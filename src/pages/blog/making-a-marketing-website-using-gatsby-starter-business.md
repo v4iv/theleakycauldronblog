@@ -1,15 +1,14 @@
 ---
 templateKey: article-page
 title: Making a marketing website using Gatsby Starter Business
-slug: get-started-with-gatsby-starter-business
 date: '2018-04-10T12:05:03+05:30'
 cover: /img/gatsbyjs.jpeg
 tags:
-  - gatsbyjs
-  - reactjs
-  - gatsby starter
-  - marketing
-  - seo
+  - GatsbyJS
+  - Reactjs
+  - Gatsby Starter
+  - Marketing
+  - SEO
 meta_title: Making a marketing website using Gatsby Starter Business
 meta_description: >-
   Make an SEO friendly website, leveraging Gatsby Starter Business, perfect for
