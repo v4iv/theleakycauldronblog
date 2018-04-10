@@ -12,7 +12,7 @@ meta_description: >-
 
 This aims to be a place where I can publish anything and everything that interests me. This can range from science and technology to entertainment.
 
-As you may have already guessed, this blog's name is inspired by the famous pub in Harry Potter. Just like that pub this blog will be a magical place where all random interesting things meet.
+As you may have already guessed, this blog's name is inspired by the famous pub in _Harry Potter_. Just like that pub this blog will be a magical place where all random interesting things meet.
 
 This is a place where I want to share the challenges that I have faced in my 20 odd years. I will also show you how I overcame them so that others, who may be going through the same won't have go through them alone.
 
