@@ -75,6 +75,7 @@ export const ArticleTemplate = ({
 
 ArticleTemplate.propTypes = {
   content: PropTypes.string.isRequired,
+  date: PropTypes.string,
   contentComponent: PropTypes.func,
   cover: PropTypes.string,
   meta_title: PropTypes.string,

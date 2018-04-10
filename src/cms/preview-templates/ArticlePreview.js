@@ -8,7 +8,6 @@ import { ArticleTemplate } from "../../templates/article-page";
 const ArticlePreview = ({ entry, widgetFor }) => (
   <ArticleTemplate
     content={widgetFor("body")}
-    date={entry.getIn(["data", "date"])}
     cover={entry.getIn(["data", "cover"])}
     meta_title={entry.getIn(["data", "meta_title"])}
     meta_desc={entry.getIn(["data", "meta_description"])}

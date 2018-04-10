@@ -11,7 +11,6 @@ import {
   RedditShareCount,
   ShareButtons,
   ShareCounts,
-  TelegramShareButton,
   TwitterShareButton
 } from "react-share";
 import config from "../../../meta/config";
@@ -69,11 +68,6 @@ class Share extends Component {
             {count => <div className="share-count">{filter(count)}</div>}
           </LinkedinShareCount>
         </LinkedinShareButton>
-        <TelegramShareButton url={url}>
-                    <span className="icon has-text-grey">
-                        <i className="fab fa-telegram fa-2x" aria-hidden="true"/>
-                    </span>
-        </TelegramShareButton>
       </div>
     );
   }
