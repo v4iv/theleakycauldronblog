@@ -15,7 +15,6 @@ collections:
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "article-page"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Slug", name: "slug", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Cover", name: "cover", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
@@ -39,8 +38,8 @@ collections:
       name: "contact"
       fields:
         - {label: "Template Key", name: "templateKey", widget: "hidden", default: "home-page"}
-        - {label: Title, name: title, widget: string}
-        - {label: Subtitle, name: subtitle, widget: string}
-        - {label: Contacts, name: contacts, widget: list, fields: [{label: Email, name: email, widget: string}, {label: Description, name: description, widget: string}]}
+        - {label: "Title", name: "title", widget: "string"}
+        - {label: "Subtitle", name: "subtitle", widget: "string"}
+        - {label: "Contacts", name: "contacts", widget: "list", fields: [{label: "Email", name: "email", widget: "string"}, {label: "Description", name: "description", widget: "string"}]}
         - {label: "Meta Title", name: "meta_title", widget: "string"}
         - {label: "Meta Description", name: "meta_description", widget: "text"}

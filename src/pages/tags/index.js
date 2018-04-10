@@ -1,22 +1,22 @@
 /**
  * Created by vaibhav on 9/4/18
  */
-import React from "react";
-import { kebabCase } from "lodash";
-import Helmet from "react-helmet";
-import Link from "gatsby-link";
+import React from 'react'
+import { kebabCase } from 'lodash'
+import Helmet from 'react-helmet'
+import Link from 'gatsby-link'
 
 const TagsPage = ({
-                    data: { allMarkdownRemark: { group }, site: { siteMetadata: { title } } }
-                  }) => (
+  data: { allMarkdownRemark: { group }, site: { siteMetadata: { title } } },
+}) => (
   <div>
-    <Helmet title={`Tags | ${title}`}/>
+    <Helmet title={`Tags | ${title}`} />
     <section className="section">
       <div className="container content">
         <div className="columns">
           <div
             className="column is-10 is-offset-1"
-            style={{ marginBottom: "6rem" }}
+            style={{ marginBottom: '6rem' }}
           >
             <section>
               <div className="content">
@@ -28,7 +28,10 @@ const TagsPage = ({
             <ul className="taglist">
               {group.map(tag => (
                 <li key={tag.fieldValue}>
-                  <Link className="has-text-primary" to={`/tags/${kebabCase(tag.fieldValue)}/`}>
+                  <Link
+                    className="has-text-primary"
+                    to={`/tags/${kebabCase(tag.fieldValue)}/`}
+                  >
                     {tag.fieldValue} ({tag.totalCount})
                   </Link>
                 </li>
@@ -39,9 +42,9 @@ const TagsPage = ({
       </div>
     </section>
   </div>
-);
+)
 
-export default TagsPage;
+export default TagsPage
 
 export const tagPageQuery = graphql`
   query TagsQuery {
@@ -57,4 +60,4 @@ export const tagPageQuery = graphql`
       }
     }
   }
-`;
+`

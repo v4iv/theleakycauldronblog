@@ -1,7 +1,6 @@
 ---
 templateKey: article-page
 title: Lorem Ipsum Dolor
-slug: lorem-ipsum-dolor
 date: 2018-03-29T03:55:49.370Z
 cover: /img/dirk_gently_s_holistic_detective_agency_by_jerseyhellboy-daructa.jpg
 tags:

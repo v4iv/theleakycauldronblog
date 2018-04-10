@@ -34,7 +34,7 @@ module.exports = {
     },
     {
       label: "Github",
-      url: "https://gitlab.com/v4iv",
+      url: "https://github.com/v4iv",
       iconClassName: "fab fa-github"
     },
     {

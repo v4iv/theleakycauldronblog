@@ -1,9 +1,9 @@
 /**
  * Created by vaibhav on 9/4/18
  */
-const config = require("./meta/config");
+const config = require('./meta/config')
 
-const pathPrefix = config.pathPrefix === "/" ? "" : config.pathPrefix;
+const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix
 
 module.exports = {
   siteMetadata: {
@@ -16,42 +16,42 @@ module.exports = {
       description: config.siteDescription,
       image_url: `${config.siteUrl + pathPrefix}/icons/icon-512x512.png`,
       author: config.userName,
-      copyright: config.copyright
-    }
+      copyright: config.copyright,
+    },
   },
   plugins: [
-    "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sass",
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sass',
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/src/pages`,
-        name: "pages"
-      }
+        name: 'pages',
+      },
     },
     {
-      resolve: `gatsby-plugin-sitemap`
+      resolve: `gatsby-plugin-sitemap`,
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/src/assets/img`,
-        name: "images"
-      }
+        name: 'images',
+      },
     },
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     {
-      resolve: "gatsby-transformer-remark",
+      resolve: 'gatsby-transformer-remark',
       options: {
-        plugins: []
-      }
+        plugins: [],
+      },
     },
     {
-      resolve: "gatsby-plugin-netlify-cms",
+      resolve: 'gatsby-plugin-netlify-cms',
       options: {
-        modulePath: `${__dirname}/src/cms/cms.js`
-      }
+        modulePath: `${__dirname}/src/cms/cms.js`,
+      },
     },
     {
       resolve: `gatsby-plugin-nprogress`,
@@ -59,50 +59,49 @@ module.exports = {
         // Setting a color is optional.
         color: config.themeColor,
         // Disable the loading spinner.
-        showSpinner: false
-      }
+        showSpinner: false,
+      },
     },
     {
       resolve: `gatsby-plugin-google-tagmanager`,
       options: {
         id: config.googleTagManagerID,
-        includeInDevelopment: false
-      }
+        includeInDevelopment: false,
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: config.siteTitle,
         short_name: config.siteTitleAlt,
-        start_url: "/index.html",
+        start_url: '/index.html',
         background_color: config.backgroundColor,
         theme_color: config.themeColor,
-        display: "standalone",
+        display: 'standalone',
         icons: [
           {
             src: `/icons/icon-192x192.png`,
             sizes: `192x192`,
-            type: `image/png`
+            type: `image/png`,
           },
           {
             src: `/icons/icon-512x512.png`,
             sizes: `512x512`,
-            type: `image/png`
-          }
-        ]
-      }
-
+            type: `image/png`,
+          },
+        ],
+      },
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-netlify`,
     {
-      resolve: "gatsby-plugin-feed",
+      resolve: 'gatsby-plugin-feed',
       options: {
         setup(ref) {
-          const ret = ref.query.site.siteMetadata.rssMetadata;
-          ret.allMarkdownRemark = ref.query.allMarkdownRemark;
-          ret.generator = "The Leaky Cauldron Blog";
-          return ret;
+          const ret = ref.query.site.siteMetadata.rssMetadata
+          ret.allMarkdownRemark = ref.query.allMarkdownRemark
+          ret.generator = 'The Leaky Cauldron Blog'
+          return ret
         },
         query: `
                 {
@@ -124,9 +123,11 @@ module.exports = {
         feeds: [
           {
             serialize(ctx) {
-              const rssMetadata = ctx.query.site.siteMetadata.rssMetadata;
+              const rssMetadata = ctx.query.site.siteMetadata.rssMetadata
               return ctx.query.allMarkdownRemark.edges
-                .filter(edge => edge.node.frontmatter.templateKey === "article-page")
+                .filter(
+                  edge => edge.node.frontmatter.templateKey === 'article-page'
+                )
                 .map(edge => ({
                   categories: edge.node.frontmatter.tags,
                   date: edge.node.frontmatter.date,
@@ -135,8 +136,8 @@ module.exports = {
                   author: rssMetadata.author,
                   url: rssMetadata.site_url + edge.node.fields.slug,
                   guid: rssMetadata.site_url + edge.node.fields.slug,
-                  custom_elements: [{ "content:encoded": edge.node.html }]
-                }));
+                  custom_elements: [{ 'content:encoded': edge.node.html }],
+                }))
             },
             query: `
                     {
@@ -162,10 +163,10 @@ module.exports = {
                       }
                     }
                   `,
-            output: config.siteRss
-          }
-        ]
-      }
-    }
-  ]
-};
+            output: config.siteRss,
+          },
+        ],
+      },
+    },
+  ],
+}
