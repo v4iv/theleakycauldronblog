@@ -3,16 +3,16 @@ templateKey: article-page
 title: Lorem Ipsum Dolor
 slug: lorem-ipsum-dolor
 date: 2018-03-29T03:55:49.370Z
-cover: /img/coffee.jpg
+cover: /img/dirk_gently_s_holistic_detective_agency_by_jerseyhellboy-daructa.jpg
+tags:
+  - lorem
+  - ipsum
 meta_title: Lorem Ipsum Dolor
 meta_description: >-
   Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
   ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam
   venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis
   consectetur purus sit amet fermentum.
-tags:
-  - lorem
-  - ipsum
 ---
 
 Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.
