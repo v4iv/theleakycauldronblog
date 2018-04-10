@@ -8,7 +8,7 @@ meta_description: >-
   venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis
   consectetur purus sit amet fermentum.
 ---
-The Leaky Cauldron Blog is the personal blog of Vaibhav Sharma.
+**The Leaky Cauldron Blog** is the personal blog of **Vaibhav Sharma**.
 
 This aims to be a place where I can publish anything and everything that interests me. This can range from science and technology to entertainment.
 
@@ -20,9 +20,10 @@ Being a travel enthusiast, I really want this blog to be a place where you can g
 
 Occasionally, this blog will feature guest writers who will write about what they truly love. I hope to bring to light various unique world views to really live up to my blog's name.
 
-All in all this, blog has no fixed scope because "True Beauty Lies In Chaos".
+All in all this, blog has no fixed scope because _"True Beauty Lies In Chaos"_.
 
 I sincerely hope this blog helps and inspires people to overcome their challenges, learn new things and make their lives better.
 
 As they say, life's a journey and I want us to support each other through each passing day.
-*~~~ Mischief Managed ~~~*
+
+`~~~ Mischief Managed ~~~`
