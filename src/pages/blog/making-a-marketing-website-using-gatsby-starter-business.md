@@ -38,4 +38,4 @@ This will create a clone of Gatsby Starter Business, with project name you gave 
 
 ## Configuring Gatsby Starter Business
 
-To configure Gatsby Starter Business open `meta` folder and open `config.js` file.
+To configure Gatsby Starter Business open `meta` folder and open `config.js` file. Change the required variables and save it. And Deploy
