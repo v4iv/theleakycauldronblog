@@ -1,16 +1,17 @@
 ---
-templateKey: 'contact-page'
+templateKey: contact-page
 title: Contact Us
-subtitle: We'd Love To Help You, Feel Free To Drop A Mail
+subtitle: 'We''d Love To Help You, Feel Free To Drop A Mail'
+contacts:
+  - description: >-
+      Only contact me if you have any queries or if you need some help with
+      something related to a blog post, don't forget to include the blog post
+      url in the mail. Please don't try to sell stuff.
+    email: theleakycauldronblog@gmail.com
 meta_title: Contact Us | The Leaky Cauldron Blog
 meta_description: >-
-  Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
-  ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam
-  venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis
-  consectetur purus sit amet fermentum.
-contacts:
-  - email: vaibhavsharmaatwork@gmail.com
-    description: >-
-      Donec scelerisque magna nec condimentum porttitor. Aliquam vel diam sed diam luctus pretium.
-      Sed quis egestas libero. Vestibulum nec venenatis ligula.
+  Contact me if you have any queries or if you need some help with something
+  related to a blog post, don't forget to include the blog post url in the mail.
+  Please don't try to sell stuff.
 ---
+
