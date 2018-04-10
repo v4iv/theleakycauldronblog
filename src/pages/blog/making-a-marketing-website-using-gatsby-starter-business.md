@@ -1,7 +1,7 @@
 ---
 templateKey: article-page
 title: Making a marketing website using Gatsby Starter Business
-slug: marketing-website-using-gatsby-starter-business
+slug: get-started-with-gatsby-starter-business
 date: '2018-04-10T12:05:03+05:30'
 cover: /img/gatsbyjs.jpeg
 tags:
@@ -36,6 +36,8 @@ Assuming you already have Gatsby CLI installed, to start a new Gatsby JS Project
 
 This will create a clone of Gatsby Starter Business, with project name you gave earlier.
 
-## Configuring Gatsby Starter Business
+## Get Started With Gatsby Starter Business
 
-To configure Gatsby Starter Business open `meta` folder and open `config.js` file. Change the required variables and save it. And Deploy
+To configure Gatsby Starter Business open `meta` folder and open `config.js` file. Change the required variables and save it. And push it to a new repository in your Github. Then from Netlify dashboard create a new site from github for the same repository, and deploy it. 
+
+Once done go to Netlify settings page, and enable Identity, set registration preference and Git Gateway. Create a user from the identity tab of Netlify and visit <https://yoursiteaddress/admin/#/> login with your Netlify credentials and you'll be on the admin page. Now you can easily edit pages or add new blog articles.
