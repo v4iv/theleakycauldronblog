@@ -3,7 +3,7 @@ templateKey: article-page
 title: Making a marketing website using Gatsby Starter Business
 slug: marketing-website-using-gatsbyjs
 date: '2018-04-10T12:05:03+05:30'
-cover: /img/coffee.jpg
+cover: /img/gatsbyjs.jpeg
 tags:
   - gatsbyjs
   - reactjs
