@@ -1,7 +1,7 @@
 ---
 templateKey: article-page
 title: Making a marketing website using Gatsby Starter Business
-slug: marketing-website-using-gatsbyjs
+slug: marketing-website-using-gatsby-starter-business
 date: '2018-04-10T12:05:03+05:30'
 cover: /img/gatsbyjs.jpeg
 tags:
@@ -24,4 +24,18 @@ When I was writing a website for my company, i found my self wanting a Gatsby st
 * It should at least have a home page and blog page.
 * It shouldn't allow proper styling using some CSS framework like_ Bootstrap_ or _Bulma_.
 
-While all these features are available in various starters none of them were a complete package. So, I decided I'll make one myself.
+While all these features are available in various starters none of them were a complete package. So, I decided I'll make one myself: 
+
+[Gatsby-Starter-Business](https://github.com/v4iv/gatsby-starter-business)
+
+## Starting a new Gatsby Project
+
+Assuming you already have Gatsby CLI installed, to start a new Gatsby JS Project using Gatsby-Starter-Business, open your terminal and run this:
+
+`$ gatsby new <your_project_name> https://github.com/v4iv/gatsby-starter-business`
+
+This will create a clone of Gatsby Starter Business, with project name you gave earlier.
+
+## Configuring Gatsby Starter Business
+
+To configure Gatsby Starter Business open `meta` folder and open `config.js` file.
