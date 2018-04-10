@@ -44,7 +44,7 @@ module.exports = {
     },
     {
       label: "Email",
-      url: "mailto:vaibhavsharmaatwork@gmail.com",
+      url: "mailto:theleakycauldronblog@gmail.com",
       iconClassName: "fas fa-envelope"
     }
   ],

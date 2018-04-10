@@ -38,7 +38,7 @@ export const ArticleTemplate = ({
         <div className="columns">
           <div className="column is-10 is-offset-1">
             <article className="article content">
-              <header>
+              <header className="article-header">
                 <small>
                   <span className="has-text-primary">{date}&nbsp;</span>
                 </small>

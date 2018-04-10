@@ -1,20 +1,20 @@
 /**
  * Created by vaibhav on 9/4/18
  */
-import React from 'react'
-import _ from 'lodash'
-import Link from 'gatsby-link'
+import React from "react";
+import _ from "lodash";
+import Link from "gatsby-link";
 
 const ArticleList = ({ posts }) => {
   return (
     <div className="container">
       {posts
-        .filter(post => post.node.frontmatter.templateKey === 'article-page')
+        .filter(post => post.node.frontmatter.templateKey === "article-page")
         .map(({ node: post }) => {
           return (
             <section key={post.id} className="section">
               <article className="article content">
-                <header>
+                <header className="article-header">
                   <h2 className="is-size-2">
                     <span className="has-text-primary">
                       {post.frontmatter.date}&nbsp;
@@ -35,18 +35,20 @@ const ArticleList = ({ posts }) => {
                     </Link>
                   ))}
                 </p>
-                <p className="has-text-weight-light has-text-grey-light is-uppercase">
-                  {post.excerpt}
+                <p>
+                  <small className="has-text-weight-light has-text-grey-light is-uppercase">
+                    {post.excerpt}
+                  </small>
                 </p>
                 <Link className="button is-small" to={post.fields.slug}>
                   Continue Reading →
                 </Link>
               </article>
             </section>
-          )
+          );
         })}
     </div>
-  )
-}
+  );
+};
 
-export default ArticleList
+export default ArticleList;
