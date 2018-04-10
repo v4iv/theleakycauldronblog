@@ -63,6 +63,13 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-plugin-google-tagmanager`,
+      options: {
+        id: config.googleTagManagerID,
+        includeInDevelopment: false
+      }
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: config.siteTitle,

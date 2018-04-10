@@ -30,7 +30,7 @@ export default class HTML extends Component {
       <html lang="en">
       <head>
         <meta charSet="utf-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
         {this.props.headComponents}
         <link rel="shortcut icon" href={favicon}/>
         {css}
@@ -41,7 +41,7 @@ export default class HTML extends Component {
         dangerouslySetInnerHTML={{ __html: this.props.body }}
       />
       {this.props.postBodyComponents}
-      <script src={__PATH_PREFIX__ + '/js/bulma.js'}/>
+      <script src={__PATH_PREFIX__ + "/js/bulma.min.js"}/>
       </body>
       </html>
     );

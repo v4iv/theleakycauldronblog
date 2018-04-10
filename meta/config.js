@@ -10,7 +10,7 @@ module.exports = {
   siteDescription: "A Brew of Awesomeness with a Pinch of Magic", // Website description used for RSS feeds/meta description tag.
   siteRss: "/rss.xml",
   siteFBAppID: "", // FB Application ID for using app insights
-  googleTagManagerID: "UA-109491704-1", // GTM tracking ID.
+  googleTagManagerID: "GTM-MPPQV7M", // GTM tracking ID.
   disqusShortname: "https-theleakycauldronblog-com", // Disqus shortname.
   userName: "Vaibhav Sharma",
   userTwitter: "vaibhaved",
