@@ -1,6 +1,9 @@
 /**
  * Created by vaibhav on 9/4/18
  */
+/* eslint import/no-unresolved:"off" */
+/* eslint import/extensions:"off" */
+/* eslint global-require:"off" */
 import React, { Component } from 'react'
 import favicon from './assets/img/favicon.ico'
 
@@ -30,7 +33,10 @@ export default class HTML extends Component {
       <html lang="en">
         <head>
           <meta charSet="utf-8" />
-          <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, user-scalable=no"
+          />
           {this.props.headComponents}
           <link rel="shortcut icon" href={favicon} />
           {css}

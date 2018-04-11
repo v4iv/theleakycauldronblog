@@ -5,7 +5,7 @@ date: '2018-04-10T12:05:03+05:30'
 cover: /img/gatsbyjs.jpeg
 tags:
   - GatsbyJS
-  - Reactjs
+  - ReactJS
   - Gatsby Starter
   - Marketing
   - SEO
@@ -23,7 +23,7 @@ When I was writing a website for my company, i found my self wanting a Gatsby st
 * It should at least have a home page and blog page.
 * It shouldn't allow proper styling using some CSS framework like_ Bootstrap_ or _Bulma_.
 
-While all these features are available in various starters none of them were a complete package. So, I decided I'll make one myself: 
+While all these features are available in various starters, none of them were a complete package. So, I decided I'll make one myself:
 
 [Gatsby-Starter-Business](https://github.com/v4iv/gatsby-starter-business)
 

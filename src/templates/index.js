@@ -16,7 +16,7 @@ const PaginationLink = props => {
     )
   } else {
     return (
-      <span disabled={true} className="button is-rounded" >
+      <span disabled={true} className="button is-rounded">
         {props.text}
       </span>
     )
