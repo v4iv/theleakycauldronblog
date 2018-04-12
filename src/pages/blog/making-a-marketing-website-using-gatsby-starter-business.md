@@ -21,7 +21,7 @@ When I was writing a website for my company, i found my self wanting a Gatsby st
 * It should be powered by _Netlify_ CMS.
 * It should be SEO friendly.
 * It should at least have a home page and blog page.
-* It shouldn't allow proper styling using some CSS framework like_ Bootstrap_ or _Bulma_.
+* It should allow proper styling using some CSS framework like_ Bootstrap_ or _Bulma_.
 
 While all these features are available in various starters, none of them were a complete package. So, I decided I'll make one myself:
 
