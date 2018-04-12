@@ -2,7 +2,7 @@
 templateKey: article-page
 title: Requesting JSON Web Token from Django OAuth Toolkit using Axios
 date: '2018-04-12T12:03:26+05:30'
-cover: /img/dirk_gently_s_holistic_detective_agency_by_jerseyhellboy-daructa.jpg
+cover: /img/djanooauthtoolkitreact.png
 tags:
   - Django
   - ReactJS
