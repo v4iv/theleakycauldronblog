@@ -34,8 +34,8 @@ export default class IndexPage extends Component {
         <Helmet>
           <title>Home | The Leaky Cauldron Blog</title>
         </Helmet>
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
+        <div className="columns is-centered">
+          <div className="column">
             <ArticleList posts={group} />
             <section className="section">
               <div className="buttons is-centered">
