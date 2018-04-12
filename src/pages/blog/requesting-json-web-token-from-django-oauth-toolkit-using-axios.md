@@ -15,5 +15,29 @@ When I first switched to Django backend for my React-Redux app, all my authentic
 After several restless days of pure frustration, I finally found a workaround that worked. What worked was, encoding every data inline using Template Literals. And If you are facing similar problem as me, this piece of code might be useful to you as well.
 
 ```
-import axios from 'axios';axios({    method: 'post',    url: `${ROOT_URL}/o/token/`,    headers: {"Content-Type": "application/x-www-form-urlencoded", 'Cache-Control': "no-cache"},    data: `grant_type=${GRANT_TYPE}&username=${email}&password=${password}&client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}`})
+import axios from 'axios';
+```
+
+```
+axios({
+```
+
+```
+\    method: 'post',
+```
+
+```
+\    url: ${ROOT_URL}/o/token/,
+```
+
+```
+\    headers: {"Content-Type": "application/x-www-form-urlencoded", 'Cache-Control': "no-cache"},
+```
+
+```
+\    data: `grant_type=${GRANT_TYPE}&username=${email}&password=${password}&client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}`
+```
+
+```
+})
 ```
