@@ -7,6 +7,7 @@ tags:
   - Django
   - ReactJS
   - OAuth
+  - Javascript
 meta_title: Requesting JSON Web Token from Django OAuth Toolkit using Axios
 meta_description: Requesting JSON Web Token from Django OAuth Toolkit using Axios
 ---
@@ -16,28 +17,31 @@ After several restless days of pure frustration, I finally found a workaround th
 
 ```
 import axios from 'axios';
-```
 
-```
+
+
 axios({
-```
 
-```
-\    method: 'post',
-```
 
-```
-\    url: ${ROOT_URL}/o/token/,
-```
 
-```
-\    headers: {"Content-Type": "application/x-www-form-urlencoded", 'Cache-Control': "no-cache"},
-```
+    method: 'post',
 
-```
-\    data: `grant_type=${GRANT_TYPE}&username=${email}&password=${password}&client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}`
-```
 
-```
+
+    url: ${ROOT_URL}/o/token/,
+
+
+
+    headers: {"Content-Type": "application/x-www-form-urlencoded", 'Cache-Control': "no-cache"},
+
+
+
+    data: `grant_type=${GRANT_TYPE}&username=${email}&password=${password}&client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}`
+
+
 })
 ```
+
+After this you can easily get the access and refresh token with `then((response) => {console.log(response.data})` .
+
+Hope this helps you.
