@@ -67,4 +67,16 @@ class BookListTest(APITestCase):
         // URL to fetch the list of the books.
         self.fetch_url = reverse("books:list")
 ```
-Everything we write in the above function are created at the beginning of every Test. Now let's come to writing the actual test.
+
+Everything we write in the above function are created at the beginning of every Test. Now let's come to writing the actual test. To do that we'll need an `access_token`, and will have to set the `authorization header` with the `bearer token`.
+
+```
+class BookListTest(APITestView):
+    def setUp(self):
+    ...
+    def test_list_books(self):
+        """
+        Ensure we can list all the books.
+        """
+        tok = AccessToken.objects.create()
+```
