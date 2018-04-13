@@ -19,7 +19,7 @@ If you are new to Django Rest Framework and Django Oauth Toolkit and are having 
 Before beginning though we're gonna work on the following assumptions:
 
 * There's a model called Books.
-* There's a `generic.ListAPIView`, with URL name `contacts:list` 
+* There's a `generic.ListAPIView`, with URL name `books:list` 
 * The permission on the URL is `is_authenticated` 
 
 Now that, that's out of the way, we can begin the fun part.
@@ -35,6 +35,36 @@ from rest_framework.test import APITestCase
 class BookListTest(APITestCase):
 
     pass
+```
 
+To begin testing, we need a few things setup first, to do so we use the `setUp` method. Here we will, first create a `test user`, set up a dummy `application`, then create `two dummy book entries`, and finally define our `fetch url`.
 
 ```
+class BookListTest(APITestCase):
+    def setUp(self):
+        // Create a Test User.
+        self.test_user = User.objects.create_user('test','user','testuser', 'test@example.com','testpassword')
+        // Set Up a Test Application
+        self.application = Application(
+            name = "Test Application",
+            redirect_uris = "http://localhost",
+            user = self.test_user,
+            client_type = Application.CLIENT_CONFIDENTIAL,
+            authorization_grant_type = Application.GRANT_AUTHORIZATION_CODE,
+        )
+        self.application.save()
+        //Create Entries in our model to fetch the list of.
+        self.foo_book = Book(
+            title = "foo"
+            author = "bar author"
+        )
+        self.foo_book.save()
+        self.bar_book = Book(
+            title = "bar"
+            author = "foo author"
+        )
+        self.bar_book.save()
+        // URL to fetch the list of the books.
+        self.fetch_url = reverse("books:list")
+```
+Everything we write in the above function are created at the beginning of every Test. Now let's come to writing the actual test.
