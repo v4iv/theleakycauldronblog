@@ -9,6 +9,7 @@ tags:
   - API
   - Testing
   - Authentication
+  - OAuth Toolkit
 meta_title: Writing Tests for Authenticated Routes in Django REST Framework
 meta_description: >-
   How to write tests for Django OAuth Toolkit Authenticated APIs in Django REST
@@ -97,7 +98,7 @@ class BookListTest(APITestView):
 
 And that's it, just run the test. But before you do that, make sure you have required `imports`. You will need the following imports:
 
-* User, Book Model
+* `User`, `Book` Models
 * from `django.urls`, `reverse`
 * from `django.utils`, `timezone`
 * from `oauth2_provider.models`, `Application` and `AccessToken` models
