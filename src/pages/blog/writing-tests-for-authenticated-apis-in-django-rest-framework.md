@@ -53,7 +53,7 @@ class BookListTest(APITestCase):
             authorization_grant_type = Application.GRANT_AUTHORIZATION_CODE,
         )
         self.application.save()
-        //Create Entries in our model to fetch the list of.
+        // Create Entries in our model to fetch the list of.
         self.foo_book = Book(
             title = "foo"
             author = "bar author"
@@ -78,5 +78,31 @@ class BookListTest(APITestView):
         """
         Ensure we can list all the books.
         """
-        tok = AccessToken.objects.create()
+        // Create A Token
+        tok = AccessToken.objects.create(
+            user = self.test_user,
+            token = '1234567890',
+            application = self.application,
+            scope = 'read write',
+            expires = timezone.now() + datetime.timedelta(days=1)
+        )
+        // Set Authorization Header
+        auth_headers = {
+            'HTTP_AUTHORIZATION': 'Bearer ' + tok.token,
+        }
+        response = self.client.get(self.fetch_url, format='json', **auth_headers)
+        // Make assertions
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
 ```
+
+And that's it, just run the test. But before you do that, make sure you have required `imports`. You will need the following imports:
+
+* User, Book Model
+* from `django.urls`, `reverse`
+* from `django.utils`, `timezone`
+* from `oauth2_provider.models`, `Application` and `AccessToken` models
+* from `rest_framework`, `status`
+* `datetime`
+* from `rest_framework.test`, `APITestCase`
+
+Happy Testing.
