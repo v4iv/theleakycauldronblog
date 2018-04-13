@@ -15,7 +15,7 @@ meta_description: >-
   How to write tests for Django OAuth Toolkit Authenticated APIs in Django REST
   Framework.
 ---
-If you are new to Django Rest Framework and Django Oauth Toolkit and are having trouble writing automated tests for your `is_authenticated` APIs, you have come to the write place. The problem arises because for a token to be generated we need to first create an application and then retrieve it's `client_id` and `client_secret` before sending it along with username and password for generating `access_token`.
+If you are new to [Django Rest Framework](http://www.django-rest-framework.org/) and [Django Oauth Toolkit](http://dot.evonove.it/) and are having trouble writing automated tests for your `is_authenticated` APIs, you have come to the write place. The problem arises because for a token to be generated we need to first create an application and then retrieve it's `client_id` and `client_secret` before sending it along with username and password for generating `access_token`.
 
 Before beginning though we're gonna work on the following assumptions:
 
