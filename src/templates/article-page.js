@@ -4,13 +4,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { kebabCase } from "lodash";
+import _ from "lodash";
 import Link from "gatsby-link";
-import "../assets/css/b16-tomorrow-dark.css";
 import Content, { HTMLContent } from "../components/Content";
 import SE0 from "../components/SEO";
 import Disqus from "../components/Disqus";
 import Share from "../components/Share";
-import _ from "lodash";
 
 export const ArticleTemplate = ({
                                   content,
@@ -76,6 +75,7 @@ ArticleTemplate.propTypes = {
   cover: PropTypes.string,
   meta_title: PropTypes.string,
   meta_desc: PropTypes.string,
+  tags: PropTypes.object,
   title: PropTypes.string,
   slug: PropTypes.string
 };
