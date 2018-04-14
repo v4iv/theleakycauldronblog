@@ -15,14 +15,14 @@ const ArticleList = ({ posts }) => {
             <section key={post.id} className="section">
               <article className="article content">
                 <header className="article-header">
-                  <h2 className="is-size-2">
+                  <h1 className="is-size-2">
                     <span className="has-text-primary">
                       {post.frontmatter.date}&nbsp;
                     </span>
                     <Link className="has-text-black" to={post.fields.slug}>
                       {post.frontmatter.title}
                     </Link>
-                  </h2>
+                  </h1>
                 </header>
                 <p className="tags">
                   {post.frontmatter.tags.map(tag => (
