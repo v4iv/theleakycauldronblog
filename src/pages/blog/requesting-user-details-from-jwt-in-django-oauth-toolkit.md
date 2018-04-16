@@ -84,4 +84,4 @@ urlpatterns = [
 ]
 ```
 
-That's all for the coding part, now when you call the `http://localhost:8000/api/me/?format=json` with Authorization Header, you'll get the ID, First Name, Last Name, Email and Username of the user asssociated with the JSON Web Token.
+That's all for the coding part, now when you call the `http://localhost:8000/api/me/?format=json` with Authorization Header, you'll get the ID, First Name, Last Name, Email and Username of the user associated with the JSON Web Token.
