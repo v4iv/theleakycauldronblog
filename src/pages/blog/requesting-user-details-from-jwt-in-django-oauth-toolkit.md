@@ -6,9 +6,9 @@ cover: /img/dot.png
 tags:
   - Authorization
   - Oauth Toolkit
+  - API
   - Django
   - DRF
-  - API
 meta_title: Requesting User details from JWT in Django OAuth Toolkit
 meta_description: >-
   Learn to write an API to fetch the details of currently logged in user, using
@@ -48,7 +48,7 @@ These steps are essentials for getting `request.user` function, which will be re
 In the `views.py` we'll write a `generic Retrieve API View` which when called along with the authorization token will return the User details. For that, we'll first write a `serializer` that will define our JSON response.
 
 ### Serializer for the User
-For our JSON response let's take id, first name, last name, email and username. In the serializers.py file write the following Model Serializer class
+For our JSON response let's take id, first name, last name, email and username. In the `serializers.py` file write the following Model Serializer class
 
 ```
 class UserDetailSerializer(serializers.ModelSerializer):
@@ -56,3 +56,32 @@ class UserDetailSerializer(serializers.ModelSerializer):
         model = User
         fields = ('id', 'first_name', 'last_name', 'email', 'username')
 ```
+### The Retrieve API View
+In the `views.py` file we'll write the UserDetail View:
+
+```
+class UserDetailView(generics.RetrieveAPIView):
+    """
+    Use this endpoint to retrieve user.
+    """
+    // Set the AUTH_USER_MODEL in settings.py file to make it work with custom user models as well.
+    model = settings.AUTH_USER_MODEL
+    serializer_class = UserDetailSerializer
+    // Set the permission class if not already set by default
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get_object(self, *args, **kwargs):
+        return self.request.user
+```
+
+### The API Path
+Now that the tough part is over we'll write the URL Path for the API. In your `urls.py` add the following url pattern.
+
+```
+urlpatterns = [
+    '...'
+    path('api/me/', UserDetailView.as_view(), name='me'),
+]
+```
+
+That's all for the coding part, now when you call the `http://localhost:8000/api/me/?format=json` with Authorization Header, you'll get the ID, First Name, Last Name, Email and Username of the user asssociated with the JSON Web Token.
