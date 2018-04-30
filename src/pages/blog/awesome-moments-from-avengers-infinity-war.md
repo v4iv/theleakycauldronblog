@@ -1,6 +1,6 @@
 ---
 templateKey: article-page
-title: 'Awesome Moments from Avengers: Infinity War'
+title: '16 Awesome Moments from Avengers: Infinity War'
 date: '2018-04-30T18:03:07+05:30'
 cover: /img/avengers_infinity_war.jpg
 tags:
@@ -21,6 +21,8 @@ The classic line from The Avengers! After tasting what Stark mean't when he said
 
 ## Space Squidward
 
+![Space Squidward](/img/squidward.webp)
+
 When Stark called Ebony Maw Squidward from Spongebob, it was a tiny one liner but i just couldn't stop myself from laughing like a maniac. I'm sure I'm not the only, right?! right?! right?!
 
 ## \`\`Dude you are embarrassing me in-front of the wizards\`\`
@@ -29,17 +31,25 @@ This sent the entire hall, in a fit of laughter.
 
 ## \`\`The only way to smuggle it was up my ....\`\`
 
+![Ass Eye](/img/eye.webp)
+
 Oh Rocket and his obsession with prosthesis! At least Thor got his missing eye thanks to the weird rabbit.
 
 ## Groot makes the handle of Stormbreaker with his Arm
+
+![Stormbreaker](/img/stormbreaker.webp)
 
 As if Thor getting a new Hammer/Axe wasn't exciting enough!
 
 ## Thanos' obsession with bubbles
 
+![thanos bubbles](/img/bubbles.webp)
+
 Seems to show a softer side to the Despot. Maybe... IDK
 
 ## Red Skull's Dementor Makeover
+
+![red_skull_dementor](/img/dementor.jpeg)
 
 This must be going through every Harry Potter fan, Red Skull levitating in those tattered robe was looking very much like a Dementor.
 
@@ -48,6 +58,8 @@ This must be going through every Harry Potter fan, Red Skull levitating in those
 This was heartbreaking in a twisted kind of way. But certainly a powerful scene.
 
 ## Where's Who's and Why's of Gamora
+
+![Gamora](/img/gamora.webp)
 
 Guardians of the Galaxy meet Earth's Mightiest...
 
@@ -73,8 +85,12 @@ The dreadful SNAP, killing half the universe, including some of our most beloved
 
 ## Peter's Death
 
+![Peter's Death](/img/peters_death.webp)
+
 This one got to me, and I'm sure most of the viewers. It was just to painful to hear him desperately hug Tony. "I'm sorry Mr. Stark..."
 
 ## Mother F...
+
+![Paging Captain Marvel](/img/captainmarvel.webp)
 
 This end credit was just appropriate..., Also Captain Marvel!
