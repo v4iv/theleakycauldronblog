@@ -17,7 +17,7 @@ Friday marked the release of Avengers Infinity War, and I couldn't miss it for t
 
 ## \`\`...We have a Hulk!\`\`
 
-The classic line from The Avengers! After tasting what Stark mean't when he said "We have a Hulk", finally Loki got to say it.
+The classic line from The Avengers! After tasting what Stark meant when he said "We have a Hulk", finally Loki got to say it.
 
 ## Space Squidward
 
@@ -69,7 +69,7 @@ The ditsy half sister of Star Lord, Mantis is always a delight.
 
 ## Strange surrenders the Time Stone in exchange for Thanos sparing an injured Stark
 
-Is it just me or it's weird that Strange never once used his most powerful weapon, and surrender it way to easily for Stark's life? He must think Stark is more important than any Stone in the future he saw them win.
+Is it just me or it's weird that Strange never once used his most powerful weapon, and surrender it way too easily for Stark's life? He must think Stark is more important than any Stone in the future he saw them win.
 
 ## Bucky-Rocket Interactions
 

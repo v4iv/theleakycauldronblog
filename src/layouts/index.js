@@ -15,19 +15,19 @@ const TemplateWrapper = ({ children }) => (
   <div>
     <Helmet>
       <title>{config.siteTitle}</title>
-      <meta name="description" content={config.siteDescription} />
+      <meta name="description" content={config.siteDescription}/>
     </Helmet>
     <div className="wrapper">
-      <Socials config={config} />
-      <Navbar config={config} />
+      <Socials config={config}/>
+      <Navbar/>
       <div>{children()}</div>
-      <Footer config={config} />
+      <Footer config={config}/>
     </div>
   </div>
-)
+);
 
 TemplateWrapper.propTypes = {
-  children: PropTypes.func,
-}
+  children: PropTypes.func
+};
 
-export default TemplateWrapper
+export default TemplateWrapper;

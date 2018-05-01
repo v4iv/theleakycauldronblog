@@ -32,7 +32,6 @@ class Navbar extends Component {
   }
 
   render() {
-    const { config } = this.props
     return (
       <nav
         className="navbar is-transparent"
@@ -42,7 +41,7 @@ class Navbar extends Component {
         <div className="container">
           <div className="navbar-brand">
             <Link className="navbar-item is-uppercase has-text-black" to="/">
-              <strong>{config.siteTitle}</strong>
+              <strong>The Leaky Cauldron &nbsp;</strong>Blog
             </Link>
 
             <a
