@@ -2,7 +2,7 @@
 templateKey: article-page
 title: Scraping Dynamic Single Page Websites with Scrapy and Selenium
 date: '2018-05-04T18:51:35+05:30'
-cover: /img/dot.png
+cover: /img/scrapy.png
 tags:
   - Scrapy
   - Selenium
