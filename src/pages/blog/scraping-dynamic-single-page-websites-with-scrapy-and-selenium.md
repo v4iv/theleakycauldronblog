@@ -18,3 +18,30 @@ Last week i was assigned a task of scraping some data from a website, regular st
 
 * More Python friendly
 * More likely to be useful in future projects.
+
+In brief what we're about to do is, use the webdriver of a browser with the help of Selenium to render the entire page along with the dynamic parts, then scrape it. But before we begin, I'm gonna assume the following:
+
+* This is not a scrapy tutorial for beginners, i'll assume some familiarity
+* A dummy page to be scraped, the links that have to be scraped has the class "ng-binding"
+* A scrapy project has been set up and blank spider script is ready, where in our code goes.
+
+## Setting up Geckodriver
+
+To begin we need to install, `geckodriver`, which is webdriver for Firefox web browser. I'm gonna write the instructions for Linux, you can look up the installation for your specific OS.
+First download the latest edition of geckodriver:
+
+```
+wget https://github.com/mozilla/geckodriver/releases/download/v0.20.1/geckodriver-v0.20.1-linux64.tar.gz
+```
+Extract the file with:
+```
+tar -xvzf geckodriver*
+```
+Make it executable:
+```
+chmod +x geckodriver
+```
+Make it accessible by command line:
+```
+sudo mv geckodriver /usr/local/bin/
+```
