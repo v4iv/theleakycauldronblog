@@ -88,4 +88,26 @@ class AngularSpider(scrapy.Spider):
    def parse(self, response):
        pass   
 ```
-
+The real magic happens in the parse function, here we'll write the selector for the data, and the output in a CSV file:
+```
+    ...
+    
+    // Parse function: Scrape the webpage and store it
+    def parse(self, response):
+        self.driver.get(response.url)
+        // Output filename
+        filename = "angular_data.csv"
+        with open(filename, 'a+') as f:
+            writer = csv.writer(f)
+            // Selector for all the names from the link with class 'ng-binding'
+            names = self.driver.find_elements_by_css_selector("a.ng-binding")
+            for name in names:
+                title = name.text
+                writer.writerow([title])
+        self.log('Saved file %s' % filename)
+```
+Now when you run this using:
+```
+scrapy crawl angular_spider
+```
+You'll notice a browser opens up and the page is loaded, and when the scraping is complete you can open the CSV file and see the data.
