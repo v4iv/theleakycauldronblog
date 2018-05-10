@@ -33,15 +33,59 @@ First download the latest edition of geckodriver:
 ```
 wget https://github.com/mozilla/geckodriver/releases/download/v0.20.1/geckodriver-v0.20.1-linux64.tar.gz
 ```
+
 Extract the file with:
+
 ```
 tar -xvzf geckodriver*
 ```
+
 Make it executable:
+
 ```
 chmod +x geckodriver
 ```
+
 Make it accessible by command line:
+
 ```
 sudo mv geckodriver /usr/local/bin/
 ```
+
+## Writing the Spider
+
+In the spider file, lets assume its name is `angular.py` first we need to import the following:
+
+```
+import scrapy
+import csv
+from selenium import webdriver
+```
+
+Then we need to set up the spider class:
+
+```
+...
+
+class AngularSpider(scrapy.Spider):
+    name = 'angular_spider'
+    start_urls = [
+        'https://www.example.com/?page=1',
+        'https://www.example.com/?page=2',
+    ]    
+    // Initalize the webdriver    
+    def __init__(self):
+        self.driver = webdriver.Firefox()
+
+    
+    // Parse through each Start URLs
+    def start_requests(self):
+        for url in self.start_urls:
+            yield scrapy.Request(url=url, callback=self.parse)    
+    
+
+   // Parse function: Scrape the webpage and store it
+   def parse(self, response):
+       pass   
+```
+
