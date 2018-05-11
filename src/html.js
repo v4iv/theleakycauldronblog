@@ -40,6 +40,13 @@ export default class HTML extends Component {
           {this.props.headComponents}
           <link rel="shortcut icon" href={favicon} />
           {css}
+          <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"/>
+          <script>
+            (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-6003659136571203",
+              enable_page_level_ads: true
+            });
+          </script>
         </head>
         <body>
           <div
