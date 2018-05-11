@@ -57,7 +57,7 @@ ArticleTemplate.propTypes = {
   cover: PropTypes.string,
   meta_title: PropTypes.string,
   meta_desc: PropTypes.string,
-  tags: PropTypes.object,
+  tags: PropTypes.array,
   title: PropTypes.string,
 };
 
