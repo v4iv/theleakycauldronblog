@@ -28,7 +28,7 @@ export default class IndexPage extends Component {
     const { data, pathContext } = this.props
     const { group, index, first, last, pageCount } = pathContext
     const previousUrl = index - 1 == 1 ? '' : (index - 1).toString()
-    const nextUrl = (index + 1).toString()
+    const nextUrl = (index + 1).toString() + '/'
     return (
       <div>
         <Helmet>
