@@ -17,9 +17,10 @@ How to write an Authenticated Route component which will redirect to Sign In Pag
 
 But before we begin, lets clear out some assumptions:
 
-* This is not a react-redux authentication tutorial, we assume you already have authentication mechanism set up.
+* This is not a beginner react-redux authentication tutorial, we assume you already have authentication mechanism set up.
 * The Redux association is just to get the "authenticated"(bool) state, and you can use any state management you like.
 * We are using React Router v4
+* You may need to modify it according to you project.
 
 Now that, that's out of the way lets begin by creating the most important part, the `AuthenticatedRoute` component.
 
@@ -87,7 +88,7 @@ export function signinUser(username, password, redirect = '/'){
 
 ## Parsing the URL Parameter
 
-To get the `redirectTo` param's value from` /signin?redirectTo=<path>`, we need to install a package called `query-string`.
+To get the `redirectTo` param's value from`/signin?redirectTo=<path>`, we need to install a package called `query-string`.
 
 ```
 yarn add query-string
@@ -113,4 +114,35 @@ class SignInContainer extends Component {
     }
 }
 ```
-And that's it! We're all set. 
+
+## Using AuthenticatedRoute in our Router
+
+Now it's time to use the AuthenticatedRoute Component, it's very easy to do and works exactly like Route from react-router-dom. It only takes one extra parameter, `authenticated`, which is a boolean that determines if the user is authenticated or not.
+```
+...
+import AuthenticatedRoute from './component/AuthenticatedRoute';
+
+const store = configureStore();
+const {sessionReducer: {session: {authenticated}}} = store.getState();
+
+class App extends Component {
+render() {
+        return (
+            <Provider store={store}>
+                <Router>
+                    <div>
+                        <Switch>
+                            <Route exact path='/signin' component={SignInPage}/>
+                            <AuthenticatedRoute exact path='/' 
+                                                component={HomePage}
+                                                authenticate={authenticated}/>
+                            ...
+                        </Switch>
+                    </div>
+                </Router>
+            </Provider>
+        );
+    }
+}
+```
+And that's it! We're all set.
