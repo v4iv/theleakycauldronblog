@@ -87,7 +87,7 @@ export function signinUser(username, password, redirect = '/'){
 
 ## Parsing the URL Parameter
 
-To get the `redirectTo` param's value from` /signin?redirectTo=<path>`, we need to install a package called query-string.
+To get the `redirectTo` param's value from` /signin?redirectTo=<path>`, we need to install a package called `query-string`.
 
 ```
 yarn add query-string
@@ -100,3 +100,17 @@ npm install query-string --save
 ```
 
 now in our Sign In Container, in the function that handles Sign In request, we access the URL param and pass it to `signinUser` function.
+
+```
+...
+import queryString from 'query-string';
+
+class SignInContainer extends Component {
+    handleSignIn(event) {
+        event.preventDefault();
+        const redirectTo = queryString.parse(this.props.location.search).redirectTo;
+        this.props.actions.signinUser(this.state.data.username, this.state.data.password, redirectTo);
+    }
+}
+```
+And that's it! We're all set. 
