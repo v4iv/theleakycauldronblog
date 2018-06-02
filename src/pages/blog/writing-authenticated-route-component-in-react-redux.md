@@ -50,4 +50,53 @@ export default function AuthenticatedRoute({
     );
 }
 ```
+
 It also stores the actual path as a parameter in the signin path `/signin?redirectTo=<path>` so that when the user signs in it'll redirect to that path.
+
+## Redirecting to the URL Param after Sign In
+
+To redirect to the param that we set, we need to first edit the `signinUser(username, password)` action, by adding a third argument, redirect.
+
+```
+...
+
+export function signinUser(username, password, redirect = '/'){
+// Authentication Logic
+...
+}
+```
+
+we set a default value for the third argument, so that in case no value is provided it'll redirect to home page. Now for the actual redirection.
+
+```
+export function signinUser(username, password, redirect = '/'){
+    return function(dispatch){
+        dispatch(authRequest);
+            return axios.post(
+                ...
+            ).then((response) => {
+                dispatch(authSuccess(response));
+                // Redirect
+                window.location = redirect;
+            }).catch(error => {
+                dispatch(authFailure(error));
+            });
+    }
+}
+```
+
+## Parsing the URL Parameter
+
+To get the `redirectTo` param's value from` /signin?redirectTo=<path>`, we need to install a package called query-string.
+
+```
+yarn add query-string
+```
+
+or
+
+```
+npm install query-string --save
+```
+
+now in our Sign In Container, in the function that handles Sign In request, we access the URL param and pass it to `signinUser` function.
