@@ -12,4 +12,4 @@ meta_description: >-
   Leverage the power of Google Script to run email campaigns, right from your
   Google Sheet.
 ---
-Ever have a list of Name and Email
+Ever find yourself with a list of
