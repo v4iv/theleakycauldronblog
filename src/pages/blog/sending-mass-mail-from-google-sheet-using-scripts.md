@@ -6,7 +6,7 @@ cover: /img/google_sheet_mass_mail.png
 tags:
   - GoogleSheet
   - GoogleScript
-  - MassMail
+  - Email
 meta_title: Sending Mass Mail from Google Sheet using Scripts
 meta_description: >-
   Leverage the power of Google Script to run email campaigns, right from your
