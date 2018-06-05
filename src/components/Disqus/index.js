@@ -31,7 +31,7 @@ class Disqus extends Component {
     if (!config.disqusShortname) {
       return null
     }
-    const url = config.siteUrl + config.pathPrefix + slug
+    const url = config.siteUrl + slug
     return (
       <ReactDisqusComments
         shortname={config.disqusShortname}
