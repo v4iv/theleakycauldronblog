@@ -27,3 +27,5 @@ So what we did first was, add three columns:
 These columns containing the word "Send" if the candidate has to be mailed, and "Sent" once the mail has been sent. So basically our script goes through, the sheet, picks up the candidate name, and email, uses name variable to create a personalised message, send it to their email(if the Send First Email contains the keyword "Send") and after sending replaces the keyword with "Sent".
 
 ## Step One: Structure of Our Sheet
+
+![google sheet sturcture](/img/sheet_structure.png)
