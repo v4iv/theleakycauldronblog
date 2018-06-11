@@ -29,3 +29,63 @@ These columns containing the word "Send" if the candidate has to be mailed, and 
 ## Step One: Structure of Our Sheet
 
 ![google sheet sturcture](/img/sheet_structure.png)
+
+This is our example table, for the customized message we'll pick up, first name from `column B`, last name from `column C` etc. You can add more details accordingly.
+
+## Step Two: Script for Mass Mail
+
+Google Script uses plain JavaScript with some built in APIs. First we write the function that'll send the mail. To Write the Script click on `Tools > Script Editor`.
+```
+function sendMassMail() {
+
+  // Get Active Sheet
+  var sheet = SpreadsheetApp.getActiveSheet(); 
+
+  // Sender Name will Appear to the Recipient
+  var senderName = "Vaibhav | The Leaky Cauldron Blog";
+
+  // Get all Data.
+  var dataRange = sheet.getDataRange(); 
+  var data = dataRange.getValues(); 
+
+  // Parse Through Data
+  for (i in data) { 
+    var rowData = data[i]; 
+
+    // Array Starts with 0, eg. - column B is 1
+    var first_name = rowData[1]; 
+    var last_name = rowData[2];
+    var emailAddress = rowData[3]; 
+    var confirmSend = rowData[4]; 
+
+    // Set a Custom Subject
+    var subject = first_name + ' | Graphic Designer Role at The Leaky Cauldron Blog';
+
+    // Verify if the mail has to be sent
+    if (confirmSend === "Send") { 
+      try { 
+
+        // Use MailApp API to send Email.
+        MailApp.sendEmail({ 
+          to: emailAddress, 
+          subject: subject, 
+          // Write Custom HTML Message
+          htmlBody: '<div>Hi ' + first_name + last_name + '</div>', 
+          name: senderName 
+        }); 
+
+        // Log if the Mail was sent successfully
+        Logger.log("Email: %s", emailAddress); 
+
+      } catch(e) { 
+
+        // Log if there was some error
+        Logger.log(e); 
+
+      } 
+    } else { 
+      continue; 
+    } 
+  }
+}
+```
