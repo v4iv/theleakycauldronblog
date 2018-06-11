@@ -14,4 +14,4 @@ meta_description: >-
   Leverage Google Tag Manager Custom HTML Tag to implement Schema.org JSON-LD
   Schema for Rich Snippets.
 ---
-Google Tag Manager
+Rich Snippets Schema, while may not help in improving SERP Ranking, it does help in better CTR(Click Through Rate).
