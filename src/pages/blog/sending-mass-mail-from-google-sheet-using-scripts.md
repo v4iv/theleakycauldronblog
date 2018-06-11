@@ -35,6 +35,7 @@ This is our example table, for the customized message we'll pick up, first name 
 ## Step Two: Script for Mass Mail
 
 Google Script uses plain JavaScript with some built in APIs. First we write the function that'll send the mail. To Write the Script click on `Tools > Script Editor`.
+
 ```
 function sendMassMail() {
 
@@ -99,3 +100,27 @@ function sendMassMail() {
   }
 }
 ```
+
+Don't forget to Save the Project.
+
+## Step Three: Add the Function To Main Menu
+
+Below the `sendMassMail()` write a function called `onOpen()`.
+
+```
+function onOpen() {
+  var sheet = SpreadsheetApp.getActiveSpreadsheet();
+  var entries = [{
+
+    // Set a Name for Function
+    name : "Send Mass Mail",
+    functionName : "sendMassMail"
+
+  }];
+
+  // Add a Menu and name it
+  sheet.addMenu("Email", entries);
+
+};
+```
+Save and reload the sheet, you'll see a menu called `Email`, and within it an option called `Send Mass Mail`. That's it just click on the option to run the script and send mass mail. One more, thing you'll have to approve the script to use your Gmail.
