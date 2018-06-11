@@ -8,7 +8,8 @@ tags:
   - RichSnippet
   - SEO
   - GoogleTagManager
-meta_title: Implement Rich Snippet Schema with Google Tag Manager
+  - JSONLD
+meta_title: Implement Rich Snippet JSON LD Schema with Google Tag Manager
 meta_description: >-
   Leverage Google Tag Manager Custom HTML Tag to implement Schema.org JSON-LD
   Schema for Rich Snippets.
