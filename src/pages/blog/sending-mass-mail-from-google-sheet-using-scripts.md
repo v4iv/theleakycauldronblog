@@ -123,4 +123,9 @@ function onOpen() {
 
 };
 ```
-Save and reload the sheet, you'll see a menu called `Email`, and within it an option called `Send Mass Mail`. That's it just click on the option to run the script and send mass mail. One more, thing you'll have to approve the script to use your Gmail.
+
+Save and reload the sheet, you'll see a menu called `Email`, and within it an option called `Send Mass Mail`. 
+
+That's it just click on the option to run the script and send mass mail. One more, thing you'll have to approve the script to use your Gmail.
+
+Link To Example Sheet - [Mass Mail](https://docs.google.com/spreadsheets/d/1OeRL8bFaAYuwAQXdy_wV1WKmGap_gcQ3jFOzrbKVEuo/edit?usp=sharing)
