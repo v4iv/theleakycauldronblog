@@ -48,8 +48,11 @@ function sendMassMail() {
   var dataRange = sheet.getDataRange(); 
   var data = dataRange.getValues(); 
 
+  var count = 0;
+
   // Parse Through Data
   for (i in data) { 
+    count += 1;
     var rowData = data[i]; 
 
     // Array Starts with 0, eg. - column B is 1
@@ -74,10 +77,17 @@ function sendMassMail() {
           name: senderName 
         }); 
 
+        // Set the value of Mail Status to Sent if Sent.
+        // getRange(row, column). column starts from 1.
+        sheet.getRange(count, 5).setValue("Sent");
+
         // Log if the Mail was sent successfully
         Logger.log("Email: %s", emailAddress); 
 
       } catch(e) { 
+
+        // Set the value of Mail Status to Failed if Failed.
+        sheet.getRange(count, 5).setValue("Failed");
 
         // Log if there was some error
         Logger.log(e); 
