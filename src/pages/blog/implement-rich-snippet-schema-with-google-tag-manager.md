@@ -20,4 +20,104 @@ There are various encodings you can use to markup your data, like `Microdata`, `
 
 Although there are various ways you can implement these Schemas, the one that has been gaining a lot of traction recently is using _Google Tag Manager_. While you can simply put your JSON-LD schema Tag in a Custom HTML field and expect it to work, and for some people it has, if you go to [Structured Data Testing Tool](https://search.google.com/structured-data/testing-tool/) you'll find out that the schema isn't visible. That's either because Structured Data Testing Tool cannot render the schema, or GTM doesn't allow us to do so.
 
-This made us think and we found a simple workaround for this problem.
+This made us think and we found a simple workaround for this problem. What we do essentially is, store schema data as `JSON` in a variable, and create a `<script type="application/ld+json"></script>` tag using JavaScript.
+
+Let's say this is our `JSON-LD` Schema
+
+```
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org/",
+  "@type": "Review",
+  "url": "https://www.example.com/lorem-services/",
+  "name": "Example Lorem Service Review",
+  "reviewBody": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.",
+  "datePublished": "2017-06-27",
+  "itemReviewed": {
+    "@type": "Service",
+    "name": "Lorem Service"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "John Smith"
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "worstRating": "1",
+    "ratingValue": "5",
+    "bestRating": "5"
+  }
+}
+</script>
+```
+
+First we create a Custom HTML Tag in Google Tag Manager. In that tag we create a JavaScript `document function` within a Script Tag. In that `function`, we create variable called `jsonld` , which stores our `JSON-LD` data.
+
+```
+<script>
+(function () {
+    var jsonld = {
+        "@context": "http://schema.org/",
+        "@type": "Review",
+        "url": "https://www.example.com/lorem-services/",
+        "name": "Example Lorem Service Review",
+        "reviewBody": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.",
+        "datePublished": "2017-06-27",
+        "itemReviewed": {
+            "@type": "Service",
+            "name": "Lorem Service"
+        },
+        "author": {
+            "@type": "Person",
+            "name": "John Smith"
+        },
+        "reviewRating": {
+            "@type": "Rating",
+            "worstRating": "1",
+            "ratingValue": "5",
+            "bestRating": "5"
+        }
+    };
+})(document);
+</script>
+```
+
+Then we initalize the Script element, set the type as `"application/ld+json"`, and put the `jsonld` variable data in the  `Inner HTML`. After that all that's left is to append the script to document Head.
+
+```
+<script>
+(function () {
+    var jsonld = {
+        "@context": "http://schema.org/",
+        "@type": "Review",
+        "url": "https://www.example.com/lorem-services/",
+        "name": "Example Lorem Service Review",
+        "reviewBody": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.",
+        "datePublished": "2017-06-27",
+        "itemReviewed": {
+            "@type": "Service",
+            "name": "Lorem Service"
+        },
+        "author": {
+            "@type": "Person",
+            "name": "John Smith"
+        },
+        "reviewRating": {
+            "@type": "Rating",
+            "worstRating": "1",
+            "ratingValue": "5",
+            "bestRating": "5"
+        }
+    };
+    var script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.innerHTML = JSON.stringify( jsonld );
+    document.getElementsByTagName('head')[0].appendChild(script);
+})(document);
+<script>
+```
+
+Oh and don't forget to check the box that says _Support `document.write`_.
+Since we are done with the coding part, all that is left is to set the trigger, which can be done easily by creating a new trigger and setting the required path, depending on if you want it to trigger on specific pages or all pages.
+
+**TIP:** You can set custom variables in GTM that'll pull the data according to `css selectors`, this can be used to make a automated template schema, for pages like blog posts.
