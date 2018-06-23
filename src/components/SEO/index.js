@@ -14,8 +14,8 @@ const SE0 = ({ title, meta_title, meta_desc, cover, slug }) => {
     {
       '@context': 'http://schema.org',
       '@type': 'WebSite',
-      url: blogURL,
-      name: title,
+      url: config.siteUrl,
+      name: config.siteTitle,
       alternateName: config.siteTitleAlt ? config.siteTitleAlt : '',
     },
   ]
