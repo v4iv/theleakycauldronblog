@@ -38,13 +38,13 @@ const SE0 = ({ title, meta_title, meta_desc, cover, slug, date }) => {
   const blogPostingSchemaOrgJSONLD = {
       "@context": "http://schema.org",
       "@type": "BlogPosting",
-      url: blogURL,
+      url: postURL,
       name: title,
       alternateName: config.siteTitleAlt ? config.siteTitleAlt : "",
       headline: title,
       mainEntityOfPage: {
         "@type": "WebPage",
-        "@id": blogURL
+        "@id": postURL
       },
       "author": {
         "@type": "Person",
