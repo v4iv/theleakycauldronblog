@@ -56,6 +56,14 @@ const SE0 = ({ title, meta_title, meta_desc, cover, slug, date }) => {
       },
       datePublished: date,
       dateModified: date,
+      publisher: {
+        "@type": "Organization",
+        name: config.siteTitle,
+        logo: {
+          "@type": "ImageObject",
+          url: config.siteUrl + "/icons/icon-512x512.png"
+        }
+      },
       description: meta_desc
     }
 
