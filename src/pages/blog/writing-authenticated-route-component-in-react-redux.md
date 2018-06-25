@@ -20,13 +20,13 @@ But before we begin, lets clear out some assumptions:
 * This is not a beginner react-redux authentication tutorial, we assume you already have authentication mechanism set up.
 * The Redux association is just to get the "authenticated"(bool) state, and you can use any state management you like.
 * We are using React Router v4
-* You may need to modify it according to you project.
+* You may need to modify it according to your project.
 
 Now that, that's out of the way lets begin by creating the most important part, the `AuthenticatedRoute` component.
 
 ## Creating AuthenticatedRoute Component
 
-`AuthenticatedRoute` component is, component which basically takes the props of `Route` and an additional boolean prop, `authenticated`, which determines if the Component is to be rendered or the user needs to be redirected.
+`AuthenticatedRoute` component is a component which basically takes the props of `Route` and an additional boolean prop, `authenticated`, which determines if the Component is to be rendered or the user needs to be redirected.
 
 ```
 import React from "react";
