@@ -12,10 +12,10 @@ meta_description: >-
   Leverage the power of Google Script to run email campaigns, right from your
   Google Sheet.
 ---
-Ever find yourself with a big spreadsheet full of names and emails and you have to send personalised mails to all of them? We did. We had a spreadsheet full of candidates for hiring and: 
+Ever find yourself with a big spreadsheet full of names and emails and you have to send personalized emails to all of them? We did. We had a spreadsheet full of candidates for hiring and: 
 
-* We had to first send them mail asking if they are interested.
-* If they replied positively we had to send them assignment.
+* We had to first send them a mail asking if they are interested.
+* If they replied positively we had to send them an assignment.
 * If they hadn't replied with the completed assignment, we had to send them reminder mail.
 
 So what we did first was, add three columns:
@@ -24,17 +24,17 @@ So what we did first was, add three columns:
 * Send Assignment
 * Send Reminder
 
-These columns containing the word "Send" if the candidate has to be mailed, and "Sent" once the mail has been sent. So basically our script goes through, the sheet, picks up the candidate name, and email, uses name variable to create a personalised message, send it to their email(if the Send First Email contains the keyword "Send") and after sending replaces the keyword with "Sent".
+These columns containing the word "Send" if the candidate has to be mailed, and "Sent" once the mail has been sent. So basically our script goes through, the sheet, picks up the candidate name, and email, uses name variable to create a personalized message, send it to their email(if the Send First Email contains the keyword "Send") and after sending replaces the keyword with "Sent".
 
 ## Step One: Structure of Our Sheet
 
 ![google sheet sturcture](/img/sheet_structure.png)
 
-This is our example table, for the customized message we'll pick up, first name from `column B`, last name from `column C` etc. You can add more details accordingly.
+This is our example table, for the customized message we'll pick up, the first name from `column B`, the last name from `column C` etc. You can add more details accordingly.
 
 ## Step Two: Script for Mass Mail
 
-Google Script uses plain JavaScript with some built in APIs. First we write the function that'll send the mail. To Write the Script click on `Tools > Script Editor`.
+Google Script uses plain JavaScript with some built-in APIs. First, we write the function that'll send the mail. To Write the Script click on `Tools > Script Editor`.
 
 ```
 function sendMassMail() {
@@ -124,7 +124,7 @@ function onOpen() {
 };
 ```
 
-Save and reload the sheet, you'll see a menu called `Email`, and within it an option called `Send Mass Mail`. 
+Save and reload the sheet, you'll see a menu called `Email`, and within it, an option called `Send Mass Mail`. 
 
 That's it just click on the option to run the script and send mass mail. One more, thing you'll have to approve the script to use your Gmail.
 
