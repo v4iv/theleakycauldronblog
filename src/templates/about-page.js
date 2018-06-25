@@ -5,6 +5,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import Content, { HTMLContent } from '../components/Content'
+import config from "../../meta/config";
 
 export const AboutPageTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content
@@ -42,11 +43,71 @@ AboutPageTemplate.propTypes = {
 const AboutPage = ({ data }) => {
   const { markdownRemark: post } = data
 
+  const breadcrumbSchemaOrgJSONLD = {
+    "@context": "http://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        item: {
+          "@id": config.siteUrl,
+          name: "Home",
+          image: config.siteUrl + "/icons/icon-512x512.png"
+        }
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        item: {
+          "@id": config.siteUrl + '/about/',
+          name: "About",
+          image: config.siteUrl + "/icons/icon-512x512.png"
+        }
+      }
+    ]
+  };
+
+  const aboutPageSchemaOrgJSONLD = {
+    "@context": "http://schema.org",
+    "@type": "AboutPage",
+    url: config.siteUrl + '/about/',
+    headline: post.frontmatter.title,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": config.siteUrl + '/about/',
+    },
+    image: {
+      "@type": "ImageObject",
+      url: config.siteUrl + "/icons/icon-512x512.png",
+      width: 512,
+      height: 512
+    },
+    publisher: {
+      "@type": "Organization",
+      name: config.siteTitle,
+      logo: {
+        "@type": "ImageObject",
+        url: config.siteUrl + "/icons/icon-512x512.png",
+        width: 512,
+        height: 512
+      }
+    },
+    description: post.frontmatter.meta_description
+  }
+
   return (
     <div>
       <Helmet>
         <title>{post.frontmatter.meta_title}</title>
         <meta name="description" content={post.frontmatter.meta_description} />
+        {/* Schema.org tags */}
+        <script type="application/ld+json">
+          {JSON.stringify(breadcrumbSchemaOrgJSONLD)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(aboutPageSchemaOrgJSONLD)}
+        </script>
       </Helmet>
       <AboutPageTemplate
         contentComponent={HTMLContent}

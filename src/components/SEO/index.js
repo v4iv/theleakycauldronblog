@@ -9,63 +9,65 @@ const SE0 = ({ title, meta_title, meta_desc, cover, slug, date }) => {
   let postURL = config.siteUrl + slug;
   const realPrefix = config.pathPrefix === "/" ? "" : config.pathPrefix;
   let image = config.siteUrl + realPrefix + cover;
-  const blogURL = config.siteUrl + config.pathPrefix;
-
-  const websiteSchemaOrgJSONLD = {
-      "@context": "http://schema.org",
-      "@type": "WebSite",
-      url: config.siteUrl,
-      name: config.siteTitle,
-      alternateName: config.siteTitleAlt ? config.siteTitleAlt : ""
-    }
 
   const breadcrumbSchemaOrgJSONLD = {
-      "@context": "http://schema.org",
-      "@type": "BreadcrumbList",
-      itemListElement: [
-        {
-          "@type": "ListItem",
-          position: 1,
-          item: {
-            "@id": postURL,
-            name: title,
-            image
-          }
+    "@context": "http://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        item: {
+          "@id": config.siteUrl,
+          name: "Home",
+          image: config.siteUrl + "/icons/icon-512x512.png"
         }
-      ]
-    }
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        item: {
+          "@id": postURL,
+          name: title,
+          image
+        }
+      }
+    ]
+  };
 
   const blogPostingSchemaOrgJSONLD = {
-      "@context": "http://schema.org",
-      "@type": "BlogPosting",
-      url: postURL,
-      name: title,
-      alternateName: config.siteTitleAlt ? config.siteTitleAlt : "",
-      headline: title,
-      mainEntityOfPage: {
-        "@type": "WebPage",
-        "@id": postURL
-      },
-      "author": {
-        "@type": "Person",
-        "name": config.userName
-      },
-      image: {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    url: postURL,
+    name: title,
+    alternateName: config.siteTitleAlt ? config.siteTitleAlt : "",
+    headline: title,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": postURL
+    },
+    "author": {
+      "@type": "Person",
+      "name": config.userName
+    },
+    image: {
+      "@type": "ImageObject",
+      url: image
+    },
+    datePublished: date,
+    dateModified: date,
+    publisher: {
+      "@type": "Organization",
+      name: config.siteTitle,
+      logo: {
         "@type": "ImageObject",
-        url: image
-      },
-      datePublished: date,
-      dateModified: date,
-      publisher: {
-        "@type": "Organization",
-        name: config.siteTitle,
-        logo: {
-          "@type": "ImageObject",
-          url: config.siteUrl + "/icons/icon-512x512.png"
-        }
-      },
-      description: meta_desc
-    }
+        url: config.siteUrl + "/icons/icon-512x512.png",
+        width: 512,
+        height: 512
+      }
+    },
+    description: meta_desc
+  };
 
   return (
     <Helmet>
@@ -74,9 +76,6 @@ const SE0 = ({ title, meta_title, meta_desc, cover, slug, date }) => {
       <meta name="description" content={meta_desc}/>
       <meta name="image" content={cover}/>
       {/* Schema.org tags */}
-      <script type="application/ld+json">
-        {JSON.stringify(websiteSchemaOrgJSONLD)}
-      </script>
       <script type="application/ld+json">
         {JSON.stringify(breadcrumbSchemaOrgJSONLD)}
       </script>
