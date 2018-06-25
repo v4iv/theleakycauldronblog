@@ -14,9 +14,9 @@ meta_description: >-
   Leverage Google Tag Manager Custom HTML Tag to implement Schema.org JSON-LD
   Schema for Rich Snippets.
 ---
-Rich Snippets Schema, while may not help in improving SERP Ranking, it does help in better CTR(Click Through Rate). And this is the new frontier in Digital Marketing/SEO. With onset of various AI Assistants like _Google Assistant_, _Siri_, _Cortana_ etc and them affecting sales, It has become very important that the search engines understand your content better. To make them understand content better, a lot of search giants got together and developed a content markup system. This is Project _**Schema.org**_.
+Rich Snippets Schema, while may not help in improving SERP Ranking, it does help in better CTR(Click Through Rate). And this is the new frontier in Digital Marketing/SEO. With the onset of various AI Assistants like _Google Assistant_, _Siri_, _Cortana_ etc and them affecting sales, It has become very important that the search engines understand your content better. To make them understand the content better, a lot of search giants got together and developed a content markup system. This is Project **_Schema.org_**.
 
-There are various encodings you can use to markup your data, like `Microdata`, `JSON-LD`, `RDFa`. But out of these the popular choices are `Microdata` and `JSON-LD`. `Microdata` is very much like `XML` where as `JSON-LD` is more like `JSON`. Google prefers `JSON-LD` and plans to phase out `Microdata`. But `Microdata` is still big part of Bing and Yahoo.
+There are various encodings you can use to markup your data, like `Microdata`, `JSON-LD`, `RDFa`. But out of these the popular choices are `Microdata` and `JSON-LD`. `Microdata` is very much like `XML` whereas `JSON-LD` is more like `JSON`. Google prefers `JSON-LD` and plans to phase out `Microdata`. But `Microdata` is still a big part of Bing and Yahoo.
 
 Although there are various ways you can implement these Schemas, the one that has been gaining a lot of traction recently is using _Google Tag Manager_. While you can simply put your JSON-LD schema Tag in a Custom HTML field and expect it to work, and for some people it has, if you go to [Structured Data Testing Tool](https://search.google.com/structured-data/testing-tool/) you'll find out that the schema isn't visible. That's either because Structured Data Testing Tool cannot render the schema, or GTM doesn't allow us to do so.
 
@@ -120,4 +120,4 @@ Then we initalize the Script element, set the type as `"application/ld+json"`, a
 Oh and don't forget to check the box that says _Support `document.write`_.
 Since we are done with the coding part, all that is left is to set the trigger, which can be done easily by creating a new trigger and setting the required path, depending on if you want it to trigger on specific pages or all pages.
 
-**TIP:** You can set custom variables in GTM that'll pull the data according to `css selectors`, this can be used to make a automated template schema, for pages like blog posts.
+**TIP:** You can set custom variables in GTM that'll pull the data according to `CSS selectors`, this can be used to make an automated template schema, for pages like blog posts.
