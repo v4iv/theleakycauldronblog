@@ -7,7 +7,7 @@ import Helmet from 'react-helmet'
 import Content, { HTMLContent } from '../components/Content'
 import config from "../../meta/config";
 
-export const AboutPageTemplate = ({ title, content, contentComponent }) => {
+export const AboutPageTemplate = ({ title, content, image, contentComponent }) => {
   const PageContent = contentComponent || Content
 
   return (
@@ -23,6 +23,7 @@ export const AboutPageTemplate = ({ title, content, contentComponent }) => {
                   </h3>
                 </div>
               </section>
+              <img src={image} alt={title} className="image is-full" style={{ width: "100%" }}/>
               <div className="section">
                 <PageContent className="content" content={content} />
               </div>
@@ -37,6 +38,7 @@ export const AboutPageTemplate = ({ title, content, contentComponent }) => {
 AboutPageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
   content: PropTypes.string,
+  image: PropTypes.string,
   contentComponent: PropTypes.func,
 }
 
@@ -79,9 +81,9 @@ const AboutPage = ({ data }) => {
     },
     image: {
       "@type": "ImageObject",
-      url: config.siteUrl + "/icons/icon-512x512.png",
-      width: 512,
-      height: 512
+      url: post.frontmatter.image,
+      width: 3120,
+      height: 1394
     },
     publisher: {
       "@type": "Organization",
@@ -112,6 +114,7 @@ const AboutPage = ({ data }) => {
       <AboutPageTemplate
         contentComponent={HTMLContent}
         title={post.frontmatter.title}
+        image={post.frontmatter.image}
         content={post.html}
       />
     </div>
@@ -130,6 +133,7 @@ export const aboutPageQuery = graphql`
       html
       frontmatter {
         title
+        image
         meta_title
         meta_description
       }

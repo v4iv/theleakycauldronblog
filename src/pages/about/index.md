@@ -1,6 +1,7 @@
 ---
 templateKey: about-page
 title: About This Blog
+image: /img/about_vaibhav_sharma.jpg
 meta_title: About | The Leaky Cauldron Blog
 meta_description: >-
   Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
