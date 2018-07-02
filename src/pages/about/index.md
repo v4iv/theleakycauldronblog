@@ -4,10 +4,7 @@ title: About This Blog
 image: /img/about_vaibhav_sharma.jpg
 meta_title: About | The Leaky Cauldron Blog
 meta_description: >-
-  Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
-  ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam
-  venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis
-  consectetur purus sit amet fermentum.
+  The Leaky Cauldron Blog is the personal blog of Vaibhav Sharma. Topics include coding, movies, music, books, dinosaurs or anything under the sun and beyond.
 ---
 **The Leaky Cauldron Blog** is the personal blog of **Vaibhav Sharma**.
 
