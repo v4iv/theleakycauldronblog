@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Content from '../Content'
 import { Link } from 'gatsby'
 import _ from 'lodash'
@@ -41,13 +42,12 @@ const ArticleTemplate = ({
   )
 }
 
-// ArticleTemplate.propTypes = {
-//   content: PropTypes.object,
-//   date: PropTypes.string,
-//   contentComponent: PropTypes.func,
-//   cover: PropTypes.string,
-//   tags: PropTypes.object,
-//   title: PropTypes.string
-// };
+ArticleTemplate.propTypes = {
+  content: PropTypes.node.isRequired,
+  date: PropTypes.string,
+  contentComponent: PropTypes.func,
+  cover: PropTypes.string,
+  title: PropTypes.string,
+};
 
 export default ArticleTemplate

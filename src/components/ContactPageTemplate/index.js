@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import Contact from '../Contact'
 
@@ -38,12 +39,12 @@ const ContactPageTemplate = ({
   )
 }
 
-// ContactPageTemplate.propTypes = {
-//   title: PropTypes.string,
-//   subtitle: PropTypes.string,
-//   meta_title: PropTypes.string,
-//   meta_description: PropTypes.string,
-//   contacts: PropTypes.array
-// };
+ContactPageTemplate.propTypes = {
+  title: PropTypes.string,
+  subtitle: PropTypes.string,
+  meta_title: PropTypes.string,
+  meta_description: PropTypes.string,
+  contacts: PropTypes.array,
+};
 
 export default ContactPageTemplate
