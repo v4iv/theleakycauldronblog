@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Content from '../Content'
 
 const AboutPageTemplate = ({ title, content, image, contentComponent }) => {
@@ -29,11 +30,11 @@ const AboutPageTemplate = ({ title, content, image, contentComponent }) => {
   )
 }
 
-// AboutPageTemplate.propTypes = {
-//   title: PropTypes.string.isRequired,
-//   content: PropTypes.string,
-//   image: PropTypes.string,
-//   contentComponent: PropTypes.func
-// };
+AboutPageTemplate.propTypes = {
+  title: PropTypes.string.isRequired,
+  content: PropTypes.string,
+  image: PropTypes.string,
+  contentComponent: PropTypes.func,
+};
 
 export default AboutPageTemplate
