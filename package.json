@@ -1,62 +1,47 @@
 {
   "name": "theleakycauldronblog",
   "description": "The Leaky Cauldron Blog",
-  "version": "1.0.0",
   "author": "Vaibhav Sharma",
-  "dependencies": {
-    "bulma": "^0.6.2",
-    "gatsby": "^1.9.241",
-    "gatsby-link": "^1.6.39",
-    "gatsby-paginate": "^1.0.13",
-    "gatsby-plugin-feed": "^1.3.20",
-    "gatsby-plugin-google-tagmanager": "^1.0.17",
-    "gatsby-plugin-manifest": "^1.0.15",
-    "gatsby-plugin-netlify": "^1.0.19",
-    "gatsby-plugin-netlify-cms": "^1.0.12",
-    "gatsby-plugin-nprogress": "^1.0.14",
-    "gatsby-plugin-offline": "^1.0.15",
-    "gatsby-plugin-react-helmet": "^2.0.9",
-    "gatsby-plugin-sass": "^1.0.25",
-    "gatsby-plugin-sharp": "^1.6.41",
-    "gatsby-plugin-sitemap": "^1.2.20",
-    "gatsby-remark-images": "^1.5.60",
-    "gatsby-source-filesystem": "^1.5.27",
-    "gatsby-transformer-remark": "^1.7.39",
-    "gatsby-transformer-sharp": "^1.6.22",
-    "lodash": "^4.17.5",
-    "lodash-webpack-plugin": "^0.11.4",
-    "prop-types": "^15.6.1",
-    "react-disqus-comments": "^1.1.1",
-    "react-helmet": "^5.2.0",
-    "react-share": "^2.1.0"
-  },
+  "license": "MIT",
   "scripts": {
+    "develop": "gatsby develop",
     "start": "npm run develop",
     "build": "gatsby build",
-    "develop": "gatsby develop",
-    "serve": "gatsby serve",
-    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "clean": "rm -rf public",
-    "lint:md": "remark src/pages/**/*.md",
-    "write-good": "write-good $(glob 'src/pages/**/*.md')"
+    "serve": "gatsby serve"
   },
-  "license": "MIT",
-  "devDependencies": {
-    "cli-glob": "^0.1.0",
-    "eslint": "^4.17.0",
-    "eslint-config-airbnb": "^16.1.0",
-    "eslint-config-prettier": "^2.9.0",
-    "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.6.1",
-    "prettier": "^1.10.2",
-    "remark-cli": "^5.0.0",
-    "remark-preset-lint-recommended": "^3.0.1",
-    "stylefmt": "^6.0.0",
-    "stylelint": "^9.2.0",
-    "stylelint-config-standard": "^18.0.0",
-    "write-good": "^0.11.3"
+  "dependencies": {
+    "bulma": "^0.7.2",
+    "gatsby": "^2.0.33",
+    "gatsby-paginate": "^1.0.16",
+    "gatsby-plugin-feed": "^2.0.9",
+    "gatsby-plugin-google-tagmanager": "^2.0.6",
+    "gatsby-plugin-layout": "^1.0.9",
+    "gatsby-plugin-manifest": "^2.0.10",
+    "gatsby-plugin-netlify": "^2.0.5",
+    "gatsby-plugin-netlify-cms": "^3.0.7",
+    "gatsby-plugin-nprogress": "^2.0.6",
+    "gatsby-plugin-offline": "^2.0.17",
+    "gatsby-plugin-purgecss": "^2.4.0",
+    "gatsby-plugin-react-helmet": "^3.0.2",
+    "gatsby-plugin-sass": "^2.0.4",
+    "gatsby-plugin-sharp": "^2.0.13",
+    "gatsby-plugin-sitemap": "^2.0.2",
+    "gatsby-remark-images": "^3.0.0",
+    "gatsby-remark-relative-images": "^0.2.0",
+    "gatsby-source-filesystem": "^2.0.8",
+    "gatsby-transformer-remark": "^2.1.12",
+    "gatsby-transformer-sharp": "^2.1.8",
+    "lodash": "^4.17.11",
+    "lodash-webpack-plugin": "^0.11.5",
+    "netlify-cms": "^2.2.0",
+    "node-sass": "^4.10.0",
+    "prop-types": "^15.6.2",
+    "react": "^16.5.1",
+    "react-disqus-comments": "^1.4.0",
+    "react-dom": "^16.5.1",
+    "react-helmet": "^5.2.0",
+    "react-share": "^2.3.1",
+    "uglifyjs-webpack-plugin": "^2.0.1"
   },
   "keywords": [
     "gatsby"
@@ -65,5 +50,9 @@
     "plugins": [
       "remark-preset-lint-recommended"
     ]
+  },
+  "devDependencies": {
+    "remark-cli": "^6.0.1",
+    "remark-preset-lint-recommended": "^3.0.2"
   }
 }

@@ -1,6 +1,3 @@
-/**
- * Created by vaibhav on 9/4/18
- */
 module.exports = {
   siteTitle: "The Leaky Cauldron Blog", // Site title.
   siteTitleAlt: "TLC Blog", // Alternative site title for SEO.

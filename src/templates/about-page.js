@@ -1,49 +1,14 @@
-/**
- * Created by vaibhav on 9/4/18
- */
-import React from 'react'
-import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
-import Content, { HTMLContent } from '../components/Content'
-import config from "../../meta/config";
+import React from "react";
+import PropTypes from "prop-types";
+import { graphql } from "gatsby"
+import Helmet from "react-helmet";
+import config from "../../data/config";
+import AboutPageTemplate from "../components/AboutPageTemplate";
+import { HTMLContent } from "../components/Content";
 
-export const AboutPageTemplate = ({ title, content, image, contentComponent }) => {
-  const PageContent = contentComponent || Content
-
-  return (
-    <div>
-      <section className="section section--gradient">
-        <div className="container">
-          <div className="columns">
-            <div className="column is-10 is-offset-1">
-              <section>
-                <div className="content">
-                  <h3 className="has-text-weight-semibold is-size-2 title">
-                    {title}
-                  </h3>
-                </div>
-              </section>
-              <img src={image} alt={title} className="image is-full" style={{ width: "100%" }}/>
-              <div className="section">
-                <PageContent className="content" content={content} />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-  )
-}
-
-AboutPageTemplate.propTypes = {
-  title: PropTypes.string.isRequired,
-  content: PropTypes.string,
-  image: PropTypes.string,
-  contentComponent: PropTypes.func,
-}
 
 const AboutPage = ({ data }) => {
-  const { markdownRemark: post } = data
+  const { markdownRemark: post } = data;
 
   const breadcrumbSchemaOrgJSONLD = {
     "@context": "http://schema.org",
@@ -62,7 +27,7 @@ const AboutPage = ({ data }) => {
         "@type": "ListItem",
         position: 2,
         item: {
-          "@id": config.siteUrl + '/about/',
+          "@id": config.siteUrl + "/about/",
           name: "About",
           image: config.siteUrl + "/icons/icon-512x512.png"
         }
@@ -73,11 +38,11 @@ const AboutPage = ({ data }) => {
   const aboutPageSchemaOrgJSONLD = {
     "@context": "http://schema.org",
     "@type": "AboutPage",
-    url: config.siteUrl + '/about/',
+    url: config.siteUrl + "/about/",
     headline: post.frontmatter.title,
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": config.siteUrl + '/about/',
+      "@id": config.siteUrl + "/about/"
     },
     image: {
       "@type": "ImageObject",
@@ -96,13 +61,13 @@ const AboutPage = ({ data }) => {
       }
     },
     description: post.frontmatter.meta_description
-  }
+  };
 
   return (
     <div>
       <Helmet>
         <title>{post.frontmatter.meta_title}</title>
-        <meta name="description" content={post.frontmatter.meta_description} />
+        <meta name="description" content={post.frontmatter.meta_description}/>
         {/* Schema.org tags */}
         <script type="application/ld+json">
           {JSON.stringify(breadcrumbSchemaOrgJSONLD)}
@@ -118,14 +83,14 @@ const AboutPage = ({ data }) => {
         content={post.html}
       />
     </div>
-  )
-}
+  );
+};
 
 AboutPage.propTypes = {
-  data: PropTypes.object.isRequired,
-}
+  data: PropTypes.object.isRequired
+};
 
-export default AboutPage
+export default AboutPage;
 
 export const aboutPageQuery = graphql`
   query AboutPage($id: String!) {
@@ -139,4 +104,4 @@ export const aboutPageQuery = graphql`
       }
     }
   }
-`
+`;

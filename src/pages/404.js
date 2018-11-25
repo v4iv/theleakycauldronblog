@@ -1,7 +1,4 @@
-/**
- * Created by vaibhav on 11/4/18
- */
-import React from 'react'
+import React from "react";
 
 const NotFoundPage = () => (
   <div>
@@ -25,6 +22,6 @@ const NotFoundPage = () => (
       </div>
     </section>
   </div>
-)
+);
 
-export default NotFoundPage
+export default NotFoundPage;
