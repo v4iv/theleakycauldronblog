@@ -1,11 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { graphql } from "gatsby"
-import ContactPageTemplate from "../components/ContactPageTemplate";
-
+import React from 'react'
+import PropTypes from 'prop-types'
+import { graphql } from 'gatsby'
+import ContactPageTemplate from '../components/ContactPageTemplate'
 
 const ContactPage = ({ data }) => {
-  const { frontmatter } = data.markdownRemark;
+  const { frontmatter } = data.markdownRemark
   return (
     <ContactPageTemplate
       title={frontmatter.title}
@@ -14,18 +13,18 @@ const ContactPage = ({ data }) => {
       meta_description={frontmatter.meta_description}
       contacts={frontmatter.contacts}
     />
-  );
-};
+  )
+}
 
 ContactPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
-      frontmatter: PropTypes.object
-    })
-  })
-};
+      frontmatter: PropTypes.object,
+    }),
+  }),
+}
 
-export default ContactPage;
+export default ContactPage
 
 export const contactPageQuery = graphql`
   query ContactPage($id: String!) {
@@ -42,4 +41,4 @@ export const contactPageQuery = graphql`
       }
     }
   }
-`;
+`

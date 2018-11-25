@@ -1,62 +1,62 @@
-import React, { Component } from "react";
+import React, { Component } from 'react'
 
-import Helmet from "react-helmet";
-import { Link } from "gatsby";
-import ArticleList from "../components/ArticleList";
-import config from "../../data/config";
+import Helmet from 'react-helmet'
+import { Link } from 'gatsby'
+import ArticleList from '../components/ArticleList'
+import config from '../../data/config'
 
 const PaginationLink = props => {
   if (!props.test) {
     return (
-      <Link to={props.url} className="button is-rounded">
+      <Link to={props.url} className='button is-rounded'>
         {props.text}
       </Link>
-    );
+    )
   } else {
     return (
-      <span disabled={true} className="button is-rounded">
+      <span disabled className='button is-rounded'>
         {props.text}
       </span>
-    );
+    )
   }
-};
+}
 
 export default class IndexPage extends Component {
-  render() {
-    const { pageContext } = this.props;
-    const { group, index, first, last } = pageContext;
-    const previousUrl = index - 1 === 1 ? "" : (index - 1).toString();
-    const nextUrl = (index + 1).toString() + "/";
+  render () {
+    const { pageContext } = this.props
+    const { group, index, first, last } = pageContext
+    const previousUrl = index - 1 === 1 ? '' : (index - 1).toString()
+    const nextUrl = (index + 1).toString() + '/'
 
     const websiteSchemaOrgJSONLD = {
-      "@context": "http://schema.org",
-      "@type": "WebSite",
+      '@context': 'http://schema.org',
+      '@type': 'WebSite',
       url: config.siteUrl,
       name: config.siteTitle,
-      alternateName: config.siteTitleAlt ? config.siteTitleAlt : ""
-    };
+      alternateName: config.siteTitleAlt ? config.siteTitleAlt : '',
+    }
 
     return (
       <div>
         <Helmet>
           <title>Home | The Leaky Cauldron Blog</title>
           {/* Schema.org tags */}
-          <script type="application/ld+json">
+          <script type='application/ld+json'>
             {JSON.stringify(websiteSchemaOrgJSONLD)}
           </script>
         </Helmet>
-        <div className="columns is-centered">
-          <div className="column">
-            <ArticleList posts={group}/>
-            <section className="section">
-              <div className="buttons is-centered">
-                <PaginationLink test={first} url={previousUrl} text="Previous Page"/>
-                <PaginationLink test={last} url={nextUrl} text="Next Page"/>
+        <div className='columns is-centered'>
+          <div className='column'>
+            <ArticleList posts={group} />
+            <section className='section'>
+              <div className='buttons is-centered'>
+                <PaginationLink test={first} url={previousUrl} text='Previous Page' />
+                <PaginationLink test={last} url={nextUrl} text='Next Page' />
               </div>
             </section>
           </div>
         </div>
       </div>
-    );
+    )
   }
 }
