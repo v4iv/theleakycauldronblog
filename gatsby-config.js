@@ -190,7 +190,6 @@ module.exports = {
         ]
       }
     },
-    'gatsby-plugin-purgecss',
     `gatsby-plugin-netlify`
   ]
 };
