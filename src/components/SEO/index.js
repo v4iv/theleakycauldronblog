@@ -1,8 +1,5 @@
-/**
- * Created by vaibhav on 31/3/18
- */
 import React from "react";
-import config from "../../../meta/config";
+import config from "../../../data/config";
 import Helmet from "react-helmet";
 
 const SE0 = ({ title, meta_title, meta_desc, cover, slug, date }) => {

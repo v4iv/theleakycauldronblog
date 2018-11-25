@@ -1,15 +1,12 @@
-/**
- * Created by vaibhav on 9/4/18
- */
-import React from 'react'
-import _ from 'lodash'
-import Link from 'gatsby-link'
+import React from "react";
+import _ from "lodash";
+import { Link } from "gatsby";
 
 const ArticleList = ({ posts }) => {
   return (
     <div className="container">
       {posts
-        .filter(post => post.node.frontmatter.templateKey === 'article-page')
+        .filter(post => post.node.frontmatter.templateKey === "article-page")
         .map(({ node: post }) => {
           return (
             <section key={post.id} className="section">
@@ -45,10 +42,10 @@ const ArticleList = ({ posts }) => {
                 </Link>
               </article>
             </section>
-          )
+          );
         })}
     </div>
-  )
-}
+  );
+};
 
-export default ArticleList
+export default ArticleList;

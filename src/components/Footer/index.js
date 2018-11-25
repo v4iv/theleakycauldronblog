@@ -1,7 +1,4 @@
-/**
- * Created by vaibhav on 9/4/18
- */
-import React from 'react'
+import React from "react";
 
 const Footer = ({ config }) => {
   return (
@@ -12,7 +9,7 @@ const Footer = ({ config }) => {
         </div>
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
