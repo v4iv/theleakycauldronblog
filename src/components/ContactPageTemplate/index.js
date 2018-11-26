@@ -45,6 +45,6 @@ ContactPageTemplate.propTypes = {
   meta_title: PropTypes.string,
   meta_description: PropTypes.string,
   contacts: PropTypes.array,
-};
+}
 
 export default ContactPageTemplate
