@@ -8,12 +8,13 @@ export default class SearchBox extends Component {
     this.state = {
       query: ``,
       results: [],
+      isActive: false,
     }
   }
 
   render () {
     return (
-      <div className='navbar-item is-hoverable'>
+      <div className={`navbar-item ${this.state.isActive ? 'is-active' : ''}`}>
         <input
           className='input navbar-link is-rounded is-primary'
           type='text'
@@ -49,6 +50,7 @@ export default class SearchBox extends Component {
         .search(query, { expand: true }) // Accept partial matches
         // Map over each ID and return the full document
         .map(({ ref }) => this.index.documentStore.getDoc(ref)),
+      isActive: !!query,
     })
   };
 }
