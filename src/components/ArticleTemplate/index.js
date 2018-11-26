@@ -48,6 +48,6 @@ ArticleTemplate.propTypes = {
   contentComponent: PropTypes.func,
   cover: PropTypes.string,
   title: PropTypes.string,
-};
+}
 
 export default ArticleTemplate

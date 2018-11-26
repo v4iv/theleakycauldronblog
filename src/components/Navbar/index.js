@@ -1,35 +1,18 @@
-import React, { Component } from 'react'
-import { Link } from 'gatsby'
+import React from 'react'
+import { StaticQuery, graphql, Link } from 'gatsby'
+import SearchBox from '../SearchBox'
 
-class Navbar extends Component {
-  componentDidMount () {
-    document.addEventListener('DOMContentLoaded', function () {
-      // Get all "navbar-burger" elements
-      var $navbarBurgers = Array.prototype.slice.call(
-        document.querySelectorAll('.navbar-burger'),
-        0
-      )
+const Navbar = () => (
 
-      // Check if there are any navbar burgers
-      if ($navbarBurgers.length > 0) {
-        // Add a click event on each of them
-        $navbarBurgers.forEach(function ($el) {
-          $el.addEventListener('click', function () {
-            // Get the target from the "data-target" attribute
-            var target = $el.dataset.target
-            var $target = document.getElementById(target)
-
-            // Toggle the class on both the "navbar-burger" and the "navbar-menu"
-            $el.classList.toggle('is-active')
-            $target.classList.toggle('is-active')
-          })
-        })
-      }
-    })
-  }
-
-  render () {
-    return (
+  <StaticQuery
+    query={graphql`
+            query SearchIndexQuery {
+                siteSearchIndex {
+                    index
+                }
+            }
+        `}
+    render={data => (
       <nav
         className='navbar is-transparent'
         role='navigation'
@@ -55,8 +38,12 @@ class Navbar extends Component {
           </div>
           <div className='navbar-menu' id='navMenu'>
             <div className='navbar-end'>
+              <SearchBox searchIndex={data.siteSearchIndex.index} />
               <Link className='navbar-item has-text-black' to='/'>
                 Home
+              </Link>
+              <Link className='navbar-item has-text-black' to='/tags'>
+                Tags
               </Link>
               <Link className='navbar-item has-text-black' to='/about'>
                 About
@@ -68,8 +55,8 @@ class Navbar extends Component {
           </div>
         </div>
       </nav>
-    )
-  }
-}
+    )}
+  />
+)
 
 export default Navbar

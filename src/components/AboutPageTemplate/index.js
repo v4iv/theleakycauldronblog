@@ -35,6 +35,6 @@ AboutPageTemplate.propTypes = {
   content: PropTypes.string,
   image: PropTypes.string,
   contentComponent: PropTypes.func,
-};
+}
 
 export default AboutPageTemplate
