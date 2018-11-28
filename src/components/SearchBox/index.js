@@ -27,9 +27,11 @@ export default class SearchBox extends Component {
             Search Results :
           </div>
           <div className='navbar-divider' />
-          {this.state.results.map(page => (
-            <Link className='navbar-item' key={page.id} to={page.slug}>{page.title}</Link>
-          ))}
+          {this.state.results
+            .filter(page => page.templateKey === 'article-page')
+            .map(page => (
+              <Link className='navbar-item' key={page.id} to={page.slug}>{page.title}</Link>
+            ))}
         </div>
       </div>
     )
