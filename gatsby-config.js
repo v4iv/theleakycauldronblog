@@ -84,7 +84,6 @@ module.exports = {
         showSpinner: false,
       },
     },
-    // `gatsby-plugin-layout`,
     {
       resolve: `gatsby-plugin-google-tagmanager`,
       options: {
@@ -202,6 +201,7 @@ module.exports = {
             title: node => node.frontmatter.title,
             tags: node => node.frontmatter.tags,
             slug: node => node.fields.slug,
+            templateKey: node => node.frontmatter.templateKey,
           },
         },
       },

@@ -46,7 +46,8 @@
     "uglifyjs-webpack-plugin": "^2.0.1"
   },
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "gatsby-blog"
   ],
   "remarkConfig": {
     "plugins": [
