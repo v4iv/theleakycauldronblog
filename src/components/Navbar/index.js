@@ -42,9 +42,6 @@ const Navbar = () => (
               <Link className='navbar-item has-text-black' to='/'>
                 Home
               </Link>
-              <Link className='navbar-item has-text-black' to='/tags'>
-                Tags
-              </Link>
               <Link className='navbar-item has-text-black' to='/about'>
                 About
               </Link>
