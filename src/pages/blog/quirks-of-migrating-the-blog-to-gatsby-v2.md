@@ -54,7 +54,7 @@ This was a particularly nasty problem because it looks like `gatsby-plugin-layou
 
 This one although was easy to figure out using Console errors, was still surprising because it made no sense why it had worked before and if it did, it made no sense that it is now broken! The problem was that the tags needed an error check:
 
-```
+```javascript
  {tags && tags.length ? (...) : null}
 ```
 

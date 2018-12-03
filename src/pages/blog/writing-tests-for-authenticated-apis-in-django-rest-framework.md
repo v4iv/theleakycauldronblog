@@ -27,7 +27,7 @@ Now that, that's out of the way, we can begin the fun part.
 
 In your `tests.py` file we create a class called BookListTest:
 
-```
+```python
 from rest_framework.test import APITestCase
 
 
@@ -40,7 +40,7 @@ class BookListTest(APITestCase):
 
 To begin testing, we need a few things setup first, to do so we use the `setUp` method. Here we will, first create a `test user`, set up a dummy `application`, then create `two dummy book entries`, and finally define our `fetch url`.
 
-```
+```python
 class BookListTest(APITestCase):
     def setUp(self):
         // Create a Test User.
@@ -71,7 +71,7 @@ class BookListTest(APITestCase):
 
 Everything we write in the above function are created at the beginning of every Test. Now let's come to writing the actual test. To do that we'll need an `access_token`, and will have to set the `authorization header` with the `bearer token`.
 
-```
+```python
 class BookListTest(APITestView):
     def setUp(self):
     ...

@@ -26,7 +26,7 @@ Now that that's clear, let's begin.
 
 Before we begin writing `API View`, first make sure to add the following in the `settings.py` of the project. First we add `AUTHENTICATION_BACKENDS`
 
-```
+```python
 AUTHENTICATION_BACKENDS = (
     'oauth2_provider.backends.OAuth2Backend',
     // Not required for DOT, but required for Admin
@@ -36,7 +36,7 @@ AUTHENTICATION_BACKENDS = (
 
 Then we add relevant `MIDDLEWARE` for the OAuth Toolkit:
 
-```
+```python
 MIDDLEWARE = (
     '...',
     # If you use SessionAuthenticationMiddleware, be sure it appears before OAuth2TokenMiddleware.
@@ -57,7 +57,7 @@ In the `views.py` we'll write a `generic Retrieve API View` which when called al
 
 For our JSON response let's take id, first name, last name, email and username. In the `serializers.py` file write the following Model Serializer class
 
-```
+```python
 class UserDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
@@ -68,7 +68,7 @@ class UserDetailSerializer(serializers.ModelSerializer):
 
 In the `views.py` file we'll write the UserDetail View:
 
-```
+```python
 class UserDetailView(generics.RetrieveAPIView):
     """
     Use this endpoint to retrieve user.
@@ -87,7 +87,7 @@ class UserDetailView(generics.RetrieveAPIView):
 
 Now that the tough part is over we'll write the URL Path for the API. In your `urls.py` add the following url pattern.
 
-```
+```python
 urlpatterns = [
     '...'
     path('api/me/', UserDetailView.as_view(), name='me'),

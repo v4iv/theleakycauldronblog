@@ -36,7 +36,7 @@ This is our example table, for the customized message we'll pick up, the first n
 
 Google Script uses plain JavaScript with some built-in APIs. First, we write the function that'll send the mail. To Write the Script click on `Tools > Script Editor`.
 
-```
+```javascript
 function sendMassMail() {
 
   // Get Active Sheet
@@ -107,7 +107,7 @@ Don't forget to Save the Project.
 
 Below the `sendMassMail()` write a function called `onOpen()`.
 
-```
+```javascript
 function onOpen() {
   var sheet = SpreadsheetApp.getActiveSpreadsheet();
   var entries = [{

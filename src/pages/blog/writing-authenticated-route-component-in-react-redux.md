@@ -28,7 +28,7 @@ Now that, that's out of the way lets begin by creating the most important part, 
 
 `AuthenticatedRoute` component is a component which basically takes the props of `Route` and an additional boolean prop, `authenticated`, which determines if the Component is to be rendered or the user needs to be redirected.
 
-```
+```javascript
 import React from "react";
 import {Route, Redirect} from "react-router-dom";
 
@@ -58,7 +58,7 @@ It also stores the actual path as a parameter in the signin path `/signin?redire
 
 To redirect to the param that we set, we need to first edit the `signinUser(username, password)` action, by adding a third argument, redirect.
 
-```
+```javascript
 ...
 
 export function signinUser(username, password, redirect = '/'){
@@ -69,7 +69,7 @@ export function signinUser(username, password, redirect = '/'){
 
 we set a default value for the third argument, so that in case no value is provided it'll redirect to home page. Now for the actual redirection.
 
-```
+```javascript
 export function signinUser(username, password, redirect = '/'){
     return function(dispatch){
         dispatch(authRequest);
@@ -90,19 +90,19 @@ export function signinUser(username, password, redirect = '/'){
 
 To get the `redirectTo` param's value from`/signin?redirectTo=<path>`, we need to install a package called `query-string`.
 
-```
+```shell
 yarn add query-string
 ```
 
 or
 
-```
+```shell
 npm install query-string --save
 ```
 
 now in our Sign In Container, in the function that handles Sign In request, we access the URL param and pass it to `signinUser` function.
 
-```
+```javascript
 ...
 import queryString from 'query-string';
 
@@ -118,7 +118,7 @@ class SignInContainer extends Component {
 ## Using AuthenticatedRoute in our Router
 
 Now it's time to use the AuthenticatedRoute Component, it's very easy to do and works exactly like Route from react-router-dom. It only takes one extra parameter, `authenticated`, which is a boolean that determines if the user is authenticated or not.
-```
+```javascript
 ...
 import AuthenticatedRoute from './component/AuthenticatedRoute';
 
