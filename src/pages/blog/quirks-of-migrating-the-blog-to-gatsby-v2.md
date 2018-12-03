@@ -13,4 +13,8 @@ meta_description: >-
   handling broken dependencies to dealing with unexpected broken features to
   utilising new features of Gatsby v2.
 ---
-Quirks of migrating the blog to Gatsby v2 and how to deal with them.
+When the Gatsby v2 dropped I was like do I really need this, my website is already more fast than anything? But then I remembered I made this website more because I wanted to try Gatsby than anything else. So I took time out to do it this last weekend.
+
+# Journey Begins - Updating Dependencies
+
+Upgrading `npm` packages broke so much because a lot of them now require Peer Dependencies which were earlier part of the package itself.
