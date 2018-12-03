@@ -29,7 +29,7 @@ Before we begin writing `API View`, first make sure to add the following in the 
 ```python
 AUTHENTICATION_BACKENDS = (
     'oauth2_provider.backends.OAuth2Backend',
-    // Not required for DOT, but required for Admin
+    # Not required for DOT, but required for Admin
     'django.contrib.auth.backends.ModelBackend',
 )
 ```
@@ -73,10 +73,10 @@ class UserDetailView(generics.RetrieveAPIView):
     """
     Use this endpoint to retrieve user.
     """
-    // Set the AUTH_USER_MODEL in settings.py file to make it work with custom user models as well.
+    # Set the AUTH_USER_MODEL in settings.py file to make it work with custom user models as well.
     model = settings.AUTH_USER_MODEL
     serializer_class = UserDetailSerializer
-    // Set the permission class if not already set by default
+    # Set the permission class if not already set by default
     permission_classes = [permissions.IsAuthenticated]
 
     def get_object(self, *args, **kwargs):
