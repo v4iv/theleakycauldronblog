@@ -37,7 +37,7 @@ Oh Rocket and his obsession with prosthesis! At least Thor got his missing eye t
 
 ## Groot makes the handle of Stormbreaker with his Arm
 
-![Stormbreaker](/img/stormbreaker.webp)
+![Stormbreaker](/img/stormbreaker.jpg.png)
 
 As if Thor getting a new Hammer/Axe wasn't exciting enough!
 
