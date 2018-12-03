@@ -15,7 +15,7 @@ When I first switched to Django backend for my React-Redux app, all my authentic
 
 After several restless days of pure frustration, I finally found a workaround that worked. What worked was, encoding every data inline using Template Literals. And If you are facing similar problem as me, this piece of code might be useful to you as well.
 
-```
+```javascript
 import axios from 'axios';
 
 

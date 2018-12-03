@@ -24,7 +24,7 @@ This made us think and we found a simple workaround for this problem. What we do
 
 Let's say this is our `JSON-LD` Schema
 
-```
+```html
 <script type="application/ld+json">
 {
   "@context": "http://schema.org/",
@@ -53,7 +53,7 @@ Let's say this is our `JSON-LD` Schema
 
 First we create a Custom HTML Tag in Google Tag Manager. In that tag we create a JavaScript `document function` within a Script Tag. In that `function`, we create variable called `jsonld` , which stores our `JSON-LD` data.
 
-```
+```html
 <script>
 (function () {
     var jsonld = {
@@ -84,7 +84,7 @@ First we create a Custom HTML Tag in Google Tag Manager. In that tag we create a
 
 Then we initalize the Script element, set the type as `"application/ld+json"`, and put the `jsonld` variable data in the  `Inner HTML`. After that all that's left is to append the script to document Head.
 
-```
+```html
 <script>
 (function () {
     var jsonld = {
