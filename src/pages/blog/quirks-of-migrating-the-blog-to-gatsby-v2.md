@@ -1,6 +1,6 @@
 ---
 templateKey: article-page
-title: Quirks of migrating the blog to Gatsby v2.
+title: Quirks of migrating the blog to Gatsby v2
 date: 2018-12-03T12:47:42.410Z
 cover: /img/astronaut-v2.jpg
 tags:
