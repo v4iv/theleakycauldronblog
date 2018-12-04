@@ -31,7 +31,7 @@ While all these features are available in various starters, none of them were a 
 
 Assuming you already have Gatsby CLI installed, to start a new Gatsby JS Project using Gatsby-Starter-Business, open your terminal and run this:
 
-```shell
+```bash
 $ gatsby new <your_project_name> https://github.com/v4iv/gatsby-starter-business
 ```
 

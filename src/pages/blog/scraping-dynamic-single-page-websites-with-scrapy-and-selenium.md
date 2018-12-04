@@ -30,25 +30,25 @@ In brief what we're about to do is, use the webdriver of a browser with the help
 To begin we need to install, `geckodriver`, which is webdriver for Firefox web browser. I'm gonna write the instructions for Linux, you can look up the installation for your specific OS.
 First, download the latest edition of geckodriver:
 
-```shell
+```bash
 wget https://github.com/mozilla/geckodriver/releases/download/v0.20.1/geckodriver-v0.20.1-linux64.tar.gz
 ```
 
 Extract the file with:
 
-```shell
+```bash
 tar -xvzf geckodriver*
 ```
 
 Make it executable:
 
-```shell
+```bash
 chmod +x geckodriver
 ```
 
 Make it accessible by command line:
 
-```shell
+```bash
 sudo mv geckodriver /usr/local/bin/
 ```
 
@@ -107,7 +107,7 @@ The real magic happens in the parse function, here we'll write the selector for 
         self.log('Saved file %s' % filename)
 ```
 Now when you run this using:
-```shell
+```bash
 scrapy crawl angular_spider
 ```
 You'll notice a browser opens up and the page is loaded, and when the scraping is complete you can open the CSV file and see the data.
