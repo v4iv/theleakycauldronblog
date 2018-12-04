@@ -12,6 +12,7 @@ A blog powered by Gatsby v2 and Netlify CMS
 * Progressive Web App with Offline Support
 * Easy Configuration using `config.js` file
 * Bulma and Sass Support for styling
+* Code Higlighting with Prism JS
 
 <a href="https://www.netlify.com">
   <img src="https://www.netlify.com/img/global/badges/netlify-dark.svg"/>

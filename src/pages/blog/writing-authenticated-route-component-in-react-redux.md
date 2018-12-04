@@ -90,13 +90,13 @@ export function signinUser(username, password, redirect = '/'){
 
 To get the `redirectTo` param's value from`/signin?redirectTo=<path>`, we need to install a package called `query-string`.
 
-```shell
+```bash
 yarn add query-string
 ```
 
 or
 
-```shell
+```bash
 npm install query-string --save
 ```
 

@@ -24,7 +24,7 @@ This made us think and we found a simple workaround for this problem. What we do
 
 Let's say this is our `JSON-LD` Schema
 
-```html
+```json
 <script type="application/ld+json">
 {
   "@context": "http://schema.org/",
@@ -114,7 +114,7 @@ Then we initalize the Script element, set the type as `"application/ld+json"`, a
     script.innerHTML = JSON.stringify( jsonld );
     document.getElementsByTagName('head')[0].appendChild(script);
 })(document);
-<script>
+</script>
 ```
 
 Oh and don't forget to check the box that says _Support `document.write`_.
