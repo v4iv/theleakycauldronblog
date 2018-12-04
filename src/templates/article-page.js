@@ -6,7 +6,7 @@ import ArticleTemplate from '../components/ArticleTemplate'
 import SE0 from '../components/SEO'
 import Disqus from '../components/Disqus'
 import Share from '../components/Share'
-import 'prismjs/themes/prism-tomorrow.css'
+import 'prismjs/themes/prism.css'
 
 const ArticlePage = ({ data }) => {
   const { markdownRemark: post } = data
