@@ -73,18 +73,18 @@ class AngularSpider(scrapy.Spider):
         'https://www.example.com/?page=1',
         'https://www.example.com/?page=2',
     ]    
-    // Initalize the webdriver    
+    # Initalize the webdriver    
     def __init__(self):
         self.driver = webdriver.Firefox()
 
     
-    // Parse through each Start URLs
+    # Parse through each Start URLs
     def start_requests(self):
         for url in self.start_urls:
             yield scrapy.Request(url=url, callback=self.parse)    
     
 
-   // Parse function: Scrape the webpage and store it
+   # Parse function: Scrape the webpage and store it
    def parse(self, response):
        pass   
 ```
@@ -92,14 +92,14 @@ The real magic happens in the parse function, here we'll write the selector for 
 ```python
     ...
     
-    // Parse function: Scrape the webpage and store it
+    # Parse function: Scrape the webpage and store it
     def parse(self, response):
         self.driver.get(response.url)
-        // Output filename
+        # Output filename
         filename = "angular_data.csv"
         with open(filename, 'a+') as f:
             writer = csv.writer(f)
-            // Selector for all the names from the link with class 'ng-binding'
+            # Selector for all the names from the link with class 'ng-binding'
             names = self.driver.find_elements_by_css_selector("a.ng-binding")
             for name in names:
                 title = name.text
