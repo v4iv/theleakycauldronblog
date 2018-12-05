@@ -43,9 +43,9 @@ To begin testing, we need a few things setup first, to do so we use the `setUp` 
 ```python
 class BookListTest(APITestCase):
     def setUp(self):
-        // Create a Test User.
+        # Create a Test User.
         self.test_user = User.objects.create_user('test','user','testuser', 'test@example.com','testpassword')
-        // Set Up a Test Application
+        # Set Up a Test Application
         self.application = Application(
             name = "Test Application",
             redirect_uris = "http://localhost",
@@ -54,7 +54,7 @@ class BookListTest(APITestCase):
             authorization_grant_type = Application.GRANT_AUTHORIZATION_CODE,
         )
         self.application.save()
-        // Create Entries in our model to fetch the list of.
+        # Create Entries in our model to fetch the list of.
         self.foo_book = Book(
             title = "foo"
             author = "bar author"
@@ -65,7 +65,7 @@ class BookListTest(APITestCase):
             author = "foo author"
         )
         self.bar_book.save()
-        // URL to fetch the list of the books.
+        # URL to fetch the list of the books.
         self.fetch_url = reverse("books:list")
 ```
 
@@ -79,7 +79,7 @@ class BookListTest(APITestView):
         """
         Ensure we can list all the books.
         """
-        // Create A Token
+        # Create A Token
         tok = AccessToken.objects.create(
             user = self.test_user,
             token = '1234567890',
@@ -87,12 +87,12 @@ class BookListTest(APITestView):
             scope = 'read write',
             expires = timezone.now() + datetime.timedelta(days=1)
         )
-        // Set Authorization Header
+        # Set Authorization Header
         auth_headers = {
             'HTTP_AUTHORIZATION': 'Bearer ' + tok.token,
         }
         response = self.client.get(self.fetch_url, format='json', **auth_headers)
-        // Make assertions
+        # Make assertions
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 ```
 
