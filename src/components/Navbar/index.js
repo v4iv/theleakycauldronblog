@@ -2,7 +2,7 @@ import React from 'react'
 import { StaticQuery, graphql, Link } from 'gatsby'
 import SearchBox from '../SearchBox'
 
-const Navbar = () => (
+const Navbar = ({toggleNavbar, isActive}) => (
 
   <StaticQuery
     query={graphql`
@@ -26,17 +26,18 @@ const Navbar = () => (
 
             <a
               role='button'
-              className='navbar-burger has-text-black'
+              className={`button navbar-burger has-text-black ${isActive ? 'is-active' : ''}`}
               data-target='navMenu'
               aria-label='menu'
               aria-expanded='false'
+              onClick={toggleNavbar}
             >
               <span aria-hidden='true' />
               <span aria-hidden='true' />
               <span aria-hidden='true' />
             </a>
           </div>
-          <div className='navbar-menu' id='navMenu'>
+          <div className={`navbar-menu ${isActive ? 'is-active' : ''}`} id='navMenu'>
             <div className='navbar-end'>
               <SearchBox searchIndex={data.siteSearchIndex.index} />
               <Link className='navbar-item has-text-black' to='/'>
