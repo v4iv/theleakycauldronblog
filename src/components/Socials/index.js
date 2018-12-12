@@ -27,7 +27,7 @@ class Socials extends Component {
         <ul>
           {this.getLinkElements()}
           <li>
-            <a href={this.props.config.siteRss}>
+            <a href={`feed:https://theleakycauldronblog.com${this.props.config.siteRss}`}>
               <span className='icon'>
                 <i className='fas fa-rss' aria-hidden='true' />
               </span>
