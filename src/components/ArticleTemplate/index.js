@@ -17,23 +17,32 @@ const ArticleTemplate = ({
   return (
     <article className='article content'>
       <header className='article-header'>
-        <small>
-          <span className='has-text-primary'>{date}&nbsp;</span>
-        </small>
         <h1 className='is-size-2'>{title}</h1>
       </header>
-      {tags && tags.length ? (
-        <p className='tags'>
-          {tags.map(tag => (
-            <Link
-              to={`/tags/${_.kebabCase(tag)}`}
-              key={tag}
-              className='has-text-black is-italic'
-            >
-              <small>#{tag}&nbsp;</small>
-            </Link>
-          ))}
-        </p>) : null}
+      <div className='article-meta'>
+        <div className='article-date'>
+          <small>
+            <span className='has-text-primary'>{date}</span>
+          </small>
+        </div>
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        <div className='article-tags'>
+          {tags && tags.length ? (
+            <div className='tags'>
+              {tags.map(tag => (
+                <Link
+                  to={`/tags/${_.kebabCase(tag)}`}
+                  key={tag}
+                  className='has-text-black is-italic'
+                >
+                  <small>#{tag}&nbsp;&nbsp;</small>
+                </Link>
+              ))}
+            </div>) : null}
+        </div>
+      </div>
+      <br />
+      <br />
       <img src={cover} alt={title} className='image is-full' style={{ width: '100%' }} />
       <section className='section'>
         <PostContent content={content} />
