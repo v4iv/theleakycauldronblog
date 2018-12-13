@@ -23,15 +23,14 @@ export default class SearchBox extends Component {
           placeholder='Search'
         />
         <div className='navbar-dropdown'>
-          <div className='navbar-item'>
-            Search Results :
-          </div>
-          <div className='navbar-divider' />
-          {this.state.results
-            .filter(page => page.templateKey === 'article-page')
-            .map(page => (
-              <Link className='navbar-item' key={page.id} to={page.slug}>{page.title}</Link>
-            ))}
+          {(this.state.isActive && this.state.results.length)
+            ? this.state.results
+              .filter(page => page.templateKey === 'article-page')
+              .map(page => (
+                <Link className='navbar-item' key={page.id} to={page.slug}>{page.title}</Link>
+              ))
+            : <div className='navbar-item' >No Results</div>
+          }
         </div>
       </div>
     )
