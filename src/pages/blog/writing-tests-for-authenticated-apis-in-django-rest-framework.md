@@ -2,7 +2,7 @@
 templateKey: article-page
 title: Writing Tests for Authenticated APIs in Django REST Framework
 date: '2018-04-13T12:17:50+05:30'
-cover: /img/django.png
+cover: /img/authenticated_api_testing.jpg
 tags:
   - Django
   - DRF
