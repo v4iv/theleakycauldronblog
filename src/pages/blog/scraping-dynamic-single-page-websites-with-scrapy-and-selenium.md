@@ -2,7 +2,7 @@
 templateKey: article-page
 title: 'Scraping Dynamic Websites (Angular, React etc) with Scrapy and Selenium'
 date: '2018-05-04T18:51:35+05:30'
-cover: /img/scrapy.png
+cover: /img/scraping_dynamic_webapps.jpg
 tags:
   - Scrapy
   - Selenium
