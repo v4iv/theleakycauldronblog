@@ -2,7 +2,7 @@
 templateKey: article-page
 title: Implement Rich Snippet Schema with Google Tag Manager
 date: '2018-06-16T15:51:54+05:30'
-cover: /img/schema_gtm.png
+cover: /img/structured_data_gtm.jpg
 tags:
   - Schema
   - RichSnippet
