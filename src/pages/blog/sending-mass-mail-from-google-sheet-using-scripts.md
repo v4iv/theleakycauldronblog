@@ -2,7 +2,7 @@
 templateKey: article-page
 title: Sending Mass Mail from Google Sheet using Scripts
 date: '2018-06-04T11:22:05+05:30'
-cover: /img/google_sheet_mass_mail.png
+cover: /img/mass_mail_google_script.jpg
 tags:
   - GoogleSheet
   - GoogleScript
