@@ -1,6 +1,7 @@
 import React from 'react'
 import _ from 'lodash'
 import { Link } from 'gatsby'
+import MiniShare from '../MiniShare'
 
 const ArticleList = ({ posts }) => {
   return (
@@ -21,22 +22,27 @@ const ArticleList = ({ posts }) => {
                     </Link>
                   </h1>
                 </header>
-                <p className='tags'>
-                  {post.frontmatter.tags.map(tag => (
-                    <Link
-                      to={`/tags/${_.kebabCase(tag)}`}
-                      key={tag}
-                      className='has-text-black is-italic'
-                    >
-                      <small>#{tag} &nbsp;</small>
-                    </Link>
-                  ))}
-                </p>
+                <div className='article-meta'>
+                  <MiniShare title={post.frontmatter.title} slug={post.fields.slug} excerpt={post.frontmatter.meta_description} />&nbsp;&nbsp;&#x7c;&nbsp;&nbsp;
+                  <div className='article-tags'>
+                    {post.frontmatter.tags.map(tag => (
+                      <Link
+                        to={`/tags/${_.kebabCase(tag)}`}
+                        key={tag}
+                        className='has-text-black is-italic'
+                      >
+                        <small>#{tag} &nbsp;</small>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+                <br />
                 <p>
                   <small className='has-text-weight-light has-text-grey-light is-uppercase'>
                     {post.excerpt}
                   </small>
                 </p>
+                <br />
                 <Link className='button is-small' to={post.fields.slug}>
                   Continue Reading →
                 </Link>

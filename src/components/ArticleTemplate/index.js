@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Content from '../Content'
 import { Link } from 'gatsby'
 import _ from 'lodash'
+import MiniShare from '../MiniShare'
 
 const ArticleTemplate = ({
   content,
@@ -11,6 +12,8 @@ const ArticleTemplate = ({
   cover,
   tags,
   title,
+  slug,
+  excerpt,
 }) => {
   const PostContent = contentComponent || Content
 
@@ -25,7 +28,7 @@ const ArticleTemplate = ({
             <span className='has-text-primary'>{date}</span>
           </small>
         </div>
-        &nbsp;&nbsp;|&nbsp;&nbsp;
+        &nbsp;&nbsp;&#x7c;&nbsp;&nbsp;<MiniShare title={title} slug={slug} excerpt={excerpt} />&nbsp;&nbsp;&#x7c;&nbsp;&nbsp;
         <div className='article-tags'>
           {tags && tags.length ? (
             <div className='tags'>
@@ -45,7 +48,7 @@ const ArticleTemplate = ({
       <br />
       <img src={cover} alt={title} className='image is-full' style={{ width: '100%' }} />
       <section className='section'>
-        <PostContent content={content} />
+        <PostContent content={content} className={'article-body'} />
       </section>
     </article>
   )

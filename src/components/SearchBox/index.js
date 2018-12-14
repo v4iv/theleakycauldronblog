@@ -29,7 +29,7 @@ export default class SearchBox extends Component {
               .map(page => (
                 <Link className='navbar-item' key={page.id} to={page.slug}>{page.title}</Link>
               ))
-            : <div className='navbar-item' >No Results</div>
+            : null
           }
         </div>
       </div>
