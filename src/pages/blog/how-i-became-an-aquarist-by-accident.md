@@ -2,7 +2,7 @@
 templateKey: article-page
 title: How I became an Aquarist by Accident!
 date: '2018-08-13T11:03:36+05:30'
-cover: /img/accidental_aquarist.png
+cover: /img/aquarist_accidental.jpg
 tags:
   - Aquariums
   - Fishes
