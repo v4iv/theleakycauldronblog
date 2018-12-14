@@ -2,7 +2,7 @@
 templateKey: article-page
 title: Requesting User details from JWT in Django OAuth Toolkit
 date: '2018-04-16T09:28:22+05:30'
-cover: /img/dot.png
+cover: /img/user_info_jwt.jpg
 tags:
   - Authorization
   - OAuth Toolkit
