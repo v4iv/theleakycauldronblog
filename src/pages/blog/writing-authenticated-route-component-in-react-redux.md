@@ -2,7 +2,7 @@
 templateKey: article-page
 title: Writing Authenticated Route Component in React Redux
 date: '2018-06-02T09:21:12+05:30'
-cover: /img/react-redux.png
+cover: /img/react_redux_authenticated_routes.jpg
 tags:
   - ReactJS
   - Redux
