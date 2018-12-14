@@ -26,7 +26,7 @@ class Share extends Component {
       <div className='social-links'>
         <RedditShareButton url={url} title={title}>
           <span className='icon has-text-grey'>
-            <i className='fab fa-reddit fa-2x' aria-hidden='true' />
+            <i className='fab fa-reddit-square fa-2x' aria-hidden='true' />
           </span>
           <RedditShareCount url={url}>
             {count => <div className='share-count'>{filter(count)}</div>}
@@ -34,12 +34,12 @@ class Share extends Component {
         </RedditShareButton>
         <TwitterShareButton url={url} title={title}>
           <span className='icon has-text-grey'>
-            <i className='fab fa-twitter fa-2x' aria-hidden='true' />
+            <i className='fab fa-twitter-square fa-2x' aria-hidden='true' />
           </span>
         </TwitterShareButton>
         <GooglePlusShareButton url={url}>
           <span className='icon has-text-grey'>
-            <i className='fab fa-google-plus fa-2x' aria-hidden='true' />
+            <i className='fab fa-google-plus-square fa-2x' aria-hidden='true' />
           </span>
           <GooglePlusShareCount url={url}>
             {count => <div className='share-count'>{filter(count)}</div>}

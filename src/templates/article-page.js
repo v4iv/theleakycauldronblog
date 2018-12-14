@@ -28,8 +28,10 @@ const ArticlePage = ({ data }) => {
               contentComponent={HTMLContent}
               date={post.frontmatter.date}
               cover={post.frontmatter.cover}
+              slug={post.fields.slug}
               tags={post.frontmatter.tags}
               title={post.frontmatter.title}
+              excerpt={post.frontmatter.meta_description}
             />
             <Share title={post.frontmatter.title} slug={post.fields.slug} excerpt={post.frontmatter.meta_description} />
             <Disqus title={post.frontmatter.title} slug={post.fields.slug} />
