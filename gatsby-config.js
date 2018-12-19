@@ -203,7 +203,9 @@ module.exports = {
                             frontmatter {
                               title
                               templateKey
-                              cover
+                              cover {
+                                publicURL
+                              }
                               date(formatString: "MMMM DD, YYYY")
                               tags
                             }
