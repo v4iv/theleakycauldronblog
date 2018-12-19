@@ -26,7 +26,7 @@ export default class IndexPage extends Component {
     const { pageContext } = this.props
     const { group, index, first, last } = pageContext
     const previousUrl = index - 1 === 1 ? '' : (index - 1).toString()
-    const nextUrl = (index + 1).toString() + '/'
+    const nextUrl = (index + 1).toString()
 
     const websiteSchemaOrgJSONLD = {
       '@context': 'http://schema.org',
