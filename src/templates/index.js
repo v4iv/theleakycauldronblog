@@ -44,6 +44,7 @@ export default class IndexPage extends Component {
           <script type='application/ld+json'>
             {JSON.stringify(websiteSchemaOrgJSONLD)}
           </script>
+          <link rel='canonical' href='https://theleakycauldronblog.com/' />
         </Helmet>
         <div className='columns is-centered'>
           <div className='column'>
