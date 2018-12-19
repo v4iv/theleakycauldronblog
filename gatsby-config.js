@@ -17,13 +17,11 @@ module.exports = {
     },
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sass`,
     {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/assets/img`,
+        path: `${__dirname}/static/img`,
         name: 'uploads',
       },
     },
@@ -104,15 +102,9 @@ module.exports = {
         ],
       },
     },
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sass`,
     `gatsby-plugin-layout`,
-    {
-      resolve: `gatsby-plugin-netlify-cms`,
-      options: {
-        modulePath: `${__dirname}/src/cms/cms.js`,
-        enableIdentityWidget: true,
-        htmlTitle: `TLCB Content Manager`,
-      },
-    },
     {
       resolve: `gatsby-plugin-nprogress`,
       options: {
@@ -240,6 +232,14 @@ module.exports = {
             templateKey: node => node.frontmatter.templateKey,
           },
         },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-netlify-cms`,
+      options: {
+        modulePath: `${__dirname}/src/cms/cms.js`,
+        enableIdentityWidget: true,
+        htmlTitle: `TLCB Content Manager`,
       },
     },
     `gatsby-plugin-netlify`,

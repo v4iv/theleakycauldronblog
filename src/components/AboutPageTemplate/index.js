@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Img from 'gatsby-image'
 import Content from '../Content'
 
 const AboutPageTemplate = ({ title, content, image, contentComponent }) => {
@@ -18,7 +19,18 @@ const AboutPageTemplate = ({ title, content, image, contentComponent }) => {
                   </h3>
                 </div>
               </section>
-              <img src={image} alt={title} className='image is-full' style={{ width: '100%' }} />
+              {!!image && !!image.childImageSharp
+                ? <Img className='image is-full'
+                  fluid={image.childImageSharp.fluid}
+                  alt={title}
+                  style={{ width: '100%' }}
+                />
+                : <img className='image is-full'
+                  src={image.publicURL}
+                  alt={title}
+                  style={{ width: '100%' }}
+                />
+              }
               <div className='section'>
                 <PageContent className='content' content={content} />
               </div>
