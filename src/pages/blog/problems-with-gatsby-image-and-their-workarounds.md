@@ -24,35 +24,31 @@ Without the optimisation magic of Gatsby Image each page size would be touching 
 
 # Things to be careful about while configuring Gatsby Image
 
-First, you need 'gatsby-remark-relative-images' for 'gatsby-remark-images' match images outside the node folder. This is especially important if you are working with Netlify CMS.
+First, you need '**gatsby-remark-relative-images**' for '**gatsby-remark-images**' match images outside the node folder. This is especially important if you are working with Netlify CMS.
 
-Second, The gatsby-source-filesystem media folder must be included before the other plugins, especially Netlfiy CMS. That's something that has been mentinoned in gatsby-transformer-remark's README.md. Not only that, it'll be best if you include 'gatsby-transformer-sharp' 'gatsby-plugin-sharp' and 'gatsby-transformer-remark' before any other plugin in gatsby-config.js. Not doing this will definitely lead to 'Field "image" must not have a selection since type "String" has no subfields' error.
+Second, The '**gatsby-source-filesystem**' media folder must be included before the other plugins, especially Netlfiy CMS. That's something that has been mentinoned in **gatsby-transformer-remark**'s README.md. Not only that, it'll be best if you include '**gatsby-transformer-sharp**' '**gatsby-plugin-sharp'** and '**gatsby-transformer-remark**' before any other plugin in _gatsby-config.js_. Not doing this will definitely lead to '**Field "image" must not have a selection since type "String" has no subfields**' error.
 
-Third, once you are done configuring you cannot just query an image without parameters. I suggest publicURL.
+Third, once you are done configuring you cannot just query an image without parameters. I suggest **publicURL**.
 
-Fourth, GIFs and SVGs are not processed by Gatsby Image. So always include publicURL in the parameters as an alternate.
+Fourth, GIFs and SVGs are not processed by Gatsby Image. So always include **publicURL** in the parameters as an alternate.
 
-<CODE/>
-
-Finally, sometimes the build can fail just because node_modules/ needs to be rebuilt. So, if you see nothing else working try removing node_modules and reinstalling packages.
+Finally, sometimes the build can fail just because **node_modules/** needs to be rebuilt. So, if you see nothing else working try removing **node_modules/** and reinstalling packages.
 
 # Gatsby Image and Gatsby Paginate don't go well together
 
-While implementing Article List I ran into an error that disturbed me for hours. Let me preface by explaining how Gatsby Paginate works. We plugin Gatsby Paginate's createPaginatedPages function in gatsby-node.js. It takes the createPages method and takes results of the query to create paginated list of posts.
+While implementing Article List I ran into an error that disturbed me for hours. Let me preface by explaining how Gatsby Paginate works. We plugin Gatsby Paginate's `createPaginatedPages` function in _gatsby-node.js_. It takes the `createPages` method and takes results of the query to create paginated list of posts.
 
-<CODE/>
+So, if I had to display a thumbnail on my article list I just add that query. Simple enough right? Wrong! You add image to the query, and you run into the first problem, it needs to have parameters. That's okay, you need to apply `...GatsbyImageSharpFluid` anyways, but wait! This throws an error, one that drove me crazy and made me write this article.
 
-So, if I had to display a thumbnail on my article list I just add that query. Simple enough right? Wrong! You add image to the query, and you run into the first problem, it needs to have parameters. That's okay, you need to apply ...GatsbyImageSharpFluid anyways, but wait! This throws an error, one that drove me crazy and made me write this article.
-
+```shell
 Error: unknown fragment ...GatsbyImageSharpFluid
+```
 
-This is an annoying problem because the reason it states is very confusing! Clearly, GatsbyImageSharpFluid is a fragment and I know that for sure. After searching for hours I find out an interesting thing.
+This is an annoying problem because the reason it states is very confusing! Clearly, **GatsbyImageSharpFluid** is a fragment and I know that for sure. After searching for hours I find out an interesting thing.
 
-The query in gatsby-node.js is only the path and stuff you put in context, which you can use in your page/template to retrieve the data you need. What this means is it's only creating pages, the query there isn't really supposed to be passing data down besides a kind of reference which you can use in the page to make a query for the specific kind of data that page needs. Hence, it doesn't recognise GatsbyImageSharpFluid as a valid fragment.
+The query in _gatsby-node.js_ is only the path and stuff you put in context, which you can use in your page/template to retrieve the data you need. What this means is it's only creating pages, the query there isn't really supposed to be passing data down besides a kind of reference which you can use in the page to make a query for the specific kind of data that page needs. Hence, it doesn't recognise **GatsbyImageSharpFluid** as a valid fragment.
 
-Which brings us to workaround. After looking online I found that I'm not the only one to run into this Catch 22. Various people found various work arounds, with varying results. After failing to get any of them working for me, it struck me. A workaround that'll work for everyone, not ideal but universal. All you gotta do is pass the required fields of fluid to it manually. And to add the blur in effect, top it off with base64.
-
-<CODE/>
+Which brings us to workaround. After looking online I found that I'm not the only one to run into this Catch 22. Various people found various work arounds, with varying results. After failing to get any of them working for me, it struck me. A workaround that'll work for everyone, not ideal but universal. All you gotta do is pass the required fields of fluid to it manually. And to add the blur in effect, top it off with **base64**.
 
 Ooooorrrrr, you could simply use one of the other plugins for pagination.
 
