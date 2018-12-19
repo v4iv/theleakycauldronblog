@@ -6,7 +6,11 @@ cover: /img/gatsby-image-workarounds.jpeg
 tags:
   - GatsbyJS
 meta_title: Problems with Gatsby Image and their workarounds
-meta_description: Problems with Gatsby Image and their workarounds
+meta_description: >-
+  Gatsby Image is a very powerful package with drool worthy features. It makes
+  it very easy to implement, Medium like progressive image loading among other
+  things. But it has its fair share of problems. Here are some of them along
+  with workarounds.
 ---
 Gatsby Image is a very powerful package with drool worthy features. It makes it very easy to implement, Medium like progressive image loading. It can do a bunch of other stuff but that's the fancy stuff. But I decided to not use it for this website, mostly because it doesn't play well with Netlify CMS. And, I was quite happy with the site's performance as it doesn't have many images.
 
