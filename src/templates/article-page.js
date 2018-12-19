@@ -61,7 +61,14 @@ export const pageQuery = graphql`
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         title
-        cover
+        cover {
+            childImageSharp {
+                fluid(maxWidth: 1075, quality: 72) {
+                    ...GatsbyImageSharpFluid
+                }
+            }
+            publicURL
+        }
         meta_title
         meta_description
         tags
