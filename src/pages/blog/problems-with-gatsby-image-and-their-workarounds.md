@@ -28,7 +28,7 @@ Without the optimisation magic of Gatsby Image each page size would be touching 
 
 # Things to be careful about while configuring Gatsby Image
 
-First, you need '**gatsby-remark-relative-images**' for '**gatsby-remark-images**' match images outside the node folder. This is especially important if you are working with Netlify CMS. Also, don't forget to add fmImagesToRelative to _gatsby-node.js_.
+First, you need '**gatsby-remark-relative-images**'to convert image src(s) in markdown to be relative to their node's parent directory. So that '**gatsby-remark-images**' can match images outside the node folder. This is especially important if you are working with Netlify CMS. Also, don't forget to add fmImagesToRelative to _gatsby-node.js_.
 
 ```javascript
 const {fmImagesToRelative} = require('gatsby-remark-relative-images')
@@ -143,7 +143,7 @@ This is an annoying problem because the reason it states is very confusing! Clea
 
 The query in _gatsby-node.js_ is only the path and stuff you put in context, which you can use in your page/template to retrieve the data you need. What this means is it's only creating pages, the query there isn't really supposed to be passing data down besides a kind of reference which you can use in the page to make a query for the specific kind of data that page needs. Hence, it doesn't recognise **GatsbyImageSharpFluid** as a valid fragment.
 
-Which brings us to workaround. After looking online I found that I'm not the only one to run into this Catch 22. Various people found various work arounds, with varying results. After failing to get any of them working for me, it struck me. A workaround that'll work for everyone, not ideal but universal. All you gotta do is pass the required fields of fluid to it manually. And to add the blur in effect, top it off with **base64**.
+Which brings us to workaround. After looking online I found that I'm not the only one to run into this Catch 22. Various people found various work arounds, with varying results. After failing to get any of them working for me, it struck me. A workaround that'll work for everyone, not ideal but universal. All you gotta do is pass the required fields of fluid to it manually. And to add the base64 placeholder image, top it off with **base64**.
 
 ```javascript
 return graphql(`
