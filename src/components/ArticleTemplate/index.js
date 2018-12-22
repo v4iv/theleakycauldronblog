@@ -17,7 +17,7 @@ const ArticleTemplate = ({
   const PostContent = contentComponent || Content
 
   return (
-    <article className='baskerville pb4'>
+    <article className='baskerville pb3'>
       <header className='avenir tc-l ph3 ph4-ns pt4 pt5-ns'>
         <h1 className='f3 f2-m f-subheadline-l measure lh-title fw1 mt0'>{title}</h1>
         <div className='flex db mb4'>

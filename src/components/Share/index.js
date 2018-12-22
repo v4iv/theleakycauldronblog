@@ -18,7 +18,7 @@ class Share extends Component {
       <div className='pv4 ph3 ph5-ns tc'>
         <div className='dib mr3' style={{cursor: 'pointer'}}>
           <RedditShareButton url={url} title={title}>
-            <span className='link grow gray dib h2 w2 br-100 pa2 bg-near-white ba b--black-10'>
+            <span className='link grow gray dib h1 h2-ns w1 w2-ns br-100 pa2 bg-near-white ba b--black-10'>
               <svg role='img' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' style={{fill: 'currentcolor'}}>
                 <title>Reddit icon</title>
                 <path
@@ -29,7 +29,7 @@ class Share extends Component {
         </div>
         <div className='dib mr3' style={{cursor: 'pointer'}}>
           <TwitterShareButton url={url} title={title}>
-            <span className='link grow gray dib h2 w2 br-100 pa2 bg-near-white ba b--black-10'>
+            <span className='link grow gray dib h1 h2-ns w1 w2-ns br-100 pa2 bg-near-white ba b--black-10'>
               <svg data-icon='twitter' viewBox='0 0 32 32' style={{fill: 'currentcolor'}}>
                 <title>twitter icon</title>
                 <path
@@ -40,7 +40,7 @@ class Share extends Component {
         </div>
         <div className='dib mr3' style={{cursor: 'pointer'}}>
           <GooglePlusShareButton url={url}>
-            <span className='link grow gray dib h2 w2 br-100 pa2 bg-near-white ba b--black-10'>
+            <span className='link grow gray dib h1 h2-ns w1 w2-ns br-100 pa2 bg-near-white ba b--black-10'>
               <svg role='img' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' style={{fill: 'currentcolor'}}>
                 <title>Google+ icon</title>
                 <path
@@ -51,7 +51,7 @@ class Share extends Component {
         </div>
         <div className='dib mr3' style={{cursor: 'pointer'}}>
           <FacebookShareButton url={url} quote={excerpt}>
-            <span className='link grow gray dib h2 w2 br-100 pa2 bg-near-white ba b--black-10'>
+            <span className='link grow gray dib h1 h2-ns w1 w2-ns br-100 pa2 bg-near-white ba b--black-10'>
               <svg data-icon='facebook' viewBox='0 0 32 32' style={{fill: 'currentcolor'}}>
                 <title>facebook icon</title>
                 <path
@@ -62,7 +62,7 @@ class Share extends Component {
         </div>
         <div className='dib mr3' style={{cursor: 'pointer'}}>
           <LinkedinShareButton url={url} title={title} description={excerpt}>
-            <span className='link grow gray dib h2 w2 br-100 pa2 bg-near-white ba b--black-10'>
+            <span className='link grow gray dib h1 h2-ns w1 w2-ns br-100 pa2 bg-near-white ba b--black-10'>
               <svg role='img' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' style={{fill: 'currentcolor'}}>
                 <title>LinkedIn icon</title>
                 <path
