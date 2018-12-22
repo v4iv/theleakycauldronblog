@@ -1,32 +1,32 @@
-import React, { Component } from 'react'
-
+import React, {Component} from 'react'
 import Helmet from 'react-helmet'
-import { Link } from 'gatsby'
+import {Link} from 'gatsby'
+
 import ArticleList from '../components/ArticleList'
-import config from '../../data/config'
+import config from '../../config'
+import Layout from '../components/Layout'
 
 const PaginationLink = props => {
   if (!props.test) {
     return (
-      <Link to={props.url} className='button is-rounded'>
-        {props.text}
+      <Link to={props.url}
+        className='f5 no-underline black bg-animate hover-bg-black hover-white inline-flex items-center pa3 ba border-box mr4'>
+        <span className='pl1'>{props.text}</span>
       </Link>
     )
   } else {
     return (
-      <span disabled className='button is-rounded'>
-        {props.text}
-      </span>
+      null
     )
   }
 }
 
 export default class IndexPage extends Component {
   render () {
-    const { pageContext } = this.props
-    const { group, index, first, last } = pageContext
+    const {pageContext} = this.props
+    const {group, index, first, last} = pageContext
     const previousUrl = index - 1 === 1 ? '' : (index - 1).toString()
-    const nextUrl = (index + 1).toString()
+    const nextUrl = (index + 1).toString() + '/'
 
     const websiteSchemaOrgJSONLD = {
       '@context': 'http://schema.org',
@@ -37,7 +37,7 @@ export default class IndexPage extends Component {
     }
 
     return (
-      <div>
+      <Layout>
         <Helmet>
           <title>Home | The Leaky Cauldron Blog</title>
           {/* Schema.org tags */}
@@ -46,18 +46,21 @@ export default class IndexPage extends Component {
           </script>
           <link rel='canonical' href='https://theleakycauldronblog.com/' />
         </Helmet>
-        <div className='columns is-centered'>
-          <div className='column'>
-            <ArticleList posts={group} />
-            <section className='section'>
-              <div className='buttons is-centered'>
-                <PaginationLink test={first} url={previousUrl} text='Previous Page' />
-                <PaginationLink test={last} url={nextUrl} text='Next Page' />
-              </div>
-            </section>
+        <div>
+
+          <ArticleList posts={group} />
+          <div className='flex items-center justify-center pa4'>
+            <PaginationLink test={first}
+              url={previousUrl}
+              text='Previous Page'
+            />
+            <PaginationLink test={last}
+              url={nextUrl}
+              text='Next Page'
+            />
           </div>
         </div>
-      </div>
+      </Layout>
     )
   }
 }

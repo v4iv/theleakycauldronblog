@@ -1,5 +1,4 @@
-# The Leaky Cauldron Blog
-A Brew of Awesomeness with a Pinch of Magic...
+# Gatsby Starter Blog Tachyons
 
 ## Features
 A blog powered by Gatsby v2 and Netlify CMS
@@ -11,7 +10,7 @@ A blog powered by Gatsby v2 and Netlify CMS
 * Tags and RSS Feed
 * Progressive Web App with Offline Support
 * Easy Configuration using `config.js` file
-* Bulma and Sass Support for styling
+* Tachyons and Sass Support for styling
 * Code Higlighting with Prism JS
 
 <a href="https://www.netlify.com">

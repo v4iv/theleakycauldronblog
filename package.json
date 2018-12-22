@@ -1,6 +1,6 @@
 {
-  "name": "theleakycauldronblog",
-  "description": "The Leaky Cauldron Blog",
+  "name": "gatsby-starter-blog-tachyons",
+  "description": "Gatsby Starter Blog Tachyons",
   "author": "Vaibhav Sharma",
   "license": "MIT",
   "scripts": {
@@ -13,13 +13,11 @@
   },
   "dependencies": {
     "@gatsby-contrib/gatsby-plugin-elasticlunr-search": "^2.1.1",
-    "bulma": "^0.7.2",
     "gatsby": "^2.0.33",
     "gatsby-image": "^2.0.25",
     "gatsby-paginate": "^1.0.16",
     "gatsby-plugin-feed": "^2.0.9",
     "gatsby-plugin-google-tagmanager": "^2.0.6",
-    "gatsby-plugin-layout": "^1.0.9",
     "gatsby-plugin-manifest": "^2.0.10",
     "gatsby-plugin-netlify": "^2.0.5",
     "gatsby-plugin-netlify-cms": "^3.0.7",
@@ -29,6 +27,7 @@
     "gatsby-plugin-sass": "^2.0.4",
     "gatsby-plugin-sharp": "^2.0.13",
     "gatsby-plugin-sitemap": "^2.0.2",
+    "gatsby-remark-copy-linked-files": "^2.0.8",
     "gatsby-remark-images": "^3.0.0",
     "gatsby-remark-prismjs": "^3.1.3",
     "gatsby-remark-relative-images": "^0.2.1",
@@ -46,6 +45,7 @@
     "react-dom": "^16.5.1",
     "react-helmet": "^5.2.0",
     "react-share": "^2.3.1",
+    "tachyons-sass": "^4.9.5",
     "uglifyjs-webpack-plugin": "^2.0.1"
   },
   "keywords": [

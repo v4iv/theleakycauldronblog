@@ -2,17 +2,19 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import ContactPageTemplate from '../components/ContactPageTemplate'
+import Layout from '../components/Layout'
 
 const ContactPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
   return (
-    <ContactPageTemplate
-      title={frontmatter.title}
-      subtitle={frontmatter.subtitle}
-      meta_title={frontmatter.meta_title}
-      meta_description={frontmatter.meta_description}
-      contacts={frontmatter.contacts}
-    />
+    <Layout>
+      <ContactPageTemplate
+        title={frontmatter.title}
+        subtitle={frontmatter.subtitle}
+        meta_title={frontmatter.meta_title}
+        meta_description={frontmatter.meta_description}
+      />
+    </Layout>
   )
 }
 
@@ -34,10 +36,6 @@ export const contactPageQuery = graphql`
         subtitle
         meta_title
         meta_description
-        contacts {
-          email
-          description
-        }
       }
     }
   }

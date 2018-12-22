@@ -8,6 +8,8 @@ meta_description: >-
 ---
 **The Leaky Cauldron Blog** is the personal blog of **Vaibhav Sharma**.
 
+![vaibhav-sharma](/img/about_vaibhav_sharma.jpg)
+
 This aims to be a place where I can publish anything and everything that interests me. This can range from science and technology to entertainment.
 
 As you may have already guessed, this blog's name is inspired by the famous pub in _Harry Potter_. Just like that pub this blog will be a magical place where all random interesting things meet.

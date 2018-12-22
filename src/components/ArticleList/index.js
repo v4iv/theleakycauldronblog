@@ -1,56 +1,54 @@
 import React from 'react'
 import _ from 'lodash'
-import { Link } from 'gatsby'
-import MiniShare from '../MiniShare'
+import {Link} from 'gatsby'
+import Img from 'gatsby-image'
 
-const ArticleList = ({ posts }) => {
+const ArticleList = ({posts}) => {
   return (
-    <div className='container'>
+    <section className='mw7 center avenir'>
       {posts
         .filter(post => post.node.frontmatter.templateKey === 'article-page')
-        .map(({ node: post }) => {
+        .map(({node: post}) => {
           return (
-            <section key={post.id} className='section'>
-              <article className='article content'>
-                <header className='article-header'>
-                  <h1 className='is-size-2'>
-                    <span className='has-text-primary'>
-                      {post.frontmatter.date}&nbsp;
-                    </span>
-                    <Link className='has-text-black' to={post.fields.slug}>
-                      {post.frontmatter.title}
-                    </Link>
-                  </h1>
-                </header>
-                <div className='article-meta'>
-                  <MiniShare title={post.frontmatter.title} slug={post.fields.slug} excerpt={post.frontmatter.meta_description} />&nbsp;&nbsp;&#x7c;&nbsp;&nbsp;
-                  <div className='article-tags'>
-                    {post.frontmatter.tags.map(tag => (
-                      <Link
-                        to={`/tags/${_.kebabCase(tag)}`}
-                        key={tag}
-                        className='has-text-black is-italic'
-                      >
-                        <small>#{tag} &nbsp;</small>
-                      </Link>
-                    ))}
-                  </div>
+            <article key={post.id} className='pv4 bb b--black-10 ph3 ph0-l'>
+              <div className='flex flex-column flex-row-ns'>
+                <div className='w-100 w-60-ns pr3-ns order-2 order-1-ns'>
+                  <Link className='db ph0-l no-underline black dim' to={post.fields.slug}>
+                    <h1 className='f3 fw1 baskerville mt0 lh-title'>{post.frontmatter.title}</h1>
+                    <p className='f6 f5-l lh-copy fw1'>
+                      {post.excerpt}
+                    </p>
+                  </Link>
                 </div>
-                <br />
-                <p>
-                  <small className='has-text-weight-light has-text-grey-light is-uppercase'>
-                    {post.excerpt}
-                  </small>
-                </p>
-                <br />
-                <Link className='button is-small' to={post.fields.slug}>
-                  Continue Reading →
-                </Link>
-              </article>
-            </section>
+                <div className='pl3-ns order-1 order-2-ns mb4 mb0-ns w-100 w-40-ns'>
+                  <Link className='db ph0-l no-underline black grow' to={post.fields.slug}>
+                    {!!post.frontmatter.cover && !!post.frontmatter.cover.childImageSharp
+                      ? <Img className='db'
+                        fluid={post.frontmatter.cover.childImageSharp.fluid}
+                        alt={post.frontmatter.title} />
+                      : <img className='db'
+                        src={post.frontmatter.cover.publicURL}
+                        alt={post.frontmatter.title} />
+                    }
+                  </Link>
+                </div>
+              </div>
+              <time className='f6 db gray'>{post.frontmatter.date}</time>
+              <div className='flex pv2 ph0'>
+                {post.frontmatter.tags.map(tag => (
+                  <Link
+                    to={`/tags/${_.kebabCase(tag)}`}
+                    key={tag}
+                    className='no-underline black dim'
+                  >
+                    <small>#{tag} &nbsp;</small>
+                  </Link>
+                ))}
+              </div>
+            </article>
           )
         })}
-    </div>
+    </section>
   )
 }
 

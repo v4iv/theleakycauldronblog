@@ -6,46 +6,13 @@ module.exports = {
   pathPrefix: '/', // Prefixes all links. For cases when deployed to example.github.io/gatsby-starter-business/.
   siteDescription: 'A Brew of Awesomeness with a Pinch of Magic', // Website description used for RSS feeds/meta description tag.
   siteRss: '/rss.xml',
-  siteFBAppID: '', // FB Application ID for using app insights
   googleTagManagerID: 'GTM-MPPQV7M', // GTM tracking ID.
   disqusShortname: 'https-theleakycauldronblog-com', // Disqus shortname.
   userName: 'Vaibhav Sharma',
   userTwitter: 'vaibhaved',
   userLocation: 'Delhi NCR, India',
   userDescription: '',
-  userLinks: [
-    {
-      label: 'Twitter',
-      url: 'https://twitter.com/vaibhaved',
-      iconClassName: 'fab fa-twitter',
-    },
-    {
-      label: 'Instagram',
-      url: 'https://instagram.com/vaibhaved',
-      iconClassName: 'fab fa-instagram',
-    },
-    {
-      label: 'Linked In',
-      url: 'https://linkedin.com/in/waybove',
-      iconClassName: 'fab fa-linkedin',
-    },
-    {
-      label: 'Github',
-      url: 'https://github.com/v4iv',
-      iconClassName: 'fab fa-github',
-    },
-    {
-      label: 'Gitlab',
-      url: 'https://gitlab.com/vaibhavsharma',
-      iconClassName: 'fab fa-gitlab',
-    },
-    {
-      label: 'Email',
-      url: 'mailto:theleakycauldronblog@gmail.com',
-      iconClassName: 'fas fa-envelope',
-    },
-  ],
   copyright: 'Copyright © The Leaky Cauldron Blog 2018. All Rights Reserved.', // Copyright string for the footer of the website and RSS feed.
-  themeColor: '#00d1b2', // Used for setting manifest and progress theme colors.
+  themeColor: '#676767', // Used for setting manifest and progress theme colors.
   backgroundColor: '#ffffff', // Used for setting manifest background color.
 }
