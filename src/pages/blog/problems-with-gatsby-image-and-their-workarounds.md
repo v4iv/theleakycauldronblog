@@ -28,7 +28,7 @@ Without the optimisation magic of Gatsby Image each page size would be touching 
 
 # Things to be careful about while configuring Gatsby Image
 
-First, you need '**gatsby-remark-relative-images**'to convert image src(s) in markdown to be relative to their node's parent directory. So that '**gatsby-remark-images**' can match images outside the node folder. This is especially important if you are working with Netlify CMS. Also, don't forget to add fmImagesToRelative to _gatsby-node.js_.
+First, you need '**gatsby-remark-relative-images**' to convert image src(s) in markdown to be relative to their node's parent directory. So that '**gatsby-remark-images**' can match images outside the node folder. This is especially important if you are working with Netlify CMS. Also, don't forget to add fmImagesToRelative to _gatsby-node.js_.
 
 ```javascript
 const {fmImagesToRelative} = require('gatsby-remark-relative-images')

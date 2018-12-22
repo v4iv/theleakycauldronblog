@@ -6,7 +6,7 @@ import {
   RedditShareButton,
   TwitterShareButton,
 } from 'react-share'
-import config from '../../../data/config'
+import config from '../../../config'
 import './styles.sass'
 
 class MiniShare extends Component {

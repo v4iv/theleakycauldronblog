@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import ReactDisqusComments from 'react-disqus-comments'
-import config from '../../../data/config'
+import config from '../../../config'
 
 class Disqus extends Component {
   constructor (props) {
@@ -30,13 +30,15 @@ class Disqus extends Component {
     }
     const url = config.siteUrl + slug
     return (
-      <ReactDisqusComments
-        shortname={config.disqusShortname}
-        identifier={title}
-        title={title}
-        url={url}
-        onNewComment={this.notifyAboutComment}
-      />
+      <section className='mb3 pa3 pa5-l center'>
+        <ReactDisqusComments
+          shortname={config.disqusShortname}
+          identifier={title}
+          title={title}
+          url={url}
+          onNewComment={this.notifyAboutComment}
+        />
+      </section>
     )
   }
 }

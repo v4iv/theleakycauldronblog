@@ -2,9 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
-import config from '../../data/config'
+import config from '../../config'
 import AboutPageTemplate from '../components/AboutPageTemplate'
 import { HTMLContent } from '../components/Content'
+import Layout from '../components/Layout'
 
 const AboutPage = ({ data }) => {
   const { markdownRemark: post } = data
@@ -63,7 +64,7 @@ const AboutPage = ({ data }) => {
   }
 
   return (
-    <div>
+    <Layout>
       <Helmet>
         <title>{post.frontmatter.meta_title}</title>
         <meta name='description' content={post.frontmatter.meta_description} />
@@ -81,7 +82,7 @@ const AboutPage = ({ data }) => {
         image={post.frontmatter.image}
         content={post.html}
       />
-    </div>
+    </Layout>
   )
 }
 
@@ -97,13 +98,12 @@ export const aboutPageQuery = graphql`
       html
       frontmatter {
         title
-        image{
+        image {
             childImageSharp {
                 fluid(maxWidth: 1075, quality: 72) {
                     ...GatsbyImageSharpFluid
                 }
             }
-            publicURL
         }
         meta_title
         meta_description
