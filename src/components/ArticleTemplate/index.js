@@ -56,8 +56,6 @@ const ArticleTemplate = ({
 ArticleTemplate.propTypes = {
   content: PropTypes.node.isRequired,
   date: PropTypes.string,
-  cover: PropTypes.object,
-  contentComponent: PropTypes.func,
   title: PropTypes.string,
 }
 
