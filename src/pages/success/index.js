@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link} from 'gatsby'
+import 'tachyons-sass/tachyons.scss'
 
 const SuccessPage = () => (
   <section className='vh-100 avenir'>

@@ -1,5 +1,6 @@
 import React from 'react'
 import {graphql, StaticQuery} from 'gatsby'
+import 'tachyons-sass/tachyons.scss'
 import SearchBox from '../../components/SearchBox'
 
 const SearchPage = () => (
