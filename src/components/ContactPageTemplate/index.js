@@ -26,7 +26,9 @@ const ContactPageTemplate = ({
             action='/success'
             data-netlify='true'
             netlify='true'
+            netlify-honeypot='bot-field'
           >
+            <input type='hidden' name='bot-field' />
             <div className='mt3'>
               <label htmlFor='name' className='f6 b db mb2'>Name</label>
               <input className='db border-box hover-black w-100 measure ba b--black-20 pa2 br2 mb2' type='text'
