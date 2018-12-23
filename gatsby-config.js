@@ -41,6 +41,9 @@ module.exports = {
     },
     {
       resolve: `gatsby-plugin-sitemap`,
+      options: {
+        exclude: [`/tags/*`, `/success`, `/search`],
+      },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
