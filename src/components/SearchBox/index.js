@@ -12,6 +12,25 @@ export default class SearchBox extends Component {
     }
   }
 
+  getOrCreateIndex = () =>
+    this.index
+      ? this.index
+      : Index.load(this.props.searchIndex)
+
+  search = evt => {
+    const query = evt.target.value
+    this.index = this.getOrCreateIndex()
+    this.setState({
+      query,
+      // Query the index with search string to get an [] of IDs
+      results: this.index
+        .search(query, {expand: true}) // Accept partial matches
+        // Map over each ID and return the full document
+        .map(({ref}) => this.index.documentStore.getDoc(ref)),
+      isActive: !!query,
+    })
+  }
+
   render () {
     return (
       <div className='measure center pa3'>
@@ -35,7 +54,7 @@ export default class SearchBox extends Component {
           ? this.state.results
             .filter(page => page.templateKey === 'article-page')
             .map(page => (
-              <article className='pv4 bb b--black-10 ph3 ph0-l'>
+              <article key={page.slug} className='pv4 bb b--black-10 ph3 ph0-l'>
                 <Link className='db ph0-l no-underline black dim' key={page.id} to={page.slug} replace>
                   <h1 className='f3 fw1 baskerville mt0 lh-title'>{page.title}</h1>
                 </Link>
@@ -61,24 +80,5 @@ export default class SearchBox extends Component {
         }
       </div>
     )
-  }
-
-  getOrCreateIndex = () =>
-    this.index
-      ? this.index
-      : Index.load(this.props.searchIndex)
-
-  search = evt => {
-    const query = evt.target.value
-    this.index = this.getOrCreateIndex()
-    this.setState({
-      query,
-      // Query the index with search string to get an [] of IDs
-      results: this.index
-        .search(query, {expand: true}) // Accept partial matches
-        // Map over each ID and return the full document
-        .map(({ref}) => this.index.documentStore.getDoc(ref)),
-      isActive: !!query,
-    })
   }
 }
