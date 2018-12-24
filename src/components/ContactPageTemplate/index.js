@@ -24,9 +24,8 @@ const ContactPageTemplate = ({
             name='contact'
             method='POST'
             action='/success'
-            netlify='true'
             data-netlify='true'
-            netlify-honeypot='bot-field'
+            data-netlify-honeypot='bot-field'
           >
             <input type='hidden' name='bot-field' />
             <div className='mt3'>
