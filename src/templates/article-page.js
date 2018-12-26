@@ -13,7 +13,7 @@ const ArticlePage = ({ data }) => {
   const { markdownRemark: post } = data
   return (
     <Layout>
-      <section className='mw8 center'>
+      <section className='center'>
         <SE0
           title={post.frontmatter.title}
           meta_title={post.frontmatter.meta_title}
@@ -30,8 +30,10 @@ const ArticlePage = ({ data }) => {
           tags={post.frontmatter.tags}
           title={post.frontmatter.title}
         />
-        <Share title={post.frontmatter.title} slug={post.fields.slug} excerpt={post.frontmatter.meta_description} />
-        <Disqus title={post.frontmatter.title} slug={post.fields.slug} />
+        <section className='mw8 center'>
+          <Share title={post.frontmatter.title} slug={post.fields.slug} excerpt={post.frontmatter.meta_description} />
+          <Disqus title={post.frontmatter.title} slug={post.fields.slug} />
+        </section>
       </section>
     </Layout>
   )
