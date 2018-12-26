@@ -45,7 +45,7 @@ const ContactPageTemplate = ({
                 id='message' rows='6' />
             </div>
             <div className='mt5 measure tr'>
-              <input name='reset' type='reset' value='Clear'
+              <input type='reset' value='Clear'
                 className='b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib mr3' />
               <input name='submit' type='submit' value='Send Message'
                 className='b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib' />
