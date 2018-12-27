@@ -44,6 +44,7 @@ const ContactPageTemplate = ({
               <textarea className='db border-box hover-black w-100 measure ba b--black-20 pa2 br2 mb2' name='message'
                 id='message' rows='6' />
             </div>
+            <div data-netlify-recaptcha="true"></div>
             <div className='mt5 measure tr'>
               <input type='reset' value='Clear'
                 className='b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib mr3' />
