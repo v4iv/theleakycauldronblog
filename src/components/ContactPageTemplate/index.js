@@ -39,7 +39,7 @@ const ContactPageTemplate = ({
               <input className='db border-box hover-black w-100 measure ba b--black-20 pa2 br2 mb2' type='text'
                 name='email' id='email' />
             </div>
-            <div className='mt3'>
+            <div className='mt3 mb3'>
               <label htmlFor='message' className='f6 b db mb2'>Message</label>
               <textarea className='db border-box hover-black w-100 measure ba b--black-20 pa2 br2 mb2' name='message'
                 id='message' rows='6' />
