@@ -23,12 +23,13 @@ const ContactPageTemplate = ({
           <form className='pa5 black-80 measure center'
             name='contact'
             method='POST'
-            action='/success'
+            action='/success?no-cache=1'
             encType='application/x-www-form-urlencoded'
             data-netlify='true'
             data-netlify-honeypot='bot-field'
           >
             <input type='hidden' name='bot-field' />
+            <input type='hidden' name='no-cache' value='1' />
             <div className='mt3'>
               <label htmlFor='name' className='f6 b db mb2'>Name</label>
               <input className='db border-box hover-black w-100 measure ba b--black-20 pa2 br2 mb2' type='text'
@@ -44,7 +45,6 @@ const ContactPageTemplate = ({
               <textarea className='db border-box hover-black w-100 measure ba b--black-20 pa2 br2 mb2' name='message'
                 id='message' rows='6' />
             </div>
-            <div data-netlify-recaptcha="true"></div>
             <div className='mt5 measure tr'>
               <input type='reset' value='Clear'
                 className='b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib mr3' />

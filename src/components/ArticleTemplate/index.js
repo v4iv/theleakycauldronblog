@@ -23,9 +23,9 @@ const ArticleTemplate = ({
           <h1 className='f3 f2-m f-subheadline-l measure lh-title fw1 mt0'>{title}</h1>
           <div className='flex db mb4'>
             <time className='f5 f4-l db fw1 baskerville mb4-l mb2'> {date}</time>
-            {tags && tags.length
-              ? (<div className='inline-flex flex-wrap'>
-                {tags.map(tag => (
+            <div className='inline-flex flex-wrap'>
+              {tags && tags.length &&
+                tags.map(tag => (
                   <Link
                     to={`/tags/${_.kebabCase(tag)}`}
                     key={tag}
@@ -34,9 +34,7 @@ const ArticleTemplate = ({
                     <small className='f6 f4-l fw1'>#{tag}&nbsp;&nbsp;</small>
                   </Link>
                 ))}
-              </div>)
-              : null
-            }
+            </div>
           </div>
         </header>
       </section>
