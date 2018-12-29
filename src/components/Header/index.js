@@ -11,7 +11,7 @@ const Header = () => (
       <Link className='f6 f5-l link bg-animate black-80 hover-bg-light-pink dib pa3 ph4-l' to='/search'>Search</Link>
       <Link className='f6 f5-l link bg-animate black-80 hover-bg-light-green dib pa3 ph4-l' to='/about'>About</Link>
       <Link className='f6 f5-l link bg-animate black-80 hover-bg-light-yellow dib pa3 ph4-l'
-        to='/contact'>Contact</Link>
+        to='/contact?no-cache=1'>Contact</Link>
     </nav>
   </header>
 )
