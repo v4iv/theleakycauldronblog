@@ -1,14 +1,14 @@
 import React from 'react'
 import _ from 'lodash'
-import {Link} from 'gatsby'
+import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 
-const ArticleList = ({posts}) => {
+const ArticleList = ({ posts }) => {
   return (
     <section className='mw7 center avenir'>
       {posts
         .filter(post => post.node.frontmatter.templateKey === 'article-page')
-        .map(({node: post}) => {
+        .map(({ node: post }) => {
           return (
             <article key={post.id} className='pv4 bb b--black-10 ph3 ph0-l'>
               <div className='flex flex-column flex-row-ns'>

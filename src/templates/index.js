@@ -1,6 +1,6 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import Helmet from 'react-helmet'
-import {Link} from 'gatsby'
+import { Link } from 'gatsby'
 
 import ArticleList from '../components/ArticleList'
 import config from '../../config'
@@ -23,8 +23,8 @@ const PaginationLink = props => {
 
 export default class IndexPage extends Component {
   render () {
-    const {pageContext} = this.props
-    const {group, index, first, last} = pageContext
+    const { pageContext } = this.props
+    const { group, index, first, last } = pageContext
     const previousUrl = index - 1 === 1 ? '' : (index - 1).toString()
     const nextUrl = (index + 1).toString() + '/'
 
