@@ -1,6 +1,6 @@
-import React, {Component} from 'react'
-import {Link} from 'gatsby'
-import {Index} from 'elasticlunr'
+import React, { Component } from 'react'
+import { Link } from 'gatsby'
+import { Index } from 'elasticlunr'
 
 export default class SearchBox extends Component {
   constructor (props) {
@@ -24,9 +24,9 @@ export default class SearchBox extends Component {
       query,
       // Query the index with search string to get an [] of IDs
       results: this.index
-        .search(query, {expand: true}) // Accept partial matches
+        .search(query, { expand: true }) // Accept partial matches
         // Map over each ID and return the full document
-        .map(({ref}) => this.index.documentStore.getDoc(ref)),
+        .map(({ ref }) => this.index.documentStore.getDoc(ref)),
       isActive: !!query,
     })
   }
@@ -36,7 +36,7 @@ export default class SearchBox extends Component {
       <div className='measure center pa3'>
         <fieldset className='cf bn ma0 pa0'>
           <div className='cf'>
-            <small id='name-desc' className='f6 black-60 db mb2 tr' style={{cursor: 'pointer'}}
+            <small id='name-desc' className='f6 black-60 db mb2 tr' style={{ cursor: 'pointer' }}
               onClick={() => window.history.back()}>Close
             </small>
             <label className='clip' htmlFor='search'>Search</label>
