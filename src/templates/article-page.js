@@ -1,16 +1,16 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
-import { HTMLContent } from '../components/Content'
-import ArticleTemplate from '../components/ArticleTemplate'
-import SE0 from '../components/SEO'
-import Disqus from '../components/Disqus'
-import Share from '../components/Share'
-import 'prismjs/themes/prism-tomorrow.css'
-import Layout from '../components/Layout'
+import React from "react";
+import PropTypes from "prop-types";
+import { graphql } from "gatsby";
+import { HTMLContent } from "../components/Content";
+import ArticleTemplate from "../components/ArticleTemplate";
+import SE0 from "../components/SEO";
+import Disqus from "../components/Disqus";
+import Share from "../components/Share";
+import "prismjs/themes/prism-tomorrow.css";
+import Layout from "../components/Layout";
 
 const ArticlePage = ({ data }) => {
-  const { markdownRemark: post } = data
+  const { markdownRemark: post } = data;
   return (
     <Layout>
       <section className='center'>
@@ -18,7 +18,7 @@ const ArticlePage = ({ data }) => {
           title={post.frontmatter.title}
           meta_title={post.frontmatter.meta_title}
           meta_desc={post.frontmatter.meta_description}
-          cover={post.frontmatter.cover}
+          cover={post.frontmatter.cover.publicURL}
           slug={post.fields.slug}
           date={post.frontmatter.date}
         />
@@ -31,45 +31,45 @@ const ArticlePage = ({ data }) => {
           title={post.frontmatter.title}
         />
         <section className='mw8 center'>
-          <Share title={post.frontmatter.title} slug={post.fields.slug} excerpt={post.frontmatter.meta_description} />
-          <Disqus title={post.frontmatter.title} slug={post.fields.slug} />
+          <Share title={post.frontmatter.title} slug={post.fields.slug} excerpt={post.frontmatter.meta_description}/>
+          <Disqus title={post.frontmatter.title} slug={post.fields.slug}/>
         </section>
       </section>
     </Layout>
-  )
-}
+  );
+};
 
 ArticlePage.propTypes = {
   data: PropTypes.shape({
-    markdownRemark: PropTypes.object,
-  }),
-}
+    markdownRemark: PropTypes.object
+  })
+};
 
-export default ArticlePage
+export default ArticlePage;
 
 export const pageQuery = graphql`
-  query ArticleByID($id: String!) {
-    markdownRemark(id: { eq: $id }) {
-      id
-      html
-      fields {
-        slug
-      }
-      frontmatter {
-        date(formatString: "MMMM DD, YYYY")
-        title
-        cover {
-            childImageSharp {
-                fluid(maxWidth: 1075, quality: 72) {
-                    ...GatsbyImageSharpFluid
-                }
+    query ArticleByID($id: String!) {
+        markdownRemark(id: { eq: $id }) {
+            id
+            html
+            fields {
+                slug
             }
-            publicURL
+            frontmatter {
+                date(formatString: "MMMM DD, YYYY")
+                title
+                cover {
+                    childImageSharp {
+                        fluid(maxWidth: 1075, quality: 72) {
+                            ...GatsbyImageSharpFluid
+                        }
+                    }
+                    publicURL
+                }
+                meta_title
+                meta_description
+                tags
+            }
         }
-        meta_title
-        meta_description
-        tags
-      }
     }
-  }
-`
+`;
