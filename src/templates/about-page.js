@@ -46,7 +46,7 @@ const AboutPage = ({ data }) => {
     },
     image: {
       '@type': 'ImageObject',
-      url: post.frontmatter.image,
+      url: post.frontmatter.image.publicURL,
       width: 3120,
       height: 1394,
     },
