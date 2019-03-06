@@ -3,6 +3,7 @@ import { Link } from 'gatsby'
 import _ from 'lodash'
 import Img from 'gatsby-image'
 import './styles.sass'
+import 'prismjs/themes/prism-tomorrow.css'
 import config from '../../../config'
 import Content from '../Content'
 
