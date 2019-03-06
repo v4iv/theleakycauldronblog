@@ -3,14 +3,14 @@ templateKey: article-page
 title: Sending Mass Mail from Google Sheet using Scripts
 date: '2018-06-04T11:22:05+05:30'
 cover: /img/mass_mail_google_script.jpg
-tags:
-  - GoogleSheet
-  - GoogleScript
-  - Email
 meta_title: Sending Mass Mail from Google Sheet using Scripts
 meta_description: >-
   Leverage the power of Google Script to run email campaigns, right from your
   Google Sheet.
+tags:
+  - GoogleSheet
+  - GoogleScript
+  - Email
 ---
 Ever find yourself with a big spreadsheet full of names and emails and you have to send personalized emails to all of them? We did. We had a spreadsheet full of candidates for hiring and: 
 
