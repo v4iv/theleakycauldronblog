@@ -3,19 +3,19 @@ templateKey: article-page
 title: How I became an Aquarist by Accident!
 date: '2018-08-13T11:03:36+05:30'
 cover: /img/aquarist_accidental.jpg
-tags:
-  - Aquariums
-  - Fishes
 meta_title: How I became an Aquarist by Accident!
 meta_description: >-
   This is the story of how I was suddenly pulled into the world of colorful
   fishes and the impact it had on my life.
+tags:
+  - Aquariums
+  - Fishes
 ---
 One fine evening as I was walking off my office complex, right outside the gate I saw a vendor selling fisheS in a bowl. I capitalised the S(knowing very well fishe-s isn't the actual plural of fish, rather more of an adapted word) to emphasize the amount. While I wasn't an expert in fish keeping, I knew very well keeping four fishes in a 15cm(6 inch) bowl isn't a good idea. So I decide to buy it and give it away to a local pet store. I was surprised by the price as they were asking for mere ₹200 (about 2.5$) for 4 fishes along with a bowl and fish food! So I buy it and head for the local pet store only to find that it's closed. I had no other option rather than to take it home for the night, and that's where it all began.
 
 Reaching home I looked up online forums to find the 4 fish were:
 
-*  1 Shubunkin Goldfish
+* 1 Shubunkin Goldfish
 * 1 Comet Goldfish 
 * 1 Kissing Gourami 
 * 1 Iridescent Shark 

@@ -3,16 +3,16 @@ templateKey: article-page
 title: Making a marketing website using Gatsby Starter Business
 date: '2018-04-10T12:05:03+05:30'
 cover: /img/gatsby_marketing_website.jpg
+meta_title: Making a marketing website using Gatsby Starter Business
+meta_description: >-
+  Make an SEO friendly website, leveraging Gatsby Starter Business, perfect for
+  your marketing needs like Sitemap, Schemas, OpenGraph, Meta Tags, GTM etc
 tags:
   - GatsbyJS
   - ReactJS
   - Gatsby Starter
   - Marketing
   - SEO
-meta_title: Making a marketing website using Gatsby Starter Business
-meta_description: >-
-  Make an SEO friendly website, leveraging Gatsby Starter Business, perfect for
-  your marketing needs like Sitemap, Schemas, OpenGraph, Meta Tags, GTM etc
 ---
 Gatsby JS brought something that everyone was waiting for, a React JS based static site generator, and that too a powerful one. True to their boast that it's really hard to make sloppy website with Gatsby, making it amazing for marketing websites.
 

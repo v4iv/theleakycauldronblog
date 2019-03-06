@@ -3,14 +3,14 @@ templateKey: article-page
 title: Quirks of migrating the blog to Gatsby v2
 date: 2018-12-03T12:47:42.410Z
 cover: /img/everything_is_connected.gif
-tags:
-  - Migration
-  - GatsbyJS
 meta_title: Quirks of migrating the blog to Gatsby v2 and how to deal with them.
 meta_description: >-
   Dealing with the struggles and features of migrating to Gatsby v2. From
   handling broken dependencies to dealing with unexpected broken features to
   utilising new features of Gatsby v2.
+tags:
+  - Migration
+  - GatsbyJS
 ---
 When the Gatsby v2 dropped I was like do I really need this, my website is already faster than anything on Gatsby v1? But then I remembered I made this website more so because I wanted to try Gatsby than anything else. Finally, I took time out to do it last weekend.
 

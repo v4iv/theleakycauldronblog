@@ -3,15 +3,15 @@ templateKey: article-page
 title: '16 Awesome Moments from Avengers: Infinity War'
 date: '2018-04-30T18:03:07+05:30'
 cover: /img/avengers_infinity_war.jpg
+meta_title: 'Awesome Moments from Avengers: Infinity War'
+meta_description: >-
+  Here are some of the most awesome moments from the long-awaited Avenger's
+  Infinity War.Warning Major Spoiler
 tags:
   - Avengers
   - Infinity War
   - Awesome Moments
   - Spoilers
-meta_title: 'Awesome Moments from Avengers: Infinity War'
-meta_description: >-
-  Here are some of the most awesome moments from the long-awaited Avenger's
-  Infinity War.Warning Major Spoiler
 ---
 Friday marked the release of Avengers Infinity War, and I couldn't miss it for the world. In short Marvel nailed it, from character chemistry to villain. The film was an emotional roller coaster, with lot of people claiming to need therapy after it was over. Here are some of the moments I thought were the best (Spoilers, DUH!):
 
