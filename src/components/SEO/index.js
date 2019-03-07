@@ -70,6 +70,8 @@ const SE0 = ({ title, meta_title, meta_desc, cover, slug, date }) => {
       {/* General tags */}
       <meta name='description' content={meta_desc} />
       <meta name='image' content={cover} />
+      <link rel='canonical' href={postURL} />
+
       {/* Schema.org tags */}
       <script type='application/ld+json'>
         {JSON.stringify(breadcrumbSchemaOrgJSONLD)}
@@ -77,6 +79,7 @@ const SE0 = ({ title, meta_title, meta_desc, cover, slug, date }) => {
       <script type='application/ld+json'>
         {JSON.stringify(blogPostingSchemaOrgJSONLD)}
       </script>
+
       {/* OpenGraph tags */}
       <meta property='og:url' content={postURL} />
       <meta property='og:type' content='article' />
@@ -87,8 +90,10 @@ const SE0 = ({ title, meta_title, meta_desc, cover, slug, date }) => {
         property='fb:app_id'
         content={config.siteFBAppID ? config.siteFBAppID : ''}
       />
+
       {/* Twitter Card tags */}
       <meta name='twitter:card' content='summary_large_image' />
+      <meta name='twitter:site' content={postURL} />
       <meta
         name='twitter:creator'
         content={config.userTwitter ? config.userTwitter : ''}

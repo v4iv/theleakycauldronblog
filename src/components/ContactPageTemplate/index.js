@@ -1,7 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { navigate } from 'gatsby-link'
 import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
 
 function encode (data) {
   return Object.keys(data)
@@ -38,16 +37,10 @@ class ContactPageTemplate extends Component {
     const {
       title,
       subtitle,
-      meta_title,
-      meta_description,
     } = this.props
 
     return (
-      <div>
-        <Helmet>
-          <title>{meta_title}</title>
-          <meta name='description' content={meta_description} />
-        </Helmet>
+      <Fragment>
         <section className='mw7 center avenir'>
           <div className='mt3'>
             <div className='pa3 measure center bb'>
@@ -94,7 +87,7 @@ class ContactPageTemplate extends Component {
             </form>
           </div>
         </section>
-      </div>
+      </Fragment>
     )
   }
 }
@@ -102,8 +95,6 @@ class ContactPageTemplate extends Component {
 ContactPageTemplate.propTypes = {
   title: PropTypes.string,
   subtitle: PropTypes.string,
-  meta_title: PropTypes.string,
-  meta_description: PropTypes.string,
 }
 
 export default ContactPageTemplate
