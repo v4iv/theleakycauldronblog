@@ -324,3 +324,66 @@ next we add some translations, to do that we need to create a folder called stat
 └── yarn.lock
 ```
 Add translations to `common.json` files
+
+`static/locales/en/common.json`
+
+```json
+{
+    "hello-world": "Hello, World!",
+    "goto-second-page": "Goto Second Page",
+    "change-language": "Change Language",
+    "welcome": "Welcome To Second Page",
+    "go-back": "Go Back",
+}
+```
+
+`static/locales/hi/common.json`
+
+```json
+{
+    "hello-world": "नमस्ते, विश्व!",
+    "goto-second-page": "दूसरे पेज पर जाएं",
+    "change-language": "भाषा बदलें",
+    "welcome": "दूसरे पेज पर आपका स्वागत है",
+    "go-back": "वापस जाएं",
+}
+```
+then we refactor our two pages to include translation HOC, namespaces and translation function, also add a button to change language.
+
+`pages/index.tsx` :
+
+```typescript jsx
+import React from 'react'
+import { i18n, Link, withNamespaces } from '../i18n' // We replace next/link with the one provide by next-i18next, this helps with locale subpaths
+
+const HomePage: React.FunctionComponent = ({ t }) => (
+    <div>
+        <h1>{t('hello-world')}</h1>
+        <button type='button' onClick={() => i18n.changeLanguage(i18n.language === 'en' ? 'hi' : 'en')}>{t('change-language')}</button>
+        <Link href='/second-page'><button type='button'>{t('goto-second-page')}</button></Link>
+    <div>
+)
+
+HomePage.getInitialProps = () => ({
+  namespacesRequired: ['common'],
+})
+
+export default withNamespaces('common')(HomePage)
+```
+and 
+
+`pages/second-page.tsx`
+
+```typescript jsx
+import React from 'react'
+import { withNamespaces, Link } from '../i18n'
+
+const SecondPage: React.FunctionComponent = ({ t }) => (
+    <div>
+        <h1>{t('welcome')}</h1>
+        <Link href='/'><button type='button'>{t('go-back')}</button></Link>
+    </div>
+)
+
+export default withNamespaces('common')(SecondPage)
+```
