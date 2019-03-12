@@ -387,3 +387,29 @@ const SecondPage: React.FunctionComponent = ({ t }) => (
 
 export default withNamespaces('common')(SecondPage)
 ```
+now all we have to do is make minor changes to our `tsconfig.server.json` to include our i18n compiled file as it is in our build folder
+
+`tsconfig.server.json` :
+
+```json
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "module": "commonjs",
+    "outDir": ".build",
+    "target": "es2017",
+    "lib": [
+      "es2017"
+    ]
+  },
+  "include": [
+    "i18n.ts",
+    "next.config.js",
+    "server/**/*.ts",
+  ]
+}
+```
+
+That's it we are done now you can go ahead and try to run, to see if everything is working.
+
+And that's how you set up next-i18next with typescript in Next JS app.
