@@ -11,7 +11,6 @@ tags:
   - i18n
   - NextJS
   - TypeScript
-  - i18next
   - SSR
 ---
 As I was starting a new [NextJS](https://nextjs.org) project, I planned to do it in TypeScript. Since I don't know TypeScript, my initial plan was to learn as I go. Comes the time I had to set up i18n using `next-i18next` plugin, and it was a bit problematic as there was no example for it on the official `next-i18next` repository. After I successfully learnt how to do it, I did make a PR for typescript example on the original repo but this is incase it doesn't get accepted.
@@ -46,7 +45,7 @@ yarn add @types/next @types/react @types/react-dom typescript --dev
 
 Now we add our two pages
 
-`pages/index.ts` :
+`pages/index.tsx` :
 
 ```typescript jsx
 import React from 'react'
@@ -64,7 +63,7 @@ export default HomePage
 
 and
 
-`pages/second-page.ts` :
+`pages/second-page.tsx` :
 
 ```typescript jsx
 import React from 'react'
@@ -164,6 +163,7 @@ and
 ```bash
 yarn add nodemon ts-node --dev
 ```
+
 after doing that we need to create our custom server, in the root directory create a folder called server, in that, create a file called `index.ts`
 
 `server/index.ts` :
@@ -187,6 +187,7 @@ const handle = app.getRequestHandler();
   console.log(`🚀 Ready on http://localhost:${port}`) // eslint-disable-line no-console
 })()
 ```
+
 and then a `tsconfig.server.json` file in the root directory
 
 `tsconfig.server.json` :
@@ -207,12 +208,11 @@ and then a `tsconfig.server.json` file in the root directory
     "server/**/*.ts",
   ]
 }
-
 ```
 
 now all we need to do some changes in our npm scripts, refactor the following lines in `package.json` 
 
-```
+```json
 "scripts": {
     "dev": "nodemon --exec ts-node --project tsconfig.server.json server",
     "build": "next build && tsc --project tsconfig.server.json",
@@ -220,4 +220,107 @@ now all we need to do some changes in our npm scripts, refactor the following li
     "type-check": "tsc"
   },
 ```
+
 give it a spin, to see if everything is working all right.
+
+## Implementing next-i18next
+
+All that's left now is to add i18next, to do that we begin by adding the following package
+
+```bash
+yarn add next-i18next
+```
+next we add a file `i18n.ts` to our root
+
+`i18n.ts` :
+
+```typescript
+const NextI18Next = require('next-i18next/dist/commonjs').default
+
+module.exports = new NextI18Next({
+  defaultLanguage: 'en',
+  otherLanguages: ['hi'],
+  localeSubpaths: 'foreign', // locale subpaths for url could be none, foreign or all
+})
+```
+now we add the i18next middleware to our server as well i18n configuration
+
+`server/index.ts`:
+
+```typescript
+const express = require('express')
+const next = require('next')
+const nextI18NextMiddleware = require('next-i18next/middleware')
+
+const nextI18next = require('../i18n')
+
+const port = process.env.PORT || 3000
+const app = next({ dev: process.env.NODE_ENV !== 'production' })
+const handle = app.getRequestHandler();
+
+(async () => {
+  await app.prepare()
+  const server = express()
+
+  // use the next-i18next middleware with our i18n configuration
+  try {
+    server.use(nextI18NextMiddleware(nextI18next))
+  } catch (e) {
+    throw (e)
+  }
+
+  // handle nextjs routing
+  server.get('*', (req, res) => handle(req, res))
+
+  await server.listen(port)
+  console.log(`🚀 Ready on http://localhost:${port}`) // eslint-disable-line no-console
+})()
+```
+next we add `appWithTranslation` HOC to a custom `_app.tsx`
+
+`pages/_app.tsx` :
+
+```typescript jsx
+import React from 'react'
+import App, { Container } from 'next/app'
+import { appWithTranslation } from '../i18n'
+
+class MyApp extends App {
+  render() {
+    const { Component, pageProps } = this.props
+    return (
+      <Container>
+        <Component {...pageProps} />
+      </Container>
+    )
+  }
+}
+
+export default appWithTranslation(MyApp)
+```
+
+next we add some translations, to do that we need to create a folder called static in our root, then add a folder called locales in static then add folders named with language codes in locales and add common.json files to them. In our case we'll be adding english as default and hindi as the other language
+
+```
+.
+├── pages
+│   ├-- _app.tsx
+│   ├-- index.tsx
+│   └-- second-page.tsx
+├── static
+│   └-- locales
+│       ├-- en
+│       │   └-- common.json
+│       └-- hi
+│           └-- common.json
+├-- server
+│   └-- index.ts
+├-- .babelrc
+├-- i18n.ts
+├-- next.config.js
+├-- package.json
+├-- tsconfig.json
+├-- tsconfig.server.json
+└── yarn.lock
+```
+Add translations to `common.json` files
