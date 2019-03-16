@@ -4,6 +4,7 @@ import ArticleTemplate from '../../components/ArticleTemplate'
 
 const ArticlePreview = ({ entry, widgetFor }) => {
   const date = entry.getIn(['data', 'date'])
+
   return (
     <ArticleTemplate
       content={widgetFor('body')}
