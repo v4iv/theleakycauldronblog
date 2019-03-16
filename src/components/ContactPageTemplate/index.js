@@ -16,12 +16,12 @@ class ContactPageTemplate extends Component {
 
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value })
-  }
+  };
 
   handleSubmit = e => {
     e.preventDefault()
     const form = e.target
-    fetch('/?no-cache=1', {
+    fetch("/?no-cache=1", {                                 //eslint-disable-line
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({
@@ -30,8 +30,8 @@ class ContactPageTemplate extends Component {
       }),
     })
       .then(() => navigate(form.getAttribute('action')))
-      .catch(error => alert(error))
-  }
+      .catch(error => alert(error));                        //eslint-disable-line
+  };
 
   render () {
     const {
