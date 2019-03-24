@@ -124,6 +124,10 @@ module.exports = {
       options: {
         // Find the view id in the GA admin in a section labeled "views"
         GAViewID: `164408679`,
+        jwt: {
+          client_email: process.env.CLIENT_EMAIL,
+          private_key: process.env.PRIVATE_KEY,
+        },
         minimumThreshold: 0.03,
         // The "period" for fetching analytic data.
         period: {
