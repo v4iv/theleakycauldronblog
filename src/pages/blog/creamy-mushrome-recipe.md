@@ -41,7 +41,7 @@ This dish is something of my own experiment, but extremely tasty. Best enjoyed w
 
 1. Melt butter in a non stick pan, add garlic paste, chopped green chillies, onions and bell peppers. Saute them till onions turn pink
 2. Add mushroom and cook them till they turn golden brown
-3. Sprinkle garam masala, oregano-garlic powder liberally and add a pinch of cardamom powder to enhanced fragrance of our MushRome
+3. Sprinkle garam masala, oregano-garlic powder liberally and add a pinch of cardamom powder to enhanced fragrance of our dish
 4. Add 2 Spoons of red chilli sauce, enough to coat all the mushrooms
 5. Pour 4-5 tablespoons of cream and keep stirring to mix everything well
 6. Cook for 15-20 mins, make sure to keep stirring, and that's it.
