@@ -33,9 +33,8 @@ This dish is something of my own experiment, but extremely tasty. Best enjoyed w
 ## Preparation
 
 * Chop mushrooms in quarters
-* Slit 2 green chillies in half, length-wise
-* Finely chop the other two green chillies
-* Cut out thin slices of Bell Peppers
+* Finely chop 2 green chillies And Slit other 2 in half for garnishing
+* Cut thin slices of Bell Peppers
 * Slice onions in ring shape
 
 ## Cooking Steps
