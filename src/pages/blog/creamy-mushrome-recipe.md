@@ -32,7 +32,7 @@ This dish is something of my own experiment, but extremely tasty. Best enjoyed w
 
 ## Preparation
 
-* Chop the mushrooms in quarters
+* Chop mushrooms in quarters
 * Slit 2 green chillies in half, length-wise
 * Finely chop the other two green chillies
 * Cut out thin slices of Bell Peppers
