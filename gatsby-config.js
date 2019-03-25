@@ -2,6 +2,27 @@ const config = require('./config')
 
 const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix
 
+const dynamicPlugins = []
+if (process.env.CLIENT_EMAIL) {
+  // pick data from 3 months ago
+  const startDate = new Date()
+  startDate.setMonth(startDate.getMonth() - 3)
+  dynamicPlugins.push({
+    resolve: `gatsby-plugin-guess-js`,
+    options: {
+      GAViewID: `164408679`,
+      jwt: {
+        client_email: process.env.CLIENT_EMAIL,
+        private_key: process.env.PRIVATE_KEY,
+      },
+      period: {
+        startDate,
+        endDate: new Date(),
+      },
+    },
+  })
+}
+
 module.exports = {
   siteMetadata: {
     title: config.siteTitle,
@@ -117,23 +138,6 @@ module.exports = {
       options: {
         id: config.googleTagManagerID,
         includeInDevelopment: false,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-guess-js`,
-      options: {
-        // Find the view id in the GA admin in a section labeled "views"
-        GAViewID: `164408679`,
-        jwt: {
-          client_email: process.env.CLIENT_EMAIL,
-          private_key: process.env.PRIVATE_KEY,
-        },
-        minimumThreshold: 0.03,
-        // The "period" for fetching analytic data.
-        period: {
-          startDate: new Date(`2018-4-10`),
-          endDate: new Date(),
-        },
       },
     },
     {
@@ -262,5 +266,5 @@ module.exports = {
       },
     },
     `gatsby-plugin-netlify`,
-  ],
+  ].concat(dynamicPlugins),
 }
