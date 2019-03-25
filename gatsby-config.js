@@ -2,6 +2,31 @@ const config = require('./config')
 
 const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix
 
+const dynamicPlugins = []
+if (process.env.CLIENT_EMAIL) {
+  // pick data from 3 months ago
+  const startDate = new Date()
+  startDate.setMonth(startDate.getMonth() - 3)
+  try {
+    dynamicPlugins.push({
+      resolve: `gatsby-plugin-guess-js`,
+      options: {
+        GAViewID: `164408679`,
+        jwt: {
+          client_email: process.env.CLIENT_EMAIL,
+          private_key: process.env.PRIVATE_KEY,
+        },
+        period: {
+          startDate,
+          endDate: new Date(),
+        },
+      },
+    })
+  } catch (e) {
+    console.log(e)
+  }
+}
+
 module.exports = {
   siteMetadata: {
     title: config.siteTitle,
