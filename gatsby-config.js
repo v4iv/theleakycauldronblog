@@ -270,5 +270,5 @@ module.exports = {
       },
     },
     `gatsby-plugin-netlify`,
-  ].concat(dynamicPlugins),
+  ],
 }
