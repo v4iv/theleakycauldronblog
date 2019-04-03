@@ -27,6 +27,6 @@ Click on _Create credentials_ and select _Service account key_ from the dropdown
 
 ![google-api-console-credentials-guessjs-2](/img/screenshot-2019-04-04-at-12.03.05-am.png "google-api-console-credentials-2")
 
-In the new page create a new Service Account.
+In the new page create a new Service Account. Give desired names, and for the role select
 
 ## Add _gatsby-plugin-guess-js_ to _gatsby-config.js_ dynamically
