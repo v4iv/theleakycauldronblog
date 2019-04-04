@@ -47,7 +47,7 @@ Now we add our two pages
 
 `pages/index.tsx` :
 
-```typescript jsx
+```typescript
 import React from 'react'
 import Link from 'next/link'
 
@@ -65,7 +65,7 @@ and
 
 `pages/second-page.tsx` :
 
-```typescript jsx
+```typescript
 import React from 'react'
 import Link from 'next/link'
 
@@ -245,7 +245,7 @@ module.exports = new NextI18Next({
 ```
 now we add the i18next middleware to our server as well i18n configuration
 
-`server/index.ts`:
+`server/index.ts` :
 
 ```typescript
 const express = require('express')
@@ -280,7 +280,7 @@ next we add `appWithTranslation` HOC to a custom `_app.tsx`
 
 `pages/_app.tsx` :
 
-```typescript jsx
+```typescript
 import React from 'react'
 import App, { Container } from 'next/app'
 import { appWithTranslation } from '../i18n'
@@ -325,7 +325,7 @@ next we add some translations, to do that we need to create a folder called stat
 ```
 Add translations to `common.json` files
 
-`static/locales/en/common.json`
+`static/locales/en/common.json` :
 
 ```json
 {
@@ -337,7 +337,7 @@ Add translations to `common.json` files
 }
 ```
 
-`static/locales/hi/common.json`
+`static/locales/hi/common.json` :
 
 ```json
 {
@@ -352,7 +352,7 @@ then we refactor our two pages to include translation HOC, namespaces and transl
 
 `pages/index.tsx` :
 
-```typescript jsx
+```typescript
 import React from 'react'
 import { i18n, Link, withNamespaces } from '../i18n' // We replace next/link with the one provide by next-i18next, this helps with locale subpaths
 
@@ -372,9 +372,9 @@ export default withNamespaces('common')(HomePage)
 ```
 and 
 
-`pages/second-page.tsx`
+`pages/second-page.tsx` :
 
-```typescript jsx
+```typescript
 import React from 'react'
 import { withNamespaces, Link } from '../i18n'
 
