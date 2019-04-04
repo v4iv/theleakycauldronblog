@@ -54,7 +54,8 @@ const dynamicPlugins = []
 // pick data from 3 months ago
 const startDate = new Date()
 startDate.setMonth(startDate.getMonth() - 3)
-dynamicPlugins.push({
+if(process.env.CLIENT_EMAIL && process.env.PRIVATE_KEY && process.env.GA_VIEW_ID) {
+    dynamicPlugins.push({
       resolve: `gatsby-plugin-guess-js`,
       options: {
         GAViewID: process.env.GA_VIEW_ID,
@@ -68,6 +69,7 @@ dynamicPlugins.push({
         },
       },
     })
+}
 ```
 
 Now we take our `dynamicPlugins` array and concat it with our main plugin config array.
