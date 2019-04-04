@@ -14,7 +14,7 @@ tags:
   - Marketing
   - SEO
 ---
-**NOTE:** Updated for _**gatsby-starter-business v2.1**_
+**NOTE:** Updated for **_gatsby-starter-business v2.1_**
 
 Gatsby JS brought something that everyone was waiting for, a React JS based static site generator, and that too a powerful one. True to their boast that it's really hard to make sloppy website with Gatsby, making it amazing for marketing websites.
 
@@ -41,7 +41,7 @@ This will create a clone of Gatsby Starter Business, with project name you gave 
 
 ## Get Started With Gatsby Starter Business
 
-To configure Gatsby Starter Business open `data` folder and open `config.js` file. Change the required variables and save it. And push it to a new repository in your Github. 
+To configure Gatsby Starter Business, open `config.js` file. Change the required variables and save it. And push it to a new repository in your Github. 
 
 ```javascript
 module.exports = {
@@ -64,7 +64,6 @@ module.exports = {
   themeColor: '#00d1b2', // Used for setting manifest and progress theme colors.
   backgroundColor: '#ffffff', // Used for setting manifest background color.
 }
-
 ```
 
 Then from Netlify dashboard create a new site from github for the same repository, and deploy it. 
