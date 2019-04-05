@@ -2,11 +2,9 @@ import React, { Component, Fragment } from 'react'
 import { navigate } from 'gatsby-link'
 import PropTypes from 'prop-types'
 
-function encode (data) {
-  return Object.keys(data)
-    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-    .join('&')
-}
+const encode = (data) => Object.keys(data)
+  .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+  .join('&')
 
 class ContactPageTemplate extends Component {
   constructor (props) {
