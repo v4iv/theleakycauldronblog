@@ -20,7 +20,6 @@
     "gatsby-paginate": "^1.0.17",
     "gatsby-plugin-feed": "^2.0.14",
     "gatsby-plugin-google-tagmanager": "^2.0.9",
-    "gatsby-plugin-guess-js": "^1.0.5",
     "gatsby-plugin-manifest": "^2.0.19",
     "gatsby-plugin-netlify": "^2.0.11",
     "gatsby-plugin-netlify-cms": "^3.0.12",
