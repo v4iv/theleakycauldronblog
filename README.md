@@ -1,5 +1,5 @@
 # Gatsby Starter Blog Tachyons
-
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e87569d9-1f7b-4ca2-941b-6d5081d976c1/deploy-status)](https://app.netlify.com/sites/theleakycauldronblog/deploys)
 ## Features
 A blog powered by Gatsby v2 and Netlify CMS
 
