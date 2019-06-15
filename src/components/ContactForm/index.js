@@ -77,6 +77,7 @@ const ContactForm = () => {
             <Field
               className='db border-box hover-black w-100 measure ba b--black-20 pa2 br2 mb2'
               name='message'
+              component='textarea'
               rows='6'
             />
             {touched.message && errors.message && <p className='f6 red'>{errors.message}</p>}
