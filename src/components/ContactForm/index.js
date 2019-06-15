@@ -3,16 +3,16 @@ import { Formik, Field } from 'formik'
 import { navigate } from 'gatsby-link'
 import validationSchema from './validationSchema'
 
-const ContactForm = () => {
-  const encode = (data) => {
-    return Object.keys(data)
-      .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-      .join('&')
-  }
+const encode = (data) => {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&')
+}
 
+const ContactForm = () => {
   return (
     <Formik
-      initialValues={{ name: null, email: null, message: null }}
+      initialValues={{ name: '', email: '', message: '' }}
       validationSchema={validationSchema}
       onSubmit={(values, { setSubmitting }) => {
         fetch("/?no-cache=1", {                                 //eslint-disable-line
@@ -29,6 +29,7 @@ const ContactForm = () => {
           })
           .catch(error => {
             console.log(error)
+            alert('Error: Please Try Again!')                            //eslint-disable-line
             setSubmitting(false)
           })
       }}
@@ -36,12 +37,13 @@ const ContactForm = () => {
         errors,
         touched,
         isSubmitting,
+        handleSubmit,
+        handleReset,
       }) => (
         <form className='pa5 black-80 measure center'
           name='contact'
-          method='post'
-          action='/success'
-          encType='application/x-www-form-urlencoded'
+          onSubmit={handleSubmit}
+          onReset={handleReset}
           data-netlify='true'
           data-netlify-honeypot='bot-field'
         >
@@ -59,6 +61,7 @@ const ContactForm = () => {
               type='text'
               name='name'
             />
+            {touched.name && errors.name && <p className='f6 red'>{errors.name}</p>}
           </div>
           <div className='mt3'>
             <label htmlFor='email' className='f6 b db mb2'>Email</label>
@@ -67,6 +70,7 @@ const ContactForm = () => {
               type='text'
               name='email'
             />
+            {touched.email && errors.email && <p className='f6 red'>{errors.email}</p>}
           </div>
           <div className='mt3 mb3'>
             <label htmlFor='message' className='f6 b db mb2'>Message</label>
@@ -75,6 +79,7 @@ const ContactForm = () => {
               name='message'
               rows='6'
             />
+            {touched.message && errors.message && <p className='f6 red'>{errors.message}</p>}
           </div>
           <div className='mt5 measure tr'>
             <input type='reset' value='Clear'
