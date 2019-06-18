@@ -21,7 +21,7 @@ Netlify Forms is yet another amazing service provided by Netlify with a generous
 
 We're gonna first install Formik:
 
-```
+```bash
 yarn add formik
 ```
 
@@ -29,7 +29,7 @@ Then we create a Function Component called `ContactForm.js`, in it we'll begin b
 
 **ContactForm.js:**
 
-```
+```javascript
 import React from 'react'
 import { Formik, Field } from 'formik'
 
@@ -95,7 +95,7 @@ This is a basic Contact form with fields for Name, Email & Message. Next we setu
 
 Yup is a form validation library and has tight integration with Formik. Yup helps us define schema like Joi and validate against it. Add it to your project:
 
-```
+```bash
 yarn add yup
 ```
 
@@ -103,7 +103,7 @@ Create a file called validationSchema.js and create a schema as shown below:
 
 **validationSchema.js:**
 
-```
+```javascript
 import * as Yup from 'yup'
 
 const validationSchema = Yup.object().shape({
