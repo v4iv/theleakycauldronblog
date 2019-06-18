@@ -19,7 +19,15 @@ Netlify Forms is yet another amazing service provided by Netlify with a generous
 
 ## Setting Up Formik Form
 
-We're gonna first create a Function Component called `ContactForm.js`, in it we'll begin by setting up Formik and it's required attributes.
+We're gonna first install Formik:
+
+```
+yarn add formik
+```
+
+Then we create a Function Component called `ContactForm.js`, in it we'll begin by setting up Formik and it's required attributes - initialValues, onSubmit & render).
+
+**ContactForm.js:**
 
 ```
 import React from 'react'
@@ -28,5 +36,87 @@ import { Formik, Field } from 'formik'
 const ContactForm = () => {
   return (
     <Formik
+      initialValues={{ name: '', email: '', message: '' }}
+      onSubmit={values => console.log(values)}
+      render={({
+        handleSubmit,
+        handleReset,
+      }) => (
+        <form className='form'
+          name='contact'
+          onSubmit={handleSubmit}
+          onReset={handleReset}
+          data-netlify='true'
+          data-netlify-honeypot='bot-field'
+        >
+          <div className='field'>
+            <label htmlFor='name' className='label'>Name</label>
+            <Field
+              className='input'
+              type='text'
+              name='name'
+            />
+          </div>
+          <div className='field'>
+            <label htmlFor='email' className='label'>Email</label>
+            <Field
+              className='input'
+              type='text'
+              name='email'
+            />
+          </div>
+          <div className='field'>
+            <label htmlFor='message' className='label'>Message</label>
+            <Field
+              className='input-textarea'
+              name='message'
+              component='textarea'
+              rows='6'
+            />
+          </div>
+          <div className='buttons'>
+            <input type='reset' value='Clear'
+              className='button' />
+            <input name='submit' type='submit' value='Send Message'
+              className='button' />
+          </div>
+        </form>
+      )}
     />
+  )
+}
+
+export default ContactForm
+```
+
+This is a basic Contact form with fields for Name, Email & Message. Next we setup validation using Yup.
+
+## Creating a Validation Schema for Contact Form
+
+Yup is a form validation library and has tight integration with Formik. Yup helps us define schema like Joi and validate against it. Add it to your project:
+
+```
+yarn add yup
+```
+
+Create a file called validationSchema.js and create a schema as shown below:
+
+**validationSchema.js:**
+
+```
+import * as Yup from 'yup'
+
+const validationSchema = Yup.object().shape({
+  name: Yup.string()
+    .min(2, 'Too Short!')
+    .max(50, 'Too Long!')
+    .required('Name is Required!'),
+  email: Yup.string()
+    .email('Enter a Valid Email!')
+    .required('Email is Required!'),
+  message: Yup.string()
+    .required('Message is Required!'),
+})
+
+export default validationSchema
 ```
