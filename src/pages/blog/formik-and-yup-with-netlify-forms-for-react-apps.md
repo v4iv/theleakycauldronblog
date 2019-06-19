@@ -39,6 +39,7 @@ const ContactForm = () => {
       initialValues={{ name: '', email: '', message: '' }}
       onSubmit={values => console.log(values)}
       render={({
+        isSubmitting,
         handleSubmit,
         handleReset,
       }) => (
@@ -77,7 +78,7 @@ const ContactForm = () => {
           <div className='buttons'>
             <input type='reset' value='Clear'
               className='button' />
-            <input name='submit' type='submit' value='Send Message'
+            <input name='submit' type='submit' disabled={isSubmitting} value='Send Message'
               className='button' />
           </div>
         </form>
@@ -88,6 +89,8 @@ const ContactForm = () => {
 
 export default ContactForm
 ```
+
+You might noticed that we have also added a flag for Send Message Button to be disabled while submitting. This is to prevent unwanted behaviour.
 
 This is a basic Contact form with fields for Name, Email & Message. Next we setup validation using Yup.
 
@@ -159,7 +162,7 @@ const ContactForm = () => {
 ...
 ```
 
-Now we write the onSubmit method, the fetch request has to be made to home path ie `/`.
+Now we write the onSubmit method, the fetch request has to be made to home path ie `/`. We also called setSubmitting method, which will be used to change the state of isSubmitting flag.
 
 **ContactForm.js:**
 
@@ -185,3 +188,84 @@ onSubmit={(values, { setSubmitting }) => {
       }}
 ...
 ```
+
+If you are using Gatsby JS, especially gatsby-plugin-offline then you'll need to add `?no-cache=1` along with `/` or it won't work.
+
+**ContactForm.js:**
+
+```
+...
+fetch("/?no-cache=1", {   
+...
+```
+
+## Displaying Validation Errors to User
+
+To display the validation errors we need to use two params from render method `touched` & `errors`. `touched` object tells us if the user has touched the field, and `errors` object tell us the errors. We are gonna display the errors if the user has touched the field and there's an error for that field.
+
+**ContactForm.js:**
+
+```
+...
+      render={({
+        touched,
+        errors,
+        isSubmitting,
+        handleSubmit,
+        handleReset,
+      }) => (
+        <form className='form'
+          name='contact'
+          onSubmit={handleSubmit}
+          onReset={handleReset}
+          data-netlify='true'
+          data-netlify-honeypot='bot-field'
+        >
+          <div className='field'>
+            <label htmlFor='name' className='label'>Name</label>
+            <Field
+              className='input'
+              type='text'
+              name='name'
+            />
+           {touched.name && errors.name && <p className='danger'>{errors.name}</p>}
+          </div>
+          <div className='field'>
+            <label htmlFor='email' className='label'>Email</label>
+            <Field
+              className='input'
+              type='text'
+              name='email'
+            />
+           {touched.email && errors.email && <p className='danger'>{errors.email}</p>}
+          </div>
+          <div className='field'>
+            <label htmlFor='message' className='label'>Message</label>
+            <Field
+              className='input-textarea'
+              name='message'
+              component='textarea'
+              rows='6'
+            />
+           {touched.message && errors.message && <p className='danger'>{errors.message}</p>}
+          </div>
+          <div className='buttons'>
+            <input type='reset' value='Clear'
+              className='button' />
+            <input name='submit' type='submit' disabled={isSubmitting} value='Send Message'
+              className='button' />
+          </div>
+        </form>
+      )}
+    />
+...
+```
+
+And with this, we are finally done. Now according to our validation Schema:
+
+* Name, Email & Message are required fields.
+* Name should be minimum 2 characters and maximum 50 characters.
+* Email field should have valid email.
+* And Message field cannot be empty.
+
+I hope this helps you, happy coding.
