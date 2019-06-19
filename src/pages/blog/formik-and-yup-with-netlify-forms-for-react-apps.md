@@ -148,7 +148,7 @@ In on Submit function of Formik Component, we'll replace `console.log` with a `a
 
 **ContactForm.js:**
 
-```
+```javascript
 ...
 import validationSchema from './validationSchema'
 
@@ -166,7 +166,7 @@ Now we write the onSubmit method, the fetch request has to be made to home path 
 
 **ContactForm.js:**
 
-```
+```javascript
 ...
 onSubmit={(values, { setSubmitting }) => {
         fetch("/", {                                 
@@ -193,7 +193,7 @@ If you are using Gatsby JS, especially gatsby-plugin-offline then you'll need to
 
 **ContactForm.js:**
 
-```
+```javascript
 ...
 fetch("/?no-cache=1", {   
 ...
@@ -205,7 +205,7 @@ To display the validation errors we need to use two params from render method `t
 
 **ContactForm.js:**
 
-```
+```javascript
 ...
       render={({
         touched,
