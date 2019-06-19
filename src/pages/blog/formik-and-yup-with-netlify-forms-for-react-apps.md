@@ -25,7 +25,7 @@ We're gonna first install Formik:
 yarn add formik
 ```
 
-Then we create a Function Component called `ContactForm.js`, in it we'll begin by setting up Formik and it's required attributes - initialValues, onSubmit & render).
+Then we create a Function Component called `ContactForm.js`, in it we'll begin by setting up Formik and it's required props - initialValues, onSubmit & render).
 
 **ContactForm.js:**
 
@@ -119,4 +119,69 @@ const validationSchema = Yup.object().shape({
 })
 
 export default validationSchema
+```
+
+Import the above file and add it to formik's validationSchema prop.
+
+**ContactForm.js:**
+
+```javascript
+import React from 'react'
+import { Formik, Field } from 'formik'
+import validationSchema from './validationSchema'
+
+const ContactForm = () => {
+  return (
+    <Formik
+      initialValues={{ name: '', email: '', message: '' }}
+      validationSchema={validationSchema}
+      onSubmit={values => console.log(values)}
+    ...
+```
+
+## Writing form On Submit method
+
+In on Submit function of Formik Component, we'll replace `console.log` with a `application/x-www-form-urlencoded` fetch request. But before we do that we need to make an uri component encoder (you can use thirdparty library if you like).
+
+**ContactForm.js:**
+
+```
+...
+import validationSchema from './validationSchema'
+
+const encode = (data) => {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&')
+}
+
+const ContactForm = () => {
+...
+```
+
+Now we write the onSubmit method, the fetch request has to be made to home path ie `/`.
+
+**ContactForm.js:**
+
+```
+...
+onSubmit={(values, { setSubmitting }) => {
+        fetch("/", {                                 
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: encode({
+            'form-name': 'contact',
+            ...values,
+          }),
+        })
+          .then(() => {
+            alert('Success!')
+            setSubmitting(false)
+          })
+          .catch(error => {
+            alert('Error: Please Try Again!')                            
+            setSubmitting(false)
+          })
+      }}
+...
 ```
