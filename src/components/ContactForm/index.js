@@ -47,13 +47,6 @@ const ContactForm = () => {
           data-netlify='true'
           data-netlify-honeypot='bot-field'
         >
-          <input type='hidden' name='form-name' value='contact' />
-          <div hidden>
-            <label>
-              Don’t fill this out:{' '}
-              <input name='bot-field' />
-            </label>
-          </div>
           <div className='mt3'>
             <label htmlFor='name' className='f6 b db mb2'>Name</label>
             <Field
