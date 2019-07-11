@@ -51,7 +51,7 @@ exports.createPages = ({ actions, graphql }) => {
     let posts = []
     // Iterate through each post/page, putting all found posts (where templateKey = article-page) into `posts`
     allNodes.forEach(edge => {
-      if (_.isMatch(edge.node.frontmatter, { 'templateKey': 'article-page' })) {
+      if (_.isMatch(edge.node.frontmatter, { templateKey: 'article-page' })) {
         posts = posts.concat(edge)
       }
     })
@@ -61,7 +61,7 @@ exports.createPages = ({ actions, graphql }) => {
       createPage: createPage,
       pageTemplate: 'src/templates/index.js',
       pageLength: 6, // This is optional and defaults to 10 if not used
-      pathPrefix: '', // This is optional and defaults to an empty string if not used
+      pathPrefix: '/', // This is optional and defaults to an empty string if not used
       context: {}, // This is optional and defaults to an empty object if not used
     })
 
