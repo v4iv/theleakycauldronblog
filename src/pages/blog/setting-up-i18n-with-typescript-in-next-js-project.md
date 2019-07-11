@@ -51,7 +51,7 @@ Now we add our two pages
 import React from 'react'
 import Link from 'next/link'
 
-const HomePage: React.FunctionComponent = () => (
+const HomePage: React.FunctionComponent<any> = () => (
     <div>
         <h1>Hello, World!</h1>
         <Link href='/second-page'><button type='button'>Goto Second Page</button></Link>
@@ -69,7 +69,7 @@ and
 import React from 'react'
 import Link from 'next/link'
 
-const SecondPage: React.FunctionComponent = () => (
+const SecondPage: React.FunctionComponent<any> = () => (
     <div>
         <h1>Welcome To Second Page</h1>
         <Link href='/'><button type='button'>Go Back</button></Link>
@@ -230,6 +230,7 @@ All that's left now is to add i18next, to do that we begin by adding the followi
 ```bash
 yarn add next-i18next
 ```
+
 next we add a file `i18n.ts` to our root
 
 `i18n.ts` :
@@ -243,6 +244,7 @@ module.exports = new NextI18Next({
   localeSubpaths: 'foreign', // locale subpaths for url could be none, foreign or all
 })
 ```
+
 now we add the i18next middleware to our server as well i18n configuration
 
 `server/index.ts` :
@@ -276,6 +278,7 @@ const handle = app.getRequestHandler();
   console.log(`🚀 Ready on http://localhost:${port}`) // eslint-disable-line no-console
 })()
 ```
+
 next we add `appWithTranslation` HOC to a custom `_app.tsx`
 
 `pages/_app.tsx` :
@@ -323,6 +326,7 @@ next we add some translations, to do that we need to create a folder called stat
 ├-- tsconfig.server.json
 └── yarn.lock
 ```
+
 Add translations to `common.json` files
 
 `static/locales/en/common.json` :
@@ -348,6 +352,7 @@ Add translations to `common.json` files
     "go-back": "वापस जाएं",
 }
 ```
+
 then we refactor our two pages to include translation HOC, namespaces and translation function, also add a button to change language.
 
 `pages/index.tsx` :
@@ -356,7 +361,7 @@ then we refactor our two pages to include translation HOC, namespaces and transl
 import React from 'react'
 import { i18n, Link, withNamespaces } from '../i18n' // We replace next/link with the one provide by next-i18next, this helps with locale subpaths
 
-const HomePage: React.FunctionComponent = ({ t }) => (
+const HomePage: React.FunctionComponent<any> = ({ t }) => (
     <div>
         <h1>{t('hello-world')}</h1>
         <button type='button' onClick={() => i18n.changeLanguage(i18n.language === 'en' ? 'hi' : 'en')}>{t('change-language')}</button>
@@ -370,6 +375,7 @@ HomePage.getInitialProps = () => ({
 
 export default withNamespaces('common')(HomePage)
 ```
+
 and 
 
 `pages/second-page.tsx` :
@@ -378,7 +384,7 @@ and
 import React from 'react'
 import { withNamespaces, Link } from '../i18n'
 
-const SecondPage: React.FunctionComponent = ({ t }) => (
+const SecondPage: React.FunctionComponent<any> = ({ t }) => (
     <div>
         <h1>{t('welcome')}</h1>
         <Link href='/'><button type='button'>{t('go-back')}</button></Link>
@@ -387,6 +393,7 @@ const SecondPage: React.FunctionComponent = ({ t }) => (
 
 export default withNamespaces('common')(SecondPage)
 ```
+
 now all we have to do is make minor changes to our `tsconfig.server.json` to include our i18n compiled file as it is in our build folder
 
 `tsconfig.server.json` :
