@@ -15,7 +15,7 @@ tags:
   - MachineLearning
   - UX
 ---
-Ever since I learn't about **HTTP/2**'s _preload_ and _prefetch_, I had a very small idea  - what if there was a way to use Google Analytics data to predict and prefetch the relevant resources accordingly! That idea came to life with Guess JS, although it had nothing to do with me. What's better is that I learn't about it when a Gatsby JS plugin was released for it. The perfect platform for such a library. But since it is very new and experimental and still evolving there's a lack of proper documentation. While implementing it on this blog I found out that it's not so straight forward. Here's how you can do it.
+Ever since I learnt about **HTTP/2**'s _preload_ and _prefetch_, I had a very small idea  - what if there was a way to use Google Analytics data to predict and prefetch the relevant resources accordingly! That idea came to life with Guess JS, although it had nothing to do with me. What's better is that I learnt about it when a Gatsby JS plugin was released for it. The perfect platform for such a library. But since it is very new and experimental and still evolving there's a lack of proper documentation. While implementing it on this blog I found out that it's not so straight forward in CI/CD environments. Here's how you can do it.
 
 ## Get Required Credentials for _Google Analytics_ API
 
@@ -87,4 +87,4 @@ module.exports = {
 
 And that's it! Now test it out to see if everything works fine.
 
-**TIP:** If you are adding it to an existing project and adding this plugin breaks your build, try removing `.cache`, `public` and `node_modules`, reinstalling the npm packages and then then re building.
+**TIP:** If you are adding it to an existing project and adding this plugin breaks your build, try removing `.cache`, `public` and `node_modules`, reinstalling the npm packages and then re building.
