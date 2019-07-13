@@ -75,7 +75,7 @@ const AboutPage = ({ data }) => {
         <script type='application/ld+json'>
           {JSON.stringify(aboutPageSchemaOrgJSONLD)}
         </script>
-        <link rel='canonical' href='https://theleakycauldronblog.com/about' />
+        <link rel='canonical' href='https://theleakycauldronblog.com/about/' />
       </Helmet>
       <AboutPageTemplate
         contentComponent={HTMLContent}

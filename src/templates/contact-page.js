@@ -12,7 +12,7 @@ const ContactPage = ({ data }) => {
       <Helmet>
         <title>{frontmatter.meta_title}</title>
         <meta name='description' content={frontmatter.meta_description} />
-        <link rel='canonical' href='https://theleakycauldronblog.com/contact' />
+        <link rel='canonical' href='https://theleakycauldronblog.com/contact/' />
       </Helmet>
       <ContactPageTemplate
         title={frontmatter.title}
