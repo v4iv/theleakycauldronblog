@@ -87,4 +87,4 @@ module.exports = {
 
 And that's it! Now test it out to see if everything works fine.
 
-**TIP:** If you are adding it to an existing project and adding this plugin breaks your build, try removing `.cache`, `public` and `node_modules`, reinstalling the npm packages and then then re building.
+**TIP:** If you are adding it to an existing project and adding this plugin breaks your build, try removing `.cache`, `public` and `node_modules`, reinstalling the npm packages and then re building.
