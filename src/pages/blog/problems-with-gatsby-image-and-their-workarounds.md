@@ -12,9 +12,9 @@ meta_description: >-
 tags:
   - GatsbyJS
 ---
-Gatsby Image is a very powerful package with drool worthy features. It makes it very easy to implement, Medium like progressive image loading. It can do a bunch of other stuff but that's the fancy stuff. But I decided to not use it for this website, mostly because it doesn't play well with Netlify CMS. And, I was quite happy with the site's performance as it doesn't have many images.
+[Gatsby Image](https://www.gatsbyjs.org/packages/gatsby-image/) is a very powerful package with drool worthy features. It makes it very easy to implement, Medium like progressive image loading. It can do a bunch of other stuff but that's the fancy stuff. But I decided to not use it for this website, mostly because it doesn't play well with [Netlify CMS](https://www.netlifycms.org). And, I was quite happy with the site's performance as it doesn't have many images.
 
-The article list is all words no thumbnails and since all the images are within article, it's works out fine. This all changed when I decided to ditch Bulma for Tachyons.
+The article list is all words no thumbnails and since all the images are within article, it's works out fine. This all changed when I decided to ditch [Bulma](https://bulma.io) for [Tachyons](https://tachyons.io).
 
 > "With New Framework Comes New Design"
 >
@@ -24,11 +24,11 @@ In the new design I was working the article list had a small thumbnails along wi
 
 ![](/img/screenshot-2018-12-19-at-11.19.21-pm.png)
 
-Without the optimisation magic of Gatsby Image each page size would be touching 5MB. Begrudgingly, I decided to use Gatsby Image. I did what anyone would do, installed the package and peer dependencies. And as instructed added the relevant config. That's when problem began! Everything started breaking. And I'm ashamed that it took me lot more time than I'm willing to admit, to solve them. Well everyone has bad days.
+Without the optimisation magic of [Gatsby Image](https://www.gatsbyjs.org/packages/gatsby-image/) each page size would be touching 5MB. Begrudgingly, I decided to use [Gatsby Image](https://www.gatsbyjs.org/packages/gatsby-image/). I did what anyone would do, installed the package and peer dependencies. And as instructed added the relevant config. That's when problem began! Everything started breaking. And I'm ashamed that it took me lot more time than I'm willing to admit, to solve them. Well everyone has bad days.
 
 # Things to be careful about while configuring Gatsby Image
 
-First, you need '**gatsby-remark-relative-images**' to convert image src(s) in markdown to be relative to their node's parent directory. So that '**gatsby-remark-images**' can match images outside the node folder. This is especially important if you are working with Netlify CMS. Also, don't forget to add fmImagesToRelative to _gatsby-node.js_.
+First, you need '**gatsby-remark-relative-images**' to convert image src(s) in markdown to be relative to their node's parent directory. So that '**gatsby-remark-images**' can match images outside the node folder. This is especially important if you are working with [Netlify CMS](https://www.netlifycms.org). Also, don't forget to add fmImagesToRelative to _gatsby-node.js_.
 
 ```javascript
 const {fmImagesToRelative} = require('gatsby-remark-relative-images')
@@ -48,11 +48,11 @@ exports.onCreateNode = ({node, actions, getNode}) => {
 }
 ```
 
-Second, The '**gatsby-source-filesystem**' media folder must be included before the other plugins, especially Netlfiy CMS. That's something that has been mentinoned in **gatsby-transformer-remark**'s README.md. Not only that, it'll be best if you include '**gatsby-transformer-sharp**' '**gatsby-plugin-sharp'** and '**gatsby-transformer-remark**' before any other plugin in _gatsby-config.js_. Not doing this will definitely lead to '**Field "image" must not have a selection since type "String" has no subfields**' error.
+Second, The '**gatsby-source-filesystem**' media folder must be included before the other plugins, especially [Netlfiy CMS](https://www.netlifycms.org). That's something that has been mentinoned in **gatsby-transformer-remark**'s README.md. Not only that, it'll be best if you include '**gatsby-transformer-sharp**' '**gatsby-plugin-sharp'** and '**gatsby-transformer-remark**' before any other plugin in _gatsby-config.js_. Not doing this will definitely lead to '**Field "image" must not have a selection since type "String" has no subfields**' error.
 
 Third, once you are done configuring you cannot just query an image without parameters. I suggest **publicURL**.
 
-Fourth, GIFs and SVGs are not processed by Gatsby Image. So always include **publicURL** in the parameters as an alternate.
+Fourth, GIFs and SVGs are not processed by [Gatsby Image](https://www.gatsbyjs.org/packages/gatsby-image/). So always include **publicURL** in the parameters as an alternate.
 
 ```javascript
 export const imageQuery = graphql`
@@ -75,14 +75,13 @@ export const imageQuery = graphql`
                  alt={title} 
            />
         }
-
 ```
 
 Finally, sometimes the build can fail just because **node_modules/** needs to be rebuilt. So, if you see nothing else working try removing **node_modules/** and reinstalling packages.
 
 # Gatsby Image and Gatsby Paginate don't go well together
 
-While implementing Article List I ran into an error that disturbed me for hours. Let me preface by explaining how Gatsby Paginate works. We plugin Gatsby Paginate's `createPaginatedPages` function in _gatsby-node.js_. It takes the `createPages` method and takes results of the query to create paginated list of posts.
+While implementing Article List I ran into an error that disturbed me for hours. Let me preface by explaining how [Gatsby Paginate](ttps://www.gatsbyjs.org/packages/gatsby-paginate) works. We plugin Gatsby Paginate's `createPaginatedPages` function in _gatsby-node.js_. It takes the `createPages` method and takes results of the query to create paginated list of posts.
 
 ```javascript
 return graphql(`
@@ -183,4 +182,4 @@ return graphql(`
 
 Ooooorrrrr, you could simply use one of the other plugins for pagination.
 
-Neither Gatsby Image nor Gatsby Paginate are ideal packages. But the utility they provide is without question, very helpful. As the Gatsby community grows, we'll have perfect solutions. But till then I just hope we keep sharing the problems we run into and how we overcome them.
+Neither [Gatsby Image](https://www.gatsbyjs.org/packages/gatsby-image/) nor [Gatsby Paginate](ttps://www.gatsbyjs.org/packages/gatsby-paginate) are ideal packages. But the utility they provide is without question, very helpful. As the Gatsby community grows, we'll have perfect solutions. But till then I just hope we keep sharing the problems we run into and how we overcome them.
