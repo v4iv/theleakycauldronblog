@@ -15,17 +15,17 @@ tags:
   - Formik
   - Yup
 ---
-Netlify Forms is yet another amazing service provided by Netlify with a generous free tier. For those who don't know, it allows you to set up a form and take submissions without needing a backend. The form data is not only stored in your dashboard, you can directly get a notification on any email address! Sounds interesting right?! As we start implementing you'll find out just how easy it is to setup if you know basics of React. Although I should mention it's not just a React only feature, you can set it up with basic HTML as well!
+[Netlify Forms](https://www.netlify.com/docs/form-handling/) is yet another amazing service provided by [Netlify](https://www.netlify.com/) with a generous free tier. For those who don't know, it allows you to set up a form and take submissions without needing a backend. The form data is not only stored in your dashboard, you can directly get a notification on any email address! Sounds interesting right?! As we start implementing you'll find out just how easy it is to setup if you know basics of React. Although I should mention it's not just a React only feature, you can set it up with basic HTML as well!
 
 ## Setting Up Formik Form
 
-We're gonna first install Formik:
+We're gonna first install [Formik](https://jaredpalmer.com/formik/):
 
 ```bash
 yarn add formik
 ```
 
-Then we create a Function Component called `ContactForm.js`, in it we'll begin by setting up Formik and it's required props - initialValues, onSubmit & render).
+Then we create a Function Component called `ContactForm.js`, in it we'll begin by setting up [Formik](https://jaredpalmer.com/formik/) and it's required props - initialValues, onSubmit & render).
 
 **ContactForm.js:**
 
@@ -96,7 +96,7 @@ This is a basic Contact form with fields for Name, Email & Message. Next we setu
 
 ## Creating a Validation Schema for Contact Form
 
-Yup is a form validation library and has tight integration with Formik. Yup helps us define schema like Joi and validate against it. Add it to your project:
+[Yup](https://github.com/jquense/yup) is a form validation library and has tight integration with [Formik](https://jaredpalmer.com/formik/). [Yup](https://github.com/jquense/yup) helps us define schema like [Joi](https://github.com/hapijs/joi) and validate against it. Add it to your project:
 
 ```bash
 yarn add yup
