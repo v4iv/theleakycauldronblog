@@ -1,6 +1,6 @@
 ---
 templateKey: article-page
-title: Creamy MushRome Recipe
+title: Creamy MushRome Mushroom Recipe
 date: 2019-03-23T18:33:42.477Z
 cover: /img/mushrome.jpg
 meta_title: Enjoy tasty Creamy MushRome Recipe
