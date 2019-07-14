@@ -13,9 +13,9 @@ tags:
   - TypeScript
   - SSR
 ---
-As I was starting a new [NextJS](https://nextjs.org) project, I planned to do it in TypeScript. Since I don't know TypeScript, my initial plan was to learn as I go. Comes the time I had to set up i18n using `next-i18next` plugin, and it was a bit problematic as there was no example for it on the official `next-i18next` repository. After I successfully learnt how to do it, I did make a PR for typescript example on the original repo but this is incase it doesn't get accepted.
+As I was starting a new [NextJS](https://nextjs.org) project, I planned to do it in [TypeScript](https://www.typescriptlang.org). Since I don't know TypeScript, my initial plan was to learn as I go. Comes the time I had to set up i18n using [`next-i18next`](https://github.com/isaachinman/next-i18next) plugin, and it was a bit problematic as there was no example for it on the official [`next-i18next`](https://github.com/isaachinman/next-i18next) repository. After I successfully learnt how to do it, I did make a PR for typescript example on the original repo but this is incase it doesn't get accepted.
 
-Setting up next-i18next in a TS Next app, has 3 parts:
+Setting up [next-i18next](https://github.com/isaachinman/next-i18next) in a TS Next app, has 3 parts:
 
 * Setting Up TypeScript Next App
 * Adding Custom Server
@@ -419,4 +419,4 @@ now all we have to do is make minor changes to our `tsconfig.server.json` to inc
 
 That's it we are done now you can go ahead and try to run, to see if everything is working.
 
-And that's how you set up next-i18next with typescript in Next JS app.
+And that's how you set up [next-i18next](https://github.com/isaachinman/next-i18next) with typescript in [Next JS](https://nextjs.org) app.
