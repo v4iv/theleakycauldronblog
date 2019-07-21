@@ -97,7 +97,7 @@ module.exports = {
               showLineNumbersGlobal: false,
               // If setting this to true, the parser won't handle and highlight inline
               // code used in markdown i.e. single backtick code like `this`.
-              noInlineHighlight: false,
+              noInlineHighlight: true,
             },
           },
         ],

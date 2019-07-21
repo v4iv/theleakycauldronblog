@@ -1,5 +1,6 @@
 const _ = require('lodash')
 const path = require('path')
+const pathPrefix = require('./config').pathPrefix
 const { createFilePath } = require('gatsby-source-filesystem')
 const createPaginatedPages = require('gatsby-paginate')
 const { fmImagesToRelative } = require('gatsby-remark-relative-images')
@@ -61,7 +62,7 @@ exports.createPages = ({ actions, graphql }) => {
       createPage: createPage,
       pageTemplate: 'src/templates/index.js',
       pageLength: 6, // This is optional and defaults to 10 if not used
-      pathPrefix: '/', // This is optional and defaults to an empty string if not used
+      pathPrefix: pathPrefix, // This is optional and defaults to an empty string if not used
       context: {}, // This is optional and defaults to an empty object if not used
     })
 
