@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@gatsby-contrib/gatsby-plugin-elasticlunr-search": "^2.3.0",
+    "@reach/router": "^1.2.1",
     "formik": "^1.5.8",
     "gatsby": "^2.13.14",
     "gatsby-image": "^2.2.5",
@@ -42,6 +43,7 @@
     "node-sass": "^4.12.0",
     "prismjs": "^1.16.0",
     "prop-types": "^15.7.2",
+    "query-string": "^6.8.1",
     "react": "^16.8.6",
     "react-disqus-comments": "^1.4.0",
     "react-dom": "^16.8.6",
