@@ -29,11 +29,16 @@ export default class IndexPage extends Component {
     const nextUrl = (index + 1).toString() + '/'
 
     const websiteSchemaOrgJSONLD = {
-      '@context': 'http://schema.org',
-      '@type': 'WebSite',
-      url: config.siteUrl,
-      name: config.siteTitle,
-      alternateName: config.siteTitleAlt ? config.siteTitleAlt : '',
+      "@context": "http://schema.org",
+      "@type": "WebSite",
+      "url": config.siteUrl,
+      "name": config.siteTitle,
+      "alternateName": config.siteTitleAlt ? config.siteTitleAlt : '',
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://theleakycauldronblog.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
     }
 
     return (
