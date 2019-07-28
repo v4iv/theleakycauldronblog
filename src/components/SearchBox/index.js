@@ -1,17 +1,17 @@
-import React, { Component } from "react";
-import { Link } from "gatsby";
-import { navigate } from "@reach/router";
-import { Index } from "elasticlunr";
-import withLocation from "../withLocation";
+import React, { Component } from 'react'
+import { Link } from 'gatsby'
+import { navigate } from '@reach/router'
+import { Index } from 'elasticlunr'
+import withLocation from '../withLocation'
 
 class SearchBox extends Component {
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
     this.state = {
       query: ``,
       results: [],
-      isActive: false
-    };
+      isActive: false,
+    }
   }
 
   getOrCreateIndex = () =>
@@ -19,11 +19,11 @@ class SearchBox extends Component {
       ? this.index
       : Index.load(this.props.searchIndex);
 
-  componentDidMount() {
-    if (this.props.search && this.props.search.q){
-      const { q } = this.props.search;
+  componentDidMount () {
+    if (this.props.search && this.props.search.q) {
+      const { q } = this.props.search
 
-      this.index = this.getOrCreateIndex();
+      this.index = this.getOrCreateIndex()
 
       this.setState({
         query: q,
@@ -31,16 +31,16 @@ class SearchBox extends Component {
           .search(q, { expand: true }) // Accept partial matches
           // Map over each ID and return the full document
           .map(({ ref }) => this.index.documentStore.getDoc(ref)),
-        isActive: !!q
+        isActive: !!q,
       })
     }
   }
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate (prevProps) {
     if (this.props.search !== prevProps.search) {
-      const { q } = this.props.search;
+      const { q } = this.props.search
 
-      this.index = this.getOrCreateIndex();
+      this.index = this.getOrCreateIndex()
 
       /*eslint-disable */
       this.setState({
@@ -57,18 +57,18 @@ class SearchBox extends Component {
   }
 
   search = evt => {
-    const query = evt.target.value;
+    const query = evt.target.value
 
-    navigate(`?q=${query}`, { replace: true });
+    navigate(`?q=${query}`, { replace: true })
   };
 
-  render() {
+  render () {
     return (
       <div className='measure center pa3'>
         <fieldset className='cf bn ma0 pa0'>
           <div className='cf'>
-            <small id='name-desc' className='f6 black-60 db mb2 tr' style={{ cursor: "pointer" }}
-                   onClick={() => window.history.back()}>Close
+            <small id='name-desc' className='f6 black-60 db mb2 tr' style={{ cursor: 'pointer' }}
+              onClick={() => window.history.back()}>Close
             </small>
             <label className='clip' htmlFor='search'>Search</label>
             <input
@@ -78,12 +78,12 @@ class SearchBox extends Component {
               name='search'
               onChange={this.search}
               value={this.state.query}
-              id='search'/>
+              id='search' />
           </div>
         </fieldset>
         {(this.state.isActive && this.state.results.length)
           ? this.state.results
-            .filter(page => page.templateKey === "article-page")
+            .filter(page => page.templateKey === 'article-page')
             .map(page => (
               <article key={page.slug} className='pv4 bb b--black-10 ph3 ph0-l'>
                 <Link className='db ph0-l no-underline black dim' key={page.id} to={page.slug} replace>
@@ -95,23 +95,23 @@ class SearchBox extends Component {
             <p className='fw1 i tc mt4 mt5-l f4 f3-l'>Are you looking for one of these?</p>
             <ul className='list tc pl0 w-100 mt5'>
               <li className='dib'><Link className='f5 f4-ns link black db pv2 ph3 hover-light-blue' to='/'
-                                        replace>Home</Link>
+                replace>Home</Link>
               </li>
               <li className='dib'><Link className='f5 f4-ns link black db pv2 ph3 hover-light-green'
-                                        to='/about' replace>About</Link>
+                to='/about' replace>About</Link>
               </li>
               <li className='dib'><Link className='f5 f4-ns link black db pv2 ph3 hover-light-yellow'
-                                        to='/contact' replace>Contact</Link>
+                to='/contact' replace>Contact</Link>
               </li>
               <li className='dib'><Link className='f5 f4-ns link black db pv2 ph3 hover-light-purple'
-                                        to='/tags' replace>Tags</Link>
+                to='/tags' replace>Tags</Link>
               </li>
             </ul>
           </div>
         }
       </div>
-    );
+    )
   }
 }
 
-export default withLocation(SearchBox);
+export default withLocation(SearchBox)
