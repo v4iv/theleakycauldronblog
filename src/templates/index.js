@@ -15,9 +15,7 @@ const PaginationLink = props => {
       </Link>
     )
   } else {
-    return (
-      null
-    )
+    return null
   }
 }
 
@@ -28,6 +26,7 @@ export default class IndexPage extends Component {
     const previousUrl = index - 1 === 1 ? '' : (index - 1).toString()
     const nextUrl = (index + 1).toString() + '/'
 
+    /*eslint-disable */
     const websiteSchemaOrgJSONLD = {
       "@context": "http://schema.org",
       "@type": "WebSite",
@@ -36,10 +35,12 @@ export default class IndexPage extends Component {
       "alternateName": config.siteTitleAlt ? config.siteTitleAlt : '',
       "potentialAction": {
         "@type": "SearchAction",
+        "name": "The Leaky Cauldron Blog Search",
         "target": "https://theleakycauldronblog.com/search?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
+        "query-input": "required name=search_term_string",
+      },
     }
+    /*eslint-enable */
 
     return (
       <Layout>

@@ -2,12 +2,7 @@ import React from 'react'
 import { Formik, Field } from 'formik'
 import { navigate } from 'gatsby-link'
 import validationSchema from './validationSchema'
-
-const encode = (data) => {
-  return Object.keys(data)
-    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-    .join('&')
-}
+import { encode } from '../../utils'
 
 const ContactForm = () => {
   return (
