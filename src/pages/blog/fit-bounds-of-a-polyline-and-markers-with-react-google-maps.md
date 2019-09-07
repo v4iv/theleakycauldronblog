@@ -39,7 +39,7 @@ export const CustomMapComponent: React.ComponentClass<any> = withScriptjs(withGo
 ))
 ```
 
-Then we add Polyline that will trace the flight path. We pass an array of `Lat` & `Lon` to the path prop.
+Then we add Polyline that will trace the flight path. We pass an array of `lat` & `lng` to the path prop.
 
 ```javascript
 ...
@@ -66,7 +66,7 @@ Then we add Polyline that will trace the flight path. We pass an array of `Lat` 
 ...
 ```
 
-Next we add Marker to show the current position of our aircraft. We pass the current position object made up of `lat` & `lon` to it.
+Next we add Marker to show the current position of our aircraft. We pass the current position object made up of `lat` & `lng` to it, which in our case is just the last position in our path array.
 
 ```javascript
 ...
@@ -98,7 +98,6 @@ Next we add Marker to show the current position of our aircraft. We pass the cur
 ...
 ```
 
-
 ## Using the Map Component
 
 Using it is simple enough just import the above component, pass it the required props one of them being your google map api key url.
@@ -112,7 +111,7 @@ class FlightPathTracker Component<any, any> {
   render() {
     const {path, defaultCenter, currentPosition} = this.props
     return(
-    <MyMapComponent
+          <CustomMapComponent
             {/* add all the other required props */}
             ...
             {/* add all the other required props */}
@@ -125,8 +124,71 @@ class FlightPathTracker Component<any, any> {
   }
 }
 ```
+
 Just go ahead and run it and check to see if everything is working. You'll see that when the map mounts the viewport zooms and fits the Marker as the default. But our objective is to fit the Marker as well as the Polyline.
 
 ## Setting the Bounding Box for both Polyline & Marker
 
-aflda
+Now comes the tricky part, to set bounds we first let the map we created above mount, then we get a `ref` from our map component, we pass it to a mounted map handler method. Where we actually set the bounds. We begin by adding the handler function as a prop to the `ref` of our map component.
+
+```javascript
+...
+
+  <GoogleMap
+    defaultCenter={props.defaultCenter}
+    defaultZoom={3}
+    options={{
+      streetViewControl: false,
+      mapTypeId: 'satellite',
+    }}
+    ref={props.onMapMounted}
+  >
+```
+
+Next, we write the handleMapMounted method, where we first initialize Google's LatLngBounds() object. Then we for each position in the path array we extend that object. And, finally we pass that object to our map.
+
+```javascript
+...
+
+class FlightPathTracker Component<any, any> {
+  ...
+
+  handleMapMounted = (map) => {
+    const { path } = this.props
+    
+    this._map = map
+    if (map) {
+      const bounds = new google.maps.LatLngBounds()
+
+      path.map(position => {
+        bounds.extend(position)
+      })
+      
+      this._map.fitBounds(bounds)
+   
+    }
+  }
+
+...
+```
+
+Finally, we pass this method to the CustomMapComponent as a prop and voila.
+
+```javascript
+...
+
+          <CustomMapComponent
+            {/* add all the other required props */}
+            ...
+            {/* add all the other required props */}
+            googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${process.env.GOOGLE_MAP_API_KEY}`}
+            defaultCenter={defaultCenter}
+            path={path}
+            currentPosition={currentPosition}
+            onMapMounted={this.handleMapMounted}
+          />
+
+...
+```
+
+Now run your app to see if everything is working and we are done.
