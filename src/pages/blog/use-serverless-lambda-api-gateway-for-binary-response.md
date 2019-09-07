@@ -88,4 +88,44 @@ plugins:
 
 ## Configuring our serverless.yml
 
-Now we need to add the following to `serverless.yml`
+Now we need to add the following to `serverless.yml`. First, to the provider section, add `apiGateway`
+
+```yaml
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: dev
+  apiGateway:
+    binaryMediaTypes:
+      - '*/*'
+```
+
+then we add `apigwBinary` to custom section
+
+```yaml
+custom:
+  serverless-offline:
+    port: 8000
+  apigwBinary:
+    types:           #list of mime-types
+      - 'image/png'
+      - 'image/jpeg'
+```
+
+and finally to the functions section, `contentHandling: CONVERT_TO_BINARY` is added to the handler's route
+
+```yaml
+functions:
+  screenshot:
+    handler: src/index.handler
+    timeout: 50
+    events:
+      - http:
+          method: get
+          path: image
+          cors: true
+          contentHandling: CONVERT_TO_BINARY
+
+```
+
+And, now run it to test it and you should be done.
