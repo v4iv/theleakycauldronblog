@@ -14,11 +14,15 @@ tags:
 ---
 [Gatsby Image](https://www.gatsbyjs.org/packages/gatsby-image/) is a very powerful package with drool worthy features. It makes it very easy to implement, Medium like progressive image loading. It can do a bunch of other stuff but that's the fancy stuff. But I decided to not use it for this website, mostly because it doesn't play well with [Netlify CMS](https://www.netlifycms.org). And, I was quite happy with the site's performance as it doesn't have many images.
 
-The article list is all words no thumbnails and since all the images are within article, it's works out fine. This all changed when I decided to ditch [Bulma](https://bulma.io) for [Tachyons](https://tachyons.io).
+The article list is all words no thumbnails and since all the images are within article, it's works out fine. 
+
+![](/img/screenshot-2019-09-07-at-4.01.21-pm.png)
+
+This all changed when I decided to ditch [Bulma](https://bulma.io) for [Tachyons](https://tachyons.io).
 
 > "With New Framework Comes New Design"
 >
-> \- Anonymous
+> \- Anonymous (Probably LOL)
 
 In the new design I was working the article list had a small thumbnails along with the title and excerpt. 
 
@@ -48,7 +52,11 @@ exports.onCreateNode = ({node, actions, getNode}) => {
 }
 ```
 
-Second, The '**gatsby-source-filesystem**' media folder must be included before the other plugins, especially [Netlfiy CMS](https://www.netlifycms.org). That's something that has been mentinoned in **gatsby-transformer-remark**'s README.md. Not only that, it'll be best if you include '**gatsby-transformer-sharp**' '**gatsby-plugin-sharp'** and '**gatsby-transformer-remark**' before any other plugin in _gatsby-config.js_. Not doing this will definitely lead to '**Field "image" must not have a selection since type "String" has no subfields**' error.
+Second, The '**gatsby-source-filesystem**' media folder must be included before the other plugins, especially [Netlfiy CMS](https://www.netlifycms.org). That's something that has been mentinoned in **gatsby-transformer-remark**'s README.md. Not only that, it'll be best if you include '**gatsby-transformer-sharp**' '**gatsby-plugin-sharp'** and '**gatsby-transformer-remark**' before any other plugin in _gatsby-config.js_. Not doing this will definitely lead to the following error.
+
+```bash
+Field "image" must not have a selection since type "String" has no subfields
+```
 
 Third, once you are done configuring you cannot just query an image without parameters. I suggest **publicURL**.
 
