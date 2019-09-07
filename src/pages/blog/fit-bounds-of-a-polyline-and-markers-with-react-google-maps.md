@@ -19,7 +19,7 @@ What we were trying to acomplish was to trace the flight path, and show the curr
 
 First we begin by making the Map Component that will display our Polyline & Marker, which is simple enough, but let me show anyways so that we are on the same page.
 
-We begin by initializing our Google Map in our Component which is wrapped in withScriptjs & withGoogleMap HOCs.
+We begin by initializing our Google Map in our Component which is wrapped in `withScriptjs` & `withGoogleMap` HOCs.
 
 ```javascript
 import React, { Component } from 'react'
