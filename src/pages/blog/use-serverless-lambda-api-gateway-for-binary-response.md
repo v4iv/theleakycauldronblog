@@ -128,4 +128,4 @@ functions:
 
 ```
 
-And, now run it to test it and you should be done.
+Now run it, to test it and you should be done.
