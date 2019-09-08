@@ -1,10 +1,11 @@
-import CMS from 'netlify-cms'
+import CMS from 'netlify-cms-app'
 import 'tachyons-sass/tachyons.scss'
 
 import AboutPagePreview from './preview-templates/AboutPagePreview'
 import ArticlePreview from './preview-templates/ArticlePreview'
 import ContactPagePreview from './preview-templates/ContactPagePreview'
 
+CMS.init()
 CMS.registerPreviewStyle('../assets/stylesheets/styles.scss')
 CMS.registerPreviewTemplate('blog', ArticlePreview)
 CMS.registerPreviewTemplate('about', AboutPagePreview)

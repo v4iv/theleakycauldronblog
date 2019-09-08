@@ -2,9 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import _ from 'lodash'
 import Img from 'gatsby-image'
-import './styles.sass'
 import 'prismjs/themes/prism-tomorrow.css'
-import config from '../../../config'
 import Content from '../Content'
 
 const ArticleTemplate = ({
@@ -14,6 +12,7 @@ const ArticleTemplate = ({
   cover,
   tags,
   title,
+  author,
 }) => {
   const PostContent = contentComponent || Content
 
@@ -23,7 +22,7 @@ const ArticleTemplate = ({
         <header className='avenir tc-l ph3 ph4-ns pt4 pt5-ns'>
           <h1 className='f3 f2-m f-subheadline-l measure lh-title fw1 mt0'>{title}</h1>
           <div className='flex db mb4'>
-            <time className='f5 f4-l db fw1 baskerville mb4-l mb2'>{config.userName} | {date}</time>
+            <time className='f5 f4-l db fw1 baskerville mb4-l mb2'>{author} | {date}</time>
             <div className='inline-flex flex-wrap'>
               {tags && tags.length &&
                 tags.map(tag => (

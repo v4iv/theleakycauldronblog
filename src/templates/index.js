@@ -40,7 +40,7 @@ export default class IndexPage extends Component {
         "query-input": "required name=search_term_string",
       },
     }
-    /*eslint-enable */
+    /* eslint-enable */
 
     return (
       <Layout>

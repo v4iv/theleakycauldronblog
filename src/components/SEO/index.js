@@ -2,7 +2,7 @@ import React from 'react'
 import config from '../../../config'
 import Helmet from 'react-helmet'
 
-const SE0 = ({ title, meta_title, meta_desc, cover, slug, date }) => {
+const SE0 = ({ title, meta_title, meta_desc, cover, slug, date, author }) => {
   const postURL = config.siteUrl + slug
   const realPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix
   const image = config.siteUrl + realPrefix + cover
@@ -45,7 +45,7 @@ const SE0 = ({ title, meta_title, meta_desc, cover, slug, date }) => {
     },
     author: {
       '@type': 'Person',
-      name: config.userName,
+      name: author,
     },
     image: {
       '@type': 'ImageObject',
@@ -84,6 +84,7 @@ const SE0 = ({ title, meta_title, meta_desc, cover, slug, date }) => {
       <meta property='og:url' content={postURL} />
       <meta property='og:type' content='article' />
       <meta property='og:title' content={title} />
+      <meta property='og:author' content={author} />
       <meta property='og:description' content={meta_desc} />
       <meta property='og:image' content={image} />
       <meta

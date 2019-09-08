@@ -32,6 +32,7 @@ exports.createPages = ({ actions, graphql }) => {
                 publicURL
               }
               title
+              author
               tags
               date(formatString: "MMMM DD, YYYY")
               templateKey
