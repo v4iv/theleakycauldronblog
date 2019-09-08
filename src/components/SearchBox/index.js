@@ -26,9 +26,9 @@ class SearchBox extends Component {
       this.index = this.getOrCreateIndex()
 
       this.setState({
-        query: q,
+        query: decodeURIComponent(q),
         results: this.index
-          .search(q, { expand: true }) // Accept partial matches
+          .search(decodeURIComponent(q), { expand: true }) // Accept partial matches
           // Map over each ID and return the full document
           .map(({ ref }) => this.index.documentStore.getDoc(ref)),
         isActive: !!q,
@@ -44,10 +44,10 @@ class SearchBox extends Component {
 
       /*eslint-disable */
       this.setState({
-        query: q,
+        query: decodeURIComponent(q),
         // Query the index with search string to get an [] of IDs
         results: this.index
-          .search(q, { expand: true }) // Accept partial matches
+          .search(decodeURIComponent(q), { expand: true }) // Accept partial matches
           // Map over each ID and return the full document
           .map(({ ref }) => this.index.documentStore.getDoc(ref)),
         isActive: !!q
@@ -59,7 +59,7 @@ class SearchBox extends Component {
   search = evt => {
     const query = evt.target.value
 
-    navigate(`?q=${query}`, { replace: true })
+    navigate(`?q=${encodeURIComponent(query)}`, { replace: true })
   };
 
   render () {
