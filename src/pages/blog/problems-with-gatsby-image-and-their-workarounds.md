@@ -1,6 +1,6 @@
 ---
 templateKey: article-page
-title: Problems with Gatsby Image and their workarounds
+title: Problems with 'gatsby-image' and their workarounds
 author: Vaibhav Sharma
 date: 2018-12-19T19:29:55.624Z
 cover: /img/gatsby-image-workarounds.jpeg
@@ -13,7 +13,7 @@ meta_description: >-
 tags:
   - GatsbyJS
 ---
-[Gatsby Image](https://www.gatsbyjs.org/packages/gatsby-image/) is a very powerful package with drool worthy features. It makes it very easy to implement, Medium like progressive image loading. It can do a bunch of other stuff but that's the fancy stuff that we won't be going into. But I decided to not use it for this website, mostly because it doesn't play well with [Netlify CMS](https://www.netlifycms.org). And, I was quite happy with the site's performance as it didn't have many images.
+[gatsby-image](https://www.gatsbyjs.org/packages/gatsby-image/) is a very powerful package with drool worthy features. It makes it very easy to implement, Medium like progressive image loading. It can do a bunch of other stuff but that's the fancy stuff that we won't be going into. But I decided to not use it for this website, mostly because it doesn't play well with [Netlify CMS](https://www.netlifycms.org). And, I was quite happy with the site's performance as it didn't have many images.
 
 The article list was all words, no thumbnails and since all the images were within article, it worked just fine. 
 
