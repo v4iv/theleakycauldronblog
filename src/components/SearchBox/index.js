@@ -31,7 +31,7 @@ class SearchBox extends Component {
           .search(decodeURIComponent(q), { expand: true }) // Accept partial matches
           // Map over each ID and return the full document
           .map(({ ref }) => this.index.documentStore.getDoc(ref)),
-        isActive: !!q,
+        isActive: !!decodeURIComponent(q),
       })
     }
   }
@@ -50,7 +50,7 @@ class SearchBox extends Component {
           .search(decodeURIComponent(q), { expand: true }) // Accept partial matches
           // Map over each ID and return the full document
           .map(({ ref }) => this.index.documentStore.getDoc(ref)),
-        isActive: !!q
+        isActive: !!decodeURIComponent(q)
       });
       /* eslint-enable */
     }
