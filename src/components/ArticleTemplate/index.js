@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import _ from 'lodash'
 import Img from 'gatsby-image'
+import './styles.sass'
 import 'prismjs/themes/prism-tomorrow.css'
 import Content from '../Content'
 
