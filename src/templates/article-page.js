@@ -20,6 +20,7 @@ const ArticlePage = ({ data }) => {
           cover={post.frontmatter.cover.publicURL}
           slug={post.fields.slug}
           date={post.frontmatter.date}
+          author={post.frontmatter.author}
         />
         <ArticleTemplate
           content={post.html}
@@ -28,6 +29,7 @@ const ArticlePage = ({ data }) => {
           cover={post.frontmatter.cover}
           tags={post.frontmatter.tags}
           title={post.frontmatter.title}
+          author={post.frontmatter.author}
         />
         <section className='mw8 center'>
           <Share title={post.frontmatter.title} slug={post.fields.slug} excerpt={post.frontmatter.meta_description} />
@@ -57,6 +59,7 @@ export const pageQuery = graphql`
             frontmatter {
                 date(formatString: "MMMM DD, YYYY")
                 title
+                author
                 cover {
                     childImageSharp {
                         fluid(maxWidth: 1075, quality: 72) {

@@ -1,6 +1,7 @@
 ---
 templateKey: article-page
 title: Problems with Gatsby Image and their workarounds
+author: Vaibhav Sharma
 date: 2018-12-19T19:29:55.624Z
 cover: /img/gatsby-image-workarounds.jpeg
 meta_title: Problems with Gatsby Image and their workarounds

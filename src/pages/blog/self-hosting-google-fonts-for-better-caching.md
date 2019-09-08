@@ -1,6 +1,7 @@
 ---
 templateKey: article-page
 title: Self hosting Google Fonts for better caching
+author: Vaibhav Sharma
 date: 2018-12-05T16:31:06.803Z
 cover: /img/self_hosted_google_fonts.jpg
 meta_title: Leverage self hosted Google Fonts for better caching

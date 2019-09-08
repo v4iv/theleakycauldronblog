@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import '../../assets/stylesheets/styles.scss'
 import ArticleTemplate from '../../components/ArticleTemplate'
 
 const ArticlePreview = ({ entry, widgetFor }) => {
@@ -15,6 +16,7 @@ const ArticlePreview = ({ entry, widgetFor }) => {
         meta_desc={entry.getIn(['data', 'meta_description'])}
         // tags={entry.getIn(['data', 'tags'])}
         title={entry.getIn(['data', 'title'])}
+        author={entry.getIn(['data', 'author'])}
       />
     </div>
   )

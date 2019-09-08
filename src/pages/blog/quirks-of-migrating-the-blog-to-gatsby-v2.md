@@ -1,6 +1,7 @@
 ---
 templateKey: article-page
 title: Quirks of migrating the blog to Gatsby v2
+author: Vaibhav Sharma
 date: 2018-12-03T12:47:42.410Z
 cover: /img/everything_is_connected.gif
 meta_title: Quirks of migrating the blog to Gatsby v2 and how to deal with them.

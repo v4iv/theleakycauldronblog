@@ -182,7 +182,7 @@ module.exports = {
                   date: edge.node.frontmatter.date,
                   title: edge.node.frontmatter.title,
                   description: edge.node.excerpt,
-                  author: rssMetadata.author,
+                  author: edge.node.frontmatter.author,
                   url: rssMetadata.site_url + edge.node.fields.slug,
                   guid: rssMetadata.site_url + edge.node.fields.slug,
                   custom_elements: [{ 'content:encoded': edge.node.html }],
@@ -202,6 +202,7 @@ module.exports = {
                             fields { slug }
                             frontmatter {
                               title
+                              author
                               templateKey
                               cover {
                                 publicURL
@@ -223,12 +224,13 @@ module.exports = {
       resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
       options: {
         // Fields to index
-        fields: [`title`, `tags`],
+        fields: [`title`, `tags`, `author`],
         // How to resolve each field`s value for a supported node type
         resolvers: {
           // For any node of type MarkdownRemark, list how to resolve the fields` values
           MarkdownRemark: {
             title: node => node.frontmatter.title,
+            author: node => node.frontmatter.author,
             tags: node => node.frontmatter.tags,
             slug: node => node.fields.slug,
             templateKey: node => node.frontmatter.templateKey,
