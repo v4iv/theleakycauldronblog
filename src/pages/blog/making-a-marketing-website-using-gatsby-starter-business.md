@@ -17,16 +17,16 @@ tags:
 ---
 **NOTE:** Updated for **_gatsby-starter-business v2.1_**
 
-Gatsby JS brought something that everyone was waiting for, a React JS based static site generator, and that too a powerful one. True to their boast that it's really hard to make sloppy website with Gatsby, making it amazing for marketing websites.
+Gatsby JS brought something that everyone was waiting for, a React JS based static site generator, and that too a powerful one. True to their boast that it's really hard to make a sloppy website with Gatsby, making it amazing for marketing websites.
 
-When I was writing a website for my company, i found my self wanting a Gatsby starter with following requirements:
+When I was writing a website for my company, I found my self wanting a Gatsby starter with the following requirements:
 
 * It should be powered by _Netlify_ CMS.
 * It should be SEO friendly.
 * It should at least have a home page and blog page.
 * It should allow proper styling using some CSS framework like _Bootstrap_ or _Bulma_.
 
-While all these features are available in various starters, none of them were a complete package. So, I decided I'll make one myself:
+While all these features are available in various starters, none of them was a complete package. So, I decided I'll make one myself:
 
 [Gatsby-Starter-Business](https://github.com/v4iv/gatsby-starter-business)
 
@@ -67,6 +67,6 @@ module.exports = {
 }
 ```
 
-Then from Netlify dashboard create a new site from github for the same repository, and deploy it. 
+Then from Netlify dashboard create a new site from Github for the same repository, and deploy it. 
 
 Once done go to Netlify settings page, and enable Identity, set registration preference and Git Gateway. Create a user from the identity tab of Netlify and visit <https://yoursiteaddress/admin/#/> login with your Netlify credentials and you'll be on the admin page. Now you can easily edit pages or add new blog articles.
