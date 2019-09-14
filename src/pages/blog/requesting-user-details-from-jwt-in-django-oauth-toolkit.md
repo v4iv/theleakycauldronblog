@@ -15,7 +15,7 @@ tags:
   - Django
   - DRF
 ---
-We always require an API to fetch the details of the current user. This API unfortunately isn't provided by default in Django OAuth Toolkit. But worry not, it's fairly easy to write this API, and that is what we'll do. But before we begin, let's clarify some assumptions:
+We always require an API to fetch the details of the current user. This API, unfortunately, isn't provided by default in Django OAuth Toolkit. But worry not, it's fairly easy to write this API, and that is what we'll do. But before we begin, let's clarify some assumptions:
 
 * This tutorial is written with Django 2.0 specific commands in mind (eg. Path)
 * This is for someone who has Django OAuth Toolkit already up and running in the project.
@@ -25,7 +25,7 @@ Now that that's clear, let's begin.
 
 ## Setting up the Authentication Backend and Middlewares
 
-Before we begin writing `API View`, first make sure to add the following in the `settings.py` of the project. First we add `AUTHENTICATION_BACKENDS`
+Before we begin writing `API View`, make sure to add the following in the `settings.py` of the project. First, we add `AUTHENTICATION_BACKENDS`
 
 ```python
 AUTHENTICATION_BACKENDS = (
@@ -56,7 +56,7 @@ In the `views.py` we'll write a `generic Retrieve API View` which when called al
 
 ### Serializer for the User
 
-For our JSON response let's take id, first name, last name, email and username. In the `serializers.py` file write the following Model Serializer class
+For our JSON response let's take id, first name, last name, email, and username. In the `serializers.py` file write the following Model Serializer class
 
 ```python
 class UserDetailSerializer(serializers.ModelSerializer):
@@ -86,7 +86,7 @@ class UserDetailView(generics.RetrieveAPIView):
 
 ### The API Path
 
-Now that the tough part is over we'll write the URL Path for the API. In your `urls.py` add the following url pattern.
+Now that the tough part is over we'll write the URL Path for the API. In your `urls.py` add the following URL pattern.
 
 ```python
 urlpatterns = [
