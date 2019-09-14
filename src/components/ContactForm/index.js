@@ -35,7 +35,8 @@ const ContactForm = () => {
         handleSubmit,
         handleReset,
       }) => (
-        <form className='pa5 black-80 measure center'
+        <form
+          className='pa5 black-80 measure center'
           name='contact'
           onSubmit={handleSubmit}
           onReset={handleReset}
@@ -71,11 +72,15 @@ const ContactForm = () => {
             {touched.message && errors.message && <p className='f6 red'>{errors.message}</p>}
           </div>
           <div className='mt5 measure tr'>
-            <input type='reset' value='Clear'
-              className='b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib mr3' />
-            <input name='submit' type='submit' value='Send Message'
+            <input
+              type='reset' value='Clear'
+              className='b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib mr3'
+            />
+            <input
+              name='submit' type='submit' value='Send Message'
               disabled={isSubmitting}
-              className='b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib' />
+              className='b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib'
+            />
           </div>
         </form>
       )}
