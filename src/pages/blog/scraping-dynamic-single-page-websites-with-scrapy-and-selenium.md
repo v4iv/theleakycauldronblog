@@ -24,7 +24,7 @@ In brief what we're about to do is, use the webdriver of a browser with the help
 
 * This is not a scrapy tutorial for beginners, I'll assume some familiarity
 * A dummy page to be scraped, the links that have to be scraped has the class "ng-binding"
-* A scrapy project has been set up and blank spider script is ready, wherein our code goes.
+* A scrapy project has been set up and a blank spider script is ready, wherein our code goes.
 
 ## Setting up Geckodriver
 
@@ -55,7 +55,7 @@ sudo mv geckodriver /usr/local/bin/
 
 ## Writing the Spider
 
-In the spider file, lets assume its name is `angular.py` first we need to import the following:
+In the spider file, let's assume its name is `angular.py` first we need to import the following:
 
 ```python
 import scrapy
