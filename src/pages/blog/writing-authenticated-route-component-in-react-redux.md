@@ -14,11 +14,11 @@ tags:
   - ReactRouter
   - Authentication
 ---
-How to write an Authenticated Route component which will redirect to Sign In Page if user isn't authenticated and once authentication is complete, it'll redirect them back to the same page, this is a problem most new React developers face. Today we learn to do just that.
+How to write an Authenticated Route component which will redirect to Sign In Page if a user isn't authenticated and once authentication is complete, it'll redirect them back to the same page, this is a problem most new React developers face. Today we learn to do just that.
 
 But before we begin, lets clear out some assumptions:
 
-* This is not a beginner react-redux authentication tutorial, we assume you already have authentication mechanism set up.
+* This is not a beginner react-redux authentication tutorial, we assume you already have an authentication mechanism set up.
 * The Redux association is just to get the "authenticated"(bool) state, and you can use any state management you like.
 * We are using React Router v4
 * You may need to modify it according to your project.
@@ -27,7 +27,7 @@ Now that, that's out of the way lets begin by creating the most important part, 
 
 ## Creating AuthenticatedRoute Component
 
-`AuthenticatedRoute` component is a component which basically takes the props of `Route` and an additional boolean prop, `authenticated`, which determines if the Component is to be rendered or the user needs to be redirected.
+`AuthenticatedRoute` component is a component which takes the props of `Route` and an additional boolean prop, `authenticated`, which determines if the Component is to be rendered or the user needs to be redirected.
 
 ```javascript
 import React from "react";
@@ -53,7 +53,7 @@ export default function AuthenticatedRoute({
 }
 ```
 
-It also stores the actual path as a parameter in the signin path `/signin?redirectTo=<path>` so that when the user signs in it'll redirect to that path.
+It also stores the actual path as a parameter in the sign in path `/signin?redirectTo=<path>` so that when the user signs in it'll redirect to that path.
 
 ## Redirecting to the URL Param after Sign In
 
@@ -68,7 +68,7 @@ export function signinUser(username, password, redirect = '/'){
 }
 ```
 
-we set a default value for the third argument, so that in case no value is provided it'll redirect to home page. Now for the actual redirection.
+we set a default value for the third argument so that in case no value is provided it'll redirect to the home page. Now for the actual redirection.
 
 ```javascript
 export function signinUser(username, password, redirect = '/'){

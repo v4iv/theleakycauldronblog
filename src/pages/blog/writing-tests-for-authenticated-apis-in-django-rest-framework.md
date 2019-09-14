@@ -16,9 +16,9 @@ tags:
   - Authentication
   - OAuth Toolkit
 ---
-If you are new to [Django Rest Framework](http://www.django-rest-framework.org/) and [Django Oauth Toolkit](http://dot.evonove.it/) and are having trouble writing automated tests for your `is_authenticated` APIs, you have come to the write place. The problem arises because for a token to be generated we need to first create an application and then retrieve it's `client_id` and `client_secret` before sending it along with username and password for generating `access_token`.
+If you are new to [Django Rest Framework](http://www.django-rest-framework.org/) and [Django OAuth Toolkit](http://dot.evonove.it/) and are having trouble writing automated tests for your `is_authenticated` APIs, you have come to the right place. The problem arises because for a token to be generated we need to first create an application and then retrieve its `client_id` and `client_secret` before sending it along with username and password for generating `access_token`.
 
-Before beginning though we're gonna work on the following assumptions:
+Before beginning, though we're gonna work on the following assumptions:
 
 * There's a model called Books.
 * There's a `generic.ListAPIView`, with URL name `books:list` 
@@ -39,7 +39,7 @@ class BookListTest(APITestCase):
     pass
 ```
 
-To begin testing, we need a few things setup first, to do so we use the `setUp` method. Here we will, first create a `test user`, set up a dummy `application`, then create `two dummy book entries`, and finally define our `fetch url`.
+To begin testing, we need a few things set up first, to do so we use the `setUp` method. Here we will, first create a `test user`, set up a dummy `application`, then create `two dummy book entries`, and finally define our `fetch url`.
 
 ```python
 class BookListTest(APITestCase):
@@ -70,7 +70,7 @@ class BookListTest(APITestCase):
         self.fetch_url = reverse("books:list")
 ```
 
-Everything we write in the above function are created at the beginning of every Test. Now let's come to writing the actual test. To do that we'll need an `access_token`, and will have to set the `authorization header` with the `bearer token`.
+Everything we write in the above function is created at the beginning of every Test. Now let's come to writing the actual test. To do that we'll need an `access_token`, and will have to set the `authorization header` with the `bearer token`.
 
 ```python
 class BookListTest(APITestView):

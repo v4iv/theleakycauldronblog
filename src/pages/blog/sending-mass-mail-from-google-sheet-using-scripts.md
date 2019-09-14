@@ -31,7 +31,7 @@ These columns containing the word "Send" if the candidate has to be mailed, and 
 
 ![google sheet sturcture](/img/sheet_structure.png)
 
-This is our example table, for the customized message we'll pick up, the first name from `column B`, the last name from `column C` etc. You can add more details accordingly.
+This is our example table, for the customized message we'll pick up, the first name from `column B`, the last name from `column C`, etc. You can add more details accordingly.
 
 ## Step Two: Script for Mass Mail
 
@@ -129,4 +129,4 @@ Save and reload the sheet, you'll see a menu called `Email`, and within it, an o
 
 That's it just click on the option to run the script and send mass mail. One more, thing you'll have to approve the script to use your Gmail.
 
-Link To Example Sheet - [Mass Mail](https://docs.google.com/spreadsheets/d/1OeRL8bFaAYuwAQXdy_wV1WKmGap_gcQ3jFOzrbKVEuo/edit?usp=sharing)
+Link to Example Sheet - [Mass Mail](https://docs.google.com/spreadsheets/d/1OeRL8bFaAYuwAQXdy_wV1WKmGap_gcQ3jFOzrbKVEuo/edit?usp=sharing)

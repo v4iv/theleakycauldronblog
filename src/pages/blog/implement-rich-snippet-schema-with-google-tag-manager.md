@@ -15,11 +15,11 @@ tags:
   - GoogleTagManager
   - JSONLD
 ---
-Rich Snippets Schema, while may not help in improving SERP Ranking, it does help in better CTR(Click Through Rate). And this is the new frontier in Digital Marketing/SEO. With the onset of various AI Assistants like _Google Assistant_, _Siri_, _Cortana_ etc and them affecting sales, It has become very important that the search engines understand your content better. To make them understand the content better, a lot of search giants got together and developed a content markup system. This is Project **_Schema.org_**.
+Rich Snippets Schema, while may not help in improving SERP Ranking, it does help in better CTR(Click Through Rate). And this is the new frontier in Digital Marketing/SEO. With the onset of various AI Assistants like _Google Assistant_, _Siri_, _Cortana_, etc and them affecting sales, It has become very important that the search engines understand your content better. To make them understand the content better, a lot of search giants got together and developed a content markup system. This is Project **_Schema.org_**.
 
 There are various encodings you can use to markup your data, like `Microdata`, `JSON-LD`, `RDFa`. But out of these the popular choices are `Microdata` and `JSON-LD`. `Microdata` is very much like `XML` whereas `JSON-LD` is more like `JSON`. Google prefers `JSON-LD` and plans to phase out `Microdata`. But `Microdata` is still a big part of Bing and Yahoo.
 
-Although there are various ways you can implement these Schemas, the one that has been gaining a lot of traction recently is using _Google Tag Manager_. While you can simply put your JSON-LD schema Tag in a Custom HTML field and expect it to work, and for some people it has, if you go to [Structured Data Testing Tool](https://search.google.com/structured-data/testing-tool/) you'll find out that the schema isn't visible. That's either because Structured Data Testing Tool cannot render the schema, or GTM doesn't allow us to do so.
+Although there are various ways you can implement these Schemas, the one that has been gaining a lot of traction recently is using _Google Tag Manager_. While you can simply put your JSON-LD schema Tag in a Custom HTML field and expect it to work, and for some people it has, if you go to [Structured Data Testing Tool](https://search.google.com/structured-data/testing-tool/) you'll find out that the schema isn't visible. That's either because the Structured Data Testing Tool cannot render the schema, or GTM doesn't allow us to do so.
 
 This made us think and we found a simple workaround for this problem. What we do essentially is, store schema data as `JSON` in a variable, and create a `<script type="application/ld+json"></script>` tag using JavaScript.
 
@@ -52,7 +52,7 @@ Let's say this is our `JSON-LD` Schema
 </script>
 ```
 
-First we create a Custom HTML Tag in Google Tag Manager. In that tag we create a JavaScript `document function` within a Script Tag. In that `function`, we create variable called `jsonld` , which stores our `JSON-LD` data.
+First, we create a Custom HTML Tag in Google Tag Manager. In that tag, we create a JavaScript `document function` within a Script Tag. In that `function`, we create a variable called `jsonld`, which stores our `JSON-LD` data.
 
 ```html
 <script>
@@ -83,7 +83,7 @@ First we create a Custom HTML Tag in Google Tag Manager. In that tag we create a
 </script>
 ```
 
-Then we initalize the Script element, set the type as `"application/ld+json"`, and put the `jsonld` variable data in the  `Inner HTML`. After that all that's left is to append the script to document Head.
+Then we initialise the Script element, set the type as `"application/ld+json"`, and put the `jsonld` variable data in the  `Inner HTML`. After that, all that's left is to append the script to document Head.
 
 ```html
 <script>
