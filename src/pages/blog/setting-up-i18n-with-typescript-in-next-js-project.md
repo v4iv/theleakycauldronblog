@@ -14,7 +14,7 @@ tags:
   - TypeScript
   - SSR
 ---
-As I was starting a new [NextJS](https://nextjs.org) project, I planned to do it in [TypeScript](https://www.typescriptlang.org). Since I don't know TypeScript, my initial plan was to learn as I go. Comes the time I had to set up i18n using [`next-i18next`](https://github.com/isaachinman/next-i18next) plugin, and it was a bit problematic as there was no example for it on the official [`next-i18next`](https://github.com/isaachinman/next-i18next) repository. After I successfully learnt how to do it, I did make a PR for typescript example on the original repo but this is incase it doesn't get accepted.
+As I was starting a new [NextJS](https://nextjs.org) project, I planned to do it in [TypeScript](https://www.typescriptlang.org). Since I don't know TypeScript, my initial plan was to learn as I go. Comes the time I had to set up i18n using [`next-i18next`](https://github.com/isaachinman/next-i18next) plugin, and it was a bit problematic as there was no example for it on the official [`next-i18next`](https://github.com/isaachinman/next-i18next) repository. After I successfully learnt how to do it, I did make a PR for typescript example on the original repo but this is in case it doesn't get accepted.
 
 Setting up [next-i18next](https://github.com/isaachinman/next-i18next) in a TS Next app, has 3 parts:
 
@@ -22,7 +22,7 @@ Setting up [next-i18next](https://github.com/isaachinman/next-i18next) in a TS N
 * Adding Custom Server
 * Implementing `next-i18next`
 
-Today we'll set up a simple Next app which will have two pages and an option to change language.
+Today we'll set up a simple Next app which will have two pages and an option to change the language.
 
 ## Setting Up TypeScript Next App
 
@@ -38,7 +38,7 @@ Then we add the following dependencies
 yarn add @zeit/next-typescript next react react-dom
 ```
 
-we'll also need some dev dependencies, lets add them
+we'll also need some dev dependencies, let's add them
 
 ```bash
 yarn add @types/next @types/react @types/react-dom typescript --dev
@@ -211,7 +211,7 @@ and then a `tsconfig.server.json` file in the root directory
 }
 ```
 
-now all we need to do some changes in our npm scripts, refactor the following lines in `package.json` 
+now all we need to do some changes in our `npm` scripts, refactor the following lines in `package.json` 
 
 ```json
 "scripts": {
@@ -232,7 +232,7 @@ All that's left now is to add i18next, to do that we begin by adding the followi
 yarn add next-i18next
 ```
 
-next we add a file `i18n.ts` to our root
+Next, we add a file `i18n.ts` to our root
 
 `i18n.ts` :
 
@@ -280,7 +280,7 @@ const handle = app.getRequestHandler();
 })()
 ```
 
-next we add `appWithTranslation` HOC to a custom `_app.tsx`
+Then, we add `appWithTranslation` HOC to a custom `_app.tsx`
 
 `pages/_app.tsx` :
 
@@ -303,7 +303,7 @@ class MyApp extends App {
 export default appWithTranslation(MyApp)
 ```
 
-next we add some translations, to do that we need to create a folder called static in our root, then add a folder called locales in static then add folders named with language codes in locales and add common.json files to them. In our case we'll be adding english as default and hindi as the other language
+Next, we add some translations, to do that we need to create a folder called static in our root, then add a folder called locales in static then add folders named with language codes in locales and add common.json files to them. In our case, we'll be adding english as default and Hindi as the other language
 
 ```
 .
@@ -354,7 +354,7 @@ Add translations to `common.json` files
 }
 ```
 
-then we refactor our two pages to include translation HOC, namespaces and translation function, also add a button to change language.
+then we refactor our two pages to include translation HOC, namespaces, and translation function, also add a button to change the language.
 
 `pages/index.tsx` :
 

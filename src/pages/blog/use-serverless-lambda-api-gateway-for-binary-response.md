@@ -14,15 +14,15 @@ tags:
   - API Gateway
   - NodeJS
 ---
-Serverless framework is an amazing tool, but a few things either works differently or is not present at all. One of those not so straight things is [sending binary data via API Gateway](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-payload-encodings.html). It took me a while to get how to do this, so I thought I should make it easier for the next Person.
+The [Serverless Framework](https://serverless.com) is an amazing tool, but a few things either work differently or are not present at all. One of those not so straight things is [sending binary data via API Gateway](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-payload-encodings.html). It took me a while to get how to do this, so I thought I should make it easier for the next person.
 
 All you have to do is reconfigure your response, add a few plugins, make the required settings, and just run it!
 
 ## Setting up the Response
 
-For that, lets suppose, that we are making a lambda function that does some processing on the image and returns the image in binary format.
+For that, let's suppose that we are making a lambda function that does some processing on the image and returns the image in binary format.
 
-Lets say there's a function that does the processing on the image and returns it to a variable. So ideally this'll be how you'd write it.
+Let's say there's a function that does the processing on the image and returns it to a variable. In case of a regular express server, this is how you'd write it.
 
 ```javascript
  module.exports.handler = async (event, context, callback) => {
