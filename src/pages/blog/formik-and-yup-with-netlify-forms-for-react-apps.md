@@ -16,7 +16,7 @@ tags:
   - Formik
   - Yup
 ---
-[Netlify Forms](https://www.netlify.com/docs/form-handling/) is yet another amazing service provided by [Netlify](https://www.netlify.com/) with a generous free tier. For those who don't know, it allows you to set up a form and take submissions without needing a backend. The form data is not only stored in your dashboard, you can directly get a notification on any email address! Sounds interesting right?! As we start implementing you'll find out just how easy it is to setup if you know basics of React. Although I should mention it's not just a React only feature, you can set it up with basic HTML as well!
+[Netlify Forms](https://www.netlify.com/docs/form-handling/) is yet another amazing service provided by [Netlify](https://www.netlify.com/) with a generous free tier. For those who don't know, it allows you to set up a form and take submissions without needing a backend. The form data is not only stored in your dashboard, but you can also directly get a notification on any email address! Sounds interesting right?! As we start implementing you'll find out just how easy it is to set up if you know basics of React. Although I should mention it's not just a React only feature, you can set it up with basic HTML as well!
 
 ## Setting Up Formik Form
 
@@ -26,7 +26,7 @@ We're gonna first install [Formik](https://jaredpalmer.com/formik/):
 yarn add formik
 ```
 
-Then we create a Function Component called `ContactForm.js`, in it we'll begin by setting up [Formik](https://jaredpalmer.com/formik/) and it's required props - initialValues, onSubmit & render).
+Then we create a Function Component called `ContactForm.js`, in it, we'll begin by setting up [Formik](https://jaredpalmer.com/formik/) and it's required props - initialValues, onSubmit & render).
 
 **ContactForm.js:**
 
@@ -91,9 +91,9 @@ const ContactForm = () => {
 export default ContactForm
 ```
 
-You might noticed that we have also added a flag for Send Message Button to be disabled while submitting. This is to prevent unwanted behaviour.
+You might've noticed that we have also added a flag for Send Message Button to be disabled while submitting. This is to prevent unwanted behaviour.
 
-This is a basic Contact form with fields for Name, Email & Message. Next we setup validation using Yup.
+This is a basic Contact form with fields for Name, Email & Message. Next, we set up validation using Yup.
 
 ## Creating a Validation Schema for Contact Form
 
@@ -125,7 +125,7 @@ const validationSchema = Yup.object().shape({
 export default validationSchema
 ```
 
-Import the above file and add it to formik's validationSchema prop.
+Import the above file and add it to formik's `validationSchema` prop.
 
 **ContactForm.js:**
 
@@ -145,7 +145,7 @@ const ContactForm = () => {
 
 ## Writing form On Submit method
 
-In on Submit function of Formik Component, we'll replace `console.log` with a `application/x-www-form-urlencoded` fetch request. But before we do that we need to make an uri component encoder (you can use thirdparty library if you like).
+In on Submit function of Formik Component, we'll replace `console.log` with a `application/x-www-form-urlencoded` fetch request. But before we do that we need to make an uri component encoder (you can use third-party library if you like).
 
 **ContactForm.js:**
 
@@ -202,7 +202,7 @@ fetch("/?no-cache=1", {
 
 ## Displaying Validation Errors to User
 
-To display the validation errors we need to use two params from render method `touched` & `errors`. `touched` object tells us if the user has touched the field, and `errors` object tell us the errors. We are gonna display the errors if the user has touched the field and there's an error for that field.
+To display the validation errors we need to use two params from `render` method `touched` & `errors`. `touched` object tells us if the user has touched the field, and `errors` object tell us the errors. We are gonna display the errors if the user has touched the field and there's an error for that field.
 
 **ContactForm.js:**
 
@@ -264,9 +264,9 @@ To display the validation errors we need to use two params from render method `t
 
 And with this, we are finally done. Now according to our validation Schema:
 
-* Name, Email & Message are required fields.
-* Name should be minimum 2 characters and maximum 50 characters.
-* Email field should have valid email.
-* And Message field cannot be empty.
+* 'Name', 'Email' & 'Message' are required fields.
+* 'Name' should be minimum 2 characters and maximum 50 characters.
+* 'Email' field should have a valid email.
+* And 'Message' field cannot be empty.
 
 I hope this helps you, happy coding.
