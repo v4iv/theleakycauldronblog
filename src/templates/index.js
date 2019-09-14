@@ -25,8 +25,8 @@ export default class IndexPage extends Component {
   render () {
     const { pageContext } = this.props
     const { group, index, first, last } = pageContext
-    const previousUrl = index - 1 === 1 ? '' : (index - 1).toString()
-    const nextUrl = (index + 1).toString() + '/'
+    const previousUrl = index - 1 === 1 ? '' : '/' + (index - 1).toString()
+    const nextUrl = '/' + (index + 1).toString()
 
     /*eslint-disable */
     const websiteSchemaOrgJSONLD = {
