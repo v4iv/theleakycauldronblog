@@ -21,15 +21,15 @@ Upgrading `npm` packages broke so much because a lot of them now require _peerDe
 
 # I See Red - Warnings and Deprecations
 
-With new release comes lots of deprecations:
+With new release, comes lots of deprecations:
 
 ## Link is now included in gatsby package
 
-Although migration from `react-router` to `reach/router` was a great decision, it meant manually updating the imports in a lot of files. Nevertheless, a good decision as i felt there were a lot inconsistency with `react-router` especially in terms of gatsby, even though it was more familiar package to work with due to my experience with React.
+Although migration from `react-router` to `reach/router` was a great decision, it meant manually updating the imports in a lot of files. Nevertheless, a good decision as I felt there was a lot of inconsistency with `react-router` especially in terms of gatsby, even though it was a more familiar package to work with due to my experience with React.
 
 ## Global graphql is now deprecated
 
-This one was more of a surprise to me as it made not much sense, but still meant a lot of refactoring. What i thought would make it easy was Webstorm auto-import but that didn't go quite well for me, had to do it manually. Only to find out that there is a codemod package to help it!
+This one was more of a surprise to me as it made not much sense, but still meant a lot of refactoring. What I thought would make it easy was Webstorm auto-import but that didn't go quite well for me, had to do it manually. Only to find out that there is a codemod package to help it!
 
 ## Renaming parameters
 
@@ -37,19 +37,19 @@ This one was more of a surprise to me as it made not much sense, but still meant
 
 ## Removing inline styles from `html.js`
 
-Although Gatsby v2 doc states that we should stay away from html.js but, my project is setup in a way that i didn't/couldn't stay away from it(thanks `bulma`). And this also meant additional refactoring.
+Although Gatsby v2 doc states that we should stay away from html.js but, my project is set up in a way that I didn't/couldn't stay away from it(thanks `Bulma`). And this also meant additional refactoring.
 
 ## Adding the support for Layout
 
-This one had me most wary, I was like this cannot go well on the first try, but voila it did. But wait a second, there was a problem that i didn't know yet.
+This one had me most wary, I was like this cannot go well on the first try, but voila it did. But wait a second, there was a problem that I didn't know yet.
 
 # Problems Begin - Solving Breaking Changes
 
-Just when I was thinking this going all too well, i encountered my first glitch - The Netlify CMS isn't accessible anymore.
+Just when I was thinking this going all too well, I encountered my first glitch - The Netlify CMS isn't accessible anymore.
 
 ## `gatsby-plugin-layout` breaks Netlify CMS Admin Page
 
-This was a particularly nasty problem because it looks like `gatsby-plugin-layout` is trying to put layout on admin page and you don't see any way to fix it! ...but, it doesn't have much to do with it. After googling for hours and asking random devs online, I remembered I had another project where it didn't break the admin page. Solution? All you need to do is that you need to put `gatsby-plugin-layout` before `gatsby-plugin-netlify-cms` in `gatsby-config.js`.
+This was a particularly nasty problem because it looks like `gatsby-plugin-layout` is trying to put the layout on the admin page and you don't see any way to fix it! ...but, it doesn't have much to do with it. After googling for hours and asking random devs online, I remembered I had another project where it didn't break the admin page. Solution? All you need to do is that you need to put `gatsby-plugin-layout` before `gatsby-plugin-netlify-cms` in `gatsby-config.js`.
 
 ## Netlify CMS Preview Pane stops working.
 
@@ -59,7 +59,7 @@ This one although was easy to figure out using Console errors, was still surpris
  {tags && tags.length ? (...) : null}
 ```
 
-Luckily this is where my problems ended with the migrations. Now, it was time for improving the blog, by adding Search functionality.
+Luckily this is where my problems ended with the migrations. Now, it was time for improving the blog, by adding search functionality.
 
 # Improvement Begins - Adding Search Functionality.
 
