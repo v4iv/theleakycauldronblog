@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import Helmet from 'react-helmet'
 import 'tachyons-sass/tachyons.scss'
 import config from '../../../config'
@@ -6,7 +6,7 @@ import Footer from '../Footer'
 import Header from '../Header'
 
 const Layout = (props) => (
-  <Fragment>
+  <>
     <Helmet>
       <title>{config.siteTitle}</title>
       <meta name='description' content={config.siteDescription} />
@@ -20,7 +20,7 @@ const Layout = (props) => (
       <div>{props.children}</div>
       <Footer config={config} />
     </div>
-  </Fragment>
+  </>
 )
 
 export default Layout

@@ -9,8 +9,10 @@ import Layout from '../components/Layout'
 const PaginationLink = props => {
   if (!props.test) {
     return (
-      <Link to={props.url}
-        className='f5 no-underline black bg-animate hover-bg-black hover-white inline-flex items-center pa3 ba border-box mr4'>
+      <Link
+        to={props.url}
+        className='f5 no-underline black bg-animate hover-bg-black hover-white inline-flex items-center pa3 ba border-box mr4'
+      >
         <span className='pl1'>{props.text}</span>
       </Link>
     )
@@ -56,11 +58,13 @@ export default class IndexPage extends Component {
 
           <ArticleList posts={group} />
           <div className='flex items-center justify-center pa4'>
-            <PaginationLink test={first}
+            <PaginationLink
+              test={first}
               url={previousUrl}
               text='Previous Page'
             />
-            <PaginationLink test={last}
+            <PaginationLink
+              test={last}
               url={nextUrl}
               text='Next Page'
             />

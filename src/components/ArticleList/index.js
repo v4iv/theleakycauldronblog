@@ -23,13 +23,16 @@ const ArticleList = ({ posts }) => {
                 <div className='pl3-ns order-1 order-2-ns mb4 mb0-ns w-100 w-40-ns'>
                   <Link className='db ph0-l no-underline black grow' to={post.fields.slug}>
                     {!!post.frontmatter.cover && !!post.frontmatter.cover.childImageSharp
-                      ? <Img className='db'
+                      ? <Img
+                        className='db'
                         fluid={post.frontmatter.cover.childImageSharp.fluid}
-                        alt={post.frontmatter.title} />
-                      : <img className='db'
+                        alt={post.frontmatter.title}
+                      />
+                      : <img
+                        className='db'
                         src={post.frontmatter.cover.publicURL}
-                        alt={post.frontmatter.title} />
-                    }
+                        alt={post.frontmatter.title}
+                      />}
                   </Link>
                 </div>
               </div>

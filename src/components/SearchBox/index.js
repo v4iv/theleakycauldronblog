@@ -67,8 +67,10 @@ class SearchBox extends Component {
       <div className='measure center pa3'>
         <fieldset className='cf bn ma0 pa0'>
           <div className='cf'>
-            <small id='name-desc' className='f6 black-60 db mb2 tr' style={{ cursor: 'pointer' }}
-              onClick={() => window.history.back()}>Close
+            <small
+              id='name-desc' className='f6 black-60 db mb2 tr' style={{ cursor: 'pointer' }}
+              onClick={() => window.history.back()}
+            >Close
             </small>
             <label className='clip' htmlFor='search'>Search</label>
             <input
@@ -78,7 +80,8 @@ class SearchBox extends Component {
               name='search'
               onChange={this.search}
               value={this.state.query}
-              id='search' />
+              id='search'
+            />
           </div>
         </fieldset>
         {(this.state.isActive && this.state.results.length)
@@ -94,21 +97,31 @@ class SearchBox extends Component {
           : <div>
             <p className='fw1 i tc mt4 mt5-l f4 f3-l'>Are you looking for one of these?</p>
             <ul className='list tc pl0 w-100 mt5'>
-              <li className='dib'><Link className='f5 f4-ns link black db pv2 ph3 hover-light-blue' to='/'
-                replace>Home</Link>
+              <li className='dib'><Link
+                className='f5 f4-ns link black db pv2 ph3 hover-light-blue' to='/'
+                replace
+              >Home
+              </Link>
               </li>
-              <li className='dib'><Link className='f5 f4-ns link black db pv2 ph3 hover-light-green'
-                to='/about' replace>About</Link>
+              <li className='dib'><Link
+                className='f5 f4-ns link black db pv2 ph3 hover-light-green'
+                to='/about' replace
+              >About
+              </Link>
               </li>
-              <li className='dib'><Link className='f5 f4-ns link black db pv2 ph3 hover-light-yellow'
-                to='/contact' replace>Contact</Link>
+              <li className='dib'><Link
+                className='f5 f4-ns link black db pv2 ph3 hover-light-yellow'
+                to='/contact' replace
+              >Contact
+              </Link>
               </li>
-              <li className='dib'><Link className='f5 f4-ns link black db pv2 ph3 hover-light-purple'
-                to='/tags' replace>Tags</Link>
+              <li className='dib'><Link
+                className='f5 f4-ns link black db pv2 ph3 hover-light-purple'
+                to='/tags' replace>Tags
+              </Link>
               </li>
             </ul>
-          </div>
-        }
+          </div>}
       </div>
     )
   }

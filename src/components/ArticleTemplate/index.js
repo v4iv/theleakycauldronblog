@@ -26,30 +26,33 @@ const ArticleTemplate = ({
             <time className='f5 f4-l db fw1 baskerville mb4-l mb2'>{author} | {date}</time>
             <div className='inline-flex flex-wrap'>
               {tags && tags.length &&
-                tags.map(tag => (
-                  <Link
-                    to={`/tags/${_.kebabCase(tag)}`}
-                    key={tag}
-                    className='no-underline black dim avenir'
-                  >
-                    <small className='f6 f4-l fw1'>#{tag}&nbsp;&nbsp;</small>
-                  </Link>
-                ))}
+              tags.map(tag => (
+                <Link
+                  to={`/tags/${_.kebabCase(tag)}`}
+                  key={tag}
+                  className='no-underline black dim avenir'
+                >
+                  <small className='f6 f4-l fw1'>#{tag}&nbsp;&nbsp;</small>
+                </Link>
+              ))}
             </div>
           </div>
         </header>
       </section>
       {!!cover && !!cover.childImageSharp
-        ? <Img className='w-100 dib f3'
+        ? <Img
+          className='w-100 dib f3'
           fluid={cover.childImageSharp.fluid}
-          alt={title} />
-        : <img className='w-100 dib f3'
+          alt={title}
+        />
+        : <img
+          className='w-100 dib f3'
           src={cover.publicURL}
-          alt={title} />
-      }
+          alt={title}
+        />}
       <section className='mw8 center'>
         <div className='ph3 ph4-m ph5-l'>
-          <PostContent content={content} className={'measure db center f5 f4-ns lh-copy'} />
+          <PostContent content={content} className='measure db center f5 f4-ns lh-copy' />
         </div>
       </section>
     </article>

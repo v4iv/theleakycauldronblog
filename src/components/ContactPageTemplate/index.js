@@ -1,8 +1,8 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import ContactForm from '../ContactForm'
 
-const ContactPageTemplate = ({ title, subtitle }) => <Fragment>
+const ContactPageTemplate = ({ title, subtitle }) => <>
   <section className='mw7 center avenir'>
     <div className='mt3'>
       <div className='pa3 measure center bb'>
@@ -12,7 +12,7 @@ const ContactPageTemplate = ({ title, subtitle }) => <Fragment>
       <ContactForm />
     </div>
   </section>
-</Fragment>
+</>
 
 ContactPageTemplate.propTypes = {
   title: PropTypes.string,
