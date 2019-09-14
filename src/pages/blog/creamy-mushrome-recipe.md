@@ -12,7 +12,7 @@ tags:
   - Recipe
   - Food
 ---
-This dish is something of my own experiment, but extremely tasty. Best enjoyed with **Garlic Naan** or **Rice**.
+This dish is something of my experiment, but extremely tasty. Best enjoyed with **Garlic Naan** or **Rice**.
 
 ## Ingredients
 
@@ -36,15 +36,15 @@ This dish is something of my own experiment, but extremely tasty. Best enjoyed w
 * Chop mushrooms in quarters
 * Finely chop 2 green chillies And Slit other 2 in half for garnishing
 * Cut thin slices of Bell Peppers
-* Slice onions in ring shape
+* Slice onions in a ring shape
 
 ## Cooking Steps
 
-1. Melt butter in a non stick pan, add garlic paste, chopped green chillies, onions and bell peppers. Saute them till onions turn pink
-2. Add mushroom and cook them till they turn golden brown
-3. Sprinkle garam masala, oregano-garlic powder liberally and add a pinch of cardamom powder to enhanced fragrance of our dish
+1. Melt butter in a non-stick pan, add garlic paste, chopped green chillies, onions and bell peppers. Saute them till onions turn pink
+2. Add mushrooms and cook them till they turn golden brown
+3. Sprinkle garam masala, oregano-garlic powder liberally and add a pinch of cardamom powder to enhance fragrance of our dish
 4. Add 2 Spoons of red chilli sauce, enough to coat all the mushrooms
 5. Pour 4-5 tablespoons of cream and keep stirring to mix everything well
 6. Cook for 15-20 mins, make sure to keep stirring, and that's it.
 
-**TIP**: Add Bhuna-Masala in step one to make it even more spicy, if it wasn't enough kick for you!
+**TIP**: Add Bhuna-Masala in step one to make it even spicier, if it wasn't enough kick for you!
