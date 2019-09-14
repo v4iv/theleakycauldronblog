@@ -12,13 +12,13 @@ tags:
   - ReactJS
   - Google Maps
 ---
-When we started working on a Live Flight Tracker for my company, we chose [React Google Maps](https://github.com/tomchentw/react-google-maps) as our library. It being the most popular one, with over 4K stars on github. I did have some experience with it but that was nowhere enough for the problem i was about to face. Especially, with a very inadequate documentation and not enough examples showing the usage of the library.
+When we started working on a Live Flight Tracker for my company, we chose to use [react-google-maps](https://github.com/tomchentw/react-google-maps) as our library. Since it's the most popular one, with over 4K stars on Github. I did have some experience with it but that was nowhere enough for the problem I was about to face. Especially, with very inadequate documentation and not enough examples showing the usage of the library.
 
-What we were trying to acomplish was to trace the flight path, and show the current position of the said flight. In theory, first part was simple enough to do with a simple `Polyline`, so was the second part with a simple `Marker`. But there was a third part to it — to display both, the Polyline & the Marker in the same bounding box of the visible map with appropriate amount of zoom. This should have been easy as well given that we knew that there's a helper function provided by Google Maps that helps us calculate bounding box. But implementing it in the context of React Google Maps wasn't as simple due to lack of examples online. So, after I was done, I decided to save noobs like me from the trouble I faced.
+What we were trying to accomplish was to trace the flight path, and show the current position of the said flight. In theory, the first part was simple enough to do with a simple `Polyline`, so was the second part with a simple `Marker`. But there was a third part to it — to display both, the Polyline & the Marker in the same bounding box of the visible map with an appropriate amount of zoom. This should have been easy as well given that we knew that there's a helper function provided by Google Maps that helps us calculate bounding box. But implementing it in the context of React Google Maps wasn't as simple due to lack of examples online. So, after I was done, I decided to save noobs like me from the trouble I faced.
 
 ## Writing the Map Component
 
-First we begin by making the Map Component that will display our Polyline & Marker, which is simple enough, but let me show anyways so that we are on the same page.
+First, we begin by making the Map Component that will display our Polyline & Marker, which is simple enough, but let me show anyways so that we are on the same page.
 
 We begin by initializing our Google Map in our Component which is wrapped in `withScriptjs` & `withGoogleMap` HOCs.
 
@@ -67,7 +67,7 @@ Then we add Polyline that will trace the flight path. We pass an array of `lat` 
 ...
 ```
 
-Next we add Marker to show the current position of our aircraft. We pass the current position object made up of `lat` & `lng` to it, which in our case is just the last position in our path array.
+Next, we add Marker to show the current position of our aircraft. We pass the current position object made up of `lat` & `lng` to it, which in our case is just the last position in our path array.
 
 ```javascript
 ...
@@ -101,7 +101,7 @@ Next we add Marker to show the current position of our aircraft. We pass the cur
 
 ## Using the Map Component
 
-Using it is simple enough just import the above component, pass it the required props one of them being your google map api key url.
+Using it is simple enough just import the above component, pass it the required props one of them being your Google Map API key URL.
 
 ```javascript
 class FlightPathTracker Component<any, any> {
@@ -130,7 +130,7 @@ Just go ahead and run it and check to see if everything is working. You'll see t
 
 ## Setting the Bounding Box for both Polyline & Marker
 
-Now comes the tricky part, to set bounds we first let the map we created above mount, then we get a `ref` from our map component, we pass it to a mounted map handler method. Where we actually set the bounds. We begin by adding the handler function as a prop to the `ref` of our map component.
+Now comes the tricky part, to set bounds we first let the map we created above mount, then we get a `ref` from our map component, we pass it to a mounted map handler method, where we set the bounds. We begin by adding the handler function as a prop to the `ref` of our map component.
 
 ```javascript
 ...
@@ -146,7 +146,7 @@ Now comes the tricky part, to set bounds we first let the map we created above m
   >
 ```
 
-Next, we write the handleMapMounted method, where we first initialize Google's LatLngBounds() object. Then we for each position in the path array we extend that object. And, finally we pass that object to our map.
+Next, we write the handleMapMounted method, where we first initialize Google's LatLngBounds() object. Then we for each position in the path array we extend that object. And, finally, we pass that object to our map.
 
 ```javascript
 ...
