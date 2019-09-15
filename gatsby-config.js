@@ -216,6 +216,8 @@ module.exports = {
                     }
                   `,
             output: config.siteRss,
+            title: config.siteTitle,
+
           },
         ],
       },
