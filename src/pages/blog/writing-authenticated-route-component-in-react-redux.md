@@ -119,6 +119,7 @@ class SignInContainer extends Component {
 ## Using AuthenticatedRoute in our Router
 
 Now it's time to use the AuthenticatedRoute Component, it's very easy to do and works exactly like Route from react-router-dom. It only takes one extra parameter, `authenticated`, which is a boolean that determines if the user is authenticated or not.
+
 ```javascript
 ...
 import AuthenticatedRoute from './component/AuthenticatedRoute';
@@ -146,4 +147,5 @@ render() {
     }
 }
 ```
+
 And that's it! We're all set.

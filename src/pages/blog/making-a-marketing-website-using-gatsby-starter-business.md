@@ -28,7 +28,7 @@ When I was writing a website for my company, I found my self wanting a Gatsby st
 
 While all these features are available in various starters, none of them was a complete package. So, I decided I'll make one myself:
 
-[Gatsby-Starter-Business](https://github.com/v4iv/gatsby-starter-business)
+[gatsby-starter-business](https://github.com/v4iv/gatsby-starter-business)
 
 ## Starting a new Gatsby Project
 
