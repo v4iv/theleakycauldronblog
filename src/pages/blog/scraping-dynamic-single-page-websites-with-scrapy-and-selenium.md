@@ -89,7 +89,9 @@ class AngularSpider(scrapy.Spider):
    def parse(self, response):
        pass   
 ```
+
 The real magic happens in the parse function, here we'll write the selector for the data, and the output in a CSV file:
+
 ```python
     ...
     
@@ -108,7 +110,9 @@ The real magic happens in the parse function, here we'll write the selector for 
         self.log('Saved file %s' % filename)
 ```
 Now when you run this using:
+
 ```bash
 scrapy crawl angular_spider
 ```
+
 You'll notice a browser opens up and the page is loaded, and when the scraping is complete you can open the CSV file and see the data.

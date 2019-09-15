@@ -145,7 +145,7 @@ const ContactForm = () => {
 
 ## Writing form On Submit method
 
-In on Submit function of Formik Component, we'll replace `console.log` with a `application/x-www-form-urlencoded` fetch request. But before we do that we need to make an uri component encoder (you can use third-party library if you like).
+In on Submit function of [Formik](https://jaredpalmer.com/formik/) Component, we'll replace `console.log` with a `application/x-www-form-urlencoded` fetch request. But before we do that we need to make an uri component encoder (you can use third-party library if you like).
 
 **ContactForm.js:**
 
@@ -190,7 +190,7 @@ onSubmit={(values, { setSubmitting }) => {
 ...
 ```
 
-If you are using Gatsby JS, especially gatsby-plugin-offline then you'll need to add `?no-cache=1` along with `/` or it won't work.
+If you are using Gatsby JS, especially `gatsby-plugin-offline` then you'll need to add `?no-cache=1` along with `/` or it won't work.
 
 **ContactForm.js:**
 

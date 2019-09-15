@@ -29,11 +29,11 @@ In the new design, I was working the article list had a small thumbnail along wi
 
 ![](/img/screenshot-2018-12-19-at-11.19.21-pm.png)
 
-Without the optimisation magic of [gatsby-image](https://www.gatsbyjs.org/packages/gatsby-image/) each page size would be touching 5MB. Begrudgingly, I decided to use [Gatsby Image](https://www.gatsbyjs.org/packages/gatsby-image/). I did what anyone would do, installed the package and peer dependencies. And as instructed added the relevant config. That's when the problem began! Everything started breaking. And I'm ashamed that it took me a lot more time than I'm willing to admit, to solve them. Well everyone has bad days.
+Without the optimisation magic of [gatsby-image](https://www.gatsbyjs.org/packages/gatsby-image/) each page size would be touching 5MB. Begrudgingly, I decided to use [gatsby-image](https://www.gatsbyjs.org/packages/gatsby-image/). I did what anyone would do, installed the package and peer dependencies. And as instructed added the relevant config. That's when the problem began! Everything started breaking. And I'm ashamed that it took me a lot more time than I'm willing to admit, to solve them. Well everyone has bad days.
 
-# Things to be careful about while configuring Gatsby Image
+# Things to be careful about while configuring gatsby-image
 
-First, you need '**gatsby-remark-relative-images**' to convert image src(s) in markdown to be relative to their node's parent directory. So that '**gatsby-remark-images**' can match images outside the node folder. This is especially important if you are working with [Netlify CMS](https://www.netlifycms.org). Also, don't forget to add fmImagesToRelative to _gatsby-node.js_.
+First, you need `gatsby-remark-relative-images` to convert image src(s) in markdown to be relative to their node's parent directory. So that `gatsby-remark-images` can match images outside the node folder. This is especially important if you are working with [Netlify CMS](https://www.netlifycms.org). Also, don't forget to add fmImagesToRelative to _gatsby-node.js_.
 
 ```javascript
 const {fmImagesToRelative} = require('gatsby-remark-relative-images')
@@ -61,7 +61,7 @@ Field "image" must not have a selection since type "String" has no subfields
 
 Third, once you are done configuring you cannot just query an image without parameters. I suggest **publicURL**.
 
-Fourth, GIFs and SVGs are not processed by [Gatsby Image](https://www.gatsbyjs.org/packages/gatsby-image/). So always include **publicURL** in the parameters as an alternate.
+Fourth, GIFs and SVGs are not processed by [gatsby-image](https://www.gatsbyjs.org/packages/gatsby-image/). So always include **publicURL** in the parameters as an alternate.
 
 ```javascript
 export const imageQuery = graphql`
@@ -88,9 +88,9 @@ export const imageQuery = graphql`
 
 Finally, sometimes the build can fail just because **node_modules/** needs to be rebuilt. So, if you see nothing else working try removing **node_modules/** and reinstalling packages.
 
-# Gatsby Image and Gatsby Paginate don't go well together
+# gatsby-image and gatsby-paginate don't go well together
 
-While implementing Article List I ran into an error that disturbed me for hours. Let me preface by explaining how [Gatsby Paginate](ttps://www.gatsbyjs.org/packages/gatsby-paginate) works. We plugin Gatsby Paginate's `createPaginatedPages` function in _gatsby-node.js_. It takes the `createPages` method and takes results of the query to create a paginated list of posts.
+While implementing Article List I ran into an error that disturbed me for hours. Let me preface by explaining how [gatsby-paginate](ttps://www.gatsbyjs.org/packages/gatsby-paginate) works. We plugin Gatsby Paginate's `createPaginatedPages` function in _gatsby-node.js_. It takes the `createPages` method and takes results of the query to create a paginated list of posts.
 
 ```javascript
 return graphql(`

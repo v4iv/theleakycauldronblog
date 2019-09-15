@@ -135,12 +135,14 @@ module.exports = withTypescript()
 to begin our project all we need to do is set up scripts in `package.json`, add the following lines to your `package.json`
 
 ```json
-"scripts": {
+{
+  "scripts": {
     "dev": "next",
     "build": "next build",
     "start": "next start",
     "type-check": "tsc"
-  },
+  }
+}
 ```
 
 Go ahead and give it a run to check if everything is okay
@@ -305,7 +307,7 @@ export default appWithTranslation(MyApp)
 
 Next, we add some translations, to do that we need to create a folder called static in our root, then add a folder called locales in static then add folders named with language codes in locales and add common.json files to them. In our case, we'll be adding english as default and Hindi as the other language
 
-```
+```bash
 .
 ├── pages
 │   ├-- _app.tsx
