@@ -75,7 +75,7 @@ const AboutPage = ({ data }) => {
         <script type='application/ld+json'>
           {JSON.stringify(aboutPageSchemaOrgJSONLD)}
         </script>
-        <link rel='canonical' href='https://theleakycauldronblog.com/about/' />
+        <link rel='canonical' href='https://theleakycauldronblog.com/about' />
       </Helmet>
       <AboutPageTemplate
         contentComponent={HTMLContent}
@@ -88,27 +88,36 @@ const AboutPage = ({ data }) => {
 }
 
 AboutPage.propTypes = {
-  data: PropTypes.object.isRequired,
+  data: PropTypes.shape({
+    markdownRemark: PropTypes.shape({
+      frontmatter: PropTypes.shape({
+        title: PropTypes.string,
+        meta_title: PropTypes.string,
+        meta_description: PropTypes.string,
+      }),
+    }),
+  }),
 }
 
 export default AboutPage
 
 export const aboutPageQuery = graphql`
-  query AboutPage($id: String!) {
-    markdownRemark(id: { eq: $id }) {
-      html
-      frontmatter {
-        title
-        image {
-            childImageSharp {
-                fluid(maxWidth: 1075, quality: 72) {
-                    ...GatsbyImageSharpFluid
+    query AboutPage($id: String!) {
+        markdownRemark(id: { eq: $id }) {
+            html
+            frontmatter {
+                title
+                image {
+                    childImageSharp {
+                        fluid(maxWidth: 1075, quality: 72) {
+                            ...GatsbyImageSharpFluid
+                        }
+                    }
+                    publicURL
                 }
+                meta_title
+                meta_description
             }
         }
-        meta_title
-        meta_description
-      }
     }
-  }
 `
