@@ -4,3 +4,4 @@
 [build.environment]
   YARN_VERSION = "1.17.3"
   YARN_FLAGS = "--no-ignore-optional"
+  RUBY_VERSION = "2.6.2"
