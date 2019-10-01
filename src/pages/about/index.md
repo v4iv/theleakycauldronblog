@@ -1,10 +1,11 @@
 ---
 templateKey: about-page
-title: About This Blog
 image: /img/about_vaibhav_sharma.jpg
+title: About This Blog
 meta_title: About | The Leaky Cauldron Blog
 meta_description: >-
-  The Leaky Cauldron Blog is the personal blog of Vaibhav Sharma. Topics include coding, movies, music, books, dinosaurs or anything under the sun and beyond.
+  The Leaky Cauldron Blog is the personal blog of Vaibhav Sharma. Topics include
+  coding, movies, music, books, dinosaurs or anything under the sun and beyond.
 ---
 **The Leaky Cauldron Blog** is the personal blog of **Vaibhav Sharma**.
 
@@ -14,7 +15,7 @@ This aims to be a place where I can publish anything and everything that interes
 
 As you may have already guessed, this blog's name is inspired by the famous pub in _Harry Potter_. Just like that pub this blog will be a magical place where all random interesting things meet.
 
-This is a place where I want to share the challenges that I have faced in my 20 odd years. I will also show you how I overcame them so that others, who may be going through the same won't have go through them alone.
+This is a place where I want to share the challenges that I have faced. I will also show you how I overcame them so that others, who may be going through the same won't have go through them alone.
 
 Being a travel enthusiast, I really want this blog to be a place where you can get to know about the mysteries and stories of the world. It has been well established that I have a varied interest, so I will also sporadically post movie, music and event reviews.
 
