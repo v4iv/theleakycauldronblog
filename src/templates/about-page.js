@@ -90,10 +90,9 @@ const AboutPage = ({ data }) => {
 AboutPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
-      html: PropTypes.node,
       frontmatter: PropTypes.shape({
         title: PropTypes.string,
-        image: PropTypes.node,
+        image: PropTypes.object,
         meta_title: PropTypes.string,
         meta_description: PropTypes.string,
       }),

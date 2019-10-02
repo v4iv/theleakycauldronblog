@@ -23,7 +23,6 @@ const PaginationLink = props => {
 }
 
 PaginationLink.propTypes = {
-  test: PropTypes.boolean,
   url: PropTypes.string,
   text: PropTypes.string,
 }

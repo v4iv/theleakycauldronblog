@@ -27,7 +27,7 @@ const AboutPageTemplate = ({ title, content, contentComponent }) => {
 
 AboutPageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
-  content: PropTypes.node,
+  content: PropTypes.string,
   contentComponent: PropTypes.func,
 }
 
