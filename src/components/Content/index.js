@@ -11,6 +11,7 @@ const Content = ({ content, className }) => (
 
 Content.propTypes = {
   className: PropTypes.string,
+  content: PropTypes.string,
 }
 
 HTMLContent.propTypes = Content.propTypes

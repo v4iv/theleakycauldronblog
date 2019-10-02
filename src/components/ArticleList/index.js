@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import _ from 'lodash'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
@@ -53,6 +54,10 @@ const ArticleList = ({ posts }) => {
         })}
     </section>
   )
+}
+
+ArticleList.propTypes = {
+  posts: PropTypes.array,
 }
 
 export default ArticleList

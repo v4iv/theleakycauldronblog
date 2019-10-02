@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import {
   FacebookShareButton,
   LinkedinShareButton,
@@ -77,6 +78,12 @@ class Share extends Component {
       </div>
     )
   }
+}
+
+Share.propTypes = {
+  title: PropTypes.string,
+  slug: PropTypes.string,
+  excerpt: PropTypes.string,
 }
 
 export default Share

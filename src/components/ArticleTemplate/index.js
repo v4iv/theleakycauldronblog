@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import _ from 'lodash'
 import Img from 'gatsby-image'
@@ -57,6 +58,16 @@ const ArticleTemplate = ({
       </section>
     </article>
   )
+}
+
+ArticleTemplate.propTypes = {
+  content: PropTypes.node,
+  date: PropTypes.string,
+  contentComponent: PropTypes.func,
+  cover: PropTypes.node,
+  tags: PropTypes.array,
+  title: PropTypes.string,
+  author: PropTypes.string,
 }
 
 export default ArticleTemplate
