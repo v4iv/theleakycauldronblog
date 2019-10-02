@@ -27,7 +27,12 @@ const ContactPage = ({ data }) => {
 ContactPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
-      frontmatter: PropTypes.object,
+      frontmatter: PropTypes.shape({
+        title: PropTypes.string,
+        subtitle: PropTypes.string,
+        meta_title: PropTypes.string,
+        meta_description: PropTypes.string,
+      }),
     }),
   }),
 }

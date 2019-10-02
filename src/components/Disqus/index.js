@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import ReactDisqusComments from 'react-disqus-comments'
 import config from '../../../config'
 
@@ -41,6 +42,11 @@ class Disqus extends Component {
       </section>
     )
   }
+}
+
+Disqus.propTypes = {
+  title: PropTypes.string,
+  slug: PropTypes.string,
 }
 
 export default Disqus

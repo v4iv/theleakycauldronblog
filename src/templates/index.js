@@ -5,6 +5,7 @@ import { Link } from 'gatsby'
 import ArticleList from '../components/ArticleList'
 import config from '../../config'
 import Layout from '../components/Layout'
+import PropTypes from 'prop-types'
 
 const PaginationLink = props => {
   if (!props.test) {
@@ -19,6 +20,12 @@ const PaginationLink = props => {
   } else {
     return null
   }
+}
+
+PaginationLink.propTypes = {
+  test: PropTypes.boolean,
+  url: PropTypes.string,
+  text: PropTypes.string,
 }
 
 export default class IndexPage extends Component {
@@ -73,4 +80,13 @@ export default class IndexPage extends Component {
       </Layout>
     )
   }
+}
+
+IndexPage.propTypes = {
+  pageContext: PropTypes.shape({
+    index: PropTypes.number,
+    first: PropTypes.boolean,
+    last: PropTypes.boolean,
+    group: PropTypes.array,
+  }),
 }

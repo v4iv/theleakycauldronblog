@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import 'tachyons-sass/tachyons.scss'
 import config from '../../../config'
@@ -16,11 +17,15 @@ const Layout = (props) => (
       />
     </Helmet>
     <div className='wrapper'>
-      <Header />
+      <Header siteTitle={config.siteTitle} />
       <div>{props.children}</div>
-      <Footer config={config} />
+      <Footer copyright={config.copyright} />
     </div>
   </>
 )
+
+Layout.propTypes = {
+  children: PropTypes.element,
+}
 
 export default Layout

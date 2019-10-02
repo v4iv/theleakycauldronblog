@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import config from '../../../config'
 import Helmet from 'react-helmet'
 
@@ -104,6 +105,16 @@ const SE0 = ({ title, meta_title, meta_desc, cover, slug, date, author }) => {
       <meta name='twitter:image' content={image} />
     </Helmet>
   )
+}
+
+SE0.propTypes = {
+  title: PropTypes.string,
+  meta_title: PropTypes.string,
+  meta_desc: PropTypes.string,
+  cover: PropTypes.node,
+  slug: PropTypes.string,
+  date: PropTypes.string,
+  author: PropTypes.string,
 }
 
 export default SE0

@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
+import PropTypes from 'prop-types'
+import IndexPage from './index'
 
 class TagRoute extends Component {
   render () {
@@ -39,6 +41,23 @@ class TagRoute extends Component {
       </Layout>
     )
   }
+}
+
+IndexPage.propTypes = {
+  pageContext: PropTypes.shape({
+    tag: PropTypes.string,
+  }),
+  data: PropTypes.shape({
+    site: PropTypes.shape({
+      siteMetadata: PropTypes.shape({
+        title: PropTypes.string,
+      }),
+    }),
+    allMarkdownRemark: PropTypes.shape({
+      edges: PropTypes.array,
+      totalCount: PropTypes.number,
+    }),
+  }),
 }
 
 export default TagRoute
