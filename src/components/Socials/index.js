@@ -5,7 +5,7 @@ const Socials = () => (
   <div className='db dtc-ns black-70 tc tr-ns v-mid'>
     <a
       href={`feed:https://theleakycauldronblog.com${config.siteRss}`} className='link hover-orange dib mr3 black-70'
-      title='Impossible Labs on Medium'
+      title='The Leaky Cauldron Blog RSS Feed'
       target='_blank'
       rel='noopener nofollow noreferrer'
     >
@@ -37,6 +37,7 @@ const Socials = () => (
     </a>
     <a
       href='https://twitter.com/vaibhaved' className='link hover-light-blue dib mr3 black-70' target='_blank'
+      title='Vaibhav Sharma on Twitter'
       rel='noopener nofollow noreferrer'
     >
       <svg
@@ -66,6 +67,7 @@ const Socials = () => (
     </a>
     <a
       href='https://www.linkedin.com/in/waybove' className='link hover-blue dib black-70' target='_blank'
+      title='Vaibhav Sharma on Linked In'
       rel='noopener nofollow noreferrer'
     >
       <svg className='db w2 h2' role='img' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' fill='currentColor'>
