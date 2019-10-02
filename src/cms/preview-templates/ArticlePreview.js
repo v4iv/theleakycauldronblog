@@ -5,11 +5,12 @@ import ArticleTemplate from '../../components/ArticleTemplate'
 
 const ArticlePreview = ({ entry, widgetFor }) => {
   const date = entry.getIn(['data', 'date'])
+  const content = widgetFor('body')
 
   return (
     <div>
       <ArticleTemplate
-        content={widgetFor('body')}
+        content={content}
         cover={{ publicURL: entry.getIn(['data', 'cover']) }}
         date={date && date.toLocaleString()}
         meta_title={entry.getIn(['data', 'meta_title'])}

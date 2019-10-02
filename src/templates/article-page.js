@@ -43,8 +43,6 @@ const ArticlePage = ({ data }) => {
 ArticlePage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
-      id: PropTypes.node,
-      html: PropTypes.node,
       fields: PropTypes.shape({
         slug: PropTypes.string,
       }),
@@ -52,7 +50,7 @@ ArticlePage.propTypes = {
         date: PropTypes.string,
         title: PropTypes.string,
         author: PropTypes.string,
-        cover: PropTypes.node,
+        cover: PropTypes.object,
         meta_title: PropTypes.string,
         meta_description: PropTypes.string,
         tags: PropTypes.array,

@@ -1,5 +1,5 @@
 import CMS from 'netlify-cms-app'
-import 'tachyons-sass/tachyons.scss'
+import '../assets/stylesheets/styles.scss'
 
 import AboutPagePreview from './preview-templates/AboutPagePreview'
 import ArticlePreview from './preview-templates/ArticlePreview'

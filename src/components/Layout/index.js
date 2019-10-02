@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import 'tachyons-sass/tachyons.scss'
 import config from '../../../config'
@@ -13,7 +12,7 @@ const Layout = (props) => (
       <meta name='description' content={config.siteDescription} />
       <meta
         name='viewport'
-        content='width=device-width, initial-scale=1, user-scalable=no'
+        content='width=device-width, initial-scale=1'
       />
     </Helmet>
     <div className='wrapper'>
@@ -23,9 +22,5 @@ const Layout = (props) => (
     </div>
   </>
 )
-
-Layout.propTypes = {
-  children: PropTypes.element,
-}
 
 export default Layout

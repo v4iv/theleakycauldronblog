@@ -61,10 +61,10 @@ const ArticleTemplate = ({
 }
 
 ArticleTemplate.propTypes = {
-  content: PropTypes.node,
+  content: PropTypes.string,
   date: PropTypes.string,
   contentComponent: PropTypes.func,
-  cover: PropTypes.node,
+  cover: PropTypes.object,
   tags: PropTypes.array,
   title: PropTypes.string,
   author: PropTypes.string,
