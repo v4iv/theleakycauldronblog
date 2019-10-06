@@ -48,7 +48,9 @@ const ContactForm = () => {
             <Field
               className='db border-box hover-black w-100 measure ba b--black-20 pa2 br2 mb2'
               type='text'
+              id='name'
               name='name'
+              aria-label='Name'
             />
             {touched.name && errors.name && <p className='f6 red'>{errors.name}</p>}
           </div>
@@ -56,8 +58,10 @@ const ContactForm = () => {
             <label htmlFor='email' className='f6 b db mb2'>Email</label>
             <Field
               className='db border-box hover-black w-100 measure ba b--black-20 pa2 br2 mb2'
-              type='text'
+              type='email'
+              id='email'
               name='email'
+              aria-label='Email'
             />
             {touched.email && errors.email && <p className='f6 red'>{errors.email}</p>}
           </div>
@@ -65,19 +69,29 @@ const ContactForm = () => {
             <label htmlFor='message' className='f6 b db mb2'>Message</label>
             <Field
               className='db border-box hover-black w-100 measure ba b--black-20 pa2 br2 mb2'
-              name='message'
               component='textarea'
               rows='6'
+              id='message'
+              name='message'
+              aria-label='Message'
             />
             {touched.message && errors.message && <p className='f6 red'>{errors.message}</p>}
           </div>
           <div className='mt5 measure tr'>
             <input
-              type='reset' value='Clear'
+              id='clear'
+              name='clear'
+              aria-label='Clear'
+              type='reset'
+              value='Clear'
               className='b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib mr3'
             />
             <input
-              name='submit' type='submit' value='Send Message'
+              id='submit'
+              name='submit'
+              aria-label='Send Message'
+              type='submit'
+              value='Send Message'
               disabled={isSubmitting}
               className='b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib'
             />

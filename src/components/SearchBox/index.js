@@ -77,10 +77,11 @@ class SearchBox extends Component {
               className='f4 f5-l input-reset ba b--black-20 fl black-80 bg-white pa3 lh-solid w-100 br2-ns br--left-ns'
               placeholder='Search...'
               type='text'
-              name='search'
               onChange={this.search}
               value={this.state.query}
               id='search'
+              name='search'
+              aria-label='Search'
             />
           </div>
         </fieldset>
