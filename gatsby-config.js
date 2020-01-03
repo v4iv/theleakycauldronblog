@@ -100,6 +100,7 @@ module.exports = {
               noInlineHighlight: true,
             },
           },
+          `gatsby-remark-smartypants`,
         ],
       },
     },
