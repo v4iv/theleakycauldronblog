@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import './styles.scss'
 
 const NotifcationBanner = ({ text, dismissible = false }) => {
   return (
