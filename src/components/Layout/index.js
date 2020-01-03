@@ -4,6 +4,7 @@ import 'tachyons-sass/tachyons.scss'
 import config from '../../../config'
 import Footer from '../Footer'
 import Header from '../Header'
+import NotifcationBanner from '../NotificationBanner'
 
 const Layout = (props) => (
   <>
@@ -24,6 +25,7 @@ const Layout = (props) => (
       ]}
     />
     <div className='wrapper'>
+      <NotifcationBanner text='Happy New Year 2020!' />
       <Header siteTitle={config.siteTitle} />
       <div>{props.children}</div>
       <Footer copyright={config.copyright} />
