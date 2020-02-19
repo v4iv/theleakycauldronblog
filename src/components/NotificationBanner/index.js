@@ -2,14 +2,21 @@ import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 
 const NotifcationBanner = ({ text, dismissible = false, enabled = false }) => {
-  const [visible, setVisible] = useState(true)
+  const [visible, setVisible] = useState(false)
 
   useEffect(() => {
-    if (dismissible) {
-      setTimeout(() => {
-        setVisible(!visible)
-      }, 5000)
+    const seen = sessionStorage.getItem('seen')
+
+    if (seen !== 'yes') {
+      setVisible(true)
+      if (dismissible) {
+        setTimeout(() => {
+          setVisible(false)
+          sessionStorage.setItem('seen', 'yes')
+        }, 5000)
+      }
     }
+
   }, [])
 
   return ((enabled)
