@@ -2,6 +2,6 @@
   publish = "public"
   command = "gatsby build"
 [build.environment]
-  YARN_VERSION = "1.19.0"
+  YARN_VERSION = "1.21.1"
   YARN_FLAGS = "--no-ignore-optional"
   RUBY_VERSION = "2.6.2"

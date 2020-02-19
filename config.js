@@ -11,7 +11,7 @@ module.exports = {
   userName: 'Vaibhav Sharma',
   userTwitter: 'vaibhaved',
   userLocation: 'Delhi NCR, India',
-  copyright: 'Copyright © The Leaky Cauldron Blog 2018-19. All Rights Reserved.', // Copyright string for the footer of the website and RSS feed.
+  copyright: 'Copyright © The Leaky Cauldron Blog 2018-20. All Rights Reserved.', // Copyright string for the footer of the website and RSS feed.
   themeColor: '#676767', // Used for setting manifest and progress theme colors.
   backgroundColor: '#ffffff', // Used for setting manifest background color.
 }

@@ -7,7 +7,10 @@
   ],
   "globals": {
     "graphql": true,
-    "__PATH_PREFIX__": true
+    "__PATH_PREFIX__": true,
+    "fetch": true,
+    "sessionStorage": true,
+    "localStorage": true
   },
   "rules": {
     "react/prop-types": "off",

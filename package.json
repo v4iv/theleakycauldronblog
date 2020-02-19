@@ -8,9 +8,9 @@
     "start": "npm run develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
+    "clean": "gatsby clean",
     "lint": "eslint --ext js,jsx --ignore-path .gitignore .",
-    "lint:fix": "eslint --ext js,jsx --ignore-path .gitignore . --fix",
-    "clean": "rm -rf public/ .cache/"
+    "lint:fix": "eslint --ext js,jsx --ignore-path .gitignore . --fix"
   },
   "dependencies": {
     "@gatsby-contrib/gatsby-plugin-elasticlunr-search": "^2.3.0",
@@ -18,6 +18,7 @@
     "formik": "^1.5.8",
     "gatsby": "^2.15.15",
     "gatsby-image": "^2.2.19",
+    "gatsby-link": "^2.2.29",
     "gatsby-paginate": "^1.1.1",
     "gatsby-plugin-feed": "^2.3.12",
     "gatsby-plugin-google-tagmanager": "^2.1.9",
@@ -31,6 +32,7 @@
     "gatsby-plugin-sass": "^2.1.14",
     "gatsby-plugin-sharp": "^2.2.22",
     "gatsby-plugin-sitemap": "^2.2.12",
+    "gatsby-react-router-scroll": "^2.1.21",
     "gatsby-remark-copy-linked-files": "^2.1.19",
     "gatsby-remark-images": "^3.1.22",
     "gatsby-remark-prismjs": "^3.3.13",
@@ -46,9 +48,9 @@
     "prismjs": "^1.17.1",
     "prop-types": "^15.7.2",
     "query-string": "^6.8.3",
-    "react": "^16.9.0",
+    "react": "^16.12.0",
     "react-disqus-comments": "^1.4.0",
-    "react-dom": "^16.9.0",
+    "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
     "react-share": "^3.0.1",
     "tachyons-sass": "^4.9.5",
@@ -66,16 +68,16 @@
   },
   "devDependencies": {
     "babel-eslint": "^10.0.3",
-    "eslint": "^6.4.0",
+    "eslint": "^6.8.0",
     "eslint-config-standard": "^14.1.0",
     "eslint-config-standard-react": "^9.2.0",
     "eslint-config-standard-trailing-commas": "^6.1.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-node": "^11.0.0",
     "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react": "^7.18.3",
     "eslint-plugin-standard": "^4.0.1",
-    "remark-cli": "^7.0.0",
+    "remark-cli": "^7.0.1",
     "remark-preset-lint-recommended": "^3.0.3"
   }
 }
