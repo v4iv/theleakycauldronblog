@@ -25,7 +25,7 @@ const Layout = (props) => (
       ]}
     />
     <div className='wrapper'>
-      <NotifcationBanner text='Happy New Year 2020!' dismissible enabled />
+      <NotifcationBanner text='Happy New Year 2020!' dismissible />
       <Header siteTitle={config.siteTitle} />
       <div>{props.children}</div>
       <Footer copyright={config.copyright} />

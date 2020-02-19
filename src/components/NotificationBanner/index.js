@@ -16,7 +16,6 @@ const NotifcationBanner = ({ text, dismissible = false, enabled = false }) => {
         }, 5000)
       }
     }
-
   }, [])
 
   return ((enabled)
