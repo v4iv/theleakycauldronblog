@@ -36,6 +36,7 @@ collections:
         - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
         - {label: "Image", name: "image", widget: "image"}
         - {label: "Title", name: "title", widget: "string"}
+        - {label: "Slug", name: "slug", widget: "string"}
         - {label: "Body", name: "body", widget: "markdown"}
         - {label: "Meta Title", name: "meta_title", widget: "string"}
         - {label: "Meta Description", name: "meta_description", widget: "text"}
@@ -45,6 +46,7 @@ collections:
       fields:
         - {label: "Template Key", name: "templateKey", widget: "hidden", default: "contact-page"}
         - {label: "Title", name: "title", widget: "string"}
+        - {label: "Slug", name: "slug", widget: "string"}
         - {label: "Subtitle", name: "subtitle", widget: "string"}
         - {label: "Meta Title", name: "meta_title", widget: "string"}
         - {label: "Meta Description", name: "meta_description", widget: "text"}
