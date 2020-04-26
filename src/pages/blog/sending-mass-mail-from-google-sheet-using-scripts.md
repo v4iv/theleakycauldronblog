@@ -1,6 +1,7 @@
 ---
 templateKey: article-page
 title: Sending Mass Mail from Google Sheet using Scripts
+slug: sending-mass-mail-from-google-sheet-using-scripts
 author: Vaibhav Sharma
 date: '2018-06-04T11:22:05+05:30'
 cover: /img/mass_mail_google_script.jpg

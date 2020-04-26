@@ -1,6 +1,7 @@
 ---
 templateKey: article-page
 title: The Egg by Andy Weir in Hindi
+slug: the-egg-by-andy-weir-in-hindi
 author: Andy Weir
 date: 2019-09-08T13:45:50.559Z
 cover: /img/parent-child-omar-lopez.jpg

@@ -1,6 +1,7 @@
 ---
 templateKey: article-page
 title: '16 Awesome Moments from Avengers: Infinity War'
+slug: awesome-moments-from-avengers-infinity-war
 author: Vaibhav Sharma
 date: '2018-04-30T18:03:07+05:30'
 cover: /img/avengers_infinity_war.jpg

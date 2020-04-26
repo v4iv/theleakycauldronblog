@@ -1,4 +1,4 @@
-module.exports = {
+const config = {
   siteTitle: 'The Leaky Cauldron Blog', // Site title.
   siteTitleAlt: 'TLC Blog', // Alternative site title for SEO.
   siteLogo: '/icons/icon-512x512.png', // Logo used for SEO and manifest.
@@ -15,3 +15,5 @@ module.exports = {
   themeColor: '#676767', // Used for setting manifest and progress theme colors.
   backgroundColor: '#ffffff', // Used for setting manifest background color.
 }
+
+module.exports = config

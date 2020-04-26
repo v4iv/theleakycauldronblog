@@ -1,6 +1,7 @@
 ---
 templateKey: contact-page
 title: Contact Us
+slug: contact
 subtitle: 'We''d Love To Help You, Feel Free To Drop A Mail'
 meta_title: Contact Us | The Leaky Cauldron Blog
 meta_description: >-

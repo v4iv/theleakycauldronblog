@@ -1,5 +1,5 @@
 import React from 'react'
-import Helmet from 'react-helmet'
+import { Helmet } from 'react-helmet'
 import 'tachyons-sass/tachyons.scss'
 import config from '../../../config'
 import Footer from '../Footer'
@@ -28,7 +28,7 @@ const Layout = (props) => (
       <NotifcationBanner text='Happy New Year 2020!' dismissible />
       <Header siteTitle={config.siteTitle} />
       <div>{props.children}</div>
-      <Footer copyright={config.copyright} />
+      <Footer copyright={config.copyright} siteRss={config.siteRss} />
     </div>
   </>
 )

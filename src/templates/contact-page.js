@@ -1,24 +1,26 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import Helmet from 'react-helmet'
+import { Helmet } from 'react-helmet'
 import ContactPageTemplate from '../components/ContactPageTemplate'
 import Layout from '../components/Layout'
 
-const ContactPage = ({ data }) => {
-  const { frontmatter } = data.markdownRemark
+const ContactPage = props => {
+  const { data: { markdownRemark: { frontmatter: { title, subtitle, meta_title, meta_description } } } } = props
+
   return (
     <Layout>
       <Helmet>
-        <title>{frontmatter.meta_title}</title>
-        <meta name='description' content={frontmatter.meta_description} />
+        <title>{meta_title}</title>
+        <meta name='description' content={meta_description} />
         <link rel='canonical' href='https://theleakycauldronblog.com/contact' />
       </Helmet>
+
       <ContactPageTemplate
-        title={frontmatter.title}
-        subtitle={frontmatter.subtitle}
-        meta_title={frontmatter.meta_title}
-        meta_description={frontmatter.meta_description}
+        title={title}
+        subtitle={subtitle}
+        meta_title={meta_title}
+        meta_description={meta_description}
       />
     </Layout>
   )

@@ -1,6 +1,7 @@
 ---
 templateKey: article-page
 title: The Interesting World of Bees
+slug: the-interesting-world-of-bees
 author: Vaibhav Sharma
 date: 2020-04-24T21:06:19.359Z
 cover: /img/boris-smokrovic-the-interesting-world-of-bees.jpg

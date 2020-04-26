@@ -1,6 +1,7 @@
 ---
 templateKey: article-page
 title: How I became an Aquarist by Accident!
+slug: how-i-became-an-aquarist-by-accident
 author: Vaibhav Sharma
 date: '2018-08-13T11:03:36+05:30'
 cover: /img/aquarist_accidental.jpg

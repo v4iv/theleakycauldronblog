@@ -1,131 +1,121 @@
-import React, { Component } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'gatsby'
 import { navigate } from '@reach/router'
 import { Index } from 'elasticlunr'
 import withLocation from '../withLocation'
 
-class SearchBox extends Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      query: ``,
-      results: [],
-      isActive: false,
-    }
+const SearchBox = props => {
+  let index = null
+
+  const { search, searchIndex } = props
+
+  const [query, setQuery] = useState('')
+  const [results, setResults] = useState([])
+  const [active, setActive] = useState(false)
+
+  const handleChange = evt => {
+    const query_value = evt.target.value
+
+    navigate(`?q=${encodeURIComponent(query_value)}`, { replace: true })
   }
 
-  getOrCreateIndex = () =>
-    this.index
-      ? this.index
-      : Index.load(this.props.searchIndex);
+  useEffect(() => {
+    const { q = '' } = search
 
-  componentDidMount () {
-    if (this.props.search && this.props.search.q) {
-      const { q } = this.props.search
+    setQuery(decodeURIComponent(q))
 
-      this.index = this.getOrCreateIndex()
+    setActive(!!decodeURIComponent(q))
 
-      this.setState({
-        query: decodeURIComponent(q),
-        results: this.index
+    if (search && search.q) {
+      index = index || Index.load(searchIndex)
+
+      setResults(
+        index
           .search(decodeURIComponent(q), { expand: true }) // Accept partial matches
           // Map over each ID and return the full document
-          .map(({ ref }) => this.index.documentStore.getDoc(ref)),
-        isActive: !!decodeURIComponent(q),
-      })
+          .map(({ ref }) => index.documentStore.getDoc(ref)),
+      )
     }
-  }
+  }, [search])
 
-  componentDidUpdate (prevProps) {
-    if (this.props.search !== prevProps.search) {
-      const { q } = this.props.search
+  return (
+    <div className='measure center pa3'>
+      <fieldset className='cf bn ma0 pa0'>
+        <div className='cf'>
+          <small
+            id='name-desc' className='f6 black-60 db mb2 tr' style={{ cursor: 'pointer' }}
+            onClick={() => window.history.back()}
+          >
+            Close
+          </small>
 
-      this.index = this.getOrCreateIndex()
+          <label className='clip' htmlFor='search'>Search</label>
 
-      /*eslint-disable */
-      this.setState({
-        query: decodeURIComponent(q),
-        // Query the index with search string to get an [] of IDs
-        results: this.index
-          .search(decodeURIComponent(q), { expand: true }) // Accept partial matches
-          // Map over each ID and return the full document
-          .map(({ ref }) => this.index.documentStore.getDoc(ref)),
-        isActive: !!decodeURIComponent(q)
-      });
-      /* eslint-enable */
-    }
-  }
+          <input
+            className='f4 f5-l input-reset ba b--black-20 fl black-80 bg-white pa3 lh-solid w-100 br2-ns br--left-ns'
+            placeholder='Search...'
+            type='text'
+            value={query}
+            onChange={handleChange}
+            id='search'
+            name='search'
+            aria-label='Search'
+          />
+        </div>
+      </fieldset>
 
-  search = evt => {
-    const query = evt.target.value
+      {(active && results.length)
+        ? results
+          .filter(page => page.templateKey === 'article-page')
+          .map(page => (
+            <article key={page.slug} className='pv4 bb b--black-10 ph3 ph0-l'>
+              <Link className='db ph0-l no-underline black dim' key={page.id} to={page.slug} replace>
+                <h1 className='f3 fw1 baskerville mt0 lh-title'>{page.title}</h1>
+              </Link>
+            </article>
+          ))
+        : <div>
+          <p className='fw1 i tc mt4 mt5-l f4 f3-l'>Are you looking for one of these?</p>
 
-    navigate(`?q=${encodeURIComponent(query)}`, { replace: true })
-  };
-
-  render () {
-    return (
-      <div className='measure center pa3'>
-        <fieldset className='cf bn ma0 pa0'>
-          <div className='cf'>
-            <small
-              id='name-desc' className='f6 black-60 db mb2 tr' style={{ cursor: 'pointer' }}
-              onClick={() => window.history.back()}
-            >Close
-            </small>
-            <label className='clip' htmlFor='search'>Search</label>
-            <input
-              className='f4 f5-l input-reset ba b--black-20 fl black-80 bg-white pa3 lh-solid w-100 br2-ns br--left-ns'
-              placeholder='Search...'
-              type='text'
-              onChange={this.search}
-              value={this.state.query}
-              id='search'
-              name='search'
-              aria-label='Search'
-            />
-          </div>
-        </fieldset>
-        {(this.state.isActive && this.state.results.length)
-          ? this.state.results
-            .filter(page => page.templateKey === 'article-page')
-            .map(page => (
-              <article key={page.slug} className='pv4 bb b--black-10 ph3 ph0-l'>
-                <Link className='db ph0-l no-underline black dim' key={page.id} to={page.slug} replace>
-                  <h1 className='f3 fw1 baskerville mt0 lh-title'>{page.title}</h1>
-                </Link>
-              </article>
-            ))
-          : <div>
-            <p className='fw1 i tc mt4 mt5-l f4 f3-l'>Are you looking for one of these?</p>
-            <ul className='list tc pl0 w-100 mt5'>
-              <li className='dib'><Link
+          <ul className='list tc pl0 w-100 mt5'>
+            <li className='dib'>
+              <Link
                 className='f5 f4-ns link black db pv2 ph3 hover-light-blue' to='/'
                 replace
-              >Home
+              >
+                Home
               </Link>
-              </li>
-              <li className='dib'><Link
+            </li>
+
+            <li className='dib'>
+              <Link
                 className='f5 f4-ns link black db pv2 ph3 hover-light-green'
                 to='/about' replace
-              >About
+              >
+                About
               </Link>
-              </li>
-              <li className='dib'><Link
+            </li>
+
+            <li className='dib'>
+              <Link
                 className='f5 f4-ns link black db pv2 ph3 hover-light-yellow'
                 to='/contact' replace
-              >Contact
+              >
+                Contact
               </Link>
-              </li>
-              <li className='dib'><Link
+            </li>
+
+            <li className='dib'>
+              <Link
                 className='f5 f4-ns link black db pv2 ph3 hover-light-purple'
-                to='/tags' replace>Tags
+                to='/tags' replace>
+                Tags
               </Link>
-              </li>
-            </ul>
-          </div>}
-      </div>
-    )
-  }
+            </li>
+          </ul>
+        </div>}
+    </div>
+  )
 }
 
 export default withLocation(SearchBox)

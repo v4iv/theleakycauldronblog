@@ -1,9 +1,45 @@
 const _ = require('lodash')
 const path = require('path')
 const pathPrefix = require('./config').pathPrefix
-const { createFilePath } = require('gatsby-source-filesystem')
+// const { createFilePath } = require('gatsby-source-filesystem')
 const createPaginatedPages = require('gatsby-paginate')
 const { fmImagesToRelative } = require('gatsby-remark-relative-images')
+
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions
+  fmImagesToRelative(node)
+  let slug
+
+  if (node.internal.type === `MarkdownRemark`) {
+    const fileNode = getNode(node.parent)
+    const parsedFilePath = path.parse(fileNode.relativePath)
+
+    if (
+      Object.prototype.hasOwnProperty.call(node, 'frontmatter') &&
+      Object.prototype.hasOwnProperty.call(node.frontmatter, 'title')
+    ) {
+      slug = `/${_.kebabCase(node.frontmatter.title)}`
+    } else if (parsedFilePath.name !== 'index' && parsedFilePath.dir !== '') {
+      slug = `/${parsedFilePath.dir}/${parsedFilePath.name}/`
+    } else if (parsedFilePath.dir === '') {
+      slug = `/${parsedFilePath.name}/`
+    } else {
+      slug = `/${parsedFilePath.dir}/`
+    }
+
+    if (Object.prototype.hasOwnProperty.call(node, 'frontmatter')) {
+      if (Object.prototype.hasOwnProperty.call(node.frontmatter, 'slug') && Object.prototype.hasOwnProperty.call(node.frontmatter, 'cover')) { slug = `/blog/${_.kebabCase(node.frontmatter.slug)}` } else if (Object.prototype.hasOwnProperty.call(node.frontmatter, 'slug')) {
+        slug = `/${_.kebabCase(node.frontmatter.slug)}`
+      }
+    }
+
+    createNodeField({
+      name: `slug`,
+      node,
+      value: slug,
+    })
+  }
+}
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
@@ -67,17 +103,28 @@ exports.createPages = ({ actions, graphql }) => {
       context: {}, // This is optional and defaults to an empty object if not used
     })
 
-    allNodes.forEach(edge => {
+    allNodes.forEach((edge, index) => {
       const id = edge.node.id
+      const nextID = index + 1 < allNodes.length ? index + 1 : 0
+      const prevID = index - 1 >= 0 ? index - 1 : allNodes.length - 1
+      const nextEdge = allNodes[nextID]
+      const prevEdge = allNodes[prevID]
+
       createPage({
         path: edge.node.fields.slug,
         tags: edge.node.frontmatter.tags,
         component: path.resolve(
           `src/templates/${String(edge.node.frontmatter.templateKey)}.js`,
         ),
+
         // additional data can be passed via context
         context: {
-          id,
+          id: id,
+          slug: edge.node.fields.slug,
+          nexttitle: nextEdge.node.frontmatter.title,
+          nextslug: nextEdge.node.fields.slug,
+          prevtitle: prevEdge.node.frontmatter.title,
+          prevslug: prevEdge.node.fields.slug,
         },
       })
     })
@@ -106,18 +153,4 @@ exports.createPages = ({ actions, graphql }) => {
       })
     })
   })
-}
-
-exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions
-  fmImagesToRelative(node)
-
-  if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode })
-    createNodeField({
-      name: `slug`,
-      node,
-      value,
-    })
-  }
 }

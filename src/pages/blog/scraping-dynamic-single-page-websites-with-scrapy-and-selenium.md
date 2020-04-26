@@ -1,6 +1,7 @@
 ---
 templateKey: article-page
 title: 'Scraping Dynamic Websites (Angular, React etc) with Scrapy and Selenium'
+slug: scraping-dynamic-single-page-websites-with-scrapy-and-selenium
 author: Vaibhav Sharma
 date: '2018-05-04T18:51:35+05:30'
 cover: /img/scraping_dynamic_webapps.jpg

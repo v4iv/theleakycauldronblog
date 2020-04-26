@@ -1,6 +1,7 @@
 ---
 templateKey: article-page
 title: Writing Tests for Authenticated APIs in Django REST Framework
+slug: writing-tests-for-authenticated-apis-in-django-rest-framework
 author: Vaibhav Sharma
 date: '2018-04-13T12:17:50+05:30'
 cover: /img/authenticated_api_testing.jpg

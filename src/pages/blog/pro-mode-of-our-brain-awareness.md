@@ -1,6 +1,7 @@
 ---
 templateKey: article-page
 title: Pro Mode of our Brain - Awareness
+slug: pro-mode-of-our-brain-awareness
 author: Vaibhav Sharma
 date: 2019-10-12T16:20:33.815Z
 cover: /img/ben-white-thinking-and-awareness.jpg

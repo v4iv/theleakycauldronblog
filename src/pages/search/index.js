@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql, StaticQuery } from 'gatsby'
-import Helmet from 'react-helmet'
+import { Helmet } from 'react-helmet'
 import 'tachyons-sass/tachyons.scss'
 import SearchBox from '../../components/SearchBox'
 
