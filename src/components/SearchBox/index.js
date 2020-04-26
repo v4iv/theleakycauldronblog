@@ -27,7 +27,6 @@ const SearchBox = props => {
     setActive(!!decodeURIComponent(q))
 
     if (search && search.q) {
-
       index = index || Index.load(searchIndex)
 
       setResults(
@@ -36,7 +35,6 @@ const SearchBox = props => {
           // Map over each ID and return the full document
           .map(({ ref }) => index.documentStore.getDoc(ref)),
       )
-
     }
   }, [search])
 
