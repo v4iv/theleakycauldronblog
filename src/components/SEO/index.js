@@ -1,9 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import config from '../../../config'
-import Helmet from 'react-helmet'
+import { Helmet } from 'react-helmet'
 
-const SE0 = ({ title, meta_title, meta_desc, cover, slug, date, author }) => {
+const SE0 = (props) => {
+  const { title, meta_title, meta_desc, cover, slug, date, author } = props
   const postURL = config.siteUrl + slug
   const realPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix
   const image = config.siteUrl + realPrefix + cover
@@ -65,46 +66,44 @@ const SE0 = ({ title, meta_title, meta_desc, cover, slug, date, author }) => {
     description: meta_desc,
   }
 
-  return (
-    <Helmet>
-      <title>{meta_title}</title>
-      {/* General tags */}
-      <meta name='description' content={meta_desc} />
-      <meta name='image' content={cover} />
-      <link rel='canonical' href={postURL} />
+  return <Helmet>
+    <title>{meta_title}</title>
+    {/* General tags */}
+    <meta name='description' content={meta_desc} />
+    <meta name='image' content={cover} />
+    <link rel='canonical' href={postURL} />
 
-      {/* Schema.org tags */}
-      <script type='application/ld+json'>
-        {JSON.stringify(breadcrumbSchemaOrgJSONLD)}
-      </script>
-      <script type='application/ld+json'>
-        {JSON.stringify(blogPostingSchemaOrgJSONLD)}
-      </script>
+    {/* Schema.org tags */}
+    <script type='application/ld+json'>
+      {JSON.stringify(breadcrumbSchemaOrgJSONLD)}
+    </script>
+    <script type='application/ld+json'>
+      {JSON.stringify(blogPostingSchemaOrgJSONLD)}
+    </script>
 
-      {/* OpenGraph tags */}
-      <meta property='og:url' content={postURL} />
-      <meta property='og:type' content='article' />
-      <meta property='og:title' content={title} />
-      <meta property='og:author' content={author} />
-      <meta property='og:description' content={meta_desc} />
-      <meta property='og:image' content={image} />
-      <meta
-        property='fb:app_id'
-        content={config.siteFBAppID ? config.siteFBAppID : ''}
-      />
+    {/* OpenGraph tags */}
+    <meta property='og:url' content={postURL} />
+    <meta property='og:type' content='article' />
+    <meta property='og:title' content={title} />
+    <meta property='og:author' content={author} />
+    <meta property='og:description' content={meta_desc} />
+    <meta property='og:image' content={image} />
+    <meta
+      property='fb:app_id'
+      content={config.siteFBAppID ? config.siteFBAppID : ''}
+    />
 
-      {/* Twitter Card tags */}
-      <meta name='twitter:card' content='summary_large_image' />
-      <meta name='twitter:site' content={postURL} />
-      <meta
-        name='twitter:creator'
-        content={config.userTwitter ? config.userTwitter : ''}
-      />
-      <meta name='twitter:title' content={title} />
-      <meta name='twitter:description' content={meta_desc} />
-      <meta name='twitter:image' content={image} />
-    </Helmet>
-  )
+    {/* Twitter Card tags */}
+    <meta name='twitter:card' content='summary_large_image' />
+    <meta name='twitter:site' content={postURL} />
+    <meta
+      name='twitter:creator'
+      content={config.userTwitter ? config.userTwitter : ''}
+    />
+    <meta name='twitter:title' content={title} />
+    <meta name='twitter:description' content={meta_desc} />
+    <meta name='twitter:image' content={image} />
+  </Helmet>
 }
 
 SE0.propTypes = {

@@ -2,6 +2,7 @@
 templateKey: about-page
 image: /img/about_vaibhav_sharma.jpg
 title: About This Blog
+slug: about
 meta_title: About | The Leaky Cauldron Blog
 meta_description: >-
   The Leaky Cauldron Blog is the personal blog of Vaibhav Sharma. Topics include

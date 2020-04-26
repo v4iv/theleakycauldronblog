@@ -2,17 +2,25 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import AboutPageTemplate from '../../components/AboutPageTemplate'
 
-const AboutPagePreview = ({ entry, widgetFor }) => (
-  <div>
+const AboutPagePreview = (props) => {
+  const { entry, widgetFor } = props
+
+  const title = entry.getIn(['data', 'title'])
+  const image = { publicURL: entry.getIn(['data', 'image']) }
+  const meta_title = entry.getIn(['data', 'meta_title'])
+  const meta_description = entry.getIn(['data', 'meta_description'])
+  const content = widgetFor('body')
+
+  return <div>
     <AboutPageTemplate
-      title={entry.getIn(['data', 'title'])}
-      image={{ publicURL: entry.getIn(['data', 'image']) }}
-      meta_title={entry.getIn(['data', 'meta_title'])}
-      meta_description={entry.getIn(['data', 'meta_description'])}
-      content={widgetFor('body')}
+      title={title}
+      image={image}
+      meta_title={meta_title}
+      meta_description={meta_description}
+      content={content}
     />
   </div>
-)
+}
 
 AboutPagePreview.propTypes = {
   entry: PropTypes.shape({

@@ -1,6 +1,7 @@
 ---
 templateKey: article-page
 title: Fit Bounds of a Polyline and Marker with react-google-maps
+slug: fit-bounds-of-a-polyline-and-marker-with-react-google-maps
 author: Vaibhav Sharma
 date: 2019-07-06T14:46:59.611Z
 cover: /img/react-google-maps.jpg

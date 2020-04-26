@@ -1,6 +1,7 @@
 ---
 templateKey: article-page
 title: Requesting JSON Web Token from Django OAuth Toolkit using Axios
+slug: requesting-json-web-token-from-django-oauth-toolkit-using-axios
 author: Vaibhav Sharma
 date: '2018-04-12T12:03:26+05:30'
 cover: /img/requesting_jwt.jpg

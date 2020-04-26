@@ -1,14 +1,14 @@
 import React from 'react'
 import { kebabCase } from 'lodash'
-import Helmet from 'react-helmet'
+import { Helmet } from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import Layout from '../../components/Layout'
 import PropTypes from 'prop-types'
 
-const TagsPage = ({
-  data: { allMarkdownRemark: { group }, site: { siteMetadata: { title } } },
-}) => (
-  <Layout>
+const TagsPage = (props) => {
+  const { data: { allMarkdownRemark: { group }, site: { siteMetadata: { title } } } } = props
+
+  return <Layout>
     <Helmet title={`Tags | ${title}`} />
     <section className='mw7 center avenir'>
       <header className='tc'>
@@ -28,7 +28,7 @@ const TagsPage = ({
       </ul>
     </section>
   </Layout>
-)
+}
 
 TagsPage.propTypes = {
   data: PropTypes.shape({

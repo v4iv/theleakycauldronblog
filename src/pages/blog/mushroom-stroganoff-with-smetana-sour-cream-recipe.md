@@ -1,6 +1,7 @@
 ---
 templateKey: article-page
 title: Mushroom Stroganoff with Smetana (Sour Cream) Recipe
+slug: mushroom-stroganoff-with-smetana-sour-cream-recipe
 author: Vaibhav Sharma
 date: 2020-03-23T16:42:53.354Z
 cover: /img/mushroom-stroganoff-with-sour-cream.jpg

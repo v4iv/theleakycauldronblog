@@ -3,24 +3,25 @@ import PropTypes from 'prop-types'
 import '../../assets/stylesheets/styles.scss'
 import ArticleTemplate from '../../components/ArticleTemplate'
 
-const ArticlePreview = ({ entry, widgetFor }) => {
+const ArticlePreview = (props) => {
+  const { entry, widgetFor } = props
+  const title = entry.getIn(['data', 'title'])
+  const author = entry.getIn(['data', 'author'])
+  const cover = { publicURL: entry.getIn(['data', 'cover']) }
   const date = entry.getIn(['data', 'date'])
+  // const tags = entry.getIn(['data', 'tags'])
   const content = widgetFor('body')
 
-  return (
-    <div>
-      <ArticleTemplate
-        content={content}
-        cover={{ publicURL: entry.getIn(['data', 'cover']) }}
-        date={date && date.toLocaleString()}
-        meta_title={entry.getIn(['data', 'meta_title'])}
-        meta_desc={entry.getIn(['data', 'meta_description'])}
-        // tags={entry.getIn(['data', 'tags'])}
-        title={entry.getIn(['data', 'title'])}
-        author={entry.getIn(['data', 'author'])}
-      />
-    </div>
-  )
+  return <div>
+    <ArticleTemplate
+      title={title}
+      author={author}
+      cover={cover}
+      date={date && date.toLocaleString()}
+      // tags={tags}
+      content={content}
+    />
+  </div>
 }
 
 ArticlePreview.propTypes = {

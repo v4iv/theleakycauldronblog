@@ -7,15 +7,8 @@ import './styles.scss'
 import 'prismjs/themes/prism-tomorrow.css'
 import Content from '../Content'
 
-const ArticleTemplate = ({
-  content,
-  date,
-  contentComponent,
-  cover,
-  tags,
-  title,
-  author,
-}) => {
+const ArticleTemplate = (props) => {
+  const { content, date, contentComponent, cover, tags, title, author } = props
   const PostContent = contentComponent || Content
 
   return (

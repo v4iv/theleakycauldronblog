@@ -1,6 +1,7 @@
 ---
 templateKey: article-page
 title: Creamy MushRome Mushroom Recipe
+slug: creamy-mushrome-recipe
 author: Vaibhav Sharma
 date: 2019-03-23T18:33:42.477Z
 cover: /img/mushrome.jpg

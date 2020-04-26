@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
+import config from '../../config'
 import { HTMLContent } from '../components/Content'
 import ArticleTemplate from '../components/ArticleTemplate'
 import SE0 from '../components/SEO'
@@ -8,32 +9,33 @@ import Disqus from '../components/Disqus'
 import Share from '../components/Share'
 import Layout from '../components/Layout'
 
-const ArticlePage = ({ data }) => {
-  const { markdownRemark: post } = data
+const ArticlePage = (props) => {
+  const { data: { markdownRemark: { id, html, fields: { slug }, frontmatter: { title, meta_title, meta_description, cover, date, author, tags } } } } = props
+
   return (
     <Layout>
       <section className='center'>
         <SE0
-          title={post.frontmatter.title}
-          meta_title={post.frontmatter.meta_title}
-          meta_desc={post.frontmatter.meta_description}
-          cover={post.frontmatter.cover.publicURL}
-          slug={post.fields.slug}
-          date={post.frontmatter.date}
-          author={post.frontmatter.author}
+          title={title}
+          meta_title={meta_title}
+          meta_desc={meta_description}
+          cover={cover.publicURL}
+          slug={slug}
+          date={date}
+          author={author}
         />
         <ArticleTemplate
-          content={post.html}
+          content={html}
           contentComponent={HTMLContent}
-          date={post.frontmatter.date}
-          cover={post.frontmatter.cover}
-          tags={post.frontmatter.tags}
-          title={post.frontmatter.title}
-          author={post.frontmatter.author}
+          date={date}
+          cover={cover}
+          tags={tags}
+          title={title}
+          author={author}
         />
         <section className='mw8 center'>
-          <Share title={post.frontmatter.title} slug={post.fields.slug} excerpt={post.frontmatter.meta_description} />
-          <Disqus title={post.frontmatter.title} slug={post.fields.slug} />
+          <Share title={title} slug={slug} excerpt={meta_description} siteUrl={config.siteUrl} pathPrefix={config.pathPrefix} />
+          <Disqus identifier={id} title={title} slug={slug} siteUrl={config.siteUrl} disqusShortname={config.disqusShortname} />
         </section>
       </section>
     </Layout>
@@ -61,8 +63,8 @@ ArticlePage.propTypes = {
 
 export default ArticlePage
 
-export const pageQuery = graphql`
-    query ArticleByID($id: String!) {
+export const articlePageQuery = graphql`
+    query ArticlePage($id: String!) {
         markdownRemark(id: { eq: $id }) {
             id
             html

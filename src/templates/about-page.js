@@ -1,14 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import Helmet from 'react-helmet'
+import { Helmet } from 'react-helmet'
 import config from '../../config'
 import AboutPageTemplate from '../components/AboutPageTemplate'
 import { HTMLContent } from '../components/Content'
 import Layout from '../components/Layout'
 
-const AboutPage = ({ data }) => {
-  const { markdownRemark: post } = data
+const AboutPage = (props) => {
+  const { data: { markdownRemark: { html, frontmatter: { title, meta_title, meta_description, image } } } } = props
 
   const breadcrumbSchemaOrgJSONLD = {
     '@context': 'http://schema.org',
@@ -39,14 +39,14 @@ const AboutPage = ({ data }) => {
     '@context': 'http://schema.org',
     '@type': 'AboutPage',
     url: config.siteUrl + '/about/',
-    headline: post.frontmatter.title,
+    headline: title,
     mainEntityOfPage: {
       '@type': 'WebPage',
       '@id': config.siteUrl + '/about/',
     },
     image: {
       '@type': 'ImageObject',
-      url: post.frontmatter.image.publicURL,
+      url: image.publicURL,
       width: 3120,
       height: 1394,
     },
@@ -60,14 +60,14 @@ const AboutPage = ({ data }) => {
         height: 512,
       },
     },
-    description: post.frontmatter.meta_description,
+    description: meta_description,
   }
 
   return (
     <Layout>
       <Helmet>
-        <title>{post.frontmatter.meta_title}</title>
-        <meta name='description' content={post.frontmatter.meta_description} />
+        <title>{meta_title}</title>
+        <meta name='description' content={meta_description} />
         {/* Schema.org tags */}
         <script type='application/ld+json'>
           {JSON.stringify(breadcrumbSchemaOrgJSONLD)}
@@ -79,9 +79,9 @@ const AboutPage = ({ data }) => {
       </Helmet>
       <AboutPageTemplate
         contentComponent={HTMLContent}
-        title={post.frontmatter.title}
-        image={post.frontmatter.image}
-        content={post.html}
+        title={title}
+        image={image}
+        content={html}
       />
     </Layout>
   )
