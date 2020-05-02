@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 
 const SE0 = (props) => {
-  const { title, meta_title, meta_desc, cover, slug, date, siteTitleAlt, siteTitle, siteUrl, siteFBAppID, userTwitter, pathPrefix } = props
+  const { title, meta_title, meta_desc, cover, slug, date, author, siteTitleAlt, siteTitle, siteUrl, siteFBAppID, userTwitter, pathPrefix } = props
   const postURL = siteUrl + slug
   const realPrefix = pathPrefix === '/' ? '' : pathPrefix
   const image = siteUrl + realPrefix + cover
