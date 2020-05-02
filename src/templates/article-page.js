@@ -23,6 +23,12 @@ const ArticlePage = (props) => {
           slug={slug}
           date={date}
           author={author}
+          siteTitleAlt={config.siteTitleAlt}
+          siteTitle={config.siteTitle}
+          siteUrl={config.siteUrl}
+          siteFBAppID={config.siteFBAppID}
+          userTwitter={config.userTwitter}
+          pathPrefix={config.pathPrefix}
         />
         <ArticleTemplate
           content={html}
