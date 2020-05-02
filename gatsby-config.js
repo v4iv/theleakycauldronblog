@@ -183,6 +183,7 @@ module.exports = {
                   date: edge.node.frontmatter.date,
                   title: edge.node.frontmatter.title,
                   description: edge.node.excerpt,
+                  image: edge.node.frontmatter.cover,
                   author: edge.node.frontmatter.author,
                   url: rssMetadata.site_url + edge.node.fields.slug,
                   guid: rssMetadata.site_url + edge.node.fields.slug,
