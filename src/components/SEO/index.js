@@ -38,7 +38,7 @@ const SE0 = (props) => {
     '@type': 'BlogPosting',
     url: postURL,
     name: title,
-    alternateName: siteTitleAlt ? siteTitleAlt : '',
+    alternateName: siteTitleAlt || '',
     headline: title,
     mainEntityOfPage: {
       '@type': 'WebPage',
@@ -89,7 +89,7 @@ const SE0 = (props) => {
     <meta property='og:image' content={image} />
     <meta
       property='fb:app_id'
-      content={siteFBAppID ? siteFBAppID : ''}
+      content={siteFBAppID || ''}
     />
 
     {/* Twitter Card tags */}
@@ -97,7 +97,7 @@ const SE0 = (props) => {
     <meta name='twitter:site' content={postURL} />
     <meta
       name='twitter:creator'
-      content={userTwitter ? userTwitter : ''}
+      content={userTwitter || ''}
     />
     <meta name='twitter:title' content={title} />
     <meta name='twitter:description' content={meta_desc} />
@@ -118,7 +118,7 @@ SE0.propTypes = {
   siteUrl: PropTypes.string,
   siteFBAppID: PropTypes.string,
   userTwitter: PropTypes.string,
-  pathPrefix: PropTypes.string
+  pathPrefix: PropTypes.string,
 }
 
 export default SE0
