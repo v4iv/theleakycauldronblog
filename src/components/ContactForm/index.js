@@ -32,7 +32,7 @@ const ContactForm = () => {
       onSubmit={handleSubmit}
     >
       {({ errors, touched, isSubmitting }) => (
-        <Form className='pa5 black-80 measure center' name='contact' data-netlify='true' data-netlify-honeypot='bot-field'>
+        <Form className='pa5 black-80 measure center' name='Contact-Form' data-netlify='true' data-netlify-honeypot='bot-field'>
           <div className='mt3'>
             <label htmlFor='name' className='f6 b db mb2'>Name</label>
 
@@ -77,18 +77,14 @@ const ContactForm = () => {
           </div>
 
           <div className='mt5 measure tr'>
-            <input
-              id='clear'
-              name='clear'
+            <button
               aria-label='Clear'
               type='reset'
               value='Clear'
               className='b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib mr3'
             />
 
-            <input
-              id='submit'
-              name='submit'
+            <button
               aria-label='Send Message'
               type='submit'
               value='Send Message'
