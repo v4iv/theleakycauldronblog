@@ -82,7 +82,9 @@ const ContactForm = () => {
               type='reset'
               value='Clear'
               className='b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib mr3'
-            />
+            >
+              Clear
+            </button>
 
             <button
               aria-label='Send Message'
@@ -90,7 +92,9 @@ const ContactForm = () => {
               value='Send Message'
               disabled={isSubmitting}
               className='b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib'
-            />
+            >
+              Send Message
+            </button>
           </div>
         </Form>
       )}
