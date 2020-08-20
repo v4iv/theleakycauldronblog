@@ -3,6 +3,7 @@ templateKey: article-page
 title: Creamy MushRome Mushroom Recipe
 slug: creamy-mushrome-mushroom-recipe
 author: Vaibhav Sharma
+author_link: https://theleakycauldronblog.com
 date: 2019-03-23T18:33:42.477Z
 cover: /img/mushrome.jpg
 meta_title: Enjoy tasty Creamy MushRome Recipe

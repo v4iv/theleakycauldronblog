@@ -4,7 +4,7 @@ import { navigate } from '@reach/router'
 import { Index } from 'elasticlunr'
 import withLocation from '../withLocation'
 
-const SearchBox = props => {
+const SearchBox = (props) => {
   let index = null
 
   const { search, searchIndex } = props
