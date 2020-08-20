@@ -3,6 +3,7 @@ templateKey: article-page
 title: How I became an Aquarist by Accident!
 slug: how-i-became-an-aquarist-by-accident
 author: Vaibhav Sharma
+author_link: https://theleakycauldronblog.com
 date: '2018-08-13T11:03:36+05:30'
 cover: /img/aquarist_accidental.jpg
 meta_title: How I became an Aquarist by Accident!

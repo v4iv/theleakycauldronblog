@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-// import _ from 'lodash'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 
@@ -39,20 +38,9 @@ const ArticleList = (props) => {
               </div>
             </div>
             <small className='f6 lh-copy gray mv0'>By <span className='ttu'>{post.frontmatter.author}</span></small>
-            <time className='db black dim'>
+            <time className='db black'>
               <small>{post.frontmatter.date}</small>
             </time>
-            {/* <div className='flex pv2 ph0'> */}
-            {/*  {post.frontmatter.tags.map(tag => ( */}
-            {/*    <Link */}
-            {/*      to={`/tags/${_.kebabCase(tag)}`} */}
-            {/*      key={tag} */}
-            {/*      className='no-underline black dim' */}
-            {/*    > */}
-            {/*      <small>#{tag} &nbsp;</small> */}
-            {/*    </Link> */}
-            {/*  ))} */}
-            {/* </div> */}
           </article>
         )
       })}

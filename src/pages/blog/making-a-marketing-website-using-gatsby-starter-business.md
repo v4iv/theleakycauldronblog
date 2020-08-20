@@ -3,6 +3,7 @@ templateKey: article-page
 title: Making a marketing website using Gatsby Starter Business
 slug: making-a-marketing-website-using-gatsby-starter-business
 author: Vaibhav Sharma
+author_link: https://theleakycauldronblog.com
 date: '2018-04-10T12:05:03+05:30'
 cover: /img/gatsby_marketing_website.jpg
 meta_title: Making a marketing website using Gatsby Starter Business

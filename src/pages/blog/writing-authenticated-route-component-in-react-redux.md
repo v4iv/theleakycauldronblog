@@ -3,6 +3,7 @@ templateKey: article-page
 title: Writing Authenticated Route Component in React Redux
 slug: writing-authenticated-route-component-in-react-redux
 author: Vaibhav Sharma
+author_link: https://theleakycauldronblog.com
 date: '2018-06-02T09:21:12+05:30'
 cover: /img/react_redux_authenticated_routes.jpg
 meta_title: Writing Authenticated Route Component in React Redux

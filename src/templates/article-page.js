@@ -10,7 +10,7 @@ import Share from '../components/Share'
 import Layout from '../components/Layout'
 
 const ArticlePage = (props) => {
-  const { data: { markdownRemark: { id, html, fields: { slug }, frontmatter: { title, meta_title, meta_description, cover, date, author, tags } } } } = props
+  const { data: { markdownRemark: { id, html, fields: { slug }, frontmatter: { title, meta_title, meta_description, cover, date, author, author_link, tags } } } } = props
 
   return (
     <Layout>
@@ -38,6 +38,7 @@ const ArticlePage = (props) => {
           tags={tags}
           title={title}
           author={author}
+          author_link={author_link}
         />
         <section className='mw8 center'>
           <Share title={title} slug={slug} excerpt={meta_description} siteUrl={config.siteUrl} pathPrefix={config.pathPrefix} />
@@ -81,6 +82,7 @@ export const articlePageQuery = graphql`
                 date(formatString: "MMMM DD, YYYY")
                 title
                 author
+                author_link
                 cover {
                     childImageSharp {
                         fluid(maxWidth: 1075, quality: 72) {

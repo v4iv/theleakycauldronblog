@@ -3,6 +3,7 @@ templateKey: article-page
 title: Implement Rich Snippet Schema with Google Tag Manager
 slug: implement-rich-snippet-schema-with-google-tag-manager
 author: Vaibhav Sharma
+author_link: https://theleakycauldronblog.com
 date: '2018-06-16T15:51:54+05:30'
 cover: /img/structured_data_gtm.jpg
 meta_title: Implement Rich Snippet JSON LD Schema with Google Tag Manager
