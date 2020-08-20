@@ -13,7 +13,7 @@ tags:
   - Secularism
   - Religion
 ---
-A beautiful poem by my friend *"**Vyom**"*.
+A powerful poem by my friend who writes under the pen-name *"**Vyom**"*.
 
 अजीब सा माहौल है, \
 मानो सब गोल मोल है \
