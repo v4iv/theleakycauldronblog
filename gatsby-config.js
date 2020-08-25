@@ -141,9 +141,15 @@ module.exports = {
             type: `image/png`,
           },
         ],
+        cache_busting_mode: 'none',
       },
     },
-    `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        precachePages: [`/blog/*`, `/about/`],
+      },
+    },
     {
       resolve: `gatsby-plugin-feed`,
       options: {
