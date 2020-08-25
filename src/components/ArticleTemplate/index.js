@@ -46,7 +46,7 @@ const ArticleTemplate = (props) => {
         />}
       <section className='mw8 center'>
         <div className='ph3 ph4-m ph5-l'>
-          <PostContent content={content} className='measure db center f5 f4-ns lh-copy' />
+          <PostContent content={content} className='measure db center f5 f4-ns lh-copy html-content' />
         </div>
       </section>
     </article>
