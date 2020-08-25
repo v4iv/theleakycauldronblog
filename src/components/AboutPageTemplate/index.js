@@ -30,7 +30,7 @@ const AboutPageTemplate = (props) => {
             src={image.publicURL}
             alt={title}
           />}
-        <PageContent content={content} className='avenir lh-copy measure f4 mt0 fw1' />
+        <PageContent content={content} className='avenir lh-copy measure f4 mt0 fw1 html-content' />
       </div>
     </article>
   </section>
