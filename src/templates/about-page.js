@@ -9,7 +9,6 @@ import Layout from '../components/Layout'
 
 const AboutPage = (props) => {
   const { data: { markdownRemark: { html, frontmatter: { title, meta_title, meta_description, image } } } } = props
-
   const breadcrumbSchemaOrgJSONLD = {
     '@context': 'http://schema.org',
     '@type': 'BreadcrumbList',

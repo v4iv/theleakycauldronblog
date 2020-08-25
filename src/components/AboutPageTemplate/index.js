@@ -1,14 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Img from 'gatsby-image'
 import Content from '../Content'
 
 const AboutPageTemplate = (props) => {
-  const { title, content, contentComponent } = props
+  const { title, content, contentComponent, image } = props
   const PageContent = contentComponent || Content
 
   return <section className='mw8 center'>
     <article className='cf ph3 ph5-ns pv5'>
-      <header className='fn fl-ns w-50-ns pr4-ns'>
+      <header className='fn fl-ns w-50-ns pr4-ns mb3'>
         <h1 className='f2 lh-title fw4 mb3 mt0 pt3 bt bw2 avenir'>
           {title}
         </h1>
@@ -18,6 +19,17 @@ const AboutPageTemplate = (props) => {
         <time className='f6 ttu tracked gray'>The Leaky Cauldron Blog</time>
       </header>
       <div className='fn fl-ns w-50-ns'>
+        {!!image && !!image.childImageSharp
+          ? <Img
+            className='w-100 dib f4'
+            fluid={image.childImageSharp.fluid}
+            alt={title}
+          />
+          : <img
+            className='w-100 dib f4'
+            src={image.publicURL}
+            alt={title}
+          />}
         <PageContent content={content} className='avenir lh-copy measure f4 mt0 fw1' />
       </div>
     </article>
