@@ -148,8 +148,8 @@ module.exports = {
       resolve: `gatsby-plugin-offline`,
       options: {
         precachePages: [`/blog/*`, `/about/`],
-      }
-    }
+      },
+    },
     {
       resolve: `gatsby-plugin-feed`,
       options: {
