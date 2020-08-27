@@ -12,7 +12,6 @@ meta_description: After a lot of digging, I think I'm finally convinced that I
   to convince you of the same.
 tags:
   - Harry Potter
-  - ""
 ---
 Maybe, few of the most used quotes of all time, from the Harry Potter series is - *"**After all this time?**"* and, it’s apt retort - *"**Always**"*. Deep down, we all know that Severus Snape can beat many great lovers of the fictional world. So, for us *Potterheads*, After all this time and Always replaced the magic words - *'**I love you**'*. Because these, more than anything else, reveal the potion master's heart before our eyes, the heart that was capable of loving forever, loving ceaselessly, loving despite all the hatred he got.
 
