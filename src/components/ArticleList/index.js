@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
-import Img from 'gatsby-image'
 import _ from 'lodash'
+import ProgressiveImageContainer from '../ProgressiveImageContainer'
 
 const ArticleList = (props) => {
   const { posts } = props
@@ -24,23 +24,11 @@ const ArticleList = (props) => {
               </div>
               <div className='pl3-ns order-1 order-2-ns mb4 mb0-ns w-100 w-40-ns'>
                 <Link className='db ph0-l no-underline black grow' to={post.fields.slug}>
-                  {(typeof post.frontmatter.cover === 'string')
-                    ? <img
-                      className='db'
-                      src={_.get(post, ['frontmatter', 'cover'])}
-                      alt={_.get(post, ['frontmatter', 'title'], '')}
-                    />
-                    : (_.get(post, ['frontmatter', 'cover', 'childImageSharp', 'fluid']))
-                      ? <Img
-                        className='db'
-                        fluid={_.get(post, ['frontmatter', 'cover', 'childImageSharp', 'fluid'])}
-                        alt={_.get(post, ['frontmatter', 'title'], '')}
-                      />
-                      : <img
-                        className='db'
-                        src={_.get(post, ['frontmatter', 'cover', 'publicURL'], '')}
-                        alt={_.get(post, ['frontmatter', 'title'], '')}
-                      />}
+                  <ProgressiveImageContainer
+                    className='db'
+                    image={_.get(post, ['frontmatter', 'cover'])}
+                    alt={_.get(post, ['frontmatter', 'title'], '')}
+                  />
                 </Link>
               </div>
             </div>

@@ -1,8 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import _ from 'lodash'
-import Img from 'gatsby-image'
 import Content from '../Content'
+import ProgressiveImageContainer from '../ProgressiveImageContainer'
 
 const AboutPageTemplate = (props) => {
   const { title, content, contentComponent, image } = props
@@ -20,22 +19,11 @@ const AboutPageTemplate = (props) => {
         <time className='f6 ttu tracked gray'>The Leaky Cauldron Blog</time>
       </header>
       <div className='fn fl-ns w-50-ns'>
-        {(typeof image === 'string')
-          ? <img
-            className='w-100 dib f4'
-            src={image}
-            alt={title}
-          />
-          : (_.get(image, ['childImageSharp', 'fluid']))
-            ? <Img
-              className='w-100 dib f4'
-              fluid={_.get(image, ['childImageSharp', 'fluid'])}
-              alt={title}
-            />
-            : <img
-              className='w-100 dib f4'
-              src={_.get(image, ['publicURL'], '')}
-              alt={title} />}
+        <ProgressiveImageContainer
+          className='w-100 dib f4'
+          image={image}
+          alt={title}
+        />
         <PageContent content={content} className='avenir lh-copy measure f4 mt0 fw1 html-content' />
       </div>
     </article>
