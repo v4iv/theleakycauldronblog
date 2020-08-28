@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
+import _ from 'lodash'
 
 const ArticleList = (props) => {
   const { posts } = props
@@ -23,23 +24,30 @@ const ArticleList = (props) => {
               </div>
               <div className='pl3-ns order-1 order-2-ns mb4 mb0-ns w-100 w-40-ns'>
                 <Link className='db ph0-l no-underline black grow' to={post.fields.slug}>
-                  {!!post.frontmatter.cover && !!post.frontmatter.cover.childImageSharp
-                    ? <Img
+                  {(typeof post.frontmatter.cover === 'string')
+                    ? <img
                       className='db'
-                      fluid={post.frontmatter.cover.childImageSharp.fluid}
-                      alt={post.frontmatter.title}
+                      src={_.get(post, ['frontmatter', 'cover'])}
+                      alt={_.get(post, ['frontmatter', 'title'], '')}
                     />
-                    : <img
-                      className='db'
-                      src={post.frontmatter.cover.publicURL}
-                      alt={post.frontmatter.title}
-                    />}
+                    : (_.get(post, ['frontmatter', 'cover', 'childImageSharp', 'fluid']))
+                      ? <Img
+                        className='db'
+                        fluid={_.get(post, ['frontmatter', 'cover', 'childImageSharp', 'fluid'])}
+                        alt={_.get(post, ['frontmatter', 'title'], '')}
+                      />
+                      : <img
+                        className='db'
+                        src={_.get(post, ['frontmatter', 'cover', 'publicURL'], '')}
+                        alt={_.get(post, ['frontmatter', 'title'], '')}
+                      />}
                 </Link>
               </div>
             </div>
-            <small className='f6 lh-copy gray mv0'>By <span className='ttu'>{post.frontmatter.author}</span></small>
+            <small className='f6 lh-copy gray mv0'>By <span
+              className='ttu'>{_.get(post, ['frontmatter', 'author'], '')}</span></small>
             <time className='db black'>
-              <small>{post.frontmatter.date}</small>
+              <small>{_.get(post, ['frontmatter', 'date'], '')}</small>
             </time>
           </article>
         )

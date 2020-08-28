@@ -3,7 +3,7 @@ templateKey: article-page
 title: Pro Mode of our Brain - Awareness
 slug: pro-mode-of-our-brain-awareness
 author: Vaibhav Sharma
-author_link: https://theleakycauldronblog.com
+author_link: https://twitter.com/vaibhaved
 date: 2019-10-12T16:20:33.815Z
 cover: /img/ben-white-thinking-and-awareness.jpg
 meta_title: Unlock the Pro Mode of our Brain - Awareness

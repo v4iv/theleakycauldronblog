@@ -3,7 +3,7 @@ templateKey: article-page
 title: Use Serverless Lambda API Gateway for Binary Response
 slug: use-serverless-lambda-api-gateway-for-binary-response
 author: Vaibhav Sharma
-author_link: https://theleakycauldronblog.com
+author_link: https://twitter.com/vaibhaved
 date: 2019-09-07T12:39:59.122Z
 cover: /img/serverless-binary-transfer-thomas-griesbeck.jpg
 meta_title: Leverage Serverless Lambda API Gateway for Binary Response

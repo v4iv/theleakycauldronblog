@@ -17,7 +17,10 @@ const ArticleTemplate = (props) => {
         <header className='avenir tc-l ph3 ph4-ns pt4 pt5-ns'>
           <h1 className='f3 f2-m f-subheadline-l measure lh-title fw1 mt0'>{title}</h1>
           <div className='flex db mb4'>
-            <p className='f5 f4-l db fw1 baskerville mb4-l mb2'><a href={author_link} className='no-underline black dim'>{author}</a> | {date}</p>
+            <p className='f5 f4-l db fw1 baskerville mb4-l mb2'><a
+              href={author_link}
+              className='no-underline black dim'>{author}</a> | {date}
+            </p>
             <div className='inline-flex flex-wrap'>
               {tags && tags.length &&
               tags.map(tag => (
@@ -33,17 +36,22 @@ const ArticleTemplate = (props) => {
           </div>
         </header>
       </section>
-      {!!cover && !!cover.childImageSharp
-        ? <Img
+      {(typeof cover === 'string')
+        ? <img
           className='w-100 dib f3'
-          fluid={cover.childImageSharp.fluid}
+          src={cover}
           alt={title}
         />
-        : <img
-          className='w-100 dib f3'
-          src={cover.publicURL}
-          alt={title}
-        />}
+        : (_.get(cover, ['childImageSharp', 'fluid']))
+          ? <Img
+            className='w-100 dib f3'
+            fluid={_.get(cover, ['childImageSharp', 'fluid'])}
+            alt={title}
+          />
+          : <img
+            className='w-100 dib f3'
+            src={_.get(cover, ['publicURL'], '')}
+            alt={title} />}
       <section className='mw8 center'>
         <div className='ph3 ph4-m ph5-l'>
           <PostContent content={content} className='measure db center f5 f4-ns lh-copy html-content' />
