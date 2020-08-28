@@ -2,10 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import _ from 'lodash'
-import Img from 'gatsby-image'
+import Content from '../Content'
+import ProgressiveImageContainer from '../ProgressiveImageContainer'
 import './styles.scss'
 import 'prismjs/themes/prism-tomorrow.css'
-import Content from '../Content'
 
 const ArticleTemplate = (props) => {
   const { content, date, contentComponent, cover, tags, title, author, author_link } = props
@@ -36,22 +36,11 @@ const ArticleTemplate = (props) => {
           </div>
         </header>
       </section>
-      {(typeof cover === 'string')
-        ? <img
-          className='w-100 dib f3'
-          src={cover}
-          alt={title}
-        />
-        : (_.get(cover, ['childImageSharp', 'fluid']))
-          ? <Img
-            className='w-100 dib f3'
-            fluid={_.get(cover, ['childImageSharp', 'fluid'])}
-            alt={title}
-          />
-          : <img
-            className='w-100 dib f3'
-            src={_.get(cover, ['publicURL'], '')}
-            alt={title} />}
+      <ProgressiveImageContainer
+        className='w-100 dib f3'
+        image={cover}
+        alt={title}
+      />
       <section className='mw8 center'>
         <div className='ph3 ph4-m ph5-l'>
           <PostContent content={content} className='measure db center f5 f4-ns lh-copy html-content' />
