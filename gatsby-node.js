@@ -3,11 +3,9 @@ const path = require('path')
 const pathPrefix = require('./config').pathPrefix
 // const { createFilePath } = require('gatsby-source-filesystem')
 const createPaginatedPages = require('gatsby-paginate')
-const { fmImagesToRelative } = require('gatsby-remark-relative-images')
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
-  fmImagesToRelative(node)
   let slug
 
   if (node.internal.type === `MarkdownRemark`) {
