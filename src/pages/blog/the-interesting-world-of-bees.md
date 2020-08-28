@@ -3,7 +3,7 @@ templateKey: article-page
 title: The Interesting World of Bees
 slug: the-interesting-world-of-bees
 author: Vaibhav Sharma
-author_link: https://theleakycauldronblog.com
+author_link: https://twitter.com/vaibhaved
 date: 2020-04-24T21:06:19.359Z
 cover: /img/boris-smokrovic-the-interesting-world-of-bees.jpg
 meta_title: The Interesting World of Bees

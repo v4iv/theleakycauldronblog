@@ -3,7 +3,7 @@ templateKey: article-page
 title: Use Guess JS in your Gatsby site to enhance User Experience
 slug: use-guess-js-in-your-gatsby-site-to-enhance-user-experience
 author: Vaibhav Sharma
-author_link: https://theleakycauldronblog.com
+author_link: https://twitter.com/vaibhaved
 date: 2019-04-04T17:13:56.164Z
 cover: /img/gatsby-guess-js.jpg
 meta_title: Leverage Guess JS in your Gatsby website to improve user experience

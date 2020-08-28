@@ -3,7 +3,7 @@ templateKey: article-page
 title: "WARNING: Images that can break your brain - McCollough Effect"
 slug: mccollough-effect
 author: Vaibhav Sharma
-author_link: https://theleakycauldronblog.com
+author_link: https://twitter.com/vaibhaved
 date: 2020-08-24T11:27:56.195Z
 cover: /img/david-clode-mccollough-effect.jpg
 meta_title: "WARNING: Images that can break your brain - McCollough Effect"

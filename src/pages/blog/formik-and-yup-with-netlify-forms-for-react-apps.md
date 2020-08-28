@@ -3,7 +3,7 @@ templateKey: article-page
 title: Formik and Yup with Netlify Forms for React Apps
 slug: formik-and-yup-with-netlify-forms-for-react-apps
 author: Vaibhav Sharma
-author_link: https://theleakycauldronblog.com
+author_link: https://twitter.com/vaibhaved
 date: 2019-06-17T08:14:41.721Z
 cover: /img/formik-netlify-forms-react-yup.jpg
 meta_title: Leverage Formik and Yup to make your Netlify Forms hassle free and sanitised.
