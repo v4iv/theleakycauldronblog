@@ -14,7 +14,7 @@ tags:
   - Short Story
   - Translation
 ---
-This is a Hindi translation of popular short story [The Egg by Andy Weir](http://www.galactanet.com/oneoff/theegg_mod.html) (author of The Martian, Artemis).
+This is my Hindi translation of popular short story [The Egg by Andy Weir](http://www.galactanet.com/oneoff/theegg_mod.html) (author of The Martian, Artemis).
 
 > ’I dedicate this to my Mom, who taught me Hindi, as well as instilled in me, that reading can be fun’
 >
