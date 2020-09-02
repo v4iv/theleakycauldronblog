@@ -7,6 +7,9 @@ const dynamicPlugins = []
 const startDate = new Date()
 startDate.setMonth(startDate.getMonth() - 3)
 if(process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL && process.env.PRIVATE_KEY && process.env.GA_VIEW_ID) {
+  console.log('PK - ', process.env.GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY)
+  console.log('B64PK - ', process.env.PRIVATE_KEY)
+
   dynamicPlugins.push({
     resolve: `gatsby-plugin-guess-js`,
     options: {
