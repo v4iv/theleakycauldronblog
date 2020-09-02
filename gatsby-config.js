@@ -6,14 +6,14 @@ const dynamicPlugins = []
 // pick data from 3 months ago
 const startDate = new Date()
 startDate.setMonth(startDate.getMonth() - 3)
-if(process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL && process.env.GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY && process.env.GA_VIEW_ID) {
+if(process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL && process.env.PRIVATE_KEY && process.env.GA_VIEW_ID) {
   dynamicPlugins.push({
     resolve: `gatsby-plugin-guess-js`,
     options: {
       GAViewID: process.env.GA_VIEW_ID,
       jwt: {
         client_email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
-        private_key: process.env.GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY,
+        private_key: Buffer.from(process.env.PRIVATE_KEY, 'base64').toString('ascii'),
       },
       period: {
         startDate,
