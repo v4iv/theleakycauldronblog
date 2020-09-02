@@ -8,7 +8,7 @@ A truly complete & feature rich Gatsby Blog Starter. Powered by Gatsby and Netli
 
 * Elastic-Lunr Search
 * Pagination
-* SEO Friendly(Sitemap, Schemas, Robots.txt, Meta Tags, GTM etc.)
+* SEO Friendly(Slugs, Sitemap, Schemas, Robots.txt, Meta Tags, GTM etc.)
 * Disqus and Share Support
 * Tags and RSS Feed
 * Progressive Web App with Offline Support
@@ -17,6 +17,7 @@ A truly complete & feature rich Gatsby Blog Starter. Powered by Gatsby and Netli
 * Medium like progressive image loading
 * Code Higlighting with Prism JS
 * Contact From using Netlify Forms, Formik & Yup
+* GDPR Cookie Consent
 
 ## Getting Started
 Create your own project with Gatsby CLI:

@@ -2,6 +2,27 @@ const config = require('./config')
 
 const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix
 
+const dynamicPlugins = []
+// pick data from 3 months ago
+const startDate = new Date()
+startDate.setMonth(startDate.getMonth() - 3)
+if(process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL && process.env.GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY && process.env.GA_VIEW_ID) {
+  dynamicPlugins.push({
+    resolve: `gatsby-plugin-guess-js`,
+    options: {
+      GAViewID: process.env.GA_VIEW_ID,
+      jwt: {
+        client_email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
+        private_key: process.env.GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY,
+      },
+      period: {
+        startDate,
+        endDate: new Date(),
+      },
+    },
+  })
+}
+
 module.exports = {
   siteMetadata: {
     title: config.siteTitle,
@@ -271,5 +292,5 @@ module.exports = {
         },
       },
     },
-  ],
+  ].concat(dynamicPlugins),
 }
