@@ -14,15 +14,11 @@ tags:
   - Science
   - Medicine
 ---
-Recently [a video](https://www.youtube.com/watch?v=53me-ICi_f8) by Sino-Malaysian comedian Nigel Ng went viral where his alter-ego roasts an Anglo-Indian girl Hersha Patel ruthlessly for her “Egg Fried Rice” cooking methods. But in a wholesome turn of events, they became friends, and he made [another video](https://www.youtube.com/watch?v=d9Zg_I5a96Y) about taking her to London’s Chinatown for shopping authentic Chinese ingredients. In this video, Nigel or rather Uncle Roger confesses his love for ... MSG. This leads to a minor argument between Uncle Roger and Aunty Hersha on whether MSG is bad for health.
-
-
+Recently [a video](https://www.youtube.com/watch?v=53me-ICi_f8) by Sino-Malaysian comedian Nigel Ng went viral where his alter-ego Uncle Roger ruthelessly roasts an Anglo-Indian girl Hersha Patel, for her “Egg Fried Rice” cooking methods. But in a wholesome turn of events, they became friends, and he made [another video](https://www.youtube.com/watch?v=d9Zg_I5a96Y) about taking her to London’s Chinatown for shopping authentic Chinese ingredients. In this video, Nigel or rather Uncle Roger confesses his love for ... MSG. This leads to a minor argument between Uncle Roger and Aunty Hersha on whether MSG is bad for health.
 
 > "In Asian culture, if taste good no need science"
 >
 > \-- Uncle Roger
-
-
 
 Being a big fan of MSG and having faced similar criticism, I decided to finally write a post presenting why MSG is infamous.
 
@@ -38,11 +34,9 @@ MSG, although sometimes called Chinese Salt in India(and elsewhere) due to the p
 
 Ever since it started being sold, MSG has enjoyed widespread popularity and acceptance in various East Asian cuisines. It all changed when the fire nation attacked...err I meant when a [letter](https://ir.uiowa.edu/poroi/vol12/iss2/7/) was penned to the [New England Journal of Medicine](https://www.nejm.org/). In this letter, Dr Robert Ho Man Kwok coined the term “Chinese Restaurant Syndrome” which was a collective term for a bunch of *“symptoms“* he believed, were caused by MSG. Dr Kwok believed that every time he visited a Chinese restaurant he experienced - numbness of the neck, arms, and back with headache, dizziness, excessive sweating and palpitations. This publication was met with a lot of ridicule, satire within the medical community, as this wasn’t an [isolated comical letter](https://news.colgate.edu/magazine/2019/02/06/the-strange-case-of-dr-ho-man-kwok/) to NEJM. What’s to be noted here is that this observation was not scientific in any stretch of the word and was totally anecdotal.
 
-Interestingly, in 2018, renowned surgeon Dr Howard Steel claimed to have written the above letter under a pseudonym for a bet. But according to a [This American Life](https://www.thisamericanlife.org/668/the-long-fuse) interview, they discovered that a real Dr Kwok existed and his descendants claim that he did, in fact, write the letter. But the fact remains that this “Chinese Restaurant Syndrome” was non-scientific speculation at best.
+Interestingly, in 2018, renowned surgeon Dr Howard Steel claimed to have written the above letter under a pseudonym for a bet. But according to a [This American Life](https://www.thisamericanlife.org/668/the-long-fuse) interview, they discovered that a real Dr Kwok existed and his descendants claim that he did, in fact, write the letter. This was followed by an NYTimes article that was published six weeks after the NEJM letter was published. This article took the letter at face value without further investigating/verifying whether the said letter was credible science. Though we cannot be sure, whether the letter written by Dr Kwok was an inside joke of the scientific community or if he did truly believe that there exists such syndrome.
 
 There was another significant paper that affected the public perception of MSG, titled - [Monosodium glutamate (MSG): A villain and promoter of liver inflammation and dysplasia](https://www.sciencedirect.com/science/article/abs/pii/S0896841107001400) that claimed that MSG causes cancer in rats. The methodology involved here though is questionable at best - injecting an abnormally high concentration of MSG directly into the bloodstreams of mice, as digestive intake is not the same as a subcutaneous injection.
-
-The biggest nail in the coffin was an NYTimes article that was published six weeks after the NEJM letter was published. This article took the letter at face value without investigating/verifying whether the said letter was credible science. Though we cannot be sure, whether the letter written by Dr Kwok was an inside joke of the scientific community or if he did truly believe that there exists such syndrome, is impossible to ascertain.
 
 # Scientific Consensus
 
@@ -50,6 +44,6 @@ MSG is regarded as [fairly safe](https://web.archive.org/web/20070521071111/http
 
 As [no association](https://en.wikipedia.org/wiki/Glutamate_flavoring#cite_note-freeman-20) between MSG consumption and [the claimed symptoms](https://doi.org/10.1016%2F0041-008X%2871%2990129-3) have been successfully demonstrated under [rigorous testing conditions](https://doi.org/10.1016%2F0278-6915%2893%2990012-N), the general scientific consensus on MSG is that it’s safe to eat.
 
-# Redefine CSR Campaign
+# Redefine CRS Campaign
 
-While researching for this article I came across a recent campaign - [\#RedefineCSR](https://www.whyusemsg.com/chinese-restaurant-syndrome/) by Ajinomoto Co. Inc. This campaign aimed to redefine the entry for Chinese Restaurant Syndrome in Merriam-Webster dictionary, on the grounds of it being dated and somewhat offensive. While I didn’t find the origin of the bias towards MSG had any racial roots, I can certainly see how it can be offensive. Though I assure you this isn’t a sponsored article, nor was it written for the [\#RedefineCSR](https://www.whyusemsg.com/chinese-restaurant-syndrome/) campaign.
+While researching for this article I came across a recent campaign - [\#RedefineCRS](https://www.whyusemsg.com/chinese-restaurant-syndrome/) by Ajinomoto Co. Inc. This campaign aimed to redefine the entry for Chinese Restaurant Syndrome in Merriam-Webster dictionary, on the grounds of it being dated and somewhat offensive. While I didn’t find the origin of the bias towards MSG had any racial roots, I can certainly see how it can be offensive. Though I assure you this isn’t a sponsored article, nor was it written for the [\#RedefineCRS](https://www.whyusemsg.com/chinese-restaurant-syndrome/) campaign.
