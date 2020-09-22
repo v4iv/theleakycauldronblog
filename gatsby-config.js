@@ -2,30 +2,6 @@ const config = require('./config')
 
 const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix
 
-const dynamicPlugins = []
-// pick data from 3 months ago
-const startDate = new Date()
-startDate.setMonth(startDate.getMonth() - 3)
-if(process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL && process.env.PRIVATE_KEY && process.env.GA_VIEW_ID) {
-  console.log('PK - ', process.env.GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY)
-  console.log('B64PK - ', process.env.PRIVATE_KEY)
-
-  dynamicPlugins.push({
-    resolve: `gatsby-plugin-guess-js`,
-    options: {
-      GAViewID: process.env.GA_VIEW_ID,
-      jwt: {
-        client_email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
-        private_key: Buffer.from(process.env.PRIVATE_KEY, 'base64').toString('ascii'),
-      },
-      period: {
-        startDate,
-        endDate: new Date(),
-      },
-    },
-  })
-}
-
 module.exports = {
   siteMetadata: {
     title: config.siteTitle,
@@ -135,6 +111,16 @@ module.exports = {
       options: {
         color: '#ffa3d7',
         showSpinner: false,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-gdpr-cookies`,
+      options: {
+        googleTagManager: {
+          trackingId: config.googleTagManagerID, // leave empty if you want to disable the tracker
+          cookieName: 'gatsby-gdpr-google-tagmanager', // default
+          dataLayerName: 'dataLayer', // default
+        },
       },
     },
     {
@@ -295,5 +281,5 @@ module.exports = {
         },
       },
     },
-  ].concat(dynamicPlugins),
+  ],
 }
