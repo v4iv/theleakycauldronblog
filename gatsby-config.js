@@ -53,6 +53,9 @@ module.exports = {
         plugins: [
           {
             resolve: `gatsby-remark-relative-images`,
+            options: {
+              name: 'uploads',
+            },
           },
           {
             resolve: `gatsby-remark-images`,
@@ -100,10 +103,14 @@ module.exports = {
               noInlineHighlight: true,
             },
           },
+          `gatsby-remark-embedder`,
           `gatsby-remark-smartypants`,
         ],
       },
     },
+    `gatsby-plugin-instagram-embed`,
+    `gatsby-plugin-pinterest`,
+    `gatsby-plugin-twitter`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     {
@@ -166,7 +173,7 @@ module.exports = {
         setup (ref) {
           const ret = ref.query.site.siteMetadata.rssMetadata
           ret.allMarkdownRemark = ref.query.allMarkdownRemark
-          ret.generator = 'The Leaky Cauldron Blog'
+          ret.generator = config.siteTitle
           return ret
         },
         query: `
