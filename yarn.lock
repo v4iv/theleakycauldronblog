@@ -6723,6 +6723,11 @@ fd@~0.0.2:
   resolved "https://registry.yarnpkg.com/fd/-/fd-0.0.3.tgz#b3240de86dbf5a345baae7382a07d4713566ff0c"
   integrity sha512-iAHrIslQb3U68OcMSP0kkNWabp7sSN6d2TBSb2JO3gcLJVDd4owr/hKM4SFJovFOUeeXeItjYgouEDTMWiVAnA==
 
+fetch-retry@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/fetch-retry/-/fetch-retry-4.0.1.tgz#ca746666399aaf0547aa3851ccb543cfb112b8da"
+  integrity sha512-EhIeVBkq9T2z1ANDr2kmLujoHOTdLvR9t/nzLSdX4PMIFinLyyZFYX9T6Fb3LrbiHQEhujq1O7ElsqjuqYIsEA==
+
 figgy-pudding@^3.5.1:
   version "3.5.2"
   resolved "https://registry.yarnpkg.com/figgy-pudding/-/figgy-pudding-3.5.2.tgz#b4eee8148abb01dcf1d1ac34367d59e12fa61d6e"
@@ -7337,6 +7342,11 @@ gatsby-plugin-google-tagmanager@^2.3.12:
   dependencies:
     "@babel/runtime" "^7.11.2"
 
+gatsby-plugin-instagram-embed@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-instagram-embed/-/gatsby-plugin-instagram-embed-2.0.1.tgz#bb619961783631cd9216f4baccab30280d78e8f5"
+  integrity sha512-CdzezDgYz73dLArWEs/eZtIZEMgytBtHqNDYfFSSOn9SM5aQvhsJGwNNg54zlPlOrDqVLc7a4DEDJWFIWk496A==
+
 gatsby-plugin-manifest@^2.4.30:
   version "2.4.30"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.4.30.tgz#a5edca7bdf898a6f06e33969ab4e21f7438438aa"
@@ -7408,6 +7418,13 @@ gatsby-plugin-page-creator@^2.3.28:
     graphql "^14.6.0"
     lodash "^4.17.20"
 
+gatsby-plugin-pinterest@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-pinterest/-/gatsby-plugin-pinterest-3.0.0.tgz#46bb713fa2dd3d56a59f40306e4a89446ad52b3e"
+  integrity sha512-Wfrvtk3R90VW5/USMdFn+BnDE9V9mzZjuenZIFb8Uhp56Z7Z8uVtLwLzyi2mvytkDQCx/8MMzgJuF3O1cCCe6w==
+  dependencies:
+    "@babel/runtime" "^7.8.7"
+
 gatsby-plugin-react-helmet@^3.3.11:
   version "3.3.11"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-react-helmet/-/gatsby-plugin-react-helmet-3.3.11.tgz#f49d31abfc5e4b31e81226d82b7b5e9c1b71f797"
@@ -7456,6 +7473,13 @@ gatsby-plugin-sitemap@^2.4.13:
     minimatch "^3.0.4"
     pify "^3.0.0"
     sitemap "^1.13.0"
+
+gatsby-plugin-twitter@^2.3.11:
+  version "2.3.11"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-twitter/-/gatsby-plugin-twitter-2.3.11.tgz#6d2fdf16bdbed62ee0a3238248ffaa04aff657a0"
+  integrity sha512-3PfiroUOA5nZOi0LrwjrULB0JLBW+rn6lnpqGqUC5Y4sUN3eRBOMER+s5r+S4OTvm/sxRl1+8aJmjiY8OO/ghA==
+  dependencies:
+    "@babel/runtime" "^7.11.2"
 
 gatsby-plugin-typescript@^2.4.20:
   version "2.4.20"
@@ -7589,6 +7613,16 @@ gatsby-remark-copy-linked-files@^2.3.15:
     path-is-inside "^1.0.2"
     probe-image-size "^5.0.0"
     unist-util-visit "^1.4.1"
+
+gatsby-remark-embedder@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-embedder/-/gatsby-remark-embedder-3.0.0.tgz#9921df857d431fe3681f28e30c1a9839e1cc7bd6"
+  integrity sha512-Do0NA09+ehs8mycfGTx0VbA6Ti4ALIILCMLax/zbspXVFaRfgbOoB/CgIEW9Raai98oMpiJtpAr0T6UR76AImA==
+  dependencies:
+    "@babel/runtime" "^7.10.5"
+    fetch-retry "^4.0.1"
+    node-fetch "^2.6.0"
+    unist-util-visit "^2.0.3"
 
 gatsby-remark-images@^3.3.30:
   version "3.3.30"
@@ -17377,7 +17411,7 @@ unist-util-visit-parents@^3.0.0:
     "@types/unist" "^2.0.0"
     unist-util-is "^4.0.0"
 
-unist-util-visit@2.0.3:
+unist-util-visit@2.0.3, unist-util-visit@^2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/unist-util-visit/-/unist-util-visit-2.0.3.tgz#c3703893146df47203bb8a9795af47d7b971208c"
   integrity sha512-iJ4/RczbJMkD0712mGktuGpm/U4By4FfDonL7N/9tATGIF4imikjOuagyMY53tnZq3NP6BcmlrHhEKAfGWjh7Q==
