@@ -82,7 +82,6 @@ const SE0 = (props) => {
 
     {/* OpenGraph tags */}
     <meta property='og:url' content={postURL} />
-    <meta property='og:type' content='article' />
     <meta property='og:title' content={title} />
     <meta property='og:author' content={author} />
     <meta property='og:description' content={meta_desc} />
