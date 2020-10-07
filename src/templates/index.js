@@ -2,10 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 import { Link } from 'gatsby'
-
 import ArticleList from '../components/ArticleList'
 import config from '../../config'
 import Layout from '../components/Layout'
+
 
 const PaginationLink = props => {
   if (!props.test) {
@@ -41,8 +41,8 @@ const IndexPage = (props) => {
     "alternateName": config.siteTitleAlt ? config.siteTitleAlt : '',
     "potentialAction": {
       "@type": "SearchAction",
-      "name": "The Leaky Cauldron Blog Search",
-      "target": "https://theleakycauldronblog.com/search?q={search_term_string}",
+      "name": `${config.siteTitle} Search`,
+      "target": `${config.siteUrl}/search?q={search_term_string}`,
       "query-input": "required name=search_term_string",
     },
   }
@@ -51,14 +51,19 @@ const IndexPage = (props) => {
   return (
     <Layout>
       <Helmet>
-        <title>Home | The Leaky Cauldron Blog</title>
+        <title>Home | {config.siteTitle}</title>
 
         {/* Schema.org tags */}
         <script type='application/ld+json'>
           {JSON.stringify(websiteSchemaOrgJSONLD)}
         </script>
 
-        <link rel='canonical' href='https://theleakycauldronblog.com/' />
+        {/* Open Graph Tags */}
+        <meta property='og:url' content={`${config.siteUrl}/contact`} />
+        <meta property='og:title' content={config.siteTitle} />
+        <meta property='og:description' content={config.siteDescription} />
+
+        <link rel='canonical' href={`${config.siteUrl}`} />
       </Helmet>
 
       <div>
