@@ -1,20 +1,19 @@
 ---
 templateKey: article-page
-title: Apne Apne Bhagwaan - अपने अपने भगवान
+title: Apne Apne Bhagwaan — अपने अपने भगवान
 slug: apne-apne-bhagwaan
 author: Vyom
-author_link: https://theleakycauldronblog.com
+author_link: https://theleakycauldronblog.com/contact
 date: 2020-08-16T14:49:01.852Z
 cover: /img/ben-white-apne-apne-bhagwaan.jpg
-meta_title: Apne Apne Bhagwaan - अपने अपने भगवान
-meta_description: |-
-  राम तू, क़ुरान तू, नानक साहब का ज्ञान तू 
-  सच्ची समझ जो आ जाये, तो परमेश्वर रूपी इंसान तू!
+meta_title: Apne Apne Bhagwaan — अपने अपने भगवान
+meta_description: राम तू, क़ुरान तू, नानक साहब का ज्ञान तू, सच्ची समझ जो आ जाये,
+  तो परमेश्वर रूपी इंसान तू! — व्योम
 tags:
-  - Secularism
-  - Religion
+  - poem
+  - secularism
 ---
-_A powerful poem by my friend who writes under the pen-name *"**Vyom**"*._
+*A powerful poem by my friend who writes under the pen-name "**Vyom**".*
 
 अजीब सा माहौल है, \
 मानो सब गोल मोल है \
@@ -31,19 +30,19 @@ _A powerful poem by my friend who writes under the pen-name *"**Vyom**"*._
 कहीं डर का माहौल है, \
 कहीं खुल रही अब पोल है
 
-कोई चीखता - चिल्लाता यहाँ \
+कोई चीख़ता - चिल्लाता यहाँ \
 कोई बम से उड़ाता यहाँ \
 कोई मस्जिद को है तोड़ रहा \
 कोई मंदिर का ईंटा जोड़ रहा 
 
-अजीब सख्त वक़्त है \
+अजीब सख्त वक्त है \
 गिर रहा हर तख्त है \
 हर खून मानो सो रहा \
 है काल मानो रो रहा
 
-हर शख्स किसी से लड़ रहा \
+हर शख़्स किसी से लड़ रहा \
 खुदा भी अब तो डर रहा \
-इंसानियत ही है खुदा \
+इनसानियत ही है खुदा \
 खुदा से ना कोई जुदा \
 संभल जा तू अब मान जा \
 इस बात को अब जान जा
@@ -55,7 +54,7 @@ _A powerful poem by my friend who writes under the pen-name *"**Vyom**"*._
 
 हर बात को है जानता, \
 वो सबको ही तो मानता \
-इंसानीयत बनाई जिसने, तू उसे ही बचा रहा! \
+इनसानियत बनाई जिसने, तू उसे ही बचा रहा! \
 दुनिया बनाई जिसने , तू उसे दुनिया दिखा रहा! 
 
 दया रखो, धर्म करो \
@@ -68,4 +67,4 @@ _A powerful poem by my friend who writes under the pen-name *"**Vyom**"*._
 सच्ची समझ जो आ जाये, \
 तो परमेश्वर रूपी इंसान तू!
 
-***\-- व्योम***
+— ***व्योम***
