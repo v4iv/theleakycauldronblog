@@ -12,8 +12,11 @@ meta_description: >-
   world's plants including 90 different food crops. That’s about ~ 1/3 of all
   the agricultural food crops!
 tags:
-  - Nature
-  - Bees
+  - nature
+  - bees
+  - science
+  - life
+  - interesting
 ---
 Bees are one of the most fascinating creatures in the world. In the alleys of the internet there’s a popular meme that gets passed around - “*According to Albert Einstein if honey bees were to disappear from the earth, humans would be dead within four years*”. While there’s no evidence that Einstein said so, or that the apocalyptic prophecy mentioned would occur, what’s true though is that it’ll certainly cause mass starvation. Bees pollinate about 80% of the world's plants including 90 different food crops. That’s about one third or one-fourth of all the agricultural food crops! Not only are they very helpful, but their life is also very very interesting.
 

@@ -11,10 +11,10 @@ meta_description: Time Dilation was an important part of both Ancient Hindu
   Scriptures and the movie Interstellar, did the Ancient Indians really know
   about it and its limitation, read to find out.
 tags:
-  - Science
-  - Movie
-  - Fiction
-  - Hinduism
+  - science
+  - movie
+  - mythology
+  - hinduism
 ---
 [Christopher Nolan](https://en.wikipedia.org/wiki/Christopher_Nolan) is without a doubt one of the best directors of our time. He takes incredibly complex subjects, mixes it with an equally complex story and beautiful cinematography and makes it accessible to regular people with a topping of great music. One of his most popular films is the sci-fi — [Interstellar](https://en.wikipedia.org/wiki/Interstellar_(film)), which deals with the topics of Black Hole, Wormhole, Parallel Dimension and Time Dilation.
 

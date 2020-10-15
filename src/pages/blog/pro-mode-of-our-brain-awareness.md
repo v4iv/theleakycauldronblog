@@ -12,10 +12,9 @@ meta_description: >-
   like a DSLR has an 'Auto' Mode and a 'Pro' Mode we also have two types of
   settings of our brain.
 tags:
-  - Philosophy
-  - Psychology
-  - Life
-  - Thought Experiment
+  - philosophy
+  - psychology
+  - life
 ---
 We all have done embarrassing things, taken bad decisions and primarily - said some bad things in the haze of the moment. Things that still traumatise us every time their thoughts cross our heads. We often ask ourselves - 'What was I thinking?!'. We can't seem to fathom, how we didn't consider certain information while taking a certain decision, despite knowing it in the back of our heads. And maybe it's a bias, but I feel that for some reason I tend to do it more than average people. It could be anything from murmuring to myself while in a crowded metro or making faces while eating alone, to blurting out inappropriate and or hurtful things. It's so bad that I'm scared every time I let myself zone out, as I don't totally trust myself in 'Auto' Mode.
 

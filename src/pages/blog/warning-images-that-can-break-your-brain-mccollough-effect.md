@@ -11,8 +11,8 @@ meta_description: What if I told you there exists a scary SCARY thing that can
   enter your head through your eyes and breaks your brain for a very long time?!
   This scary phenomenon is called the McCollough Effect.
 tags:
-  - Interesting
-  - Mind Bending
+  - interesting
+  - mind bending
 ---
 Earworm or Sticky Music Syndrome refers to the phenomenon when a catchy piece of music continually repeats through a person’s mind after it’s no longer playing. It’s an annoyance mostly, but to be honest I sometimes use it to play music in my head while commuting, when I forget my earphones at home.
 

@@ -12,11 +12,9 @@ meta_description: >-
   Best part, no backend required! With a generous 100 submissions per month,
   it's more than enough for most hobby websites.
 tags:
-  - ReactJS
-  - Netlify
-  - Forms
-  - Formik
-  - Yup
+  - react jS
+  - netlify
+  - javascript
 ---
 [Netlify Forms](https://www.netlify.com/docs/form-handling/) is yet another amazing service provided by [Netlify](https://www.netlify.com/) with a generous free tier. For those who don't know, it allows you to set up a form and take submissions without needing a backend. The form data is not only stored in your dashboard, but you can also directly get a notification on any email address! Sounds interesting right?! As we start implementing you'll find out just how easy it is to set up if you know basics of React. Although I should mention it's not just a React only feature, you can set it up with basic HTML as well!
 

@@ -11,10 +11,11 @@ meta_description: >-
   Requesting JSON Web Token for Authentication from Django OAuth Toolkit using
   Axios in your Javascript app.
 tags:
-  - Django
-  - ReactJS
-  - Authentication
-  - Javascript
+  - django
+  - react js
+  - authentication
+  - javascript
+  - python
 ---
 When I first switched to Django backend for my React-Redux app, all my authentication requests failed. Which was strange, because I had used the same authentication method with a couple of other backends and it worked fine! At first, I thought it was an error with backend but my Postman and cURL request worked fine. The only error that was thrown, was when I tried to authenticate from my react app using Axios library.
 

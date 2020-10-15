@@ -9,9 +9,9 @@ cover: /img/markus-clemens-classy-french-insult.jpg
 meta_title: 5 Classy French Insults
 meta_description: Learn few of the most classy french insults, and sound like a true Gentleman.
 tags:
-  - Le Francais
-  - Language
-  - Interesting
+  - le francais
+  - language
+  - interesting
 ---
 The lockdown due to the pandemic has been rough. Everyone’s trying to find a productive hobby to make the most of it. And me being no different, tried to learn *Le Français*. While learning a language is rewarding in itself, it gets a bit tedious after a while. After a while, you start understanding that the bookish language you learn is mostly useless IRL conversations. To my immense surprise, I learnt that the native speakers don’t exactly use *“J’ai une baguette et un croissant”*, all that much. 
 

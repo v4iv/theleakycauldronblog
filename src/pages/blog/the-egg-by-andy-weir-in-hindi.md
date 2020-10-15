@@ -10,11 +10,11 @@ meta_title: The Egg by Andy Weir in Hindi
 meta_description: This is a Hindi translation of popular short story 'The Egg'
   by Andy Weir. Translated by Vaibhav Sharma.
 tags:
-  - Hindi
-  - Short Story
-  - Translation
+  - hindi
+  - short story
+  - translation
 ---
-This is my Hindi translation of popular short story [The Egg by Andy Weir](http://www.galactanet.com/oneoff/theegg_mod.html) (author of The Martian, Artemis).
+This is my Hindi translation of popular short story [The Egg by Andy Weir](http://www.galactanet.com/oneoff/theegg_mod.html) (author of The Martian, Artemis) which is heavily influenced by the Hindu concept of [Hiranyagarbha](https://en.wikipedia.org/wiki/Hiranyagarbha). Written with the permission of Andy Weir.
 
 > ’I dedicate this to my Mom, who taught me Hindi, as well as instilled in me, that reading can be fun’
 >
