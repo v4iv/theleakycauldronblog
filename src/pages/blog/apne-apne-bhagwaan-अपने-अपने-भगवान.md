@@ -12,6 +12,7 @@ meta_description: राम तू, क़ुरान तू, नानक स�
 tags:
   - poem
   - secularism
+  - hindi
 ---
 *A powerful poem by my friend who writes under the pen-name "**Vyom**".*
 
