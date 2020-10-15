@@ -10,6 +10,7 @@ meta_title: The Egg by Andy Weir in Hindi
 meta_description: This is a Hindi translation of popular short story 'The Egg'
   by Andy Weir. Translated by Vaibhav Sharma.
 tags:
+  - guest author
   - hindi
   - short story
   - translation

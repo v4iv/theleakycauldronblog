@@ -17,6 +17,7 @@ const ProgressiveImageContainer = ({ image, alt, className }) => (typeof image =
     : <img
       className={className}
       src={_.get(image, ['publicURL'], '')}
-      alt={alt} />
+      alt={alt}
+    />
 
 export default ProgressiveImageContainer

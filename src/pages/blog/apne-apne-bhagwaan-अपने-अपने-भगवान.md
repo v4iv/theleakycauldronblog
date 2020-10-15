@@ -10,6 +10,7 @@ meta_title: Apne Apne Bhagwaan — अपने अपने भगवान
 meta_description: राम तू, क़ुरान तू, नानक साहब का ज्ञान तू, सच्ची समझ जो आ जाये,
   तो परमेश्वर रूपी इंसान तू! — व्योम
 tags:
+  - guest author
   - poem
   - secularism
   - hindi

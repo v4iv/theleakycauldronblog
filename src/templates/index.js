@@ -6,7 +6,6 @@ import ArticleList from '../components/ArticleList'
 import config from '../../config'
 import Layout from '../components/Layout'
 
-
 const PaginationLink = props => {
   if (!props.test) {
     return (
