@@ -11,8 +11,8 @@ meta_description: >-
   A vegetarian twist to a classic Russian dish. This is an easy and tasty recipe
   to enjoy with Rice or Buttered Noodles.
 tags:
-  - Recipe
-  - Food
+  - recipe
+  - food
 ---
 Mushroom Stroganoff is a Russian dish of sautéed pieces of Mushroom served in a sauce with [smetana](https://en.wikipedia.org/wiki/Smetana_(dairy_product) "Smetana (dairy product)") ([sour cream](https://en.wikipedia.org/wiki/Sour_cream "Sour cream")). Best enjoyed with *rice* and a side of *sautéed vegetables*. It can be made in ~ 1 hour.
 

@@ -12,8 +12,10 @@ meta_description: >-
   handling broken dependencies to dealing with unexpected broken features to
   utilising new features of Gatsby v2.
 tags:
-  - Migration
-  - GatsbyJS
+  - migration
+  - gatsby js
+  - react js
+  - javascript
 ---
 When the Gatsby v2 dropped I was like do I really need this, my website is already faster than anything on Gatsby v1? But then I remembered I made this website more so because I wanted to try Gatsby than anything else. Finally, I took time out to do it last weekend.
 

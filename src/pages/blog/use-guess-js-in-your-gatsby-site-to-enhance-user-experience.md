@@ -13,10 +13,12 @@ meta_description: >-
   likely to visit next from a given page and prefetches them, making UX super
   smooth.
 tags:
-  - GatsbyJS
-  - GuessJS
-  - MachineLearning
+  - gatsby js
+  - guess js
+  - machine learning
   - UX
+  - react js
+  - javascript
 ---
 Ever since I learnt about **HTTP/2**'s _preload_ and _prefetch_, I had a very small idea  - what if there was a way to use Google Analytics data to predict and prefetch the relevant resources accordingly! That idea came to life with [Guess JS](https://github.com/guess-js/guess), although it had nothing to do with me. What's better is that I learnt about it when a [Gatsby JS plugin](https://www.gatsbyjs.org/packages/gatsby-plugin-guess-js) was released for it. The perfect platform for such a library. But since it is very new and experimental and still evolving there's a lack of proper documentation. While implementing it on this blog I found out that it's not so straight forward in CI/CD environments. Here's how you can do it.
 

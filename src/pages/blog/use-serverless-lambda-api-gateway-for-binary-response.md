@@ -11,10 +11,11 @@ meta_description: >-
   Leverage Serverless Framework to configure Lambda API Gateway for Binary
   Response.
 tags:
-  - Serverless
-  - Lambda
-  - API Gateway
-  - NodeJS
+  - serverless
+  - lambda
+  - API gateway
+  - node js
+  - javascript
 ---
 The [Serverless Framework](https://serverless.com) is an amazing tool, but a few things either work differently or are not present at all. One of those not so straight things is [sending binary data via API Gateway](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-payload-encodings.html). It took me a while to get how to do this, so I thought I should make it easier for the next person.
 
