@@ -1,6 +1,6 @@
 ---
 templateKey: article-page
-title: Raat - रात
+title: Raat — रात
 slug: raat
 author: Vyom
 author_link: https://theleakycauldronblog.com/contact
