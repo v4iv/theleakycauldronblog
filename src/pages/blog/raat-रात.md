@@ -12,6 +12,7 @@ meta_description: अजीब थी वो रात पर आखिर र�
 tags:
   - poem
   - philosophy
+  - hindi
 ---
 *Another great poem by my friend who writes under the pen-name ”**Vyom**”.*
 
