@@ -16,7 +16,6 @@
     "react/no-unused-prop-types": "off",
     "react/prop-types": "off",
     "camelcase": "off",
-    "react/jsx-indent-props": "off",
     "react/jsx-handler-names": "off",
     "react/jsx-closing-bracket-location": "off",
     "react/jsx-closing-tag-location": "off"
