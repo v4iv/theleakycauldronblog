@@ -6,7 +6,7 @@ author: Vaibhav Sharma
 author_link: https://twitter.com/vaibhaved
 date: 2020-10-10T20:23:02.414Z
 cover: /img/king-muchukunda.jpg
-meta_title: Find out the link between Interstellar, Hindu Scriptures and Time Dilation
+meta_title: Find out the link between Interstellar, Muchukunda and Time Dilation
 meta_description: Time Dilation was an important part of both Ancient Hindu
   Scriptures and the movie Interstellar, did the Ancient Indians really know
   about it and its limitation, read to find out.
