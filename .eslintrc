@@ -10,7 +10,8 @@
     "__PATH_PREFIX__": true,
     "fetch": true,
     "sessionStorage": true,
-    "localStorage": true
+    "localStorage": true,
+    "alert": true
   },
   "rules": {
     "react/no-unused-prop-types": "off",

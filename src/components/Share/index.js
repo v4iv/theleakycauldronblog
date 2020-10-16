@@ -7,6 +7,7 @@ import {
   TwitterShareButton,
   WhatsappShareButton,
 } from 'react-share'
+import { CopyToClipboard } from 'react-copy-to-clipboard'
 
 const Share = (props) => {
   const { title, slug, excerpt, pathPrefix, siteUrl } = props
@@ -15,7 +16,13 @@ const Share = (props) => {
 
   return (
     <div className='pv4 ph3 ph5-ns tc'>
-      <div className='dib mr3' style={{ cursor: 'pointer' }}>
+      <div className='avenir v-mid ma2'>
+        <small>
+          SHARE
+        </small>
+      </div>
+
+      <div className='dib ma2 v-mid' style={{ cursor: 'pointer' }}>
         <RedditShareButton url={url} title={title}>
           <span className='link grow gray dib h1 h2-ns w1 w2-ns br-100 pa2 bg-near-white ba b--black-10'>
             <svg role='img' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' style={{ fill: 'currentcolor' }}>
@@ -29,7 +36,7 @@ const Share = (props) => {
         </RedditShareButton>
       </div>
 
-      <div className='dib mr3' style={{ cursor: 'pointer' }}>
+      <div className='dib ma2 v-mid' style={{ cursor: 'pointer' }}>
         <TwitterShareButton url={url} title={title}>
           <span className='link grow gray dib h1 h2-ns w1 w2-ns br-100 pa2 bg-near-white ba b--black-10'>
             <svg data-icon='twitter' viewBox='0 0 32 32' style={{ fill: 'currentcolor' }}>
@@ -43,7 +50,7 @@ const Share = (props) => {
         </TwitterShareButton>
       </div>
 
-      <div className='dib mr3' style={{ cursor: 'pointer' }}>
+      <div className='dib ma2 v-mid' style={{ cursor: 'pointer' }}>
         <FacebookShareButton url={url} quote={excerpt}>
           <span className='link grow gray dib h1 h2-ns w1 w2-ns br-100 pa2 bg-near-white ba b--black-10'>
             <svg data-icon='facebook' viewBox='0 0 32 32' style={{ fill: 'currentcolor' }}>
@@ -57,19 +64,20 @@ const Share = (props) => {
         </FacebookShareButton>
       </div>
 
-      <div className='dib mr3' style={{ cursor: 'pointer' }}>
+      <div className='dib ma2 v-mid' style={{ cursor: 'pointer' }}>
         <WhatsappShareButton url={url} title={title}>
           <span className='link grow gray dib h1 h2-ns w1 w2-ns br-100 pa2 bg-near-white ba b--black-10'>
             <svg data-icon='whatsapp' viewBox='0 0 24 24' style={{ fill: 'currentcolor' }}>
               <title>Share on WhatsApp</title>
 
-              <path d='M17.498 14.382c-.301-.15-1.767-.867-2.04-.966-.273-.101-.473-.15-.673.15-.197.295-.771.964-.944 1.162-.175.195-.349.21-.646.075-.3-.15-1.263-.465-2.403-1.485-.888-.795-1.484-1.77-1.66-2.07-.174-.3-.019-.465.13-.615.136-.135.301-.345.451-.523.146-.181.194-.301.297-.496.1-.21.049-.375-.025-.524-.075-.15-.672-1.62-.922-2.206-.24-.584-.487-.51-.672-.51-.172-.015-.371-.015-.571-.015-.2 0-.523.074-.797.359-.273.3-1.045 1.02-1.045 2.475s1.07 2.865 1.219 3.075c.149.195 2.105 3.195 5.1 4.485.714.3 1.27.48 1.704.629.714.227 1.365.195 1.88.121.574-.091 1.767-.721 2.016-1.426.255-.705.255-1.29.18-1.425-.074-.135-.27-.21-.57-.345m-5.446 7.443h-.016c-1.77 0-3.524-.48-5.055-1.38l-.36-.214-3.75.975 1.005-3.645-.239-.375c-.99-1.576-1.516-3.391-1.516-5.26 0-5.445 4.455-9.885 9.942-9.885 2.654 0 5.145 1.035 7.021 2.91 1.875 1.859 2.909 4.35 2.909 6.99-.004 5.444-4.46 9.885-9.935 9.885M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.334.101 11.893c0 2.096.549 4.14 1.595 5.945L0 24l6.335-1.652c1.746.943 3.71 1.444 5.71 1.447h.006c6.585 0 11.946-5.336 11.949-11.896 0-3.176-1.24-6.165-3.495-8.411' />
+              <path
+                d='M17.498 14.382c-.301-.15-1.767-.867-2.04-.966-.273-.101-.473-.15-.673.15-.197.295-.771.964-.944 1.162-.175.195-.349.21-.646.075-.3-.15-1.263-.465-2.403-1.485-.888-.795-1.484-1.77-1.66-2.07-.174-.3-.019-.465.13-.615.136-.135.301-.345.451-.523.146-.181.194-.301.297-.496.1-.21.049-.375-.025-.524-.075-.15-.672-1.62-.922-2.206-.24-.584-.487-.51-.672-.51-.172-.015-.371-.015-.571-.015-.2 0-.523.074-.797.359-.273.3-1.045 1.02-1.045 2.475s1.07 2.865 1.219 3.075c.149.195 2.105 3.195 5.1 4.485.714.3 1.27.48 1.704.629.714.227 1.365.195 1.88.121.574-.091 1.767-.721 2.016-1.426.255-.705.255-1.29.18-1.425-.074-.135-.27-.21-.57-.345m-5.446 7.443h-.016c-1.77 0-3.524-.48-5.055-1.38l-.36-.214-3.75.975 1.005-3.645-.239-.375c-.99-1.576-1.516-3.391-1.516-5.26 0-5.445 4.455-9.885 9.942-9.885 2.654 0 5.145 1.035 7.021 2.91 1.875 1.859 2.909 4.35 2.909 6.99-.004 5.444-4.46 9.885-9.935 9.885M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.334.101 11.893c0 2.096.549 4.14 1.595 5.945L0 24l6.335-1.652c1.746.943 3.71 1.444 5.71 1.447h.006c6.585 0 11.946-5.336 11.949-11.896 0-3.176-1.24-6.165-3.495-8.411' />
             </svg>
           </span>
         </WhatsappShareButton>
       </div>
 
-      <div className='dib mr3' style={{ cursor: 'pointer' }}>
+      <div className='dib ma2 v-mid' style={{ cursor: 'pointer' }}>
         <LinkedinShareButton url={url} title={title} description={excerpt}>
           <span className='link grow gray dib h1 h2-ns w1 w2-ns br-100 pa2 bg-near-white ba b--black-10'>
             <svg role='img' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' style={{ fill: 'currentcolor' }}>
@@ -81,6 +89,19 @@ const Share = (props) => {
             </svg>
           </span>
         </LinkedinShareButton>
+      </div>
+
+      <div className='dib ma2 v-mid' style={{ cursor: 'pointer' }}>
+        <CopyToClipboard text={url} onCopy={() => alert('URL copied to clipboard.')}>
+          <span className='link grow gray dib h1 h2-ns w1 w2-ns br-100 pa2 bg-near-white ba b--black-10'>
+            <svg role='img' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' style={{ fill: 'currentcolor' }} fillRule='evenodd' clipRule='evenodd'>
+              <title>Copy Link URL</title>
+
+              <path
+                d='M14.851 11.923c-.179-.641-.521-1.246-1.025-1.749-1.562-1.562-4.095-1.563-5.657 0l-4.998 4.998c-1.562 1.563-1.563 4.095 0 5.657 1.562 1.563 4.096 1.561 5.656 0l3.842-3.841.333.009c.404 0 .802-.04 1.189-.117l-4.657 4.656c-.975.976-2.255 1.464-3.535 1.464-1.28 0-2.56-.488-3.535-1.464-1.952-1.951-1.952-5.12 0-7.071l4.998-4.998c.975-.976 2.256-1.464 3.536-1.464 1.279 0 2.56.488 3.535 1.464.493.493.861 1.063 1.105 1.672l-.787.784zm-5.703.147c.178.643.521 1.25 1.026 1.756 1.562 1.563 4.096 1.561 5.656 0l4.999-4.998c1.563-1.562 1.563-4.095 0-5.657-1.562-1.562-4.095-1.563-5.657 0l-3.841 3.841-.333-.009c-.404 0-.802.04-1.189.117l4.656-4.656c.975-.976 2.256-1.464 3.536-1.464 1.279 0 2.56.488 3.535 1.464 1.951 1.951 1.951 5.119 0 7.071l-4.999 4.998c-.975.976-2.255 1.464-3.535 1.464-1.28 0-2.56-.488-3.535-1.464-.494-.495-.863-1.067-1.107-1.678l.788-.785z' />
+            </svg>
+          </span>
+        </CopyToClipboard>
       </div>
     </div>
   )
