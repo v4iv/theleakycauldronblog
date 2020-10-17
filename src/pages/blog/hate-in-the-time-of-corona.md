@@ -4,7 +4,7 @@ title: Hate in the Time of Corona
 slug: hate-in-the-time-of-corona
 author: Vaibhav Sharma
 author_link: https://twitter.com/cauldronofideas
-date: 2020-10-21T19:30:38.938Z
+date: 2020-10-21T18:30:38.938Z
 cover: /img/bram-hate-in-the-time-of-corona.jpg
 meta_title: Hate in the Time of Corona
 meta_description: Discover how fear drives humanity, which was once the gift
