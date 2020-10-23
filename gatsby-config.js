@@ -1,3 +1,4 @@
+const path = require('path')
 const config = require('./config')
 
 const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix
@@ -21,21 +22,21 @@ module.exports = {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/static/img`,
+        path: path.join(__dirname, `static`, `img`),
         name: 'uploads',
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/static/img`,
+        path: path.join(__dirname, `static`, `img`),
         name: 'images',
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/pages`,
+        path: path.join(__dirname, `src`, `pages`),
         name: 'pages',
       },
     },
@@ -298,8 +299,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-netlify-cms`,
       options: {
-        modulePath: `${__dirname}/src/cms/cms.js`,
-        stylesPath: `${__dirname}/src/assets/stylesheets/styles.scss`,
+        modulePath: path.join(__dirname, `src`, `cms`, `cms.js`),
+        stylesPath: path.join(__dirname, `src`, `assets`, `stylesheets`, `styles.scss`),
         enableIdentityWidget: true,
         htmlTitle: `TLCB Content Manager`,
       },
