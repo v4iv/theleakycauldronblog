@@ -16,6 +16,8 @@ const NotFoundPage = () => (
       </li>
       <li className='dib'><Link className='f5 f4-ns link black db pv2 ph3 hover-light-purple' to='/tags' replace>Tags</Link></li>
     </ul>
+    <p className='fw1 i tc mt3 mt4-l f4 f3-l'>or</p>
+    <p className='tc mt3 mt4-l'><Link className='f5 f4-ns link black db pv2 ph3 hover-light-pink' to='/search' replace>Search</Link></p>
   </section>
 )
 
