@@ -5,7 +5,7 @@ slug: is-msg-bad-for-you
 author: Vaibhav Sharma
 author_link: https://twitter.com/vaibhaved
 date: 2020-09-21T21:35:20.646Z
-cover: /img/uncle-roger-msg.png
+cover: /img/uncle-roger-msg.jpg
 meta_title: Find out why MSG probably isn't the villain it's made out to be
 meta_description: Find out if MSG is really bad for you, if not, where does the
   controversy come from and what is the Scientific Consensus.
