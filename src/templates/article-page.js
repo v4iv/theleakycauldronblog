@@ -85,7 +85,7 @@ export const articlePageQuery = graphql`
                 author_link
                 cover {
                     childImageSharp {
-                        fluid(maxWidth: 1075, quality: 72) {
+                        fluid(maxWidth: 800, quality: 72) {
                             ...GatsbyImageSharpFluid
                         }
                     }
