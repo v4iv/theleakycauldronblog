@@ -55,7 +55,7 @@ exports.createPages = ({ actions, graphql }) => {
             frontmatter {
               cover {
                 childImageSharp{
-                  fluid (maxWidth:500, quality:50){
+                  fluid (maxWidth:300, quality:50){
                     src
                     srcSet
                     aspectRatio
