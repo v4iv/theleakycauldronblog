@@ -5,6 +5,7 @@ backend:
   accept_roles:
     - admin
     - editor
+    - author
     - guest
 
 site_url: https://theleakycauldronblog.com
