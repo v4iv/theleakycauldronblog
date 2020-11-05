@@ -1,6 +1,10 @@
 backend:
   name: git-gateway
+  repo: v4iv/theleakycauldronblog
   branch: master
+  accept_roles:
+    - admin
+    - editor
 
 site_url: https://theleakycauldronblog.com
 display_url: https://theleakycauldronblog.com
