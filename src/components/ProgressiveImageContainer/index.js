@@ -2,7 +2,7 @@ import React from 'react'
 import _ from 'lodash'
 import Img from 'gatsby-image'
 
-const ProgressiveImageContainer = ({ image, alt, className }) => (typeof image === 'string')
+const ProgressiveImageContainer = ({ image, alt, className = '' }) => (typeof image === 'string')
   ? <img className={className} src={image} alt={alt} />
   : (_.get(image, ['childImageSharp', 'fluid']))
     ? <Img className={className} fluid={_.get(image, ['childImageSharp', 'fluid'])} alt={alt} />
