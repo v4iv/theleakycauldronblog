@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
-import _ from 'lodash'
+import { get } from 'lodash'
 import ProgressiveImageContainer from '../ProgressiveImageContainer'
 
 const ArticleList = (props) => {
@@ -26,16 +26,16 @@ const ArticleList = (props) => {
                 <Link className='db ph0-l no-underline black grow' to={post.fields.slug}>
                   <ProgressiveImageContainer
                     className='db'
-                    image={_.get(post, ['frontmatter', 'cover'])}
-                    alt={_.get(post, ['frontmatter', 'title'], '')}
+                    image={get(post, ['frontmatter', 'cover'])}
+                    alt={get(post, ['frontmatter', 'title'], '')}
                   />
                 </Link>
               </div>
             </div>
             <small className='f6 lh-copy gray mv0'>By <span
-              className='ttu'>{_.get(post, ['frontmatter', 'author'], '')}</span></small>
+              className='ttu'>{get(post, ['frontmatter', 'author'], '')}</span></small>
             <time className='db black'>
-              <small>{_.get(post, ['frontmatter', 'date'], '')}</small>
+              <small>{get(post, ['frontmatter', 'date'], '')}</small>
             </time>
           </article>
         )

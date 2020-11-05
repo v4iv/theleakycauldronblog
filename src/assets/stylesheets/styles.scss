@@ -1,1 +1,38 @@
 @import "~tachyons-sass/tachyons.scss";
+
+blockquote {
+  font-family: athelas, georgia, serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: .1em;
+  color: rgba(0, 0, 0, .9);
+  border-left-style: solid;
+  border-color: #408bc9;
+  border-width: .25rem;
+  margin-top: 0;
+  margin-left: 0;
+  padding: 2rem;
+}
+
+@media screen and (min-width: 30em) {
+  &blockquote {
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (min-width: 60em) {
+  &blockquote {
+    font-size: 1.5rem
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+.html-content img {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: auto;
+}

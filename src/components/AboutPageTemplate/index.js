@@ -4,7 +4,7 @@ import Content from '../Content'
 import ProgressiveImageContainer from '../ProgressiveImageContainer'
 
 const AboutPageTemplate = (props) => {
-  const { title, content, contentComponent, image } = props
+  const { title, subtitle, author, content, contentComponent, image } = props
   const PageContent = contentComponent || Content
 
   return <section className='mw8 center'>
@@ -14,9 +14,9 @@ const AboutPageTemplate = (props) => {
           {title}
         </h1>
         <h2 className='f3 mid-gray lh-title avenir fw2'>
-          A brew of awesomeness with a pinch of magic...
+          {subtitle}
         </h2>
-        <time className='f6 ttu tracked gray'>The Leaky Cauldron Blog</time>
+        <time className='f6 ttu tracked gray'>{author}</time>
       </header>
       <div className='fn fl-ns w-50-ns'>
         <ProgressiveImageContainer
@@ -32,6 +32,8 @@ const AboutPageTemplate = (props) => {
 
 AboutPageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string,
+  author: PropTypes.string,
   content: PropTypes.string,
   contentComponent: PropTypes.func,
 }
