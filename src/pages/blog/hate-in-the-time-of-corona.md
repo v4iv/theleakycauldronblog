@@ -3,7 +3,7 @@ templateKey: article-page
 title: Hate in the Time of Corona
 slug: hate-in-the-time-of-corona
 author: Vaibhav Sharma
-author_link: https://twitter.com/cauldronofideas
+author_link: https://twitter.com/aleakycauldron
 date: 2020-10-20T18:30:38.938Z
 cover: /img/bram-hate-in-the-time-of-corona.jpg
 meta_title: Hate in the Time of Corona
