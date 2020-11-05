@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
-import _ from 'lodash'
+import { kebabCase } from 'lodash'
 import Content from '../Content'
 import ProgressiveImageContainer from '../ProgressiveImageContainer'
 import './styles.scss'
@@ -25,7 +25,7 @@ const ArticleTemplate = (props) => {
               {tags && tags.length &&
               tags.map(tag => (
                 <Link
-                  to={`/tags/${_.kebabCase(tag)}`}
+                  to={`/tags/${kebabCase(tag)}`}
                   key={tag}
                   className='no-underline black dim avenir'
                 >

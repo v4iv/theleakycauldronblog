@@ -1,6 +1,6 @@
 import React from 'react'
 import { Formik, Field, Form } from 'formik'
-import { navigate } from 'gatsby-link'
+import { navigate } from '@reach/router'
 import validationSchema from './validationSchema'
 import { encode } from '../../utils'
 
@@ -10,7 +10,7 @@ const ContactForm = () => {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({
-        'form-name': 'contact',
+        'form-name': 'Contact',
         ...values,
       }),
     })

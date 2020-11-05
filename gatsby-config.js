@@ -303,7 +303,7 @@ module.exports = {
         modulePath: path.join(__dirname, `src`, `cms`, `cms.js`),
         stylesPath: path.join(__dirname, `src`, `assets`, `stylesheets`, `styles.scss`),
         enableIdentityWidget: true,
-        htmlTitle: `TLCB Content Manager`,
+        htmlTitle: `CMS | The Leaky Cauldron Blog`,
       },
     },
     {

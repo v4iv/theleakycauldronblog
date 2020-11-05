@@ -8,7 +8,7 @@ import { HTMLContent } from '../components/Content'
 import Layout from '../components/Layout'
 
 const AboutPage = (props) => {
-  const { data: { markdownRemark: { html, frontmatter: { title, meta_title, meta_description, image } } } } = props
+  const { data: { markdownRemark: { html, frontmatter: { title, subtitle, author, meta_title, meta_description, image } } } } = props
   const breadcrumbSchemaOrgJSONLD = {
     '@context': 'http://schema.org',
     '@type': 'BreadcrumbList',
@@ -84,6 +84,8 @@ const AboutPage = (props) => {
       <AboutPageTemplate
         contentComponent={HTMLContent}
         title={title}
+        subtitle={subtitle}
+        author={author}
         image={image}
         content={html}
       />
@@ -96,6 +98,8 @@ AboutPage.propTypes = {
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.shape({
         title: PropTypes.string,
+        subtitle: PropTypes.string,
+        author: PropTypes.string,
         image: PropTypes.object,
         meta_title: PropTypes.string,
         meta_description: PropTypes.string,
@@ -112,6 +116,8 @@ export const aboutPageQuery = graphql`
             html
             frontmatter {
                 title
+                subtitle
+                author
                 image {
                     childImageSharp {
                         fluid(maxWidth: 1075, quality: 72) {

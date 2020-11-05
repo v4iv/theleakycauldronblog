@@ -2,6 +2,8 @@
 templateKey: about-page
 image: /img/vaibhav_sharma_cine.jpg
 title: About This Blog
+subtitle: A brew of awesomeness with a pinch of magic...
+author: The Leaky Cauldron Blog
 slug: about
 meta_title: About | The Leaky Cauldron Blog
 meta_description: The Leaky Cauldron Blog is the personal blog of Vaibhav

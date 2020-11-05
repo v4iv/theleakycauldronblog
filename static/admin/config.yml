@@ -5,6 +5,8 @@ backend:
   accept_roles:
     - admin
     - editor
+    - author
+    - guest
 
 site_url: https://theleakycauldronblog.com
 display_url: https://theleakycauldronblog.com
@@ -35,12 +37,14 @@ collections:
     label: "Pages"
     files:
     - file: "src/pages/about/index.md"
-      label: "About"
+      label: "About Page"
       name: "about"
       fields:
         - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
         - {label: "Image", name: "image", widget: "image"}
         - {label: "Title", name: "title", widget: "string"}
+        - {label: "Subtitle", name: "subtitle", widget: "string"}
+        - {label: "Author", name: "author", widget: "string"}
         - {label: "Slug", name: "slug", widget: "string"}
         - {label: "Body", name: "body", widget: "markdown"}
         - {label: "Meta Title", name: "meta_title", widget: "string"}
