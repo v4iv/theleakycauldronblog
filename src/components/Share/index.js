@@ -37,7 +37,7 @@ const Share = (props) => {
       </div>
 
       <div className='dib ma2 v-mid' style={{ cursor: 'pointer' }}>
-        <TwitterShareButton url={url} title={title}>
+        <TwitterShareButton url={url} title={`${title} via @aleakycauldron`}>
           <span className='link grow gray dib h1 h2-ns w1 w2-ns br-100 pa2 bg-near-white ba b--black-10'>
             <svg data-icon='twitter' viewBox='0 0 32 32' style={{ fill: 'currentcolor' }}>
               <title>Share on Twitter</title>
