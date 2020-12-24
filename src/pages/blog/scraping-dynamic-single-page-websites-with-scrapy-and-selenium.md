@@ -1,16 +1,15 @@
 ---
 templateKey: article-page
-title: 'Scraping Dynamic Websites (Angular, React etc) with Scrapy and Selenium'
+title: Scraping Dynamic Websites (Angular, React etc) with Scrapy and Selenium
 slug: scraping-dynamic-single-page-websites-with-scrapy-and-selenium
 author: Vaibhav Sharma
 author_link: https://twitter.com/vaibhaved
-date: '2018-05-04T18:51:35+05:30'
+date: 2018-05-04T18:51:35+05:30
 cover: /img/scraping_dynamic_webapps.jpg
-meta_title: 'Scraping Dynamic Websites (Angular, React etc) with Scrapy and Selenium'
-meta_description: >-
-  Scraping websites made with Javascript frameworks like Angular and React is
-  not possible with Scrapy or Beautiful Soup, learn to do so with the added help
-  of Selenium.
+meta_title: Scraping Dynamic Websites (Angular, React etc) with Scrapy and Selenium
+meta_description: Scraping websites made with Javascript frameworks like Angular
+  and React is not possible with Scrapy or Beautiful Soup, learn to do so with
+  the added help of Selenium.
 tags:
   - scrapy
   - selenium
@@ -111,6 +110,7 @@ The real magic happens in the parse function, here we'll write the selector for 
                 writer.writerow([title])
         self.log('Saved file %s' % filename)
 ```
+
 Now when you run this using:
 
 ```bash
@@ -118,3 +118,6 @@ scrapy crawl angular_spider
 ```
 
 You'll notice a browser opens up and the page is loaded, and when the scraping is complete you can open the CSV file and see the data.
+
+*But one of the most frustrating parts of automated web scraping is constantly dealing with IP blocks and CAPTCHAs. To deal with those it's best to use a professional scraping service like [Scraper API](https://www.scraperapi.com/?fpr=theleakycauldronblog&utm_source=blog&utm_medium=cpc&utm_campaign=scraperapi_affiliate). Scraper API rotates IP addresses with each request, from a pool of millions of proxies across over a dozen ISPs, and automatically retries failed requests, so you will never be blocked. Scraper API also handles CAPTCHAs for you, so you can concentrate on turning websites into actionable data.*
+*(affiliate)*
