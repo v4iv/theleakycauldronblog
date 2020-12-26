@@ -2,7 +2,7 @@ import React from 'react'
 import { Formik, Field, Form } from 'formik'
 import { navigate } from '@reach/router'
 import validationSchema from './validationSchema'
-import { encode } from '../../utils'
+import { encode } from '../../../utils'
 
 const ContactForm = () => {
   const handleSubmit = (values, { setSubmitting }) => {
@@ -15,8 +15,9 @@ const ContactForm = () => {
       }),
     })
       .then(() => {
-        navigate('/success')
-        setSubmitting(false)
+        navigate('/success').then(() => {
+          setSubmitting(false)
+        })
       })
       .catch(error => {
         console.log(error)
@@ -101,4 +102,4 @@ const ContactForm = () => {
   )
 }
 
-export default ContactForm
+export { ContactForm }
