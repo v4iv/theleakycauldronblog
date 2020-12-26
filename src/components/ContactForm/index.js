@@ -15,8 +15,9 @@ const ContactForm = () => {
       }),
     })
       .then(() => {
-        navigate('/success')
-        setSubmitting(false)
+        navigate('/success').then(() => {
+          setSubmitting(false)
+        })
       })
       .catch(error => {
         console.log(error)

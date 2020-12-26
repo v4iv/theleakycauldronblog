@@ -18,6 +18,7 @@ const NewsletterForm = () => {
         navigate('/success/').then(() => {
           resetForm({ email: '' })
           setStatus({ success: true })
+          setSubmitting(false)
         })
       })
       .catch(error => {
@@ -47,11 +48,11 @@ const NewsletterForm = () => {
           />
 
           <button
+            className='w-100 w-25-m w-20-l bg-black-80 white f5 pv2 pv3-ns ph4 ba b--black-80 bg-hover-mid-gray'
             aria-label='Subscribe'
             type='submit'
             value='Subscribe'
             disabled={isSubmitting}
-            className='w-100 w-25-m w-20-l bg-black-80 white f5 pv2 pv3-ns ph4 ba b--black-80 bg-hover-mid-gray'
           >
             Subscribe
           </button>
