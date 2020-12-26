@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import ContactForm from '../ContactForm'
+import { ContactForm } from '../forms'
 
 const ContactPageTemplate = (props) => {
   const { title, subtitle } = props

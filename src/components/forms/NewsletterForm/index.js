@@ -1,7 +1,7 @@
 import React from 'react'
 import { Formik, Field, Form } from 'formik'
 import validationSchema from './validationSchema'
-import { encode } from '../../utils'
+import { encode } from '../../../utils'
 import { navigate } from '@reach/router'
 
 const NewsletterForm = () => {
@@ -15,7 +15,7 @@ const NewsletterForm = () => {
       }),
     })
       .then(() => {
-        navigate('/success/').then(() => {
+        navigate('/subscribed').then(() => {
           resetForm({ email: '' })
           setStatus({ success: true })
           setSubmitting(false)
@@ -64,4 +64,4 @@ const NewsletterForm = () => {
   )
 }
 
-export default NewsletterForm
+export { NewsletterForm }

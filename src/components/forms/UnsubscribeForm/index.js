@@ -1,7 +1,7 @@
 import React from 'react'
 import { Formik, Field, Form } from 'formik'
 import validationSchema from './validationSchema'
-import { encode } from '../../utils'
+import { encode } from '../../../utils'
 import { navigate } from '@reach/router'
 
 const UnsubscribeForm = () => {
@@ -15,7 +15,7 @@ const UnsubscribeForm = () => {
       }),
     })
       .then(() => {
-        navigate('/success/').then(() => {
+        navigate('/unsubscribed').then(() => {
           resetForm({ email: '' })
           setStatus({ success: true })
           setSubmitting(false)
@@ -64,4 +64,4 @@ const UnsubscribeForm = () => {
   )
 }
 
-export default UnsubscribeForm
+export { UnsubscribeForm }

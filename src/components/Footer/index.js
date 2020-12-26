@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Socials from '../Socials'
-import NewsletterForm from '../NewsletterForm'
+import { NewsletterForm } from '../forms'
 
 const Footer = (props) => {
   const { copyright, siteRss } = props
