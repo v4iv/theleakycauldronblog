@@ -5,7 +5,7 @@ import 'tachyons-sass/tachyons.scss'
 import config from '../../../config'
 import Footer from '../Footer'
 import Header from '../Header'
-// import NotifcationBanner from '../NotificationBanner'
+import NotifcationBanner from '../NotificationBanner'
 
 const Layout = (props) => (
   <>
@@ -26,7 +26,7 @@ const Layout = (props) => (
       ]}
     />
     <div className='wrapper'>
-      {/* <NotifcationBanner text='Happy New Year 2020!' dismissible /> */}
+       <NotifcationBanner text='Happy New Year 2021!' dismissible />
 
       <Header siteTitle={config.siteTitle} />
 
