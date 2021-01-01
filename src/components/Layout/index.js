@@ -26,7 +26,7 @@ const Layout = (props) => (
       ]}
     />
     <div className='wrapper'>
-       <NotifcationBanner text='Happy New Year 2021!' dismissible />
+      <NotifcationBanner text='Happy New Year 2021!' dismissible enabled/>
 
       <Header siteTitle={config.siteTitle} />
 
