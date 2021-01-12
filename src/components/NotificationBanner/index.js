@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 
-const NotifcationBanner = (props) => {
+const NotificationBanner = (props) => {
   const { text, dismissible = false, enabled = false } = props
   const [visible, setVisible] = useState(false)
 
@@ -30,9 +30,9 @@ const NotifcationBanner = (props) => {
     : <></>)
 }
 
-NotifcationBanner.propTypes = {
+NotificationBanner.propTypes = {
   text: PropTypes.string,
   dismissible: PropTypes.bool,
 }
 
-export default NotifcationBanner
+export default NotificationBanner
