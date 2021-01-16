@@ -38,7 +38,7 @@ How does our brain turn a certain range of wavelengths of the electromagnetic sp
 
 Some philosophers like Daniel Dennett believe that our inability to express our internal qualia might be a failure of our language, not necessarily because they will always be impossible to share. Given millions and billions of words used in just the right way, it may be possible to adequately describe a colour such that a blind person could see it for the first time. And that might bring us one step closer to the answer to what is *The Ghost in our Shell*, the hard problem of consciousness.
 
-Or as Pierre Teilhard de Chardin once said:
+As Pierre Teilhard de Chardin once said:
 
 > “We are not human beings having a spiritual experience. We are spiritual beings having a human experience.”
 >
