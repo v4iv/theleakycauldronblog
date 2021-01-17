@@ -21230,6 +21230,7 @@ fsevents@~2.3.1:
     eslint-plugin-standard: ^5.0.0
     formik: ^2.2.6
     gatsby: ^2.30.3
+    gatsby-cli: ^2.17.1
     gatsby-image: ^2.9.0
     gatsby-paginate: ^1.1.1
     gatsby-plugin-feed: ^2.11.0
