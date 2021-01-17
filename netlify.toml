@@ -1,6 +1,6 @@
 [build]
   publish = "public"
-  command = "gatsby build"
+  command = "yarn set version berry && gatsby build"
 [build.environment]
   RUBY_VERSION = "2.6.2"
   NODE_VERSION = "15.6.0"
