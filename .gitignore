@@ -62,7 +62,7 @@ public
 .DS_Store
 
 # Yarn
-.yarn/
+.yarn/*
 !.yarn/releases
 !.yarn/plugins
 !.yarn/sdks
