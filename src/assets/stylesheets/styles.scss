@@ -15,13 +15,13 @@ blockquote {
 }
 
 @media screen and (min-width: 30em) {
-  &blockquote {
+  blockquote {
     font-size: 1.25rem;
   }
 }
 
 @media screen and (min-width: 60em) {
-  &blockquote {
+  blockquote {
     font-size: 1.5rem
   }
 }
