@@ -23,10 +23,13 @@ const TagRoute = (props) => {
     <Layout>
       <section className='pa3'>
         <Helmet title={`${tag} | ${title}`} />
+
         <section className='mw7 center avenir'>
           <div className='tc'>
             <h3 className='f2 lh-title fw4 mb3 mt0 pt3 bw2 avenir'>{tagHeader}</h3>
+
             <div className='taglist'>{postLinks}</div>
+
             <p className='mb5'>
               <Link to='/tags/' className='no-underline black dim avenir'>
                 Browse all tags

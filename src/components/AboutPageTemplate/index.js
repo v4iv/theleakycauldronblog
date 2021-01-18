@@ -13,17 +13,21 @@ const AboutPageTemplate = (props) => {
         <h1 className='f2 lh-title fw4 mb3 mt0 pt3 bt bw2 avenir'>
           {title}
         </h1>
+
         <h2 className='f3 mid-gray lh-title avenir fw2'>
           {subtitle}
         </h2>
+
         <time className='f6 ttu tracked gray'>{author}</time>
       </header>
+
       <div className='fn fl-ns w-50-ns'>
         <ProgressiveImageContainer
           className='w-100 dib f4'
           image={image}
           alt={title}
         />
+
         <PageContent content={content} className='avenir lh-copy measure f4 mt0 fw1 html-content' />
       </div>
     </article>

@@ -9,7 +9,7 @@ const config = {
   googleTagManagerID: process.env.GTM_ID || ``, // GTM tracking ID.
   disqusShortname: process.env.DISQUS_SHORTNAME || `https-theleakycauldronblog-com`, // Disqus shortname.
   userName: `Vaibhav Sharma`,
-  userTwitter: `vaibhaved`,
+  userTwitter: `aleakycauldron`,
   siteFBAppID: ``,
   userLocation: `Delhi NCR, India`,
   copyright: `Copyright © The Leaky Cauldron Blog 2018-${new Date().getFullYear().toString().substr(2, 2)}. All Rights Reserved.`, // Copyright string for the footer of the website and RSS feed.

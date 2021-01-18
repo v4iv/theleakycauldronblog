@@ -12,17 +12,21 @@ const Footer = (props) => {
         <p className="f4 fw6 mb2 f6 mt0 avenir">
           Sign up for our newsletter.
         </p>
+
         <NewsletterForm/>
       </div>
     </section>
+
     <div className='dt dt--fixed w-100'>
       <div className='dn dtc-ns v-mid'>
         <p className='f7 black-70 dib pr3 mb3'>
           {copyright} Powered by <a className='link black hover-purple' href='https://www.gatsbyjs.com' target='_blank' rel='noreferrer nofollow noopener'>Gatsby</a>
         </p>
       </div>
+
       <Socials siteRss={siteRss} />
     </div>
+
     <div className='db dn-ns'>
       <p className='f7 black-70 mt4 tc'>
         {copyright} Powered by <a className='link black hover-purple' href='https://www.gatsbyjs.org' target='_blank' rel='noreferrer nofollow noopener'>Gatsby</a>

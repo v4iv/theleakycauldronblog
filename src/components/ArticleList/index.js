@@ -17,11 +17,13 @@ const ArticleList = (props) => {
               <div className='w-100 w-60-ns pr3-ns order-2 order-1-ns'>
                 <Link className='db ph0-l no-underline black dim' to={post.fields.slug}>
                   <h1 className='f3 fw1 baskerville mt0 lh-title'>{post.frontmatter.title}</h1>
+
                   <p className='f6 f5-l lh-copy fw1'>
                     {post.excerpt}
                   </p>
                 </Link>
               </div>
+
               <div className='pl3-ns order-1 order-2-ns mb4 mb0-ns w-100 w-40-ns'>
                 <Link className='db ph0-l no-underline black grow' to={post.fields.slug}>
                   <ProgressiveImageContainer
@@ -32,8 +34,10 @@ const ArticleList = (props) => {
                 </Link>
               </div>
             </div>
+
             <small className='f6 lh-copy gray mv0'>By <span
               className='ttu'>{get(post, ['frontmatter', 'author'], '')}</span></small>
+
             <time className='db black'>
               <small>{get(post, ['frontmatter', 'date'], '')}</small>
             </time>

@@ -31,6 +31,7 @@ const SearchPage = () => (
             },
           ]}
         />
+
         <section className='vh-100 avenir'>
           <SearchBox searchIndex={data.siteSearchIndex.index} />
         </section>

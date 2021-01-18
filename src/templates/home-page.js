@@ -26,7 +26,7 @@ PaginationLink.propTypes = {
   text: PropTypes.string,
 }
 
-const IndexPage = (props) => {
+const HomePage = (props) => {
   const { pageContext: { group, index, first, last } } = props
   const previousUrl = index - 1 === 1 ? '' : '/' + (index - 1).toString()
   const nextUrl = '/' + (index + 1).toString()
@@ -59,7 +59,9 @@ const IndexPage = (props) => {
 
         {/* Open Graph Tags */}
         <meta property='og:url' content={`${config.siteUrl}/contact`} />
+
         <meta property='og:title' content={config.siteTitle} />
+
         <meta property='og:description' content={config.siteDescription} />
 
         <link rel='canonical' href={`${config.siteUrl}`} />
@@ -78,7 +80,7 @@ const IndexPage = (props) => {
   )
 }
 
-IndexPage.propTypes = {
+HomePage.propTypes = {
   pageContext: PropTypes.shape({
     index: PropTypes.number,
     first: PropTypes.boolean,
@@ -87,4 +89,4 @@ IndexPage.propTypes = {
   }),
 }
 
-export default IndexPage
+export default HomePage

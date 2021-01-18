@@ -14,22 +14,23 @@ const ArticlePage = (props) => {
 
   return (
     <Layout>
+      <SE0
+        title={title}
+        meta_title={meta_title}
+        meta_desc={meta_description}
+        cover={cover.publicURL}
+        slug={slug}
+        date={date}
+        author={author}
+        siteTitleAlt={config.siteTitleAlt}
+        siteTitle={config.siteTitle}
+        siteUrl={config.siteUrl}
+        siteFBAppID={config.siteFBAppID}
+        userTwitter={config.userTwitter}
+        pathPrefix={config.pathPrefix}
+      />
+
       <section className='center'>
-        <SE0
-          title={title}
-          meta_title={meta_title}
-          meta_desc={meta_description}
-          cover={cover.publicURL}
-          slug={slug}
-          date={date}
-          author={author}
-          siteTitleAlt={config.siteTitleAlt}
-          siteTitle={config.siteTitle}
-          siteUrl={config.siteUrl}
-          siteFBAppID={config.siteFBAppID}
-          userTwitter={config.userTwitter}
-          pathPrefix={config.pathPrefix}
-        />
         <ArticleTemplate
           content={html}
           contentComponent={HTMLContent}
@@ -40,8 +41,10 @@ const ArticlePage = (props) => {
           author={author}
           author_link={author_link}
         />
+
         <section className='mw8 center'>
           <Share title={title} slug={slug} excerpt={meta_description} siteUrl={config.siteUrl} pathPrefix={config.pathPrefix} />
+
           <Disqus identifier={id} title={title} slug={slug} siteUrl={config.siteUrl} disqusShortname={config.disqusShortname} />
         </section>
       </section>
