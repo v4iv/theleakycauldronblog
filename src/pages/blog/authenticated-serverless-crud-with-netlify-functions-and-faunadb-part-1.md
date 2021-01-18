@@ -108,7 +108,7 @@ Create a file called `hello-world.js`, in the functions folder. Remember the fil
 touch hello-world.js
 ```
 
-Inside `hello-world.js` we will write a generic AWS Lambda function, since Netlify Functions are just a wrapper on AWS Lambda:
+Inside `hello-world.js` we will write a generic AWS Lambda function, since Netlify Functions is just a wrapper on AWS Lambda:
 
 ```javascript
 module.exports.handler = (event, context, callback) => {
