@@ -70,7 +70,7 @@ yarn add faunadb
 
 Then in your `package.json` add the following script:
 
-```javascript
+```json
 “scripts”: {
   “dev”: “netlify dev”
 }
