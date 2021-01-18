@@ -72,9 +72,7 @@ Then in your `package.json` add the following script:
 
 ```javascript
 “scripts”: {
-
   “dev”: “netlify dev”
-
 }
 ```
 
