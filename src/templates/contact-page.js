@@ -16,8 +16,11 @@ const ContactPage = props => {
         <meta name='description' content={meta_description} />
         {/* Open Graph Tags */}
         <meta property='og:url' content={`${config.siteUrl}/contact`} />
+
         <meta property='og:title' content={title} />
+
         <meta property='og:description' content={meta_description} />
+
         <link rel='canonical' href={`${config.siteUrl}/contact`} />
       </Helmet>
 

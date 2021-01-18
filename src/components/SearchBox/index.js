@@ -13,10 +13,10 @@ const SearchBox = (props) => {
   const [results, setResults] = useState([])
   const [active, setActive] = useState(false)
 
-  const handleChange = evt => {
+  const handleChange = async evt => {
     const query_value = evt.target.value
 
-    navigate(`?q=${encodeURIComponent(query_value)}`, { replace: true })
+    await navigate(`?q=${encodeURIComponent(query_value)}`, { replace: true })
   }
 
   useEffect(() => {

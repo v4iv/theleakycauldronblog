@@ -67,25 +67,34 @@ const SE0 = (props) => {
 
   return <Helmet>
     <title>{meta_title}</title>
+
     {/* General tags */}
     <meta name='description' content={meta_desc} />
+
     <meta name='image' content={cover} />
+
     <link rel='canonical' href={postURL} />
 
     {/* Schema.org tags */}
     <script type='application/ld+json'>
       {JSON.stringify(breadcrumbSchemaOrgJSONLD)}
     </script>
+
     <script type='application/ld+json'>
       {JSON.stringify(blogPostingSchemaOrgJSONLD)}
     </script>
 
     {/* OpenGraph tags */}
     <meta property='og:url' content={postURL} />
+
     <meta property='og:title' content={title} />
+
     <meta property='og:author' content={author} />
+
     <meta property='og:description' content={meta_desc} />
+
     <meta property='og:image' content={image} />
+
     <meta
       property='fb:app_id'
       content={siteFBAppID || ''}
@@ -93,10 +102,15 @@ const SE0 = (props) => {
 
     {/* Twitter Card tags */}
     <meta name='twitter:card' content='summary_large_image' />
+
     <meta name='twitter:site' content={postURL} />
+
     <meta name='twitter:creator' content={`@${userTwitter}` || ''} />
+
     <meta name='twitter:title' content={title} />
+
     <meta name='twitter:description' content={meta_desc} />
+
     <meta name='twitter:image' content={image} />
   </Helmet>
 }

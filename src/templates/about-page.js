@@ -66,21 +66,30 @@ const AboutPage = (props) => {
     <Layout>
       <Helmet>
         <title>{meta_title}</title>
+
         <meta name='description' content={meta_description} />
+
         {/* Open Graph Tags */}
         <meta property='og:url' content={`${config.siteUrl}/about`} />
+
         <meta property='og:title' content={title} />
+
         <meta property='og:description' content={meta_description} />
+
         <meta property='og:image' content={image} />
+
         {/* Schema.org tags */}
         <script type='application/ld+json'>
           {JSON.stringify(breadcrumbSchemaOrgJSONLD)}
         </script>
+
         <script type='application/ld+json'>
           {JSON.stringify(aboutPageSchemaOrgJSONLD)}
         </script>
+
         <link rel='canonical' href={`${config.siteUrl}/about`} />
       </Helmet>
+
       <AboutPageTemplate
         contentComponent={HTMLContent}
         title={title}
