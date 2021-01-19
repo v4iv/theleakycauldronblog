@@ -23,17 +23,11 @@ If everything was set up properly according to last tutorial the project folder 
 
 ```
 .
-
 ├── node_modules/
-
 ├── functions
-
 │      └──  hello-world.js   
-
 ├-- netlify.toml
-
 ├-- package.json
-
 └── yarn.lock
 ```
 
@@ -65,9 +59,7 @@ In the `bootstrap.js` file we’ll first import `dotenv` and `faunadb`.
 
 ```javascript
 require('dotenv').config()
-
 const faunadb = require('faunadb')
-
 
 
 console.log('Creating FaunaDB database...')
@@ -79,15 +71,11 @@ First we write a function to create our Collections, in that function we initiat
 
 ```javascript
 const createCollections = key => {
-
   const q = faunadb.query
 
 
-
   const client = new faunadb.Client({
-
     secret: key
-
   })
 
 }
@@ -97,29 +85,19 @@ Now we have to write the queries to create Collections in our `createCollections
 
 ```javascript
 // Users Collection
-
 client.query(
-
    q.CreateCollection({name: 'users'})
-
 )
-
    .then(ret => console.log('Success: %s', ret))
-
    .catch(err => console.error('Error: %s', err))
 
 
 
 // CatBreeds Collection
-
 client.query(
-
    q.CreateCollection({name: ‘cat_breeds’})
-
 )
-
    .then(ret => console.log('Success: %s', ret))
-
    .catch(err => console.error('Error: %s', err))
 ```
 
@@ -131,17 +109,12 @@ In the `bootstrap.js` file add another function, `createIndexes` and initialise 
 
 ```javascript
 const createIndexes = key => {
-
   const q = faunadb.query
 
 
-
   const client = new faunadb.Client({
-
     secret: key
-
   })
-
 }
 ```
 
@@ -149,50 +122,29 @@ Next we need to write the query to create our indexes, in our `createIndexes` fu
 
 ```javascript
 // Users by Email Index
-
 client.query(
-
    q.CreateIndex({
-
        name: 'users_by_email',
-
        permissions: {read: "public"},
-
        source: q.Collection("users"),
-
-       terms: \[{field: ["data", "email"]}],
-
+       terms: [{field: ["data", "email"]}],
        unique: true,
-
    })
-
 )
-
    .then(ret => console.log('Success: %s', ret))
-
    .catch(err => console.error('Error: %s', err))
 
 
 // Cat Breeds by Users Index
-
 client.query(
-
    q.CreateIndex({
-
        name: 'cats_by_users',
-
-       source: \[q.Collection("cat_breeds")],
-
-       terms: \[{field: ["data", "userRef"]}],
-
+       source: [q.Collection("cat_breeds")],
+       terms: [{field: ["data", "userRef"]}],
        unique: true
-
    })
-
 )
-
    .then(ret => console.log('Success: %s', ret))
-
    .catch(err => console.error('Error: %s', err))
 ```
 
@@ -204,17 +156,12 @@ As before, create a function, name it `createRoles`.
 
 ```javascript
 const createRoles = key => {
-
   const q = faunadb.query
 
 
-
   const client = new faunadb.Client({
-
     secret: key
-
   })
-
 }
 ```
 
@@ -222,65 +169,36 @@ And then, write the queries for the role, `cat_whisperers`:
 
 ```javascript
 client.query(q.CreateRole({
-
    name: "cat_whisperers",
-
    membership: [
-
        {
-
            resource: q.Collection("users"),
-
        }
-
    ],
-
    privileges: [
-
        {
-
            resource: q.Collection("cat_breeds"),
-
            actions: {
-
                read: true,
-
                write: true,
-
                create: true,
-
                delete: true,
-
                history_read: false,
-
                history_write: false,
-
                unrestricted_read: false
-
            }
-
        },
-
        {
-
            resource: q.Index("'cats_by_users'"),
-
            actions: {
-
                unrestricted_read: false,
-
                read: true
-
            }
-
        },
-
    ],
 
 }))
-
    .then(ret => console.log('Success: %s', ret))
-
    .catch(err => console.error('Error: %s', err))
 ```
 
@@ -292,17 +210,11 @@ Before we run the script we need to call the above functions after checking if t
 
 ```javascript
 if (!process.env.FAUNADB_SECRET) {
-
    console.error('FaunaDB Secret Key not found!')
-
 } else {
-
-   createKitchenCollections(process.env.FAUNADB_SECRET)
-
-   createKitchenIndexes(process.env.FAUNADB_SECRET)
-
-   createKitchenRoles(process.env.FAUNADB_SECRET)
-
+   createCollections(process.env.FAUNADB_SECRET)
+   createIndexes(process.env.FAUNADB_SECRET)
+   createRoles(process.env.FAUNADB_SECRET)
 }
 ```
 
@@ -330,23 +242,17 @@ Then add the following code to the file. This function will take user data and s
 const faunadb = require('faunadb')
 
 
-
 const q = faunadb.query
-
 const client = new faunadb.Client({
-
    secret: process.env.FAUNADB_SECRET
-
 })
 
 
 
 module.exports.handler = async (event, context, callback) => {
-
    let payload = JSON.parse(event.body)
-
+   
    // user_data part of payload can contain all that you want to store about the user but it must contain email for our login to work
-
    let user_data = payload.user_data
 
    const password = payload.password
@@ -354,77 +260,43 @@ module.exports.handler = async (event, context, callback) => {
 
 
    try {
-
        const user = await client.query(
-
            q.Create(
-
                q.Collection('users'), {
-
                    credentials: {
-
                        password: password
-
                    },
-
                    data: user_data
-
                }
-
            )
-
        )
-
 
 
        const response = user.data
 
 
-
        callback(null, {
-
        statusCode: 200,
-
        headers: {
-
-         /\* Required for CORS support to work \*/
-
-         “Access-Control-Allow-Origin”: “*”,
-
+         /* Required for CORS support to work */
+         "Access-Control-Allow-Origin": "*",
          "Access-Control-Allow-Methods": "POST, OPTIONS",
-
       },
-
       body: JSON.stringify(response),
-
     })
-
    } catch (err) {
-
        console.error(err)
 
-
-
        callback(null, {
-
-       statusCode: 500,
-
-       headers: {
-
-         /\* Required for CORS support to work \*/
-
-         “Access-Control-Allow-Origin”: “*”,
-
-         "Access-Control-Allow-Methods": "POST, OPTIONS",
-
-      },
-
-      body: JSON.stringify({error: err}),
-
-    })
-
+         statusCode: 500,
+         headers: {
+           /* Required for CORS support to work */
+           "Access-Control-Allow-Origin": "*",
+           "Access-Control-Allow-Methods": "POST, OPTIONS",
+        },
+        body: JSON.stringify({error: err}),
+      })
    }
-
 }
 ```
 
@@ -442,17 +314,11 @@ With the following payload:
 
 ```json
 {
-
-  “password”: “abc123”,
-
-  “user_data”: {
-
-    “name”: “foo bar”,
-
-    “email”: “foo@bar.com”
-
+  "password": "abc123",
+  "user_data": {
+    "name": "foo bar",
+    "email": "foo@bar.com"
   }
-
 }
 ```
 
@@ -474,19 +340,14 @@ Then add the following code to the file:
 const faunadb = require('faunadb')
 
 
-
 const q = faunadb.query
-
 const client = new faunadb.Client({
-
    secret: process.env.FAUNADB_SECRET
-
 })
 
 
 
 module.exports.handler = async (event, context, callback) => {
-
    let payload = JSON.parse(event.body)
 
    const email = payload.email
@@ -494,77 +355,39 @@ module.exports.handler = async (event, context, callback) => {
    const password = payload.password
 
 
-
    try {
-
        const response = await client.query(
-
            q.Login(
-
                q.Match(q.Index('users_by_email'), email),
-
                {password: password}
-
            )
-
        )
 
 
-
        callback(null, {
-
-   statusCode: 200,
-
-   headers: {
-
-       /\* Required for CORS support to work \*/
-
-       'Access-Control-Allow-Origin': '*',
-
-       /\* Required for cookies, authorization headers with HTTPS \*/
-
-       'Access-Control-Allow-Credentials': true,
-
-       "Access-Control-Allow-Headers": "*",
-
-       "Access-Control-Allow-Methods": "POST, OPTIONS",
-
-   },
-
-   body: JSON.stringify(response),
-
-})
-
+         statusCode: 200,
+         headers: {
+             /* Required for CORS support to work */
+             "Access-Control-Allow-Origin": "*",
+             "Access-Control-Allow-Headers": "*",
+             "Access-Control-Allow-Methods": "POST, OPTIONS",
+         },
+         body: JSON.stringify(response),
+      })
    } catch (err) {
-
        console.error(err)
-
+     
        callback(null, {
-
-   statusCode: 400,
-
-   headers: {
-
-       /\* Required for CORS support to work \*/
-
-       'Access-Control-Allow-Origin': '*',
-
-       /\* Required for cookies, authorization headers with HTTPS \*/
-
-       'Access-Control-Allow-Credentials': true,
-
-       "Access-Control-Allow-Headers": "*",
-
-       "Access-Control-Allow-Methods": "POST, OPTIONS",
-
-   },
-
-   body: JSON.stringify({error: err}),
-
-})
-
+         statusCode: 400,
+         headers: {
+             /* Required for CORS support to work */
+             "Access-Control-Allow-Origin": "*",
+             "Access-Control-Allow-Headers": "*",
+             "Access-Control-Allow-Methods": "POST, OPTIONS",
+         },
+         body: JSON.stringify({error: err}),
+      })
    }
-
 }
 ```
 
@@ -582,11 +405,8 @@ With the following payload:
 
 ```json
 {
-
-  “email”: “foo@bar.com”,
-
-  “password”: “abc123”
-
+  "email": "foo@bar.com",
+  "password": "abc123"
 }
 ```
 
@@ -594,61 +414,33 @@ This should give you a response like this:
 
 ```json
 {
-
    "ref": {
-
        "@ref": {
-
            "id": "288175339623940608",
-
            "collection": {
-
                "@ref": {
-
                    "id": "tokens"
-
                }
-
            }
-
        }
-
    },
-
    "ts": 1611084270140000,
-
    "instance": {
-
        "@ref": {
-
            "id": "285249298598199809",
-
            "collection": {
-
                "@ref": {
-
                    "id": "users",
-
                    "collection": {
-
                        "@ref": {
-
                            "id": "collections"
-
                        }
-
                    }
-
                }
-
            }
-
        }
-
    },
-
    "secret": "fnED_83xz1ACAAPy2UP8gAYBHFYA7Xw0l-0EDv_oWF4fj28gX9I"
-
 }
 ```
 
