@@ -177,7 +177,7 @@ Hopefully, we still get the same output as before.
 
 In the next parts we'll create our Fauna DB Collections, Indexes and Roles, as well as write the CRUD APIs.
 
-# Link
+# Links
 
 **Link to Part 2:** [Authenticated Serverless CRUD with Netlify Functions and FaunaDB Part 2](https://theleakycauldronblog.com/blog/authenticated-serverless-crud-netlify-functions-faunadb-part-2)
 
