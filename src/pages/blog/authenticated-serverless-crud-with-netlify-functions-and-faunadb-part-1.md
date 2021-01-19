@@ -28,7 +28,7 @@ NOTE: This write-up assumes that you have some familiarity with serverless funct
 
 # Setup Fauna
 
-e begin by signing up for a free Fauna DB account (I love the fact that neither Fauna nor Netlify needs a credit card to sign up). 
+We begin by signing up for a free Fauna DB account (I love the fact that neither Fauna nor Netlify needs a credit card to sign up). 
 
 After that, we have to create a new database, in Fauna Cloud Console:
 
