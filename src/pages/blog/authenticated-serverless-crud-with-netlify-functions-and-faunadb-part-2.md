@@ -141,7 +141,6 @@ client.query(
        name: 'cats_by_users',
        source: [q.Collection("cat_breeds")],
        terms: [{field: ["data", "userRef"]}],
-       unique: true
    })
 )
    .then(ret => console.log('Success: %s', ret))
