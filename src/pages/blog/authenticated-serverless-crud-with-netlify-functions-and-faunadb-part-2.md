@@ -3,7 +3,7 @@ templateKey: article-page
 title: Authenticated Serverless CRUD with Netlify Functions and FaunaDB Part 2
 slug: authenticated-serverless-crud-netlify-functions-faunadb-part-2
 author: Vaibhav Sharma
-author_link: https://www.instagram.com/theleakycauldronblog/
+author_link: https://www.instagram.com/theleakycauldronblog
 date: 2021-01-19T19:58:58.728Z
 cover: /img/ga-authenticated-serverless-crud-netlify-faunadb-part-2.jpg
 meta_title: Authenticated Serverless CRUD with Netlify Functions and FaunaDB Part 2
@@ -19,7 +19,7 @@ In the last part, we set up our *FaunaDB* account, generated a database access s
 
 Link to Part 1: [Authenticated Serverless CRUD with Netlify Functions and FaunaDB Part 1](https://theleakycauldronblog.com/blog/authenticated-serverless-crud-netlify-functions-faunadb-part-1)
 
-If everything was set up properly according to last tutorial the project folder should look like this:
+If everything was set up properly according to the last tutorial the project folder should look like this:
 
 ```
 .
@@ -35,15 +35,15 @@ In this part, we will first, programmatically set up our database `Collections`,
 
 # Bootstrap Fauna Database
 
-For our Cats project we’ll need two tables or “`Collections`” — `users` and `cat_breeds`. And while we can make our Collections, Indexes and Roles using the Fauna Cloud Console GUI, setting it up programmatically allows us to keep the settings as a template which can be deployed locally as well. 
+For our Cats project, we’ll need two tables or “`Collections`” — `users` and `cat_breeds`. And while we can make our Collections, Indexes and Roles using the Fauna Cloud Console GUI, setting it up programmatically allows us to keep the settings as a template which can be deployed locally as well. 
 
-First, install dotenv package
+First, install `dotenv` package
 
 ```shell
 yarn add dotenv
 ```
 
-Next create a folder `db` at the project root:
+Next, create a folder `db` at the project root:
 
 ```shell
 mkdir db 
@@ -55,7 +55,7 @@ Then in the `db` folder create a file `bootstrap.js`
 cd db && touch bootstrap.js
 ```
 
-In the `bootstrap.js` file we’ll first import `dotenv` and `faunadb`.
+In the `bootstrap.js` file, we’ll first import `dotenv` and `faunadb`.
 
 ```javascript
 require('dotenv').config()
@@ -67,7 +67,7 @@ console.log('Creating FaunaDB database...')
 
 ## Creating Collections
 
-First we write a function to create our Collections, in that function we initiate the Fauna `query` and Fauna `client`.
+First, we write a function to create our Collections, in that function we initiate the Fauna `query` and Fauna `client`.
 
 ```javascript
 const createCollections = key => {
@@ -118,7 +118,7 @@ const createIndexes = key => {
 }
 ```
 
-Next we need to write the query to create our indexes, in our `createIndexes` function.
+Next, we need to write the query to create our indexes, in our `createIndexes` function.
 
 ```javascript
 // Users by Email Index
@@ -147,9 +147,9 @@ client.query(
    .catch(err => console.error('Error: %s', err))
 ```
 
-## Create Role
+## Create Roles
 
-User-defined roles provide configurable, domain-specific security rules. They are the core schema for attribute-based access control. For example you can create roles like Staff, Customers etc. Here we’ll be creating a role for our users so that they all can access Cat Breeds table.
+User-defined roles provide configurable, domain-specific security rules. They are the core schema for attribute-based access control. For example, you can create roles like Staff, Customers etc. Here we’ll be creating a role for our users so that they all can access the Cat Breeds table and the `cats_by_users` index.
 
 As before, create a function, name it `createRoles`.
 
@@ -227,9 +227,9 @@ You can go to Fauna Cloud Console and verify if everything was created as desire
 
 # Sign Up
 
-This is a simple one, first we initialise Fauna `Client` and `Query` with `FAUNADB_SECRET`. And then write a FQL query to create a user.
+This is a simple one, first, we initialise Fauna `Client` and `Query` with `FAUNADB_SECRET`. And then write an FQL query to create a user.
 
-Create a file `sign-up.js` in functions folder:
+Create a file `sign-up.js` in the `functions` folder:
 
 ```shell
 cd functions && touch sign-up.js
@@ -327,7 +327,7 @@ That should successfully create a user with email: [foo@bar.com](<>) & password:
 
 To sign in we’ll use Fauna’s native `Login` function. This will take the password in the incoming payload and convert it to the hash format and try to match it against the stored hash. We’ll be using the `users_by_email` Index that we created earlier to identify the user.
 
-First we need to create a file, let’s name it `sign-in.js`
+First, we need to create a file, let’s name it `sign-in.js`
 
 ```shell
 touch sign-in.js
@@ -445,7 +445,7 @@ This should give you a response like this:
 
 Save the `secret`, we’ll be using it while making authenticated CRUD requests. We’ll also be needing user id, it’s in the response: `instance => @ref => id`
 
-That’s it for this part, In the next part we’ll finally be writing the code for authenticated CRUD requests.
+That’s it for this part, In the next part, we’ll finally be writing the code for authenticated CRUD requests.
 
 # Links
 
