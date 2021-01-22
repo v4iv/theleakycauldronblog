@@ -24,8 +24,6 @@ If everything was set up properly according to the last tutorial the project fol
 ```
 .
 ├── node_modules/
-├── db
-│   └──  bootstrap.js
 ├── functions
 │      └──  hello-world.js   
 ├-- netlify.toml
