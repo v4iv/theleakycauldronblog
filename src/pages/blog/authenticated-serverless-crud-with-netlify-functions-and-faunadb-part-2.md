@@ -453,4 +453,4 @@ That’s it for this part, In the next part, we’ll finally be writing the code
 
 **Link to Part 1:** [Authenticated Serverless CRUD with Netlify Functions and FaunaDB Part 1](https://theleakycauldronblog.com/blog/authenticated-serverless-crud-netlify-functions-faunadb-part-1)
 
-**Link to Part 3:** Authenticated Serverless CRUD with Netlify Functions and FaunaDB Part 3
+**Link to Part 3:** [Authenticated Serverless CRUD with Netlify Functions and FaunaDB Part 3](https://theleakycauldronblog.com/blog/authenticated-serverless-crud-netlify-functions-faunadb-part-3)
