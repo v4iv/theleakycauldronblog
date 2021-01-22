@@ -73,7 +73,7 @@ Finally, we write the query to create an entry of a cat, from the payload, we al
                         name: payload.name,
                         image: payload.image,
                         breed: payload.breed,
-                        userRef: q.Ref(q.Collection('users'), _.get(payload.user_id]))
+                        userRef: q.Ref(q.Collection('users'), payload.user_id)
                     }
                 }
             )
