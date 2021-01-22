@@ -181,4 +181,4 @@ In the next parts we'll create our Fauna DB Collections, Indexes and Roles, as w
 
 **Link to Part 2:** [Authenticated Serverless CRUD with Netlify Functions and FaunaDB Part 2](https://theleakycauldronblog.com/blog/authenticated-serverless-crud-netlify-functions-faunadb-part-2)
 
-**Link to Part 3:** Authenticated Serverless CRUD with Netlify Functions and FaunaDB Part 3
+**Link to Part 3:** [Authenticated Serverless CRUD with Netlify Functions and FaunaDB Part 3](https://theleakycauldronblog.com/blog/authenticated-serverless-crud-netlify-functions-faunadb-part-3)
