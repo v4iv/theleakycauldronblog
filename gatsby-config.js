@@ -1,3 +1,4 @@
+require('dotenv').config()
 const path = require('path')
 const config = require('./config')
 
@@ -124,14 +125,14 @@ module.exports = {
     {
       resolve: `gatsby-plugin-disqus`,
       options: {
-        shortname: config.disqusShortname,
+        shortname: process.env.DISQUS_SHORTNAME,
       },
     },
     {
       resolve: `gatsby-plugin-gdpr-cookies`,
       options: {
         googleTagManager: {
-          trackingId: config.googleTagManagerID, // leave empty if you want to disable the tracker
+          trackingId: process.env.GTM_ID, // leave empty if you want to disable the tracker
           cookieName: 'gatsby-gdpr-google-tagmanager', // default
           dataLayerName: 'dataLayer', // default
         },

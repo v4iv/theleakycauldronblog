@@ -2,9 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 import { Link } from 'gatsby'
-import ArticleList from '../components/ArticleList'
 import config from '../../config'
 import Layout from '../components/Layout'
+import ArticleList from '../components/ArticleList'
 
 const PaginationLink = props => {
   if (!props.test) {

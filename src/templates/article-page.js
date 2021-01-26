@@ -1,13 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import { Disqus } from 'gatsby-plugin-disqus'
 import config from '../../config'
 import { HTMLContent } from '../components/Content'
-import ArticleTemplate from '../components/ArticleTemplate'
-import SE0 from '../components/SEO'
-import Share from '../components/Share'
 import Layout from '../components/Layout'
+import SE0 from '../components/SEO'
+import ArticleTemplate from '../components/ArticleTemplate'
+import Share from '../components/Share'
+import CommentBox from '../components/CommentBox'
 
 const ArticlePage = (props) => {
   const { data: { markdownRemark: { id, html, fields: { slug }, frontmatter: { title, meta_title, meta_description, cover, date, author, author_link, tags } } } } = props
@@ -45,13 +45,7 @@ const ArticlePage = (props) => {
         <section className='mw8 center'>
           <Share title={title} slug={slug} excerpt={meta_description} siteUrl={config.siteUrl} pathPrefix={config.pathPrefix} />
 
-          <section className='mb3 pa3 pa5-l center' key={id}>
-            <Disqus config={{
-              url: `${config.siteUrl}/blog/${slug}`,
-              identifier: title,
-              title: title,
-            }}/>
-          </section>
+          <CommentBox id={id} title={title} site_url={config.siteUrl} slug={slug} path_prefix={config.pathPrefix}/>
         </section>
       </section>
     </Layout>
