@@ -122,6 +122,12 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+        shortname: config.disqusShortname,
+      },
+    },
+    {
       resolve: `gatsby-plugin-gdpr-cookies`,
       options: {
         googleTagManager: {
@@ -303,7 +309,7 @@ module.exports = {
         modulePath: path.join(__dirname, `src`, `cms`, `cms.js`),
         stylesPath: path.join(__dirname, `src`, `assets`, `stylesheets`, `styles.scss`),
         enableIdentityWidget: true,
-        htmlTitle: `CMS | The Leaky Cauldron Blog`,
+        htmlTitle: `CMS | ${config.siteTitle}`,
       },
     },
     {
