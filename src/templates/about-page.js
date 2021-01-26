@@ -3,9 +3,9 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 import config from '../../config'
-import AboutPageTemplate from '../components/AboutPageTemplate'
 import { HTMLContent } from '../components/Content'
 import Layout from '../components/Layout'
+import AboutPageTemplate from '../components/AboutPageTemplate'
 
 const AboutPage = (props) => {
   const { data: { markdownRemark: { html, frontmatter: { title, subtitle, author, meta_title, meta_description, image } } } } = props

@@ -2,9 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
-import ContactPageTemplate from '../components/ContactPageTemplate'
-import Layout from '../components/Layout'
 import config from '../../config'
+import Layout from '../components/Layout'
+import ContactPageTemplate from '../components/ContactPageTemplate'
 
 const ContactPage = props => {
   const { data: { markdownRemark: { frontmatter: { title, subtitle, meta_title, meta_description } } } } = props

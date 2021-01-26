@@ -1,8 +1,8 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
-import PropTypes from 'prop-types'
 
 const TagRoute = (props) => {
   const { data: { site: { siteMetadata: { title } }, allMarkdownRemark: { totalCount, edges: posts } }, pageContext: { tag } } = props

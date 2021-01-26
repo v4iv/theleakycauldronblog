@@ -7,7 +7,6 @@ const config = {
   siteDescription: `The Leaky Cauldron Blog is the personal blog of Vaibhav Sharma. A Brew of Awesomeness with a Pinch of Magic...`, // Website description used for RSS feeds/meta description tag.
   siteRss: `/rss.xml`,
   googleTagManagerID: process.env.GTM_ID || ``, // GTM tracking ID.
-  disqusShortname: process.env.DISQUS_SHORTNAME || `https-theleakycauldronblog-com`, // Disqus shortname.
   userName: `Vaibhav Sharma`,
   userTwitter: `aleakycauldron`,
   siteFBAppID: ``,

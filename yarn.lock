@@ -9354,9 +9354,9 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"gatsby-plugin-sharp@npm:^2.13.1":
-  version: 2.13.1
-  resolution: "gatsby-plugin-sharp@npm:2.13.1"
+"gatsby-plugin-sharp@npm:^2.13.2":
+  version: 2.13.2
+  resolution: "gatsby-plugin-sharp@npm:2.13.2"
   dependencies:
     "@babel/runtime": ^7.12.5
     async: ^3.2.0
@@ -9379,7 +9379,7 @@ fsevents@~2.3.1:
     uuid: 3.4.0
   peerDependencies:
     gatsby: ">2.0.15"
-  checksum: 109a63c6fd027de3add93e05d8f97531a270fc2113bf2b504e462c9af6fa7f861eaa03d8ed5b2b51649f8429a707fccb016cad9522d21eb9c212efb774aa7694
+  checksum: f308e219f6614b0392955acbd05529b3af1c7dac5a4c0c2c3d26cb144d87db96fdfea6c351506673f5588ae8452c23c834d14ab50fd3f710fc2b1894e4a3ef98
   languageName: node
   linkType: hard
 
@@ -9639,6 +9639,7 @@ fsevents@~2.3.1:
     "@gatsby-contrib/gatsby-plugin-elasticlunr-search": ^2.4.2
     "@reach/router": ^1.3.4
     babel-eslint: ^10.1.0
+    dotenv: ^8.2.0
     elasticlunr: ^0.9.5
     eslint: ^7.18.0
     eslint-config-standard: ^16.0.2
@@ -9667,7 +9668,7 @@ fsevents@~2.3.1:
     gatsby-plugin-pinterest: ^3.2.3
     gatsby-plugin-react-helmet: ^3.9.0
     gatsby-plugin-sass: ^3.1.0
-    gatsby-plugin-sharp: ^2.13.1
+    gatsby-plugin-sharp: ^2.13.2
     gatsby-plugin-sitemap: ^2.11.0
     gatsby-plugin-twitter: ^2.9.0
     gatsby-react-router-scroll: ^3.6.0
