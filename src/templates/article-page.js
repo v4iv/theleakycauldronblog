@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
+import { Disqus } from 'gatsby-plugin-disqus'
 import config from '../../config'
 import { HTMLContent } from '../components/Content'
 import ArticleTemplate from '../components/ArticleTemplate'
 import SE0 from '../components/SEO'
-import Disqus from '../components/Disqus'
 import Share from '../components/Share'
 import Layout from '../components/Layout'
 
@@ -45,7 +45,13 @@ const ArticlePage = (props) => {
         <section className='mw8 center'>
           <Share title={title} slug={slug} excerpt={meta_description} siteUrl={config.siteUrl} pathPrefix={config.pathPrefix} />
 
-          <Disqus identifier={id} title={title} slug={slug} siteUrl={config.siteUrl} disqusShortname={config.disqusShortname} />
+          <section className='mb3 pa3 pa5-l center' key={id}>
+            <Disqus config={{
+              url: `${config.siteUrl}/blog/${slug}`,
+              identifier: title,
+              title: title,
+            }}/>
+          </section>
         </section>
       </section>
     </Layout>

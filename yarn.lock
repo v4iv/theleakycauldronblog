@@ -9156,6 +9156,15 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
+"gatsby-plugin-disqus@npm:^1.2.2":
+  version: 1.2.2
+  resolution: "gatsby-plugin-disqus@npm:1.2.2"
+  peerDependencies:
+    react: ^16.8.5
+  checksum: df9d33ad50723d4d3c68a0c3ebf0ced695979461b7d138ac7639b43c498b3287aab436083fab15c70f1cc4ad05281a00ba89de1dafc99fc8d98adb4753d975f7
+  languageName: node
+  linkType: hard
+
 "gatsby-plugin-feed@npm:^2.12.0":
   version: 2.12.0
   resolution: "gatsby-plugin-feed@npm:2.12.0"
@@ -9645,6 +9654,7 @@ fsevents@~2.3.1:
     gatsby: ^2.31.1
     gatsby-image: ^2.10.0
     gatsby-paginate: ^1.1.1
+    gatsby-plugin-disqus: ^1.2.2
     gatsby-plugin-feed: ^2.12.0
     gatsby-plugin-gdpr-cookies: ^1.0.11
     gatsby-plugin-google-tagmanager: ^2.10.0
@@ -9679,7 +9689,6 @@ fsevents@~2.3.1:
     react: ^17.0.1
     react-cookie-consent: ^6.2.1
     react-copy-to-clipboard: ^5.0.3
-    react-disqus-comments: ^1.4.0
     react-dom: ^17.0.1
     react-helmet: ^6.1.0
     react-share: ^4.3.1
@@ -17591,16 +17600,6 @@ fsevents@~2.3.1:
   version: 0.2.5
   resolution: "react-display-name@npm:0.2.5"
   checksum: cadfbf2d2f050165cd247452051e11de00092aa527ae28e47a935eb2e91f00169e98158a848a477e274f15e6ae9cc7b5b2f990c41419c0ef27806fe5c2b714d2
-  languageName: node
-  linkType: hard
-
-"react-disqus-comments@npm:^1.4.0":
-  version: 1.4.0
-  resolution: "react-disqus-comments@npm:1.4.0"
-  peerDependencies:
-    react: ">=15.0.1 < 17.0.0"
-    react-dom: ">=15.0.1 < 17.0.0"
-  checksum: fd0818f019d46e72b0d367f836f18a33f8c130deb0515702df5a02606da712fe9d98640ee951d782eed7c90a9c38f9a579de07a6131f5b8f0252bb74466b27b3
   languageName: node
   linkType: hard
 
