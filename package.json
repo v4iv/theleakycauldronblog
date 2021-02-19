@@ -63,6 +63,7 @@
     "tachyons-sass": "^4.9.5",
     "trim-right": "^1.0.1",
     "uglifyjs-webpack-plugin": "^2.2.0",
+    "web-vitals": "^1.1.0",
     "yup": "^0.32.9"
   },
   "devDependencies": {

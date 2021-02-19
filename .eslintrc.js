@@ -12,6 +12,7 @@ module.exports = {
     sessionStorage: true,
     localStorage: true,
     alert: true,
+    gtag: true,
   },
   rules: {
     'no-unused-vars': 'off',
