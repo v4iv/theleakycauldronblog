@@ -9,8 +9,6 @@ const CommentBox = (props) => {
 
   const url = site_url + real_prefix + slug
 
-  console.log('Blog URL: %s', slug)
-
   const disqus_config = {
     url: url,
     identifier: title,
