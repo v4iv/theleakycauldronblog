@@ -114,12 +114,7 @@ module.exports = {
     `gatsby-plugin-pinterest`,
     `gatsby-plugin-twitter`,
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-plugin-sass`,
-      options: {
-        indentedSyntax: true,
-      },
-    },
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-plugin-nprogress`,
       options: {
