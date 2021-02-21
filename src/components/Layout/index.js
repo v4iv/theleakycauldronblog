@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 import CookieConsent from 'react-cookie-consent'
 import 'tachyons-sass/tachyons.scss'
@@ -54,5 +55,12 @@ const Layout = (props) => (
     </div>
   </>
 )
+
+Layout.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]).isRequired,
+}
 
 export default Layout

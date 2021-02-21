@@ -43,7 +43,7 @@ const ArticlePage = (props) => {
         />
 
         <section className='mw8 center'>
-          <Share title={title} slug={slug} excerpt={metaDescription} siteUrl={config.siteUrl} pathPrefix={config.pathPrefix} />
+          <Share title={title} slug={slug} excerpt={metaDescription} siteURL={config.siteUrl} pathPrefix={config.pathPrefix} />
 
           <CommentBox id={id} title={title} siteURL={config.siteUrl} slug={slug} pathPrefix={config.pathPrefix}/>
         </section>
@@ -55,6 +55,8 @@ const ArticlePage = (props) => {
 ArticlePage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
+      id: PropTypes.string,
+      html: PropTypes.any,
       fields: PropTypes.shape({
         slug: PropTypes.string,
       }),

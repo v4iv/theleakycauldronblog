@@ -105,6 +105,7 @@ const AboutPage = (props) => {
 AboutPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
+      html: PropTypes.any,
       frontmatter: PropTypes.shape({
         title: PropTypes.string,
         subtitle: PropTypes.string,

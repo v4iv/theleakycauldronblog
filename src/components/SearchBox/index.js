@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import { navigate } from '@reach/router'
 import { Index } from 'elasticlunr'
@@ -116,6 +117,13 @@ const SearchBox = (props) => {
         </div>}
     </div>
   )
+}
+
+SearchBox.propTypes = {
+  search: PropTypes.shape({
+    q: PropTypes.string,
+  }),
+  searchIndex: PropTypes.any,
 }
 
 export default withLocation(SearchBox)

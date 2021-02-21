@@ -10,9 +10,9 @@ import {
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 
 const Share = (props) => {
-  const { title, slug, excerpt, pathPrefix, siteUrl } = props
+  const { title, slug, excerpt, pathPrefix, siteURL } = props
   const realPrefix = pathPrefix === '/' ? '' : pathPrefix
-  const url = siteUrl + realPrefix + slug
+  const url = siteURL + realPrefix + slug
 
   return (
     <div className='pv4 ph3 ph5-ns tc'>
@@ -111,6 +111,8 @@ Share.propTypes = {
   title: PropTypes.string,
   slug: PropTypes.string,
   excerpt: PropTypes.string,
+  pathPrefix: PropTypes.string,
+  siteURL: PropTypes.string,
 }
 
 export default Share

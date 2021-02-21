@@ -16,15 +16,5 @@ module.exports = {
   },
   rules: {
     'no-unused-vars': 'off',
-    'react/no-unused-prop-types': 'off',
-    'react/prop-types': 'off',
-    // camelcase: 'off',
-    'react/jsx-handler-names': 'off',
-    'react/jsx-closing-bracket-location': 'off',
-    'react/jsx-closing-tag-location': 'off',
-    'default-case-last': 'off',
-    'no-useless-backreference': 'off',
-    'no-loss-of-precision': 'off',
-    'no-unreachable-loop': 'off',
   },
 }
