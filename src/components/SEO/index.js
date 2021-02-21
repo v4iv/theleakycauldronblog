@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 
 const SE0 = (props) => {
-  const { title, meta_title, meta_desc, cover, slug, date, author, siteTitleAlt, siteTitle, siteUrl, siteFBAppID, userTwitter, pathPrefix } = props
+  const { title, metaTitle, metaDescription, cover, slug, date, author, siteTitleAlt, siteTitle, siteUrl, siteFBAppID, userTwitter, pathPrefix } = props
   const postURL = siteUrl + slug
   const realPrefix = pathPrefix === '/' ? '' : pathPrefix
   const image = siteUrl + realPrefix + cover
@@ -62,14 +62,14 @@ const SE0 = (props) => {
         url: siteUrl + '/icons/icon-512x512.png',
       },
     },
-    description: meta_desc,
+    description: metaDescription,
   }
 
   return <Helmet>
-    <title>{meta_title}</title>
+    <title>{metaTitle}</title>
 
     {/* General tags */}
-    <meta name='description' content={meta_desc} />
+    <meta name='description' content={metaDescription} />
 
     <meta name='image' content={cover} />
 
@@ -91,7 +91,7 @@ const SE0 = (props) => {
 
     <meta property='og:author' content={author} />
 
-    <meta property='og:description' content={meta_desc} />
+    <meta property='og:description' content={metaDescription} />
 
     <meta property='og:image' content={image} />
 
@@ -109,7 +109,7 @@ const SE0 = (props) => {
 
     <meta name='twitter:title' content={title} />
 
-    <meta name='twitter:description' content={meta_desc} />
+    <meta name='twitter:description' content={metaDescription} />
 
     <meta name='twitter:image' content={image} />
   </Helmet>
@@ -117,8 +117,8 @@ const SE0 = (props) => {
 
 SE0.propTypes = {
   title: PropTypes.string,
-  meta_title: PropTypes.string,
-  meta_desc: PropTypes.string,
+  metaTitle: PropTypes.string,
+  metaDescription: PropTypes.string,
   cover: PropTypes.node,
   slug: PropTypes.string,
   date: PropTypes.string,

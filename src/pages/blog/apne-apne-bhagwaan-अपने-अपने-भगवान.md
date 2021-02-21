@@ -3,11 +3,11 @@ templateKey: article-page
 title: Apne Apne Bhagwaan — अपने अपने भगवान
 slug: apne-apne-bhagwaan
 author: Vyom
-author_link: https://theleakycauldronblog.com/contact
+authorLink: https://theleakycauldronblog.com/contact
 date: 2020-08-16T14:49:01.852Z
 cover: /img/ben-white-apne-apne-bhagwaan.jpg
-meta_title: Apne Apne Bhagwaan — अपने अपने भगवान
-meta_description: राम तू, क़ुरान तू, नानक साहब का ज्ञान तू, सच्ची समझ जो आ जाये,
+metaTitle: Apne Apne Bhagwaan — अपने अपने भगवान
+metaDescription: राम तू, क़ुरान तू, नानक साहब का ज्ञान तू, सच्ची समझ जो आ जाये,
   तो परमेश्वर रूपी इंसान तू! — व्योम
 tags:
   - guest author

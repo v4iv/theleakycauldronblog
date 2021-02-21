@@ -3,11 +3,11 @@ templateKey: article-page
 title: Writing Tests for Authenticated APIs in Django REST Framework
 slug: writing-tests-for-authenticated-apis-in-django-rest-framework
 author: Vaibhav Sharma
-author_link: https://twitter.com/vaibhaved
+authorLink: https://twitter.com/vaibhaved
 date: '2018-04-13T12:17:50+05:30'
 cover: /img/authenticated_api_testing.jpg
-meta_title: Writing Tests for Authenticated Routes in Django REST Framework
-meta_description: >-
+metaTitle: Writing Tests for Authenticated Routes in Django REST Framework
+metaDescription: >-
   How to write tests for Django OAuth Toolkit Authenticated APIs in Django REST
   Framework.
 tags:

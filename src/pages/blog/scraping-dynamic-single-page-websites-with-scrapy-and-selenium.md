@@ -3,11 +3,11 @@ templateKey: article-page
 title: Scraping Dynamic Websites (Angular, React etc) with Scrapy and Selenium
 slug: scraping-dynamic-single-page-websites-with-scrapy-and-selenium
 author: Vaibhav Sharma
-author_link: https://twitter.com/vaibhaved
+authorLink: https://twitter.com/vaibhaved
 date: 2018-05-04T18:51:35+05:30
 cover: /img/scraping_dynamic_webapps.jpg
-meta_title: Scraping Dynamic Websites (Angular, React etc) with Scrapy and Selenium
-meta_description: Scraping websites made with Javascript frameworks like Angular
+metaTitle: Scraping Dynamic Websites (Angular, React etc) with Scrapy and Selenium
+metaDescription: Scraping websites made with Javascript frameworks like Angular
   and React is not possible with Scrapy or Beautiful Soup, learn to do so with
   the added help of Selenium.
 tags:

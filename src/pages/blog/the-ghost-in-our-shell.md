@@ -3,11 +3,11 @@ templateKey: article-page
 title: The Ghost in our Shell
 slug: hard-problem-of-consciousness
 author: Vaibhav Sharma
-author_link: https://www.instagram.com/theleakycauldronblog/
+authorLink: https://www.instagram.com/theleakycauldronblog/
 date: 2021-01-16T09:16:13.698Z
 cover: /img/the-ghost-in-the-shell.jpg
-meta_title: The Ghost in our Shell
-meta_description: Embark on a journey to understand the question of what makes
+metaTitle: The Ghost in our Shell
+metaDescription: Embark on a journey to understand the question of what makes
   us, us, as we try to unravel the problem of explaining why any physical state
   is conscious rather than non-conscious.
 tags:

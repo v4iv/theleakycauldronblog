@@ -3,11 +3,11 @@ templateKey: article-page
 title: Authenticated Serverless CRUD with Netlify Functions and FaunaDB Part 1
 slug: authenticated-serverless-crud-netlify-functions-faunadb-part-1
 author: Vaibhav Sharma
-author_link: https://instagram.com/theleakycauldronblog
+authorLink: https://instagram.com/theleakycauldronblog
 date: 2021-01-18T14:34:54.026Z
 cover: /img/chris-barbalis-serverless-netlify-faunadb.jpg
-meta_title: Authenticated Serverless CRUD with Netlify Functions and FaunaDB Part 1
-meta_description: Leverage FaunaDB and Netlify Functions to create authenticated
+metaTitle: Authenticated Serverless CRUD with Netlify Functions and FaunaDB Part 1
+metaDescription: Leverage FaunaDB and Netlify Functions to create authenticated
   Serverless CRUD APIs with generous free tier.
 tags:
   - serverless

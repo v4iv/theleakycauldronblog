@@ -8,7 +8,7 @@ import Layout from '../components/Layout'
 import AboutPageTemplate from '../components/AboutPageTemplate'
 
 const AboutPage = (props) => {
-  const { data: { markdownRemark: { html, frontmatter: { title, subtitle, author, meta_title, meta_description, image } } } } = props
+  const { data: { markdownRemark: { html, frontmatter: { title, subtitle, author, metaTitle, metaDescription, image } } } } = props
   const breadcrumbSchemaOrgJSONLD = {
     '@context': 'http://schema.org',
     '@type': 'BreadcrumbList',
@@ -59,22 +59,22 @@ const AboutPage = (props) => {
         height: 512,
       },
     },
-    description: meta_description,
+    description: metaDescription,
   }
 
   return (
     <Layout>
       <Helmet>
-        <title>{meta_title}</title>
+        <title>{metaTitle}</title>
 
-        <meta name='description' content={meta_description} />
+        <meta name='description' content={metaDescription} />
 
         {/* Open Graph Tags */}
         <meta property='og:url' content={`${config.siteUrl}/about`} />
 
         <meta property='og:title' content={title} />
 
-        <meta property='og:description' content={meta_description} />
+        <meta property='og:description' content={metaDescription} />
 
         <meta property='og:image' content={image} />
 
@@ -110,8 +110,8 @@ AboutPage.propTypes = {
         subtitle: PropTypes.string,
         author: PropTypes.string,
         image: PropTypes.object,
-        meta_title: PropTypes.string,
-        meta_description: PropTypes.string,
+        metaTitle: PropTypes.string,
+        metaDescription: PropTypes.string,
       }),
     }),
   }),
@@ -135,8 +135,8 @@ export const aboutPageQuery = graphql`
                     }
                     publicURL
                 }
-                meta_title
-                meta_description
+                metaTitle
+                metaDescription
             }
         }
     }

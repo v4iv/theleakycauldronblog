@@ -14,9 +14,9 @@ const SearchBox = (props) => {
   const [active, setActive] = useState(false)
 
   const handleChange = async evt => {
-    const query_value = evt.target.value
+    const queryValue = evt.target.value
 
-    await navigate(`?q=${encodeURIComponent(query_value)}`, { replace: true })
+    await navigate(`?q=${encodeURIComponent(queryValue)}`, { replace: true })
   }
 
   useEffect(() => {

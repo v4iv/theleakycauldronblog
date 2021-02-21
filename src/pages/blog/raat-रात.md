@@ -3,11 +3,11 @@ templateKey: article-page
 title: Raat — रात
 slug: raat
 author: Vyom
-author_link: https://theleakycauldronblog.com/contact
+authorLink: https://theleakycauldronblog.com/contact
 date: 2020-10-15T08:30:41.705Z
 cover: /img/todd-diemer-raat-vyom.jpg
-meta_title: Raat - रात
-meta_description: अजीब थी वो रात पर आखिर रात ही थी ना। रातों की किस्मत होती है
+metaTitle: Raat - रात
+metaDescription: अजीब थी वो रात पर आखिर रात ही थी ना। रातों की किस्मत होती है
   सवेरे से मात खाना। — व्योम
 tags:
   - guest author

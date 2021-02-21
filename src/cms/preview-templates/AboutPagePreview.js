@@ -9,8 +9,8 @@ const AboutPagePreview = (props) => {
   const subtitle = entry.getIn(['data', 'subtitle'])
   const author = entry.getIn(['data', 'author'])
   const image = { publicURL: entry.getIn(['data', 'image']) }
-  const meta_title = entry.getIn(['data', 'meta_title'])
-  const meta_description = entry.getIn(['data', 'meta_description'])
+  const metaTitle = entry.getIn(['data', 'metaTitle'])
+  const metaDescription = entry.getIn(['data', 'metaDescription'])
   const content = widgetFor('body')
 
   return <div>
@@ -19,8 +19,8 @@ const AboutPagePreview = (props) => {
       subtitle={subtitle}
       author={author}
       image={image}
-      meta_title={meta_title}
-      meta_description={meta_description}
+      metaTitle={metaTitle}
+      metaDescription={metaDescription}
       content={content}
     />
   </div>

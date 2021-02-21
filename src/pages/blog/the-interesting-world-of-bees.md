@@ -3,11 +3,11 @@ templateKey: article-page
 title: The Interesting World of Bees
 slug: the-interesting-world-of-bees
 author: Vaibhav Sharma
-author_link: https://twitter.com/vaibhaved
+authorLink: https://twitter.com/vaibhaved
 date: 2020-04-24T21:06:19.359Z
 cover: /img/boris-smokrovic-the-interesting-world-of-bees.jpg
-meta_title: The Interesting World of Bees
-meta_description: >-
+metaTitle: The Interesting World of Bees
+metaDescription: >-
   Take a look at the interesting life of bees. Bees pollinate about 80% of the
   world's plants including 90 different food crops. That’s about ~ 1/3 of all
   the agricultural food crops!

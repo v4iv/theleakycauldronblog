@@ -3,11 +3,11 @@ templateKey: article-page
 title: Is “Always”, really Snape’s best line?
 slug: is-always-really-snape-best-line
 author: Hermione Lovegood
-author_link: mailto:hermionelovegood@gmail.com
+authorLink: mailto:hermionelovegood@gmail.com
 date: 2020-08-27T03:26:52.721Z
 cover: /img/artem-maltsev-always-snape.jpg
-meta_title: Is “Always”, really Snape’s best line?
-meta_description: After a lot of digging, I think I'm finally convinced that I
+metaTitle: Is “Always”, really Snape’s best line?
+metaDescription: After a lot of digging, I think I'm finally convinced that I
   have found out the best line that Snape has ever uttered. So here I am writing
   to convince you of the same.
 tags:

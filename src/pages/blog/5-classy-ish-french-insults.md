@@ -3,11 +3,11 @@ templateKey: article-page
 title: 5 Classy-ish French Insults
 slug: classy-french-insults
 author: Vaibhav Sharma
-author_link: https://twitter.com/vaibhaved
+authorLink: https://twitter.com/vaibhaved
 date: 2020-09-01T11:02:51.127Z
 cover: /img/markus-clemens-classy-french-insult.jpg
-meta_title: 5 Classy French Insults
-meta_description: Learn few of the most classy french insults, and sound like a true Gentleman.
+metaTitle: 5 Classy French Insults
+metaDescription: Learn few of the most classy french insults, and sound like a true Gentleman.
 tags:
   - le francais
   - language

@@ -3,11 +3,11 @@ templateKey: article-page
 title: The Monk Who Accidentally Saved India
 slug: kesavananda-bharati-vs-kerala
 author: Vaibhav Sharma
-author_link: https://instagram.com/theleakycauldronblog
+authorLink: https://instagram.com/theleakycauldronblog
 date: 2021-01-26T06:30:35.106Z
 cover: /img/manyu-varma-kesavanada-bharati-vs-kerala.jpg
-meta_title: Kesavananda Bharati - The Monk Who Accidentally Saved India
-meta_description: "Find out how an unwitting saviour rescued Indian Democracy
+metaTitle: Kesavananda Bharati - The Monk Who Accidentally Saved India
+metaDescription: "Find out how an unwitting saviour rescued Indian Democracy
   from becoming a totalitarian Regime, the story of Kesavananda Bharati vs The
   State of Kerala. "
 tags:

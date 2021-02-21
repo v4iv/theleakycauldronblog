@@ -9,11 +9,11 @@ module.exports = {
     title: config.siteTitle,
     siteUrl: config.siteUrl,
     rssMetadata: {
-      site_url: config.siteUrl + pathPrefix,
-      feed_url: config.siteUrl + pathPrefix + config.siteRss,
+      siteURL: config.siteUrl + pathPrefix,
+      feedURL: config.siteUrl + pathPrefix + config.siteRss,
       title: config.siteTitle,
       description: config.siteDescription,
-      image_url: `${config.siteUrl + pathPrefix}/icons/icon-512x512.png`,
+      imageURL: `${config.siteUrl + pathPrefix}/icons/icon-512x512.png`,
       author: config.userName,
       copyright: config.copyright,
     },
@@ -221,11 +221,11 @@ module.exports = {
                   site {
                     siteMetadata {
                       rssMetadata {
-                        site_url
-                        feed_url
+                        siteURL
+                        feedURL
                         title
                         description
-                        image_url
+                        imageURL
                         author
                         copyright
                       }
@@ -248,8 +248,8 @@ module.exports = {
                   description: edge.node.excerpt,
                   image: edge.node.frontmatter.cover,
                   author: edge.node.frontmatter.author,
-                  url: rssMetadata.site_url + edge.node.fields.slug,
-                  guid: rssMetadata.site_url + edge.node.fields.slug,
+                  url: rssMetadata.siteURL + edge.node.fields.slug,
+                  guid: rssMetadata.siteURL + edge.node.fields.slug,
                   custom_elements: [{ 'content:encoded': edge.node.html }],
                 }))
             },

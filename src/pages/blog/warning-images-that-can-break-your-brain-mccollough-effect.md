@@ -3,11 +3,11 @@ templateKey: article-page
 title: "WARNING: Images that can break your brain - McCollough Effect"
 slug: mccollough-effect
 author: Vaibhav Sharma
-author_link: https://twitter.com/vaibhaved
+authorLink: https://twitter.com/vaibhaved
 date: 2020-08-24T11:27:56.195Z
 cover: /img/david-clode-mccollough-effect.jpg
-meta_title: "WARNING: Images that can break your brain - McCollough Effect"
-meta_description: What if I told you there exists a scary SCARY thing that can
+metaTitle: "WARNING: Images that can break your brain - McCollough Effect"
+metaDescription: What if I told you there exists a scary SCARY thing that can
   enter your head through your eyes and breaks your brain for a very long time?!
   This scary phenomenon is called the McCollough Effect.
 tags:

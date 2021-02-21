@@ -3,11 +3,11 @@ templateKey: article-page
 title: Pro Mode of our Brain - Awareness
 slug: pro-mode-of-our-brain-awareness
 author: Vaibhav Sharma
-author_link: https://twitter.com/vaibhaved
+authorLink: https://twitter.com/vaibhaved
 date: 2019-10-12T16:20:33.815Z
 cover: /img/ben-white-thinking-and-awareness.jpg
-meta_title: Unlock the Pro Mode of our Brain - Awareness
-meta_description: >-
+metaTitle: Unlock the Pro Mode of our Brain - Awareness
+metaDescription: >-
   My dealings with my awareness, and how it changed my life. I learnt that just
   like a DSLR has an 'Auto' Mode and a 'Pro' Mode we also have two types of
   settings of our brain.

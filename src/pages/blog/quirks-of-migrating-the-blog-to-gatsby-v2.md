@@ -3,11 +3,11 @@ templateKey: article-page
 title: Quirks of migrating the blog to Gatsby v2
 slug: quirks-of-migrating-the-blog-to-gatsby-v2
 author: Vaibhav Sharma
-author_link: https://twitter.com/vaibhaved
+authorLink: https://twitter.com/vaibhaved
 date: 2018-12-03T12:47:42.410Z
 cover: /img/everything_is_connected.gif
-meta_title: Quirks of migrating the blog to Gatsby v2 and how to deal with them.
-meta_description: >-
+metaTitle: Quirks of migrating the blog to Gatsby v2 and how to deal with them.
+metaDescription: >-
   Dealing with the struggles and features of migrating to Gatsby v2. From
   handling broken dependencies to dealing with unexpected broken features to
   utilising new features of Gatsby v2.

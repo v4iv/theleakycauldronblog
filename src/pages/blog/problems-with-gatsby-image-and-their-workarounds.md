@@ -3,11 +3,11 @@ templateKey: article-page
 title: Problems with 'gatsby-image' and their workarounds
 slug: problems-with-gatsby-image-and-their-workarounds
 author: Vaibhav Sharma
-author_link: https://twitter.com/vaibhaved
+authorLink: https://twitter.com/vaibhaved
 date: 2018-12-19T19:29:55.624Z
 cover: /img/gatsby-image-workarounds.jpeg
-meta_title: Problems with Gatsby Image and their workarounds
-meta_description: >-
+metaTitle: Problems with Gatsby Image and their workarounds
+metaDescription: >-
   Gatsby Image is a very powerful package with drool worthy features. It makes
   it very easy to implement, Medium like progressive image loading among other
   things. But it has its fair share of problems. Here are some of them along
