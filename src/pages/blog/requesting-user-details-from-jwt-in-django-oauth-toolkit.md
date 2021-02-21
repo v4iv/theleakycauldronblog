@@ -3,11 +3,11 @@ templateKey: article-page
 title: Requesting User details from JWT in Django OAuth Toolkit
 slug: requesting-user-details-from-jwt-in-django-oauth-toolkit
 author: Vaibhav Sharma
-author_link: https://twitter.com/vaibhaved
+authorLink: https://twitter.com/vaibhaved
 date: '2018-04-16T09:28:22+05:30'
 cover: /img/user_info_jwt.jpg
-meta_title: Requesting User details from JWT in Django OAuth Toolkit
-meta_description: >-
+metaTitle: Requesting User details from JWT in Django OAuth Toolkit
+metaDescription: >-
   Learn to write an API to fetch the details of currently logged in user, using
   the Authorization Token, in Django Oauth Toolkit
 tags:

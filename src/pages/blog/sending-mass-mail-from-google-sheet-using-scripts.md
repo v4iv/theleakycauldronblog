@@ -3,11 +3,11 @@ templateKey: article-page
 title: Sending Mass Mail from Google Sheet using Scripts
 slug: sending-mass-mail-from-google-sheet-using-scripts
 author: Vaibhav Sharma
-author_link: https://twitter.com/vaibhaved
+authorLink: https://twitter.com/vaibhaved
 date: '2018-06-04T11:22:05+05:30'
 cover: /img/mass_mail_google_script.jpg
-meta_title: Sending Mass Mail from Google Sheet using Scripts
-meta_description: >-
+metaTitle: Sending Mass Mail from Google Sheet using Scripts
+metaDescription: >-
   Leverage the power of Google Script to run email campaigns, right from your
   Google Sheet.
 tags:

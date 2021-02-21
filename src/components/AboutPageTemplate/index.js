@@ -37,6 +37,7 @@ const AboutPageTemplate = (props) => {
 AboutPageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string,
+  image: PropTypes.any,
   author: PropTypes.string,
   content: PropTypes.string,
   contentComponent: PropTypes.func,

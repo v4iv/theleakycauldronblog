@@ -36,6 +36,7 @@ const Footer = (props) => {
 }
 
 Footer.propTypes = {
+  siteRss: PropTypes.string,
   copyright: PropTypes.string,
 }
 

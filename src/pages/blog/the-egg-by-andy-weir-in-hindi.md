@@ -3,11 +3,11 @@ templateKey: article-page
 title: The Egg by Andy Weir in Hindi
 slug: the-egg-by-andy-weir-in-hindi
 author: Andy Weir
-author_link: http://www.galactanet.com
+authorLink: http://www.galactanet.com
 date: 2019-09-08T13:45:50.559Z
 cover: /img/parent-child-omar-lopez.jpg
-meta_title: The Egg by Andy Weir in Hindi
-meta_description: This is a Hindi translation of popular short story 'The Egg'
+metaTitle: The Egg by Andy Weir in Hindi
+metaDescription: This is a Hindi translation of popular short story 'The Egg'
   by Andy Weir. Translated by Vaibhav Sharma.
 tags:
   - guest author

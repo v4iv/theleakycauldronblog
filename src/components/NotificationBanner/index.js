@@ -35,6 +35,7 @@ const NotificationBanner = (props) => {
 NotificationBanner.propTypes = {
   text: PropTypes.string,
   dismissible: PropTypes.bool,
+  enabled: PropTypes.bool,
 }
 
 export default NotificationBanner

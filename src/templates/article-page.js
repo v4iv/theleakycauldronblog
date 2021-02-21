@@ -10,14 +10,14 @@ import Share from '../components/Share'
 import CommentBox from '../components/CommentBox'
 
 const ArticlePage = (props) => {
-  const { data: { markdownRemark: { id, html, fields: { slug }, frontmatter: { title, meta_title, meta_description, cover, date, author, author_link, tags } } } } = props
+  const { data: { markdownRemark: { id, html, fields: { slug }, frontmatter: { title, metaTitle, metaDescription, cover, date, author, authorLink, tags } } } } = props
 
   return (
     <Layout>
       <SE0
         title={title}
-        meta_title={meta_title}
-        meta_desc={meta_description}
+        metaTitle={metaTitle}
+        metaDescription={metaDescription}
         cover={cover.publicURL}
         slug={slug}
         date={date}
@@ -39,13 +39,13 @@ const ArticlePage = (props) => {
           tags={tags}
           title={title}
           author={author}
-          author_link={author_link}
+          authorLink={authorLink}
         />
 
         <section className='mw8 center'>
-          <Share title={title} slug={slug} excerpt={meta_description} siteUrl={config.siteUrl} pathPrefix={config.pathPrefix} />
+          <Share title={title} slug={slug} excerpt={metaDescription} siteURL={config.siteUrl} pathPrefix={config.pathPrefix} />
 
-          <CommentBox id={id} title={title} site_url={config.siteUrl} slug={slug} path_prefix={config.pathPrefix}/>
+          <CommentBox id={id} title={title} siteURL={config.siteUrl} slug={slug} pathPrefix={config.pathPrefix}/>
         </section>
       </section>
     </Layout>
@@ -55,6 +55,8 @@ const ArticlePage = (props) => {
 ArticlePage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
+      id: PropTypes.string,
+      html: PropTypes.any,
       fields: PropTypes.shape({
         slug: PropTypes.string,
       }),
@@ -62,9 +64,10 @@ ArticlePage.propTypes = {
         date: PropTypes.string,
         title: PropTypes.string,
         author: PropTypes.string,
+        authorLink: PropTypes.string,
         cover: PropTypes.object,
-        meta_title: PropTypes.string,
-        meta_description: PropTypes.string,
+        metaTitle: PropTypes.string,
+        metaDescription: PropTypes.string,
         tags: PropTypes.array,
       }),
     }),
@@ -85,7 +88,7 @@ export const articlePageQuery = graphql`
                 date(formatString: "MMMM DD, YYYY")
                 title
                 author
-                author_link
+                authorLink
                 cover {
                     childImageSharp {
                         fluid(maxWidth: 800, quality: 72) {
@@ -94,8 +97,8 @@ export const articlePageQuery = graphql`
                     }
                     publicURL
                 }
-                meta_title
-                meta_description
+                metaTitle
+                metaDescription
                 tags
             }
         }

@@ -3,11 +3,11 @@ templateKey: article-page
 title: Mushroom Stroganoff with Smetana (Sour Cream) Recipe
 slug: mushroom-stroganoff-with-smetana-sour-cream-recipe
 author: Vaibhav Sharma
-author_link: https://twitter.com/vaibhaved
+authorLink: https://twitter.com/vaibhaved
 date: 2020-03-23T16:42:53.354Z
 cover: /img/mushroom-stroganoff-with-sour-cream.jpg
-meta_title: Make Classic Mushroom Stroganoff with this easy recipe
-meta_description: >-
+metaTitle: Make Classic Mushroom Stroganoff with this easy recipe
+metaDescription: >-
   A vegetarian twist to a classic Russian dish. This is an easy and tasty recipe
   to enjoy with Rice or Buttered Noodles.
 tags:

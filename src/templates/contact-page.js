@@ -7,19 +7,19 @@ import Layout from '../components/Layout'
 import ContactPageTemplate from '../components/ContactPageTemplate'
 
 const ContactPage = props => {
-  const { data: { markdownRemark: { frontmatter: { title, subtitle, meta_title, meta_description } } } } = props
+  const { data: { markdownRemark: { frontmatter: { title, subtitle, metaTitle, metaDescription } } } } = props
 
   return (
     <Layout>
       <Helmet>
-        <title>{meta_title}</title>
-        <meta name='description' content={meta_description} />
+        <title>{metaTitle}</title>
+        <meta name='description' content={metaDescription} />
         {/* Open Graph Tags */}
         <meta property='og:url' content={`${config.siteUrl}/contact`} />
 
         <meta property='og:title' content={title} />
 
-        <meta property='og:description' content={meta_description} />
+        <meta property='og:description' content={metaDescription} />
 
         <link rel='canonical' href={`${config.siteUrl}/contact`} />
       </Helmet>
@@ -27,8 +27,8 @@ const ContactPage = props => {
       <ContactPageTemplate
         title={title}
         subtitle={subtitle}
-        meta_title={meta_title}
-        meta_description={meta_description}
+        metaTitle={metaTitle}
+        metaDescription={metaDescription}
       />
     </Layout>
   )
@@ -40,8 +40,8 @@ ContactPage.propTypes = {
       frontmatter: PropTypes.shape({
         title: PropTypes.string,
         subtitle: PropTypes.string,
-        meta_title: PropTypes.string,
-        meta_description: PropTypes.string,
+        metaTitle: PropTypes.string,
+        metaDescription: PropTypes.string,
       }),
     }),
   }),
@@ -55,8 +55,8 @@ export const contactPageQuery = graphql`
       frontmatter {
         title
         subtitle
-        meta_title
-        meta_description
+          metaTitle
+          metaDescription
       }
     }
   }

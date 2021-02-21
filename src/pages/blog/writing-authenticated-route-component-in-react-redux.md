@@ -3,11 +3,11 @@ templateKey: article-page
 title: Writing Authenticated Route Component in React Redux
 slug: writing-authenticated-route-component-in-react-redux
 author: Vaibhav Sharma
-author_link: https://twitter.com/vaibhaved
+authorLink: https://twitter.com/vaibhaved
 date: '2018-06-02T09:21:12+05:30'
 cover: /img/react_redux_authenticated_routes.jpg
-meta_title: Writing Authenticated Route Component in React Redux
-meta_description: >-
+metaTitle: Writing Authenticated Route Component in React Redux
+metaDescription: >-
   Writing Authenticated Routes which will redirect to signin page if the user is
   not authenticated and once signed in it'll redirect back to the same page.
 tags:

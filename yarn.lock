@@ -9700,6 +9700,7 @@ fsevents@~2.3.1:
     tachyons-sass: ^4.9.5
     trim-right: ^1.0.1
     uglifyjs-webpack-plugin: ^2.2.0
+    web-vitals: ^1.1.0
     yup: ^0.32.8
   languageName: unknown
   linkType: soft
@@ -22766,6 +22767,13 @@ fsevents@~2.3.1:
   version: 1.1.4
   resolution: "web-namespaces@npm:1.1.4"
   checksum: 0899d2a4a088b15761b6234ff6610f9598112d58f27adad86f7881ad51631317b47033bfa84cdeb62a37c8b6c3ece618f4ff720fd42c99f4907a1d9390c9dae0
+  languageName: node
+  linkType: hard
+
+"web-vitals@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "web-vitals@npm:1.1.0"
+  checksum: b75f7929f0b0bbd055c67eab95024c16038dcc808873dd7406225318c79491f011d9c2cf7c8cf68109c21fb0e9fa292eee3977b9ac780626d17ad25b36cd2ffe
   languageName: node
   linkType: hard
 

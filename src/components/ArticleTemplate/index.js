@@ -8,7 +8,7 @@ import './styles.scss'
 import 'prismjs/themes/prism-tomorrow.css'
 
 const ArticleTemplate = (props) => {
-  const { content, date, contentComponent, cover, tags, title, author, author_link } = props
+  const { content, date, contentComponent, cover, tags, title, author, authorLink } = props
   const PostContent = contentComponent || Content
 
   return (
@@ -19,7 +19,7 @@ const ArticleTemplate = (props) => {
 
           <div className='flex db mb4'>
             <p className='f5 f4-l db fw1 baskerville mb4-l mb2'><a
-              href={author_link}
+              href={authorLink}
               className='no-underline black dim'>{author}</a> | {date}
             </p>
 
@@ -62,7 +62,7 @@ ArticleTemplate.propTypes = {
   tags: PropTypes.array,
   title: PropTypes.string,
   author: PropTypes.string,
-  author_link: PropTypes.string,
+  authorLink: PropTypes.string,
 }
 
 export default ArticleTemplate

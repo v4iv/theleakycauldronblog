@@ -3,11 +3,11 @@ templateKey: article-page
 title: Can Psychedelics Lift the Veil to Consciousness?
 slug: psychedelics-consciousness-iit
 author: Vaibhav Sharma
-author_link: https://instagram.com/theleakycauldronblog
+authorLink: https://instagram.com/theleakycauldronblog
 date: 2020-12-25T20:24:57.539Z
 cover: /img/dima-pechurin-psychedelic-consciousness-iit.jpg
-meta_title: Can Psychedelics Lift the Veil to Consciousness?
-meta_description: "Psychedelic down-regulates the part of brain that controls
+metaTitle: Can Psychedelics Lift the Veil to Consciousness?
+metaDescription: "Psychedelic down-regulates the part of brain that controls
   our ego letting us truly see what it means to be one with the universe, and
   may hold the answer to the panpsychic world of integrated information theory.
   "

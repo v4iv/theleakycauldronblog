@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import { navigate } from '@reach/router'
 import { Index } from 'elasticlunr'
@@ -14,9 +15,9 @@ const SearchBox = (props) => {
   const [active, setActive] = useState(false)
 
   const handleChange = async evt => {
-    const query_value = evt.target.value
+    const queryValue = evt.target.value
 
-    await navigate(`?q=${encodeURIComponent(query_value)}`, { replace: true })
+    await navigate(`?q=${encodeURIComponent(queryValue)}`, { replace: true })
   }
 
   useEffect(() => {
@@ -116,6 +117,13 @@ const SearchBox = (props) => {
         </div>}
     </div>
   )
+}
+
+SearchBox.propTypes = {
+  search: PropTypes.shape({
+    q: PropTypes.string,
+  }),
+  searchIndex: PropTypes.any,
 }
 
 export default withLocation(SearchBox)

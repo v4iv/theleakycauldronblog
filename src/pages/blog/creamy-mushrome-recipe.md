@@ -3,11 +3,11 @@ templateKey: article-page
 title: Creamy MushRome Mushroom Recipe
 slug: creamy-mushrome-mushroom-recipe
 author: Vaibhav Sharma
-author_link: https://twitter.com/vaibhaved
+authorLink: https://twitter.com/vaibhaved
 date: 2019-03-23T18:33:42.477Z
 cover: /img/mushrome.jpg
-meta_title: Enjoy tasty Creamy MushRome Recipe
-meta_description: >-
+metaTitle: Enjoy tasty Creamy MushRome Recipe
+metaDescription: >-
   Taste the creamy mildly spicy deliciousness of this mushroom recipe, that
   cooks fast and leaves you craving for more.
 tags:

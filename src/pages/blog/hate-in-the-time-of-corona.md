@@ -3,11 +3,11 @@ templateKey: article-page
 title: Hate in the Time of Corona
 slug: hate-in-the-time-of-corona
 author: Vaibhav Sharma
-author_link: https://twitter.com/aleakycauldron
+authorLink: https://twitter.com/aleakycauldron
 date: 2020-10-20T18:30:38.938Z
 cover: /img/bram-hate-in-the-time-of-corona.jpg
-meta_title: Hate in the Time of Corona
-meta_description: Discover how fear drives humanity, which was once the gift
+metaTitle: Hate in the Time of Corona
+metaDescription: Discover how fear drives humanity, which was once the gift
   that helped us evolve but has now backfired leading us to hate and how we need
   compassion to counter this situation.
 tags:

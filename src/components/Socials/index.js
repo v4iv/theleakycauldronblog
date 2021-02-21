@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const Socials = (props) => {
   const { siteRss } = props
@@ -89,6 +90,10 @@ const Socials = (props) => {
       </a>
     </div>
   )
+}
+
+Socials.propTypes = {
+  siteRss: PropTypes.string,
 }
 
 export default Socials
