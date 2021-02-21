@@ -114,7 +114,12 @@ module.exports = {
     `gatsby-plugin-pinterest`,
     `gatsby-plugin-twitter`,
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        indentedSyntax: true,
+      },
+    },
     {
       resolve: `gatsby-plugin-nprogress`,
       options: {
@@ -142,7 +147,7 @@ module.exports = {
       resolve: `gatsby-plugin-google-tagmanager`,
       options: {
         id: process.env.GTM_ID,
-        includeInDevelopment: true,
+        includeInDevelopment: false,
         defaultDataLayer: { platform: 'gatsby' },
       },
     },
