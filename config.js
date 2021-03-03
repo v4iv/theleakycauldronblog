@@ -8,6 +8,7 @@ const config = {
   siteRss: `/rss.xml`,
   googleTagManagerID: process.env.GTM_ID || ``, // GTM tracking ID.
   userName: `Vaibhav Sharma`,
+  coffeeLink: `https://www.buymeacoffee.com/vaibhavsharma`,
   userTwitter: `aleakycauldron`,
   siteFBAppID: ``,
   userLocation: `Delhi NCR, India`,
