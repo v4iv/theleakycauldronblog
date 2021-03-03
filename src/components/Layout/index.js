@@ -33,7 +33,7 @@ const Layout = (props) => (
 
       <div>{props.children}</div>
 
-      <Footer copyright={config.copyright} siteRss={config.siteRss} />
+      <Footer copyright={config.copyright} siteRss={config.siteRss} coffeeLink={config.coffeeLink} />
 
       <CookieConsent
         acceptOnScroll

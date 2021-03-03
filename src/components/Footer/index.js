@@ -2,9 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Socials from '../Socials'
 import { NewsletterForm } from '../forms'
+import BuyMeACoffee from '../BuyMeACoffee'
 
 const Footer = (props) => {
-  const { copyright, siteRss } = props
+  const {
+    copyright,
+    siteRss,
+    coffeeLink,
+  } = props
 
   return <footer className='pa4 pa5-l black-70 bt b--black-10 mw8 center pv5'>
     <section className="center cf mb4">
@@ -24,12 +29,18 @@ const Footer = (props) => {
         </p>
       </div>
 
-      <Socials siteRss={siteRss} />
+      <Socials siteRss={siteRss}/>
     </div>
 
     <div className='db dn-ns'>
       <p className='f7 black-70 mt4 tc'>
-        {copyright} Powered by <a className='link black hover-purple' href='https://www.gatsbyjs.org' target='_blank' rel='noreferrer nofollow noopener'>Gatsby</a>
+        {copyright} Powered by <a className='link black hover-purple' href='https://www.gatsbyjs.com' target='_blank' rel='noreferrer nofollow noopener'>Gatsby</a>
+      </p>
+    </div>
+
+    <div className='dbx'>
+      <p className='f7 black-70 mt4 tc'>
+        <BuyMeACoffee coffeeLink={coffeeLink}/>
       </p>
     </div>
   </footer>
@@ -38,6 +49,7 @@ const Footer = (props) => {
 Footer.propTypes = {
   siteRss: PropTypes.string,
   copyright: PropTypes.string,
+  coffeeLink: PropTypes.string,
 }
 
 export default Footer
