@@ -18,7 +18,13 @@ Typeahead search progressively searches and filters as the user types his/her qu
 
 # Setup Cloudflare
 
-We begin by signing up for a Cloudflare Workers account at [workers.cloudflare.com](https://workers.cloudflare.com). In the onboarding screen, select a unique subdomain for our workers.
+We begin by signing up for a Cloudflare Workers account at [workers.cloudflare.com](https://workers.cloudflare.com). 
+
+![cloudflare-workers-homepage](/img/cloudflare-workers-homepage.png "cloudflare-workers-homepage")
+
+In the onboarding screen, select a unique subdomain for our workers.
+
+![setting-up-custom-subdomain](/img/setting-up-custom-subdomain.jpg "setting-up-custom-subdomain")
 
 # Installing Wrangler
 
@@ -34,7 +40,11 @@ Next we login to our Cloudflare Account with Wrangler CLI
 wrangler login
 ```
 
+![wrangler-login-terminal](/img/wrangler-login-terminal.png "wrangler-login-terminal")
+
 This will open up a page on your browser where you can authorise the wrangler.
+
+![wrangler-login-browser](/img/wrangler-login-browser.jpg "wrangler-login-browser")
 
 If it doesn’t work, you can manually log in using the config command and following the prompted instructions.
 
@@ -52,7 +62,11 @@ We’ll be using the TypeScript template for our project. To set it up just use 
 wrangler generate search-api https://github.com/cloudflare/worker-typescript-template
 ```
 
-Next, navigate to the project and open it using your favourite IDE and we can start writing the serverless code. But, before we begin to write our API, we need to add our `accound_id` in the project’s `wrangler.toml` file, as prompted while generating the project.
+Next, navigate to the project and open it using your favourite IDE and we can start writing the serverless code. 
+
+![wrangler-generate-template](/img/wrangler-generate-template.jpg "wrangler-generate-template")
+
+But, before we begin to write our API, we need to add our `accound_id` in the project’s `wrangler.toml` file, as prompted while generating the project.
 
 # Writing the API
 
@@ -283,7 +297,7 @@ import "gestalt/dist/gestalt.css"
 
 Then in the `App.tsx` file, we delete the pre-existing code, make it a fresh `React Function Component` and add the following code for our Search Field.
 
-```typescript
+```jsx
 import React from 'react';
 import {Box, Container, SearchField} from "gestalt";
 
@@ -428,5 +442,7 @@ export default App;
 ```
 
 The results should look something like this.
+
+![typeahead-search-final](/img/final-product.png "typeahead-search-final")
 
 We can deploy the react app with Cloudflare Pages or with Cloudflare Workers as well.
