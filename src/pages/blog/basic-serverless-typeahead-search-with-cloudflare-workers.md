@@ -54,7 +54,7 @@ wrangler config
 
 # Setup A Worker Project
 
-Wrangler CLI lets you set up a Cloudflare Worker project easily, as well as allows you to use Templates. For example, Default, Webpack or TypeScript Worker Template.
+Wrangler CLI lets you set up a Cloudflare Worker project easily, as well as allows you to use Templates.
 
 We’ll be using the TypeScript template for our project. To set it up just use the following command.
 
