@@ -70,7 +70,7 @@ But, before we begin to write our API, we need to add our `accound_id` in the pr
 
 # Writing the API
 
-For our search to work there needs to be an index where our data is stored, here we’ll be using a JSON File of all the *Pokémons* and their ID, that I generated using [PokeAPI](https://pokeapi.co).
+For our search to work there needs to be an index where our data is stored, here we’ll be using a [JSON File](https://raw.githubusercontent.com/v4iv/pokedex/master/search/search-index.json) of all the *Pokémons* and their ID, that I generated using [PokeAPI](https://pokeapi.co).
 
 ```json
 [
@@ -112,7 +112,7 @@ For our search to work there needs to be an index where our data is stored, here
 ]
 ```
 
-You can download and add it to the project’s `src` folder.
+You can download and add it to the project’s `src` folder as `pokedex.json`.
 
 But we can’t directly import a JSON module to our typescript file, for that we need to add the following to the project’s `tsconfig.json` file.
 
