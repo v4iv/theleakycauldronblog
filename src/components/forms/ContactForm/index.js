@@ -1,6 +1,6 @@
 import React from 'react'
 import { Formik, Field, Form } from 'formik'
-import { navigate } from '@reach/router'
+import { navigate } from 'gatsby'
 import validationSchema from './validationSchema'
 import { encode } from '../../../utils'
 

@@ -41,40 +41,38 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
 
-  return graphql(`
-    {
-      allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
-        edges {
-          node {
-            excerpt(pruneLength: 250)
-            id
-            fields {
-              slug
+  return graphql(`{
+  allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}) {
+    edges {
+      node {
+        excerpt(pruneLength: 250)
+        id
+        fields {
+          slug
+        }
+        frontmatter {
+          cover {
+            childImageSharp {
+              gatsbyImageData(
+                width: 300
+                quality: 50
+                placeholder: BLURRED
+                layout: CONSTRAINED
+              )
             }
-            frontmatter {
-              cover {
-                childImageSharp{
-                  fluid (maxWidth:300, quality:50){
-                    src
-                    srcSet
-                    aspectRatio
-                    sizes
-                    base64
-                  }
-                }
-                publicURL
-              }
-              title
-              author
-              tags
-              date(formatString: "MMMM DD, YYYY")
-              templateKey
-            }
+            publicURL
           }
+          title
+          author
+          tags
+          date(formatString: "MMMM DD, YYYY")
+          templateKey
         }
       }
     }
-  `).then(result => {
+  }
+}
+`).then(result => {
     if (result.errors) {
       result.errors.forEach(e => console.error(e.toString()))
       return Promise.reject(result.errors)
