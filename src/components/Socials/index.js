@@ -59,7 +59,7 @@ const Socials = (props) => {
       </a>
 
       <a
-        href='https://github.com/v4iv' className='link hover-black dib mr3 black-70' title='Vaibhav Sharma on Github'
+        href='https://github.com/v4iv' className='link hover-black dib black-70' title='Vaibhav Sharma on Github'
         target='_blank'
         rel='noopener nofollow noreferrer'
       >

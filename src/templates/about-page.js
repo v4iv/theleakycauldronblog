@@ -129,7 +129,7 @@ export const aboutPageQuery = graphql`query AboutPage($id: String!) {
       author
       image {
         childImageSharp {
-          gatsbyImageData(quality: 72, layout: FULL_WIDTH)
+          gatsbyImageData(quality: 72, placeholder: BLURRED, width: 500, layout: CONSTRAINED)
         }
         publicURL
       }
