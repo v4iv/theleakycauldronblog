@@ -6818,7 +6818,7 @@ gatsby-plugin-sitemap@^3.0.0:
     pify "^3.0.0"
     sitemap "^1.13.0"
 
-gatsby-plugin-twitter@^3.0.0:
+gatsby-plugin-twitter@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-twitter/-/gatsby-plugin-twitter-3.1.0.tgz#ff8dffd4252932481bac7a7b100a550a9c2c0e56"
   integrity sha512-kgDllGarLlVGoJhGaxFN+Zq3CE/wKSn+vLzuzC1FjmNqn8TprKgOh06BoFSjK2ygAUw+ueVFaizo5MwYYR/Saw==
