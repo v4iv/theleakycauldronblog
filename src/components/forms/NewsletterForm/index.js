@@ -2,7 +2,7 @@ import React from 'react'
 import { Formik, Field } from 'formik'
 import validationSchema from './validationSchema'
 import { encode } from '../../../utils'
-import { navigate } from '@reach/router'
+import { navigate } from 'gatsby'
 
 const NewsletterForm = () => {
   const handleSubmit = (values, { setSubmitting, setErrors, setStatus, resetForm }) => {

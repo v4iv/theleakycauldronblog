@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
-import { Link } from 'gatsby'
-import { navigate } from '@reach/router'
+import { Link, navigate } from 'gatsby'
 import { Index } from 'elasticlunr'
 import withLocation from '../withLocation'
 
@@ -14,10 +13,11 @@ const SearchBox = (props) => {
   const [results, setResults] = useState([])
   const [active, setActive] = useState(false)
 
-  const handleChange = async evt => {
+  const handleChange = evt => {
     const queryValue = evt.target.value
 
-    await navigate(`?q=${encodeURIComponent(queryValue)}`, { replace: true })
+    navigate(`?q=${encodeURIComponent(queryValue)}`, { replace: true })
+      .then(r => console.log('searching %s ...', queryValue))
   }
 
   useEffect(() => {

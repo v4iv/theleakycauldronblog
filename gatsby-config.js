@@ -47,6 +47,7 @@ module.exports = {
         exclude: [`/tags`, `/tags/*`, `/success`, `/subscribed`, `/unsubscribed`, `/unsubscribe`],
       },
     },
+    `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {

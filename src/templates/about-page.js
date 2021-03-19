@@ -120,25 +120,22 @@ AboutPage.propTypes = {
 
 export default AboutPage
 
-export const aboutPageQuery = graphql`
-    query AboutPage($id: String!) {
-        markdownRemark(id: { eq: $id }) {
-            html
-            frontmatter {
-                title
-                subtitle
-                author
-                image {
-                    childImageSharp {
-                        fluid(maxWidth: 1075, quality: 72) {
-                            ...GatsbyImageSharpFluid
-                        }
-                    }
-                    publicURL
-                }
-                metaTitle
-                metaDescription
-            }
+export const aboutPageQuery = graphql`query AboutPage($id: String!) {
+  markdownRemark(id: {eq: $id}) {
+    html
+    frontmatter {
+      title
+      subtitle
+      author
+      image {
+        childImageSharp {
+          gatsbyImageData(quality: 72, layout: FULL_WIDTH)
         }
+        publicURL
+      }
+      metaTitle
+      metaDescription
     }
+  }
+}
 `
