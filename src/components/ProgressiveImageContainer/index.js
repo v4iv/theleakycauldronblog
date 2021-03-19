@@ -4,13 +4,13 @@ import { get } from 'lodash'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 const ProgressiveImageContainer = ({ image, alt, className = '' }) => (typeof image === 'string')
-  ? <img className={className} src={image} alt={alt} />
-  : (get(image, ['childImageSharp', 'fluid']))
+  ? <img className={className} placeholder="blurred" src={image} alt={alt} />
+  : (getImage(image))
     ? <GatsbyImage
       image={getImage(image)}
       className={className}
       alt={alt} />
-    : <img className={className} src={get(image, ['publicURL'], '')} alt={alt} />
+    : <img className={className} placeholder="blurred" src={get(image, ['publicURL'])} alt={alt} />
 
 ProgressiveImageContainer.propTypes = {
   image: PropTypes.any,
