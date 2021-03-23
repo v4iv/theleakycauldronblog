@@ -6,7 +6,7 @@ import 'tachyons-sass/tachyons.scss'
 import SearchBox from '../../components/SearchBox'
 
 const SearchPage = (props) => {
-  const { data } = props
+  const { data, location } = props
   return <>
     <Helmet
       htmlAttributes={{
@@ -26,13 +26,14 @@ const SearchPage = (props) => {
     />
 
     <section className='vh-100 avenir'>
-      <SearchBox searchIndex={data.siteSearchIndex.index}/>
+      <SearchBox location={location} searchIndex={data.siteSearchIndex.index}/>
     </section>
   </>
 }
 
 SearchPage.propTypes = {
   data: PropTypes.object,
+  location: PropTypes.any,
 }
 
 export default SearchPage

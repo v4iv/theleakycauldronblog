@@ -17,7 +17,6 @@ const SearchBox = (props) => {
     const queryValue = evt.target.value
 
     navigate(`?q=${encodeURIComponent(queryValue)}`, { replace: true })
-      .then(r => console.log('searching %s ...', queryValue))
   }
 
   useEffect(() => {
