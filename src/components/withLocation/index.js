@@ -1,5 +1,5 @@
 import React from 'react'
-import { Location } from '@gatsbyjs/reach-router'
+import { Location } from '@reach/router'
 import queryString from 'query-string'
 
 const withLocation = ComponentToWrap => props => (
