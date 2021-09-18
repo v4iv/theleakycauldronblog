@@ -14,7 +14,6 @@ tags:
   - book
   - interesting
   - rant
-  - ""
 ---
 Yesterday I finished reading the book **Fahrenheit 451**, oh wait did I say finished reading, more like, completed listening to the audiobook narrated by *Tim Robbins*. Yes, I’m a *Neil DeGrasse Tyson* certified badass who listens, instead of reads, a book that is all about the dangers of abandoning reading literature. 
 
