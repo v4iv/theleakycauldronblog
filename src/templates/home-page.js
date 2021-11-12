@@ -24,6 +24,7 @@ const PaginationLink = props => {
 PaginationLink.propTypes = {
   url: PropTypes.string,
   text: PropTypes.string,
+  test: PropTypes.bool,
 }
 
 const HomePage = (props) => {
@@ -83,8 +84,8 @@ const HomePage = (props) => {
 HomePage.propTypes = {
   pageContext: PropTypes.shape({
     index: PropTypes.number,
-    first: PropTypes.boolean,
-    last: PropTypes.boolean,
+    first: PropTypes.bool,
+    last: PropTypes.bool,
     group: PropTypes.array,
   }),
 }
