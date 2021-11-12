@@ -36,8 +36,6 @@ const Layout = (props) => (
       <Footer copyright={config.copyright} siteRss={config.siteRss} coffeeLink={config.coffeeLink} />
 
       <CookieConsent
-        acceptOnScroll
-        acceptOnScrollPercentage={5}
         enableDeclineButton
         disableButtonStyles
         location='bottom'
