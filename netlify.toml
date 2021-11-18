@@ -4,3 +4,23 @@
 [build.environment]
   RUBY_VERSION = "2.6.2"
   NODE_VERSION = "17.0.1"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    cache-control = "public, max-age=31536000, immutable"
+
+  for = "/*.css"
+  [headers.values]
+    cache-control = "public, max-age=31536000, immutable"
+
+  for = "/sw.js"
+  [headers.values]
+    cache-control = "public, max-age=0, must-revalidate"
+
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "no-referrer-when-downgrade"
