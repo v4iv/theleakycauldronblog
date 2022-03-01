@@ -47,6 +47,7 @@ module.exports = {
         excludes: [`/tags`, `/tags/*`, `/success`, `/subscribed`, `/unsubscribed`, `/unsubscribe`],
       },
     },
+    `gatsby-plugin-remove-trailing-slashes`,
     `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
