@@ -17,11 +17,11 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     ) {
       slug = `/${_.kebabCase(node.frontmatter.title)}`
     } else if (parsedFilePath.name !== 'index' && parsedFilePath.dir !== '') {
-      slug = `/${parsedFilePath.dir}/${parsedFilePath.name}/`
+      slug = `/${parsedFilePath.dir}/${parsedFilePath.name}`
     } else if (parsedFilePath.dir === '') {
-      slug = `/${parsedFilePath.name}/`
+      slug = `/${parsedFilePath.name}`
     } else {
-      slug = `/${parsedFilePath.dir}/`
+      slug = `/${parsedFilePath.dir}`
     }
 
     if (Object.prototype.hasOwnProperty.call(node, 'frontmatter')) {
@@ -136,7 +136,7 @@ exports.createPages = ({ actions, graphql }) => {
 
     // Make tag pages
     tags.forEach(tag => {
-      const tagPath = `/tags/${_.kebabCase(tag)}/`
+      const tagPath = `/tags/${_.kebabCase(tag)}`
 
       createPage({
         path: tagPath,
