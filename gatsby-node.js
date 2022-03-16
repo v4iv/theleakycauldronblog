@@ -1,10 +1,10 @@
-const _ = require('lodash')
 const path = require('path')
+const kebabCase = require('lodash.kebabcase')
 const pathPrefix = require('./config').pathPrefix
 const createPaginatedPages = require('gatsby-paginate')
 
-exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions
+exports.onCreateNode = ({node, actions, getNode}) => {
+  const {createNodeField} = actions
   let slug
 
   if (node.internal.type === `MarkdownRemark`) {
@@ -15,7 +15,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       Object.prototype.hasOwnProperty.call(node, 'frontmatter') &&
       Object.prototype.hasOwnProperty.call(node.frontmatter, 'title')
     ) {
-      slug = `/${_.kebabCase(node.frontmatter.title)}`
+      slug = `/${kebabCase(node.frontmatter.title)}`
     } else if (parsedFilePath.name !== 'index' && parsedFilePath.dir !== '') {
       slug = `/${parsedFilePath.dir}/${parsedFilePath.name}`
     } else if (parsedFilePath.dir === '') {
@@ -25,8 +25,15 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     }
 
     if (Object.prototype.hasOwnProperty.call(node, 'frontmatter')) {
-      if (Object.prototype.hasOwnProperty.call(node.frontmatter, 'slug') && Object.prototype.hasOwnProperty.call(node.frontmatter, 'cover')) { slug = `/blog/${_.kebabCase(node.frontmatter.slug)}` } else if (Object.prototype.hasOwnProperty.call(node.frontmatter, 'slug')) {
-        slug = `/${_.kebabCase(node.frontmatter.slug)}`
+      if (
+        Object.prototype.hasOwnProperty.call(node.frontmatter, 'slug') &&
+        Object.prototype.hasOwnProperty.call(node.frontmatter, 'cover')
+      ) {
+        slug = `/blog/${kebabCase(node.frontmatter.slug)}`
+      } else if (
+        Object.prototype.hasOwnProperty.call(node.frontmatter, 'slug')
+      ) {
+        slug = `/${kebabCase(node.frontmatter.slug)}`
       }
     }
 
@@ -38,42 +45,43 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 }
 
-exports.createPages = ({ actions, graphql }) => {
-  const { createPage } = actions
+exports.createPages = ({actions, graphql}) => {
+  const {createPage} = actions
 
-  return graphql(`{
-  allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}) {
-    edges {
-      node {
-        excerpt(pruneLength: 250)
-        id
-        fields {
-          slug
-        }
-        frontmatter {
-          cover {
-            childImageSharp {
-              gatsbyImageData(
-                quality: 72
-                placeholder: BLURRED
-                layout: FULL_WIDTH
-              )
+  return graphql(`
+    {
+      allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}) {
+        edges {
+          node {
+            excerpt(pruneLength: 250)
+            id
+            fields {
+              slug
             }
-            publicURL
+            frontmatter {
+              cover {
+                childImageSharp {
+                  gatsbyImageData(
+                    quality: 72
+                    placeholder: BLURRED
+                    layout: FULL_WIDTH
+                  )
+                }
+                publicURL
+              }
+              title
+              author
+              tags
+              date(formatString: "MMMM DD, YYYY")
+              templateKey
+            }
           }
-          title
-          author
-          tags
-          date(formatString: "MMMM DD, YYYY")
-          templateKey
         }
       }
     }
-  }
-}
-`).then(result => {
+  `).then((result) => {
     if (result.errors) {
-      result.errors.forEach(e => console.error(e.toString()))
+      result.errors.forEach((e) => console.error(e.toString()))
       return Promise.reject(result.errors)
     }
 
@@ -82,8 +90,8 @@ exports.createPages = ({ actions, graphql }) => {
     // Post pages:
     let posts = []
     // Iterate through each post/page, putting all found posts (where templateKey = article-page) into `posts`
-    allNodes.forEach(edge => {
-      if (_.isMatch(edge.node.frontmatter, { templateKey: 'article-page' })) {
+    allNodes.forEach((edge) => {
+      if (edge?.node?.frontmatter?.templateKey === 'article-page') {
         posts = posts.concat(edge)
       }
     })
@@ -126,17 +134,18 @@ exports.createPages = ({ actions, graphql }) => {
     // Tag pages:
     let tags = []
     // Iterate through each post, putting all found tags into `tags`
-    posts.forEach(edge => {
-      if (_.get(edge, `node.frontmatter.tags`)) {
+    posts.forEach((edge) => {
+      if (edge?.node?.frontmatter?.tags) {
         tags = tags.concat(edge.node.frontmatter.tags)
       }
     })
+
     // Eliminate duplicate tags
-    tags = _.uniq(tags)
+    tags = [...new Set(tags)]
 
     // Make tag pages
-    tags.forEach(tag => {
-      const tagPath = `/tags/${_.kebabCase(tag)}`
+    tags.forEach((tag) => {
+      const tagPath = `/tags/${kebabCase(tag)}`
 
       createPage({
         path: tagPath,

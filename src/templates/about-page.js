@@ -1,14 +1,28 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
-import { Helmet } from 'react-helmet'
+import {graphql} from 'gatsby'
+import {Helmet} from 'react-helmet'
 import config from '../../config'
-import { HTMLContent } from '../components/Content'
+import {HTMLContent} from '../components/Content'
 import Layout from '../components/Layout'
 import AboutPageTemplate from '../components/AboutPageTemplate'
 
 const AboutPage = (props) => {
-  const { data: { markdownRemark: { html, frontmatter: { title, subtitle, author, metaTitle, metaDescription, image } } } } = props
+  const {
+    data: {
+      markdownRemark: {
+        html,
+        frontmatter: {
+          title,
+          subtitle,
+          author,
+          metaTitle,
+          metaDescription,
+          image,
+        },
+      },
+    },
+  } = props
   const breadcrumbSchemaOrgJSONLD = {
     '@context': 'http://schema.org',
     '@type': 'BreadcrumbList',
@@ -67,27 +81,27 @@ const AboutPage = (props) => {
       <Helmet>
         <title>{metaTitle}</title>
 
-        <meta name='description' content={metaDescription} />
+        <meta name="description" content={metaDescription} />
 
         {/* Open Graph Tags */}
-        <meta property='og:url' content={`${config.siteUrl}/about`} />
+        <meta property="og:url" content={`${config.siteUrl}/about`} />
 
-        <meta property='og:title' content={title} />
+        <meta property="og:title" content={title} />
 
-        <meta property='og:description' content={metaDescription} />
+        <meta property="og:description" content={metaDescription} />
 
-        <meta property='og:image' content={image} />
+        <meta property="og:image" content={image} />
 
         {/* Schema.org tags */}
-        <script type='application/ld+json'>
+        <script type="application/ld+json">
           {JSON.stringify(breadcrumbSchemaOrgJSONLD)}
         </script>
 
-        <script type='application/ld+json'>
+        <script type="application/ld+json">
           {JSON.stringify(aboutPageSchemaOrgJSONLD)}
         </script>
 
-        <link rel='canonical' href={`${config.siteUrl}/about`} />
+        <link rel="canonical" href={`${config.siteUrl}/about`} />
       </Helmet>
 
       <AboutPageTemplate
@@ -120,27 +134,28 @@ AboutPage.propTypes = {
 
 export default AboutPage
 
-export const aboutPageQuery = graphql`query AboutPage($id: String!) {
-  markdownRemark(id: {eq: $id}) {
-    html
-    frontmatter {
-      title
-      subtitle
-      author
-      image {
-        childImageSharp {
-          gatsbyImageData(
-              quality: 72, 
-              placeholder: BLURRED, 
-              width: 500, 
+export const aboutPageQuery = graphql`
+  query AboutPage($id: String!) {
+    markdownRemark(id: {eq: $id}) {
+      html
+      frontmatter {
+        title
+        subtitle
+        author
+        image {
+          childImageSharp {
+            gatsbyImageData(
+              quality: 72
+              placeholder: BLURRED
+              width: 500
               layout: CONSTRAINED
-          )
+            )
+          }
+          publicURL
         }
-        publicURL
+        metaTitle
+        metaDescription
       }
-      metaTitle
-      metaDescription
     }
   }
-}
 `
