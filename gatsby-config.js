@@ -44,10 +44,16 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
-        excludes: [`/tags`, `/tags/*`, `/success`, `/subscribed`, `/unsubscribed`, `/unsubscribe`],
+        excludes: [
+          `/tags`,
+          `/tags/*`,
+          `/success`,
+          `/subscribed`,
+          `/unsubscribed`,
+          `/unsubscribe`,
+        ],
       },
     },
-    `gatsby-plugin-remove-trailing-slashes`,
     `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -145,7 +151,7 @@ module.exports = {
       options: {
         id: process.env.GTM_ID,
         includeInDevelopment: false,
-        defaultDataLayer: { platform: 'gatsby' },
+        defaultDataLayer: {platform: 'gatsby'},
       },
     },
     {
@@ -183,14 +189,16 @@ module.exports = {
               handler: `CacheFirst`,
             },
             {
-              urlPattern: /^https?:.*\/page-data\/.*\/(page-data|app-data)\.json$/,
+              urlPattern:
+                /^https?:.*\/page-data\/.*\/(page-data|app-data)\.json$/,
               handler: `NetworkFirst`,
               options: {
                 networkTimeoutSeconds: 1,
               },
             },
             {
-              urlPattern: /^https?:.*\.(png|jpg|jpeg|webp|svg|gif|tiff|js|woff|woff2|json|css)$/,
+              urlPattern:
+                /^https?:.*\.(png|jpg|jpeg|webp|svg|gif|tiff|js|woff|woff2|json|css)$/,
               handler: `StaleWhileRevalidate`,
             },
             {
@@ -212,7 +220,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-feed`,
       options: {
-        setup (ref) {
+        setup(ref) {
           const ret = ref.query.site.siteMetadata.rssMetadata
           ret.allMarkdownRemark = ref.query.allMarkdownRemark
           ret.generator = config.siteTitle
@@ -237,13 +245,14 @@ module.exports = {
               `,
         feeds: [
           {
-            serialize (ctx) {
+            serialize(ctx) {
               const rssMetadata = ctx.query.site.siteMetadata.rssMetadata
               return ctx.query.allMarkdownRemark.edges
                 .filter(
-                  edge => edge.node.frontmatter.templateKey === 'article-page',
+                  (edge) =>
+                    edge.node.frontmatter.templateKey === 'article-page',
                 )
-                .map(edge => ({
+                .map((edge) => ({
                   categories: edge.node.frontmatter.tags,
                   date: edge.node.frontmatter.date,
                   title: edge.node.frontmatter.title,
@@ -252,7 +261,7 @@ module.exports = {
                   author: edge.node.frontmatter.author,
                   url: rssMetadata.siteURL + edge.node.fields.slug,
                   guid: rssMetadata.siteURL + edge.node.fields.slug,
-                  custom_elements: [{ 'content:encoded': edge.node.html }],
+                  custom_elements: [{'content:encoded': edge.node.html}],
                 }))
             },
             query: `
@@ -284,7 +293,6 @@ module.exports = {
                   `,
             output: config.siteRss,
             title: config.siteTitle,
-
           },
         ],
       },
@@ -298,11 +306,11 @@ module.exports = {
         resolvers: {
           // For any node of type MarkdownRemark, list how to resolve the fields` values
           MarkdownRemark: {
-            title: node => node.frontmatter.title,
-            author: node => node.frontmatter.author,
-            tags: node => node.frontmatter.tags,
-            slug: node => node.fields.slug,
-            templateKey: node => node.frontmatter.templateKey,
+            title: (node) => node.frontmatter.title,
+            author: (node) => node.frontmatter.author,
+            tags: (node) => node.frontmatter.tags,
+            slug: (node) => node.fields.slug,
+            templateKey: (node) => node.frontmatter.templateKey,
           },
         },
       },
@@ -311,7 +319,13 @@ module.exports = {
       resolve: `gatsby-plugin-netlify-cms`,
       options: {
         modulePath: path.join(__dirname, `src`, `cms`, `cms.js`),
-        stylesPath: path.join(__dirname, `src`, `assets`, `stylesheets`, `styles.scss`),
+        stylesPath: path.join(
+          __dirname,
+          `src`,
+          `assets`,
+          `stylesheets`,
+          `styles.scss`,
+        ),
         enableIdentityWidget: true,
         htmlTitle: `CMS | ${config.siteTitle}`,
       },
@@ -321,15 +335,9 @@ module.exports = {
       options: {
         mergeSecurityHeaders: false,
         headers: {
-          '/*.js': [
-            'cache-control: public, max-age=31536000, immutable',
-          ],
-          '/*.css': [
-            'cache-control: public, max-age=31536000, immutable',
-          ],
-          '/sw.js': [
-            'cache-control: public, max-age=0, must-revalidate',
-          ],
+          '/*.js': ['cache-control: public, max-age=31536000, immutable'],
+          '/*.css': ['cache-control: public, max-age=31536000, immutable'],
+          '/sw.js': ['cache-control: public, max-age=0, must-revalidate'],
           '/*': [
             `X-Frame-Options: DENY`,
             `X-XSS-Protection: 1; mode=block`,

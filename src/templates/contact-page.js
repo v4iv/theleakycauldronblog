@@ -1,27 +1,33 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
-import { Helmet } from 'react-helmet'
+import {graphql} from 'gatsby'
+import {Helmet} from 'react-helmet'
 import config from '../../config'
 import Layout from '../components/Layout'
 import ContactPageTemplate from '../components/ContactPageTemplate'
 
-const ContactPage = props => {
-  const { data: { markdownRemark: { frontmatter: { title, subtitle, metaTitle, metaDescription } } } } = props
+const ContactPage = (props) => {
+  const {
+    data: {
+      markdownRemark: {
+        frontmatter: {title, subtitle, metaTitle, metaDescription},
+      },
+    },
+  } = props
 
   return (
     <Layout>
       <Helmet>
         <title>{metaTitle}</title>
-        <meta name='description' content={metaDescription} />
+        <meta name="description" content={metaDescription} />
         {/* Open Graph Tags */}
-        <meta property='og:url' content={`${config.siteUrl}/contact`} />
+        <meta property="og:url" content={`${config.siteUrl}/contact`} />
 
-        <meta property='og:title' content={title} />
+        <meta property="og:title" content={title} />
 
-        <meta property='og:description' content={metaDescription} />
+        <meta property="og:description" content={metaDescription} />
 
-        <link rel='canonical' href={`${config.siteUrl}/contact`} />
+        <link rel="canonical" href={`${config.siteUrl}/contact`} />
       </Helmet>
 
       <ContactPageTemplate
@@ -51,12 +57,12 @@ export default ContactPage
 
 export const contactPageQuery = graphql`
   query ContactPage($id: String!) {
-    markdownRemark(id: { eq: $id }) {
+    markdownRemark(id: {eq: $id}) {
       frontmatter {
         title
         subtitle
-          metaTitle
-          metaDescription
+        metaTitle
+        metaDescription
       }
     }
   }

@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Disqus } from 'gatsby-plugin-disqus'
+import {Disqus} from 'gatsby-plugin-disqus'
 
 const CommentBox = (props) => {
-  const { id, siteURL, pathPrefix = '', slug, title } = props
+  const {id, siteURL, pathPrefix = '', slug, title} = props
 
   const realPrefix = pathPrefix === '/' ? '' : pathPrefix
 
@@ -16,8 +16,8 @@ const CommentBox = (props) => {
   }
 
   return (
-    <section className='mb3 pa3 pa5-l center' key={id}>
-      <Disqus config={disqusConfig}/>
+    <section className="mb3 pa3 pa5-l center" key={id}>
+      <Disqus config={disqusConfig} />
     </section>
   )
 }
