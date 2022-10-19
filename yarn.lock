@@ -1419,7 +1419,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.1.2, @babel/runtime@npm:^7.10.2, @babel/runtime@npm:^7.11.2, @babel/runtime@npm:^7.12.0, @babel/runtime@npm:^7.12.13, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.13.10, @babel/runtime@npm:^7.15.4, @babel/runtime@npm:^7.16.3, @babel/runtime@npm:^7.16.7, @babel/runtime@npm:^7.17.7, @babel/runtime@npm:^7.18.0, @babel/runtime@npm:^7.18.3, @babel/runtime@npm:^7.18.9, @babel/runtime@npm:^7.2.0, @babel/runtime@npm:^7.3.4, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.7.2, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.8.7, @babel/runtime@npm:^7.9.2":
+"@babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.1.2, @babel/runtime@npm:^7.10.2, @babel/runtime@npm:^7.11.2, @babel/runtime@npm:^7.12.0, @babel/runtime@npm:^7.12.13, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.13.10, @babel/runtime@npm:^7.15.4, @babel/runtime@npm:^7.16.3, @babel/runtime@npm:^7.16.7, @babel/runtime@npm:^7.17.7, @babel/runtime@npm:^7.18.0, @babel/runtime@npm:^7.18.3, @babel/runtime@npm:^7.18.9, @babel/runtime@npm:^7.2.0, @babel/runtime@npm:^7.3.4, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.7.2, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.8.7, @babel/runtime@npm:^7.9.2, @babel/runtime@npm:^7.9.6":
   version: 7.19.4
   resolution: "@babel/runtime@npm:7.19.4"
   dependencies:
@@ -9477,6 +9477,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"gatsby-plugin-web-vitals@npm:^1.0.3":
+  version: 1.0.3
+  resolution: "gatsby-plugin-web-vitals@npm:1.0.3"
+  dependencies:
+    "@babel/runtime": ^7.9.6
+    web-vitals: ^0.2.1
+  checksum: c96a2f37bdd646808a70d9273fdd82b658db29b1a5244ca5f6578a2768fdbb47be5e51b929f07bca141c08ee61711c4487b7c03d6b4f345f140ee928dfc5646a
+  languageName: node
+  linkType: hard
+
 "gatsby-react-router-scroll@npm:^5.24.0":
   version: 5.24.0
   resolution: "gatsby-react-router-scroll@npm:5.24.0"
@@ -9666,6 +9676,7 @@ __metadata:
     gatsby-plugin-sharp: ^4.24.0
     gatsby-plugin-sitemap: ^5.24.0
     gatsby-plugin-twitter: ^4.24.0
+    gatsby-plugin-web-vitals: ^1.0.3
     gatsby-remark-copy-linked-files: ^5.24.0
     gatsby-remark-embedder: ^6.0.1
     gatsby-remark-images: ^6.24.0
@@ -20772,6 +20783,13 @@ __metadata:
   version: 1.1.4
   resolution: "web-namespaces@npm:1.1.4"
   checksum: 5149842ccbfbc56fe4f8758957b3f8c8616a281874a5bb84aa1b305e4436a9bad853d21c629a7b8f174902449e1489c7a6c724fccf60965077c5636bd8aed42b
+  languageName: node
+  linkType: hard
+
+"web-vitals@npm:^0.2.1":
+  version: 0.2.4
+  resolution: "web-vitals@npm:0.2.4"
+  checksum: 128a4e87730b0a02fb6af3eef7d31f9a79b4646e83cfe4465aa8ce6054fe16f7b1f4125a384f1b4f039091bd9513cb54b4e559c0b10ae953c01900786a16b1c2
   languageName: node
   linkType: hard
 
