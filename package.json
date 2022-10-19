@@ -39,6 +39,7 @@
     "gatsby-plugin-sharp": "^4.24.0",
     "gatsby-plugin-sitemap": "^5.24.0",
     "gatsby-plugin-twitter": "^4.24.0",
+    "gatsby-plugin-web-vitals": "^1.0.3",
     "gatsby-remark-copy-linked-files": "^5.24.0",
     "gatsby-remark-embedder": "^6.0.1",
     "gatsby-remark-images": "^6.24.0",
