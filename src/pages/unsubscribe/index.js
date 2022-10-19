@@ -31,13 +31,13 @@ const SuccessPage = () => (
         <h2 className="tc f1-l fw1">Enter Your Email ID to Unsubscribe.</h2>
       </header>
 
-      <p className="fw1 i tc mt4 mt5-l f4 f3-l ma3">
+      <div className="fw1 i tc mt4 mt5-l f4 f3-l ma3">
         <section className="cf mb4">
           <div className="mb4 mb0-ns fl w-100">
             <UnsubscribeForm />
           </div>
         </section>
-      </p>
+      </div>
     </section>
   </>
 )
