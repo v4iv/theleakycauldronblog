@@ -1,110 +1,49 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/a3b02aa4-93ac-47d9-b914-7eb42de75a83/deploy-status)](https://app.netlify.com/sites/theleakycauldronblog/deploys)
+<p align="center">
+  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts">
+    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
+  </a>
+</p>
+<h1 align="center">
+  Gatsby Minimal TypeScript Starter
+</h1>
 
-# Gatsby Starter Blog Tachyons
+## 🚀 Quick start
 
-A truly complete & feature rich Gatsby Blog Starter. Powered by Gatsby and Netlify CMS.
+1.  **Create a Gatsby site.**
 
-## Features
+    Use the Gatsby CLI to create a new site, specifying the minimal TypeScript starter.
 
-* Elastic-Lunr Search
-* Pagination
-* SEO Friendly(Slugs, Sitemap, Schemas, Robots.txt, Meta Tags, GTM etc.)
-* Disqus and Share Support
-* Tags and RSS Feed
-* Progressive Web App with Offline Support
-* Easy Configuration using `config.js` file
-* Tachyons and Sass Support for styling
-* Medium like progressive image loading
-* Code Highlighting with Prism JS
-* Embedding Support (Youtube, Twitter, Instagram etc)
-* Forms using Netlify Forms, Formik & Yup
-* GDPR Cookie Consent
+    ```shell
+    # create a new Gatsby site using the minimal TypeScript starter
+    npm init gatsby -- -ts
+    ```
 
-## Getting Started
-Create your own project with Gatsby CLI:
+2.  **Start developing.**
 
-```shell
-gatsby new myblogname https://github.com/v4iv/theleakycauldronblog.git 
-```
-## Environment Variables
+    Navigate into your new site’s directory and start it up.
 
-* GTM_ID
-* DISQUS_SHORTNAME
+    ```shell
+    cd my-gatsby-site/
+    npm run develop
+    ```
 
-## Available NPM Commands
+3.  **Open the code and start customizing!**
 
-### Develop
+    Your site is now running at http://localhost:8000!
 
-Start a hot-reloading development environment accessible at `localhost:8000`
+    Edit `src/pages/index.tsx` to see your site update in real-time!
 
-```shell
-yarn start
-```
+4.  **Learn more**
 
-### Build
+    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
+    - [Tutorials](https://www.gatsbyjs.com/docs/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
+    - [Guides](https://www.gatsbyjs.com/docs/how-to/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
+    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
+    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
+    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
 
-Get an optimized production build for your site generating static HTML and per-route JavaScript code bundles.
+## 🚀 Quick start (Netlify)
 
-```shell
-yarn build
-```
+Deploy this starter with one click on [Netlify](https://app.netlify.com/signup):
 
-### Serve
-
-gatsby serve — Gatsby starts a local HTML server for testing your built site.
-
-```shell
-yarn serve
-```
-
-### Lint
-
-Lint the code according to eslintrc file, for consistency.
-
-```shell
-yarn lint
-```
-
-### Lint Fix
-
-Auto fix Lint issues.
-
-```shell
-yarn lint:fix
-```
-
-### Clean
-
-Remove the .cache and public for a scratch compile.
-
-```shell
-yarn clean
-```
-
-## Configuration (Very Important!)
-
-To personalize and configure this Starter open `config.js` file and replace the default values.
-
-```javascript
-const config = {
-  siteTitle: `The Leaky Cauldron Blog`, // Site title.
-  siteTitleAlt: `TLC Blog`, // Alternative site title for SEO.
-  siteLogo: `/icons/icon-512x512.png`, // Logo used for SEO and manifest.
-  siteUrl: `https://theleakycauldronblog.com`, // Domain of your website without pathPrefix.
-  pathPrefix: '', // Prefixes all links. For cases when deployed to example.github.io/gatsby-starter-business/.
-  siteDescription: `The Leaky Cauldron Blog is the personal blog of Vaibhav Sharma. A Brew of Awesomeness with a Pinch of Magic...`, // Website description used for RSS feeds/meta description tag.
-  siteRss: `/rss.xml`,
-  userName: `Vaibhav Sharma`,
-  userTwitter: `aleakycauldron`,
-  siteFBAppID: ``,
-  userLocation: `Delhi NCR, India`,
-  copyright: `Copyright © The Leaky Cauldron Blog 2018-${new Date().getFullYear().toString().substr(2, 2)}. All Rights Reserved.`, // Copyright string for the footer of the website and RSS feed.
-  themeColor: `#676767`, // Used for setting manifest and progress theme colors.
-  backgroundColor: `#ffffff`, // Used for setting manifest background color.
-  cookieConsent: `This website uses cookies which are used to collect anonymous information to improve your browsing experience and for analytics and metrics.`,
-}
-```
-
-<a href="https://www.netlify.com">
-  <img src="https://www.netlify.com/img/global/badges/netlify-dark.svg"/>
-</a>
+[<img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-minimal-ts)
