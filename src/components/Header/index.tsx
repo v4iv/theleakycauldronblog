@@ -14,10 +14,6 @@ const Header: React.FC = () => {
         </li>
 
         <li>
-          <Link to="/search">Search</Link>
-        </li>
-
-        <li>
           <Link to="/about">About</Link>
         </li>
 

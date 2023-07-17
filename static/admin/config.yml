@@ -66,7 +66,6 @@ collections:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Subtitle", name: "subtitle", widget: "string" }
           - { label: "Author", name: "author", widget: "string" }
-          - { label: "Slug", name: "slug", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
           - { label: "Meta Title", name: "metaTitle", widget: "string" }
           - {
@@ -86,7 +85,6 @@ collections:
               default: "contact-page",
             }
           - { label: "Title", name: "title", widget: "string" }
-          - { label: "Slug", name: "slug", widget: "string" }
           - { label: "Subtitle", name: "subtitle", widget: "string" }
           - { label: "Meta Title", name: "metaTitle", widget: "string" }
           - {

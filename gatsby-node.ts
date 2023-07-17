@@ -1,5 +1,6 @@
-import type { GatsbyNode } from "gatsby"
 import * as path from "path"
+import type { GatsbyNode } from "gatsby"
+import kebabCase from "lodash.kebabcase"
 import { createFilePath } from "gatsby-source-filesystem"
 
 export const onCreateNode: GatsbyNode["onCreateNode"] = ({
@@ -10,12 +11,23 @@ export const onCreateNode: GatsbyNode["onCreateNode"] = ({
   const { createNodeField } = actions
 
   if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode })
+    let slug
+
+    if (
+      Object.prototype.hasOwnProperty.call(node, "frontmatter") &&
+      // @ts-ignore
+      node?.frontmatter?.templateKey === "article-page"
+    ) {
+      // @ts-ignore
+      slug = `/blog/${kebabCase(node.frontmatter.slug)}`
+    } else {
+      slug = createFilePath({ node, getNode })
+    }
 
     createNodeField({
       name: `slug`,
       node,
-      value,
+      value: slug,
     })
   }
 }
@@ -67,7 +79,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
   const allNodes = result.data.allMarkdownRemark.edges
 
   let articles: any = []
-  // Iterate through each page, putting all found posts (where templateKey = article-page) into `articles`
+
   allNodes.forEach((edge: any) => {
     if (edge?.node?.frontmatter?.templateKey === "article-page") {
       articles = articles.concat(edge)

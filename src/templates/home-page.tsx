@@ -1,11 +1,32 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "@/components/Layout"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { TypographyH2, TypographyP } from "@/components/ui/typography"
+import ArticleList from "@/components/ArticleList"
+import { Button } from "@/components/ui/button"
 
 interface HomePageTemplateProps {
-  data: any
+  data: {
+    allMarkdownRemark: {
+      edges: {
+        node: {
+          excerpt: string
+          fields: {
+            slug: string
+          }
+          frontmatter: {
+            title: string
+            cover: {
+              childImageSharp: any
+              publicURL: string
+            }
+            author: string
+            tags: string[]
+            date: any
+          }
+        }
+      }[]
+    }
+  }
   pageContext: {
     currentPage: number
     numberOfPages: number
@@ -15,7 +36,7 @@ interface HomePageTemplateProps {
 const HomePageTemplate: React.FC<HomePageTemplateProps> = (props) => {
   const {
     data: {
-      allMarkdownRemark: { edges: pages },
+      allMarkdownRemark: { edges: articles },
     },
     pageContext: { currentPage, numberOfPages },
   } = props
@@ -28,34 +49,21 @@ const HomePageTemplate: React.FC<HomePageTemplateProps> = (props) => {
 
   return (
     <Layout>
-      {pages.map(({ node }: any, idx: number) => {
-        const title = node.frontmatter.title
-        const image = getImage(node.frontmatter.cover)!
-        const slug = node.fields.slug
-        const excerpt = node.excerpt
-
-        return (
-          <article key={idx}>
-            <Link to={slug}>
-              <TypographyH2>{title}</TypographyH2>
-            </Link>
-            <Link to={slug}>
-              <GatsbyImage image={image} alt={title} />
-            </Link>
-            <TypographyP>{excerpt}</TypographyP>
-          </article>
-        )
-      })}
+      <ArticleList articles={articles} />
 
       {!isFirst && (
-        <Link to={prevPage} rel="prev">
-          <TypographyP>← Previous Page</TypographyP>
-        </Link>
+        <Button asChild>
+          <Link to={prevPage} rel="prev">
+            ← Previous Page
+          </Link>
+        </Button>
       )}
       {!isLast && (
-        <Link to={nextPage} rel="next">
-          <TypographyP>Next Page →</TypographyP>
-        </Link>
+        <Button asChild>
+          <Link to={nextPage} rel="next">
+            Next Page →
+          </Link>
+        </Button>
       )}
     </Layout>
   )
