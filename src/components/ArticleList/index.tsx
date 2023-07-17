@@ -1,13 +1,13 @@
-import * as React from "react"
-import { Link } from "gatsby"
-import kebabCase from "lodash.kebabcase"
+import * as React from 'react'
+import {Link} from 'gatsby'
+import kebabCase from 'lodash.kebabcase'
 import {
   TypographyH2,
   TypographyLead,
   TypographyMuted,
   TypographyP,
-} from "@/components/ui/typography"
-import { Button } from "@/components/ui/button"
+} from '@/components/ui/typography'
+import {Button} from '@/components/ui/button'
 
 interface ArticleListProps {
   articles: {
@@ -31,11 +31,11 @@ interface ArticleListProps {
 }
 
 const ArticleList: React.FC<ArticleListProps> = (props) => {
-  const { articles } = props
+  const {articles} = props
 
   return (
     <>
-      {articles.map(({ node }, idx) => {
+      {articles.map(({node}, idx) => {
         const title = node.frontmatter.title
         const slug = node.fields.slug
         const excerpt = node.excerpt

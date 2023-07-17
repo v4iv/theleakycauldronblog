@@ -1,19 +1,31 @@
-import * as React from "react"
-import { Link, HeadFC, PageProps } from "gatsby"
+import * as React from 'react'
+import {Link, HeadFC, PageProps} from 'gatsby'
+import Layout from '@/components/Layout'
+import {
+  TypographyH1,
+  TypographyLead,
+  TypographyList,
+  TypographyP,
+} from '@/components/ui/typography'
+import {Separator} from '@/components/ui/separator'
 
 const NotFoundPage: React.FC<PageProps> = () => {
   return (
-    <main>
-      <section>
-        <h2>404 | Page Not Found</h2>
+    <Layout>
+      <div>
+        <TypographyH1>404 | Page Not Found</TypographyH1>
 
-        <p>Sorry, we can&apos;t find the page you are looking for.</p>
-      </section>
+        <TypographyLead>
+          Sorry, we can&apos;t find the page you are looking for.
+        </TypographyLead>
+      </div>
 
-      <section>
-        <h5>Are you looking for one of these?</h5>
+      <Separator />
 
-        <ul>
+      <div>
+        <TypographyP>Are you looking for one of these?</TypographyP>
+
+        <TypographyList>
           <li>
             <Link to="/" replace>
               Home
@@ -31,15 +43,9 @@ const NotFoundPage: React.FC<PageProps> = () => {
               Contact
             </Link>
           </li>
-
-          <li>
-            <Link to="/search" replace>
-              Search
-            </Link>
-          </li>
-        </ul>
-      </section>
-    </main>
+        </TypographyList>
+      </div>
+    </Layout>
   )
 }
 

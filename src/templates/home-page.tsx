@@ -1,8 +1,8 @@
-import * as React from "react"
-import { Link, graphql } from "gatsby"
-import Layout from "@/components/Layout"
-import ArticleList from "@/components/ArticleList"
-import { Button } from "@/components/ui/button"
+import * as React from 'react'
+import {Link, graphql} from 'gatsby'
+import Layout from '@/components/Layout'
+import ArticleList from '@/components/ArticleList'
+import {Button} from '@/components/ui/button'
 
 interface HomePageTemplateProps {
   data: {
@@ -36,16 +36,16 @@ interface HomePageTemplateProps {
 const HomePageTemplate: React.FC<HomePageTemplateProps> = (props) => {
   const {
     data: {
-      allMarkdownRemark: { edges: articles },
+      allMarkdownRemark: {edges: articles},
     },
-    pageContext: { currentPage, numberOfPages },
+    pageContext: {currentPage, numberOfPages},
   } = props
 
   const isFirst = currentPage === 1
   const isLast = currentPage === numberOfPages
   const prevPage =
-    currentPage - 1 === 1 ? "/" : "/" + (currentPage - 1).toString()
-  const nextPage = "/" + (currentPage + 1).toString()
+    currentPage - 1 === 1 ? '/' : `/${(currentPage - 1).toString()}`
+  const nextPage = `/${(currentPage + 1).toString()}`
 
   return (
     <Layout>
@@ -72,9 +72,9 @@ const HomePageTemplate: React.FC<HomePageTemplateProps> = (props) => {
 export default HomePageTemplate
 
 export const articleListQuery = graphql`
-  query articleListQuery($skip: Int!, $limit: Int!) {
+  query ArticleList($skip: Int!, $limit: Int!) {
     allMarkdownRemark(
-      sort: { frontmatter: { date: DESC } }
+      sort: {frontmatter: {date: DESC}}
       limit: $limit
       skip: $skip
     ) {

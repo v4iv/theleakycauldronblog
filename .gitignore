@@ -58,6 +58,7 @@ typings/
 .cache/
 public
 src/gatsby-types.d.ts
+graphql.config.js
 
 # Mac files
 .DS_Store

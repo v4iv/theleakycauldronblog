@@ -1,6 +1,6 @@
-import * as React from "react"
-import { TypographyP } from "@/components/ui/typography"
-import { Separator } from "@/components/ui/separator"
+import * as React from 'react'
+import {TypographyP} from '@/components/ui/typography'
+import {Separator} from '@/components/ui/separator'
 
 const Footer: React.FC = () => {
   return (

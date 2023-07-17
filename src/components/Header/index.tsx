@@ -1,12 +1,12 @@
-import { Link } from "gatsby"
-import * as React from "react"
-import { TypographyH1, TypographyList } from "@/components/ui/typography"
-import { Separator } from "@/components/ui/separator"
+import {Link} from 'gatsby'
+import * as React from 'react'
+import {TypographyH3, TypographyList} from '@/components/ui/typography'
+import {Separator} from '@/components/ui/separator'
 
 const Header: React.FC = () => {
   return (
     <header>
-      <TypographyH1>The Leaky Cauldron Blog</TypographyH1>
+      <TypographyH3>The Leaky Cauldron Blog</TypographyH3>
 
       <TypographyList>
         <li>

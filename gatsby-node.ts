@@ -1,27 +1,27 @@
-import * as path from "path"
-import type { GatsbyNode } from "gatsby"
-import kebabCase from "lodash.kebabcase"
-import { createFilePath } from "gatsby-source-filesystem"
+import * as path from 'path'
+import type {GatsbyNode} from 'gatsby'
+import kebabCase from 'lodash.kebabcase'
+import {createFilePath} from 'gatsby-source-filesystem'
 
-export const onCreateNode: GatsbyNode["onCreateNode"] = ({
+export const onCreateNode: GatsbyNode['onCreateNode'] = ({
   actions,
   getNode,
   node,
 }) => {
-  const { createNodeField } = actions
+  const {createNodeField} = actions
 
   if (node.internal.type === `MarkdownRemark`) {
     let slug
 
     if (
-      Object.prototype.hasOwnProperty.call(node, "frontmatter") &&
+      Object.prototype.hasOwnProperty.call(node, 'frontmatter') &&
       // @ts-ignore
-      node?.frontmatter?.templateKey === "article-page"
+      node?.frontmatter?.templateKey === 'article-page'
     ) {
       // @ts-ignore
       slug = `/blog/${kebabCase(node.frontmatter.slug)}`
     } else {
-      slug = createFilePath({ node, getNode })
+      slug = createFilePath({node, getNode})
     }
 
     createNodeField({
@@ -32,15 +32,15 @@ export const onCreateNode: GatsbyNode["onCreateNode"] = ({
   }
 }
 
-export const createPages: GatsbyNode["createPages"] = async ({
+export const createPages: GatsbyNode['createPages'] = async ({
   actions,
   graphql,
 }) => {
-  const { createPage } = actions
+  const {createPage} = actions
 
   const result: any = await graphql(`
-    {
-      allMarkdownRemark(sort: [{ frontmatter: { date: DESC } }]) {
+    query TheLeakyCauldronBlog {
+      allMarkdownRemark(sort: [{frontmatter: {date: DESC}}]) {
         edges {
           node {
             excerpt(pruneLength: 250)
@@ -81,7 +81,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
   let articles: any = []
 
   allNodes.forEach((edge: any) => {
-    if (edge?.node?.frontmatter?.templateKey === "article-page") {
+    if (edge?.node?.frontmatter?.templateKey === 'article-page') {
       articles = articles.concat(edge)
     }
   })
@@ -89,10 +89,10 @@ export const createPages: GatsbyNode["createPages"] = async ({
   const articlesPerPage = 6
   const numberOfPages = Math.ceil(articles.length / articlesPerPage)
 
-  Array.from({ length: numberOfPages }).forEach((_, i) => {
+  Array.from({length: numberOfPages}).forEach((_, i) => {
     createPage({
       path: i === 0 ? `/` : `/${i + 1}`,
-      component: path.resolve("./src/templates/home-page.tsx"),
+      component: path.resolve('./src/templates/home-page.tsx'),
       context: {
         limit: articlesPerPage,
         skip: i * articlesPerPage,
@@ -101,14 +101,30 @@ export const createPages: GatsbyNode["createPages"] = async ({
       },
     })
   })
+
+  allNodes.forEach((edge: any) => {
+    const id = edge.node.id
+
+    createPage({
+      path: edge.node.fields.slug,
+      component: path.resolve(
+        `./src/templates/${String(edge.node.frontmatter.templateKey)}.tsx`,
+      ),
+
+      // additional data can be passed via context
+      context: {
+        id: id,
+      },
+    })
+  })
 }
 
-export const onCreateWebpackConfig = ({ actions }: any) => {
+export const onCreateWebpackConfig = ({actions}: any) => {
   actions.setWebpackConfig({
     resolve: {
       alias: {
-        "@/components": path.resolve(__dirname, "src/components"),
-        "@/lib/utils": path.resolve(__dirname, "src/lib/utils"),
+        '@/components': path.resolve(__dirname, 'src/components'),
+        '@/lib/utils': path.resolve(__dirname, 'src/lib/utils'),
       },
     },
   })

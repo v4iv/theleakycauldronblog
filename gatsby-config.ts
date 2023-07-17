@@ -1,5 +1,5 @@
-import * as path from "path"
-import type { GatsbyConfig } from "gatsby"
+import * as path from 'path'
+import type {GatsbyConfig} from 'gatsby'
 
 const config: GatsbyConfig = {
   siteMetadata: {
@@ -72,7 +72,7 @@ const config: GatsbyConfig = {
       options: {
         name: `The Leaky Cauldron Blog`,
         short_name: `TLC Blog`,
-        start_url: "/",
+        start_url: '/',
         background_color: `#ffffff`,
         theme_color: `#676767`,
         display: `standalone`,
