@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: */admin/
+Disallow: */tags/
+Disallow: */success/
+Disallow: */subscribed/
+Disallow: */unsubscribe/
+Disallow: */unsubscribed/
+
+sitemap: https://theleakycauldronblog.com/sitemap.xml

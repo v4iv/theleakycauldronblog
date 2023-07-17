@@ -1,0 +1,39 @@
+{
+    "extends": [
+        "plugin:react/recommended",
+        "plugin:prettier/recommended"
+    ],
+    "plugins": [
+        "prettier"
+    ],
+    "globals": {
+        "graphql": true,
+        "__PATH_PREFIX__": true,
+        "fetch": true,
+        "sessionStorage": true,
+        "localStorage": true,
+        "alert": true,
+        "gtag": true
+    },
+    "rules": {
+        "prettier/prettier": [
+            "warn",
+            {
+                "singleQuote": true,
+                "bracketSpacing": false,
+                "trailingComma": "all",
+                "semi": false,
+                "endOfLine": "lf"
+            }
+        ],
+        "prefer-template": "error",
+        "@typescript-eslint/no-empty-function": "off",
+        "@typescript-eslint/ban-ts-comment": "off",
+        "@typescript-eslint/no-explicit-any": "off"
+    },
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
+    }
+}

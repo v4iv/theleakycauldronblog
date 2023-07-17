@@ -1,10 +1,12 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a3b02aa4-93ac-47d9-b914-7eb42de75a83/deploy-status)](https://app.netlify.com/sites/theleakycauldronblog/deploys)
+
 <p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
+  <a href="https://theleakycauldronblog">
+    <img alt="Gatsby" src="https://theleakycauldronblog.com/icons/icon-512x512.png" width="60" />
   </a>
 </p>
 <h1 align="center">
-  Gatsby Minimal TypeScript Starter
+  The Leaky Cauldron Blog
 </h1>
 
 ## 🚀 Quick start
@@ -14,8 +16,8 @@
     Use the Gatsby CLI to create a new site, specifying the minimal TypeScript starter.
 
     ```shell
-    # create a new Gatsby site using the minimal TypeScript starter
-    npm init gatsby -- -ts
+    # create a new Gatsby site
+    yarn create gatsby
     ```
 
 2.  **Start developing.**
@@ -24,14 +26,14 @@
 
     ```shell
     cd my-gatsby-site/
-    npm run develop
+    yarn develop
     ```
 
 3.  **Open the code and start customizing!**
 
     Your site is now running at http://localhost:8000!
 
-    Edit `src/pages/index.tsx` to see your site update in real-time!
+    Edit `src/pages` to see your site update in real-time!
 
 4.  **Learn more**
 
