@@ -16,6 +16,8 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.1.1",
+    "@radix-ui/react-label": "^2.0.2",
     "@radix-ui/react-separator": "^1.0.3",
     "@radix-ui/react-slot": "^1.0.2",
     "@types/lodash.kebabcase": "^4.1.7",
@@ -23,7 +25,6 @@
     "class-variance-authority": "^0.6.1",
     "clsx": "^2.0.0",
     "dotenv": "^16.3.1",
-    "formik": "^2.4.2",
     "gatsby": "^5.11.0",
     "gatsby-plugin-image": "^3.11.0",
     "gatsby-plugin-manifest": "^5.11.0",
@@ -47,10 +48,12 @@
     "querystring": "^0.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.45.2",
     "tailwind-merge": "^1.14.0",
     "tailwindcss": "^3.3.3",
     "tailwindcss-animate": "^1.0.6",
-    "yup": "^1.2.0"
+    "yup": "^1.2.0",
+    "zod": "^3.21.4"
   },
   "devDependencies": {
     "@graphql-eslint/eslint-plugin": "^3.20.1",

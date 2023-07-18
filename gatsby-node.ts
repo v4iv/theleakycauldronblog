@@ -1,26 +1,66 @@
 import * as path from 'path'
-import type {GatsbyNode} from 'gatsby'
 import kebabCase from 'lodash.kebabcase'
+import type {CreateNodeArgs, GatsbyNode} from 'gatsby'
 import {createFilePath} from 'gatsby-source-filesystem'
 
-// TODO typesafe
+interface MarkdownRemarkNode extends CreateNodeArgs {
+  [key: string]: unknown
+  internal: {
+    type: 'MarkdownRemark'
+  }
+  frontmatter?: {
+    templateKey?: string
+    slug?: string
+  }
+}
+
+interface IEdge {
+  node: {
+    excerpt?: string
+    id: string
+    fields: {
+      slug: string
+    }
+    frontmatter?: {
+      cover?: {
+        childImageSharp: any
+        publicURL: string
+      }
+      title?: string
+      author?: string
+      tags?: string[]
+      date?: string
+      templateKey?: string
+    }
+  }
+}
+
+interface IQueryResult {
+  data?: {
+    allMarkdownRemark: {
+      excerpt: string
+      id: string
+      fields: {
+        slug: string
+      }
+      edges: IEdge[]
+    }
+  }
+  errors?: any[]
+}
+
 export const onCreateNode: GatsbyNode['onCreateNode'] = ({
   actions,
   getNode,
   node,
-}) => {
+}: CreateNodeArgs<MarkdownRemarkNode>) => {
   const {createNodeField} = actions
 
   if (node.internal.type === `MarkdownRemark`) {
     let slug
 
-    if (
-      Object.prototype.hasOwnProperty.call(node, 'frontmatter') &&
-      // @ts-ignore
-      node?.frontmatter?.templateKey === 'article-page'
-    ) {
-      // @ts-ignore
-      slug = `/blog/${kebabCase(node.frontmatter.slug)}`
+    if (node.frontmatter?.templateKey === 'article-page') {
+      slug = `/blog/${kebabCase(node.frontmatter?.slug)}`
     } else {
       slug = createFilePath({node, getNode})
     }
@@ -39,7 +79,7 @@ export const createPages: GatsbyNode['createPages'] = async ({
 }) => {
   const {createPage} = actions
 
-  const result: any = await graphql(`
+  const response: any = await graphql<IQueryResult>(`
     query TheLeakyCauldronBlog {
       allMarkdownRemark(sort: [{frontmatter: {date: DESC}}]) {
         edges {
@@ -72,16 +112,17 @@ export const createPages: GatsbyNode['createPages'] = async ({
     }
   `)
 
-  if (result.errors) {
-    result.errors.forEach((err: any) => console.error(err.toString()))
+  if (response.errors) {
+    response.errors.forEach((err: any) => console.error(err.toString()))
 
-    return Promise.reject(result.errors)
+    return Promise.reject(response.errors)
   }
-  const allNodes = result.data.allMarkdownRemark.edges
 
-  let articles: any = []
+  const allNodes = response?.data.allMarkdownRemark.edges
 
-  allNodes.forEach((edge: any) => {
+  let articles: IEdge[] = []
+
+  allNodes.forEach((edge: IEdge) => {
     if (edge?.node?.frontmatter?.templateKey === 'article-page') {
       articles = articles.concat(edge)
     }
@@ -103,13 +144,13 @@ export const createPages: GatsbyNode['createPages'] = async ({
     })
   })
 
-  allNodes.forEach((edge: any) => {
+  allNodes.forEach((edge: IEdge) => {
     const id = edge.node.id
 
     createPage({
       path: edge.node.fields.slug,
       component: path.resolve(
-        `src/templates/${String(edge.node.frontmatter.templateKey)}.tsx`,
+        `src/templates/${String(edge?.node?.frontmatter?.templateKey)}.tsx`,
       ),
 
       context: {
@@ -118,9 +159,9 @@ export const createPages: GatsbyNode['createPages'] = async ({
     })
   })
 
-  let tags: any = []
+  let tags: string[] = []
 
-  articles.forEach((edge: any) => {
+  articles.forEach((edge: IEdge) => {
     if (edge?.node?.frontmatter?.tags) {
       tags = tags.concat(edge.node.frontmatter.tags)
     }
