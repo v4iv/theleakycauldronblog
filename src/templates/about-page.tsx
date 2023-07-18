@@ -5,7 +5,6 @@ import {
   TypographyH1,
   TypographyLarge,
   TypographyLead,
-  TypographyP,
 } from '@/components/ui/typography'
 import Layout from '@/components/Layout'
 
@@ -40,15 +39,25 @@ const AboutPage: React.FC<AboutPageProps> = (props) => {
 
   return (
     <Layout>
-      <TypographyH1>{title}</TypographyH1>
-      <TypographyLead>{subtitle}</TypographyLead>
-      <TypographyLarge>{author}</TypographyLarge>
+      <header className="mx-auto w-full max-w-screen-md">
+        <section className="px-3 md:px-0 py-3 md:py-5">
+          <TypographyH1>{title}</TypographyH1>
+          <TypographyLead>{subtitle}</TypographyLead>
+          <TypographyLarge>{author}</TypographyLarge>
+        </section>
+      </header>
 
-      <GatsbyImage image={aboutImage} alt={author} />
+      <GatsbyImage
+        className="h-auto w-auto object-cover aspect-video"
+        image={aboutImage}
+        alt={author}
+      />
 
-      <TypographyP>
-        <div dangerouslySetInnerHTML={{__html: html}} />
-      </TypographyP>
+      <div className="mx-auto w-full max-w-screen-md">
+        <div className="px-3 md:px-0 py-3 md:py-5">
+          <div dangerouslySetInnerHTML={{__html: html}} />
+        </div>
+      </div>
     </Layout>
   )
 }
@@ -68,8 +77,7 @@ export const aboutPageQuery = graphql`
             gatsbyImageData(
               quality: 72
               placeholder: BLURRED
-              width: 500
-              layout: CONSTRAINED
+              layout: FULL_WIDTH
             )
           }
           publicURL

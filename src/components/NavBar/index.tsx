@@ -16,7 +16,7 @@ import {Avatar, AvatarFallback, AvatarImage} from '@/components/ui/avatar'
 const NavBar: React.FC = () => {
   return (
     <nav className="mx-auto w-full max-w-screen-md">
-      <div className="px-3 md:px-0 py-5">
+      <div className="px-3 md:px-0 py-3 md:py-5">
         <div className="flex">
           <div className="flex flex-grow">
             <Link to="/">
@@ -31,14 +31,14 @@ const NavBar: React.FC = () => {
 
             <h3 className="scroll-m-20 text-2xl font-extrabold tracking-wider leading-relaxed">
               <Link
-                className="hidden md:flex hover:text-gray-500 transition-colors duration-200"
+                className="hidden md:flex hover:text-gray-500 transition-colors duration-100"
                 to="/"
               >
                 the leaky cauldron blog
               </Link>
 
               <Link
-                className="flex md:hidden hover:text-gray-500 transition-colors duration-200"
+                className="flex md:hidden hover:text-gray-500 transition-colors duration-100"
                 to="/"
               >
                 tlcb
@@ -47,13 +47,18 @@ const NavBar: React.FC = () => {
           </div>
 
           <div className="flex">
-            <Button className="mr-2" variant="outline" size="icon">
+            <Button
+              className="mr-2"
+              variant="outline"
+              size="icon"
+              aria-label="Search"
+            >
               <Search className="h-4 w-4" />
             </Button>
 
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="outline" size="icon">
+                <Button variant="outline" size="icon" aria-label="Menu">
                   <Equal className="h-6 w-6" />
                 </Button>
               </SheetTrigger>

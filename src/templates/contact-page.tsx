@@ -27,15 +27,20 @@ const ContactPageTemplate: React.FC<ContactPageTemplateProps> = (props) => {
 
   return (
     <Layout>
-      <section>
-        <TypographyH1>{title}</TypographyH1>
-        <TypographyLead>{subtitle}</TypographyLead>
-      </section>
+      <div className="mx-auto w-full max-w-screen-md">
+        <div className="px-3 md:px-0 py-3 md:py-5">
+          <TypographyH1>{title}</TypographyH1>
 
-      <Separator />
+          <div className="my-3">
+            <TypographyLead>{subtitle}</TypographyLead>
+          </div>
 
-      <div>
-        <ContactForm />
+          <Separator />
+
+          <div className="py-12 md:p-12">
+            <ContactForm />
+          </div>
+        </div>
       </div>
     </Layout>
   )

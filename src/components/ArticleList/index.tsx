@@ -55,7 +55,7 @@ const ArticleList: React.FC<ArticleListProps> = (props) => {
                 <div className="flex sm:flex-row flex-col">
                   <div className="md:w-90 md:pr-3 pr-0 order-2 md:order-1 md:w-3/5">
                     <Link
-                      className="block px-0 lg:px-0 underline-none text-black opacity-100 hover:text-gray-500 transition-colors duration-200"
+                      className="block px-0 lg:px-0 underline-none text-black opacity-100 hover:text-gray-500 transition-colors duration-100"
                       to={slug}
                     >
                       <TypographyH2>{title}</TypographyH2>
@@ -65,12 +65,18 @@ const ArticleList: React.FC<ArticleListProps> = (props) => {
                   </div>
 
                   <div className="md:pl-3 pl-0 order-1 mb-4 md:mb-0 w-full md:w-2/5 md:ml-auto md:order-last">
-                    <Link
-                      className="block px-0 lg:px-0 underline-none text-black transform hover:scale-105 transition-transform duration-300"
-                      to={slug}
-                    >
-                      <GatsbyImage className="block" image={image} alt={slug} />
-                    </Link>
+                    <div className="overflow-hidden rounded-md">
+                      <Link
+                        className="block px-0 lg:px-0 underline-none text-black transform"
+                        to={slug}
+                      >
+                        <GatsbyImage
+                          className="block h-auto w-auto object-cover transition-all hover:scale-105 duration-300 aspect-video"
+                          image={image}
+                          alt={slug}
+                        />
+                      </Link>
+                    </div>
                   </div>
                 </div>
 

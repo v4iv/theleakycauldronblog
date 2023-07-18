@@ -95,13 +95,10 @@ const ContactForm: React.FC = () => {
         />
 
         <Button
-          type="reset"
-          variant="outline"
+          className="float-right mt-3"
+          type="submit"
           disabled={methods.formState.isSubmitting}
         >
-          Clear
-        </Button>
-        <Button type="submit" disabled={methods.formState.isSubmitting}>
           Submit
         </Button>
       </form>

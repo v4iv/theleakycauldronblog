@@ -4,11 +4,7 @@ import {Link, graphql} from 'gatsby'
 import {GatsbyImage, getImage} from 'gatsby-plugin-image'
 import 'prismjs/themes/prism.css'
 import {badgeVariants} from '@/components/ui/badge'
-import {
-  TypographyH1,
-  TypographyLead,
-  TypographyP,
-} from '@/components/ui/typography'
+import {TypographyH1, TypographyLead} from '@/components/ui/typography'
 import Layout from '@/components/Layout'
 
 interface ArticlePageTemplateProps {
@@ -51,27 +47,40 @@ const ArticlePageTemplate: React.FC<ArticlePageTemplateProps> = (props) => {
   return (
     <Layout>
       <article>
-        <TypographyH1>{title}</TypographyH1>
+        <header className="mx-auto w-full max-w-screen-md">
+          <section className="px-3 md:px-0 py-3 md:py-5">
+            <TypographyH1>{title}</TypographyH1>
 
-        <TypographyLead>
-          <Link to={authorLink}>{author}</Link>&nbsp;&nbsp;|&nbsp;&nbsp;{date}
-        </TypographyLead>
+            <div className="my-3">
+              <TypographyLead>
+                <Link to={authorLink}>{author}</Link>&nbsp;&nbsp;|&nbsp;&nbsp;
+                {date}
+              </TypographyLead>
+            </div>
 
-        {tags.map((tag, idx) => (
-          <Link
-            key={`${kebabCase(tag)}-${idx}`}
-            className={`${badgeVariants({variant: 'default'})} mr-2`}
-            to={`/tags/${kebabCase(tag)}`}
-          >
-            #{tag}&nbsp;
-          </Link>
-        ))}
+            {tags.map((tag, idx) => (
+              <Link
+                key={`${kebabCase(tag)}-${idx}`}
+                className={`${badgeVariants({variant: 'default'})} my-3 mr-2`}
+                to={`/tags/${kebabCase(tag)}`}
+              >
+                #{tag}&nbsp;
+              </Link>
+            ))}
+          </section>
+        </header>
 
-        <GatsbyImage image={image} alt={title} />
+        <GatsbyImage
+          className="h-auto w-auto object-cover aspect-video"
+          image={image}
+          alt={title}
+        />
 
-        <TypographyP>
-          <div dangerouslySetInnerHTML={{__html: html}} />
-        </TypographyP>
+        <div className="mx-auto w-full max-w-screen-md">
+          <div className="px-3 md:px-0 py-3 md:py-5">
+            <div dangerouslySetInnerHTML={{__html: html}} />
+          </div>
+        </div>
       </article>
     </Layout>
   )
