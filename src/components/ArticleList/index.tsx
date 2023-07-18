@@ -1,14 +1,6 @@
 import * as React from 'react'
 import {Link} from 'gatsby'
-import kebabCase from 'lodash.kebabcase'
-import {ChevronRight} from 'lucide-react'
-import {
-  TypographyH2,
-  TypographyLead,
-  TypographyP,
-} from '@/components/ui/typography'
-import {Button} from '@/components/ui/button'
-import {badgeVariants} from '@/components/ui/badge'
+import {GatsbyImage, getImage} from 'gatsby-plugin-image'
 
 interface ArticleListProps {
   pages: {
@@ -24,7 +16,6 @@ interface ArticleListProps {
           publicURL: string
         }
         author: string
-        tags: string[]
         date: string
         templateKey: string
       }
@@ -36,49 +27,66 @@ const ArticleList: React.FC<ArticleListProps> = (props) => {
   const {pages} = props
 
   return (
-    <>
+    <section className="mx-auto w-full max-w-screen-md">
       {pages
         .filter(
           (page) => page?.node?.frontmatter?.templateKey === 'article-page',
         )
-        .map(({node}, idx) => {
-          const title = node.frontmatter.title
-          const slug = node.fields.slug
-          const excerpt = node.excerpt
-          const author = node.frontmatter.author
-          const tags = node.frontmatter.tags
-          const date = node.frontmatter.date
+        .map(
+          (
+            {
+              node: {
+                excerpt,
+                fields: {slug},
+                frontmatter: {title, cover, author, date},
+              },
+            },
+            idx,
+          ) => {
+            const image = getImage(cover)!
+            return (
+              <article
+                key={`${slug}-${idx}`}
+                className="py-7 px-3 md:px-0 border-b border-black-10"
+              >
+                <div className="flex sm:flex-row flex-col">
+                  <div className="md:w-90 md:pr-3 pr-0 order-2 md:order-1 md:w-3/5">
+                    <Link
+                      className="block px-0 lg:px-0 underline-none text-black opacity-100 hover:text-gray-500 transition-colors duration-200"
+                      to={slug}
+                    >
+                      <h2 className="text-2xl font-light font-serif mt-0 leading-tight">
+                        {title}
+                      </h2>
 
-          return (
-            <article key={`${slug}-${idx}`}>
-              <TypographyH2>
-                <Link to={slug}>{title}</Link>
-              </TypographyH2>
+                      <p className="text-sm sm:text-base leading-normal font-light pt-3">
+                        {excerpt}
+                      </p>
+                    </Link>
+                  </div>
 
-              <TypographyLead>
-                {date}&nbsp;&bull;&nbsp;{author}
-              </TypographyLead>
+                  <div className="md:pl-3 pl-0 order-1 mb-4 md:mb-0 w-full md:w-2/5 md:ml-auto md:order-last">
+                    <Link
+                      className="block px-0 lg:px-0 underline-none text-black transform hover:scale-105 transition-transform duration-300"
+                      to={slug}
+                    >
+                      <GatsbyImage className="block" image={image} alt={slug} />
+                    </Link>
+                  </div>
+                </div>
 
-              <TypographyP>{excerpt}</TypographyP>
-              <Button variant="link" asChild>
-                <Link to={slug}>
-                  Continue Reading <ChevronRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
+                <small className="text-sm leading-relaxed text-gray-500 my-0">
+                  By&nbsp;<span className="uppercase">{author}</span>
+                </small>
 
-              {tags?.map((tag, idx) => (
-                <Link
-                  key={`${kebabCase(tag)}-${idx}`}
-                  className={`${badgeVariants({variant: 'default'})} mr-2`}
-                  to={`/tags/${kebabCase(tag)}`}
-                >
-                  #{tag}&nbsp;
-                </Link>
-              ))}
-            </article>
-          )
-        })}
-    </>
+                <time className="block text-black">
+                  <small>{date}</small>
+                </time>
+              </article>
+            )
+          },
+        )}
+    </section>
   )
 }
 

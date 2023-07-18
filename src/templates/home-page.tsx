@@ -21,7 +21,6 @@ interface HomePageTemplateProps {
               publicURL: string
             }
             author: string
-            tags: string[]
             date: any
             templateKey: string
           }
@@ -99,7 +98,6 @@ export const articleListQuery = graphql`
               publicURL
             }
             author
-            tags
             date(formatString: "MMMM DD, YYYY")
             templateKey
           }

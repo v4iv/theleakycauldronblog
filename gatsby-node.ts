@@ -22,12 +22,6 @@ interface IEdge {
       slug: string
     }
     frontmatter?: {
-      cover?: {
-        childImageSharp: any
-        publicURL: string
-      }
-      title?: string
-      author?: string
       tags?: string[]
       date?: string
       templateKey?: string
@@ -90,18 +84,6 @@ export const createPages: GatsbyNode['createPages'] = async ({
               slug
             }
             frontmatter {
-              cover {
-                childImageSharp {
-                  gatsbyImageData(
-                    quality: 72
-                    placeholder: BLURRED
-                    layout: FULL_WIDTH
-                  )
-                }
-                publicURL
-              }
-              title
-              author
               tags
               date(formatString: "MMMM DD, YYYY")
               templateKey
