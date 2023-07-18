@@ -19,15 +19,17 @@ const NavBar: React.FC = () => {
       <div className="px-3 md:px-0 py-5">
         <div className="flex">
           <div className="flex flex-grow">
-            <Avatar className="mr-2 flex md:hidden">
-              <AvatarImage
-                src="/icons/icon-192x192.png"
-                alt="the-leaky-cauldron-blog"
-              />
-              <AvatarFallback>tlcb</AvatarFallback>
-            </Avatar>
+            <Link to="/">
+              <Avatar className="mr-2 flex md:hidden">
+                <AvatarImage
+                  src="/icons/icon-192x192.png"
+                  alt="the-leaky-cauldron-blog"
+                />
+                <AvatarFallback>tlcb</AvatarFallback>
+              </Avatar>
+            </Link>
 
-            <h3 className="scroll-m-20 text-2xl font-extrabold tracking-wider">
+            <h3 className="scroll-m-20 text-2xl font-extrabold tracking-wider leading-relaxed">
               <Link
                 className="hidden md:flex hover:text-gray-500 transition-colors duration-200"
                 to="/"
