@@ -9,6 +9,7 @@ import {
   TypographyList,
   TypographyP,
 } from '@/components/ui/typography'
+import 'prismjs/themes/prism.css'
 
 interface ArticlePageTemplateProps {
   data: {

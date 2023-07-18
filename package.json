@@ -10,6 +10,8 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
+    "lint": "eslint --ignore-path .gitignore .",
+    "lint:fix": "yarn run lint -- --fix",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
@@ -30,6 +32,7 @@
     "gatsby-plugin-sitemap": "^6.11.0",
     "gatsby-remark-copy-linked-files": "^6.11.0",
     "gatsby-remark-images": "^7.11.0",
+    "gatsby-remark-prismjs": "^7.11.0",
     "gatsby-remark-relative-images": "^2.0.5",
     "gatsby-remark-smartypants": "^6.11.0",
     "gatsby-source-filesystem": "^5.11.0",
@@ -39,6 +42,7 @@
     "lucide-react": "^0.260.0",
     "netlify-cms-app": "^2.15.72",
     "postcss": "^8.4.26",
+    "prismjs": "^1.29.0",
     "querystring": "^0.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

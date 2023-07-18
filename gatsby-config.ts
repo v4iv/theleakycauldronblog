@@ -39,11 +39,26 @@ const config: GatsbyConfig = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
-          `gatsby-remark-relative-images`,
+          {
+            resolve: `gatsby-remark-relative-images`,
+            options: {
+              name: `uploads`,
+            },
+          },
           {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 1024,
+            },
+          },
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              classPrefix: 'language-',
+              inlineCodeMarker: null,
+              aliases: {},
+              showLineNumbersGlobal: false,
+              noInlineHighlight: true,
             },
           },
           `gatsby-remark-copy-linked-files`,

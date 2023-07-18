@@ -1,5 +1,5 @@
-import {Link} from 'gatsby'
 import * as React from 'react'
+import {Link} from 'gatsby'
 import {TypographyH3, TypographyList} from '@/components/ui/typography'
 import {Separator} from '@/components/ui/separator'
 
