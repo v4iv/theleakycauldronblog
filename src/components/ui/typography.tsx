@@ -10,7 +10,7 @@ export function TypographyH1({children}: {children: React.ReactNode}) {
 
 export function TypographyH2({children}: {children: React.ReactNode}) {
   return (
-    <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
+    <h2 className="scroll-m-20 text-3xl font-bold tracking-tight transition-colors first:mt-0">
       {children}
     </h2>
   )
@@ -18,7 +18,7 @@ export function TypographyH2({children}: {children: React.ReactNode}) {
 
 export function TypographyH3({children}: {children: React.ReactNode}) {
   return (
-    <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">
+    <h3 className="scroll-m-20 text-2xl font-bold tracking-tight">
       {children}
     </h3>
   )
@@ -33,7 +33,11 @@ export function TypographyH4({children}: {children: React.ReactNode}) {
 }
 
 export function TypographyP({children}: {children: React.ReactNode}) {
-  return <p className="leading-7 [&:not(:first-child)]:mt-6">{children}</p>
+  return (
+    <p className="leading-7 font-light [&:not(:first-child)]:mt-6">
+      {children}
+    </p>
+  )
 }
 
 export function TypographyBlockQuote({children}: {children: React.ReactNode}) {

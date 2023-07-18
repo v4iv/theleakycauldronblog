@@ -1,6 +1,12 @@
 import * as React from 'react'
 import {Link} from 'gatsby'
 import {GatsbyImage, getImage} from 'gatsby-plugin-image'
+import {Separator} from '@/components/ui/separator'
+import {
+  TypographyH2,
+  TypographyP,
+  TypographySmall,
+} from '@/components/ui/typography'
 
 interface ArticleListProps {
   pages: {
@@ -45,23 +51,16 @@ const ArticleList: React.FC<ArticleListProps> = (props) => {
           ) => {
             const image = getImage(cover)!
             return (
-              <article
-                key={`${slug}-${idx}`}
-                className="py-7 px-3 md:px-0 border-b border-black-10"
-              >
+              <article key={`${slug}-${idx}`} className="py-5 px-3 md:px-0">
                 <div className="flex sm:flex-row flex-col">
                   <div className="md:w-90 md:pr-3 pr-0 order-2 md:order-1 md:w-3/5">
                     <Link
                       className="block px-0 lg:px-0 underline-none text-black opacity-100 hover:text-gray-500 transition-colors duration-200"
                       to={slug}
                     >
-                      <h2 className="text-2xl font-light font-serif mt-0 leading-tight">
-                        {title}
-                      </h2>
+                      <TypographyH2>{title}</TypographyH2>
 
-                      <p className="text-sm sm:text-base leading-normal font-light pt-3">
-                        {excerpt}
-                      </p>
+                      <TypographyP>{excerpt}</TypographyP>
                     </Link>
                   </div>
 
@@ -79,9 +78,11 @@ const ArticleList: React.FC<ArticleListProps> = (props) => {
                   By&nbsp;<span className="uppercase">{author}</span>
                 </small>
 
-                <time className="block text-black">
-                  <small>{date}</small>
+                <time className="block">
+                  <TypographySmall>{date}</TypographySmall>
                 </time>
+
+                <Separator className="mt-7" />
               </article>
             )
           },

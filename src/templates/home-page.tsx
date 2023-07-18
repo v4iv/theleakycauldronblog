@@ -52,20 +52,24 @@ const HomePageTemplate: React.FC<HomePageTemplateProps> = (props) => {
     <Layout>
       <ArticleList pages={pages} />
 
-      {!isFirst && (
-        <Button asChild>
-          <Link to={prevPage} rel="prev">
-            <ArrowLeft className="mr-2 h-4 w-4" /> Previous Page
-          </Link>
-        </Button>
-      )}
-      {!isLast && (
-        <Button asChild>
-          <Link to={nextPage} rel="next">
-            Next Page <ArrowRight className="ml-2 h-4 w-4" />
-          </Link>
-        </Button>
-      )}
+      <div className="mx-auto w-full max-w-screen-md pt-5 pb-9 flex align-middle justify-evenly">
+        {!isFirst && (
+          <Button asChild>
+            <Link to={prevPage} rel="prev">
+              <ArrowLeft className="mr-2 h-4 w-4" />
+              &nbsp;Prev
+            </Link>
+          </Button>
+        )}
+        {!isLast && (
+          <Button asChild>
+            <Link to={nextPage} rel="next">
+              Next&nbsp;
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+          </Button>
+        )}
+      </div>
     </Layout>
   )
 }

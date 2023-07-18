@@ -4,13 +4,15 @@ import {TypographyMuted} from '@/components/ui/typography'
 
 const Footer: React.FC = () => {
   return (
-    <footer>
+    <footer className="mx-auto w-full max-w-screen-md">
       <Separator />
 
-      <TypographyMuted>
-        Copyright &copy; 2018-{new Date().getFullYear().toString()} The Leaky
-        Cauldron Blog. All Rights Reserved.
-      </TypographyMuted>
+      <div className="py-10 px-3 md:px-0 md:text-left text-center">
+        <TypographyMuted>
+          Copyright &copy; 2018-{new Date().getFullYear().toString()} The Leaky
+          Cauldron Blog. All Rights Reserved.
+        </TypographyMuted>
+      </div>
     </footer>
   )
 }

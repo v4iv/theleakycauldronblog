@@ -1,14 +1,14 @@
 import * as React from 'react'
-import Header from '@/components/Header'
+import NavBar from '@/components/NavBar'
 import Footer from '@/components/Footer'
 
 function Layout({children}: {children: React.ReactNode}) {
   return (
-    <div className="md:container md:mx-auto">
-      <Header />
+    <>
+      <NavBar />
       <main className="min-h-screen">{children}</main>
       <Footer />
-    </div>
+    </>
   )
 }
 
