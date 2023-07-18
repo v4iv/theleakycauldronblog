@@ -18,7 +18,7 @@ Typeahead search progressively searches and filters as the user types his/her qu
 
 # Setup Cloudflare
 
-We begin by signing up for a Cloudflare Workers account at [workers.cloudflare.com](https://workers.cloudflare.com). 
+We begin by signing up for a Cloudflare Workers account at [workers.cloudflare.com](https://workers.cloudflare.com).
 
 ![cloudflare-workers-homepage](/img/cloudflare-workers-homepage.png "cloudflare-workers-homepage")
 
@@ -62,7 +62,7 @@ We’ll be using the TypeScript template for our project. To set it up just use 
 wrangler generate search-api https://github.com/cloudflare/worker-typescript-template
 ```
 
-Next, navigate to the project and open it using your favourite IDE and we can start writing the serverless code. 
+Next, navigate to the project and open it using your favourite IDE and we can start writing the serverless code.
 
 ![wrangler-generate-template](/img/wrangler-generate-template.jpg "wrangler-generate-template")
 
@@ -211,7 +211,7 @@ export async function handleRequest(request: Request): Promise<Response> {
 
 # Debugging and Publishing
 
-Since this project is made with TypeScript we cannot directly run or publish it, for that we need a bundler like Webpack, which is preconfigured in the template we used. 
+Since this project is made with TypeScript we cannot directly run or publish it, for that we need a bundler like Webpack, which is preconfigured in the template we used.
 
 To debug locally, we need to first run the dev script to compile the typescript.
 

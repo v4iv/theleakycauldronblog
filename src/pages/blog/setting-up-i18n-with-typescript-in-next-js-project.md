@@ -217,7 +217,7 @@ and then a `tsconfig.server.json` file in the root directory
 }
 ```
 
-now all we need to do some changes in our `npm` scripts, refactor the following lines in `package.json` 
+now all we need to do some changes in our `npm` scripts, refactor the following lines in `package.json`
 
 ```json
 "scripts": {
@@ -383,7 +383,7 @@ HomePage.getInitialProps = () => ({
 export default withNamespaces('common')(HomePage)
 ```
 
-and 
+and
 
 `pages/second-page.tsx` :
 

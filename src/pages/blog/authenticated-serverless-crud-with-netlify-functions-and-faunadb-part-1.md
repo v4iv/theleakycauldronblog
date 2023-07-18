@@ -29,7 +29,7 @@ NOTE: This write-up assumes that you have some familiarity with serverless funct
 
 # Setup Fauna
 
-We begin by signing up for a free Fauna DB account (I love the fact that neither Fauna nor Netlify needs a credit card to sign up). 
+We begin by signing up for a free Fauna DB account (I love the fact that neither Fauna nor Netlify needs a credit card to sign up).
 
 After that, we have to create a new database, in Fauna Cloud Console:
 
@@ -49,7 +49,7 @@ You’ll get a long alphanumeric key, copy it and save it, as you’ll not get t
 
 # Setup Netlify Functions Project
 
-Now for the serverless part, we need to first create an empty node project. 
+Now for the serverless part, we need to first create an empty node project.
 
 Create a directory called cats.
 

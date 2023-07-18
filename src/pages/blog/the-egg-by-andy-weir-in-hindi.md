@@ -17,7 +17,6 @@ tags:
 ---
 This is my Hindi translation of popular short story [The Egg by Andy Weir](http://www.galactanet.com/oneoff/theegg_mod.html) (author of The Martian, Artemis) which is heavily influenced by the Hindu concept of [Hiranyagarbha](https://en.wikipedia.org/wiki/Hiranyagarbha). Written with the permission of Andy Weir.
 
-
 ## द एग (एक अंडा) - ऐंडी वीयर
 
 तुम घर जा रहे थे, जब तुम मर गए।

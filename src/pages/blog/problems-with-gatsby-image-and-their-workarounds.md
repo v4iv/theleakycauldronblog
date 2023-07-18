@@ -19,7 +19,7 @@ tags:
 ---
 [gatsby-image](https://www.gatsbyjs.org/packages/gatsby-image/) is a very powerful package with drool-worthy features. It makes it very easy to implement, Medium like progressive image loading. It can do a bunch of other stuff but that's the fancy stuff that we won't be going into. But I decided to not use it for this website, mostly because it doesn't play well with [Netlify CMS](https://www.netlifycms.org). And, I was quite happy with the site's performance as it didn't have many images.
 
-The article list was all words, no thumbnails and since all the images were within the article, it worked just fine. 
+The article list was all words, no thumbnails and since all the images were within the article, it worked just fine.
 
 ![](/img/screenshot-2019-09-07-at-4.01.21-pm.png)
 
@@ -29,7 +29,7 @@ This all changed when I decided to ditch [Bulma](https://bulma.io) for [Tachyons
 >
 > \- Anonymous (Probably LOL)
 
-In the new design, I was working the article list had a small thumbnail along with the title and excerpt. 
+In the new design, I was working the article list had a small thumbnail along with the title and excerpt.
 
 ![](/img/screenshot-2018-12-19-at-11.19.21-pm.png)
 

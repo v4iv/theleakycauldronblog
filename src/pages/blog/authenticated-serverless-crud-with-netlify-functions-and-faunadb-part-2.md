@@ -15,7 +15,7 @@ tags:
   - authentication
   - netlify
 ---
-In the last part, we set up our *FaunaDB* account, generated a database access secret and set up our *Netlify Functions* project. We also made a serverless API that returns *“Hello, World!”*. 
+In the last part, we set up our *FaunaDB* account, generated a database access secret and set up our *Netlify Functions* project. We also made a serverless API that returns *“Hello, World!”*.
 
 Link to Part 1: [Authenticated Serverless CRUD with Netlify Functions and FaunaDB Part 1](https://theleakycauldronblog.com/blog/authenticated-serverless-crud-netlify-functions-faunadb-part-1)
 
@@ -35,7 +35,7 @@ In this part, we will first, programmatically set up our database `Collections`,
 
 # Bootstrap Fauna Database
 
-For our Cats project, we’ll need two tables or “`Collections`” — `users` and `cat_breeds`. And while we can make our Collections, Indexes and Roles using the Fauna Cloud Console GUI, setting it up programmatically allows us to keep the settings as a template which can be deployed locally as well. 
+For our Cats project, we’ll need two tables or “`Collections`” — `users` and `cat_breeds`. And while we can make our Collections, Indexes and Roles using the Fauna Cloud Console GUI, setting it up programmatically allows us to keep the settings as a template which can be deployed locally as well.
 
 First, install `dotenv` package
 

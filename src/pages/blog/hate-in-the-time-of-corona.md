@@ -36,7 +36,7 @@ This thought crept up the other day when I found a book that I had read in my hi
 
 > “The enemy has begun to employ a new and most cruel bomb, the power of which to do damage is, indeed, incalculable, taking the toll of many innocent lives. Should we continue to fight, not only would it result in an ultimate collapse and obliteration of the Japanese nation, but also it would lead to the total extinction of human civilisation.”
 
-And ever since then, there have been at least a thousand instances that, we know of for sure, when we accidentally fucked up and almost brought our entire planet to the brink of nuclear annihilation. And it’s without a doubt that we’ll screw up in the future as well with a thousand times the efficiency we did in the past. So, it is not too much of a stretch to imagine that a bioweapon that was created in the lab got out. 
+And ever since then, there have been at least a thousand instances that, we know of for sure, when we accidentally fucked up and almost brought our entire planet to the brink of nuclear annihilation. And it’s without a doubt that we’ll screw up in the future as well with a thousand times the efficiency we did in the past. So, it is not too much of a stretch to imagine that a bioweapon that was created in the lab got out.
 
 Or is it?
 

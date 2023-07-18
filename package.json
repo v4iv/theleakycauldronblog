@@ -12,6 +12,7 @@
     "clean": "gatsby clean",
     "lint": "eslint --ignore-path .gitignore .",
     "lint:fix": "yarn run lint -- --fix",
+    "remark:lint": "remark --use remark-preset-lint-recommended ./src/pages/{**/*,*}.{md,mdx}",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

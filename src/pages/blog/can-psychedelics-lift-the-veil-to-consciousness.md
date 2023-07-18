@@ -27,7 +27,7 @@ Being one with the universe, as many of you may be familiar, is an important par
 
 So does that mean that consciousness extends to all matter and not just things with brains? *Guilio Tononi*, a neuroscientist, proposed an ambitious theory to explain consciousness called the *Integrated Information Theory* (IIT). This theory suggests that panpsychism might not be so far-fetched after all. The core identity of IIT suggests that —
 
-> The quantity and quality of an “*experience*” are an intrinsic, maximally irreducible property of a complex of mechanisms in a state — the property of informing or shaping the space of possibilities (past and future states) in a particular way, just as it is considered to be intrinsic to a mass to bend space-time around it. 
+> The quantity and quality of an “*experience*” are an intrinsic, maximally irreducible property of a complex of mechanisms in a state — the property of informing or shaping the space of possibilities (past and future states) in a particular way, just as it is considered to be intrinsic to a mass to bend space-time around it.
 
 IIT claims that a system is conscious if it possesses a property called **Φ**, or **phi**. *Phi* is the measure of a system's “integrated information”. What that implies is that various systems can have various levels of consciousness which is their intrinsic property.
 

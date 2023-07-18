@@ -55,7 +55,7 @@ Just when I was thinking this going all too well, I encountered my first glitch 
 
 This was a particularly nasty problem because it looks like `gatsby-plugin-layout` is trying to put the layout on the admin page and you don't see any way to fix it! ...but, it doesn't have much to do with it. After googling for hours and asking random devs online, I remembered I had another project where it didn't break the admin page. Solution? All you need to do is that you need to put `gatsby-plugin-layout` before `gatsby-plugin-netlify-cms` in `gatsby-config.js`.
 
-## Netlify CMS Preview Pane stops working.
+## Netlify CMS Preview Pane stops working
 
 This one although was easy to figure out using Console errors, was still surprising because it made no sense why it had worked before and if it did, it made no sense that it is now broken! The problem was that the tags needed an error check:
 
@@ -65,7 +65,7 @@ This one although was easy to figure out using Console errors, was still surpris
 
 Luckily this is where my problems ended with the migrations. Now, it was time for improving the blog, by adding search functionality.
 
-# Improvement Begins - Adding Search Functionality.
+# Improvement Begins - Adding Search Functionality
 
 I know this doesn't seem like much of a reason to include it in this blog, but I included this because I wanted to discuss how freakin' StaticQuery is! It was always in the plans to include a Search Box, and had planned to use `@andrew-codes/gatsby-plugin-elasticlunr-search` since I had no plans to use Algolia. I could still use `andrew-codes` version but i decided to use the forked version by `gatsby-contrib`, because I wanted to try out StaticQuery. And let me tell ya, it's a damn cool feature!
 

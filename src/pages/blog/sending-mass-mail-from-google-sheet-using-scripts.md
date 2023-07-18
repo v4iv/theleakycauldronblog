@@ -15,7 +15,7 @@ tags:
   - marketing
   - javascript
 ---
-Ever find yourself with a big spreadsheet full of names and emails and you have to send personalized emails to all of them? We did. We had a spreadsheet full of candidates for hiring and: 
+Ever find yourself with a big spreadsheet full of names and emails and you have to send personalized emails to all of them? We did. We had a spreadsheet full of candidates for hiring and:
 
 * We had to first send them a mail asking if they are interested.
 * If they replied positively we had to send them an assignment.
@@ -127,7 +127,7 @@ function onOpen() {
 };
 ```
 
-Save and reload the sheet, you'll see a menu called `Email`, and within it, an option called `Send Mass Mail`. 
+Save and reload the sheet, you'll see a menu called `Email`, and within it, an option called `Send Mass Mail`.
 
 That's it just click on the option to run the script and send mass mail. One more, thing you'll have to approve the script to use your Gmail.
 

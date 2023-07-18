@@ -22,8 +22,8 @@ If you are new to [Django Rest Framework](http://www.django-rest-framework.org/)
 Before beginning, though we're gonna work on the following assumptions:
 
 * There's a model called Books.
-* There's a `generic.ListAPIView`, with URL name `books:list` 
-* The permission on the URL is `is_authenticated` 
+* There's a `generic.ListAPIView`, with URL name `books:list`
+* The permission on the URL is `is_authenticated`
 
 Now that, that's out of the way, we can begin the fun part.
 

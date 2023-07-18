@@ -38,14 +38,14 @@ While all these features are available in various starters, none of them was a c
 Assuming you already have Gatsby CLI installed, to start a new Gatsby JS Project using Gatsby-Starter-Business, open your terminal and run this:
 
 ```bash
-$ gatsby new <your_project_name> https://github.com/v4iv/gatsby-starter-business
+gatsby new <your_project_name> https://github.com/v4iv/gatsby-starter-business
 ```
 
 This will create a clone of Gatsby Starter Business, with project name you gave earlier.
 
 ## Get Started With Gatsby Starter Business
 
-To configure Gatsby Starter Business, open `config.js` file. Change the required variables and save it. And push it to a new repository in your Github. 
+To configure Gatsby Starter Business, open `config.js` file. Change the required variables and save it. And push it to a new repository in your Github.
 
 ```javascript
 module.exports = {
@@ -70,6 +70,6 @@ module.exports = {
 }
 ```
 
-Then from Netlify dashboard create a new site from Github for the same repository, and deploy it. 
+Then from Netlify dashboard create a new site from Github for the same repository, and deploy it.
 
 Once done go to Netlify settings page, and enable Identity, set registration preference and Git Gateway. Create a user from the identity tab of Netlify and visit <https://yoursiteaddress/admin/#/> login with your Netlify credentials and you'll be on the admin page. Now you can easily edit pages or add new blog articles.

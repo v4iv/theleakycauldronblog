@@ -23,6 +23,7 @@ interface HomePageTemplateProps {
             author: string
             tags: string[]
             date: any
+            templateKey: string
           }
         }
       }[]
@@ -37,7 +38,7 @@ interface HomePageTemplateProps {
 const HomePageTemplate: React.FC<HomePageTemplateProps> = (props) => {
   const {
     data: {
-      allMarkdownRemark: {edges: articles},
+      allMarkdownRemark: {edges: pages},
     },
     pageContext: {currentPage, numberOfPages},
   } = props
@@ -50,7 +51,7 @@ const HomePageTemplate: React.FC<HomePageTemplateProps> = (props) => {
 
   return (
     <Layout>
-      <ArticleList articles={articles} />
+      <ArticleList pages={pages} />
 
       {!isFirst && (
         <Button asChild>
@@ -100,6 +101,7 @@ export const articleListQuery = graphql`
             author
             tags
             date(formatString: "MMMM DD, YYYY")
+            templateKey
           }
         }
       }

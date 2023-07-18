@@ -77,11 +77,11 @@ Is it just me or it's weird that Strange never once used his most powerful weapo
 
 Everyone was screaming with excitement when Buck used Rocket as a weapon, oh and of course Rocket wants his arm.
 
-## Wanda Destroys an Infinity Stone!
+## Wanda Destroys an Infinity Stone
 
 Just goes to show how powerful she is(or rather was).
 
-## SNAP!!!
+## SNAP
 
 The dreadful SNAP, killing half the universe, including some of our most beloved character. As if that wasn't enough, we got to see how much Thanos mourns Gamora.
 
@@ -91,7 +91,7 @@ The dreadful SNAP, killing half the universe, including some of our most beloved
 
 This one got to me, and I'm sure most of the viewers. It was just too painful to hear him desperately hug Tony. "I'm sorry Mr. Stark..."
 
-## Mother F...
+## Mother F
 
 ![Paging Captain Marvel](/img/captainmarvel.jpg)
 
