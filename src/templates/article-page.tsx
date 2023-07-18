@@ -2,14 +2,14 @@ import * as React from 'react'
 import kebabCase from 'lodash.kebabcase'
 import {Link, graphql} from 'gatsby'
 import {GatsbyImage, getImage} from 'gatsby-plugin-image'
-import Layout from '@/components/Layout'
+import 'prismjs/themes/prism.css'
+import {badgeVariants} from '@/components/ui/badge'
 import {
   TypographyH1,
   TypographyLead,
-  TypographyList,
   TypographyP,
 } from '@/components/ui/typography'
-import 'prismjs/themes/prism.css'
+import Layout from '@/components/Layout'
 
 interface ArticlePageTemplateProps {
   data: {
@@ -57,13 +57,15 @@ const ArticlePageTemplate: React.FC<ArticlePageTemplateProps> = (props) => {
           <Link to={authorLink}>{author}</Link>&nbsp;&nbsp;|&nbsp;&nbsp;{date}
         </TypographyLead>
 
-        <TypographyList>
-          {tags.map((tag, idx) => (
-            <li key={`${idx}`}>
-              <Link to={`/tag/${kebabCase(tag)}`}>#{tag}&nbsp;</Link>
-            </li>
-          ))}
-        </TypographyList>
+        {tags.map((tag, idx) => (
+          <Link
+            key={`${kebabCase(tag)}-${idx}`}
+            className={`${badgeVariants({variant: 'default'})} mr-2`}
+            to={`/tags/${kebabCase(tag)}`}
+          >
+            #{tag}&nbsp;
+          </Link>
+        ))}
 
         <GatsbyImage image={image} alt={title} />
 

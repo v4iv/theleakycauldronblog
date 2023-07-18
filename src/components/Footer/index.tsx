@@ -1,16 +1,16 @@
 import * as React from 'react'
-import {TypographyP} from '@/components/ui/typography'
 import {Separator} from '@/components/ui/separator'
+import {TypographyMuted} from '@/components/ui/typography'
 
 const Footer: React.FC = () => {
   return (
     <footer>
       <Separator />
 
-      <TypographyP>
+      <TypographyMuted>
         Copyright &copy; 2018-{new Date().getFullYear().toString()} The Leaky
         Cauldron Blog. All Rights Reserved.
-      </TypographyP>
+      </TypographyMuted>
     </footer>
   )
 }

@@ -3,6 +3,7 @@ import type {GatsbyNode} from 'gatsby'
 import kebabCase from 'lodash.kebabcase'
 import {createFilePath} from 'gatsby-source-filesystem'
 
+// TODO typesafe
 export const onCreateNode: GatsbyNode['onCreateNode'] = ({
   actions,
   getNode,
@@ -92,7 +93,7 @@ export const createPages: GatsbyNode['createPages'] = async ({
   Array.from({length: numberOfPages}).forEach((_, i) => {
     createPage({
       path: i === 0 ? `/` : `/${i + 1}`,
-      component: path.resolve('./src/templates/home-page.tsx'),
+      component: path.resolve(`src/templates/home-page.tsx`),
       context: {
         limit: articlesPerPage,
         skip: i * articlesPerPage,
@@ -108,18 +109,41 @@ export const createPages: GatsbyNode['createPages'] = async ({
     createPage({
       path: edge.node.fields.slug,
       component: path.resolve(
-        `./src/templates/${String(edge.node.frontmatter.templateKey)}.tsx`,
+        `src/templates/${String(edge.node.frontmatter.templateKey)}.tsx`,
       ),
 
-      // additional data can be passed via context
       context: {
         id: id,
       },
     })
   })
+
+  let tags: any = []
+
+  articles.forEach((edge: any) => {
+    if (edge?.node?.frontmatter?.tags) {
+      tags = tags.concat(edge.node.frontmatter.tags)
+    }
+  })
+
+  tags = [...new Set(tags)]
+
+  tags.forEach((tag: string) => {
+    const tagPath = `/tags/${kebabCase(tag)}`
+
+    createPage({
+      path: tagPath,
+      component: path.resolve(`src/templates/tag-page.tsx`),
+      context: {
+        tag,
+      },
+    })
+  })
 }
 
-export const onCreateWebpackConfig = ({actions}: any) => {
+export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({
+  actions,
+}) => {
   actions.setWebpackConfig({
     resolve: {
       alias: {

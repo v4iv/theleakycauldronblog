@@ -1,8 +1,9 @@
 import * as React from 'react'
 import {Link, graphql} from 'gatsby'
+import {ArrowLeft, ArrowRight} from 'lucide-react'
+import {Button} from '@/components/ui/button'
 import Layout from '@/components/Layout'
 import ArticleList from '@/components/ArticleList'
-import {Button} from '@/components/ui/button'
 
 interface HomePageTemplateProps {
   data: {
@@ -54,14 +55,14 @@ const HomePageTemplate: React.FC<HomePageTemplateProps> = (props) => {
       {!isFirst && (
         <Button asChild>
           <Link to={prevPage} rel="prev">
-            ← Previous Page
+            <ArrowLeft className="mr-2 h-4 w-4" /> Previous Page
           </Link>
         </Button>
       )}
       {!isLast && (
         <Button asChild>
           <Link to={nextPage} rel="next">
-            Next Page →
+            Next Page <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
         </Button>
       )}

@@ -1,13 +1,14 @@
 import * as React from 'react'
 import {Link} from 'gatsby'
 import kebabCase from 'lodash.kebabcase'
+import {ChevronRight} from 'lucide-react'
 import {
   TypographyH2,
   TypographyLead,
-  TypographyMuted,
   TypographyP,
 } from '@/components/ui/typography'
 import {Button} from '@/components/ui/button'
+import {badgeVariants} from '@/components/ui/badge'
 
 interface ArticleListProps {
   articles: {
@@ -55,13 +56,19 @@ const ArticleList: React.FC<ArticleListProps> = (props) => {
 
             <TypographyP>{excerpt}</TypographyP>
             <Button variant="link" asChild>
-              <Link to={slug}>Continue Reading...</Link>
+              <Link to={slug}>
+                Continue Reading <ChevronRight className="ml-2 h-4 w-4" />
+              </Link>
             </Button>
 
             {tags.map((tag, idx) => (
-              <TypographyMuted key={`${idx}`}>
-                <Link to={`/tag/${kebabCase(tag)}`}>#{tag}&nbsp;</Link>
-              </TypographyMuted>
+              <Link
+                key={`${kebabCase(tag)}-${idx}`}
+                className={`${badgeVariants({variant: 'default'})} mr-2`}
+                to={`/tags/${kebabCase(tag)}`}
+              >
+                #{tag}&nbsp;
+              </Link>
             ))}
           </article>
         )
