@@ -40,7 +40,8 @@ function NavBar() {
                 <Avatar className="mr-2 flex md:hidden">
                   <AvatarImage
                     src="/icons/icon-192x192.png"
-                    alt="the-leaky-cauldron-blog" />
+                    alt="the-leaky-cauldron-blog"
+                  />
                   <AvatarFallback>tlcb</AvatarFallback>
                 </Avatar>
               </Link>

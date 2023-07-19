@@ -141,8 +141,6 @@ const config: GatsbyConfig = {
                 frontmatter {
                   title
                   author
-                  metaTitle
-                  metaDescription
                   templateKey
                 }
                 rawMarkdownBody
@@ -158,20 +156,12 @@ const config: GatsbyConfig = {
         // List of keys to index. The values of the keys are taken from the
         // normalizer function below.
         // Default: all fields
-        index: [
-          `slug`,
-          `title`,
-          `body`,
-          `author`,
-          `metaTitle`,
-          `metaDescription`,
-          `templateKey`,
-        ],
+        index: [`slug`, `title`, `body`, `author`, `templateKey`],
 
         // List of keys to store and make available in your UI. The values of
         // the keys are taken from the normalizer function below.
         // Default: all fields
-        store: [`id`, `slug`, `title`, `templateKey`],
+        store: [`id`, `slug`, `title`, `author`, `templateKey`],
 
         // Function used to map the result from the GraphQL query. This should
         // return an array of items to index in the form of flat objects
@@ -184,12 +174,88 @@ const config: GatsbyConfig = {
             title: node.frontmatter.title,
             body: node.rawMarkdownBody,
             author: node.frontmatter.author,
-            metaTitle: node.frontmatter.metaTitle,
-            metaDescription: node.frontmatter.metaDescription,
             templateKey: node.frontmatter.templateKey,
           })),
       },
     },
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        feeds: [
+          {
+            output: `/rss.xml`,
+            title: `The Leaky Cauldron Blog RSS Feed`,
+            serialize: ({
+              query: {site, allMarkdownRemark},
+            }: {
+              query: {
+                site: {
+                  siteMetadata: {
+                    siteUrl: string
+                  }
+                }
+                allMarkdownRemark: {
+                  nodes: {
+                    excerpt: string
+                    html: string
+                    id: string
+                    fields: {
+                      slug: string
+                    }
+                    frontmatter: {
+                      title: string
+                      author: string
+                      date: string
+                      templateKey: string
+                    }
+                  }[]
+                }
+              }
+            }) => {
+              return allMarkdownRemark.nodes
+                .filter(
+                  (node) => node.frontmatter.templateKey === 'article-page',
+                )
+                .map((node) => {
+                  return Object.assign({}, node.frontmatter, {
+                    title: node.frontmatter.title,
+                    description: node.excerpt,
+                    author: node.frontmatter.author,
+                    date: node.frontmatter.date,
+                    url: site.siteMetadata.siteUrl + node.fields.slug,
+                    guid: site.siteMetadata.siteUrl + node.fields.slug,
+                    custom_elements: [{'content:encoded': node.html}],
+                  })
+                })
+            },
+            query: `
+            {
+              allMarkdownRemark(
+                sort: { order: DESC, fields: [frontmatter___date] },
+              ) {
+                nodes {
+                  excerpt(pruneLength: 400)
+                  html
+                  id
+                  fields {
+                    slug
+                  }
+                  frontmatter {
+                    title
+                    author
+                    date
+                    templateKey
+                  }
+                }
+              }
+            }
+            `,
+          },
+        ],
+      },
+    },
+    // `gatsby-plugin-perf-budgets`,
+    // `gatsby-plugin-webpack-bundle-analyser-v2`,
   ],
 }
 

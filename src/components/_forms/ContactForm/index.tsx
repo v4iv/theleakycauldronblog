@@ -1,6 +1,7 @@
 import * as React from 'react'
 import {useForm, SubmitHandler} from 'react-hook-form'
 import {yupResolver} from '@hookform/resolvers/yup'
+import {Loader2} from 'lucide-react'
 import {Button} from '@/components/ui/button'
 import {
   Form,
@@ -13,6 +14,7 @@ import {
 } from '@/components/ui/form'
 import {Input} from '@/components/ui/input'
 import {Textarea} from '@/components/ui/textarea'
+import {useToast} from '@/components/ui/use-toast'
 import {encode} from '@/lib/utils'
 import validationSchema from './validationSchema'
 
@@ -23,7 +25,15 @@ type FormData = {
 }
 
 function ContactForm() {
-  const methods = useForm<FormData>({resolver: yupResolver(validationSchema)})
+  const methods = useForm<FormData>({
+    resolver: yupResolver(validationSchema),
+    defaultValues: {
+      name: '',
+      email: '',
+      message: '',
+    },
+  })
+  const {toast} = useToast()
 
   const submitHandler: SubmitHandler<FormData> = async (data) => {
     try {
@@ -35,11 +45,25 @@ function ContactForm() {
           ...data,
         }),
       })
+
+      toast({
+        title: 'Your Message Was Sent Successfully!',
+        description: "I'll Get Back To You ASAP!",
+      })
+
+      methods.reset()
     } catch (err) {
       console.error(err)
-      alert('Error: Please Try Again!')
+
+      toast({
+        title: 'Error!',
+        description: 'Please Try Again!',
+      })
     }
   }
+
+  const submitDisabled =
+    methods.formState.isSubmitting || methods.formState.isSubmitted
 
   return (
     <Form {...methods}>
@@ -86,7 +110,7 @@ function ContactForm() {
             <FormItem>
               <FormLabel>Message</FormLabel>
               <FormControl>
-                <Textarea {...field} />
+                <Textarea rows={12} {...field} />
               </FormControl>
               <FormDescription />
               <FormMessage />
@@ -94,13 +118,24 @@ function ContactForm() {
           )}
         />
 
-        <Button
-          className="float-right mt-3"
-          type="submit"
-          disabled={methods.formState.isSubmitting}
-        >
-          Submit
-        </Button>
+        <div className="mt-3 flex justify-end">
+          <Button
+            className="mr-2"
+            variant="outline"
+            type="reset"
+            disabled={methods.formState.isSubmitting}
+            onClick={() => methods.reset()}
+          >
+            Clear
+          </Button>
+
+          <Button type="submit" disabled={submitDisabled}>
+            {methods.formState.isSubmitting && (
+              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+            )}
+            {methods.formState.isSubmitting ? 'Submitting' : 'Submit'}
+          </Button>
+        </div>
       </form>
     </Form>
   )
