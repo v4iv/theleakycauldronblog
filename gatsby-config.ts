@@ -230,9 +230,7 @@ const config: GatsbyConfig = {
             },
             query: `
             {
-              allMarkdownRemark(
-                sort: { order: DESC, fields: [frontmatter___date] },
-              ) {
+              allMarkdownRemark(sort: {frontmatter: {date: DESC}}) {
                 nodes {
                   excerpt(pruneLength: 400)
                   html
