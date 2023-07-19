@@ -2,7 +2,7 @@ import * as React from 'react'
 import {Separator} from '@/components/ui/separator'
 import {TypographyMuted} from '@/components/ui/typography'
 
-const Footer: React.FC = () => {
+function Footer() {
   return (
     <footer className="mx-auto w-full max-w-screen-md">
       <Separator />

@@ -16,7 +16,7 @@ interface CommandPaletteProps {
   setOpen: Dispatch<SetStateAction<boolean>>
 }
 
-const CommandPalette: React.FC<CommandPaletteProps> = (props) => {
+function CommandPalette(props: CommandPaletteProps) {
   const {open, setOpen} = props
 
   // Not suitable for large number of pages

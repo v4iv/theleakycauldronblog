@@ -22,7 +22,7 @@ type FormData = {
   message: string
 }
 
-const ContactForm: React.FC = () => {
+function ContactForm() {
   const methods = useForm<FormData>({resolver: yupResolver(validationSchema)})
 
   const submitHandler: SubmitHandler<FormData> = async (data) => {

@@ -17,7 +17,7 @@ import {Avatar, AvatarFallback, AvatarImage} from '@/components/ui/avatar'
 
 const CommandPalette = lazy(() => import('@/components/CommandPalette'))
 
-const NavBar: React.FC = () => {
+function NavBar() {
   const [open, setOpen] = useState(false)
 
   useEffect(() => {
@@ -40,8 +40,7 @@ const NavBar: React.FC = () => {
                 <Avatar className="mr-2 flex md:hidden">
                   <AvatarImage
                     src="/icons/icon-192x192.png"
-                    alt="the-leaky-cauldron-blog"
-                  />
+                    alt="the-leaky-cauldron-blog" />
                   <AvatarFallback>tlcb</AvatarFallback>
                 </Avatar>
               </Link>

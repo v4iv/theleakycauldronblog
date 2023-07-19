@@ -16,7 +16,7 @@ tags:
 ---
 Mushroom Stroganoff is a Russian dish of sautéed pieces of Mushroom served in a sauce with [smetana](https://en.wikipedia.org/wiki/Smetana_(dairy_product) "Smetana (dairy product)") ([sour cream](https://en.wikipedia.org/wiki/Sour_cream "Sour cream")). Best enjoyed with *rice* and a side of *sautéed vegetables*. It can be made in ~ 1 hour.
 
-# Ingredients
+## Ingredients
 
 * 200g **Button Mushrooms**
 * 1 medium **Onion**
@@ -29,14 +29,14 @@ Mushroom Stroganoff is a Russian dish of sautéed pieces of Mushroom served in a
 * ¼ teaspoon **Black Pepper**
 * ½ teaspoon **Salt**
 
-# Preparations
+## Preparations
 
-## Vegetables
+### Vegetables
 
 * Cut the mushrooms in long, ¼ centimetre thick strips, along the stem.
 * Mince onion and green chillies.
 
-## Mushroom Broth
+### Mushroom Broth
 
 Before we begin we first need to prepare *Mushroom Broth*.
 
@@ -47,7 +47,7 @@ Before we begin we first need to prepare *Mushroom Broth*.
 5. Add water, let it boil for a minute.
 6. Separate the mushrooms and the broth using a strainer.
 
-# Steps to Make
+## Steps to Make
 
 1. Sprinkle the mushrooms with salt, pepper and herbs. Set it aside.
 2. Melt a tablespoon of butter in a non stick pan.

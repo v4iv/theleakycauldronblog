@@ -10,8 +10,14 @@ interface SEOProps {
   children?: React.ReactNode
 }
 
-const SEO: React.FC<SEOProps> = (props) => {
-  const {title, description, author, pathname, image, children} = props
+function SEO({
+  title,
+  description,
+  author,
+  pathname,
+  image,
+  children,
+}: SEOProps) {
   const {
     title: defaultTitle,
     description: defaultDescription,

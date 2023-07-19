@@ -29,9 +29,7 @@ interface ArticleListProps {
   }[]
 }
 
-const ArticleList: React.FC<ArticleListProps> = (props) => {
-  const {pages} = props
-
+function ArticleList({pages}: ArticleListProps) {
   return (
     <section className="mx-auto w-full max-w-screen-md">
       {pages
