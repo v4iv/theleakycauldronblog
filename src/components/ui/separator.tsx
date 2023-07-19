@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import * as React from 'react'
 import * as SeparatorPrimitive from '@radix-ui/react-separator'
 
@@ -8,7 +9,6 @@ const Separator = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof SeparatorPrimitive.Root>
 >(
   (
-    // eslint-disable-next-line react/prop-types
     {className, orientation = 'horizontal', decorative = true, ...props},
     ref,
   ) => (
