@@ -1,47 +1,44 @@
 import * as React from 'react'
 import kebabCase from 'lodash.kebabcase'
-import {Link, graphql} from 'gatsby'
+import {Link, graphql, PageProps, HeadProps} from 'gatsby'
 import {GatsbyImage, getImage} from 'gatsby-plugin-image'
 import 'prismjs/themes/prism.css'
 import {badgeVariants} from '@/components/ui/badge'
 import {TypographyH1, TypographyLead} from '@/components/ui/typography'
 import Layout from '@/components/Layout'
+import SEO from '@/components/SEO'
 
-interface ArticlePageTemplateProps {
-  data: {
-    markdownRemark: {
-      id: string
-      html: string
-      fields: {
-        slug: string
+type DataProps = {
+  markdownRemark: {
+    id: string
+    html: string
+    fields: {
+      slug: string
+    }
+    frontmatter: {
+      title: string
+      metaTitle: string
+      metaDescription: string
+      cover: {
+        childImageSharp: any
+        publicURL: string
       }
-      frontmatter: {
-        title: string
-        metaTitle: string
-        metaDescription: string
-        cover: {
-          childImageSharp: any
-          publicURL: string
-        }
-        date: string
-        author: string
-        authorLink: string
-        tags: string[]
-      }
+      date: string
+      author: string
+      authorLink: string
+      tags: string[]
     }
   }
 }
 
-const ArticlePageTemplate: React.FC<ArticlePageTemplateProps> = (props) => {
-  const {
-    data: {
-      markdownRemark: {
-        html,
-        frontmatter: {title, cover, date, author, authorLink, tags},
-      },
+function ArticlePageTemplate({
+  data: {
+    markdownRemark: {
+      html,
+      frontmatter: {title, cover, date, author, authorLink, tags},
     },
-  } = props
-
+  },
+}: PageProps<DataProps>) {
   const image = getImage(cover)!
 
   return (
@@ -87,6 +84,25 @@ const ArticlePageTemplate: React.FC<ArticlePageTemplateProps> = (props) => {
 }
 
 export default ArticlePageTemplate
+
+export function Head({
+  location: {pathname},
+  data: {
+    markdownRemark: {
+      frontmatter: {author, cover, metaTitle, metaDescription},
+    },
+  },
+}: HeadProps<DataProps>) {
+  return (
+    <SEO
+      pathname={pathname}
+      title={metaTitle}
+      description={metaDescription}
+      author={author}
+      image={cover.publicURL}
+    />
+  )
+}
 
 export const articleQuery = graphql`
   query Article($id: String!) {

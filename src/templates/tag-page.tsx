@@ -1,5 +1,5 @@
 import * as React from 'react'
-import {Link, graphql} from 'gatsby'
+import {HeadProps, Link, PageProps, graphql} from 'gatsby'
 import {
   TypographyH1,
   TypographyH2,
@@ -7,36 +7,34 @@ import {
 } from '@/components/ui/typography'
 import Layout from '@/components/Layout'
 import {Separator} from '@/components/ui/separator'
+import SEO from '@/components/SEO'
 
-interface TagPageTemplateProps {
-  data: {
-    allMarkdownRemark: {
-      totalCount: number
-      edges: {
-        node: {
-          fields: {
-            slug: string
-          }
-          frontmatter: {
-            title: string
-          }
+type DataProps = {
+  allMarkdownRemark: {
+    totalCount: number
+    edges: {
+      node: {
+        fields: {
+          slug: string
         }
-      }[]
-    }
-  }
-  pageContext: {
-    tag: string
+        frontmatter: {
+          title: string
+        }
+      }
+    }[]
   }
 }
 
-const TagPageTemplate: React.FC<TagPageTemplateProps> = (props) => {
-  const {
-    data: {
-      allMarkdownRemark: {totalCount, edges: articles},
-    },
-    pageContext: {tag},
-  } = props
+type PageContextProps = {
+  tag: string
+}
 
+function TagPageTemplate({
+  data: {
+    allMarkdownRemark: {totalCount, edges: articles},
+  },
+  pageContext: {tag},
+}: PageProps<DataProps, PageContextProps>) {
   const tagHeader = `${totalCount} post${
     totalCount === 1 ? '' : 's'
   } tagged with “${tag}”`
@@ -83,6 +81,20 @@ const TagPageTemplate: React.FC<TagPageTemplateProps> = (props) => {
 }
 
 export default TagPageTemplate
+
+export function Head({
+  location: {pathname},
+  data: {
+    allMarkdownRemark: {totalCount},
+  },
+  pageContext: {tag},
+}: HeadProps<DataProps, PageContextProps>) {
+  const tagHeader = `${totalCount} post${
+    totalCount === 1 ? '' : 's'
+  } tagged with “${tag}”`
+
+  return <SEO pathname={pathname} title={tag} description={tagHeader} />
+}
 
 export const tagQuery = graphql`
   query Tag($tag: String) {

@@ -1,0 +1,70 @@
+import * as React from 'react'
+import {useSiteMetadata} from '../../hooks/useSiteMetadata'
+
+interface SEOProps {
+  title?: string
+  description?: string
+  image?: string
+  author?: string
+  pathname?: string
+  children?: React.ReactNode
+}
+
+const SEO: React.FC<SEOProps> = (props) => {
+  const {title, description, author, pathname, image, children} = props
+  const {
+    title: defaultTitle,
+    description: defaultDescription,
+    image: defaultImage,
+    siteUrl,
+    twitterUsername,
+  } = useSiteMetadata()
+
+  const seo = {
+    title: title || defaultTitle,
+    description: description || defaultDescription,
+    image: `${siteUrl}${image || defaultImage}`,
+    url: `${siteUrl}${pathname || ``}`,
+    author: author || ``,
+    twitterUsername,
+  }
+
+  return (
+    <>
+      <html lang="en" />
+
+      {/* General tags */}
+      <title>{seo.title}</title>
+
+      <meta name="description" content={seo.description} />
+
+      {/* OpenGraph tags */}
+      <meta property="og:url" content={seo.url} />
+
+      <meta property="og:title" content={seo.title} />
+
+      <meta property="og:author" content={seo.author} />
+
+      <meta property="og:description" content={seo.description} />
+
+      <meta property="og:image" content={seo.image} />
+
+      {/* Twitter Card tags */}
+      <meta name="twitter:card" content="summary_large_image" />
+
+      <meta name="twitter:site" content={seo.url} />
+
+      <meta name="twitter:creator" content={`@${seo.twitterUsername}` || ''} />
+
+      <meta name="twitter:title" content={seo.title} />
+
+      <meta name="twitter:description" content={seo.description} />
+
+      <meta name="twitter:image" content={seo.image} />
+
+      {children}
+    </>
+  )
+}
+
+export default SEO

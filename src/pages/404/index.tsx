@@ -1,54 +1,25 @@
 import * as React from 'react'
-import {Link, HeadFC, PageProps} from 'gatsby'
-import Layout from '@/components/Layout'
-import {
-  TypographyH1,
-  TypographyLead,
-  TypographyList,
-  TypographyP,
-} from '@/components/ui/typography'
 import {Separator} from '@/components/ui/separator'
+import {TypographyH1, TypographyH2} from '@/components/ui/typography'
+import Layout from '@/components/Layout'
+import SEO from '@/components/SEO'
 
-const NotFoundPage: React.FC<PageProps> = () => {
+function NotFoundPage() {
   return (
     <Layout>
-      <div>
-        <TypographyH1>404 | Page Not Found</TypographyH1>
-
-        <TypographyLead>
-          Sorry, we can&apos;t find the page you are looking for.
-        </TypographyLead>
-      </div>
-
-      <Separator />
-
-      <div>
-        <TypographyP>Are you looking for one of these?</TypographyP>
-
-        <TypographyList>
-          <li>
-            <Link to="/" replace>
-              Home
-            </Link>
-          </li>
-
-          <li>
-            <Link to="/about" replace>
-              About
-            </Link>
-          </li>
-
-          <li>
-            <Link to="/contact" replace>
-              Contact
-            </Link>
-          </li>
-        </TypographyList>
-      </div>
+      <header className="mx-auto w-full max-w-screen-md min-h-screen flex items-center justify-center">
+        <div className="flex h-12 items-center space-x-4">
+          <TypographyH1>404</TypographyH1>
+          <Separator orientation="vertical" />
+          <TypographyH2>Page Not Found</TypographyH2>
+        </div>
+      </header>
     </Layout>
   )
 }
 
 export default NotFoundPage
 
-export const Head: HeadFC = () => <title>404: Page Not Found</title>
+export function Head() {
+  return <SEO title="404: Page Not Found | The Leaky Cauldron Blog" />
+}

@@ -1,47 +1,45 @@
 import * as React from 'react'
-import {Link, graphql} from 'gatsby'
+import {HeadProps, Link, PageProps, graphql} from 'gatsby'
 import {ArrowLeft, ArrowRight} from 'lucide-react'
 import {Button} from '@/components/ui/button'
 import Layout from '@/components/Layout'
 import ArticleList from '@/components/ArticleList'
+import SEO from '@/components/SEO'
 
-interface HomePageTemplateProps {
-  data: {
-    allMarkdownRemark: {
-      edges: {
-        node: {
-          excerpt: string
-          fields: {
-            slug: string
-          }
-          frontmatter: {
-            title: string
-            cover: {
-              childImageSharp: any
-              publicURL: string
-            }
-            author: string
-            date: any
-            templateKey: string
-          }
+type DataProps = {
+  allMarkdownRemark: {
+    edges: {
+      node: {
+        excerpt: string
+        fields: {
+          slug: string
         }
-      }[]
-    }
-  }
-  pageContext: {
-    currentPage: number
-    numberOfPages: number
+        frontmatter: {
+          title: string
+          cover: {
+            childImageSharp: any
+            publicURL: string
+          }
+          author: string
+          date: any
+          templateKey: string
+        }
+      }
+    }[]
   }
 }
 
-const HomePageTemplate: React.FC<HomePageTemplateProps> = (props) => {
-  const {
-    data: {
-      allMarkdownRemark: {edges: pages},
-    },
-    pageContext: {currentPage, numberOfPages},
-  } = props
+type PageContextProps = {
+  currentPage: number
+  numberOfPages: number
+}
 
+function HomePageTemplate({
+  data: {
+    allMarkdownRemark: {edges: pages},
+  },
+  pageContext: {currentPage, numberOfPages},
+}: PageProps<DataProps, PageContextProps>) {
   const isFirst = currentPage === 1
   const isLast = currentPage === numberOfPages
   const prevPage =
@@ -75,6 +73,12 @@ const HomePageTemplate: React.FC<HomePageTemplateProps> = (props) => {
 }
 
 export default HomePageTemplate
+
+export function Head({
+  location: {pathname},
+}: HeadProps<DataProps, PageContextProps>) {
+  return <SEO pathname={pathname} />
+}
 
 export const articleListQuery = graphql`
   query ArticleList($skip: Int!, $limit: Int!) {

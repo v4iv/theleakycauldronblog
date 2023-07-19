@@ -1,5 +1,5 @@
 import * as React from 'react'
-import {graphql} from 'gatsby'
+import {HeadProps, PageProps, graphql} from 'gatsby'
 import {GatsbyImage, getImage} from 'gatsby-plugin-image'
 import {
   TypographyH1,
@@ -7,34 +7,33 @@ import {
   TypographyLead,
 } from '@/components/ui/typography'
 import Layout from '@/components/Layout'
+import SEO from '@/components/SEO'
 
-interface AboutPageProps {
-  data: {
-    markdownRemark: {
-      html: string
-      frontmatter: {
-        title: string
-        subtitle: string
-        author: string
-        image: {
-          childSharpImage: any
-          publicURL: string
-        }
+type DataProps = {
+  markdownRemark: {
+    html: string
+    frontmatter: {
+      title: string
+      subtitle: string
+      author: string
+      image: {
+        childSharpImage: any
+        publicURL: string
       }
+      metaTitle: string
+      metaDescription: string
     }
   }
 }
 
-const AboutPage: React.FC<AboutPageProps> = (props) => {
-  const {
-    data: {
-      markdownRemark: {
-        html,
-        frontmatter: {title, subtitle, author, image},
-      },
+function AboutPage({
+  data: {
+    markdownRemark: {
+      html,
+      frontmatter: {title, subtitle, author, image},
     },
-  } = props
-
+  },
+}: PageProps<DataProps>) {
   const aboutImage = getImage(image)!
 
   return (
@@ -63,6 +62,25 @@ const AboutPage: React.FC<AboutPageProps> = (props) => {
 }
 
 export default AboutPage
+
+export function Head({
+  location: {pathname},
+  data: {
+    markdownRemark: {
+      frontmatter: {metaTitle, metaDescription, author, image},
+    },
+  },
+}: HeadProps<DataProps>) {
+  return (
+    <SEO
+      pathname={pathname}
+      title={metaTitle}
+      description={metaDescription}
+      author={author}
+      image={image.publicURL}
+    />
+  )
+}
 
 export const aboutPageQuery = graphql`
   query About($id: String!) {

@@ -1,30 +1,29 @@
 import * as React from 'react'
-import {graphql} from 'gatsby'
+import {HeadProps, PageProps, graphql} from 'gatsby'
 import {Separator} from '@/components/ui/separator'
 import {TypographyH1, TypographyLead} from '@/components/ui/typography'
 import Layout from '@/components/Layout'
 import {ContactForm} from '@/components/_forms'
+import SEO from '@/components/SEO'
 
-interface ContactPageTemplateProps {
-  data: {
-    markdownRemark: {
-      frontmatter: {
-        title: string
-        subtitle: string
-      }
+type DataProps = {
+  markdownRemark: {
+    frontmatter: {
+      title: string
+      subtitle: string
+      metaTitle: string
+      metaDescription: string
     }
   }
 }
 
-const ContactPageTemplate: React.FC<ContactPageTemplateProps> = (props) => {
-  const {
-    data: {
-      markdownRemark: {
-        frontmatter: {title, subtitle},
-      },
+function ContactPageTemplate({
+  data: {
+    markdownRemark: {
+      frontmatter: {title, subtitle},
     },
-  } = props
-
+  },
+}: PageProps<DataProps>) {
   return (
     <Layout>
       <div className="mx-auto w-full max-w-screen-md">
@@ -48,12 +47,27 @@ const ContactPageTemplate: React.FC<ContactPageTemplateProps> = (props) => {
 
 export default ContactPageTemplate
 
+export function Head({
+  location: {pathname},
+  data: {
+    markdownRemark: {
+      frontmatter: {metaTitle, metaDescription},
+    },
+  },
+}: HeadProps<DataProps>) {
+  return (
+    <SEO pathname={pathname} title={metaTitle} description={metaDescription} />
+  )
+}
+
 export const contactPageQuery = graphql`
   query Contact($id: String!) {
     markdownRemark(id: {eq: $id}) {
       frontmatter {
         title
         subtitle
+        metaTitle
+        metaDescription
       }
     }
   }
