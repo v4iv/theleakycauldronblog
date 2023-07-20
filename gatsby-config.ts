@@ -1,3 +1,5 @@
+import dotenv from 'dotenv'
+dotenv.config({path: `.env.${process.env.NODE_ENV}`})
 import * as path from 'path'
 import type {GatsbyConfig} from 'gatsby'
 
@@ -80,6 +82,27 @@ const config: GatsbyConfig = {
     `gatsby-plugin-postcss`,
     `gatsby-plugin-image`,
     {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        color: '#ffa3d7',
+        showSpinner: false,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+        shortname: process.env.DISQUS_SHORTNAME,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-tagmanager`,
+      options: {
+        id: process.env.GTM_ID,
+        includeInDevelopment: false,
+        defaultDataLayer: {platform: 'gatsby'},
+      },
+    },
+    {
       resolve: `gatsby-plugin-sitemap`,
       options: {
         excludes: [`/tags`, `/tags/*`],
@@ -114,22 +137,9 @@ const config: GatsbyConfig = {
     {
       resolve: `gatsby-plugin-local-search`,
       options: {
-        // A unique name for the search index. This should be descriptive of
-        // what the index contains. This is required.
         name: `pages`,
-
-        // Set the search engine to create the index. This is required.
-        // The following engines are supported: flexsearch, lunr
-        engine: `flexsearch`,
-
-        // Provide options to the engine. This is optional and only recommended
-        // for advanced users.
-        //
-        // Note: Only the flexsearch engine supports options.
+        engine: `lunr`,
         engineOptions: `speed`,
-
-        // GraphQL query used to fetch all data for the search index. This is
-        // required.
         query: `
           {
             allMarkdownRemark {
@@ -168,14 +178,35 @@ const config: GatsbyConfig = {
         // containing properties to index. The objects must contain the `ref`
         // field above (default: 'id'). This is required.
         normalizer: ({data}: any) =>
-          data.allMarkdownRemark.nodes.map((node: any) => ({
-            id: node.id,
-            slug: node.fields.slug,
-            title: node.frontmatter.title,
-            body: node.rawMarkdownBody,
-            author: node.frontmatter.author,
-            templateKey: node.frontmatter.templateKey,
-          })),
+          data.allMarkdownRemark.nodes
+            .filter(
+              (node: {
+                frontmatter: {
+                  templateKey: string
+                }
+              }) => node.frontmatter.templateKey === 'article-page',
+            )
+            .map(
+              (node: {
+                rawMarkdownBody: string
+                id: string
+                fields: {
+                  slug: string
+                }
+                frontmatter: {
+                  title: string
+                  author: string
+                  templateKey: string
+                }
+              }) => ({
+                id: node.id,
+                slug: node.fields.slug,
+                title: node.frontmatter.title,
+                body: node.rawMarkdownBody,
+                author: node.frontmatter.author,
+                templateKey: node.frontmatter.templateKey,
+              }),
+            ),
       },
     },
     {
@@ -250,6 +281,23 @@ const config: GatsbyConfig = {
             `,
           },
         ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-netlify`,
+      options: {
+        mergeSecurityHeaders: false,
+        headers: {
+          '/*.js': ['cache-control: public, max-age=31536000, immutable'],
+          '/*.css': ['cache-control: public, max-age=31536000, immutable'],
+          '/sw.js': ['cache-control: public, max-age=0, must-revalidate'],
+          '/*': [
+            `X-Frame-Options: DENY`,
+            `X-XSS-Protection: 1; mode=block`,
+            `X-Content-Type-Options: nosniff`,
+            `Referrer-Policy: no-referrer-when-downgrade`,
+          ],
+        },
       },
     },
     // `gatsby-plugin-perf-budgets`,

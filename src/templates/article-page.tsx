@@ -9,8 +9,14 @@ import {TypographyH1, TypographyLead} from '@/components/ui/typography'
 import SEO from '@/components/SEO'
 import Layout from '@/components/Layout'
 import Content from '@/components/Content'
+import CommentBox from '@/components/CommentBox'
 
 type DataProps = {
+  site: {
+    siteMetadata: {
+      siteUrl: string
+    }
+  }
   markdownRemark: {
     id: string
     html: string
@@ -35,8 +41,13 @@ type DataProps = {
 
 function ArticlePageTemplate({
   data: {
+    site: {
+      siteMetadata: {siteUrl},
+    },
     markdownRemark: {
       html,
+      id,
+      fields: {slug},
       frontmatter: {title, cover, date, author, authorLink, tags},
     },
   },
@@ -53,7 +64,9 @@ function ArticlePageTemplate({
 
               <div className="flex items-center h-6 space-x-4">
                 <TypographyLead>
-                  <Link to={authorLink}>{author}</Link>
+                  <a rel="noreferrer nofollow noopener" href={authorLink}>
+                    {author}
+                  </a>
                 </TypographyLead>
 
                 <Separator orientation="vertical" />
@@ -86,6 +99,8 @@ function ArticlePageTemplate({
           <div className="px-3 md:px-0 py-3 md:py-5">
             <Content html={html} />
           </div>
+
+          <CommentBox id={id} slug={slug} title={title} siteURL={siteUrl} />
         </div>
       </article>
     </Layout>
@@ -115,6 +130,11 @@ export function Head({
 
 export const articleQuery = graphql`
   query Article($id: String!) {
+    site {
+      siteMetadata {
+        siteUrl
+      }
+    }
     markdownRemark(id: {eq: $id}) {
       id
       html

@@ -6,7 +6,7 @@ import {TypographyMuted} from '@/components/ui/typography'
 function Footer() {
   return (
     <footer className="mx-auto w-full max-w-screen-md">
-      <div className="py-10 px-3 md:px-0 md:text-left text-center flex items-center flex-col md:flex-row">
+      <div className="py-5 px-3 md:px-0 md:text-left text-center flex items-center flex-col md:flex-row">
         <div className="flex-grow">
           <TypographyMuted>
             Copyright &copy; 2018-{new Date().getFullYear().toString()} The

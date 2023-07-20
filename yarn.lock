@@ -1109,7 +1109,7 @@
   resolved "https://registry.yarnpkg.com/@babel/regjsgen/-/regjsgen-0.8.0.tgz#f0ba69b075e1f05fb2825b7fad991e7adbb18310"
   integrity sha512-x/rqGMdzj+fWZvCOYForTghzbtqPDZ5gPwaoNGHdgDfF2QA/XZbCBp4Moo5scrkAMPhB7z26XM/AaHuIJdgauA==
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.12.0", "@babel/runtime@^7.12.13", "@babel/runtime@^7.12.5", "@babel/runtime@^7.13.10", "@babel/runtime@^7.15.4", "@babel/runtime@^7.18.3", "@babel/runtime@^7.2.0", "@babel/runtime@^7.20.13", "@babel/runtime@^7.20.7", "@babel/runtime@^7.21.0", "@babel/runtime@^7.21.5", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7", "@babel/runtime@^7.9.2":
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.12.0", "@babel/runtime@^7.12.13", "@babel/runtime@^7.12.5", "@babel/runtime@^7.13.10", "@babel/runtime@^7.15.4", "@babel/runtime@^7.16.7", "@babel/runtime@^7.18.3", "@babel/runtime@^7.2.0", "@babel/runtime@^7.20.13", "@babel/runtime@^7.20.7", "@babel/runtime@^7.21.0", "@babel/runtime@^7.21.5", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7", "@babel/runtime@^7.9.2":
   version "7.22.6"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.22.6.tgz#57d64b9ae3cff1d67eb067ae117dac087f5bd438"
   integrity sha512-wDb5pWm4WDdF6LFUde3Jl8WzPA+3ZbxYqkC6xAXuD3irdEHN1k0NfTRrJD8ZD378SJ61miMLCqIOXYhd8x+AJQ==
@@ -3729,6 +3729,11 @@ accepts@~1.3.4, accepts@~1.3.5, accepts@~1.3.8:
     mime-types "~2.1.34"
     negotiator "0.6.3"
 
+accessible-nprogress@^2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/accessible-nprogress/-/accessible-nprogress-2.1.2.tgz#8e65ebf4936db1752638e1cd2e8730f9bef311e9"
+  integrity sha512-reIwMbbt+ZGOmQLWPXGcPf5X1F4fzsZAekY9alCxpekxizRhQMAd/QInaA8k7WtwTcGMzD9hnYswGLcaJDRY/A==
+
 acorn-import-assertions@^1.9.0:
   version "1.9.0"
   resolved "https://registry.yarnpkg.com/acorn-import-assertions/-/acorn-import-assertions-1.9.0.tgz#507276249d684797c84e0734ef84860334cfb1ac"
@@ -4742,7 +4747,7 @@ chalk@^3.0.0:
     ansi-styles "^4.1.0"
     supports-color "^7.1.0"
 
-chalk@^4.0.0, chalk@^4.1.0, chalk@^4.1.2:
+chalk@^4.0, chalk@^4.0.0, chalk@^4.1.0, chalk@^4.1.2:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-4.1.2.tgz#aac4e2b7734a740867aeb16bf02aad556a1e7a01"
   integrity sha512-oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA==
@@ -5608,7 +5613,7 @@ deep-is@^0.1.3:
   resolved "https://registry.yarnpkg.com/deep-is/-/deep-is-0.1.4.tgz#a6f2dce612fadd2ef1f519b73551f17e85199831"
   integrity sha512-oIPzksmTg4/MriiaYGO+okXDT7ztn/w3Eptv/+gSIdMdKsJo0u4CfYNFJPy+4SKMuCqGw2wxnA+URMg3t8a/bQ==
 
-deepmerge@^4.2.2, deepmerge@^4.3.1:
+deepmerge@^4.0, deepmerge@^4.2.2, deepmerge@^4.3.1:
   version "4.3.1"
   resolved "https://registry.yarnpkg.com/deepmerge/-/deepmerge-4.3.1.tgz#44b5f2147cd3b00d4b56137685966f26fd25dd4a"
   integrity sha512-3sUqbMEc77XqpdNO7FRyRog+eW3ph+GYCbj+rK+uYyRMuwsVy0rMiVtPn+QJlKFvWP/1PYpapqYn0Me2knFn+A==
@@ -6998,6 +7003,15 @@ fs-exists-cached@1.0.0, fs-exists-cached@^1.0.0:
   resolved "https://registry.yarnpkg.com/fs-exists-cached/-/fs-exists-cached-1.0.0.tgz#cf25554ca050dc49ae6656b41de42258989dcbce"
   integrity sha512-kSxoARUDn4F2RPXX48UXnaFKwVU7Ivd/6qpzZL29MCDmr9sTvybv4gFCp+qaI4fM9m0z9fgz/yJvi56GAz+BZg==
 
+fs-extra@^10.0.0:
+  version "10.1.0"
+  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-10.1.0.tgz#02873cfbc4084dde127eaa5f9905eef2325d1abf"
+  integrity sha512-oRXApq54ETRj4eMiFzGnHWGy+zo5raudjuxN0b8H7s/RU2oW0Wvsx9O0ACRN/kRq9E8Vu/ReskGB5o3ji+FzHQ==
+  dependencies:
+    graceful-fs "^4.2.0"
+    jsonfile "^6.0.1"
+    universalify "^2.0.0"
+
 fs-extra@^11.1.1:
   version "11.1.1"
   resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-11.1.1.tgz#da69f7c39f3b002378b0954bb6ae7efdc0876e2d"
@@ -7109,7 +7123,7 @@ gatsby-cli@^5.11.0:
     yoga-layout-prebuilt "^1.10.0"
     yurnalist "^2.1.0"
 
-gatsby-core-utils@^4.11.0:
+gatsby-core-utils@^4.0.0, gatsby-core-utils@^4.11.0:
   version "4.11.0"
   resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-4.11.0.tgz#16d300129d0d143a79ad32816b8837630d7e7fae"
   integrity sha512-W7pfrKgBchdk19g802IuPkCA2iJ69lRR1GzkfYjB8d1TuIQqf0l1z0lv7e+2kQqO+uQ5Yt3sGMMN2qMYMWfLXg==
@@ -7185,6 +7199,11 @@ gatsby-parcel-config@^1.11.0:
     "@parcel/transformer-js" "2.8.3"
     "@parcel/transformer-json" "2.8.3"
 
+gatsby-plugin-disqus@^1.2.6:
+  version "1.2.6"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-disqus/-/gatsby-plugin-disqus-1.2.6.tgz#cefc7b1cc5921fa36099256f8ca0fe634b72cb6e"
+  integrity sha512-lGa6q7oldF3cxbwcS1dvndaxDevEBfYOIweUYOARheU0AhbDzYp4lyIvUkUwBYEWsAzIsuJNiugI6yIcQXy09g==
+
 gatsby-plugin-feed@^5.11.0:
   version "5.11.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-feed/-/gatsby-plugin-feed-5.11.0.tgz#3db367a54c6bea8ae63e553631bbab5d2d86054d"
@@ -7196,6 +7215,14 @@ gatsby-plugin-feed@^5.11.0:
     gatsby-plugin-utils "^4.11.0"
     lodash.merge "^4.6.2"
     rss "^1.2.2"
+
+gatsby-plugin-google-tagmanager@^5.11.0:
+  version "5.11.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-tagmanager/-/gatsby-plugin-google-tagmanager-5.11.0.tgz#48b61d5539ce0c90f95b2433c80ca64142f3a558"
+  integrity sha512-+QRH6k90Y1G8nJP89fCwhgEodGSUQa7B26McegTP+QCwf+cmAKaUOg2n7F7/PbbWl+JzINyI5YZMn8KX7bq2bA==
+  dependencies:
+    "@babel/runtime" "^7.20.13"
+    web-vitals "^1.1.2"
 
 gatsby-plugin-image@^3.11.0:
   version "3.11.0"
@@ -7252,6 +7279,26 @@ gatsby-plugin-netlify-cms@^7.11.0:
     lodash "^4.17.21"
     mini-css-extract-plugin "1.6.2"
     netlify-identity-widget "^1.9.2"
+
+gatsby-plugin-netlify@^5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-netlify/-/gatsby-plugin-netlify-5.1.0.tgz#a681b7fafef4f5ae026a72c3bfe01c8f395e52b8"
+  integrity sha512-L2OPGYpjp6auXzntbQi3PveQ5433w6YFLb5MKDLwYaC9SdC4myLZStCMdHTMLzfcc2x9iLhA+XNkUNxC9OiUXw==
+  dependencies:
+    "@babel/runtime" "^7.16.7"
+    fs-extra "^10.0.0"
+    gatsby-core-utils "^4.0.0"
+    kebab-hash "^0.1.2"
+    lodash.mergewith "^4.6.2"
+    webpack-assets-manifest "^5.0.6"
+
+gatsby-plugin-nprogress@^5.11.0:
+  version "5.11.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-nprogress/-/gatsby-plugin-nprogress-5.11.0.tgz#8ca24e6b35f6c1b2a436898de768f0192b0116a5"
+  integrity sha512-8ClaUeoafh+3azdM++8KU9SlAyhc0EdbMKgf9NEXXP5ao2dA6Wz/kLSe31CAUFWr7Ga46P6YhPa6PpfMtuXjUQ==
+  dependencies:
+    "@babel/runtime" "^7.20.13"
+    accessible-nprogress "^2.1.2"
 
 gatsby-plugin-page-creator@^5.11.0:
   version "5.11.0"
@@ -9194,6 +9241,13 @@ jwt-decode@^3.0.0:
   resolved "https://registry.yarnpkg.com/jwt-decode/-/jwt-decode-3.1.2.tgz#3fb319f3675a2df0c2895c8f5e9fa4b67b04ed59"
   integrity sha512-UfpWE/VZn0iP50d8cz9NrZLM9lSWhcJ+0Gt/nm4by88UL+J1SiKN8/5dkjMmbEzwL2CAe+67GsegCbIKtbp75A==
 
+kebab-hash@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/kebab-hash/-/kebab-hash-0.1.2.tgz#dfb7949ba34d8e70114ea7d83e266e5e2a4abaac"
+  integrity sha512-BTZpq3xgISmQmAVzkISy4eUutsUA7s4IEFlCwOBJjvSFOwyR7I+fza+tBc/rzYWK/NrmFHjfU1IhO3lu29Ib/w==
+  dependencies:
+    lodash.kebabcase "^4.1.1"
+
 keyv@^4.0.0, keyv@^4.5.2:
   version "4.5.3"
   resolved "https://registry.yarnpkg.com/keyv/-/keyv-4.5.3.tgz#00873d2b046df737963157bd04f294ca818c9c25"
@@ -9372,6 +9426,13 @@ lock@^1.1.0:
   resolved "https://registry.yarnpkg.com/lock/-/lock-1.1.0.tgz#53157499d1653b136ca66451071fca615703fa55"
   integrity sha512-NZQIJJL5Rb9lMJ0Yl1JoVr9GSdo4HTPsUEWsSFzB8dE8DSoiLCVavWZPi7Rnlv/o73u6I24S/XYc/NmG4l8EKA==
 
+lockfile@^1.0:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/lockfile/-/lockfile-1.0.4.tgz#07f819d25ae48f87e538e6578b6964a4981a5609"
+  integrity sha512-cvbTwETRfsFh4nHsL1eGWapU1XFi5Ot9E85sWAwia7Y7EgB7vfqcZhTKZ+l7hCGxSPoushMv5GKhT5PdLv03WA==
+  dependencies:
+    signal-exit "^3.0.2"
+
 lodash-es@^4.17.15:
   version "4.17.21"
   resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.21.tgz#43e626c46e6591b7750beb2b50117390c609e3ee"
@@ -9412,6 +9473,16 @@ lodash.foreach@^4.5.0:
   resolved "https://registry.yarnpkg.com/lodash.foreach/-/lodash.foreach-4.5.0.tgz#1a6a35eace401280c7f06dddec35165ab27e3e53"
   integrity sha512-aEXTF4d+m05rVOAUG3z4vZZ4xVexLKZGF0lIxuHZ1Hplpk/3B6Z1+/ICICYRLm7c41Z2xiejbkCkJoTlypoXhQ==
 
+lodash.get@^4.0:
+  version "4.4.2"
+  resolved "https://registry.yarnpkg.com/lodash.get/-/lodash.get-4.4.2.tgz#2d177f652fa31e939b4438d5341499dfa3825e99"
+  integrity sha512-z+Uw/vLuy6gQe8cfaFWD7p0wVv8fJl3mbzXh33RS+0oW2wvUqiRXiQ69gLWSLpgB5/6sU+r6BlQR0MBILadqTQ==
+
+lodash.has@^4.0:
+  version "4.5.2"
+  resolved "https://registry.yarnpkg.com/lodash.has/-/lodash.has-4.5.2.tgz#d19f4dc1095058cccbe2b0cdf4ee0fe4aa37c862"
+  integrity sha512-rnYUdIo6xRCJnQmbVFEwcxF144erlD+M3YcJUVesflU9paQaE8p+fJDcIQrlMYbxoANFL+AB9hZrzSBBk5PL+g==
+
 lodash.isplainobject@^4.0.6:
   version "4.0.6"
   resolved "https://registry.yarnpkg.com/lodash.isplainobject/-/lodash.isplainobject-4.0.6.tgz#7c526a52d89b45c45cc690b88163be0497f550cb"
@@ -9446,6 +9517,11 @@ lodash.merge@^4.6.2:
   version "4.6.2"
   resolved "https://registry.yarnpkg.com/lodash.merge/-/lodash.merge-4.6.2.tgz#558aa53b43b661e1925a0afdfa36a9a1085fe57a"
   integrity sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==
+
+lodash.mergewith@^4.6.2:
+  version "4.6.2"
+  resolved "https://registry.yarnpkg.com/lodash.mergewith/-/lodash.mergewith-4.6.2.tgz#617121f89ac55f59047c7aec1ccd6654c6590f55"
+  integrity sha512-GK3g5RPZWTRSeLSpgP8Xhra+pnjBC56q9FZYe1d5RN3TJ35dbkGy3YqBSMbyCrlbi+CM9Z3Jk5yTL7RCsqboyQ==
 
 lodash.truncate@^4.4.2:
   version "4.4.2"
@@ -13502,7 +13578,7 @@ schema-utils@^2.6.5:
     ajv "^6.12.4"
     ajv-keywords "^3.5.2"
 
-schema-utils@^3.0.0, schema-utils@^3.1.1, schema-utils@^3.2.0:
+schema-utils@^3.0, schema-utils@^3.0.0, schema-utils@^3.1.1, schema-utils@^3.2.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/schema-utils/-/schema-utils-3.3.0.tgz#f50a88877c3c01652a15b622ae9e9795df7a60fe"
   integrity sha512-pN/yOAvcC+5rQ5nERGuwrjLlYvLTbCibnZ1I7B1LaiAz9BRBlE9GMgE/eqV30P7aJQUf7Ddimy/RsbYO/GrVGg==
@@ -14374,7 +14450,7 @@ tapable@^1.0.0:
   resolved "https://registry.yarnpkg.com/tapable/-/tapable-1.1.3.tgz#a1fccc06b58db61fd7a45da2da44f5f3a3e67ba2"
   integrity sha512-4WK/bYZmj8xLr+HUCODHGF1ZFzsYffasLUgEiMBY4fgtltdO6B4WJtlSbPaDTLpYTcGVwM2qLnFTICEcNxs3kA==
 
-tapable@^2.0.0, tapable@^2.1.1, tapable@^2.2.0:
+tapable@^2.0, tapable@^2.0.0, tapable@^2.1.1, tapable@^2.2.0:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/tapable/-/tapable-2.2.1.tgz#1967a73ef4060a82f12ab96af86d52fdb76eeca0"
   integrity sha512-GNzQvQTOIP6RyTfE2Qxb8ZVlNmw0n88vp1szwWRimP02mnTsx3Wtn5qRdqY9w2XduFNUgvOwhNnQsjwCp+kqaQ==
@@ -15511,6 +15587,11 @@ web-streams-polyfill@^3.2.1:
   resolved "https://registry.yarnpkg.com/web-streams-polyfill/-/web-streams-polyfill-3.2.1.tgz#71c2718c52b45fd49dbeee88634b3a60ceab42a6"
   integrity sha512-e0MO3wdXWKrLbL0DgGnUV7WHVuw9OUvL4hjgnPkIeEvESk74gAITi5G606JtZPp39cd8HA9VQzCIvA49LpPN5Q==
 
+web-vitals@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/web-vitals/-/web-vitals-1.1.2.tgz#06535308168986096239aa84716e68b4c6ae6d1c"
+  integrity sha512-PFMKIY+bRSXlMxVAQ+m2aw9c/ioUYfDgrYot0YUa+/xa0sakubWhSDyxAKwzymvXVdF4CZI71g06W+mqhzu6ig==
+
 web-worker@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/web-worker/-/web-worker-1.2.0.tgz#5d85a04a7fbc1e7db58f66595d7a3ac7c9c180da"
@@ -15531,6 +15612,19 @@ webidl-conversions@^3.0.0:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/webidl-conversions/-/webidl-conversions-3.0.1.tgz#24534275e2a7bc6be7bc86611cc16ae0a5654871"
   integrity sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ==
+
+webpack-assets-manifest@^5.0.6:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/webpack-assets-manifest/-/webpack-assets-manifest-5.1.0.tgz#5af328f6c8fa760cb9a62af631a83da2b478b791"
+  integrity sha512-kPuTMEjBrqZQVJ5M6yXNBCEdFbQQn7p+loNXt8NOeDFaAbsNFWqqwR0YL1mfG5LbwhK5FLXWXpuK3GuIIZ46rg==
+  dependencies:
+    chalk "^4.0"
+    deepmerge "^4.0"
+    lockfile "^1.0"
+    lodash.get "^4.0"
+    lodash.has "^4.0"
+    schema-utils "^3.0"
+    tapable "^2.0"
 
 webpack-bundle-analyzer@^4.8.0:
   version "4.9.0"
