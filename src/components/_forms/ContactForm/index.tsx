@@ -30,9 +30,11 @@ const formSchema = z.object({
       required_error: 'Email is Required!',
     })
     .email({message: 'Enter a Valid Email!'}),
-  message: z.string({
-    required_error: 'Message is Required!',
-  }),
+  message: z
+    .string({
+      required_error: 'Message is Required!',
+    })
+    .min(20, {message: 'You can drop a hi on twitter @waybove!'}),
 })
 
 function ContactForm() {

@@ -284,6 +284,7 @@ const config: GatsbyConfig = {
         ],
       },
     },
+    `gatsby-plugin-use-query-params`,
     {
       resolve: `gatsby-plugin-netlify`,
       options: {

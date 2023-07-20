@@ -26,11 +26,14 @@ import {Separator} from '@/components/ui/separator'
 import {TypographyH2, TypographyMuted} from '@/components/ui/typography'
 import SEO from '@/components/SEO'
 import Footer from '@/components/Footer'
+import {StringParam, useQueryParam} from 'use-query-params'
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json())
 
 function SearchPage() {
-  const [query, setQuery] = useState('')
+  const [q, setQ] = useQueryParam('q', StringParam)
+
+  const [query, setQuery] = useState(q || '')
 
   const {
     localSearchPages: {publicIndexURL, publicStoreURL},
@@ -62,8 +65,15 @@ function SearchPage() {
     fetcher,
   )
 
+  useEffect(() => {
+    if (!isIndexLoading && !isStoreLoading) {
+      setQuery(q || '')
+    }
+  }, [q, setQuery, isIndexLoading, isStoreLoading])
+
+  // TODO Make it work on localhost
   const handleQuery = (event: any) => {
-    setQuery(event.target.value)
+    setQ(event.target.value)
   }
 
   const results = useLunr(query, index, store)
@@ -89,6 +99,7 @@ function SearchPage() {
               <Input
                 autoFocus
                 name="Search"
+                value={query}
                 disabled={isIndexLoading || isStoreLoading}
                 placeholder={
                   isIndexLoading || isStoreLoading ? 'Loading...' : 'Search...'
