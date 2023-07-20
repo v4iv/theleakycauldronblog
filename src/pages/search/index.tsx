@@ -88,7 +88,7 @@ function SearchPage() {
                 variant="outline"
                 size="icon"
                 aria-label="Back"
-                onClick={() => navigate(-1)}
+                onClick={() => navigate('/', {replace: true})}
               >
                 <ArrowLeft className="h-4 w-4" />
               </Button>

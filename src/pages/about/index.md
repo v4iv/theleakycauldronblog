@@ -27,4 +27,4 @@ I sincerely hope this blog helps and inspires people to overcome their challenge
 
 As they say, life's a journey and I want us to support each other through each passing day.
 
-`~~~ Mischief Managed ~~~`
+` ~~~ Mischief Managed ~~~ `
