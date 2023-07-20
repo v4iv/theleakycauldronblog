@@ -36,7 +36,7 @@ function Footer() {
           </Button>
 
           <Button variant="outline" size="icon" aria-label="rss-feed" asChild>
-            <a href="feed:https://theleakycauldronblog.com/rss.xml">
+            <a href="https://theleakycauldronblog.com/rss.xml">
               <Rss className="h-4 w-4" />
             </a>
           </Button>

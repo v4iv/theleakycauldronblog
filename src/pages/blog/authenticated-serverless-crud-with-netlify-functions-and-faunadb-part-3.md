@@ -68,7 +68,7 @@ Finally, we write the query to create an entry of a cat, from the payload, we al
     try {
         const response = await client.query(
             q.Create(
-                q.Collection('addresses'), {
+                q.Collection('cat_breeds'), {
                     data: {
                         name: payload.name,
                         image: payload.image,

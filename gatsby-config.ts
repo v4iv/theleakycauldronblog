@@ -66,11 +66,13 @@ const config: GatsbyConfig = {
               noInlineHighlight: true,
             },
           },
+          `gatsby-remark-embedder`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
         ],
       },
     },
+    `gatsby-plugin-twitter`,
     {
       resolve: `gatsby-plugin-netlify-cms`,
       options: {
@@ -116,7 +118,7 @@ const config: GatsbyConfig = {
         short_name: `tlcb`,
         start_url: '/',
         background_color: `#ffffff`,
-        theme_color: `#0f172a`,
+        theme_color: `#0f172a`, // TODO #020817
         display: `standalone`,
         icons: [
           {

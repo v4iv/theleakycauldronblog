@@ -34,7 +34,10 @@ const formSchema = z.object({
     .string({
       required_error: 'Message is Required!',
     })
-    .min(20, {message: 'You can drop a hi on twitter @waybove!'}),
+    .min(20, {
+      message:
+        'The message is too short! You can drop a hi on twitter @waybove!',
+    }),
 })
 
 function ContactForm() {
@@ -77,8 +80,7 @@ function ContactForm() {
     }
   }
 
-  const submitDisabled =
-    methods.formState.isSubmitting || methods.formState.isSubmitted
+  const submitDisabled = methods.formState.isSubmitting
 
   return (
     <Form {...methods}>
@@ -95,7 +97,7 @@ function ContactForm() {
             <FormItem>
               <FormLabel>Name</FormLabel>
               <FormControl>
-                <Input {...field} />
+                <Input disabled={submitDisabled} {...field} />
               </FormControl>
               <FormDescription />
               <FormMessage />
@@ -110,7 +112,7 @@ function ContactForm() {
             <FormItem>
               <FormLabel>Email</FormLabel>
               <FormControl>
-                <Input {...field} />
+                <Input disabled={submitDisabled} {...field} />
               </FormControl>
               <FormDescription />
               <FormMessage />
@@ -125,7 +127,7 @@ function ContactForm() {
             <FormItem>
               <FormLabel>Message</FormLabel>
               <FormControl>
-                <Textarea rows={12} {...field} />
+                <Textarea disabled={submitDisabled} rows={12} {...field} />
               </FormControl>
               <FormDescription />
               <FormMessage />
@@ -144,10 +146,10 @@ function ContactForm() {
           </Button>
 
           <Button type="submit" disabled={submitDisabled}>
-            {methods.formState.isSubmitting && (
+            {submitDisabled && (
               <Loader2 className="mr-2 h-4 w-4 animate-spin" />
             )}
-            {methods.formState.isSubmitting ? 'Submitting' : 'Submit'}
+            {submitDisabled ? 'Submitting' : 'Submit'}
           </Button>
         </div>
       </form>

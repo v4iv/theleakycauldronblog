@@ -19,10 +19,12 @@ Last month, one of my best friends decided he wanted to fulfil his lifelong drea
 
 ## What We’ll Be Building
 
-We’ll be building a Sign-Up API, a Sign In API and Authenticated CRUD APIs for our Cats database. Before we begin, make sure you have the `netlify-dev` package installed globally on your machine.
+We’ll be building a Sign-Up API, a Sign In API and Authenticated CRUD APIs for our Cats database. ~~Before we begin, make sure you have the `netlify-dev` package installed globally on your machine.~~
+
+`netlify-dev` has been deprecated please check out [`netlify-cli`](https://docs.netlify.com/cli/get-started/)
 
 ```shell
-yarn global add netlify-dev
+yarn global add netlify-cli
 ```
 
 NOTE: This write-up assumes that you have some familiarity with serverless functions. This article will not teach you FQL in detail, but merely show you how you can leverage FaunaDB and Netlify Functions to create authenticated serverless APIs. I use `yarn`, but you can use `npm` as well.

@@ -1,6 +1,6 @@
 ---
 templateKey: article-page
-title: Can Psychedelics Lift the Veil to Consciousness?
+title: Can Psychedelics Lift the Veil on Consciousness?
 slug: psychedelics-consciousness-iit
 author: Vaibhav Sharma
 authorLink: https://twitter.com/waybove
