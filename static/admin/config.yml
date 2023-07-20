@@ -10,7 +10,7 @@ backend:
 
 site_url: https://theleakycauldronblog.com
 display_url: https://theleakycauldronblog.com
-logo_url: https://theleakycauldronblog.com/icons/icon-512x512.png
+logo_url: https://theleakycauldronblog.com/icons/icon-512.png
 publish_mode: editorial_workflow
 media_folder: static/img
 public_folder: /img

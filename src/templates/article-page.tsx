@@ -1,5 +1,5 @@
 import * as React from 'react'
-import kebabCase from 'lodash.kebabcase'
+import slugify from 'slugify'
 import {Link, graphql, PageProps, HeadProps} from 'gatsby'
 import {GatsbyImage, getImage} from 'gatsby-plugin-image'
 import 'prismjs/themes/prism-twilight.css'
@@ -77,9 +77,9 @@ function ArticlePageTemplate({
               <div className="space-x-2">
                 {tags.map((tag, idx) => (
                   <Link
-                    key={`${kebabCase(tag)}-${idx}`}
+                    key={`${slugify(tag)}-${idx}`}
                     className={badgeVariants({variant: 'default'})}
-                    to={`/tags/${kebabCase(tag)}`}
+                    to={`/tags/${slugify(tag)}`}
                   >
                     #{tag}&nbsp;
                   </Link>

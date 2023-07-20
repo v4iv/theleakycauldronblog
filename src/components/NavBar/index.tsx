@@ -39,7 +39,7 @@ function NavBar() {
               <Link aria-label="tlcb" to="/">
                 <Avatar className="mr-2 flex md:hidden">
                   <AvatarImage
-                    src="/icons/icon-192x192.png"
+                    src="/icons/icon-192-maskable.png"
                     alt="the-leaky-cauldron-blog"
                   />
                   <AvatarFallback>tlcb</AvatarFallback>

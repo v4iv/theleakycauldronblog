@@ -1,5 +1,5 @@
 import * as path from 'path'
-import kebabCase from 'lodash.kebabcase'
+import slugify from 'slugify'
 import type {CreateNodeArgs, GatsbyNode} from 'gatsby'
 import {createFilePath} from 'gatsby-source-filesystem'
 
@@ -53,7 +53,9 @@ export const onCreateNode: GatsbyNode['onCreateNode'] = ({
     let slug
 
     if (node.frontmatter?.templateKey === 'article-page') {
-      slug = `/blog/${kebabCase(node.frontmatter?.slug)}`
+      const s: string = node.frontmatter?.slug || ''
+
+      slug = `/blog/${slugify(s)}`
     } else {
       slug = createFilePath({node, getNode})
     }
@@ -149,7 +151,7 @@ export const createPages: GatsbyNode['createPages'] = async ({
   tags = [...new Set(tags)]
 
   tags.forEach((tag: string) => {
-    const tagPath = `/tags/${kebabCase(tag)}`
+    const tagPath = `/tags/${slugify(tag)}`
 
     createPage({
       path: tagPath,

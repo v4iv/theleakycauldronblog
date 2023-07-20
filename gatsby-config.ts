@@ -8,7 +8,7 @@ const config: GatsbyConfig = {
     title: `The Leaky Cauldron Blog`,
     description: `A Brew of Awesomeness with a Pinch of Magic...`,
     siteUrl: `https://theleakycauldronblog.com`,
-    image: `/icons/icon-512x512.png`,
+    image: `/icons/icon-512.png`,
     twitterUsername: `waybove`,
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
@@ -112,20 +112,20 @@ const config: GatsbyConfig = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `The Leaky Cauldron Blog`,
-        short_name: `TLC Blog`,
+        name: `the leaky cauldron blog`,
+        short_name: `tlcb`,
         start_url: '/',
         background_color: `#ffffff`,
-        theme_color: `#676767`,
+        theme_color: `#0f172a`,
         display: `standalone`,
         icons: [
           {
-            src: `/icons/icon-192x192.png`,
+            src: `/icons/icon-192.png`,
             sizes: `192x192`,
             type: `image/png`,
           },
           {
-            src: `/icons/icon-512x512.png`,
+            src: `/icons/icon-512.png`,
             sizes: `512x512`,
             type: `image/png`,
           },
