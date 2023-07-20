@@ -71,8 +71,10 @@ function SearchPage() {
     }
   }, [q, setQuery, isIndexLoading, isStoreLoading])
 
-  const handleQuery = (event: any) => {
-    navigate(`?q=${encodeURIComponent(event.target.value)}`, {replace: true})
+  const handleQuery = async (event: any) => {
+    await navigate(`?q=${encodeURIComponent(event.target.value)}`, {
+      replace: true,
+    })
   }
 
   const results = useLunr(query, index, store)

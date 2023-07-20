@@ -135,45 +135,45 @@ const config: GatsbyConfig = {
         cache_busting_mode: `none`,
       },
     },
-    {
-      resolve: `gatsby-plugin-offline`,
-      options: {
-        workboxConfig: {
-          globPatterns: ['**/icon-*'],
-          runtimeCaching: [
-            {
-              urlPattern: /(\.js$|\.css$|static\/)/,
-              handler: `CacheFirst`,
-            },
-            {
-              urlPattern:
-                /^https?:.*\/page-data\/.*\/(page-data|app-data)\.json$/,
-              handler: `NetworkFirst`,
-              options: {
-                networkTimeoutSeconds: 1,
-              },
-            },
-            {
-              urlPattern:
-                /^https?:.*\.(png|jpg|jpeg|webp|svg|gif|tiff|js|woff|woff2|json|css)$/,
-              handler: `StaleWhileRevalidate`,
-            },
-            {
-              urlPattern: /^https?:\/\/fonts\.googleapis\.com\/css/,
-              handler: `StaleWhileRevalidate`,
-            },
-            {
-              urlPattern: /\/$/,
-              handler: `NetworkFirst`,
-              options: {
-                networkTimeoutSeconds: 1,
-              },
-            },
-          ],
-        },
-        precachePages: [`/blog/*`, `/about`],
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-offline`,
+    //   options: {
+    //     workboxConfig: {
+    //       globPatterns: ['**/icon-*'],
+    //       runtimeCaching: [
+    //         {
+    //           urlPattern: /(\.js$|\.css$|static\/)/,
+    //           handler: `CacheFirst`,
+    //         },
+    //         {
+    //           urlPattern:
+    //             /^https?:.*\/page-data\/.*\/(page-data|app-data)\.json$/,
+    //           handler: `NetworkFirst`,
+    //           options: {
+    //             networkTimeoutSeconds: 1,
+    //           },
+    //         },
+    //         {
+    //           urlPattern:
+    //             /^https?:.*\.(png|jpg|jpeg|webp|svg|gif|tiff|js|woff|woff2|json|css)$/,
+    //           handler: `StaleWhileRevalidate`,
+    //         },
+    //         {
+    //           urlPattern: /^https?:\/\/fonts\.googleapis\.com\/css/,
+    //           handler: `StaleWhileRevalidate`,
+    //         },
+    //         {
+    //           urlPattern: /\/$/,
+    //           handler: `NetworkFirst`,
+    //           options: {
+    //             networkTimeoutSeconds: 1,
+    //           },
+    //         },
+    //       ],
+    //     },
+    //     precachePages: [`/blog/*`, `/about`],
+    //   },
+    // },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {
@@ -200,25 +200,9 @@ const config: GatsbyConfig = {
             }
           }
         `,
-
-        // Field used as the reference value for each document.
-        // Default: 'id'.
         ref: `id`,
-
-        // List of keys to index. The values of the keys are taken from the
-        // normalizer function below.
-        // Default: all fields
         index: [`slug`, `title`, `body`, `author`, `templateKey`],
-
-        // List of keys to store and make available in your UI. The values of
-        // the keys are taken from the normalizer function below.
-        // Default: all fields
         store: [`id`, `slug`, `title`, `author`, `templateKey`],
-
-        // Function used to map the result from the GraphQL query. This should
-        // return an array of items to index in the form of flat objects
-        // containing properties to index. The objects must contain the `ref`
-        // field above (default: 'id'). This is required.
         normalizer: ({data}: any) =>
           data.allMarkdownRemark.nodes
             .filter(
@@ -343,6 +327,7 @@ const config: GatsbyConfig = {
         },
       },
     },
+    `gatsby-plugin-remove-serviceworker`,
     // `gatsby-plugin-perf-budgets`,
     // `gatsby-plugin-webpack-bundle-analyser-v2`,
   ],

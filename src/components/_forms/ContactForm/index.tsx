@@ -36,7 +36,7 @@ const formSchema = z.object({
     })
     .min(20, {
       message:
-        'The message is too short! You can drop a hi on twitter @waybove!',
+        'The message is too short! BTW you can drop a hi on twitter @waybove!',
     }),
 })
 
