@@ -16,7 +16,6 @@ interface MarkdownRemarkNode extends CreateNodeArgs {
 
 interface IEdge {
   node: {
-    excerpt?: string
     id: string
     fields: {
       slug: string
@@ -78,14 +77,12 @@ export const createPages: GatsbyNode['createPages'] = async ({
       allMarkdownRemark(sort: [{frontmatter: {date: DESC}}]) {
         edges {
           node {
-            excerpt(pruneLength: 250)
             id
             fields {
               slug
             }
             frontmatter {
               tags
-              date(formatString: "MMMM DD, YYYY")
               templateKey
             }
           }

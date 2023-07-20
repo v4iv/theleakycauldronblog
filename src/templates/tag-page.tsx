@@ -5,9 +5,9 @@ import {
   TypographyH2,
   TypographyLead,
 } from '@/components/ui/typography'
-import Layout from '@/components/Layout'
 import {Separator} from '@/components/ui/separator'
 import SEO from '@/components/SEO'
+import Layout from '@/components/Layout'
 
 type DataProps = {
   allMarkdownRemark: {

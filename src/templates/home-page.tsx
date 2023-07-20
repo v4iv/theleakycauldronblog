@@ -2,9 +2,9 @@ import * as React from 'react'
 import {HeadProps, Link, PageProps, graphql} from 'gatsby'
 import {ArrowLeft, ArrowRight} from 'lucide-react'
 import {Button} from '@/components/ui/button'
+import SEO from '@/components/SEO'
 import Layout from '@/components/Layout'
 import ArticleList from '@/components/ArticleList'
-import SEO from '@/components/SEO'
 
 type DataProps = {
   allMarkdownRemark: {
@@ -89,7 +89,7 @@ export const articleListQuery = graphql`
     ) {
       edges {
         node {
-          excerpt
+          excerpt(format: PLAIN, pruneLength: 200)
           fields {
             slug
           }

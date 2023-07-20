@@ -1,8 +1,8 @@
 import * as React from 'react'
 import {Separator} from '@/components/ui/separator'
 import {TypographyH1, TypographyH2} from '@/components/ui/typography'
-import Layout from '@/components/Layout'
 import SEO from '@/components/SEO'
+import Layout from '@/components/Layout'
 
 function NotFoundPage() {
   return (
