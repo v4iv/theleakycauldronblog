@@ -1,7 +1,7 @@
 ---
 templateKey: article-page
-title: "Fahrenheit 451: An Alternative Perspective"
-slug: fahrenheit-451-alternative-perspective
+title: "Fahrenheit 451: An Alternate Perspective"
+slug: fahrenheit-451-alternate-perspective
 author: Vaibhav Sharma
 authorLink: https://twitter.com/waybove
 date: 2021-09-18T19:43:50.489Z

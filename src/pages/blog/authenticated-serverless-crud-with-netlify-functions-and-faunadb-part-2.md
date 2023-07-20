@@ -188,7 +188,7 @@ client.query(q.CreateRole({
            }
        },
        {
-           resource: q.Index("'cats_by_users'"),
+           resource: q.Index("cats_by_users"),
            actions: {
                unrestricted_read: false,
                read: true
