@@ -43,14 +43,13 @@ function TagPageTemplate({
     <Layout>
       <div className="mx-auto w-full max-w-screen-md">
         <div className="px-3 md:px-0 py-3 md:py-5">
-          <header>
+          <header className="space-y-3">
             <TypographyH1># {tag}</TypographyH1>
-            <div className="my-3">
-              <TypographyLead>{tagHeader}</TypographyLead>
-            </div>
-          </header>
 
-          <Separator />
+            <TypographyLead>{tagHeader}</TypographyLead>
+
+            <Separator />
+          </header>
 
           <section>
             {articles.map((article: any, idx: number) => {

@@ -4,6 +4,7 @@ import {Link, graphql, PageProps, HeadProps} from 'gatsby'
 import {GatsbyImage, getImage} from 'gatsby-plugin-image'
 import 'prismjs/themes/prism-twilight.css'
 import {badgeVariants} from '@/components/ui/badge'
+import {Separator} from '@/components/ui/separator'
 import {TypographyH1, TypographyLead} from '@/components/ui/typography'
 import SEO from '@/components/SEO'
 import Layout from '@/components/Layout'
@@ -45,28 +46,35 @@ function ArticlePageTemplate({
   return (
     <Layout>
       <article>
-        <header className="mx-auto w-full max-w-screen-md">
-          <section className="px-3 md:px-0 py-3 md:py-5">
-            <TypographyH1>{title}</TypographyH1>
+        <div className="mx-auto w-full max-w-screen-md">
+          <div className="px-3 md:px-0 py-3 md:py-5">
+            <header className="space-y-3">
+              <TypographyH1>{title}</TypographyH1>
 
-            <div className="my-3">
-              <TypographyLead>
-                <Link to={authorLink}>{author}</Link>&nbsp;&nbsp;|&nbsp;&nbsp;
-                {date}
-              </TypographyLead>
-            </div>
+              <div className="flex items-center h-6 space-x-4">
+                <TypographyLead>
+                  <Link to={authorLink}>{author}</Link>
+                </TypographyLead>
 
-            {tags.map((tag, idx) => (
-              <Link
-                key={`${kebabCase(tag)}-${idx}`}
-                className={`${badgeVariants({variant: 'default'})} my-3 mr-2`}
-                to={`/tags/${kebabCase(tag)}`}
-              >
-                #{tag}&nbsp;
-              </Link>
-            ))}
-          </section>
-        </header>
+                <Separator orientation="vertical" />
+
+                <TypographyLead>{date}</TypographyLead>
+              </div>
+
+              <div className="space-x-2">
+                {tags.map((tag, idx) => (
+                  <Link
+                    key={`${kebabCase(tag)}-${idx}`}
+                    className={badgeVariants({variant: 'default'})}
+                    to={`/tags/${kebabCase(tag)}`}
+                  >
+                    #{tag}&nbsp;
+                  </Link>
+                ))}
+              </div>
+            </header>
+          </div>
+        </div>
 
         <GatsbyImage
           className="h-auto w-auto object-cover aspect-video"

@@ -63,14 +63,8 @@ function NavBar() {
               </h3>
             </div>
 
-            <div className="flex">
-              <Button
-                className="mr-2"
-                variant="outline"
-                size="icon"
-                aria-label="Search"
-                asChild
-              >
+            <div className="flex space-x-2">
+              <Button variant="outline" size="icon" aria-label="Search" asChild>
                 <Link to="/search">
                   <Search className="h-4 w-4" />
                 </Link>
@@ -133,8 +127,6 @@ function NavBar() {
             </div>
           </div>
         </div>
-
-        <Separator />
       </nav>
 
       {open && (

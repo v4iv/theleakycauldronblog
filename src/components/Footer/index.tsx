@@ -1,14 +1,11 @@
 import * as React from 'react'
 import {Github, Rss, Twitter} from 'lucide-react'
-import {Separator} from '@/components/ui/separator'
-import {TypographyMuted} from '@/components/ui/typography'
 import {Button} from '@/components/ui/button'
+import {TypographyMuted} from '@/components/ui/typography'
 
 function Footer() {
   return (
     <footer className="mx-auto w-full max-w-screen-md">
-      <Separator />
-
       <div className="py-10 px-3 md:px-0 md:text-left text-center flex items-center flex-col md:flex-row">
         <div className="flex-grow">
           <TypographyMuted>
@@ -17,14 +14,8 @@ function Footer() {
           </TypographyMuted>
         </div>
 
-        <div className="flex mt-3 md:mt-0">
-          <Button
-            variant="outline"
-            size="icon"
-            aria-label="github"
-            className="mr-2"
-            asChild
-          >
+        <div className="flex mt-3 md:mt-0 space-x-2">
+          <Button variant="outline" size="icon" aria-label="github" asChild>
             <a
               target="_blank"
               rel="noreferrer nofollow noopener"
@@ -34,13 +25,7 @@ function Footer() {
             </a>
           </Button>
 
-          <Button
-            variant="outline"
-            size="icon"
-            aria-label="twitter"
-            className="mr-2"
-            asChild
-          >
+          <Button variant="outline" size="icon" aria-label="twitter" asChild>
             <a
               target="_blank"
               rel="noreferrer nofollow noopener"

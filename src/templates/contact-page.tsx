@@ -28,15 +28,15 @@ function ContactPageTemplate({
     <Layout>
       <div className="mx-auto w-full max-w-screen-md">
         <div className="px-3 md:px-0 py-3 md:py-5">
-          <TypographyH1>{title}</TypographyH1>
+          <header className="space-y-3">
+            <TypographyH1>{title}</TypographyH1>
 
-          <div className="my-3">
             <TypographyLead>{subtitle}</TypographyLead>
-          </div>
 
-          <Separator />
+            <Separator />
+          </header>
 
-          <div className="py-12 md:p-12">
+          <div className="py-12">
             <ContactForm />
           </div>
         </div>

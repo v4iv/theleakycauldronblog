@@ -118,9 +118,8 @@ function ContactForm() {
           )}
         />
 
-        <div className="mt-3 flex justify-end">
+        <div className="mt-3 flex justify-end space-x-2">
           <Button
-            className="mr-2"
             variant="outline"
             type="reset"
             disabled={methods.formState.isSubmitting}
