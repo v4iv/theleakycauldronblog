@@ -3,14 +3,7 @@ import {useEffect, useState} from 'react'
 import {graphql, useStaticQuery, Link, HeadProps, navigate} from 'gatsby'
 import useSWR, {preload} from 'swr'
 import {useLunr} from 'react-lunr'
-import {
-  ArrowLeft,
-  Equal,
-  Search,
-  AtSign,
-  Home,
-  MessageCircle,
-} from 'lucide-react'
+import {Equal, Search, AtSign, Home, MessageCircle} from 'lucide-react'
 import {Input} from '@/components/ui/input'
 import {Button} from '@/components/ui/button'
 import {
@@ -31,7 +24,7 @@ import {StringParam, useQueryParam} from 'use-query-params'
 const fetcher = (url: string) => fetch(url).then((res) => res.json())
 
 function SearchPage() {
-  const [q] = useQueryParam('q', StringParam)
+  const [q, setQueryParam] = useQueryParam('q', StringParam)
 
   const [query, setQuery] = useState(q || '')
 
@@ -72,9 +65,7 @@ function SearchPage() {
   }, [q, setQuery, isIndexLoading, isStoreLoading])
 
   const handleQuery = async (event: any) => {
-    await navigate(`?q=${encodeURIComponent(event.target.value)}`, {
-      replace: true,
-    })
+    setQueryParam(event.target.value)
   }
 
   const results = useLunr(query, index, store)
@@ -88,10 +79,10 @@ function SearchPage() {
               <Button
                 variant="outline"
                 size="icon"
-                aria-label="Back"
-                onClick={() => navigate(-1)}
+                aria-label="Home"
+                onClick={() => navigate('/', {replace: true})}
               >
-                <ArrowLeft className="h-4 w-4" />
+                <Home className="h-4 w-4" />
               </Button>
             </div>
 
