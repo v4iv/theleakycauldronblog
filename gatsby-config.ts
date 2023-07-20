@@ -99,6 +99,7 @@ const config: GatsbyConfig = {
       options: {
         id: process.env.GTM_ID,
         includeInDevelopment: false,
+        enableWebVitalsTracking: true,
         defaultDataLayer: {platform: 'gatsby'},
       },
     },

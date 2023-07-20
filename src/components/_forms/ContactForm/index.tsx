@@ -1,6 +1,7 @@
 import * as React from 'react'
 import {useForm, SubmitHandler} from 'react-hook-form'
-import {yupResolver} from '@hookform/resolvers/yup'
+import * as z from 'zod'
+import {zodResolver} from '@hookform/resolvers/zod'
 import {Loader2} from 'lucide-react'
 import {Button} from '@/components/ui/button'
 import {
@@ -16,17 +17,27 @@ import {Input} from '@/components/ui/input'
 import {Textarea} from '@/components/ui/textarea'
 import {useToast} from '@/components/ui/use-toast'
 import {encode} from '@/lib/utils'
-import validationSchema from './validationSchema'
 
-type FormData = {
-  name: string
-  email: string
-  message: string
-}
+const formSchema = z.object({
+  name: z
+    .string({
+      required_error: 'Name is Required!',
+    })
+    .min(2, {message: 'Too Short!'})
+    .max(50, {message: 'Too Long!'}),
+  email: z
+    .string({
+      required_error: 'Email is Required!',
+    })
+    .email({message: 'Enter a Valid Email!'}),
+  message: z.string({
+    required_error: 'Message is Required!',
+  }),
+})
 
 function ContactForm() {
-  const methods = useForm<FormData>({
-    resolver: yupResolver(validationSchema),
+  const methods = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
     defaultValues: {
       name: '',
       email: '',
@@ -35,7 +46,9 @@ function ContactForm() {
   })
   const {toast} = useToast()
 
-  const submitHandler: SubmitHandler<FormData> = async (data) => {
+  const submitHandler: SubmitHandler<z.infer<typeof formSchema>> = async (
+    data,
+  ) => {
     try {
       await fetch('/?no-cache=1', {
         method: 'POST',

@@ -52,7 +52,7 @@ function AboutPage({
       </div>
 
       <GatsbyImage
-        className="h-auto w-auto object-cover aspect-video"
+        className="h-auto w-auto object-cover"
         image={aboutImage}
         alt={author}
       />

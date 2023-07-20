@@ -19,7 +19,7 @@ interface CommandPaletteProps {
 function CommandPalette(props: CommandPaletteProps) {
   const {open, setOpen} = props
 
-  // Not suitable for large number of pages
+  // Not suitable for large number of pages, use publicStoreURL instead
   const {
     localSearchPages: {store},
   }: {
@@ -34,7 +34,7 @@ function CommandPalette(props: CommandPaletteProps) {
       }
     }
   } = useStaticQuery(graphql`
-    query Search {
+    query CommandSearch {
       localSearchPages {
         store
       }
@@ -68,7 +68,6 @@ function CommandPalette(props: CommandPaletteProps) {
             </CommandItem>
           </CommandGroup>
 
-          {/* not suitable for large number of pages */}
           <CommandGroup heading="Articles">
             {Object.entries(store)
               .filter(([, val]) => val.templateKey === 'article-page')
