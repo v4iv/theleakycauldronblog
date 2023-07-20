@@ -31,7 +31,7 @@ import {StringParam, useQueryParam} from 'use-query-params'
 const fetcher = (url: string) => fetch(url).then((res) => res.json())
 
 function SearchPage() {
-  const [q, setQ] = useQueryParam('q', StringParam)
+  const [q] = useQueryParam('q', StringParam)
 
   const [query, setQuery] = useState(q || '')
 
@@ -71,9 +71,8 @@ function SearchPage() {
     }
   }, [q, setQuery, isIndexLoading, isStoreLoading])
 
-  // TODO Make it work on localhost
   const handleQuery = (event: any) => {
-    setQ(event.target.value)
+    navigate(`?q=${encodeURIComponent(event.target.value)}`, {replace: true})
   }
 
   const results = useLunr(query, index, store)
@@ -88,7 +87,7 @@ function SearchPage() {
                 variant="outline"
                 size="icon"
                 aria-label="Back"
-                onClick={() => navigate('/', {replace: true})}
+                onClick={() => navigate(-1)}
               >
                 <ArrowLeft className="h-4 w-4" />
               </Button>
@@ -144,16 +143,7 @@ function SearchPage() {
                     </Button>
                   </SheetDescription>
 
-                  <Separator />
-
-                  <SheetFooter>
-                    <p className="font-mono text-[10px] text-muted-foreground">
-                      QUICK SEARCH&nbsp;&raquo;&nbsp;
-                      <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
-                        <span className="text-xs">⌘</span>K
-                      </kbd>
-                    </p>
-                  </SheetFooter>
+                  <SheetFooter />
                 </SheetContent>
               </Sheet>
             </div>
@@ -162,6 +152,7 @@ function SearchPage() {
       </nav>
 
       <Separator />
+
       <main className="min-h-screen">
         <div className="mx-auto w-full max-w-screen-md">
           <div className="px-3 md:px-0 py-3 md:py-5">
@@ -188,7 +179,9 @@ function SearchPage() {
           </div>
         </div>
       </main>
+
       <Separator />
+
       <Footer />
     </>
   )

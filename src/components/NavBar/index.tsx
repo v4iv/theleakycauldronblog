@@ -12,7 +12,6 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet'
-import {Separator} from '@/components/ui/separator'
 import {Avatar, AvatarFallback, AvatarImage} from '@/components/ui/avatar'
 
 const CommandPalette = lazy(() => import('@/components/CommandPalette'))
@@ -112,10 +111,8 @@ function NavBar() {
                     </Button>
                   </SheetDescription>
 
-                  <Separator />
-
                   <SheetFooter>
-                    <p className="font-mono text-[10px] text-muted-foreground">
+                    <p className="font-mono text-[10px] text-muted-foreground hidden md:flex md:items-center">
                       QUICK SEARCH&nbsp;&raquo;&nbsp;
                       <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
                         <span className="text-xs">⌘</span>K

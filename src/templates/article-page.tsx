@@ -62,7 +62,7 @@ function ArticlePageTemplate({
             <header className="space-y-3">
               <TypographyH1>{title}</TypographyH1>
 
-              <div className="flex items-center h-6 space-x-4">
+              <div className="flex items-center h-6 space-x-2">
                 <TypographyLead>
                   <a rel="noreferrer nofollow noopener" href={authorLink}>
                     {author}

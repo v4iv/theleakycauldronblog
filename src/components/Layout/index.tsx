@@ -8,10 +8,15 @@ function Layout({children}: {children: React.ReactNode}) {
   return (
     <>
       <NavBar />
+
       <Separator />
+
       <main className="min-h-screen">{children}</main>
+
       <Separator />
+
       <Footer />
+
       <Toaster />
     </>
   )

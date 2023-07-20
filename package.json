@@ -39,6 +39,7 @@
     "gatsby-plugin-netlify": "^5.1.0",
     "gatsby-plugin-netlify-cms": "^7.11.0",
     "gatsby-plugin-nprogress": "^5.11.0",
+    "gatsby-plugin-offline": "^6.11.0",
     "gatsby-plugin-postcss": "^6.11.0",
     "gatsby-plugin-sharp": "^5.11.0",
     "gatsby-plugin-sitemap": "^6.11.0",
