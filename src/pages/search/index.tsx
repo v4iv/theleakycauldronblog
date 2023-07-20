@@ -64,7 +64,8 @@ function SearchPage() {
     }
   }, [q, setQuery, isIndexLoading, isStoreLoading])
 
-  const handleQuery = async (event: any) => {
+  // Might not work on development server
+  const handleQuery = async (event: React.ChangeEvent<HTMLInputElement>) => {
     setQueryParam(event.target.value)
   }
 

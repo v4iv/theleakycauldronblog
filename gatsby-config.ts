@@ -135,45 +135,6 @@ const config: GatsbyConfig = {
         cache_busting_mode: `none`,
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-offline`,
-    //   options: {
-    //     workboxConfig: {
-    //       globPatterns: ['**/icon-*'],
-    //       runtimeCaching: [
-    //         {
-    //           urlPattern: /(\.js$|\.css$|static\/)/,
-    //           handler: `CacheFirst`,
-    //         },
-    //         {
-    //           urlPattern:
-    //             /^https?:.*\/page-data\/.*\/(page-data|app-data)\.json$/,
-    //           handler: `NetworkFirst`,
-    //           options: {
-    //             networkTimeoutSeconds: 1,
-    //           },
-    //         },
-    //         {
-    //           urlPattern:
-    //             /^https?:.*\.(png|jpg|jpeg|webp|svg|gif|tiff|js|woff|woff2|json|css)$/,
-    //           handler: `StaleWhileRevalidate`,
-    //         },
-    //         {
-    //           urlPattern: /^https?:\/\/fonts\.googleapis\.com\/css/,
-    //           handler: `StaleWhileRevalidate`,
-    //         },
-    //         {
-    //           urlPattern: /\/$/,
-    //           handler: `NetworkFirst`,
-    //           options: {
-    //             networkTimeoutSeconds: 1,
-    //           },
-    //         },
-    //       ],
-    //     },
-    //     precachePages: [`/blog/*`, `/about`],
-    //   },
-    // },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {
@@ -203,7 +164,26 @@ const config: GatsbyConfig = {
         ref: `id`,
         index: [`slug`, `title`, `body`, `author`, `templateKey`],
         store: [`id`, `slug`, `title`, `author`, `templateKey`],
-        normalizer: ({data}: any) =>
+        normalizer: ({
+          data,
+        }: {
+          data: {
+            allMarkdownRemark: {
+              nodes: {
+                rawMarkdownBody: string
+                id: string
+                fields: {
+                  slug: string
+                }
+                frontmatter: {
+                  title: string
+                  author: string
+                  templateKey: string
+                }
+              }[]
+            }
+          }
+        }) =>
           data.allMarkdownRemark.nodes
             .filter(
               (node: {
