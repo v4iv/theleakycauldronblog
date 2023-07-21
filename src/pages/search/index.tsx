@@ -3,7 +3,16 @@ import {useEffect, useState} from 'react'
 import {graphql, useStaticQuery, Link, HeadProps, navigate} from 'gatsby'
 import useSWR, {preload} from 'swr'
 import {useLunr} from 'react-lunr'
-import {Equal, Search, AtSign, Home, MessageCircle} from 'lucide-react'
+import {useDebouncedCallback} from 'use-debounce'
+import {StringParam, useQueryParam} from 'use-query-params'
+import {
+  Equal,
+  Search,
+  AtSign,
+  Home,
+  MessageCircle,
+  ArrowLeft,
+} from 'lucide-react'
 import {Input} from '@/components/ui/input'
 import {Button} from '@/components/ui/button'
 import {
@@ -19,16 +28,12 @@ import {Separator} from '@/components/ui/separator'
 import {TypographyH2, TypographyMuted} from '@/components/ui/typography'
 import SEO from '@/components/SEO'
 import Footer from '@/components/Footer'
-import {StringParam, useQueryParam} from 'use-query-params'
-import {useDebouncedCallback} from 'use-debounce'
+
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json())
 
 function SearchPage() {
-  const [
-    q,
-    //setQueryParam
-  ] = useQueryParam('q', StringParam)
+  const [q] = useQueryParam('q', StringParam)
 
   const [query, setQuery] = useState(q || '')
 
@@ -72,8 +77,6 @@ function SearchPage() {
   const handleQuery = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const inputValue = event.target.value
 
-    // setQueryParam(inputValue)
-
     setQuery(inputValue)
 
     debouncedSetQueryParam(inputValue)
@@ -81,7 +84,7 @@ function SearchPage() {
 
   const debouncedSetQueryParam = useDebouncedCallback((inputValue) => {
     navigate(`?q=${encodeURIComponent(inputValue)}`, {replace: true})
-  }, 300)
+  }, 500)
 
   const results = useLunr(query, index, store)
 
@@ -94,10 +97,10 @@ function SearchPage() {
               <Button
                 variant="outline"
                 size="icon"
-                aria-label="Home"
-                onClick={() => navigate('/', {replace: true})}
+                aria-label="Back"
+                onClick={() => navigate(-1)}
               >
-                <Home className="h-4 w-4" />
+                <ArrowLeft className="h-4 w-4" />
               </Button>
             </div>
 
