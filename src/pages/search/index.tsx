@@ -20,11 +20,15 @@ import {TypographyH2, TypographyMuted} from '@/components/ui/typography'
 import SEO from '@/components/SEO'
 import Footer from '@/components/Footer'
 import {StringParam, useQueryParam} from 'use-query-params'
+import {useDebouncedCallback} from 'use-debounce'
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json())
 
 function SearchPage() {
-  const [q, setQueryParam] = useQueryParam('q', StringParam)
+  const [
+    q,
+    //setQueryParam
+  ] = useQueryParam('q', StringParam)
 
   const [query, setQuery] = useState(q || '')
 
@@ -66,8 +70,18 @@ function SearchPage() {
 
   // Might not work on development server
   const handleQuery = async (event: React.ChangeEvent<HTMLInputElement>) => {
-    setQueryParam(event.target.value)
+    const inputValue = event.target.value
+
+    // setQueryParam(inputValue)
+
+    setQuery(inputValue)
+
+    debouncedSetQueryParam(inputValue)
   }
+
+  const debouncedSetQueryParam = useDebouncedCallback((inputValue) => {
+    navigate(`?q=${encodeURIComponent(inputValue)}`, {replace: true})
+  }, 300)
 
   const results = useLunr(query, index, store)
 
