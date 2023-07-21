@@ -11,9 +11,9 @@ metaDescription: >-
   Leverage the power of Google Script to run email campaigns, right from your
   Google Sheet.
 tags:
-  - email
-  - marketing
-  - javascript
+-   email
+-   marketing
+-   javascript
 ---
 Ever find yourself with a big spreadsheet full of names and emails and you have to send personalized emails to all of them? We did. We had a spreadsheet full of candidates for hiring and:
 

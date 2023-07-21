@@ -11,11 +11,11 @@ metaDescription: >-
   Learn to write an API to fetch the details of currently logged in user, using
   the Authorization Token, in Django Oauth Toolkit
 tags:
-  - authentication
-  - API
-  - django
-  - python
-  - javascript
+-   authentication
+-   API
+-   django
+-   python
+-   javascript
 ---
 We always require an API to fetch the details of the current user. This API, unfortunately, isn't provided by default in Django OAuth Toolkit. But worry not, it's fairly easy to write this API, and that is what we'll do. But before we begin, let's clarify some assumptions:
 

@@ -23,7 +23,7 @@ function SEO({
     description: defaultDescription,
     image: defaultImage,
     siteUrl,
-    twitterUsername,
+    social: {twitter},
   } = useSiteMetadata()
 
   const seo = {
@@ -32,7 +32,7 @@ function SEO({
     image: `${siteUrl}${image || defaultImage}`,
     url: `${siteUrl}${pathname || ``}`,
     author: author || ``,
-    twitterUsername,
+    twitter,
   }
 
   return (
@@ -60,7 +60,7 @@ function SEO({
 
       <meta name="twitter:site" content={seo.url} />
 
-      <meta name="twitter:creator" content={`@${seo.twitterUsername}` || ''} />
+      <meta name="twitter:creator" content={`@${seo.twitter}` || ''} />
 
       <meta name="twitter:title" content={seo.title} />
 

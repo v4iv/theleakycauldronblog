@@ -11,8 +11,8 @@ metaDescription: Discover how fear drives humanity, which was once the gift
   that helped us evolve but has now backfired leading us to hate and how we need
   compassion to counter this situation.
 tags:
-  - rant
-  - philosophy
+-   rant
+-   philosophy
 ---
 Have you ever met someone and felt from the bottom of your heart that you want to spend your entire life... without them? Usually, I feel that way when I find some bell-end justifying their hate and asserting their flawed ideas as if it’s common fuckin' sense, that too with an air of threat that anyone who disagrees or tries to be neutral is not worth existing. FYI, I know calling someone a Stupid Cunt has never in the history of the world changed their mind, no matter what logical and sensible argument we precede it with. But this write-up isn’t meant to change anyone’s mind or to justify why the title is ripped from the modern classic [Love In The Time of Cholera](https://en.wikipedia.org/wiki/Love_in_the_Time_of_Cholera). No this... this is a motherfuckin' RANT! A release that was long overdue, due to my particular strategy of dealing with stupid people.
 

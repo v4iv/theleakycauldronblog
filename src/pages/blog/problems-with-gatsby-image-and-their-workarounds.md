@@ -13,9 +13,9 @@ metaDescription: >-
   things. But it has its fair share of problems. Here are some of them along
   with workarounds.
 tags:
-  - gatsby js
-  - react js
-  - javascript
+-   gatsby js
+-   react js
+-   javascript
 ---
 [gatsby-image](https://www.gatsbyjs.org/packages/gatsby-image/) is a very powerful package with drool-worthy features. It makes it very easy to implement, Medium like progressive image loading. It can do a bunch of other stuff but that's the fancy stuff that we won't be going into. But I decided to not use it for this website, mostly because it doesn't play well with [Netlify CMS](https://www.netlifycms.org). And, I was quite happy with the site's performance as it didn't have many images.
 

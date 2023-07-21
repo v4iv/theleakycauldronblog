@@ -11,8 +11,8 @@ metaDescription: >-
   Taste the creamy mildly spicy deliciousness of this mushroom recipe, that
   cooks fast and leaves you craving for more.
 tags:
-  - recipe
-  - food
+-   recipe
+-   food
 ---
 This dish is something of my experiment, but extremely tasty. Best enjoyed with **Garlic Naan** or **Rice**.
 

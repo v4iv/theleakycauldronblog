@@ -11,8 +11,8 @@ metaDescription: "Find out how an unwitting saviour rescued Indian Democracy
   from becoming a totalitarian Regime, the story of Kesavananda Bharati vs The
   State of Kerala. "
 tags:
-  - history
-  - interesting
+-   history
+-   interesting
 ---
 Today is the *71st Republic Day of India* as on this day, year 1950, *The Constitution of India* came into force. But in this long journey, there came a time when India almost came to the brink of becoming a totalitarian regime. And then, came an unwitting, unlikely saviour, who rescued the Indian Democracy, a Monk, *Swami Kesavananda Bharati*. In 1973, 13 Judges assembled to deliver the verdict on the most important case of Indian History, ***Kesavananda Bharati vs The State of Kerala***, which enforced the *Basic Structure Doctrine*. Last year, on September 6th, he crossed this realm of existence and I wanted to commemorate his legacy on this historic day.
 

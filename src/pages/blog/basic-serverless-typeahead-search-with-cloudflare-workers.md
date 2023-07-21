@@ -9,10 +9,10 @@ cover: /img/michael-rivera-serverless-typeahead-search.jpg
 metaTitle: Leverage Cloudflare Workers to make a Serverless Typeahead Search API
 metaDescription: Use Cloudflare Workers and React to make a Basic Typeahead Search for Pokedex.
 tags:
-  - serverless
-  - typescript
-  - cloudflare
-  - react js
+-   serverless
+-   typescript
+-   cloudflare
+-   react js
 ---
 Typeahead search progressively searches and filters as the user types his/her query. It’s also called **predictive search**, **incremental search** or **search-as-you-type** and is an important feature of most search engines. In this tutorial, we’ll learn to make a very basic version of a *Pokémon* Typeahead Search using **Cloudflare Workers** and **React**. Cloudflare provides generous **100,000** requests per day in its free plan, making it perfect for an API like this.
 

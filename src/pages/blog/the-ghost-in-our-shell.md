@@ -11,10 +11,10 @@ metaDescription: Embark on a journey to understand the question of what makes
   us, us, as we try to unravel the problem of explaining why any physical state
   is conscious rather than non-conscious.
 tags:
-  - philosophy
-  - science
-  - language
-  - interesting
+-   philosophy
+-   science
+-   language
+-   interesting
 ---
 *Portuguese Man-o-War*, also known as bluebottle and floating terror is a weird marine organism that is actually not an organism. It’s a bunch of genetically distinct organisms with distinct nervous systems working together to form another organism. Although it’s commonly found on beaches (which leads to the closing of the beach because of their venomous tentacles) we know very little about them. Not because of lack of interest, but because of lack of making sense! Scientists still can’t figure out if they are a group of colonial organisms or a single organism made of specialized tissues (like we are). They have a weird overlap of both of these but we don’t know how much. They are named after 18th-century sailing warships that they roughly resemble.
 

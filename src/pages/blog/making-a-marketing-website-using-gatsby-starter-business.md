@@ -11,12 +11,12 @@ metaDescription: >-
   Make an SEO friendly website, leveraging Gatsby Starter Business, perfect for
   your marketing needs like Sitemap, Schemas, OpenGraph, Meta Tags, GTM etc
 tags:
-  - gatsby js
-  - react js
-  - gatsby starter
-  - marketing
-  - SEO
-  - javascript
+-   gatsby js
+-   react js
+-   gatsby starter
+-   marketing
+-   SEO
+-   javascript
 ---
 **NOTE:** Updated for **_gatsby-starter-business v2.1_**
 

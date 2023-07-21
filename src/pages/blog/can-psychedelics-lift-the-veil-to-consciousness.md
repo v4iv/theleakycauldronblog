@@ -12,10 +12,10 @@ metaDescription: "Psychedelic down-regulates the part of brain that controls
   may hold the answer to the panpsychic world of integrated information theory.
   "
 tags:
-  - philosophy
-  - science
-  - hinduism
-  - interesting
+-   philosophy
+-   science
+-   hinduism
+-   interesting
 ---
 Psychedelics are mysterious compounds and science doesn’t really understand how they work. Partly, because research on them was banned and partly because their effects extend to alter the state of consciousness itself. Their primary effect is to trigger non-ordinary states of consciousness, which is colloquially referred to as *Psychedelic Experience* or *Trips*. These non-ordinary states of consciousness are often compared to the state of consciousness experienced in meditation and near-death experience. What we do understand about psychedelics is that these compounds trigger the **5-HT2A** serotonin receptors, which modulate the sensory perception and cognition in our brain. This is because the shape of these compounds resembles serotonin, so much so, that some compounds fit the **5-HT2A** receptors better than serotonin itself! However, what is not known is how exactly the compounds manipulate the receptor to induce changes in perception and cognition.
 

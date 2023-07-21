@@ -9,7 +9,9 @@ const config: GatsbyConfig = {
     description: `A Brew of Awesomeness with a Pinch of Magic...`,
     siteUrl: `https://theleakycauldronblog.com`,
     image: `/icons/icon-512.png`,
-    twitterUsername: `waybove`,
+    social: {
+      twitter: `@waybove`,
+    },
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin

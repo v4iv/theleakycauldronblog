@@ -11,12 +11,12 @@ metaDescription: >-
   Leverage the power of TypeScript with Next JS and make your project i18n
   ready. Use the plugin next-i18next with your TypeScript Next JS project.
 tags:
-  - i18n
-  - next js
-  - typescript
-  - server side rendering
-  - react js
-  - javascript
+-   i18n
+-   next js
+-   typescript
+-   server side rendering
+-   react js
+-   javascript
 ---
 As I was starting a new [NextJS](https://nextjs.org) project, I planned to do it in [TypeScript](https://www.typescriptlang.org). Since I don't know TypeScript, my initial plan was to learn as I go. Comes the time I had to set up i18n using [`next-i18next`](https://github.com/isaachinman/next-i18next) plugin, and it was a bit problematic as there was no example for it on the official [`next-i18next`](https://github.com/isaachinman/next-i18next) repository. After I successfully learnt how to do it, I did make a PR for typescript example on the original repo but this is in case it doesn't get accepted.
 

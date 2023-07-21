@@ -10,10 +10,10 @@ metaTitle: Authenticated Serverless CRUD with Netlify Functions and FaunaDB Part
 metaDescription: Leverage FaunaDB and Netlify Functions to create authenticated
   Serverless CRUD APIs with generous free tier.
 tags:
-  - serverless
-  - javascript
-  - authentication
-  - netlify
+-   serverless
+-   javascript
+-   authentication
+-   netlify
 ---
 Last month, one of my best friends decided he wanted to fulfil his lifelong dream of opening a restaurant. So while we were discussing how to go about doing that I suggested to him to try cloud kitchen first, as we realised we didn’t want to risk investing too much, in uncertain times like this. Since we wanted to invest as little as we can get away with, I decided to try the generous free tier of *Netlify Functions* and *Fauna DB*. Having worked extensively with *AWS Lambda* Serverless Functions I was itching to try Netlify Functions, as I thought it’ll be right up my alley. But I was sceptical about FaunaDB especially since I’m not comfortable with the hassle, that is, setting up *GraphQL* and I was conflicted about learning Fauna’s native query language *FQL*. But after quickly skimming through docs I decided to try FQL. And, while I did run into some trouble, I finally got a hang of it and decided that I’d write an article on setting up Authenticated CRUD APIs using the two.
 

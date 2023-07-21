@@ -9,7 +9,9 @@ export function useSiteMetadata() {
           description
           siteUrl
           image
-          twitterUsername
+          social {
+            twitter
+          }
         }
       }
     }

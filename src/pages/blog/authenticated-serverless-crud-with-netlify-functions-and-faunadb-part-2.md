@@ -10,10 +10,10 @@ metaTitle: Authenticated Serverless CRUD with Netlify Functions and FaunaDB Part
 metaDescription: Leverage FaunaDB and Netlify Functions to create authenticated
   Serverless CRUD APIs with generous free tier.
 tags:
-  - serverless
-  - javascript
-  - authentication
-  - netlify
+-   serverless
+-   javascript
+-   authentication
+-   netlify
 ---
 In the last part, we set up our *FaunaDB* account, generated a database access secret and set up our *Netlify Functions* project. We also made a serverless API that returns *“Hello, World!”*.
 

@@ -11,10 +11,10 @@ metaDescription: After a lot of digging, I think I'm finally convinced that I
   have found out the best line that Snape has ever uttered. So here I am writing
   to convince you of the same.
 tags:
-  - guest author
-  - harry potter
-  - book
-  - movie
+-   guest author
+-   harry potter
+-   book
+-   movie
 ---
 _Check out this amazing article on Severus Snape by my friend **[Hermione Lovegood](mailto:hermionelovegood@gmail.com)**. For more of her writings check out her blog - **[The Daily Quibbler](https://dailyquibbler.com)**, where she analyzes various books and movies from an unusual point of view. The idea behind the name, as you can see is also derived from our beloved 'Harry Potter'._
 

@@ -11,10 +11,10 @@ metaDescription: >-
   Writing Authenticated Routes which will redirect to signin page if the user is
   not authenticated and once signed in it'll redirect back to the same page.
 tags:
-  - react js
-  - redux
-  - authentication
-  - javascript
+-   react js
+-   redux
+-   authentication
+-   javascript
 ---
 How to write an Authenticated Route component which will redirect to Sign In Page if a user isn't authenticated and once authentication is complete, it'll redirect them back to the same page, this is a problem most new React developers face. Today we learn to do just that.
 
