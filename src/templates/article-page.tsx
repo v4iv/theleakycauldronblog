@@ -10,6 +10,7 @@ import SEO from '@/components/SEO'
 import Layout from '@/components/Layout'
 import Content from '@/components/Content'
 import CommentBox from '@/components/CommentBox'
+import Share from '@/components/Share'
 
 type DataProps = {
   site: {
@@ -48,7 +49,15 @@ function ArticlePageTemplate({
       html,
       id,
       fields: {slug},
-      frontmatter: {title, cover, date, author, authorLink, tags},
+      frontmatter: {
+        title,
+        cover,
+        date,
+        author,
+        authorLink,
+        tags,
+        metaDescription,
+      },
     },
   },
 }: PageProps<DataProps>) {
@@ -99,6 +108,13 @@ function ArticlePageTemplate({
           <div className="px-3 md:px-0 py-3 md:py-5">
             <Content html={html} />
           </div>
+
+          <Share
+            title={title}
+            slug={slug}
+            excerpt={metaDescription}
+            siteURL={siteUrl}
+          />
 
           <CommentBox id={id} slug={slug} title={title} siteURL={siteUrl} />
         </div>

@@ -5,30 +5,14 @@ import useSWR, {preload} from 'swr'
 import {useLunr} from 'react-lunr'
 import {useDebouncedCallback} from 'use-debounce'
 import {StringParam, useQueryParam} from 'use-query-params'
-import {
-  Equal,
-  Search,
-  AtSign,
-  Home,
-  MessageCircle,
-  ArrowLeft,
-} from 'lucide-react'
+import {Search, X} from 'lucide-react'
 import {Input} from '@/components/ui/input'
 import {Button} from '@/components/ui/button'
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetFooter,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from '@/components/ui/sheet'
 import {Separator} from '@/components/ui/separator'
+import {TooltipProvider} from '@/components/ui/tooltip'
 import {TypographyH2, TypographyMuted} from '@/components/ui/typography'
 import SEO from '@/components/SEO'
 import Footer from '@/components/Footer'
-
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json())
 
@@ -89,25 +73,15 @@ function SearchPage() {
   const results = useLunr(query, index, store)
 
   return (
-    <>
+    <TooltipProvider>
       <nav className="mx-auto w-full max-w-screen-md">
         <div className="px-3 md:px-0 py-3 md:py-5">
           <div className="flex space-x-2">
-            <div>
-              <Button
-                variant="outline"
-                size="icon"
-                aria-label="Back"
-                onClick={() => navigate(-1)}
-              >
-                <ArrowLeft className="h-4 w-4" />
-              </Button>
-            </div>
-
             <div className="flex flex-grow relative">
               <Search className="pointer-events-none h-4 w-4 absolute top-1/2 transform -translate-y-1/2 right-3" />
               <Input
                 autoFocus
+                aria-label="Search"
                 name="Search"
                 value={query}
                 disabled={isIndexLoading || isStoreLoading}
@@ -118,45 +92,15 @@ function SearchPage() {
               />
             </div>
 
-            <div className="flex">
-              <Sheet>
-                <SheetTrigger asChild>
-                  <Button variant="outline" size="icon" aria-label="Menu">
-                    <Equal className="h-6 w-6" />
-                  </Button>
-                </SheetTrigger>
-
-                <SheetContent className="flex flex-col">
-                  <SheetHeader>
-                    <SheetTitle />
-                  </SheetHeader>
-
-                  <SheetDescription className="flex-grow">
-                    <Button variant="ghost" className="block my-5" asChild>
-                      <Link className="flex" to="/" replace>
-                        <Home className="mr-2 h-4 w-4" />
-                        Home
-                      </Link>
-                    </Button>
-
-                    <Button variant="ghost" className="block my-5" asChild>
-                      <Link className="flex" to="/about" replace>
-                        <MessageCircle className="mr-2 h-4 w-4" />
-                        About
-                      </Link>
-                    </Button>
-
-                    <Button variant="ghost" className="block my-5" asChild>
-                      <Link className="flex" to="/contact" replace>
-                        <AtSign className="mr-2 h-4 w-4" />
-                        Contact
-                      </Link>
-                    </Button>
-                  </SheetDescription>
-
-                  <SheetFooter />
-                </SheetContent>
-              </Sheet>
+            <div>
+              <Button
+                variant="outline"
+                size="icon"
+                aria-label="Close"
+                onClick={() => navigate(-1)}
+              >
+                <X className="h-5 w-5" />
+              </Button>
             </div>
           </div>
         </div>
@@ -194,7 +138,7 @@ function SearchPage() {
       <Separator />
 
       <Footer />
-    </>
+    </TooltipProvider>
   )
 }
 

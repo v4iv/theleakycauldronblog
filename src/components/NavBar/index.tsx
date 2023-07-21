@@ -3,6 +3,7 @@ import {lazy, Suspense, useState, useEffect} from 'react'
 import {Link} from 'gatsby'
 import {Equal, Search, AtSign, Home, MessageCircle} from 'lucide-react'
 import {Button} from '@/components/ui/button'
+import {Tooltip, TooltipContent, TooltipTrigger} from '@/components/ui/tooltip'
 import {
   Sheet,
   SheetContent,
@@ -35,46 +36,83 @@ function NavBar() {
         <div className="px-3 md:px-0 py-3 md:py-5">
           <div className="flex">
             <div className="flex flex-grow">
-              <Link aria-label="tlcb" to="/">
-                <Avatar className="mr-2 flex md:hidden">
-                  <AvatarImage
-                    src="/icons/icon-192-maskable.png"
-                    alt="the-leaky-cauldron-blog"
-                  />
-                  <AvatarFallback>tlcb</AvatarFallback>
-                </Avatar>
-              </Link>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Link aria-label="tlcb" to="/">
+                    <Avatar className="mr-2 flex md:hidden">
+                      <AvatarImage
+                        src="/icons/icon-192-maskable.png"
+                        alt="the-leaky-cauldron-blog"
+                      />
+                      <AvatarFallback>tlcb</AvatarFallback>
+                    </Avatar>
+                  </Link>
+                </TooltipTrigger>
 
-              <h3 className="scroll-m-20 text-2xl font-extrabold tracking-wider leading-relaxed">
-                <Link
-                  className="hidden md:flex hover:text-gray-500 transition-colors duration-100"
-                  to="/"
-                >
-                  the leaky cauldron blog
-                </Link>
+                <TooltipContent>
+                  <p>Home</p>
+                </TooltipContent>
+              </Tooltip>
 
-                <Link
-                  className="flex md:hidden hover:text-gray-500 transition-colors duration-100"
-                  to="/"
-                >
-                  tlcb
-                </Link>
-              </h3>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <h3 className="scroll-m-20 text-2xl font-extrabold tracking-wider leading-relaxed">
+                    <Link
+                      className="hidden md:flex hover:text-gray-500 transition-colors duration-100"
+                      to="/"
+                    >
+                      the leaky cauldron blog
+                    </Link>
+
+                    <Link
+                      className="flex md:hidden hover:text-gray-500 transition-colors duration-100"
+                      to="/"
+                    >
+                      tlcb
+                    </Link>
+                  </h3>
+                </TooltipTrigger>
+
+                <TooltipContent>
+                  <p>Home</p>
+                </TooltipContent>
+              </Tooltip>
             </div>
 
             <div className="flex space-x-2">
-              <Button variant="outline" size="icon" aria-label="Search" asChild>
-                <Link to="/search">
-                  <Search className="h-4 w-4" />
-                </Link>
-              </Button>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    aria-label="Search"
+                    asChild
+                  >
+                    <Link to="/search">
+                      <Search className="h-4 w-4" />
+                    </Link>
+                  </Button>
+                </TooltipTrigger>
+
+                <TooltipContent>
+                  <p>Search</p>
+                </TooltipContent>
+              </Tooltip>
 
               <Sheet>
-                <SheetTrigger asChild>
-                  <Button variant="outline" size="icon" aria-label="Menu">
-                    <Equal className="h-6 w-6" />
-                  </Button>
-                </SheetTrigger>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <SheetTrigger asChild>
+                      <Button variant="outline" size="icon" aria-label="Menu">
+                        <Equal className="h-6 w-6" />
+                      </Button>
+                    </SheetTrigger>
+                  </TooltipTrigger>
+
+                  <TooltipContent>
+                    <p>Menu</p>
+                  </TooltipContent>
+                </Tooltip>
 
                 <SheetContent className="flex flex-col">
                   <SheetHeader>
