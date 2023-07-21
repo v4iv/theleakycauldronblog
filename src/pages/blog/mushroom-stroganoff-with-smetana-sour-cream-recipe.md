@@ -3,7 +3,7 @@ templateKey: article-page
 title: Mushroom Stroganoff with Smetana (Sour Cream) Recipe
 slug: mushroom-stroganoff-with-smetana-sour-cream-recipe
 author: Vaibhav Sharma
-authorLink: https://twitter.com/vaibhaved
+authorLink: https://twitter.com/waybove
 date: 2020-03-23T16:42:53.354Z
 cover: /img/mushroom-stroganoff-with-sour-cream.jpg
 metaTitle: Make Classic Mushroom Stroganoff with this easy recipe
@@ -11,12 +11,12 @@ metaDescription: >-
   A vegetarian twist to a classic Russian dish. This is an easy and tasty recipe
   to enjoy with Rice or Buttered Noodles.
 tags:
-  - recipe
-  - food
+-   recipe
+-   food
 ---
 Mushroom Stroganoff is a Russian dish of sautéed pieces of Mushroom served in a sauce with [smetana](https://en.wikipedia.org/wiki/Smetana_(dairy_product) "Smetana (dairy product)") ([sour cream](https://en.wikipedia.org/wiki/Sour_cream "Sour cream")). Best enjoyed with *rice* and a side of *sautéed vegetables*. It can be made in ~ 1 hour.
 
-# Ingredients
+## Ingredients
 
 * 200g **Button Mushrooms**
 * 1 medium **Onion**
@@ -29,14 +29,14 @@ Mushroom Stroganoff is a Russian dish of sautéed pieces of Mushroom served in a
 * ¼ teaspoon **Black Pepper**
 * ½ teaspoon **Salt**
 
-# Preparations
+## Preparations
 
-## Vegetables
+### Vegetables
 
 * Cut the mushrooms in long, ¼ centimetre thick strips, along the stem.
 * Mince onion and green chillies.
 
-## Mushroom Broth
+### Mushroom Broth
 
 Before we begin we first need to prepare *Mushroom Broth*.
 
@@ -47,7 +47,7 @@ Before we begin we first need to prepare *Mushroom Broth*.
 5. Add water, let it boil for a minute.
 6. Separate the mushrooms and the broth using a strainer.
 
-# Steps to Make
+## Steps to Make
 
 1. Sprinkle the mushrooms with salt, pepper and herbs. Set it aside.
 2. Melt a tablespoon of butter in a non stick pan.

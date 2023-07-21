@@ -3,7 +3,7 @@ templateKey: article-page
 title: Requesting User details from JWT in Django OAuth Toolkit
 slug: requesting-user-details-from-jwt-in-django-oauth-toolkit
 author: Vaibhav Sharma
-authorLink: https://twitter.com/vaibhaved
+authorLink: https://twitter.com/waybove
 date: '2018-04-16T09:28:22+05:30'
 cover: /img/user_info_jwt.jpg
 metaTitle: Requesting User details from JWT in Django OAuth Toolkit
@@ -11,11 +11,11 @@ metaDescription: >-
   Learn to write an API to fetch the details of currently logged in user, using
   the Authorization Token, in Django Oauth Toolkit
 tags:
-  - authentication
-  - API
-  - django
-  - python
-  - javascript
+-   authentication
+-   API
+-   django
+-   python
+-   javascript
 ---
 We always require an API to fetch the details of the current user. This API, unfortunately, isn't provided by default in Django OAuth Toolkit. But worry not, it's fairly easy to write this API, and that is what we'll do. But before we begin, let's clarify some assumptions:
 

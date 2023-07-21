@@ -3,7 +3,7 @@ templateKey: article-page
 title: Hate in the Time of Corona
 slug: hate-in-the-time-of-corona
 author: Vaibhav Sharma
-authorLink: https://twitter.com/aleakycauldron
+authorLink: https://twitter.com/waybove
 date: 2020-10-20T18:30:38.938Z
 cover: /img/bram-hate-in-the-time-of-corona.jpg
 metaTitle: Hate in the Time of Corona
@@ -11,8 +11,8 @@ metaDescription: Discover how fear drives humanity, which was once the gift
   that helped us evolve but has now backfired leading us to hate and how we need
   compassion to counter this situation.
 tags:
-  - rant
-  - philosophy
+-   rant
+-   philosophy
 ---
 Have you ever met someone and felt from the bottom of your heart that you want to spend your entire life... without them? Usually, I feel that way when I find some bell-end justifying their hate and asserting their flawed ideas as if it’s common fuckin' sense, that too with an air of threat that anyone who disagrees or tries to be neutral is not worth existing. FYI, I know calling someone a Stupid Cunt has never in the history of the world changed their mind, no matter what logical and sensible argument we precede it with. But this write-up isn’t meant to change anyone’s mind or to justify why the title is ripped from the modern classic [Love In The Time of Cholera](https://en.wikipedia.org/wiki/Love_in_the_Time_of_Cholera). No this... this is a motherfuckin' RANT! A release that was long overdue, due to my particular strategy of dealing with stupid people.
 
@@ -36,7 +36,7 @@ This thought crept up the other day when I found a book that I had read in my hi
 
 > “The enemy has begun to employ a new and most cruel bomb, the power of which to do damage is, indeed, incalculable, taking the toll of many innocent lives. Should we continue to fight, not only would it result in an ultimate collapse and obliteration of the Japanese nation, but also it would lead to the total extinction of human civilisation.”
 
-And ever since then, there have been at least a thousand instances that, we know of for sure, when we accidentally fucked up and almost brought our entire planet to the brink of nuclear annihilation. And it’s without a doubt that we’ll screw up in the future as well with a thousand times the efficiency we did in the past. So, it is not too much of a stretch to imagine that a bioweapon that was created in the lab got out. 
+And ever since then, there have been at least a thousand instances that, we know of for sure, when we accidentally fucked up and almost brought our entire planet to the brink of nuclear annihilation. And it’s without a doubt that we’ll screw up in the future as well with a thousand times the efficiency we did in the past. So, it is not too much of a stretch to imagine that a bioweapon that was created in the lab got out.
 
 Or is it?
 

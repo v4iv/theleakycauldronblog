@@ -3,33 +3,35 @@ templateKey: article-page
 title: Authenticated Serverless CRUD with Netlify Functions and FaunaDB Part 1
 slug: authenticated-serverless-crud-netlify-functions-faunadb-part-1
 author: Vaibhav Sharma
-authorLink: https://instagram.com/theleakycauldronblog
+authorLink: https://twitter.com/waybove
 date: 2021-01-18T14:34:54.026Z
 cover: /img/chris-barbalis-serverless-netlify-faunadb.jpg
 metaTitle: Authenticated Serverless CRUD with Netlify Functions and FaunaDB Part 1
 metaDescription: Leverage FaunaDB and Netlify Functions to create authenticated
   Serverless CRUD APIs with generous free tier.
 tags:
-  - serverless
-  - javascript
-  - authentication
-  - netlify
+-   serverless
+-   javascript
+-   authentication
+-   netlify
 ---
 Last month, one of my best friends decided he wanted to fulfil his lifelong dream of opening a restaurant. So while we were discussing how to go about doing that I suggested to him to try cloud kitchen first, as we realised we didn’t want to risk investing too much, in uncertain times like this. Since we wanted to invest as little as we can get away with, I decided to try the generous free tier of *Netlify Functions* and *Fauna DB*. Having worked extensively with *AWS Lambda* Serverless Functions I was itching to try Netlify Functions, as I thought it’ll be right up my alley. But I was sceptical about FaunaDB especially since I’m not comfortable with the hassle, that is, setting up *GraphQL* and I was conflicted about learning Fauna’s native query language *FQL*. But after quickly skimming through docs I decided to try FQL. And, while I did run into some trouble, I finally got a hang of it and decided that I’d write an article on setting up Authenticated CRUD APIs using the two.
 
-# What We’ll Be Building
+## What We’ll Be Building
 
-We’ll be building a Sign-Up API, a Sign In API and Authenticated CRUD APIs for our Cats database. Before we begin, make sure you have the `netlify-dev` package installed globally on your machine.
+We’ll be building a Sign-Up API, a Sign In API and Authenticated CRUD APIs for our Cats database. ~~Before we begin, make sure you have the `netlify-dev` package installed globally on your machine.~~
+
+`netlify-dev` has been deprecated please check out [`netlify-cli`](https://docs.netlify.com/cli/get-started/)
 
 ```shell
-yarn global add netlify-dev
+yarn global add netlify-cli
 ```
 
 NOTE: This write-up assumes that you have some familiarity with serverless functions. This article will not teach you FQL in detail, but merely show you how you can leverage FaunaDB and Netlify Functions to create authenticated serverless APIs. I use `yarn`, but you can use `npm` as well.
 
-# Setup Fauna
+## Setup Fauna
 
-We begin by signing up for a free Fauna DB account (I love the fact that neither Fauna nor Netlify needs a credit card to sign up). 
+We begin by signing up for a free Fauna DB account (I love the fact that neither Fauna nor Netlify needs a credit card to sign up).
 
 After that, we have to create a new database, in Fauna Cloud Console:
 
@@ -47,9 +49,9 @@ Next, we need to generate a database access key secret:
 
 You’ll get a long alphanumeric key, copy it and save it, as you’ll not get to see it again. We’ll need it later.
 
-# Setup Netlify Functions Project
+## Setup Netlify Functions Project
 
-Now for the serverless part, we need to first create an empty node project. 
+Now for the serverless part, we need to first create an empty node project.
 
 Create a directory called cats.
 
@@ -87,7 +89,7 @@ touch .env
 
 In this file add the Fauna DB access secret that we had generated earlier, as follows:
 
-```
+```shell
 FAUNADB_SECRET=”your-fauna-db-access-key”
 ```
 
@@ -154,7 +156,7 @@ The dev server will probably start at [http://localhost:8888](http://localhost:8
 
 It should give the following output:
 
-```
+```shell
 Hello, World!
 ```
 
@@ -177,7 +179,7 @@ Hopefully, we still get the same output as before.
 
 In the next parts we'll create our Fauna DB Collections, Indexes and Roles, as well as write the CRUD APIs.
 
-# Links
+## Links
 
 **Link to Part 2:** [Authenticated Serverless CRUD with Netlify Functions and FaunaDB Part 2](https://theleakycauldronblog.com/blog/authenticated-serverless-crud-netlify-functions-faunadb-part-2)
 

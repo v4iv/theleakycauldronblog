@@ -3,7 +3,7 @@ templateKey: article-page
 title: Sending Mass Mail from Google Sheet using Scripts
 slug: sending-mass-mail-from-google-sheet-using-scripts
 author: Vaibhav Sharma
-authorLink: https://twitter.com/vaibhaved
+authorLink: https://twitter.com/waybove
 date: '2018-06-04T11:22:05+05:30'
 cover: /img/mass_mail_google_script.jpg
 metaTitle: Sending Mass Mail from Google Sheet using Scripts
@@ -11,11 +11,11 @@ metaDescription: >-
   Leverage the power of Google Script to run email campaigns, right from your
   Google Sheet.
 tags:
-  - email
-  - marketing
-  - javascript
+-   email
+-   marketing
+-   javascript
 ---
-Ever find yourself with a big spreadsheet full of names and emails and you have to send personalized emails to all of them? We did. We had a spreadsheet full of candidates for hiring and: 
+Ever find yourself with a big spreadsheet full of names and emails and you have to send personalized emails to all of them? We did. We had a spreadsheet full of candidates for hiring and:
 
 * We had to first send them a mail asking if they are interested.
 * If they replied positively we had to send them an assignment.
@@ -127,7 +127,7 @@ function onOpen() {
 };
 ```
 
-Save and reload the sheet, you'll see a menu called `Email`, and within it, an option called `Send Mass Mail`. 
+Save and reload the sheet, you'll see a menu called `Email`, and within it, an option called `Send Mass Mail`.
 
 That's it just click on the option to run the script and send mass mail. One more, thing you'll have to approve the script to use your Gmail.
 

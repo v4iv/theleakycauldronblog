@@ -3,25 +3,25 @@ templateKey: article-page
 title: Authenticated Serverless CRUD with Netlify Functions and FaunaDB Part 2
 slug: authenticated-serverless-crud-netlify-functions-faunadb-part-2
 author: Vaibhav Sharma
-authorLink: https://www.instagram.com/theleakycauldronblog
+authorLink: https://twitter.com/waybove
 date: 2021-01-19T19:58:58.728Z
 cover: /img/ga-authenticated-serverless-crud-netlify-faunadb-part-2.jpg
 metaTitle: Authenticated Serverless CRUD with Netlify Functions and FaunaDB Part 2
 metaDescription: Leverage FaunaDB and Netlify Functions to create authenticated
   Serverless CRUD APIs with generous free tier.
 tags:
-  - serverless
-  - javascript
-  - authentication
-  - netlify
+-   serverless
+-   javascript
+-   authentication
+-   netlify
 ---
-In the last part, we set up our *FaunaDB* account, generated a database access secret and set up our *Netlify Functions* project. We also made a serverless API that returns *“Hello, World!”*. 
+In the last part, we set up our *FaunaDB* account, generated a database access secret and set up our *Netlify Functions* project. We also made a serverless API that returns *“Hello, World!”*.
 
 Link to Part 1: [Authenticated Serverless CRUD with Netlify Functions and FaunaDB Part 1](https://theleakycauldronblog.com/blog/authenticated-serverless-crud-netlify-functions-faunadb-part-1)
 
 If everything was set up properly according to the last tutorial the project folder should look like this:
 
-```
+```shell
 .
 ├── node_modules/
 ├── functions
@@ -33,9 +33,9 @@ If everything was set up properly according to the last tutorial the project fol
 
 In this part, we will first, programmatically set up our database `Collections`, `Indexes` and `Roles`. Then, we’ll set up the user sign-up and sign-in APIs.
 
-# Bootstrap Fauna Database
+## Bootstrap Fauna Database
 
-For our Cats project, we’ll need two tables or “`Collections`” — `users` and `cat_breeds`. And while we can make our Collections, Indexes and Roles using the Fauna Cloud Console GUI, setting it up programmatically allows us to keep the settings as a template which can be deployed locally as well. 
+For our Cats project, we’ll need two tables or “`Collections`” — `users` and `cat_breeds`. And while we can make our Collections, Indexes and Roles using the Fauna Cloud Console GUI, setting it up programmatically allows us to keep the settings as a template which can be deployed locally as well.
 
 First, install `dotenv` package
 
@@ -65,7 +65,7 @@ const faunadb = require('faunadb')
 console.log('Creating FaunaDB database...')
 ```
 
-## Creating Collections
+### Creating Collections
 
 First, we write a function to create our Collections, in that function we initiate the Fauna `query` and Fauna `client`.
 
@@ -101,7 +101,7 @@ client.query(
    .catch(err => console.error('Error: %s', err))
 ```
 
-## Creating Indexes
+### Creating Indexes
 
 Indexes are used to quickly locate data without having to search every individual document (or row of data) in the database. We’ll create an index to look up users by email so that we can sign them in and another to get the cats.
 
@@ -147,7 +147,7 @@ client.query(
    .catch(err => console.error('Error: %s', err))
 ```
 
-## Create Roles
+### Create Roles
 
 User-defined roles provide configurable, domain-specific security rules. They are the core schema for attribute-based access control. For example, you can create roles like Staff, Customers etc. Here we’ll be creating a role for our users so that they all can access the Cat Breeds table and the `cats_by_users` index.
 
@@ -188,7 +188,7 @@ client.query(q.CreateRole({
            }
        },
        {
-           resource: q.Index("'cats_by_users'"),
+           resource: q.Index("cats_by_users"),
            actions: {
                unrestricted_read: false,
                read: true
@@ -203,7 +203,7 @@ client.query(q.CreateRole({
 
 We don’t need to add permission for our other index because that is already public.
 
-## Running the Bootstrap Script
+### Running the Bootstrap Script
 
 Before we run the script we need to call the above functions after checking if the environment has `FAUNADB_SECRET`:
 
@@ -225,7 +225,7 @@ node ./db/bootstrap.js
 
 You can go to Fauna Cloud Console and verify if everything was created as desired. After doing that, we can finally start writing our APIs.
 
-# Sign Up
+## Sign Up
 
 This is a simple one, first, we initialise Fauna `Client` and `Query` with `FAUNADB_SECRET`. And then write an FQL query to create a user.
 
@@ -321,9 +321,9 @@ With the following payload:
 }
 ```
 
-That should successfully create a user with email: [foo@bar.com](<>) & password: abc123.
+That should successfully create a user with email: [foo@bar.com](foo@bar.com) & password: abc123.
 
-# Sign In
+## Sign In
 
 To sign in we’ll use Fauna’s native `Login` function. This will take the password in the incoming payload and convert it to the hash format and try to match it against the stored hash. We’ll be using the `users_by_email` Index that we created earlier to identify the user.
 
@@ -447,7 +447,7 @@ Save the `secret`, we’ll be using it while making authenticated CRUD requests.
 
 That’s it for this part, In the next part, we’ll finally be writing the code for authenticated CRUD requests.
 
-# Links
+## Links
 
 **Link to Part 1:** [Authenticated Serverless CRUD with Netlify Functions and FaunaDB Part 1](https://theleakycauldronblog.com/blog/authenticated-serverless-crud-netlify-functions-faunadb-part-1)
 

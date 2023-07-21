@@ -1,9 +1,9 @@
 ---
 templateKey: article-page
-title: Can Psychedelics Lift the Veil to Consciousness?
+title: Can Psychedelics Lift the Veil on Consciousness?
 slug: psychedelics-consciousness-iit
 author: Vaibhav Sharma
-authorLink: https://instagram.com/theleakycauldronblog
+authorLink: https://twitter.com/waybove
 date: 2020-12-25T20:24:57.539Z
 cover: /img/dima-pechurin-psychedelic-consciousness-iit.jpg
 metaTitle: Can Psychedelics Lift the Veil to Consciousness?
@@ -12,10 +12,10 @@ metaDescription: "Psychedelic down-regulates the part of brain that controls
   may hold the answer to the panpsychic world of integrated information theory.
   "
 tags:
-  - philosophy
-  - science
-  - hinduism
-  - interesting
+-   philosophy
+-   science
+-   hinduism
+-   interesting
 ---
 Psychedelics are mysterious compounds and science doesn’t really understand how they work. Partly, because research on them was banned and partly because their effects extend to alter the state of consciousness itself. Their primary effect is to trigger non-ordinary states of consciousness, which is colloquially referred to as *Psychedelic Experience* or *Trips*. These non-ordinary states of consciousness are often compared to the state of consciousness experienced in meditation and near-death experience. What we do understand about psychedelics is that these compounds trigger the **5-HT2A** serotonin receptors, which modulate the sensory perception and cognition in our brain. This is because the shape of these compounds resembles serotonin, so much so, that some compounds fit the **5-HT2A** receptors better than serotonin itself! However, what is not known is how exactly the compounds manipulate the receptor to induce changes in perception and cognition.
 
@@ -27,7 +27,7 @@ Being one with the universe, as many of you may be familiar, is an important par
 
 So does that mean that consciousness extends to all matter and not just things with brains? *Guilio Tononi*, a neuroscientist, proposed an ambitious theory to explain consciousness called the *Integrated Information Theory* (IIT). This theory suggests that panpsychism might not be so far-fetched after all. The core identity of IIT suggests that —
 
-> The quantity and quality of an “*experience*” are an intrinsic, maximally irreducible property of a complex of mechanisms in a state — the property of informing or shaping the space of possibilities (past and future states) in a particular way, just as it is considered to be intrinsic to a mass to bend space-time around it. 
+> The quantity and quality of an “*experience*” are an intrinsic, maximally irreducible property of a complex of mechanisms in a state — the property of informing or shaping the space of possibilities (past and future states) in a particular way, just as it is considered to be intrinsic to a mass to bend space-time around it.
 
 IIT claims that a system is conscious if it possesses a property called **Φ**, or **phi**. *Phi* is the measure of a system's “integrated information”. What that implies is that various systems can have various levels of consciousness which is their intrinsic property.
 

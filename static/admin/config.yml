@@ -1,16 +1,16 @@
 backend:
   name: git-gateway
-  repo: v4iv/theleakycauldronblog
-  branch: master
-  accept_roles:
-    - admin
-    - editor
-    - author
-    - guest
+  branch: master # Branch to update (optional; defaults to master)
+  commit_messages:
+    create: "Create {{collection}} “{{slug}}”"
+    update: "Update {{collection}} “{{slug}}”"
+    delete: "Delete {{collection}} “{{slug}}”"
+    uploadMedia: "[skip ci] Upload “{{path}}”"
+    deleteMedia: "[skip ci] Delete “{{path}}”"
 
 site_url: https://theleakycauldronblog.com
 display_url: https://theleakycauldronblog.com
-logo_url: https://theleakycauldronblog.com/icons/icon-512x512.png
+logo_url: https://theleakycauldronblog.com/icons/icon-512.png
 publish_mode: editorial_workflow
 media_folder: static/img
 public_folder: /img
@@ -22,40 +22,73 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "article-page"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Slug", name: "slug", widget: "string"}
-      - {label: "Author", name: "author", widget: "string", default: "Vaibhav Sharma"}
-      - {label: "Author Link", name: "authorLink", widget: "string", default: "https://twitter.com/vaibhaved"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Cover", name: "cover", widget: "image"}
-      - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Meta Title", name: "metaTitle", widget: "string"}
-      - {label: "Meta Description", name: "metaDescription", widget: "text"}
-      - {label: "Tags", name: "tags", widget: "list"}
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "article-page",
+        }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - {
+          label: "Author",
+          name: "author",
+          widget: "string",
+          default: "Vaibhav Sharma",
+        }
+      - {
+          label: "Author Link",
+          name: "authorLink",
+          widget: "string",
+          default: "https://twitter.com/waybove",
+        }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Cover", name: "cover", widget: "image" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Meta Title", name: "metaTitle", widget: "string" }
+      - { label: "Meta Description", name: "metaDescription", widget: "text" }
+      - { label: "Tags", name: "tags", widget: "list" }
+
   - name: "pages"
     label: "Pages"
     files:
-    - file: "src/pages/about/index.md"
-      label: "About Page"
-      name: "about"
-      fields:
-        - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
-        - {label: "Image", name: "image", widget: "image"}
-        - {label: "Title", name: "title", widget: "string"}
-        - {label: "Subtitle", name: "subtitle", widget: "string"}
-        - {label: "Author", name: "author", widget: "string"}
-        - {label: "Slug", name: "slug", widget: "string"}
-        - {label: "Body", name: "body", widget: "markdown"}
-        - {label: "Meta Title", name: "metaTitle", widget: "string"}
-        - {label: "Meta Description", name: "metaDescription", widget: "text"}
-    - file: "src/pages/contact/index.md"
-      label: "Contact Page"
-      name: "contact"
-      fields:
-        - {label: "Template Key", name: "templateKey", widget: "hidden", default: "contact-page"}
-        - {label: "Title", name: "title", widget: "string"}
-        - {label: "Slug", name: "slug", widget: "string"}
-        - {label: "Subtitle", name: "subtitle", widget: "string"}
-        - {label: "Meta Title", name: "metaTitle", widget: "string"}
-        - {label: "Meta Description", name: "metaDescription", widget: "text"}
+      - file: "src/pages/about/index.md"
+        label: "About Page"
+        name: "about"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "about-page",
+            }
+          - { label: "Image", name: "image", widget: "image" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Subtitle", name: "subtitle", widget: "string" }
+          - { label: "Author", name: "author", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+          - { label: "Meta Title", name: "metaTitle", widget: "string" }
+          - {
+              label: "Meta Description",
+              name: "metaDescription",
+              widget: "text",
+            }
+
+      - file: "src/pages/contact/index.md"
+        label: "Contact Page"
+        name: "contact"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "contact-page",
+            }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Subtitle", name: "subtitle", widget: "string" }
+          - { label: "Meta Title", name: "metaTitle", widget: "string" }
+          - {
+              label: "Meta Description",
+              name: "metaDescription",
+              widget: "text",
+            }

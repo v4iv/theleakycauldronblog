@@ -1,6 +1,22 @@
-[build]
-  publish = "public"
-  command = "yarn run build"
 [build.environment]
-  RUBY_VERSION = "2.6.2"
-  NODE_VERSION = "18.16.1"
+  NODE_VERSION = "20.4.0"
+
+[[plugins]]
+  package = "netlify-plugin-submit-sitemap"
+
+	[plugins.inputs]
+
+	# The base url of your site (optional, default = main URL set in Netlify)
+	baseUrl = "https://theleakycauldronblog.com"
+
+	# Path to the sitemap URL (optional, default = /sitemap.xml)
+	sitemapPath = "/sitemap-index.xml"
+
+	# Time in seconds to not submit the sitemap after successful submission
+	ignorePeriod = 0
+
+	# Enabled providers to submit sitemap to (optional, default = 'google', 'yandex'). Possible providers are currently only 'google', 'yandex'.
+	providers = [
+		"google",
+		"yandex"
+	]

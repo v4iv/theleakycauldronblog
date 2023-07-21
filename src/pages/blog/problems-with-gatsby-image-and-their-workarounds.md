@@ -3,7 +3,7 @@ templateKey: article-page
 title: Problems with 'gatsby-image' and their workarounds
 slug: problems-with-gatsby-image-and-their-workarounds
 author: Vaibhav Sharma
-authorLink: https://twitter.com/vaibhaved
+authorLink: https://twitter.com/waybove
 date: 2018-12-19T19:29:55.624Z
 cover: /img/gatsby-image-workarounds.jpeg
 metaTitle: Problems with Gatsby Image and their workarounds
@@ -13,13 +13,13 @@ metaDescription: >-
   things. But it has its fair share of problems. Here are some of them along
   with workarounds.
 tags:
-  - gatsby js
-  - react js
-  - javascript
+-   gatsby js
+-   react js
+-   javascript
 ---
 [gatsby-image](https://www.gatsbyjs.org/packages/gatsby-image/) is a very powerful package with drool-worthy features. It makes it very easy to implement, Medium like progressive image loading. It can do a bunch of other stuff but that's the fancy stuff that we won't be going into. But I decided to not use it for this website, mostly because it doesn't play well with [Netlify CMS](https://www.netlifycms.org). And, I was quite happy with the site's performance as it didn't have many images.
 
-The article list was all words, no thumbnails and since all the images were within the article, it worked just fine. 
+The article list was all words, no thumbnails and since all the images were within the article, it worked just fine.
 
 ![](/img/screenshot-2019-09-07-at-4.01.21-pm.png)
 
@@ -29,13 +29,13 @@ This all changed when I decided to ditch [Bulma](https://bulma.io) for [Tachyons
 >
 > \- Anonymous (Probably LOL)
 
-In the new design, I was working the article list had a small thumbnail along with the title and excerpt. 
+In the new design, I was working the article list had a small thumbnail along with the title and excerpt.
 
 ![](/img/screenshot-2018-12-19-at-11.19.21-pm.png)
 
 Without the optimisation magic of [gatsby-image](https://www.gatsbyjs.org/packages/gatsby-image/) each page size would be touching 5MB. Begrudgingly, I decided to use [gatsby-image](https://www.gatsbyjs.org/packages/gatsby-image/). I did what anyone would do, installed the package and peer dependencies. And as instructed added the relevant config. That's when the problem began! Everything started breaking. And I'm ashamed that it took me a lot more time than I'm willing to admit, to solve them. Well everyone has bad days.
 
-# Things to be careful about while configuring gatsby-image
+## Things to be careful about while configuring gatsby-image
 
 First, you need `gatsby-remark-relative-images` to convert image src(s) in markdown to be relative to their node's parent directory. So that `gatsby-remark-images` can match images outside the node folder. This is especially important if you are working with [Netlify CMS](https://www.netlifycms.org). Also, don't forget to add fmImagesToRelative to _gatsby-node.js_.
 
@@ -92,7 +92,7 @@ export const imageQuery = graphql`
 
 Finally, sometimes the build can fail just because **node_modules/** needs to be rebuilt. So, if you see nothing else working try removing **node_modules/** and reinstalling packages.
 
-# gatsby-image and gatsby-paginate don't go well together
+## gatsby-image and gatsby-paginate don't go well together
 
 While implementing Article List I ran into an error that disturbed me for hours. Let me preface by explaining how [gatsby-paginate](ttps://www.gatsbyjs.org/packages/gatsby-paginate) works. We plugin Gatsby Paginate's `createPaginatedPages` function in _gatsby-node.js_. It takes the `createPages` method and takes results of the query to create a paginated list of posts.
 

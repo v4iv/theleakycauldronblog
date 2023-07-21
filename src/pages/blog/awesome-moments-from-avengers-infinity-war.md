@@ -3,7 +3,7 @@ templateKey: article-page
 title: '16 Awesome Moments from Avengers: Infinity War'
 slug: awesome-moments-from-avengers-infinity-war
 author: Vaibhav Sharma
-authorLink: https://twitter.com/vaibhaved
+authorLink: https://twitter.com/waybove
 date: '2018-04-30T18:03:07+05:30'
 cover: /img/avengers_infinity_war.jpg
 metaTitle: 'Awesome Moments from Avengers: Infinity War'
@@ -11,9 +11,9 @@ metaDescription: >-
   Here are some of the most awesome moments from the long-awaited Avenger's
   Infinity War.Warning Major Spoiler
 tags:
-  - movie
-  - spoilers
-  - interesting
+-   movie
+-   spoilers
+-   interesting
 ---
 Friday marked the release of Avengers Infinity War, and I couldn't miss it for the world. In short, Marvel nailed it, from character chemistry to villain. The film was an emotional roller coaster, with a lot of people claiming to need therapy after it was over. Here are some of the moments I thought were the best (Spoilers, DUH!):
 
@@ -77,11 +77,11 @@ Is it just me or it's weird that Strange never once used his most powerful weapo
 
 Everyone was screaming with excitement when Buck used Rocket as a weapon, oh and of course Rocket wants his arm.
 
-## Wanda Destroys an Infinity Stone!
+## Wanda Destroys an Infinity Stone
 
 Just goes to show how powerful she is(or rather was).
 
-## SNAP!!!
+## SNAP
 
 The dreadful SNAP, killing half the universe, including some of our most beloved character. As if that wasn't enough, we got to see how much Thanos mourns Gamora.
 
@@ -91,7 +91,7 @@ The dreadful SNAP, killing half the universe, including some of our most beloved
 
 This one got to me, and I'm sure most of the viewers. It was just too painful to hear him desperately hug Tony. "I'm sorry Mr. Stark..."
 
-## Mother F...
+## Mother F
 
 ![Paging Captain Marvel](/img/captainmarvel.jpg)
 

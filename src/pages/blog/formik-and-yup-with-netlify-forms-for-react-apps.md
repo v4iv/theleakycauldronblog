@@ -3,7 +3,7 @@ templateKey: article-page
 title: Formik and Yup with Netlify Forms for React Apps
 slug: formik-and-yup-with-netlify-forms-for-react-apps
 author: Vaibhav Sharma
-authorLink: https://twitter.com/vaibhaved
+authorLink: https://twitter.com/waybove
 date: 2019-06-17T08:14:41.721Z
 cover: /img/formik-netlify-forms-react-yup.jpg
 metaTitle: Leverage Formik and Yup to make your Netlify Forms hassle free and sanitised.
@@ -11,9 +11,9 @@ metaDescription: Use Formik and Yup to make robust forms in conjunction with
   Netlify Forms. Best part, no backend required! With a generous 100 submissions
   per month, it's more than enough for most hobby websites.
 tags:
-  - react js
-  - netlify
-  - javascript
+-   react js
+-   netlify
+-   javascript
 ---
 [Netlify Forms](https://www.netlify.com/docs/form-handling/) is yet another amazing service provided by [Netlify](https://www.netlify.com/) with a generous free tier. For those who don't know, it allows you to set up a form and take submissions without needing a backend. The form data is not only stored in your dashboard, but you can also directly get a notification on any email address! Sounds interesting right?! As we start implementing you'll find out just how easy it is to set up if you know basics of React. Although I should mention it's not just a React only feature, you can set it up with basic HTML as well!
 

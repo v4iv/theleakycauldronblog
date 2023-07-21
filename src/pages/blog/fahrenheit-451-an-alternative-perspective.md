@@ -1,9 +1,9 @@
 ---
 templateKey: article-page
-title: "Fahrenheit 451: An Alternative Perspective"
-slug: fahrenheit-451-alternative-perspective
+title: "Fahrenheit 451: An Alternate Perspective"
+slug: fahrenheit-451-alternate-perspective
 author: Vaibhav Sharma
-authorLink: https://twitter.com/vaibhaved
+authorLink: https://twitter.com/waybove
 date: 2021-09-18T19:43:50.489Z
 cover: /img/fred-kearney-fahrenheit-451-alternative-perspective.jpg
 metaTitle: "Fahrenheit 451: An Alternative Perspective"
@@ -11,11 +11,11 @@ metaDescription: Fahrenheit 451 is no doubt a great read but what bugs me is
   that the book pretends to be about book burning and censorship but is actually
   mostly about shitting on new technologies at its core. But why?
 tags:
-  - book
-  - interesting
-  - rant
+-   book
+-   interesting
+-   rant
 ---
-Yesterday I finished reading the book **Fahrenheit 451**, oh wait did I say finished reading, more like, completed listening to the audiobook narrated by *Tim Robbins*. Yes, I’m a *Neil DeGrasse Tyson* certified badass who listens, instead of reads, a book that is all about the dangers of abandoning reading literature. 
+Yesterday I finished reading the book **Fahrenheit 451**, oh wait did I say finished reading, more like, completed listening to the audiobook narrated by *Tim Robbins*. Yes, I’m a *Neil DeGrasse Tyson* certified badass who listens, instead of reads, a book that is all about the dangers of abandoning reading literature.
 
 ![neil-degrasse-tyson-badass-meme](/img/neiltysonbadass.png "neil-degrasse-tyson-badass-meme")
 
@@ -29,7 +29,7 @@ Now forgive me for my ignorance but, I never found Tim Robbins to be significant
 >
 > ― George Orwell
 
-Fuckin’ teenagers with their Radio and TV! 
+Fuckin’ teenagers with their Radio and TV!
 
 Generational labels get created to provide an order to our generally messy history and explain the concerned disappointment with the youth. This hate/disappointment for the youth is timeless with examples dating as far back as times of Aristotle, 4th century BC. And as is the tradition there’s always a relevant [XKCD comic](https://xkcd.com/1227/) for any situation. This inaccurate, exaggerated and sensational characterisation of young people is called **Ephebiphobia**. But the sentiments of distaste and/or fear of the social culture associated with young people is perhaps better described by the term *Juvenoia*. Perhaps, fuelled by the way our memories are notoriously affected by emotions of the time, making them less than reliable. But surely things are way worse than they were back in the good ol’ days, right? There’s no depth beneath the superficial stimulation of modern media, right?
 

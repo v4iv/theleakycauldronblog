@@ -3,21 +3,21 @@ templateKey: article-page
 title: Authenticated Serverless CRUD with Netlify Functions and FaunaDB Part 3
 slug: authenticated-serverless-crud-netlify-functions-faunadb-part-3
 author: Vaibhav Sharma
-authorLink: https://twitter.com/aleakycauldron
+authorLink: https://twitter.com/waybove
 date: 2021-01-22T11:22:44.167Z
 cover: /img/marcel-friedrich-authenticated-serverless-crud-netlify-faunadb-part-3.jpg
 metaTitle: Authenticated Serverless CRUD with Netlify Functions and FaunaDB Part 3
 metaDescription: Leverage FaunaDB and Netlify Functions to create authenticated
   Serverless CRUD APIs with generous free tier.
 tags:
-  - serverless
-  - javascript
-  - authentication
-  - netlify
+-   serverless
+-   javascript
+-   authentication
+-   netlify
 ---
 In the last parts, we have built a foundation of a Netlify Functions serverless project and set up our Fauna DB Collections, Indexes and Roles. We have also written two APIs, Sign Up and Sign In. And if you have followed the last parts, your project folder should look like this:
 
-```
+```shell
 .
 ├── node_modules/
 ├── db/
@@ -33,7 +33,7 @@ In the last parts, we have built a foundation of a Netlify Functions serverless 
 
 In this part, we’ll finally be writing the CRUD APIs. Oh, I hope you have saved the `User ID` and the `Secret Token` returned after signing in. If not, go ahead sign in again and save the new ones, as we’ll be needing them.
 
-# Create My Cat
+## Create My Cat
 
 The big idea is to use the `secret token` we saved earlier as a `bearer token` and on the server-side, we use it as a regular FaunaDB access token, to initialise the Fauna Client and run queries. In this particular case a query to create a cat.
 
@@ -68,7 +68,7 @@ Finally, we write the query to create an entry of a cat, from the payload, we al
     try {
         const response = await client.query(
             q.Create(
-                q.Collection('addresses'), {
+                q.Collection('cat_breeds'), {
                     data: {
                         name: payload.name,
                         image: payload.image,
@@ -136,7 +136,7 @@ And, the authorisation header:
 
 Make sure to make a few entries before proceeding to the next step.
 
-# Retrieve My Cats
+## Retrieve My Cats
 
 Retrieving the cats is similar, but we’ll be using the Index we created in the last part - `cats_by_users`. We’ll also be using a FaunaDB Lambda function, which will process the list of cat ids retrieved from the Index to their entire document.
 
@@ -214,7 +214,7 @@ To test the API, restart the dev server. Then, make a `POST` request to the API,
 
 For the next part, make sure to save one of the **Cat’s ID**.
 
-# Update My Cat
+## Update My Cat
 
 For updating data we’ll use the Cat ID we saved earlier.
 
@@ -290,7 +290,7 @@ Then, to test the API, restart the dev server and make a `PUT` request to the AP
 }
 ```
 
-# Delete My Cat
+## Delete My Cat
 
 Just like in the last script we’ll use the Cat ID we saved earlier.
 
@@ -356,7 +356,7 @@ Then, to test the API, restart the dev server and make a `DELETE` request to the
 
 That’s it for this tutorial series on making serverless authenticated CRUD with Netlify Functions and Fauna DB. Hope, you make something awesome.
 
-# Links
+## Links
 
 **Link to Part 1:** [Authenticated Serverless CRUD with Netlify Functions and FaunaDB Part 1](https://theleakycauldronblog.com/blog/authenticated-serverless-crud-netlify-functions-faunadb-part-1)
 

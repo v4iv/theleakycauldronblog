@@ -3,7 +3,7 @@ templateKey: article-page
 title: Fit Bounds of a Polyline and Marker with react-google-maps
 slug: fit-bounds-of-a-polyline-and-marker-with-react-google-maps
 author: Vaibhav Sharma
-authorLink: https://twitter.com/vaibhaved
+authorLink: https://twitter.com/waybove
 date: 2019-07-06T14:46:59.611Z
 cover: /img/react-google-maps.jpg
 metaTitle: Fit Bounds of a Polyline and Marker with React Google Maps
@@ -11,9 +11,9 @@ metaDescription: >-
   Use React Google Maps and fit bounds & zoom of a Polyline and Marker together
   for a better UI experience.
 tags:
-  - react js
-  - maps
-  - javascript
+-   react js
+-   maps
+-   javascript
 ---
 When we started working on a Live Flight Tracker for my company, we chose to use [react-google-maps](https://github.com/tomchentw/react-google-maps) as our library. Since it's the most popular one, with over 4K stars on Github. I did have some experience with it but that was nowhere enough for the problem I was about to face. Especially, with very inadequate documentation and not enough examples showing the usage of the library.
 

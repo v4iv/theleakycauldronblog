@@ -52,11 +52,12 @@ typings/
 *.tgz
 
 # dotenv environment variables file
-.env
+.env*
 
 # gatsby files
 .cache/
 public
+src/gatsby-types.d.ts
 
 # Mac files
 .DS_Store

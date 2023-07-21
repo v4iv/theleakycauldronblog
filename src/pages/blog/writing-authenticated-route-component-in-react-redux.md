@@ -3,7 +3,7 @@ templateKey: article-page
 title: Writing Authenticated Route Component in React Redux
 slug: writing-authenticated-route-component-in-react-redux
 author: Vaibhav Sharma
-authorLink: https://twitter.com/vaibhaved
+authorLink: https://twitter.com/waybove
 date: '2018-06-02T09:21:12+05:30'
 cover: /img/react_redux_authenticated_routes.jpg
 metaTitle: Writing Authenticated Route Component in React Redux
@@ -11,10 +11,10 @@ metaDescription: >-
   Writing Authenticated Routes which will redirect to signin page if the user is
   not authenticated and once signed in it'll redirect back to the same page.
 tags:
-  - react js
-  - redux
-  - authentication
-  - javascript
+-   react js
+-   redux
+-   authentication
+-   javascript
 ---
 How to write an Authenticated Route component which will redirect to Sign In Page if a user isn't authenticated and once authentication is complete, it'll redirect them back to the same page, this is a problem most new React developers face. Today we learn to do just that.
 

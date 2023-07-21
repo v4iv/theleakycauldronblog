@@ -3,22 +3,22 @@ templateKey: article-page
 title: Basic Serverless Typeahead Search with Cloudflare Workers
 slug: serverless-typeahead-search-cloudflare-workers
 author: Vaibhav Sharma
-authorLink: https://instagram.com/waybove
+authorLink: https://twitter.com/waybove
 date: 2021-03-12T10:13:34.119Z
 cover: /img/michael-rivera-serverless-typeahead-search.jpg
 metaTitle: Leverage Cloudflare Workers to make a Serverless Typeahead Search API
 metaDescription: Use Cloudflare Workers and React to make a Basic Typeahead Search for Pokedex.
 tags:
-  - serverless
-  - typescript
-  - cloudflare
-  - react js
+-   serverless
+-   typescript
+-   cloudflare
+-   react js
 ---
 Typeahead search progressively searches and filters as the user types his/her query. It’s also called **predictive search**, **incremental search** or **search-as-you-type** and is an important feature of most search engines. In this tutorial, we’ll learn to make a very basic version of a *Pokémon* Typeahead Search using **Cloudflare Workers** and **React**. Cloudflare provides generous **100,000** requests per day in its free plan, making it perfect for an API like this.
 
-# Setup Cloudflare
+## Setup Cloudflare
 
-We begin by signing up for a Cloudflare Workers account at [workers.cloudflare.com](https://workers.cloudflare.com). 
+We begin by signing up for a Cloudflare Workers account at [workers.cloudflare.com](https://workers.cloudflare.com).
 
 ![cloudflare-workers-homepage](/img/cloudflare-workers-homepage.png "cloudflare-workers-homepage")
 
@@ -26,7 +26,7 @@ In the onboarding screen, select a unique subdomain for our workers.
 
 ![setting-up-custom-subdomain](/img/setting-up-custom-subdomain.jpg "setting-up-custom-subdomain")
 
-# Installing Wrangler
+## Installing Wrangler
 
 To get the most out of Cloudflare Workers we need to install Wrangler CLI using `yarn` or `npm`.
 
@@ -52,7 +52,7 @@ If it doesn’t work, you can manually log in using the config command and follo
 wrangler config
 ```
 
-# Setup A Worker Project
+## Setup A Worker Project
 
 Wrangler CLI lets you set up a Cloudflare Worker project easily, as well as allows you to use Templates.
 
@@ -62,13 +62,13 @@ We’ll be using the TypeScript template for our project. To set it up just use 
 wrangler generate search-api https://github.com/cloudflare/worker-typescript-template
 ```
 
-Next, navigate to the project and open it using your favourite IDE and we can start writing the serverless code. 
+Next, navigate to the project and open it using your favourite IDE and we can start writing the serverless code.
 
 ![wrangler-generate-template](/img/wrangler-generate-template.jpg "wrangler-generate-template")
 
 But, before we begin to write our API, we need to add our `accound_id` in the project’s `wrangler.toml` file, as prompted while generating the project.
 
-# Writing the API
+## Writing the API
 
 For our search to work there needs to be an index where our data is stored, here we’ll be using a [JSON File](https://raw.githubusercontent.com/v4iv/pokedex/master/search/search-index.json) of all the *Pokémons* and their ID, that I generated using [PokeAPI](https://pokeapi.co).
 
@@ -209,9 +209,9 @@ export async function handleRequest(request: Request): Promise<Response> {
 }
 ```
 
-# Debugging and Publishing
+## Debugging and Publishing
 
-Since this project is made with TypeScript we cannot directly run or publish it, for that we need a bundler like Webpack, which is preconfigured in the template we used. 
+Since this project is made with TypeScript we cannot directly run or publish it, for that we need a bundler like Webpack, which is preconfigured in the template we used.
 
 To debug locally, we need to first run the dev script to compile the typescript.
 
@@ -267,11 +267,11 @@ wrangler publish
 
 Finally, the backend part of this project is complete and we can access the live API from the browser, it should be something like this.
 
-```
+```shell
 https://search-api.<your-subdomain>.workers.dev/search?q=pika
 ```
 
-# Frontend
+## Frontend
 
 Although the API we made earlier is front-end agnostic, I’ll be bootstrapping the web app using Create React App.
 

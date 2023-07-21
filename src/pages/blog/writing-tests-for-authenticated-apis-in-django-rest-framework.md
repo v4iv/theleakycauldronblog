@@ -3,7 +3,7 @@ templateKey: article-page
 title: Writing Tests for Authenticated APIs in Django REST Framework
 slug: writing-tests-for-authenticated-apis-in-django-rest-framework
 author: Vaibhav Sharma
-authorLink: https://twitter.com/vaibhaved
+authorLink: https://twitter.com/waybove
 date: '2018-04-13T12:17:50+05:30'
 cover: /img/authenticated_api_testing.jpg
 metaTitle: Writing Tests for Authenticated Routes in Django REST Framework
@@ -11,19 +11,19 @@ metaDescription: >-
   How to write tests for Django OAuth Toolkit Authenticated APIs in Django REST
   Framework.
 tags:
-  - django
-  - API
-  - testing
-  - authentication
-  - python
+-   django
+-   API
+-   testing
+-   authentication
+-   python
 ---
 If you are new to [Django Rest Framework](http://www.django-rest-framework.org/) and [Django OAuth Toolkit](http://dot.evonove.it/) and are having trouble writing automated tests for your `is_authenticated` APIs, you have come to the right place. The problem arises because for a token to be generated we need to first create an application and then retrieve its `client_id` and `client_secret` before sending it along with username and password for generating `access_token`.
 
 Before beginning, though we're gonna work on the following assumptions:
 
 * There's a model called Books.
-* There's a `generic.ListAPIView`, with URL name `books:list` 
-* The permission on the URL is `is_authenticated` 
+* There's a `generic.ListAPIView`, with URL name `books:list`
+* The permission on the URL is `is_authenticated`
 
 Now that, that's out of the way, we can begin the fun part.
 

@@ -3,7 +3,7 @@ templateKey: article-page
 title: Self hosting Google Fonts for better caching
 slug: self-hosting-google-fonts-for-better-caching
 author: Vaibhav Sharma
-authorLink: https://twitter.com/vaibhaved
+authorLink: https://twitter.com/waybove
 date: 2018-12-05T16:31:06.803Z
 cover: /img/self_hosted_google_fonts.jpg
 metaTitle: Leverage self hosted Google Fonts for better caching
@@ -11,9 +11,9 @@ metaDescription: >-
   Self host google fonts to better leverage the browser caching provided by
   starter kit like create-react-app and Gatsby.
 tags:
-  - caching
-  - fonts
-  - javascript
+-   caching
+-   fonts
+-   javascript
 ---
 Just a month ago a college fresher came to me showing her newly made React app, bootstrapped using `create-react-app`. As we got into discussing performance, she told me that everything was almost 100 on [gtmetrix.com](https://gtmetrix.com/) except for **Browser Caching**. That was because of _Google Analytics_ and _Google Fonts_. And, it's not just about browser caching, a lot of times _Google Fonts_ have files that will probably be of no use to us. For example, extra language support. Although not much can be done about _Google Analytics_, I told her a little hack that will make the _'Google Fonts'_ problem disappear very easily. Since starter kits like `create-react-app` and _Gatsby JS_ provide support for caching and service workers, we're better off self-hosting.
 
