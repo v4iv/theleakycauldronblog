@@ -79,7 +79,7 @@ Then in your `package.json` add the following script:
 }
 ```
 
-The `netlify-dev` package allows us to emulate the netlify production environment on our local machine. It also injects variables saved in a `.env` file into the environment, bringing us to the next step.
+The ~~`netlify-dev`~~ `netlify-cli` package allows us to emulate the netlify production environment on our local machine. It also injects variables saved in a `.env` file into the environment, bringing us to the next step.
 
 Create a file `.env`:
 
