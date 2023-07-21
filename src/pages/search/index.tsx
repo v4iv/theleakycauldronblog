@@ -9,7 +9,7 @@ import {Search, X} from 'lucide-react'
 import {Input} from '@/components/ui/input'
 import {Button} from '@/components/ui/button'
 import {Separator} from '@/components/ui/separator'
-import {TooltipProvider} from '@/components/ui/tooltip'
+import {Tooltip, TooltipContent, TooltipTrigger} from '@/components/ui/tooltip'
 import {TypographyH2, TypographyMuted} from '@/components/ui/typography'
 import SEO from '@/components/SEO'
 import Footer from '@/components/Footer'
@@ -73,34 +73,52 @@ function SearchPage() {
   const results = useLunr(query, index, store)
 
   return (
-    <TooltipProvider>
+    <>
       <nav className="mx-auto w-full max-w-screen-md">
         <div className="px-3 md:px-0 py-3 md:py-5">
           <div className="flex space-x-2">
-            <div className="flex flex-grow relative">
-              <Search className="pointer-events-none h-4 w-4 absolute top-1/2 transform -translate-y-1/2 right-3" />
-              <Input
-                autoFocus
-                aria-label="Search"
-                name="Search"
-                value={query}
-                disabled={isIndexLoading || isStoreLoading}
-                placeholder={
-                  isIndexLoading || isStoreLoading ? 'Loading...' : 'Search...'
-                }
-                onChange={handleQuery}
-              />
-            </div>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <div className="flex flex-grow relative">
+                  <Search className="pointer-events-none h-4 w-4 absolute top-1/2 transform -translate-y-1/2 right-3" />
+                  <Input
+                    autoFocus
+                    aria-label="Search"
+                    name="Search"
+                    value={query}
+                    disabled={isIndexLoading || isStoreLoading}
+                    placeholder={
+                      isIndexLoading || isStoreLoading
+                        ? 'Loading...'
+                        : 'Search...'
+                    }
+                    onChange={handleQuery}
+                  />
+                </div>
+              </TooltipTrigger>
+
+              <TooltipContent>
+                <p>Search</p>
+              </TooltipContent>
+            </Tooltip>
 
             <div>
-              <Button
-                variant="outline"
-                size="icon"
-                aria-label="Close"
-                onClick={() => navigate(-1)}
-              >
-                <X className="h-5 w-5" />
-              </Button>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    aria-label="Close"
+                    onClick={() => navigate(-1)}
+                  >
+                    <X className="h-5 w-5" />
+                  </Button>
+                </TooltipTrigger>
+
+                <TooltipContent>
+                  <p>Close</p>
+                </TooltipContent>
+              </Tooltip>
             </div>
           </div>
         </div>
@@ -138,7 +156,7 @@ function SearchPage() {
       <Separator />
 
       <Footer />
-    </TooltipProvider>
+    </>
   )
 }
 
