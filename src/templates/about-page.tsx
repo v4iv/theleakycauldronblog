@@ -1,6 +1,5 @@
 import * as React from 'react'
 import {HeadProps, PageProps, graphql} from 'gatsby'
-import {GatsbyImage, getImage} from 'gatsby-plugin-image'
 import {
   TypographyH1,
   TypographyLarge,
@@ -8,6 +7,7 @@ import {
 } from '@/components/ui/typography'
 import SEO from '@/components/SEO'
 import Layout from '@/components/Layout'
+import ImageBox from '@/components/ImageBox'
 import Content from '@/components/Content'
 
 type DataProps = {
@@ -35,8 +35,6 @@ function AboutPage({
     },
   },
 }: PageProps<DataProps>) {
-  const aboutImage = getImage(image)!
-
   return (
     <Layout>
       <div className="mx-auto w-full max-w-screen-md">
@@ -51,9 +49,9 @@ function AboutPage({
         </div>
       </div>
 
-      <GatsbyImage
+      <ImageBox
         className="h-auto w-auto object-cover"
-        image={aboutImage}
+        image={image}
         alt={author}
       />
 

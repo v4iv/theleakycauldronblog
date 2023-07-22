@@ -120,7 +120,7 @@ const config: GatsbyConfig = {
         short_name: `tlcb`,
         start_url: '/',
         background_color: `#ffffff`,
-        theme_color: `#0f172a`, // TODO #020817
+        theme_color: `#020817`,
         display: `standalone`,
         icons: [
           {
