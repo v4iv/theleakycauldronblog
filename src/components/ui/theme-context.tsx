@@ -9,7 +9,6 @@ const defaultState = {
 
 const ThemeContext = createContext(defaultState)
 
-// TODO: Find a better solution than wrapping with <body></body> tag
 export function ThemeProvider({children}: {children: React.ReactNode}) {
   const prefersDarkMode = usePrefersDarkMode()
 

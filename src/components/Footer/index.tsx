@@ -2,6 +2,7 @@ import * as React from 'react'
 import {Github, Rss, Twitter} from 'lucide-react'
 import {Button} from '@/components/ui/button'
 import {TypographyMuted} from '@/components/ui/typography'
+import {Tooltip, TooltipContent, TooltipTrigger} from '@/components/ui/tooltip'
 
 function Footer() {
   return (
@@ -15,31 +16,69 @@ function Footer() {
         </div>
 
         <div className="flex mt-3 md:mt-0 space-x-2">
-          <Button variant="outline" size="icon" aria-label="github" asChild>
-            <a
-              target="_blank"
-              rel="noreferrer nofollow noopener"
-              href="https://github.com/v4iv"
-            >
-              <Github className="h-4 w-4" />
-            </a>
-          </Button>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button variant="outline" size="icon" aria-label="github" asChild>
+                <a
+                  target="_blank"
+                  rel="noreferrer nofollow noopener"
+                  href="https://github.com/v4iv"
+                >
+                  <Github className="h-4 w-4" />
+                </a>
+              </Button>
+            </TooltipTrigger>
 
-          <Button variant="outline" size="icon" aria-label="twitter" asChild>
-            <a
-              target="_blank"
-              rel="noreferrer nofollow noopener"
-              href="https://twitter.com/waybove"
-            >
-              <Twitter className="h-4 w-4" />
-            </a>
-          </Button>
+            <TooltipContent>
+              <p>My Github</p>
+            </TooltipContent>
+          </Tooltip>
 
-          <Button variant="outline" size="icon" aria-label="rss-feed" asChild>
-            <a href="https://theleakycauldronblog.com/rss.xml">
-              <Rss className="h-4 w-4" />
-            </a>
-          </Button>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button
+                variant="outline"
+                size="icon"
+                aria-label="twitter"
+                asChild
+              >
+                <a
+                  target="_blank"
+                  rel="noreferrer nofollow noopener"
+                  href="https://twitter.com/waybove"
+                >
+                  <Twitter className="h-4 w-4" />
+                </a>
+              </Button>
+            </TooltipTrigger>
+
+            <TooltipContent>
+              <p>My Twitter</p>
+            </TooltipContent>
+          </Tooltip>
+
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button
+                variant="outline"
+                size="icon"
+                aria-label="rss-feed"
+                asChild
+              >
+                <a
+                  target="_blank"
+                  href="https://theleakycauldronblog.com/rss.xml"
+                  rel="noreferrer"
+                >
+                  <Rss className="h-4 w-4" />
+                </a>
+              </Button>
+            </TooltipTrigger>
+
+            <TooltipContent>
+              <p>RSS Feed</p>
+            </TooltipContent>
+          </Tooltip>
         </div>
       </div>
     </footer>
