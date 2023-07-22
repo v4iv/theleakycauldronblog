@@ -2,12 +2,14 @@ import * as React from 'react'
 import {GatsbyBrowser} from 'gatsby'
 import './src/styles/globals.css'
 import {TooltipProvider} from './src/components/ui/tooltip'
+import {ThemeProvider} from './src/components/ui/theme-context'
 
 export const wrapRootElement: GatsbyBrowser['wrapRootElement'] = ({
   element,
 }) => {
-  // Instantiating store in `wrapRootElement` handler ensures:
-  //  - there is fresh store for each SSR page
-  //  - it will be called only once in browser, when React mounts
-  return <TooltipProvider>{element}</TooltipProvider>
+  return (
+    <ThemeProvider>
+      <TooltipProvider>{element}</TooltipProvider>
+    </ThemeProvider>
+  )
 }

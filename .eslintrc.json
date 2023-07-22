@@ -18,6 +18,8 @@
                 "es6": true
             },
             "globals": {
+                "window.__onThemeChange": true,
+                "window.__theme": true,
                 "graphql": true,
                 "__PATH_PREFIX__": true,
                 "fetch": true,
