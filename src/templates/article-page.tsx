@@ -1,16 +1,16 @@
 import * as React from 'react'
 import slugify from 'slugify'
 import {Link, graphql, PageProps, HeadProps} from 'gatsby'
-import {GatsbyImage, getImage} from 'gatsby-plugin-image'
 import 'prismjs/themes/prism-twilight.css'
 import {badgeVariants} from '@/components/ui/badge'
 import {Separator} from '@/components/ui/separator'
 import {TypographyH1, TypographyLead} from '@/components/ui/typography'
 import SEO from '@/components/SEO'
 import Layout from '@/components/Layout'
+import ImageBox from '@/components/ImageBox'
 import Content from '@/components/Content'
-import CommentBox from '@/components/CommentBox'
 import Share from '@/components/Share'
+import CommentBox from '@/components/CommentBox'
 
 type DataProps = {
   site: {
@@ -61,8 +61,6 @@ function ArticlePageTemplate({
     },
   },
 }: PageProps<DataProps>) {
-  const image = getImage(cover)!
-
   return (
     <Layout>
       <article>
@@ -98,9 +96,9 @@ function ArticlePageTemplate({
           </div>
         </div>
 
-        <GatsbyImage
-          className="h-auto w-auto object-cover aspect-video"
-          image={image}
+        <ImageBox
+          className="h-auto w-full object-cover aspect-video"
+          image={cover}
           alt={title}
         />
 

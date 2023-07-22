@@ -5,7 +5,7 @@ slug: quirks-of-migrating-the-blog-to-gatsby-v2
 author: Vaibhav Sharma
 authorLink: https://twitter.com/waybove
 date: 2018-12-03T12:47:42.410Z
-cover: /img/i18n-typescript-nextjs.jpg
+cover: /img/everything_is_connected.gif
 metaTitle: Quirks of migrating the blog to Gatsby v2 and how to deal with them.
 metaDescription: >-
   Dealing with the struggles and features of migrating to Gatsby v2. From

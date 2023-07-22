@@ -17,7 +17,7 @@
 
 - Pagination
 
-- SEO friendly (Head API, Slug, Sitemap, Schemas, Robots.txt, GTM etc)
+- SEO friendly (Head API, Slug, Sitemap, Robots.txt, GTM etc)
 
 - Disqus comments
 
@@ -26,6 +26,8 @@
 - Decap CMS(Netlify CMS) generated markdown pages with Prism code highlighting, social embedding etc
 
 - Netlify Forms
+
+- Dark Mode
 
 ## 🚀 Getting Started
 
