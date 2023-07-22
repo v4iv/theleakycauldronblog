@@ -37,8 +37,6 @@ function SEO({
 
   return (
     <>
-      <html lang="en" />
-
       {/* General tags */}
       <title>{seo.title}</title>
 
