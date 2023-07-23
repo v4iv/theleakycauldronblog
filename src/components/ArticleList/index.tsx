@@ -52,7 +52,7 @@ function ArticleList({pages}: ArticleListProps) {
               <div className="flex sm:flex-row flex-col">
                 <div className="md:w-90 md:pr-3 pr-0 order-2 md:order-1 md:w-3/5">
                   <Link
-                    className="block px-0 lg:px-0 hover:text-gray-500 transition-colors duration-100"
+                    className="block px-0 lg:px-0 hover:text-muted-foreground"
                     to={slug}
                   >
                     <TypographyH2>{title}</TypographyH2>
