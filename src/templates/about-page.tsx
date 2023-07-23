@@ -50,7 +50,7 @@ function AboutPage({
       </div>
 
       <ImageBox
-        className="h-auto w-auto object-cover"
+        className="h-auto w-full object-cover"
         image={image}
         alt={author}
       />

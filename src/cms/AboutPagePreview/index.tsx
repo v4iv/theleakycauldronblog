@@ -4,14 +4,13 @@ import {
   TypographyLarge,
   TypographyLead,
 } from '../../components/ui/typography'
-import ImageBox from '../../components/ImageBox'
 
 function AboutPagePreview({entry, widgetFor}: any) {
-  const title = entry.getIn(['data', 'title']) || ''
-  const subtitle = entry.getIn(['data', 'subtitle']) || ''
-  const author = entry.getIn(['data', 'author']) || ''
-  const image = {publicURL: entry.getIn(['data', 'image'])} || {publicURL: ''}
-  const body = widgetFor('body') || ''
+  const title = entry.getIn(['data', 'title']) || 'Title'
+  const subtitle = entry.getIn(['data', 'subtitle']) || 'Subtitle'
+  const author = entry.getIn(['data', 'author']) || 'The Leaky Cauldron Blog'
+  const image = entry.getIn(['data', 'image'])
+  const body = widgetFor('body')
 
   return (
     <div>
@@ -27,11 +26,9 @@ function AboutPagePreview({entry, widgetFor}: any) {
         </div>
       </div>
 
-      <ImageBox
-        className="h-auto w-auto object-cover"
-        image={image}
-        alt={author}
-      />
+      {!!image.length && (
+        <img className="h-auto w-full object-cover" src={image} alt={author} />
+      )}
 
       <div className="mx-auto w-full max-w-screen-md">
         <div className="px-3 md:px-0 py-3 md:py-5">

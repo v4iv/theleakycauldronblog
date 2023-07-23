@@ -3,8 +3,8 @@ import {Separator} from '../../components/ui/separator'
 import {TypographyH1, TypographyLead} from '../../components/ui/typography'
 
 function ContactPagePreview({entry}: any) {
-  const title = entry.getIn(['data', 'title']) || ''
-  const subtitle = entry.getIn(['data', 'subtitle']) || ''
+  const title = entry.getIn(['data', 'title']) || 'Title'
+  const subtitle = entry.getIn(['data', 'subtitle']) || 'Subtitle'
 
   return (
     <div className="mx-auto w-full max-w-screen-md">
