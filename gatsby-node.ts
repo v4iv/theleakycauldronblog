@@ -1,3 +1,4 @@
+import webpack from 'webpack'
 import * as path from 'path'
 import slugify from 'slugify'
 import type {CreateNodeArgs, GatsbyNode} from 'gatsby'
@@ -167,6 +168,11 @@ export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({
   actions,
 }) => {
   actions.setWebpackConfig({
+    plugins: [
+      new webpack.IgnorePlugin({
+        resourceRegExp: /^netlify-identity-widget$/,
+      }),
+    ],
     resolve: {
       alias: {
         '@/components': path.resolve(__dirname, 'src/components'),
