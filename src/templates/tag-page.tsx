@@ -62,10 +62,7 @@ function TagPageTemplate({
                   className="py-6 border-b last:border-none"
                 >
                   <TypographyH2>
-                    <Link
-                      className="hover:text-gray-500 transition-colors duration-100"
-                      to={slug}
-                    >
+                    <Link className="hover:text-muted-foreground" to={slug}>
                       {articleTitle}
                     </Link>
                   </TypographyH2>
