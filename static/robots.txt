@@ -2,4 +2,4 @@ User-agent: *
 Disallow: */admin/
 Disallow: */tags/
 
-sitemap: https://theleakycauldronblog.com/sitemap.xml
+sitemap: https://theleakycauldronblog.com/sitemap-index.xml

@@ -126,7 +126,7 @@ const config: GatsbyConfig = {
         name: `the leaky cauldron blog`,
         short_name: `tlcb`,
         start_url: '/',
-        background_color: `#020817`,
+        background_color: `#ffffff`,
         theme_color: `#020817`,
         display: `standalone`,
         icons: [
@@ -139,6 +139,18 @@ const config: GatsbyConfig = {
             src: `/icons/icon-512.png`,
             sizes: `512x512`,
             type: `image/png`,
+          },
+          {
+            src: `/icons/icon-192-maskable.png`,
+            sizes: `192x192`,
+            type: `image/png`,
+            purpose: 'any maskable',
+          },
+          {
+            src: `/icons/icon-512-maskable.png`,
+            sizes: `512x512`,
+            type: `image/png`,
+            purpose: 'any maskable',
           },
         ],
         cache_busting_mode: `none`,
