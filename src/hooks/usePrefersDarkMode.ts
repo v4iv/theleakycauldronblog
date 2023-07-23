@@ -1,4 +1,4 @@
-import {useCallback, useEffect, useMemo, useState} from 'react'
+import {useCallback, useLayoutEffect, useMemo, useState} from 'react'
 
 export function usePrefersDarkMode() {
   const [prefersDark, setPrefersDark] = useState<boolean>(() => {
@@ -11,7 +11,7 @@ export function usePrefersDarkMode() {
     setPrefersDark(e.matches)
   }, [])
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (typeof window !== 'undefined') {
       const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
 
