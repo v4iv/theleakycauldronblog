@@ -58,7 +58,7 @@ function NavBar() {
                 <TooltipTrigger asChild>
                   <h3 className="scroll-m-20 text-2xl font-extrabold tracking-wider leading-relaxed">
                     <Link
-                      className="hidden md:flex hover:text-muted-foreground transition-colors duration-100"
+                      className="hidden md:flex hover:text-muted-foreground"
                       to="/"
                     >
                       the leaky cauldron blog
