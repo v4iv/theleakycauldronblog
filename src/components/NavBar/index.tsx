@@ -58,7 +58,7 @@ function NavBar() {
                 <TooltipTrigger asChild>
                   <h3 className="scroll-m-20 text-2xl font-extrabold tracking-wider leading-relaxed">
                     <Link
-                      className="hidden md:flex hover:text-gray-500 transition-colors duration-100"
+                      className="hidden md:flex hover:text-muted-foreground transition-colors duration-100"
                       to="/"
                     >
                       the leaky cauldron blog
@@ -153,7 +153,7 @@ function NavBar() {
                     <p className="font-mono text-[10px] text-muted-foreground hidden md:flex md:items-center">
                       QUICK SEARCH&nbsp;&raquo;&nbsp;
                       <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
-                        <span className="text-xs">⌘</span>K
+                        <span className="text-xs">&#8984;</span>K
                       </kbd>
                     </p>
                   </SheetFooter>

@@ -71,7 +71,11 @@ function ArticlePageTemplate({
 
               <div className="flex items-center h-6 space-x-2">
                 <TypographyLead>
-                  <a rel="noreferrer nofollow noopener" href={authorLink}>
+                  <a
+                    className="hover:text-primary"
+                    rel="noreferrer nofollow noopener"
+                    href={authorLink}
+                  >
                     {author}
                   </a>
                 </TypographyLead>

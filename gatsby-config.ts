@@ -119,7 +119,7 @@ const config: GatsbyConfig = {
         name: `the leaky cauldron blog`,
         short_name: `tlcb`,
         start_url: '/',
-        background_color: `#ffffff`,
+        background_color: `#020817`,
         theme_color: `#020817`,
         display: `standalone`,
         icons: [

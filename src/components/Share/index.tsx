@@ -25,8 +25,10 @@ function Share({title, slug, excerpt, siteURL}: ShareProps) {
         <Tooltip>
           <TooltipTrigger asChild>
             <div
+              role="button"
               className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10"
               aria-label="Share on WhatsApp"
+              aria-pressed="false"
             >
               <svg
                 className="h-4 w-4"
@@ -51,8 +53,10 @@ function Share({title, slug, excerpt, siteURL}: ShareProps) {
         <Tooltip>
           <TooltipTrigger asChild>
             <div
+              role="button"
               className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10"
               aria-label="Share on Twitter"
+              aria-pressed="false"
             >
               <svg
                 className="h-4 w-4"
@@ -77,8 +81,10 @@ function Share({title, slug, excerpt, siteURL}: ShareProps) {
         <Tooltip>
           <TooltipTrigger asChild>
             <div
+              role="button"
               className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10"
               aria-label="Share on Reddit"
+              aria-pressed="false"
             >
               <svg
                 className="h-4 w-4"
@@ -104,8 +110,10 @@ function Share({title, slug, excerpt, siteURL}: ShareProps) {
         <Tooltip>
           <TooltipTrigger asChild>
             <div
+              role="button"
               className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10"
               aria-label="Share on Facebook"
+              aria-pressed="false"
             >
               <svg
                 className="h-4 w-4"
@@ -133,8 +141,10 @@ function Share({title, slug, excerpt, siteURL}: ShareProps) {
             onCopy={() => alert('URL copied to clipboard.')}
           >
             <div
+              role="button"
               className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10"
               aria-label="Copy link to clipboard"
+              aria-pressed="false"
             >
               <Link className="h-4 w-4" />
             </div>
