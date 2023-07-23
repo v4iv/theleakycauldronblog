@@ -1,10 +1,9 @@
 import React from 'react'
 import {Link} from 'gatsby'
 import slugify from 'slugify'
-import {badgeVariants} from '../../components/ui/badge'
 import {Separator} from '../../components/ui/separator'
+import {badgeVariants} from '../../components/ui/badge'
 import {TypographyH1, TypographyLead} from '../../components/ui/typography'
-import Content from '../../components/Content'
 import ImageBox from '../../components/ImageBox'
 
 function ArticlePagePreview({entry, widgetFor}: any) {
@@ -13,8 +12,12 @@ function ArticlePagePreview({entry, widgetFor}: any) {
   const authorLink = entry.getIn(['data', 'subtitle']) || ''
   const author = entry.getIn(['data', 'author']) || ''
   const cover = {publicURL: entry.getIn(['data', 'cover'])} || {publicURL: ''}
-  const html = widgetFor('body') || ''
+  const body = widgetFor('body') || ''
   const tags = entry.getIn(['data', 'tags']) || []
+
+  const displayDate = `${date.toLocaleString('default', {
+    month: 'long',
+  })} ${date.getDate()}, ${date.getFullYear()}`
 
   return (
     <div>
@@ -37,20 +40,19 @@ function ArticlePagePreview({entry, widgetFor}: any) {
 
                 <Separator orientation="vertical" />
 
-                <TypographyLead>{date}</TypographyLead>
+                <TypographyLead>{displayDate}</TypographyLead>
               </div>
 
               <div className="space-x-2">
-                {tags &&
-                  tags.toJS().map((tag: any, idx: number) => (
-                    <Link
-                      key={`${slugify(tag)}-${idx}`}
-                      className={badgeVariants({variant: 'default'})}
-                      to={`/tags/${slugify(tag)}`}
-                    >
-                      #{tag}&nbsp;
-                    </Link>
-                  ))}
+                {tags.toJS().map((tag: any, idx: number) => (
+                  <Link
+                    key={`${slugify(tag)}-${idx}`}
+                    className={badgeVariants({variant: 'default'})}
+                    to={`/tags/${slugify(tag)}`}
+                  >
+                    #{tag}&nbsp;
+                  </Link>
+                ))}
               </div>
             </header>
           </div>
@@ -64,7 +66,9 @@ function ArticlePagePreview({entry, widgetFor}: any) {
 
         <div className="mx-auto w-full max-w-screen-md">
           <div className="px-3 md:px-0 py-3 md:py-5">
-            <Content html={html} />
+            <div className="prose prose-slate prose-base md:prose-lg dark:prose-invert">
+              {body}
+            </div>
           </div>
         </div>
       </article>

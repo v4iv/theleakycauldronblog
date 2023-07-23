@@ -4,7 +4,6 @@ import {
   TypographyLarge,
   TypographyLead,
 } from '../../components/ui/typography'
-import Content from '../../components/Content'
 import ImageBox from '../../components/ImageBox'
 
 function AboutPagePreview({entry, widgetFor}: any) {
@@ -12,7 +11,7 @@ function AboutPagePreview({entry, widgetFor}: any) {
   const subtitle = entry.getIn(['data', 'subtitle']) || ''
   const author = entry.getIn(['data', 'author']) || ''
   const image = {publicURL: entry.getIn(['data', 'image'])} || {publicURL: ''}
-  const html = widgetFor('body') || ''
+  const body = widgetFor('body') || ''
 
   return (
     <div>
@@ -36,7 +35,9 @@ function AboutPagePreview({entry, widgetFor}: any) {
 
       <div className="mx-auto w-full max-w-screen-md">
         <div className="px-3 md:px-0 py-3 md:py-5">
-          <Content html={html} />
+          <div className="prose prose-slate prose-base md:prose-lg dark:prose-invert">
+            {body}
+          </div>
         </div>
       </div>
     </div>
