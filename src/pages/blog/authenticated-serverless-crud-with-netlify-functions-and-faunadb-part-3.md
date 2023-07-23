@@ -358,6 +358,6 @@ That’s it for this tutorial series on making serverless authenticated CRUD wit
 
 ## Links
 
-**Link to Part 1:** [Authenticated Serverless CRUD with Netlify Functions and FaunaDB Part 1](https://theleakycauldronblog.com/blog/authenticated-serverless-crud-netlify-functions-faunadb-part-1)
+**Link to Part 1:** [Authenticated Serverless CRUD with Netlify Functions and FaunaDB Part 1](/blog/authenticated-serverless-crud-netlify-functions-faunadb-part-1)
 
-**Link to Part 2:** [Authenticated Serverless CRUD with Netlify Functions and FaunaDB Part 2](https://theleakycauldronblog.com/blog/authenticated-serverless-crud-netlify-functions-faunadb-part-2)
+**Link to Part 2:** [Authenticated Serverless CRUD with Netlify Functions and FaunaDB Part 2](/blog/authenticated-serverless-crud-netlify-functions-faunadb-part-2)

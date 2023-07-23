@@ -65,11 +65,7 @@ function Footer() {
                 aria-label="rss-feed"
                 asChild
               >
-                <a
-                  target="_blank"
-                  href="https://theleakycauldronblog.com/rss.xml"
-                  rel="noreferrer"
-                >
+                <a target="_blank" href="/rss.xml" rel="noopener noreferrer">
                   <Rss className="h-4 w-4" />
                 </a>
               </Button>

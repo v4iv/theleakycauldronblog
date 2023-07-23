@@ -8,7 +8,8 @@ import {TypographyH1, TypographyLead} from '../../components/ui/typography'
 function ArticlePagePreview({entry, widgetFor}: any) {
   const title = entry.getIn(['data', 'title']) || 'Title'
   const date = entry.getIn(['data', 'date'])
-  const authorLink = entry.getIn(['data', 'subtitle']) || 'https://twitter.com/waybove'
+  const authorLink =
+    entry.getIn(['data', 'subtitle']) || 'https://twitter.com/waybove'
   const author = entry.getIn(['data', 'author'])
   const cover = entry.getIn(['data', 'cover']) || ''
   const body = widgetFor('body')

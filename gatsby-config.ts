@@ -68,6 +68,13 @@ const config: GatsbyConfig = {
               noInlineHighlight: true,
             },
           },
+          {
+            resolve: `gatsby-remark-external-links`,
+            options: {
+              target: `_blank`,
+              rel: 'nofollow',
+            },
+          },
           `gatsby-remark-embedder`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
@@ -243,7 +250,6 @@ const config: GatsbyConfig = {
                     }
                     frontmatter: {
                       title: string
-                      author: string
                       date: string
                       templateKey: string
                     }
@@ -256,20 +262,33 @@ const config: GatsbyConfig = {
                   (node) => node.frontmatter.templateKey === 'article-page',
                 )
                 .map((node) => {
+                  let html = node.html
+                  // Hacky workaround for replacing relative paths taken from overreacted.io https://github.com/gaearon/overreacted.io
+                  html = html
+                    .replace(/href="\//g, `href="${site.siteMetadata.siteUrl}/`)
+                    .replace(/src="\//g, `src="${site.siteMetadata.siteUrl}/`)
+                    .replace(
+                      /"\/static\//g,
+                      `"${site.siteMetadata.siteUrl}/static/`,
+                    )
+                    .replace(
+                      /,\s*\/static\//g,
+                      `,${site.siteMetadata.siteUrl}/static/`,
+                    )
+
                   return Object.assign({}, node.frontmatter, {
                     title: node.frontmatter.title,
                     description: node.excerpt,
-                    author: node.frontmatter.author,
                     date: node.frontmatter.date,
                     url: site.siteMetadata.siteUrl + node.fields.slug,
                     guid: site.siteMetadata.siteUrl + node.fields.slug,
-                    custom_elements: [{'content:encoded': node.html}],
+                    custom_elements: [{'content:encoded': html}],
                   })
                 })
             },
             query: `
             {
-              allMarkdownRemark(sort: {frontmatter: {date: DESC}}) {
+              allMarkdownRemark(limit: 1000, sort: {frontmatter: {date: DESC}}) {
                 nodes {
                   excerpt(pruneLength: 400)
                   html
@@ -279,7 +298,6 @@ const config: GatsbyConfig = {
                   }
                   frontmatter {
                     title
-                    author
                     date
                     templateKey
                   }
@@ -309,6 +327,7 @@ const config: GatsbyConfig = {
         },
       },
     },
+    `gatsby-plugin-catch-links`,
     `gatsby-plugin-remove-serviceworker`,
     // `gatsby-plugin-perf-budgets`,
     // `gatsby-plugin-webpack-bundle-analyser-v2`,

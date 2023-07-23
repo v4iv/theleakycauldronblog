@@ -19,7 +19,7 @@ This is a place where I want to share the challenges that I have faced. I will a
 
 Being a travel enthusiast, I really want this blog to be a place where you can get to know about the lesser known mysteries and stories of the world. I would like to believe that I have established that I have varied interests, so I will also sporadically post movie, music and event reviews as well.
 
-Occasionally, this blog will feature [guest authors](https://theleakycauldronblog.com/tags/guest-author) who will write about what they truly love. I hope to bring to light various unique world views to really live up to my blog's name.
+Occasionally, this blog will feature [guest authors](/tags/guest-author) who will write about what they truly love. I hope to bring to light various unique world views to really live up to my blog's name.
 
 All in all, this blog has no fixed scope because *"True Beauty Lies In Chaos"*.
 

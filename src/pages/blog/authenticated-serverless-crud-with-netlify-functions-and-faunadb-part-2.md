@@ -17,7 +17,7 @@ tags:
 ---
 In the last part, we set up our *FaunaDB* account, generated a database access secret and set up our *Netlify Functions* project. We also made a serverless API that returns *“Hello, World!”*.
 
-Link to Part 1: [Authenticated Serverless CRUD with Netlify Functions and FaunaDB Part 1](https://theleakycauldronblog.com/blog/authenticated-serverless-crud-netlify-functions-faunadb-part-1)
+Link to Part 1: [Authenticated Serverless CRUD with Netlify Functions and FaunaDB Part 1](/blog/authenticated-serverless-crud-netlify-functions-faunadb-part-1)
 
 If everything was set up properly according to the last tutorial the project folder should look like this:
 
@@ -449,6 +449,6 @@ That’s it for this part, In the next part, we’ll finally be writing the code
 
 ## Links
 
-**Link to Part 1:** [Authenticated Serverless CRUD with Netlify Functions and FaunaDB Part 1](https://theleakycauldronblog.com/blog/authenticated-serverless-crud-netlify-functions-faunadb-part-1)
+**Link to Part 1:** [Authenticated Serverless CRUD with Netlify Functions and FaunaDB Part 1](/blog/authenticated-serverless-crud-netlify-functions-faunadb-part-1)
 
-**Link to Part 3:** [Authenticated Serverless CRUD with Netlify Functions and FaunaDB Part 3](https://theleakycauldronblog.com/blog/authenticated-serverless-crud-netlify-functions-faunadb-part-3)
+**Link to Part 3:** [Authenticated Serverless CRUD with Netlify Functions and FaunaDB Part 3](/blog/authenticated-serverless-crud-netlify-functions-faunadb-part-3)
