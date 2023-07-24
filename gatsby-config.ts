@@ -127,7 +127,7 @@ const config: GatsbyConfig = {
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
-        excludes: [`/tags`, `/tags/*`],
+        excludes: [`/tags/*`],
       },
     },
     {
@@ -352,20 +352,18 @@ const config: GatsbyConfig = {
     {
       resolve: `gatsby-plugin-react-i18next`,
       options: {
-        localeJsonSourceName: `locale`, // name given to `gatsby-source-filesystem` plugin.
+        localeJsonSourceName: `locale`,
         languages: [`en`],
         defaultLanguage: `en`,
         siteUrl: siteMetadata.siteUrl,
-        // if you are using trailingSlash gatsby config include it here, as well (the default is 'always')
         trailingSlash: `always`,
-        // you can pass any i18next options
         i18nextOptions: {
           defaultNS: `common`,
           debug: !!(process.env.NODE_ENV === 'development'),
           lowerCaseLng: true,
           saveMissing: false,
           interpolation: {
-            escapeValue: false, // not needed for react as it escapes by default
+            escapeValue: false,
           },
         },
       },

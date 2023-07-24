@@ -1,7 +1,7 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/a3b02aa4-93ac-47d9-b914-7eb42de75a83/deploy-status)](https://app.netlify.com/sites/theleakycauldronblog/deploys)
 
 <p align="center">
-  <a href="https://theleakycauldronblog">
+  <a href="https://theleakycauldronblog.com">
     <img alt="Gatsby" src="https://theleakycauldronblog.com/icons/icon-512.png" width="60" />
   </a>
 </p>

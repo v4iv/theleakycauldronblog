@@ -42,8 +42,6 @@ function SEO({
 
       <meta name="description" content={seo.description} />
 
-      <link rel="apple-touch-icon" href="/apple-touch-icon.png"></link>
-
       {/* OpenGraph tags */}
       <meta property="og:url" content={seo.url} />
 
