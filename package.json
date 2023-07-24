@@ -2,7 +2,7 @@
   "name": "theleakycauldronblog",
   "description": "The Leaky Cauldron Blog",
   "author": "Vaibhav Sharma<vaibhavsharmaatwork@gmail.com>",
-  "version": "3.2.0",
+  "version": "3.2.1",
   "license": "MIT",
   "scripts": {
     "develop": "gatsby develop",

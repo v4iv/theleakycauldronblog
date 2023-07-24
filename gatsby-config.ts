@@ -361,7 +361,7 @@ const config: GatsbyConfig = {
         // you can pass any i18next options
         i18nextOptions: {
           defaultNS: `common`,
-          debug: true,
+          debug: !!(process.env.NODE_ENV === 'development'),
           lowerCaseLng: true,
           saveMissing: false,
           interpolation: {

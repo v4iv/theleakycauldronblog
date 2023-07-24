@@ -10,3 +10,15 @@ export function encode(data: {[key: string]: any}) {
     .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
     .join('&')
 }
+
+export function getThemePreference() {
+  const storedThemePreference = localStorage.getItem('theme')
+
+  if (typeof storedThemePreference === 'string') return storedThemePreference
+
+  const prefersDarkMode = window.matchMedia(
+    '(prefers-color-scheme: dark)',
+  ).matches
+
+  return prefersDarkMode ? 'dark' : 'light'
+}
