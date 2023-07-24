@@ -3,16 +3,19 @@ dotenv.config({path: `.env.${process.env.NODE_ENV}`})
 import * as path from 'path'
 import type {GatsbyConfig} from 'gatsby'
 
-const config: GatsbyConfig = {
-  siteMetadata: {
-    title: `The Leaky Cauldron Blog`,
-    description: `A Brew of Awesomeness with a Pinch of Magic...`,
-    siteUrl: `https://theleakycauldronblog.com`,
-    image: `/icons/icon-512.png`,
-    social: {
-      twitter: `@waybove`,
-    },
+const siteMetadata = {
+  title: `The Leaky Cauldron Blog`,
+  description: `A Brew of Awesomeness with a Pinch of Magic...`,
+  shortName: `tlcb`,
+  siteUrl: `https://theleakycauldronblog.com`,
+  image: `/icons/icon-512.png`,
+  social: {
+    twitter: `@waybove`,
   },
+}
+
+const config: GatsbyConfig = {
+  siteMetadata,
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
   // Learn more at: https://gatsby.dev/graphql-typegen
@@ -41,6 +44,13 @@ const config: GatsbyConfig = {
         path: path.join(__dirname, `src`, `pages`),
       },
       __key: `pages`,
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/locales`,
+        name: `locale`,
+      },
     },
     {
       resolve: `gatsby-transformer-remark`,
@@ -87,7 +97,7 @@ const config: GatsbyConfig = {
       options: {
         modulePath: path.join(__dirname, `src`, `cms`, `cms.ts`),
         enableIdentityWidget: true,
-        htmlTitle: `CMS | The Leaky Cauldron Blog`,
+        htmlTitle: `CMS | ${siteMetadata.title}`,
       },
     },
     `gatsby-plugin-postcss`,
@@ -123,10 +133,10 @@ const config: GatsbyConfig = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `the leaky cauldron blog`,
-        short_name: `tlcb`,
+        name: siteMetadata.title,
+        short_name: siteMetadata.shortName,
         start_url: '/',
-        background_color: `#020817`,
+        background_color: `#ffffff`,
         theme_color: `#020817`,
         display: `standalone`,
         icons: [
@@ -139,6 +149,18 @@ const config: GatsbyConfig = {
             src: `/icons/icon-512.png`,
             sizes: `512x512`,
             type: `image/png`,
+          },
+          {
+            src: `/icons/icon-192-maskable.png`,
+            sizes: `192x192`,
+            type: `image/png`,
+            purpose: 'any maskable',
+          },
+          {
+            src: `/icons/icon-512-maskable.png`,
+            sizes: `512x512`,
+            type: `image/png`,
+            purpose: 'any maskable',
           },
         ],
         cache_busting_mode: `none`,
@@ -230,7 +252,7 @@ const config: GatsbyConfig = {
         feeds: [
           {
             output: `/rss.xml`,
-            title: `The Leaky Cauldron Blog RSS Feed`,
+            title: `${siteMetadata.title} RSS Feed`,
             serialize: ({
               query: {site, allMarkdownRemark},
             }: {
@@ -324,6 +346,27 @@ const config: GatsbyConfig = {
             `X-Content-Type-Options: nosniff`,
             `Referrer-Policy: no-referrer-when-downgrade`,
           ],
+        },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-react-i18next`,
+      options: {
+        localeJsonSourceName: `locale`, // name given to `gatsby-source-filesystem` plugin.
+        languages: [`en`],
+        defaultLanguage: `en`,
+        siteUrl: siteMetadata.siteUrl,
+        // if you are using trailingSlash gatsby config include it here, as well (the default is 'always')
+        trailingSlash: `always`,
+        // you can pass any i18next options
+        i18nextOptions: {
+          defaultNS: `common`,
+          debug: !!(process.env.NODE_ENV === 'development'),
+          lowerCaseLng: true,
+          saveMissing: false,
+          interpolation: {
+            escapeValue: false, // not needed for react as it escapes by default
+          },
         },
       },
     },

@@ -1,6 +1,7 @@
 import * as React from 'react'
-import {createContext, useLayoutEffect, useState} from 'react'
+import {createContext, useEffect, useState} from 'react'
 import {usePrefersDarkMode} from '../../hooks/usePrefersDarkMode'
+import {getThemePreference} from '../../lib/utils'
 
 const defaultState = {
   theme: 'light',
@@ -10,17 +11,15 @@ const defaultState = {
 const ThemeContext = createContext(defaultState)
 
 export function ThemeProvider({children}: {children: React.ReactNode}) {
+  const [theme, setTheme] = useState<string>(getThemePreference())
+
   const prefersDarkMode = usePrefersDarkMode()
 
-  const [theme, setTheme] = useState<'light' | 'dark'>(
-    prefersDarkMode ? 'dark' : 'light',
-  )
-
-  useLayoutEffect(() => {
+  useEffect(() => {
     prefersDarkMode ? setTheme('dark') : setTheme('light')
   }, [prefersDarkMode, setTheme])
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     document.body.classList.add(theme)
 
     return () => {
@@ -28,8 +27,11 @@ export function ThemeProvider({children}: {children: React.ReactNode}) {
     }
   }, [theme])
 
-  const toggleTheme = () =>
+  const toggleTheme = () => {
+    localStorage.setItem('theme', theme === 'dark' ? 'light' : 'dark')
+
     setTheme((prevTheme) => (prevTheme === 'dark' ? 'light' : 'dark'))
+  }
 
   return (
     <ThemeContext.Provider

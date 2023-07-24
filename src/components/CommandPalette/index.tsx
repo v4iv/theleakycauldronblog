@@ -1,6 +1,7 @@
 import * as React from 'react'
 import {Dispatch, SetStateAction} from 'react'
 import {navigate, graphql, useStaticQuery} from 'gatsby'
+import {useTranslation} from 'gatsby-plugin-react-i18next'
 import {AtSign, Circle, Home, MessageCircle, Search} from 'lucide-react'
 import {
   CommandDialog,
@@ -16,8 +17,8 @@ interface CommandPaletteProps {
   setOpen: Dispatch<SetStateAction<boolean>>
 }
 
-function CommandPalette(props: CommandPaletteProps) {
-  const {open, setOpen} = props
+function CommandPalette({open, setOpen}: CommandPaletteProps) {
+  const {t} = useTranslation('common')
 
   // Not suitable for large number of pages, use publicStoreURL instead
   const {
@@ -44,31 +45,31 @@ function CommandPalette(props: CommandPaletteProps) {
   return (
     <>
       <CommandDialog open={open} onOpenChange={setOpen}>
-        <CommandInput placeholder="Quick search..." />
+        <CommandInput placeholder={t('command-palette.quick-search')} />
         <CommandList>
-          <CommandEmpty>No results found.</CommandEmpty>
+          <CommandEmpty>{t('command-palette.no-results')}</CommandEmpty>
 
-          <CommandGroup heading="Pages">
+          <CommandGroup heading={t('command-palette.pages')}>
             <CommandItem onSelect={() => navigate('/')}>
-              <Home className="mr-2" /> Home
+              <Home className="mr-2" /> {t('home')}
             </CommandItem>
 
             <CommandItem onSelect={() => navigate('/search')}>
-              <Search className="mr-2" /> Search
+              <Search className="mr-2" /> {t('search')}
             </CommandItem>
 
             <CommandItem onSelect={() => navigate('/about')}>
               <MessageCircle className="mr-2" />
-              About
+              {t('about')}
             </CommandItem>
 
             <CommandItem onSelect={() => navigate('/contact')}>
               <AtSign className="mr-2" />
-              Contact
+              {t('contact')}
             </CommandItem>
           </CommandGroup>
 
-          <CommandGroup heading="Articles">
+          <CommandGroup heading={t('command-palette.articles')}>
             {Object.entries(store)
               .filter(([, val]) => val.templateKey === 'article-page')
               .map(([key, val]) => (

@@ -1,4 +1,5 @@
 import * as React from 'react'
+import {useTranslation} from 'gatsby-plugin-react-i18next'
 import {useForm, SubmitHandler} from 'react-hook-form'
 import * as z from 'zod'
 import {zodResolver} from '@hookform/resolvers/zod'
@@ -18,37 +19,39 @@ import {Textarea} from '@/components/ui/textarea'
 import {useToast} from '@/components/ui/use-toast'
 import {encode} from '@/lib/utils'
 
-const formSchema = z.object({
-  name: z
-    .string({
-      required_error: 'Name is Required!',
-    })
-    .min(2, {message: 'Too Short!'})
-    .max(50, {message: 'Too Long!'}),
-  email: z
-    .string({
-      required_error: 'Email is Required!',
-    })
-    .email({message: 'Enter a Valid Email!'}),
-  message: z
-    .string({
-      required_error: 'Message is Required!',
-    })
-    .min(20, {
-      message:
-        'The message is too short! BTW you can drop a hi on twitter @waybove!',
-    }),
-})
-
 function ContactForm() {
+  const {t} = useTranslation('common')
+
+  const formSchema = z.object({
+    name: z
+      .string({
+        required_error: t('contact-form.name-required'),
+      })
+      .min(2, {message: t('contact-form.name-too-short')})
+      .max(50, {message: t('contact-form.name-too-long')}),
+    email: z
+      .string({
+        required_error: t('contact-form.email-required'),
+      })
+      .email({message: t('contact-form.invalid-email')}),
+    message: z
+      .string({
+        required_error: t('contact-form.message-required'),
+      })
+      .min(20, {
+        message: t('contact-form.message-too-short'),
+      }),
+  })
+
   const methods = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      name: '',
-      email: '',
-      message: '',
+      name: undefined,
+      email: undefined,
+      message: undefined,
     },
   })
+
   const {toast} = useToast()
 
   const submitHandler: SubmitHandler<z.infer<typeof formSchema>> = async (
@@ -65,8 +68,8 @@ function ContactForm() {
       })
 
       toast({
-        title: 'Your Message Was Sent Successfully!',
-        description: "I'll Get Back To You ASAP!",
+        title: t('contact-form.success-toast-title'),
+        description: t('contact-form.success-toast-description'),
       })
 
       methods.reset()
@@ -74,8 +77,9 @@ function ContactForm() {
       console.error(err)
 
       toast({
-        title: 'Error!',
-        description: 'Please Try Again!',
+        variant: 'destructive',
+        title: t('contact-form.error-toast-title'),
+        description: t('contact-form.error-toast-description'),
       })
     }
   }
@@ -95,7 +99,7 @@ function ContactForm() {
           name="name"
           render={({field}) => (
             <FormItem>
-              <FormLabel>Name</FormLabel>
+              <FormLabel>{t('contact-form.name')}</FormLabel>
               <FormControl>
                 <Input disabled={submitDisabled} {...field} />
               </FormControl>
@@ -110,7 +114,7 @@ function ContactForm() {
           name="email"
           render={({field}) => (
             <FormItem>
-              <FormLabel>Email</FormLabel>
+              <FormLabel>{t('contact-form.email')}</FormLabel>
               <FormControl>
                 <Input disabled={submitDisabled} {...field} />
               </FormControl>
@@ -125,7 +129,7 @@ function ContactForm() {
           name="message"
           render={({field}) => (
             <FormItem>
-              <FormLabel>Message</FormLabel>
+              <FormLabel>{t('contact-form.message')}</FormLabel>
               <FormControl>
                 <Textarea disabled={submitDisabled} rows={12} {...field} />
               </FormControl>
@@ -142,14 +146,16 @@ function ContactForm() {
             disabled={methods.formState.isSubmitting}
             onClick={() => methods.reset()}
           >
-            Clear
+            {t('contact-form.clear')}
           </Button>
 
           <Button type="submit" disabled={submitDisabled}>
             {submitDisabled && (
               <Loader2 className="mr-2 h-4 w-4 animate-spin" />
             )}
-            {submitDisabled ? 'Submitting' : 'Submit'}
+            {submitDisabled
+              ? t('contact-form.submitting')
+              : t('contact-form.submit')}
           </Button>
         </div>
       </form>

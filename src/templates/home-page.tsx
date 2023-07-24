@@ -5,6 +5,7 @@ import {Button} from '@/components/ui/button'
 import SEO from '@/components/SEO'
 import Layout from '@/components/Layout'
 import ArticleList from '@/components/ArticleList'
+import {useTranslation} from 'react-i18next'
 
 type DataProps = {
   allMarkdownRemark: {
@@ -40,6 +41,7 @@ function HomePageTemplate({
   },
   pageContext: {currentPage, numberOfPages},
 }: PageProps<DataProps, PageContextProps>) {
+  const {t} = useTranslation('common')
   const isFirst = currentPage === 1
   const isLast = currentPage === numberOfPages
   const prevPage =
@@ -55,14 +57,14 @@ function HomePageTemplate({
           <Button asChild>
             <Link to={prevPage} rel="prev">
               <ArrowLeft className="mr-2 h-4 w-4" />
-              &nbsp;Prev
+              &nbsp;{t('prev')}
             </Link>
           </Button>
         )}
         {!isLast && (
           <Button asChild>
             <Link to={nextPage} rel="next">
-              Next&nbsp;
+              {t('next')}&nbsp;
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
@@ -81,7 +83,18 @@ export function Head({
 }
 
 export const articleListQuery = graphql`
-  query ArticleList($skip: Int!, $limit: Int!) {
+  query ArticleList($skip: Int!, $limit: Int!, $language: String!) {
+    locales: allLocale(
+      filter: {ns: {in: ["common"]}, language: {eq: $language}}
+    ) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
     allMarkdownRemark(
       sort: {frontmatter: {date: DESC}}
       limit: $limit

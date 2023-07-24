@@ -147,7 +147,18 @@ export function Head({
 }
 
 export const articleQuery = graphql`
-  query Article($id: String!) {
+  query Article($id: String!, $language: String!) {
+    locales: allLocale(
+      filter: {ns: {in: ["common"]}, language: {eq: $language}}
+    ) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
     site {
       siteMetadata {
         siteUrl

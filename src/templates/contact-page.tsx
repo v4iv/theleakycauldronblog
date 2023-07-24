@@ -61,7 +61,18 @@ export function Head({
 }
 
 export const contactPageQuery = graphql`
-  query Contact($id: String!) {
+  query Contact($id: String!, $language: String!) {
+    locales: allLocale(
+      filter: {ns: {in: ["common"]}, language: {eq: $language}}
+    ) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
     markdownRemark(id: {eq: $id}) {
       frontmatter {
         title
