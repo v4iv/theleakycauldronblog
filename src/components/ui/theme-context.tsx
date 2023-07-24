@@ -1,5 +1,5 @@
 import * as React from 'react'
-import {createContext, useLayoutEffect, useState} from 'react'
+import {createContext, useEffect, useState} from 'react'
 import {usePrefersDarkMode} from '../../hooks/usePrefersDarkMode'
 
 const defaultState = {
@@ -16,11 +16,11 @@ export function ThemeProvider({children}: {children: React.ReactNode}) {
     prefersDarkMode ? 'dark' : 'light',
   )
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     prefersDarkMode ? setTheme('dark') : setTheme('light')
   }, [prefersDarkMode, setTheme])
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     document.body.classList.add(theme)
 
     return () => {

@@ -1,5 +1,6 @@
 import * as React from 'react'
 import {Link} from 'gatsby'
+import {useTranslation} from 'gatsby-plugin-react-i18next'
 import {
   TypographyH2,
   TypographyMuted,
@@ -31,6 +32,7 @@ interface ArticleListProps {
 }
 
 function ArticleList({pages}: ArticleListProps) {
+  const {t} = useTranslation()
   return (
     <section className="mx-auto w-full max-w-screen-md">
       {pages
@@ -75,7 +77,7 @@ function ArticleList({pages}: ArticleListProps) {
               </div>
 
               <TypographyMuted>
-                By&nbsp;<span className="uppercase">{author}</span>
+                {t('by-author', {author: author.toUpperCase()})}
               </TypographyMuted>
 
               <time className="block">

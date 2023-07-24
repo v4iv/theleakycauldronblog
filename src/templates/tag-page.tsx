@@ -1,11 +1,13 @@
 import * as React from 'react'
 import {HeadProps, Link, PageProps, graphql} from 'gatsby'
+import {useTranslation} from 'gatsby-plugin-react-i18next'
 import {
   TypographyH1,
   TypographyH2,
   TypographyLead,
 } from '@/components/ui/typography'
 import {Separator} from '@/components/ui/separator'
+import {useSiteMetadata} from '../hooks/useSiteMetadata'
 import SEO from '@/components/SEO'
 import Layout from '@/components/Layout'
 
@@ -35,9 +37,7 @@ function TagPageTemplate({
   },
   pageContext: {tag},
 }: PageProps<DataProps, PageContextProps>) {
-  const tagHeader = `${totalCount} post${
-    totalCount === 1 ? '' : 's'
-  } tagged with “${tag}”`
+  const {t} = useTranslation('common')
 
   return (
     <Layout>
@@ -46,7 +46,9 @@ function TagPageTemplate({
           <header className="space-y-3">
             <TypographyH1># {tag}</TypographyH1>
 
-            <TypographyLead>{tagHeader}</TypographyLead>
+            <TypographyLead>
+              {t('tag-subtitle', {count: totalCount, tag: tag})}
+            </TypographyLead>
 
             <Separator />
           </header>
@@ -85,15 +87,31 @@ export function Head({
   },
   pageContext: {tag},
 }: HeadProps<DataProps, PageContextProps>) {
-  const tagHeader = `${totalCount} post${
-    totalCount === 1 ? '' : 's'
-  } tagged with “${tag}”`
+  const {t} = useTranslation('common')
+  const {title} = useSiteMetadata()
 
-  return <SEO pathname={pathname} title={tag} description={tagHeader} />
+  return (
+    <SEO
+      pathname={pathname}
+      title={`${tag} | ${title}`}
+      description={t('tag-subtitle', {count: totalCount, tag: tag})}
+    />
+  )
 }
 
 export const tagQuery = graphql`
-  query Tag($tag: String) {
+  query Tag($tag: String, $language: String!) {
+    locales: allLocale(
+      filter: {ns: {in: ["common"]}, language: {eq: $language}}
+    ) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
     allMarkdownRemark(
       limit: 1000
       sort: {frontmatter: {date: DESC}}

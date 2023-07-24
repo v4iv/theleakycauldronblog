@@ -1,6 +1,7 @@
 import * as React from 'react'
 import {useEffect, useState} from 'react'
-import {graphql, useStaticQuery, Link, HeadProps, navigate} from 'gatsby'
+import {graphql, Link, HeadProps, navigate, PageProps} from 'gatsby'
+import {useTranslation} from 'gatsby-plugin-react-i18next'
 import useSWR, {preload} from 'swr'
 import {useLunr} from 'react-lunr'
 import {useDebouncedCallback} from 'use-debounce'
@@ -11,31 +12,28 @@ import {Button} from '@/components/ui/button'
 import {Separator} from '@/components/ui/separator'
 import {Tooltip, TooltipContent, TooltipTrigger} from '@/components/ui/tooltip'
 import {TypographyH2, TypographyMuted} from '@/components/ui/typography'
+import {useSiteMetadata} from '../../hooks/useSiteMetadata'
 import SEO from '@/components/SEO'
 import Footer from '@/components/Footer'
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json())
 
-function SearchPage() {
+type DataProps = {
+  localSearchPages: {
+    publicIndexURL: string
+    publicStoreURL: string
+  }
+}
+
+function SearchPage({
+  data: {
+    localSearchPages: {publicIndexURL, publicStoreURL},
+  },
+}: PageProps<DataProps>) {
+  const {t} = useTranslation('common')
   const [q] = useQueryParam('q', StringParam)
 
   const [query, setQuery] = useState(q || '')
-
-  const {
-    localSearchPages: {publicIndexURL, publicStoreURL},
-  }: {
-    localSearchPages: {
-      publicIndexURL: string
-      publicStoreURL: string
-    }
-  } = useStaticQuery(graphql`
-    query Search {
-      localSearchPages {
-        publicIndexURL
-        publicStoreURL
-      }
-    }
-  `)
 
   useEffect(() => {
     preload(publicIndexURL, fetcher)
@@ -83,14 +81,14 @@ function SearchPage() {
                   <Search className="pointer-events-none h-4 w-4 absolute top-1/2 transform -translate-y-1/2 right-3" />
                   <Input
                     autoFocus
-                    aria-label="Search"
-                    name="Search"
+                    aria-label={t('search')}
+                    name="search"
                     value={query}
                     disabled={isIndexLoading || isStoreLoading}
                     placeholder={
                       isIndexLoading || isStoreLoading
-                        ? 'Loading...'
-                        : 'Search...'
+                        ? t('loading')
+                        : t('search-placeholder')
                     }
                     onChange={handleQuery}
                   />
@@ -98,7 +96,7 @@ function SearchPage() {
               </TooltipTrigger>
 
               <TooltipContent>
-                <p>Search</p>
+                <p>{t('search')}</p>
               </TooltipContent>
             </Tooltip>
 
@@ -108,7 +106,7 @@ function SearchPage() {
                   <Button
                     variant="outline"
                     size="icon"
-                    aria-label="Close"
+                    aria-label={t('close')}
                     onClick={() => navigate(-1)}
                   >
                     <X className="h-5 w-5" />
@@ -116,7 +114,7 @@ function SearchPage() {
                 </TooltipTrigger>
 
                 <TooltipContent>
-                  <p>Close</p>
+                  <p>{t('close')}</p>
                 </TooltipContent>
               </Tooltip>
             </div>
@@ -145,7 +143,9 @@ function SearchPage() {
                     </Link>
                   </TypographyH2>
 
-                  <TypographyMuted>By&nbsp;{author}</TypographyMuted>
+                  <TypographyMuted>
+                    {t('by-author', {author: author.toUpperCase()})}
+                  </TypographyMuted>
                 </article>
               ))}
             </div>
@@ -163,5 +163,27 @@ function SearchPage() {
 export default SearchPage
 
 export function Head({location: {pathname}}: HeadProps) {
-  return <SEO pathname={pathname} title="Search | The Leaky Cauldron Blog" />
+  const {title} = useSiteMetadata()
+
+  return <SEO pathname={pathname} title={`Search | ${title}`} />
 }
+
+export const searchPageQuery = graphql`
+  query Search($language: String!) {
+    locales: allLocale(
+      filter: {ns: {in: ["common"]}, language: {eq: $language}}
+    ) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+    localSearchPages {
+      publicIndexURL
+      publicStoreURL
+    }
+  }
+`

@@ -33,7 +33,7 @@
 
 1. **Create a Gatsby site.**
 
-    Use the Gatsby CLI to create a new site, specifying the minimal TypeScript starter.
+    Use the Gatsby CLI to create a new site, specifying the blog starter.
 
     ```shell
     # create a new Gatsby project
@@ -55,11 +55,30 @@
 
     Edit `src/pages` to see your site update in real-time!
 
+4. **Customize**
+
+    You'll need to change the following files to make it fully yours, also make sure to not deploy the site with the blog posts written for [theleakycauldronblog.com](https://theleakycauldronblog.com):
+
+    - `gatsby-config.ts` : edit siteMetadata variable
+
+    - `locales/en/common.json` : react-i18next is being used to manage entire site's branding, though you can extend it to support multiple languages as well
+
+    - `static/admin/config.yml` : site url, default values
+
+    - `static/icons/icon-*.png` : your brand icons
+
+    - `static/apple-touch-icon.png` : your brand icons
+
+    - `static/favicon.ico` : your brand icons
+
+    - `static/robots.txt` : sitemap url
+
+
 4. **Environment Variables**
 
-    - GTM_ID
+    - GTM_ID - To enable Google Tag Manager
 
-    - DISQUS_SHORTNAME
+    - DISQUS_SHORTNAME - To enable Disqus comments
 
 5. **Learn more**
 

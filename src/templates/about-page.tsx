@@ -86,7 +86,18 @@ export function Head({
 }
 
 export const aboutPageQuery = graphql`
-  query About($id: String!) {
+  query About($id: String!, $language: String!) {
+    locales: allLocale(
+      filter: {ns: {in: ["common"]}, language: {eq: $language}}
+    ) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
     markdownRemark(id: {eq: $id}) {
       html
       frontmatter {
