@@ -1,7 +1,7 @@
 import * as React from 'react'
 import {createContext, useEffect, useState} from 'react'
 import {usePrefersDarkMode} from '../../hooks/usePrefersDarkMode'
-import {getThemePreference} from '@/lib/utils'
+import {getThemePreference} from '../../lib/utils'
 
 const defaultState = {
   theme: 'light',
