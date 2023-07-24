@@ -12,6 +12,8 @@ export function encode(data: {[key: string]: any}) {
 }
 
 export function getThemePreference() {
+  if (typeof window === 'undefined') return 'light'
+
   const storedThemePreference = localStorage.getItem('theme')
 
   if (typeof storedThemePreference === 'string') return storedThemePreference
