@@ -1,5 +1,5 @@
 import * as React from 'react'
-import {useSiteMetadata} from '../../hooks/useSiteMetadata'
+import {useSiteMetadata} from '@/hooks/useSiteMetadata'
 
 interface SEOProps {
   title?: string

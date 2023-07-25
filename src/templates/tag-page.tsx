@@ -7,7 +7,7 @@ import {
   TypographyLead,
 } from '@/components/ui/typography'
 import {Separator} from '@/components/ui/separator'
-import {useSiteMetadata} from '../hooks/useSiteMetadata'
+import {useSiteMetadata} from '@/hooks/useSiteMetadata'
 import SEO from '@/components/SEO'
 import Layout from '@/components/Layout'
 

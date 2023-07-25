@@ -12,7 +12,7 @@ import {Button} from '@/components/ui/button'
 import {Separator} from '@/components/ui/separator'
 import {Tooltip, TooltipContent, TooltipTrigger} from '@/components/ui/tooltip'
 import {TypographyH2, TypographyMuted} from '@/components/ui/typography'
-import {useSiteMetadata} from '../../hooks/useSiteMetadata'
+import {useSiteMetadata} from '@/hooks/useSiteMetadata'
 import SEO from '@/components/SEO'
 import Footer from '@/components/Footer'
 

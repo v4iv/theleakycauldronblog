@@ -3,7 +3,7 @@ import {graphql} from 'gatsby'
 import {useTranslation} from 'gatsby-plugin-react-i18next'
 import {Separator} from '@/components/ui/separator'
 import {TypographyH1, TypographyH2} from '@/components/ui/typography'
-import {useSiteMetadata} from '../../hooks/useSiteMetadata'
+import {useSiteMetadata} from '@/hooks/useSiteMetadata'
 import SEO from '@/components/SEO'
 import Layout from '@/components/Layout'
 
