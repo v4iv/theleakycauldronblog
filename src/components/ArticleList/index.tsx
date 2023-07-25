@@ -51,7 +51,7 @@ function ArticleList({pages}: ArticleListProps) {
             idx,
           ) => (
             <article key={`${slug}-${idx}`} className="py-5 px-3 md:px-0">
-              <div className="flex sm:flex-row flex-col">
+              <div className="flex md:flex-row flex-col">
                 <div className="md:w-90 md:pr-3 pr-0 order-2 md:order-1 md:w-3/5 mb-2">
                   <Link
                     className="block px-0 lg:px-0 hover:text-muted-foreground"
@@ -67,7 +67,7 @@ function ArticleList({pages}: ArticleListProps) {
                   <div className="overflow-hidden rounded-md">
                     <Link className="block px-0 lg:px-0 transform" to={slug}>
                       <ImageBox
-                        className="block h-auto w-auto object-cover transition-all hover:scale-105 duration-300 aspect-video"
+                        className="block h-auto w-auto object-cover transition-all hover:scale-105 duration-300 aspect-video md:aspect-[4/3]"
                         image={cover}
                         alt={slug}
                       />
