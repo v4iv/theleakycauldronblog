@@ -106,11 +106,7 @@ export const aboutPageQuery = graphql`
         author
         image {
           childImageSharp {
-            gatsbyImageData(
-              quality: 72
-              placeholder: BLURRED
-              layout: FULL_WIDTH
-            )
+            gatsbyImageData(width: 1280, placeholder: BLURRED)
           }
           publicURL
         }
