@@ -15,22 +15,22 @@ export const onRenderBody: GatsbySSR['onRenderBody'] = ({
       key="set-theme"
       dangerouslySetInnerHTML={{
         __html: `
-          function getThemePreference() {
-            var storedColorPreference = localStorage.getItem('theme')
-          
-            if (typeof storedColorPreference === 'string') return storedColorPreference
-          
-            var prefersDarkMode = window.matchMedia(
-              '(prefers-color-scheme: dark)',
-            ).matches
-          
-            return prefersDarkMode ? 'dark' : 'light'
-          }
+            function getThemePreference() {
+              var storedColorPreference = localStorage.getItem('theme')
+            
+              if (typeof storedColorPreference === 'string') return storedColorPreference
+            
+              var prefersDarkMode = window.matchMedia(
+                '(prefers-color-scheme: dark)',
+              ).matches
+            
+              return prefersDarkMode ? 'dark' : 'light'
+            }
 
-          var theme = getThemePreference()
+            var theme = getThemePreference()
 
-          document.body.classList.add(theme)
-    `,
+            document.body.classList.add(theme)
+        `,
       }}
     />,
   ])

@@ -85,11 +85,11 @@ function ArticlePageTemplate({
                 <TypographyLead>{date}</TypographyLead>
               </div>
 
-              <div className="space-x-2">
+              <div className="flex flex-wrap gap-y-1">
                 {tags.map((tag, idx) => (
                   <Link
                     key={`${slugify(tag)}-${idx}`}
-                    className={badgeVariants({variant: 'default'})}
+                    className={`${badgeVariants({variant: 'default'})} mr-2`}
                     to={`/tags/${slugify(tag)}`}
                   >
                     #{tag}&nbsp;

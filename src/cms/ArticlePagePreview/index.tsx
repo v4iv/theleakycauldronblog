@@ -43,11 +43,11 @@ function ArticlePagePreview({entry, widgetFor}: any) {
                 <TypographyLead>{displayDate}</TypographyLead>
               </div>
 
-              <div className="space-x-2">
+              <div className="flex flex-wrap gap-y-1">
                 {tags.map((tag: any, idx: number) => (
                   <Link
                     key={`${slugify(tag)}-${idx}`}
-                    className={badgeVariants({variant: 'default'})}
+                    className={`${badgeVariants({variant: 'default'})} mr-2`}
                     to={`/tags/${slugify(tag)}`}
                   >
                     #{tag}&nbsp;

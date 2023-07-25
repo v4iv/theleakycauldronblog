@@ -52,7 +52,7 @@ function ArticleList({pages}: ArticleListProps) {
           ) => (
             <article key={`${slug}-${idx}`} className="py-5 px-3 md:px-0">
               <div className="flex sm:flex-row flex-col">
-                <div className="md:w-90 md:pr-3 pr-0 order-2 md:order-1 md:w-3/5">
+                <div className="md:w-90 md:pr-3 pr-0 order-2 md:order-1 md:w-3/5 mb-2">
                   <Link
                     className="block px-0 lg:px-0 hover:text-muted-foreground"
                     to={slug}

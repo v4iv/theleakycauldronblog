@@ -331,7 +331,6 @@ const config: GatsbyConfig = {
         ],
       },
     },
-    `gatsby-plugin-use-query-params`,
     {
       resolve: `gatsby-plugin-netlify`,
       options: {
@@ -368,6 +367,7 @@ const config: GatsbyConfig = {
         },
       },
     },
+    `gatsby-plugin-use-query-params`,
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-remove-serviceworker`,
     // `gatsby-plugin-perf-budgets`,
