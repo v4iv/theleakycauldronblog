@@ -67,7 +67,7 @@ function ArticleList({pages}: ArticleListProps) {
                   <div className="overflow-hidden rounded-md">
                     <Link className="block px-0 lg:px-0 transform" to={slug}>
                       <ImageBox
-                        className="block h-auto w-auto object-cover transition-all hover:scale-105 duration-300 aspect-video md:aspect-[4/3]"
+                        className="block h-auto w-full object-cover transition-all hover:scale-105 duration-300 aspect-video md:aspect-[4/3]"
                         image={cover}
                         alt={slug}
                       />
