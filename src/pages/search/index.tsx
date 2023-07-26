@@ -81,6 +81,7 @@ function SearchPage({
                   <Search className="pointer-events-none h-4 w-4 absolute top-1/2 transform -translate-y-1/2 right-3" />
                   <Input
                     autoFocus
+                    autoComplete="new-password"
                     aria-label={t('search')}
                     name="search"
                     value={query}
@@ -128,7 +129,7 @@ function SearchPage({
         <div className="mx-auto w-full max-w-screen-md">
           <div className="px-3 md:px-0 py-3 md:py-5">
             <div className="space-y-3">
-              {results.map(({id, slug, title, author}: any) => (
+              {results?.map(({id, slug, title, author}: any) => (
                 <article
                   className="space-y-3 py-3 border-b last:border-none"
                   key={id}
@@ -144,7 +145,7 @@ function SearchPage({
                   </TypographyH2>
 
                   <TypographyMuted>
-                    {t('by-author', {author: author.toUpperCase()})}
+                    {t('by-author', {author: author?.toUpperCase()})}
                   </TypographyMuted>
                 </article>
               ))}
