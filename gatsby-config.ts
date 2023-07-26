@@ -18,7 +18,7 @@ const siteMetadata = {
 const config: GatsbyConfig = {
   siteMetadata,
   partytownProxiedURLs: [
-    `https://www.googletagmanager.com/gtm.js?id=${process.env.GTM_ID}`,
+    `https://www.googletagmanager.com/gtm.js?id=${process.env.GATSBY_GTM_ID}`,
     `https://www.google-analytics.com/analytics.js`,
   ],
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
@@ -117,13 +117,13 @@ const config: GatsbyConfig = {
     {
       resolve: `gatsby-plugin-disqus`,
       options: {
-        shortname: process.env.DISQUS_SHORTNAME,
+        shortname: process.env.GATSBY_DISQUS_SHORTNAME,
       },
     },
     // {
     //   resolve: `gatsby-plugin-google-tagmanager`,
     //   options: {
-    //     id: process.env.GTM_ID,
+    //     id: process.env.GATSBY_GTM_ID,
     //     includeInDevelopment: false,
     //     enableWebVitalsTracking: true,
     //     defaultDataLayer: {platform: 'gatsby'},

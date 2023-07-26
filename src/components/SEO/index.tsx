@@ -70,7 +70,7 @@ function SEO({
       {/* Google Tag Manager */}
 
       <Script
-        src={`https://www.googletagmanager.com/gtm.js?id=${process.env.GTM_ID}`}
+        src={`https://www.googletagmanager.com/gtm.js?id=${process.env.GATSBY_GTM_ID}`}
         strategy={ScriptStrategy.offMainThread}
         forward={[`dataLayer.push`]}
       />
