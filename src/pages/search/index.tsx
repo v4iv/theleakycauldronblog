@@ -110,7 +110,7 @@ function SearchPage({
                     aria-label={t('close')}
                     onClick={() => navigate(-1)}
                   >
-                    <X className="h-5 w-5" />
+                    <X className="h-5 w-5 animate-in spin-in" />
                   </Button>
                 </TooltipTrigger>
 

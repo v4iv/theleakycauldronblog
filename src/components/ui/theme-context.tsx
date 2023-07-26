@@ -3,46 +3,26 @@ import {createContext, useEffect, useState} from 'react'
 import {getThemePreference} from '../../lib/utils'
 import {usePrefersDarkMode} from '../../hooks/usePrefersDarkMode'
 
-const defaultState = {
-  theme: 'light',
-  toggleTheme: () => {},
-}
+const ThemeContext = createContext('light')
 
-const ThemeContext = createContext(defaultState)
-
+// TODO: Better implementation for Dark, Light and System theme
 export function ThemeProvider({children}: {children: React.ReactNode}) {
-  const [theme, setTheme] = useState<string>(getThemePreference())
-
+  const [theme, setTheme] = useState(getThemePreference())
   const prefersDarkMode = usePrefersDarkMode()
+
+  useEffect(() => {
+    document.documentElement.classList.add(theme)
+
+    return () => {
+      document.documentElement.classList.remove(theme)
+    }
+  }, [theme])
 
   useEffect(() => {
     prefersDarkMode ? setTheme('dark') : setTheme('light')
   }, [prefersDarkMode, setTheme])
 
-  useEffect(() => {
-    document.body.classList.add(theme)
-
-    return () => {
-      document.body.classList.remove(theme)
-    }
-  }, [theme])
-
-  const toggleTheme = () => {
-    localStorage.setItem('theme', theme === 'dark' ? 'light' : 'dark')
-
-    setTheme((prevTheme) => (prevTheme === 'dark' ? 'light' : 'dark'))
-  }
-
-  return (
-    <ThemeContext.Provider
-      value={{
-        theme,
-        toggleTheme,
-      }}
-    >
-      {children}
-    </ThemeContext.Provider>
-  )
+  return <ThemeContext.Provider value={theme}>{children}</ThemeContext.Provider>
 }
 
 export default ThemeContext

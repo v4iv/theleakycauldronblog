@@ -15,22 +15,27 @@ export const onRenderBody: GatsbySSR['onRenderBody'] = ({
     <script
       key="set-theme"
       dangerouslySetInnerHTML={{
+        // taken from next-themes, removes flicker
         __html: `
-                    function getThemePreference() {
-                      var storedColorPreference = localStorage.getItem('theme')
-                    
-                      if (typeof storedColorPreference === 'string') return storedColorPreference
-                    
-                      var prefersDarkMode = window.matchMedia(
-                        '(prefers-color-scheme: dark)',
-                      ).matches
-                    
-                      return prefersDarkMode ? 'dark' : 'light'
-                    }
-
-                    var theme = getThemePreference()
-
-                    document.body.classList.add(theme)
+                  !(function () {
+                    try {
+                      const d = document.documentElement,
+                        c = d.classList
+                      c.remove('light', 'dark')
+                      const e = localStorage.getItem('theme')
+                      if ('system' === e || (!e && true)) {
+                        const t = '(prefers-color-scheme: dark)',
+                          m = window.matchMedia(t)
+                        if (m.media !== t || m.matches) {
+                          c.add('dark')
+                        } else {
+                          c.add('light')
+                        }
+                      } else if (e) {
+                        c.add(e || '')
+                      }
+                    } catch (e) {}
+                  })()
                 `,
       }}
     />,
