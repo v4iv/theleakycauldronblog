@@ -5,7 +5,7 @@ slug: migrating-from-webstorm-to-vscode
 author: Vaibhav Sharma
 authorLink: https://twitter.com/waybove
 date: 2023-07-24T14:13:36.769Z
-cover: /img/artem-sapegin-webstorm-vscode.jpg
+cover: /img/juanjo-jaramillo-vscode-webstorm.jpg
 metaTitle: "Migrating from WebStorm to VS Code: Embracing Lightness and Extensibility"
 metaDescription: Join my journey as I switch from WebStorm to VS Code! Discover
   the reasons behind the switch, how I overcame challenges, and embraced VS
