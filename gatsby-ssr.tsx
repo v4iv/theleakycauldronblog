@@ -6,13 +6,34 @@ import {ThemeProvider} from './src/components/ui/theme-context'
 export const onRenderBody: GatsbySSR['onRenderBody'] = ({
   setHtmlAttributes,
   setHeadComponents,
-  setPreBodyComponents,
 }) => {
   setHtmlAttributes({
     lang: 'en',
   })
 
   setHeadComponents([
+    <script
+      key="set-theme"
+      dangerouslySetInnerHTML={{
+        __html: `
+            function getThemePreference() {
+              var storedColorPreference = localStorage.getItem('theme')
+            
+              if (typeof storedColorPreference === 'string') return storedColorPreference
+            
+              var prefersDarkMode = window.matchMedia(
+                '(prefers-color-scheme: dark)',
+              ).matches
+            
+              return prefersDarkMode ? 'dark' : 'light'
+            }
+
+            var theme = getThemePreference()
+
+            document.body.classList.add(theme)
+        `,
+      }}
+    />,
     <script
       key="partytown-vanilla-config"
       dangerouslySetInnerHTML={{
@@ -34,31 +55,6 @@ export const onRenderBody: GatsbySSR['onRenderBody'] = ({
                 return url
             }
         }`,
-      }}
-    />,
-  ])
-
-  setPreBodyComponents([
-    <script
-      key="set-theme"
-      dangerouslySetInnerHTML={{
-        __html: `
-            function getThemePreference() {
-              var storedColorPreference = localStorage.getItem('theme')
-            
-              if (typeof storedColorPreference === 'string') return storedColorPreference
-            
-              var prefersDarkMode = window.matchMedia(
-                '(prefers-color-scheme: dark)',
-              ).matches
-            
-              return prefersDarkMode ? 'dark' : 'light'
-            }
-
-            var theme = getThemePreference()
-
-            document.body.classList.add(theme)
-        `,
       }}
     />,
   ])

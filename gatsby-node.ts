@@ -48,7 +48,24 @@ export const onCreateNode: GatsbyNode['onCreateNode'] = ({
   getNode,
   node,
 }: CreateNodeArgs<MarkdownRemarkNode>) => {
-  const {createNodeField} = actions
+  const {createNodeField, createRedirect} = actions
+
+  const thirdPartyProxyPath = `/__third-party-proxy`
+
+  const partytownProxiedURLs = [
+    `https://www.googletagmanager.com/gtm.js?id=${process.env.GATSBY_GTM_ID}`,
+    `https://www.google-analytics.com/analytics.js`,
+  ]
+
+  for (const host of partytownProxiedURLs) {
+    const encodedURL: string = encodeURIComponent(host)
+
+    createRedirect({
+      fromPath: `${thirdPartyProxyPath}?url=${encodedURL}`,
+      toPath: host,
+      statusCode: 200,
+    })
+  }
 
   if (node.internal.type === `MarkdownRemark`) {
     let slug

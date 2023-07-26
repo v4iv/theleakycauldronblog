@@ -59,7 +59,7 @@ function SEO({
 
       <meta name="twitter:site" content={seo.url} />
 
-      <meta name="twitter:creator" content={`@${seo.twitter}` || ''} />
+      <meta name="twitter:creator" content={seo.twitter || ''} />
 
       <meta name="twitter:title" content={seo.title} />
 
