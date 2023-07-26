@@ -17,10 +17,6 @@ const siteMetadata = {
 
 const config: GatsbyConfig = {
   siteMetadata,
-  partytownProxiedURLs: [
-    `https://www.googletagmanager.com/gtm.js?id=${process.env.GATSBY_GTM_ID}`,
-    `https://www.google-analytics.com/analytics.js`,
-  ],
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
   // Learn more at: https://gatsby.dev/graphql-typegen
@@ -117,18 +113,18 @@ const config: GatsbyConfig = {
     {
       resolve: `gatsby-plugin-disqus`,
       options: {
-        shortname: process.env.GATSBY_DISQUS_SHORTNAME,
+        shortname: process.env.DISQUS_SHORTNAME,
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-google-tagmanager`,
-    //   options: {
-    //     id: process.env.GATSBY_GTM_ID,
-    //     includeInDevelopment: false,
-    //     enableWebVitalsTracking: true,
-    //     defaultDataLayer: {platform: 'gatsby'},
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-google-tagmanager`,
+      options: {
+        id: process.env.GTM_ID,
+        includeInDevelopment: false,
+        enableWebVitalsTracking: true,
+        defaultDataLayer: {platform: 'gatsby'},
+      },
+    },
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
@@ -357,7 +353,6 @@ const config: GatsbyConfig = {
     },
     `gatsby-plugin-use-query-params`,
     `gatsby-plugin-catch-links`,
-    `gatsby-plugin-netlify`,
     `gatsby-plugin-remove-serviceworker`,
     // `gatsby-plugin-perf-budgets`,
     // `gatsby-plugin-webpack-bundle-analyser-v2`,
