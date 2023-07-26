@@ -14,28 +14,6 @@ export const onRenderBody: GatsbySSR['onRenderBody'] = ({
 
   setHeadComponents([
     <script
-      key="set-theme"
-      dangerouslySetInnerHTML={{
-        __html: `
-                    function getThemePreference() {
-                      var storedColorPreference = localStorage.getItem('theme')
-                    
-                      if (typeof storedColorPreference === 'string') return storedColorPreference
-                    
-                      var prefersDarkMode = window.matchMedia(
-                        '(prefers-color-scheme: dark)',
-                      ).matches
-                    
-                      return prefersDarkMode ? 'dark' : 'light'
-                    }
-
-                    var theme = getThemePreference()
-
-                    document.body.classList.add(theme)
-                `,
-      }}
-    />,
-    <script
       key="partytown-vanilla-config"
       dangerouslySetInnerHTML={{
         __html: `partytown = {
@@ -69,6 +47,28 @@ export const onRenderBody: GatsbySSR['onRenderBody'] = ({
         __html: `
                   <iframe src="https://www.googletagmanager.com/ns.html?id=${process.env.GATSBY_GTM_ID}" height="0" width="0"
                       style="display:none;visibility:hidden"></iframe>
+                `,
+      }}
+    />,
+    <script
+      key="set-theme"
+      dangerouslySetInnerHTML={{
+        __html: `
+                    function getThemePreference() {
+                      var storedColorPreference = localStorage.getItem('theme')
+                    
+                      if (typeof storedColorPreference === 'string') return storedColorPreference
+                    
+                      var prefersDarkMode = window.matchMedia(
+                        '(prefers-color-scheme: dark)',
+                      ).matches
+                    
+                      return prefersDarkMode ? 'dark' : 'light'
+                    }
+
+                    var theme = getThemePreference()
+
+                    document.body.classList.add(theme)
                 `,
       }}
     />,
