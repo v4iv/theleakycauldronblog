@@ -76,9 +76,9 @@
 
 4. **Environment Variables**
 
-    - GTM_ID - To enable Google Tag Manager
+    - GATSBY_GTM_ID - To enable Google Tag Manager
 
-    - DISQUS_SHORTNAME - To enable Disqus comments
+    - GATSBY_DISQUS_SHORTNAME - To enable Disqus comments
 
 5. **Learn more**
 

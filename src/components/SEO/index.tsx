@@ -1,4 +1,5 @@
 import * as React from 'react'
+import {Script, ScriptStrategy} from 'gatsby'
 import {useSiteMetadata} from '@/hooks/useSiteMetadata'
 
 interface SEOProps {
@@ -58,13 +59,28 @@ function SEO({
 
       <meta name="twitter:site" content={seo.url} />
 
-      <meta name="twitter:creator" content={`@${seo.twitter}` || ''} />
+      <meta name="twitter:creator" content={seo.twitter || ''} />
 
       <meta name="twitter:title" content={seo.title} />
 
       <meta name="twitter:description" content={seo.description} />
 
       <meta name="twitter:image" content={seo.image} />
+
+      {/* Google Tag Manager */}
+
+      <Script
+        src={`https://www.googletagmanager.com/gtm.js?id=${process.env.GATSBY_GTM_ID}`}
+        strategy={ScriptStrategy.offMainThread}
+        forward={[`dataLayer.push`]}
+      />
+
+      <Script id="gtm-init" strategy={ScriptStrategy.offMainThread}>
+        {`
+            window.dataLayer = window.dataLayer || []
+            window.dataLayer.push({ 'gtm.start': new Date().getTime(), 'event': 'gtm.js' })
+        `}
+      </Script>
 
       {children}
     </>
