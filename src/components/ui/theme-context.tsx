@@ -11,16 +11,16 @@ export function ThemeProvider({children}: {children: React.ReactNode}) {
   const prefersDarkMode = usePrefersDarkMode()
 
   useEffect(() => {
-    document.documentElement.classList.add(theme)
-
-    return () => {
-      document.documentElement.classList.remove(theme)
-    }
-  }, [theme])
-
-  useEffect(() => {
     prefersDarkMode ? setTheme('dark') : setTheme('light')
   }, [prefersDarkMode, setTheme])
+
+  useEffect(() => {
+    document.body.classList.add(theme)
+
+    return () => {
+      document.body.classList.remove(theme)
+    }
+  }, [theme])
 
   return <ThemeContext.Provider value={theme}>{children}</ThemeContext.Provider>
 }
