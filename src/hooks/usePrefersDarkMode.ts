@@ -8,17 +8,24 @@ export function usePrefersDarkMode() {
   })
 
   const handleChange = useCallback((e: MediaQueryListEvent) => {
-    setPrefersDark(e.matches)
+    const query = '(prefers-color-scheme: dark)'
+
+    if (e.media !== query || e.matches) {
+      setPrefersDark(true)
+    } else {
+      setPrefersDark(false)
+    }
   }, [])
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+      const query = '(prefers-color-scheme: dark)'
+      const systemTheme = window.matchMedia(query)
 
-      mediaQuery.addEventListener('change', handleChange)
+      systemTheme.addEventListener('change', handleChange)
 
       return () => {
-        mediaQuery.removeEventListener('change', handleChange)
+        systemTheme.removeEventListener('change', handleChange)
       }
     }
   }, [handleChange])

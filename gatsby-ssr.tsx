@@ -19,7 +19,7 @@ export const onRenderBody: GatsbySSR['onRenderBody'] = ({
         __html: `
                   !(function () {
                     try {
-                      const d = document.documentElement,
+                      const d = document.body,
                         c = d.classList
                       c.remove('light', 'dark')
                       const e = localStorage.getItem('theme')

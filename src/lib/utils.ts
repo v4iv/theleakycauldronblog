@@ -14,13 +14,17 @@ export function encode(data: {[key: string]: any}) {
 export function getThemePreference() {
   if (typeof window === 'undefined') return 'light'
 
-  const storedThemePreference = localStorage.getItem('theme')
+  const storedTheme = localStorage.getItem('theme')
 
-  if (typeof storedThemePreference === 'string') return storedThemePreference
+  if ('system' === storedTheme || (!storedTheme && true)) {
+    const query = '(prefers-color-scheme: dark)',
+      systemTheme = window.matchMedia(query)
+    if (systemTheme.media !== query || systemTheme.matches) {
+      return 'dark'
+    } else {
+      return 'light'
+    }
+  }
 
-  const prefersDarkMode = window.matchMedia(
-    '(prefers-color-scheme: dark)',
-  ).matches
-
-  return prefersDarkMode ? 'dark' : 'light'
+  return 'light'
 }
