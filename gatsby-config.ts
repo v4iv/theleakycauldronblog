@@ -353,6 +353,7 @@ const config: GatsbyConfig = {
     },
     `gatsby-plugin-use-query-params`,
     `gatsby-plugin-catch-links`,
+    `gatsby-plugin-netlify`,
     `gatsby-plugin-remove-serviceworker`,
     // `gatsby-plugin-perf-budgets`,
     // `gatsby-plugin-webpack-bundle-analyser-v2`,
