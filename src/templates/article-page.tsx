@@ -177,7 +177,11 @@ export const articleQuery = graphql`
         authorLink
         cover {
           childImageSharp {
-            gatsbyImageData(width: 1280, quality: 75, placeholder: BLURRED)
+            gatsbyImageData(
+              quality: 75
+              layout: FULL_WIDTH
+              placeholder: BLURRED
+            )
           }
           publicURL
         }
