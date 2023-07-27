@@ -1,5 +1,5 @@
 import * as React from 'react'
-import {useEffect, useState} from 'react'
+import {lazy, Suspense, useEffect, useState} from 'react'
 import {graphql, Link, HeadProps, navigate, PageProps} from 'gatsby'
 import {useTranslation} from 'gatsby-plugin-react-i18next'
 import useSWR, {preload} from 'swr'
@@ -15,6 +15,10 @@ import {TypographyH2, TypographyMuted} from '@/components/ui/typography'
 import {useSiteMetadata} from '@/hooks/useSiteMetadata'
 import SEO from '@/components/SEO'
 import Footer from '@/components/Footer'
+
+const SearchResultSkeleton = lazy(
+  () => import('@/components/SearchResultSkeleton'),
+)
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json())
 
@@ -69,6 +73,8 @@ function SearchPage({
   }, 500)
 
   const results = useLunr(query, index, store)
+
+  const showSkeleton = (isIndexLoading || isStoreLoading) && query.length > 0
 
   return (
     <>
@@ -129,26 +135,32 @@ function SearchPage({
         <div className="mx-auto w-full max-w-screen-md">
           <div className="px-3 md:px-0 py-3 md:py-5">
             <div className="space-y-3">
-              {results?.map(({id, slug, title, author}: any) => (
-                <article
-                  className="space-y-3 py-3 border-b last:border-none"
-                  key={id}
-                >
-                  <TypographyH2>
-                    <Link
-                      className="hover:text-gray-500 transition-colors duration-100"
-                      to={slug}
-                      replace
-                    >
-                      {title}
-                    </Link>
-                  </TypographyH2>
+              {showSkeleton ? (
+                <Suspense>
+                  <SearchResultSkeleton />
+                </Suspense>
+              ) : (
+                results?.map(({id, slug, title, author}: any) => (
+                  <article
+                    className="space-y-3 py-3 border-b last:border-none"
+                    key={id}
+                  >
+                    <TypographyH2>
+                      <Link
+                        className="hover:text-gray-500 transition-colors duration-100"
+                        to={slug}
+                        replace
+                      >
+                        {title}
+                      </Link>
+                    </TypographyH2>
 
-                  <TypographyMuted>
-                    {t('by-author', {author: author?.toUpperCase()})}
-                  </TypographyMuted>
-                </article>
-              ))}
+                    <TypographyMuted>
+                      {t('by-author', {author: author?.toUpperCase()})}
+                    </TypographyMuted>
+                  </article>
+                ))
+              )}
             </div>
           </div>
         </div>
