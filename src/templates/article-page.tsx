@@ -3,7 +3,6 @@ import slugify from 'slugify'
 import {Link, graphql, PageProps, HeadProps} from 'gatsby'
 import 'prismjs/themes/prism-twilight.css'
 import {badgeVariants} from '@/components/ui/badge'
-import {Separator} from '@/components/ui/separator'
 import {TypographyH1, TypographyLead} from '@/components/ui/typography'
 import SEO from '@/components/SEO'
 import Layout from '@/components/Layout'
@@ -69,7 +68,7 @@ function ArticlePageTemplate({
             <header className="space-y-3">
               <TypographyH1>{title}</TypographyH1>
 
-              <div className="flex items-center h-6 space-x-2">
+              <div className="flex items-center gap-x-2 flex-wrap">
                 <TypographyLead>
                   <a
                     className="hover:text-primary"
@@ -80,7 +79,7 @@ function ArticlePageTemplate({
                   </a>
                 </TypographyLead>
 
-                <Separator orientation="vertical" />
+                <TypographyLead>&middot;</TypographyLead>
 
                 <TypographyLead>{date}</TypographyLead>
               </div>

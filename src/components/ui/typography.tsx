@@ -57,7 +57,7 @@ export function TypographyInlineCode({children}: {children: React.ReactNode}) {
 }
 
 export function TypographyLead({children}: {children: React.ReactNode}) {
-  return <p className="text-xl text-muted-foreground">{children}</p>
+  return <p className="text-lg md:text-xl text-muted-foreground">{children}</p>
 }
 
 export function TypographyLarge({children}: {children: React.ReactNode}) {
