@@ -102,7 +102,7 @@ export const articleListQuery = graphql`
     ) {
       edges {
         node {
-          excerpt(format: PLAIN, pruneLength: 200)
+          excerpt(format: PLAIN, pruneLength: 150)
           fields {
             slug
           }
