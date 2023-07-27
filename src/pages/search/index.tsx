@@ -87,6 +87,7 @@ function SearchPage({
                   <Search className="pointer-events-none h-4 w-4 absolute top-1/2 transform -translate-y-1/2 right-3" />
                   <Input
                     autoFocus
+                    spellCheck={false}
                     autoComplete="new-password"
                     aria-label={t('search')}
                     name="search"

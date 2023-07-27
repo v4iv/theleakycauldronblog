@@ -1,7 +1,6 @@
 import * as React from 'react'
 import {Link} from 'gatsby'
 import slugify from 'slugify'
-import {Separator} from '../../components/ui/separator'
 import {badgeVariants} from '../../components/ui/badge'
 import {TypographyH1, TypographyLead} from '../../components/ui/typography'
 
@@ -27,7 +26,7 @@ function ArticlePagePreview({entry, widgetFor}: any) {
             <header className="space-y-3">
               <TypographyH1>{title}</TypographyH1>
 
-              <div className="flex items-center h-6 space-x-2">
+              <div className="flex items-center gap-x-2 flex-wrap">
                 <TypographyLead>
                   <a
                     className="hover:text-primary"
@@ -38,7 +37,7 @@ function ArticlePagePreview({entry, widgetFor}: any) {
                   </a>
                 </TypographyLead>
 
-                <Separator orientation="vertical" />
+                <TypographyLead>&middot;</TypographyLead>
 
                 <TypographyLead>{displayDate}</TypographyLead>
               </div>
@@ -50,7 +49,7 @@ function ArticlePagePreview({entry, widgetFor}: any) {
                     className={`${badgeVariants({variant: 'default'})} mr-2`}
                     to={`/tags/${slugify(tag)}`}
                   >
-                    #{tag}&nbsp;
+                    #{tag}
                   </Link>
                 ))}
               </div>

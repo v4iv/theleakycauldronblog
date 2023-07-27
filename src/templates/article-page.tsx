@@ -91,7 +91,7 @@ function ArticlePageTemplate({
                     className={`${badgeVariants({variant: 'default'})} mr-2`}
                     to={`/tags/${slugify(tag)}`}
                   >
-                    #{tag}&nbsp;
+                    #{tag}
                   </Link>
                 ))}
               </div>

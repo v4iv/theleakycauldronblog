@@ -1,6 +1,7 @@
 import * as React from 'react'
 import {HeadProps, Link, PageProps, graphql} from 'gatsby'
 import {useTranslation} from 'gatsby-plugin-react-i18next'
+import {Hash} from 'lucide-react'
 import {
   TypographyH1,
   TypographyH2,
@@ -44,7 +45,12 @@ function TagPageTemplate({
       <div className="mx-auto w-full max-w-screen-md">
         <div className="px-3 md:px-0 py-3 md:py-5">
           <header className="space-y-3">
-            <TypographyH1># {tag}</TypographyH1>
+            <TypographyH1>
+              <span className="flex items-end">
+                <Hash className="h-12 w-12 mr-1" />
+                {tag}
+              </span>
+            </TypographyH1>
 
             <TypographyLead>
               {t('tag-subtitle', {count: totalCount, tag: tag})}
