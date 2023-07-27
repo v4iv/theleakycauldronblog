@@ -140,7 +140,7 @@ function Share({title, slug, excerpt, siteURL}: ShareProps) {
         <TooltipTrigger>
           <CopyToClipboard
             text={url}
-            onCopy={() => alert(t('share.copy-link'))}
+            onCopy={() => alert(t('share.link-copied'))}
           >
             <div
               role="button"

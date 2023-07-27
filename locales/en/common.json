@@ -33,7 +33,8 @@
         "share-twitter": "Share on Twitter",
         "share-reddit": "Share on Reddit",
         "share-facebook": "Share on Facebook",
-        "copy-link": "Copy Link"
+        "copy-link": "Copy Link",
+        "link-copied": "Link copied to clipboard. ✅"
     },
     "contact-form": {
         "name": "Name",
