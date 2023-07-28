@@ -2,7 +2,7 @@
   "name": "theleakycauldronblog",
   "description": "The Leaky Cauldron Blog",
   "author": "Vaibhav Sharma<vaibhavsharmaatwork@gmail.com>",
-  "version": "3.2.12",
+  "version": "3.2.13",
   "license": "MIT",
   "scripts": {
     "develop": "gatsby develop",
@@ -32,6 +32,7 @@
     "cmdk": "^0.2.0",
     "gatsby": "^5.11.0",
     "gatsby-plugin-catch-links": "^5.11.0",
+    "gatsby-plugin-disqus": "^1.2.6",
     "gatsby-plugin-feed": "^5.11.0",
     "gatsby-plugin-image": "^3.11.0",
     "gatsby-plugin-local-search": "^2.0.1",
@@ -98,5 +99,13 @@
     "remark-cli": "^11.0.0",
     "rimraf": "^5.0.1",
     "typescript": "^5.1.6"
+  },
+  "hooks": {
+    "pre-commit": [
+      "lint-staged"
+    ],
+    "pre-push": [
+      "yarn typecheck"
+    ]
   }
 }
