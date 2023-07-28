@@ -73,14 +73,7 @@
 
     - `static/robots.txt` : sitemap url
 
-
-4. **Environment Variables**
-
-    - GTM_ID - To enable Google Tag Manager
-
-    - DISQUS_SHORTNAME - To enable Disqus comments
-
-5. **Learn more**
+4. **Learn more**
 
     - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
     - [Tutorials](https://www.gatsbyjs.com/docs/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)

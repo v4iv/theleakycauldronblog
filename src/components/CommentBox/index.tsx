@@ -1,7 +1,5 @@
 import * as React from 'react'
 import {Script} from 'gatsby'
-// import {Disqus} from 'gatsby-plugin-disqus'
-
 interface CommentBoxProps {
   id: string
   slug: string
@@ -18,6 +16,7 @@ function CommentBox({id, slug, title, siteURL}: CommentBoxProps) {
     identifier: id,
   }
 
+  // Implemented using Cloudflare Zaraz
   return (
     <>
       <div id="disqus_thread" className="px-3 md:px-0 py-3 md:py-5"></div>

@@ -119,12 +119,6 @@ const config: GatsbyConfig = {
         },
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-disqus`,
-    //   options: {
-    //     shortname: process.env.DISQUS_SHORTNAME,
-    //   },
-    // },
     {
       resolve: `gatsby-plugin-local-search`,
       options: {
@@ -208,15 +202,6 @@ const config: GatsbyConfig = {
       options: {
         color: '#ffa3d7',
         showSpinner: false,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-google-tagmanager`,
-      options: {
-        id: process.env.GTM_ID,
-        includeInDevelopment: false,
-        enableWebVitalsTracking: true,
-        defaultDataLayer: {platform: 'gatsby'},
       },
     },
     {
