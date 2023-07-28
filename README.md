@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://theleakycauldronblog.com">
-    <img alt="Gatsby" src="https://theleakycauldronblog.com/icons/icon-512.png" width="60" />
+    <img alt="Gatsby" src="https://theleakycauldronblog.com/icon-512.png" width="60" />
   </a>
 </p>
 <h1 align="center">
@@ -65,7 +65,7 @@
 
     - `static/admin/config.yml` : site url, default values
 
-    - `static/icons/icon-*.png` : your brand icons
+    - `static/icon-*.png` : your brand icons
 
     - `static/apple-touch-icon.png` : your brand icons
 

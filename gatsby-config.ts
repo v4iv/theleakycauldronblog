@@ -9,7 +9,7 @@ const siteMetadata = {
   description: `A Brew of Awesomeness with a Pinch of Magic...`,
   shortName: `tlcb`,
   siteUrl: `https://theleakycauldronblog.com`,
-  image: `/icons/icon-512.png`,
+  image: `/icon-512.png`,
   social: {
     twitter: `@waybove`,
   },
@@ -92,7 +92,6 @@ const config: GatsbyConfig = {
         ],
       },
     },
-    `gatsby-plugin-twitter`,
     {
       resolve: `gatsby-plugin-netlify-cms`,
       options: {
@@ -101,13 +100,23 @@ const config: GatsbyConfig = {
         htmlTitle: `CMS | ${siteMetadata.title}`,
       },
     },
-    `gatsby-plugin-postcss`,
-    `gatsby-plugin-image`,
     {
-      resolve: `gatsby-plugin-nprogress`,
+      resolve: `gatsby-plugin-react-i18next`,
       options: {
-        color: '#ffa3d7',
-        showSpinner: false,
+        localeJsonSourceName: `locale`,
+        languages: [`en`],
+        defaultLanguage: `en`,
+        siteUrl: siteMetadata.siteUrl,
+        trailingSlash: `always`,
+        i18nextOptions: {
+          defaultNS: `common`,
+          debug: !!(process.env.NODE_ENV === 'development'),
+          lowerCaseLng: true,
+          saveMissing: false,
+          interpolation: {
+            escapeValue: false,
+          },
+        },
       },
     },
     {
@@ -116,59 +125,6 @@ const config: GatsbyConfig = {
         shortname: process.env.DISQUS_SHORTNAME,
       },
     },
-    {
-      resolve: `gatsby-plugin-google-tagmanager`,
-      options: {
-        id: process.env.GTM_ID,
-        includeInDevelopment: false,
-        enableWebVitalsTracking: true,
-        defaultDataLayer: {platform: 'gatsby'},
-      },
-    },
-    {
-      resolve: `gatsby-plugin-sitemap`,
-      options: {
-        excludes: [`/tags/*`],
-      },
-    },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: siteMetadata.title,
-        short_name: siteMetadata.shortName,
-        start_url: '/',
-        background_color: `#ffffff`,
-        theme_color: `#020817`,
-        display: `standalone`,
-        icons: [
-          {
-            src: `/icons/icon-192.png`,
-            sizes: `192x192`,
-            type: `image/png`,
-          },
-          {
-            src: `/icons/icon-512.png`,
-            sizes: `512x512`,
-            type: `image/png`,
-          },
-          {
-            src: `/icons/icon-192-maskable.png`,
-            sizes: `192x192`,
-            type: `image/png`,
-            purpose: 'any maskable',
-          },
-          {
-            src: `/icons/icon-512-maskable.png`,
-            sizes: `512x512`,
-            type: `image/png`,
-            purpose: 'any maskable',
-          },
-        ],
-        cache_busting_mode: `none`,
-      },
-    },
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-local-search`,
       options: {
@@ -245,6 +201,69 @@ const config: GatsbyConfig = {
                 templateKey: node.frontmatter.templateKey,
               }),
             ),
+      },
+    },
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        color: '#ffa3d7',
+        showSpinner: false,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-tagmanager`,
+      options: {
+        id: process.env.GTM_ID,
+        includeInDevelopment: false,
+        enableWebVitalsTracking: true,
+        defaultDataLayer: {platform: 'gatsby'},
+      },
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: siteMetadata.title,
+        short_name: siteMetadata.shortName,
+        start_url: '/',
+        background_color: `#ffffff`,
+        theme_color: `#020817`,
+        display: `standalone`,
+        icons: [
+          {
+            src: `/icon-192.png`,
+            sizes: `192x192`,
+            type: `image/png`,
+          },
+          {
+            src: `/icon-512.png`,
+            sizes: `512x512`,
+            type: `image/png`,
+          },
+          {
+            src: `/icon-192-maskable.png`,
+            sizes: `192x192`,
+            type: `image/png`,
+            purpose: 'any maskable',
+          },
+          {
+            src: `/icon-512-maskable.png`,
+            sizes: `512x512`,
+            type: `image/png`,
+            purpose: 'any maskable',
+          },
+          {
+            src: `/apple-touch-icon.png`,
+            sizes: `192x192`,
+            type: `image/png`,
+          },
+        ],
+        cache_busting_mode: `none`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        excludes: [`/tags/*`],
       },
     },
     {
@@ -332,25 +351,11 @@ const config: GatsbyConfig = {
         ],
       },
     },
-    {
-      resolve: `gatsby-plugin-react-i18next`,
-      options: {
-        localeJsonSourceName: `locale`,
-        languages: [`en`],
-        defaultLanguage: `en`,
-        siteUrl: siteMetadata.siteUrl,
-        trailingSlash: `always`,
-        i18nextOptions: {
-          defaultNS: `common`,
-          debug: !!(process.env.NODE_ENV === 'development'),
-          lowerCaseLng: true,
-          saveMissing: false,
-          interpolation: {
-            escapeValue: false,
-          },
-        },
-      },
-    },
+    `gatsby-plugin-postcss`,
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-twitter`,
     `gatsby-plugin-use-query-params`,
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-netlify`,

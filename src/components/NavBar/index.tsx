@@ -43,7 +43,7 @@ function NavBar() {
                   <Link aria-label={t('site-short-name')} to="/">
                     <Avatar className="mr-2 flex md:hidden">
                       <AvatarImage
-                        src="/icons/icon-192-maskable.png"
+                        src="/icon-192-maskable.png"
                         alt="the-leaky-cauldron-blog"
                       />
                       <AvatarFallback>{t('site-short-name')}</AvatarFallback>
