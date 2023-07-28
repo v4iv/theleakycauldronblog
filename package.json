@@ -12,7 +12,8 @@
     "clean": "gatsby clean",
     "lint": "eslint --ignore-path .gitignore .",
     "lint:fix": "yarn run lint -- --fix",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.1.1",
@@ -93,7 +94,7 @@
     "gatsby-plugin-netlify": "^5.1.0",
     "gatsby-plugin-perf-budgets": "^0.0.18",
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.31",
-    "husky": "^8.0.3",
+    "husky": "^8.0.0",
     "lint-staged": "^13.2.3",
     "prettier": "^3.0.0",
     "remark-cli": "^11.0.0",
