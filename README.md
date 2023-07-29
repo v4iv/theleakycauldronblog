@@ -17,7 +17,7 @@
 
 - Pagination
 
-- SEO friendly (Head API, Slug, Sitemap, Robots.txt, GTM etc)
+- SEO friendly (Head API, Slug, Sitemap, Robots.txt etc)
 
 - Disqus comments
 
