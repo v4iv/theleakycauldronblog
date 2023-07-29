@@ -46,9 +46,9 @@ function ContactForm() {
   const methods = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      name: undefined,
-      email: undefined,
-      message: undefined,
+      name: '',
+      email: '',
+      message: '',
     },
   })
 
