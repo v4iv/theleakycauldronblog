@@ -26,10 +26,9 @@ function NotFoundPage() {
 export default NotFoundPage
 
 export function Head() {
-  const {t} = useTranslation('common')
   const {title} = useSiteMetadata()
 
-  return <SEO title={`404: ${t('page-not-found')} | ${title}`} />
+  return <SEO title={`404: Page Not Found | ${title}`} />
 }
 
 export const notFoundQuery = graphql`

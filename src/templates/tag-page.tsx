@@ -93,14 +93,17 @@ export function Head({
   },
   pageContext: {tag},
 }: HeadProps<DataProps, PageContextProps>) {
-  const {t} = useTranslation('common')
   const {title} = useSiteMetadata()
+
+  const aboutTag = `${totalCount} post${
+    totalCount === 1 ? '' : 's'
+  } tagged with “${tag}”`
 
   return (
     <SEO
       pathname={pathname}
-      title={`${tag} | ${title}`}
-      description={t('tag-subtitle', {count: totalCount, tag: tag})}
+      title={`${aboutTag} | ${title}`}
+      description={aboutTag}
     />
   )
 }

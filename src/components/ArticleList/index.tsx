@@ -33,6 +33,7 @@ interface ArticleListProps {
 
 function ArticleList({pages}: ArticleListProps) {
   const {t} = useTranslation()
+
   return (
     <section className="mx-auto w-full max-w-screen-md">
       {pages
@@ -54,7 +55,7 @@ function ArticleList({pages}: ArticleListProps) {
               <div className="flex md:flex-row flex-col">
                 <div className="md:w-90 md:pr-3 pr-0 order-2 md:order-1 md:w-3/5 mb-2">
                   <Link
-                    className="block px-0 lg:px-0 hover:text-muted-foreground"
+                    className="block px-0 hover:text-muted-foreground"
                     to={slug}
                   >
                     <TypographyH2>{title}</TypographyH2>
