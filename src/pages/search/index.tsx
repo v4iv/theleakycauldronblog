@@ -79,12 +79,12 @@ function SearchPage({
   return (
     <>
       <nav className="mx-auto w-full max-w-screen-md">
-        <div className="px-3 md:px-0 py-3 md:py-5">
+        <div className="p-3 md:px-0 md:py-5">
           <div className="flex space-x-2">
             <Tooltip>
               <TooltipTrigger asChild>
-                <div className="flex flex-grow relative">
-                  <Search className="pointer-events-none h-4 w-4 absolute top-1/2 transform -translate-y-1/2 right-3" />
+                <div className="relative flex grow">
+                  <Search className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2" />
                   <Input
                     autoFocus
                     spellCheck={false}
@@ -134,7 +134,7 @@ function SearchPage({
 
       <main className="min-h-screen">
         <div className="mx-auto w-full max-w-screen-md">
-          <div className="px-3 md:px-0 py-3 md:py-5">
+          <div className="p-3 md:px-0 md:py-5">
             <div className="space-y-3">
               {showSkeleton ? (
                 <Suspense>
@@ -143,12 +143,12 @@ function SearchPage({
               ) : (
                 results?.map(({id, slug, title, author}: any) => (
                   <article
-                    className="space-y-3 py-3 border-b last:border-none"
+                    className="space-y-3 border-b py-3 last:border-none"
                     key={id}
                   >
                     <TypographyH2>
                       <Link
-                        className="hover:text-gray-500 transition-colors duration-100"
+                        className="transition-colors duration-100 hover:text-gray-500"
                         to={slug}
                         replace
                       >

@@ -15,7 +15,7 @@ function AboutPagePreview({entry, widgetFor}: any) {
   return (
     <div>
       <div className="mx-auto w-full max-w-screen-md">
-        <div className="px-3 md:px-0 py-3 md:py-5">
+        <div className="p-3 md:px-0 md:py-5">
           <header className="space-y-3">
             <TypographyH1>{title}</TypographyH1>
 
@@ -31,8 +31,8 @@ function AboutPagePreview({entry, widgetFor}: any) {
       )}
 
       <div className="mx-auto w-full max-w-screen-md">
-        <div className="px-3 md:px-0 py-3 md:py-5">
-          <div className="prose prose-slate prose-base md:prose-lg dark:prose-invert">
+        <div className="p-3 md:px-0 md:py-5">
+          <div className="prose prose-base prose-slate dark:prose-invert md:prose-lg">
             {body}
           </div>
         </div>

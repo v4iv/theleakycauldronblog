@@ -22,11 +22,11 @@ function ArticlePagePreview({entry, widgetFor}: any) {
     <div>
       <article>
         <div className="mx-auto w-full max-w-screen-md">
-          <div className="px-3 md:px-0 py-3 md:py-5">
+          <div className="p-3 md:px-0 md:py-5">
             <header className="space-y-3">
               <TypographyH1>{title}</TypographyH1>
 
-              <div className="flex items-center gap-x-2 flex-wrap">
+              <div className="flex flex-wrap items-center gap-x-2">
                 <TypographyLead>
                   <a
                     className="hover:text-primary"
@@ -59,15 +59,15 @@ function ArticlePagePreview({entry, widgetFor}: any) {
 
         {!!cover.length && (
           <img
-            className="h-auto w-full object-cover aspect-video"
+            className="aspect-video h-auto w-full object-cover"
             src={cover}
             alt={title}
           />
         )}
 
         <div className="mx-auto w-full max-w-screen-md">
-          <div className="px-3 md:px-0 py-3 md:py-5">
-            <div className="prose prose-slate prose-base md:prose-lg dark:prose-invert">
+          <div className="p-3 md:px-0 md:py-5">
+            <div className="prose prose-base prose-slate dark:prose-invert md:prose-lg">
               {body}
             </div>
           </div>

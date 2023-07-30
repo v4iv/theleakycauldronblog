@@ -35,9 +35,9 @@ function NavBar() {
   return (
     <>
       <nav className="mx-auto w-full max-w-screen-md">
-        <div className="px-3 md:px-0 py-3 md:py-5">
+        <div className="p-3 md:px-0 md:py-5">
           <div className="flex">
-            <div className="flex flex-grow">
+            <div className="flex grow">
               <Tooltip>
                 <TooltipTrigger asChild>
                   <Link aria-label={t('site-short-name')} to="/">
@@ -58,16 +58,16 @@ function NavBar() {
 
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <h3 className="scroll-m-20 text-2xl font-extrabold tracking-wider leading-relaxed">
+                  <h3 className="scroll-m-20 text-2xl font-extrabold leading-relaxed tracking-wider">
                     <Link
-                      className="hidden md:flex hover:text-muted-foreground"
+                      className="hidden hover:text-muted-foreground md:flex"
                       to="/"
                     >
                       {t('site-name')}
                     </Link>
 
                     <Link
-                      className="flex md:hidden hover:text-gray-500 transition-colors duration-100"
+                      className="flex transition-colors duration-100 hover:text-gray-500 md:hidden"
                       to="/"
                     >
                       {t('site-short-name')}
@@ -125,10 +125,10 @@ function NavBar() {
                     <SheetTitle />
                   </SheetHeader>
 
-                  <SheetDescription className="flex-grow">
+                  <SheetDescription className="grow">
                     <Button
                       variant="ghost"
-                      className="block my-5"
+                      className="my-5 block"
                       aria-label={t('home')}
                       asChild
                     >
@@ -140,7 +140,7 @@ function NavBar() {
 
                     <Button
                       variant="ghost"
-                      className="block my-5"
+                      className="my-5 block"
                       aria-label={t('search')}
                       asChild
                     >
@@ -152,7 +152,7 @@ function NavBar() {
 
                     <Button
                       variant="ghost"
-                      className="block my-5"
+                      className="my-5 block"
                       aria-label={t('about')}
                       asChild
                     >
@@ -164,7 +164,7 @@ function NavBar() {
 
                     <Button
                       variant="ghost"
-                      className="block my-5"
+                      className="my-5 block"
                       aria-label={t('contact')}
                       asChild
                     >
@@ -176,7 +176,7 @@ function NavBar() {
                   </SheetDescription>
 
                   <SheetFooter>
-                    <p className="font-mono text-[10px] text-muted-foreground hidden md:flex md:items-center">
+                    <p className="hidden font-mono text-[10px] text-muted-foreground md:flex md:items-center">
                       {t('quick-search')}&nbsp;&raquo;&nbsp;
                       <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
                         <span className="text-xs">&#8984;</span>K

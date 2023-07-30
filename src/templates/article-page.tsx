@@ -64,11 +64,11 @@ function ArticlePageTemplate({
     <Layout>
       <article>
         <div className="mx-auto w-full max-w-screen-md">
-          <div className="px-3 md:px-0 py-3 md:py-5">
+          <div className="p-3 md:px-0 md:py-5">
             <header className="space-y-3">
               <TypographyH1>{title}</TypographyH1>
 
-              <div className="flex items-center gap-x-2 flex-wrap">
+              <div className="flex flex-wrap items-center gap-x-2">
                 <TypographyLead>
                   <a
                     className="hover:text-primary"
@@ -100,13 +100,13 @@ function ArticlePageTemplate({
         </div>
 
         <ImageBox
-          className="h-auto w-full object-cover aspect-video"
+          className="aspect-video h-auto w-full object-cover"
           image={cover}
           alt={title}
         />
 
         <div className="mx-auto w-full max-w-screen-md">
-          <div className="px-3 md:px-0 py-3 md:py-5">
+          <div className="p-3 md:px-0 md:py-5">
             <Content html={html} />
           </div>
 
