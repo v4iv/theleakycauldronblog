@@ -176,7 +176,7 @@ export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({
     resolve: {
       alias: {
         '@/hooks': path.resolve(__dirname, 'src/hooks'),
-        '@/lib/utils': path.resolve(__dirname, 'src/lib/utils'),
+        '@/lib': path.resolve(__dirname, 'src/lib'),
         '@/components': path.resolve(__dirname, 'src/components'),
         '@/components/ui': path.resolve(__dirname, 'src/components/ui'),
       },

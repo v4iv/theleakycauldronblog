@@ -27,7 +27,7 @@ function ContactPageTemplate({
   return (
     <Layout>
       <div className="mx-auto w-full max-w-screen-md">
-        <div className="px-3 md:px-0 py-3 md:py-5">
+        <div className="p-3 md:px-0 md:py-5">
           <header className="space-y-3">
             <TypographyH1>{title}</TypographyH1>
 

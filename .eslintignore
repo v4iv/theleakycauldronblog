@@ -88,9 +88,10 @@ dist
 
 # Gatsby files
 .cache/
-# Comment in the public line in if your project uses Gatsby and not Next.js
-# https://nextjs.org/blog/next-9-1#public-directory-support
-# public
+# gatsby files
+.cache/
+public
+src/gatsby-types.d.ts
 
 # vuepress build output
 .vuepress/dist
@@ -129,3 +130,10 @@ src/utils/airlines.ts
 
 .netlify/
 netlify.toml
+
+src/components/ui/*
+
+#IDE
+.idea/
+.vscode/
+.fleet/

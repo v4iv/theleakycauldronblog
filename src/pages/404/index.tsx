@@ -12,7 +12,7 @@ function NotFoundPage() {
 
   return (
     <Layout>
-      <header className="mx-auto w-full max-w-screen-md min-h-screen flex items-center justify-center">
+      <header className="mx-auto flex min-h-screen w-full max-w-screen-md items-center justify-center">
         <div className="flex h-12 items-center space-x-4">
           <TypographyH1>404</TypographyH1>
           <Separator orientation="vertical" />

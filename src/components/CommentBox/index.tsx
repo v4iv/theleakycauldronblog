@@ -17,7 +17,7 @@ function CommentBox({id, slug, title, siteURL}: CommentBoxProps) {
   }
 
   return (
-    <div className="px-3 md:px-0 py-3 md:py-5">
+    <div className="p-3 md:px-0 md:py-5">
       <Disqus config={disqusConfig} />
     </div>
   )

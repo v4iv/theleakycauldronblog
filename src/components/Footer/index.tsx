@@ -10,8 +10,8 @@ function Footer() {
 
   return (
     <footer className="mx-auto w-full max-w-screen-md">
-      <div className="py-5 px-3 md:px-0 md:text-left text-center flex items-center flex-col md:flex-row">
-        <div className="flex-grow">
+      <div className="flex flex-col items-center px-3 py-5 text-center md:flex-row md:px-0 md:text-left">
+        <div className="grow">
           <TypographyMuted>
             {t('footer.copyright', {
               year: new Date().getFullYear().toString(),
@@ -19,7 +19,7 @@ function Footer() {
           </TypographyMuted>
         </div>
 
-        <div className="flex mt-3 md:mt-0 space-x-2">
+        <div className="mt-3 flex space-x-2 md:mt-0">
           <Tooltip>
             <TooltipTrigger asChild>
               <Button
