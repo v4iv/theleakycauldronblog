@@ -2,7 +2,7 @@
   "name": "theleakycauldronblog",
   "description": "The Leaky Cauldron Blog",
   "author": "Vaibhav Sharma<vaibhavsharmaatwork@gmail.com>",
-  "version": "3.2.17",
+  "version": "3.2.18",
   "license": "MIT",
   "scripts": {
     "develop": "gatsby develop",
@@ -19,6 +19,7 @@
     "@radix-ui/react-avatar": "^1.0.3",
     "@radix-ui/react-dialog": "^1.0.4",
     "@radix-ui/react-label": "^2.0.2",
+    "@radix-ui/react-popover": "^1.0.6",
     "@radix-ui/react-separator": "^1.0.3",
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-toast": "^1.1.4",

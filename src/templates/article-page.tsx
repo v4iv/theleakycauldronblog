@@ -8,7 +8,7 @@ import SEO from '@/components/SEO'
 import Layout from '@/components/Layout'
 import ImageBox from '@/components/ImageBox'
 import Content from '@/components/Content'
-import Share from '@/components/Share'
+import ShareSheet from '@/components/ShareSheet'
 import CommentBox from '@/components/CommentBox'
 
 type DataProps = {
@@ -68,20 +68,31 @@ function ArticlePageTemplate({
             <header className="space-y-3">
               <TypographyH1>{title}</TypographyH1>
 
-              <div className="flex flex-wrap items-center gap-x-2">
-                <TypographyLead>
-                  <a
-                    className="hover:text-primary"
-                    rel="noreferrer nofollow noopener"
-                    href={authorLink}
-                  >
-                    {author}
-                  </a>
-                </TypographyLead>
+              <div className="flex items-center justify-between">
+                <div className="flex flex-wrap items-center gap-x-2">
+                  <TypographyLead>
+                    <a
+                      className="hover:text-primary"
+                      rel="noreferrer nofollow noopener"
+                      href={authorLink}
+                    >
+                      {author}
+                    </a>
+                  </TypographyLead>
 
-                <TypographyLead>&middot;</TypographyLead>
+                  <TypographyLead>&middot;</TypographyLead>
 
-                <TypographyLead>{date}</TypographyLead>
+                  <TypographyLead>{date}</TypographyLead>
+                </div>
+
+                <div className="hidden md:flex">
+                  <ShareSheet
+                    title={title}
+                    slug={slug}
+                    excerpt={metaDescription}
+                    siteURL={siteUrl}
+                  />
+                </div>
               </div>
 
               <div className="flex flex-wrap gap-y-1">
@@ -110,12 +121,14 @@ function ArticlePageTemplate({
             <Content html={html} />
           </div>
 
-          <Share
-            title={title}
-            slug={slug}
-            excerpt={metaDescription}
-            siteURL={siteUrl}
-          />
+          <div className="flex justify-center">
+            <ShareSheet
+              title={title}
+              slug={slug}
+              excerpt={metaDescription}
+              siteURL={siteUrl}
+            />
+          </div>
 
           <CommentBox id={id} slug={slug} title={title} siteURL={siteUrl} />
         </div>
