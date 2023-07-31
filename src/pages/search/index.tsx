@@ -1,5 +1,4 @@
-import * as React from 'react'
-import {lazy, Suspense, useEffect, useState} from 'react'
+import React, {lazy, Suspense, useEffect, useState} from 'react'
 import {graphql, Link, HeadProps, navigate, PageProps} from 'gatsby'
 import {useTranslation} from 'gatsby-plugin-react-i18next'
 import useSWR, {preload} from 'swr'

@@ -1,5 +1,4 @@
-import * as React from 'react'
-import {lazy, Suspense, useState, useEffect} from 'react'
+import React, {lazy, Suspense, useState, useEffect} from 'react'
 import {Link} from 'gatsby'
 import {useTranslation} from 'gatsby-plugin-react-i18next'
 import {Equal, Search, AtSign, Home, MessageCircle, Hash} from 'lucide-react'

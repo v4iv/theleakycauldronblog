@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import {Toaster} from '@/components/ui/toaster'
 import {Separator} from '@/components/ui/separator'
 import NavBar from '@/components/NavBar'

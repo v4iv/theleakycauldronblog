@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import {Disqus} from 'gatsby-plugin-disqus'
 interface CommentBoxProps {
   id: string

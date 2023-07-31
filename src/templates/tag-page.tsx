@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import {HeadProps, Link, PageProps, graphql} from 'gatsby'
 import {useTranslation} from 'gatsby-plugin-react-i18next'
 import {Hash} from 'lucide-react'

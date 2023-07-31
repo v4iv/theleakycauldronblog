@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import {HeadProps, Link, PageProps, graphql} from 'gatsby'
 import {ArrowLeft, ArrowRight} from 'lucide-react'
 import {Button} from '@/components/ui/button'

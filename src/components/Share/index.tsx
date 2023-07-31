@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import {useTranslation} from 'gatsby-plugin-react-i18next'
 import {Link} from 'lucide-react'
 import {

@@ -1,5 +1,4 @@
-import * as React from 'react'
-import {Dispatch, SetStateAction} from 'react'
+import React, {Dispatch, SetStateAction} from 'react'
 import {navigate, graphql, useStaticQuery} from 'gatsby'
 import {useTranslation} from 'gatsby-plugin-react-i18next'
 import {AtSign, Circle, Hash, Home, MessageCircle, Search} from 'lucide-react'
