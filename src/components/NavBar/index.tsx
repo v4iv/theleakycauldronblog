@@ -121,13 +121,13 @@ function NavBar() {
 
                 <SheetContent className="flex flex-col">
                   <SheetHeader>
-                    <SheetTitle />
+                    <SheetTitle>{t('menu')}</SheetTitle>
                   </SheetHeader>
 
-                  <SheetDescription className="grow">
+                  <SheetDescription className="flex grow flex-col">
                     <Button
                       variant="ghost"
-                      className="my-5 block"
+                      className="my-5 justify-start"
                       aria-label={t('home')}
                       asChild
                     >
@@ -139,7 +139,7 @@ function NavBar() {
 
                     <Button
                       variant="ghost"
-                      className="my-5 block"
+                      className="my-5 justify-start"
                       aria-label={t('search')}
                       asChild
                     >
@@ -151,7 +151,7 @@ function NavBar() {
 
                     <Button
                       variant="ghost"
-                      className="my-5 block"
+                      className="my-5 justify-start"
                       aria-label={t('tags')}
                       asChild
                     >
@@ -163,7 +163,7 @@ function NavBar() {
 
                     <Button
                       variant="ghost"
-                      className="my-5 block"
+                      className="my-5 justify-start"
                       aria-label={t('about')}
                       asChild
                     >
@@ -175,7 +175,7 @@ function NavBar() {
 
                     <Button
                       variant="ghost"
-                      className="my-5 block"
+                      className="my-5 justify-start"
                       aria-label={t('contact')}
                       asChild
                     >

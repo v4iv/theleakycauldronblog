@@ -34,6 +34,7 @@ function TagsPage({
 
             <Separator />
           </header>
+
           <div className="flex flex-wrap gap-y-4 py-12">
             {tags?.map((tag, idx) => (
               <Link
