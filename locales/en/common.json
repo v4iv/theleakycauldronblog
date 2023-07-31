@@ -13,6 +13,7 @@
     "prev": "Prev",
     "page-not-found": "Page Not Found",
     "by-author": "By {{author}}",
+    "tags": "Tags",
     "tag-subtitle_one": "{{count}} post tagged with \"{{tag}}\"",
     "tag-subtitle_other": "{{count}} posts tagged with \"{{tag}}\"",
     "quick-search": "QUICK SEARCH",

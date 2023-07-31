@@ -2,7 +2,7 @@ import * as React from 'react'
 import {lazy, Suspense, useState, useEffect} from 'react'
 import {Link} from 'gatsby'
 import {useTranslation} from 'gatsby-plugin-react-i18next'
-import {Equal, Search, AtSign, Home, MessageCircle} from 'lucide-react'
+import {Equal, Search, AtSign, Home, MessageCircle, Hash} from 'lucide-react'
 import {Button} from '@/components/ui/button'
 import {Tooltip, TooltipContent, TooltipTrigger} from '@/components/ui/tooltip'
 import {
@@ -144,9 +144,21 @@ function NavBar() {
                       aria-label={t('search')}
                       asChild
                     >
-                      <Link className="flex" to="/search">
+                      <Link className="flex" to="/search/">
                         <Search className="mr-2 h-4 w-4" />
                         {t('search')}
+                      </Link>
+                    </Button>
+
+                    <Button
+                      variant="ghost"
+                      className="my-5 block"
+                      aria-label={t('tags')}
+                      asChild
+                    >
+                      <Link className="flex" to="/tags/">
+                        <Hash className="mr-2 h-4 w-4" />
+                        {t('tags')}
                       </Link>
                     </Button>
 
@@ -156,7 +168,7 @@ function NavBar() {
                       aria-label={t('about')}
                       asChild
                     >
-                      <Link className="flex" to="/about">
+                      <Link className="flex" to="/about/">
                         <MessageCircle className="mr-2 h-4 w-4" />
                         {t('about')}
                       </Link>
@@ -168,7 +180,7 @@ function NavBar() {
                       aria-label={t('contact')}
                       asChild
                     >
-                      <Link className="flex" to="/contact">
+                      <Link className="flex" to="/contact/">
                         <AtSign className="mr-2 h-4 w-4" />
                         {t('contact')}
                       </Link>

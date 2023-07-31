@@ -89,7 +89,7 @@ function ArticlePageTemplate({
                   <Link
                     key={`${slugify(tag)}-${idx}`}
                     className={`${badgeVariants({variant: 'default'})} mr-2`}
-                    to={`/tags/${slugify(tag)}`}
+                    to={`/tags/${slugify(tag)}/`}
                   >
                     #{tag}
                   </Link>

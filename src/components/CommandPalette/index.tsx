@@ -2,7 +2,7 @@ import * as React from 'react'
 import {Dispatch, SetStateAction} from 'react'
 import {navigate, graphql, useStaticQuery} from 'gatsby'
 import {useTranslation} from 'gatsby-plugin-react-i18next'
-import {AtSign, Circle, Home, MessageCircle, Search} from 'lucide-react'
+import {AtSign, Circle, Hash, Home, MessageCircle, Search} from 'lucide-react'
 import {
   CommandDialog,
   CommandEmpty,
@@ -54,16 +54,20 @@ function CommandPalette({open, setOpen}: CommandPaletteProps) {
               <Home className="mr-2" /> {t('home')}
             </CommandItem>
 
-            <CommandItem onSelect={() => navigate('/search')}>
+            <CommandItem onSelect={() => navigate('/search/')}>
               <Search className="mr-2" /> {t('search')}
             </CommandItem>
 
-            <CommandItem onSelect={() => navigate('/about')}>
+            <CommandItem onSelect={() => navigate('/tags/')}>
+              <Hash className="mr-2" /> {t('tags')}
+            </CommandItem>
+
+            <CommandItem onSelect={() => navigate('/about/')}>
               <MessageCircle className="mr-2" />
               {t('about')}
             </CommandItem>
 
-            <CommandItem onSelect={() => navigate('/contact')}>
+            <CommandItem onSelect={() => navigate('/contact/')}>
               <AtSign className="mr-2" />
               {t('contact')}
             </CommandItem>

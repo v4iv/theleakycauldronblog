@@ -1,7 +1,6 @@
 import * as React from 'react'
-import {Link} from 'gatsby'
 import slugify from 'slugify'
-import {badgeVariants} from '../../components/ui/badge'
+import {Badge} from '../../components/ui/badge'
 import {TypographyH1, TypographyLead} from '../../components/ui/typography'
 
 function ArticlePagePreview({entry, widgetFor}: any) {
@@ -44,13 +43,9 @@ function ArticlePagePreview({entry, widgetFor}: any) {
 
               <div className="flex flex-wrap gap-y-1">
                 {tags.map((tag: any, idx: number) => (
-                  <Link
-                    key={`${slugify(tag)}-${idx}`}
-                    className={`${badgeVariants({variant: 'default'})} mr-2`}
-                    to={`/tags/${slugify(tag)}`}
-                  >
+                  <Badge key={`${slugify(tag)}-${idx}`} className="mr-2">
                     #{tag}
-                  </Link>
+                  </Badge>
                 ))}
               </div>
             </header>
