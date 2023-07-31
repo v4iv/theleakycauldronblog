@@ -101,7 +101,7 @@ function ContactForm() {
             <FormItem>
               <FormLabel>{t('contact-form.name')}</FormLabel>
               <FormControl>
-                <Input disabled={submitDisabled} {...field} />
+                <Input required disabled={submitDisabled} {...field} />
               </FormControl>
               <FormDescription />
               <FormMessage />
@@ -116,7 +116,7 @@ function ContactForm() {
             <FormItem>
               <FormLabel>{t('contact-form.email')}</FormLabel>
               <FormControl>
-                <Input disabled={submitDisabled} {...field} />
+                <Input required disabled={submitDisabled} {...field} />
               </FormControl>
               <FormDescription />
               <FormMessage />
@@ -131,7 +131,12 @@ function ContactForm() {
             <FormItem>
               <FormLabel>{t('contact-form.message')}</FormLabel>
               <FormControl>
-                <Textarea disabled={submitDisabled} rows={12} {...field} />
+                <Textarea
+                  required
+                  rows={12}
+                  disabled={submitDisabled}
+                  {...field}
+                />
               </FormControl>
               <FormDescription />
               <FormMessage />
