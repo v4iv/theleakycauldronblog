@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import {GatsbyBrowser} from 'gatsby'
 import './src/styles/globals.css'
 import {TooltipProvider} from './src/components/ui/tooltip'

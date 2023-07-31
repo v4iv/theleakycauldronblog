@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 
 export function TypographyH1({children}: {children: React.ReactNode}) {
   return (

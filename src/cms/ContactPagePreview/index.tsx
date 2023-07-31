@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import {Separator} from '../../components/ui/separator'
 import {TypographyH1, TypographyLead} from '../../components/ui/typography'
 

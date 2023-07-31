@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import {useTranslation} from 'gatsby-plugin-react-i18next'
 import {Github, Rss, Twitter} from 'lucide-react'
 import {Button} from '@/components/ui/button'

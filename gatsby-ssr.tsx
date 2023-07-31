@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import {GatsbySSR} from 'gatsby'
 import {TooltipProvider} from './src/components/ui/tooltip'
 import {ThemeProvider} from './src/components/ui/theme-context'
