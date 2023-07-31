@@ -9,7 +9,7 @@ const siteMetadata = {
   description: `A Brew of Awesomeness with a Pinch of Magic...`,
   shortName: `tlcb`,
   siteUrl: `https://theleakycauldronblog.com`,
-  image: `/icon-512.png`,
+  image: `/banner.jpg`,
   social: {
     twitter: `@waybove`,
   },

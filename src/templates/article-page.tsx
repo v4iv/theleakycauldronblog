@@ -127,6 +127,8 @@ function ArticlePageTemplate({
               slug={slug}
               excerpt={metaDescription}
               siteURL={siteUrl}
+              side="top"
+              orientation="horizontal"
             />
           </div>
 

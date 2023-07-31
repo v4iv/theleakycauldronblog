@@ -17,7 +17,9 @@ interface ShareSheetProps {
   slug: string
   excerpt: string
   siteURL: string
+  side?: 'top' | 'bottom' | 'left' | 'right'
   iconOnly?: boolean
+  orientation?: 'horizontal' | 'vertical'
 }
 
 function ShareSheet({
@@ -25,7 +27,9 @@ function ShareSheet({
   slug,
   excerpt,
   siteURL,
+  side = 'bottom',
   iconOnly = false,
+  orientation = 'vertical',
 }: ShareSheetProps) {
   const {t} = useTranslation('common')
   const url = siteURL + slug
@@ -43,8 +47,14 @@ function ShareSheet({
           {iconOnly ? '' : t('share-button')}
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-full">
-        <div className="flex flex-col items-center justify-center space-y-4 py-2">
+      <PopoverContent className="w-full" side={side}>
+        <div
+          className={`flex items-center justify-center py-2 ${
+            orientation === 'vertical'
+              ? 'flex-col space-y-4'
+              : 'flex-row space-x-4'
+          }`}
+        >
           <WhatsappShareButton url={url} title={title}>
             <Tooltip>
               <TooltipTrigger asChild>
