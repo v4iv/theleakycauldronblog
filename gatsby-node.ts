@@ -71,13 +71,14 @@ export const onCreateNode: GatsbyNode['onCreateNode'] = ({
 
 export const createPages: GatsbyNode['createPages'] = async ({
   actions,
-  store,
   graphql,
 }) => {
   const {createPage, createRedirect} = actions
 
-  const {config = {}} = store.getState()
-  const {partytownProxiedURLs = []} = config
+  // move partytownProxiedURLs to gatsby-node.ts instead of gatsby-config.ts to force redirect in netlify environment
+  const partytownProxiedURLs = [
+    `https://www.googletagmanager.com/gtag/js?id=${process.env.GATSBY_GTAG}`,
+  ]
 
   for (const host of partytownProxiedURLs) {
     const encodedURL: string = encodeURIComponent(host)
@@ -87,6 +88,7 @@ export const createPages: GatsbyNode['createPages'] = async ({
       toPath: host,
       statusCode: 200,
       force: true,
+      isPermanent: true,
       redirectInBrowser: true,
     })
   }
