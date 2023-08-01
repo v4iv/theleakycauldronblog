@@ -73,25 +73,7 @@ export const createPages: GatsbyNode['createPages'] = async ({
   actions,
   graphql,
 }) => {
-  const {createPage, createRedirect} = actions
-
-  // move partytownProxiedURLs to gatsby-node.ts instead of gatsby-config.ts to force redirect in netlify environment
-  const partytownProxiedURLs = [
-    `https://www.googletagmanager.com/gtag/js?id=${process.env.GATSBY_GTAG}`,
-  ]
-
-  for (const host of partytownProxiedURLs) {
-    const encodedURL: string = encodeURIComponent(host)
-
-    createRedirect({
-      fromPath: `/__third-party-proxy?url=${encodedURL}`,
-      toPath: host,
-      statusCode: 200,
-      force: true,
-      isPermanent: true,
-      redirectInBrowser: true,
-    })
-  }
+  const {createPage} = actions
 
   const response: any = await graphql<IQueryResult>(`
     query TheLeakyCauldronBlog {
@@ -193,8 +175,8 @@ export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({
     ],
     resolve: {
       alias: {
-        '@/hooks': path.resolve(__dirname, 'src/hooks'),
         '@/lib': path.resolve(__dirname, 'src/lib'),
+        '@/hooks': path.resolve(__dirname, 'src/hooks'),
         '@/components': path.resolve(__dirname, 'src/components'),
         '@/components/ui': path.resolve(__dirname, 'src/components/ui'),
       },
