@@ -98,7 +98,6 @@
     "skipLibCheck": true /* Skip type checking all .d.ts files. */
   },
   "include": [
-    "globals.d.ts",
     "**/*.ts",
     "**/*.tsx",
     "./src/**/*",
