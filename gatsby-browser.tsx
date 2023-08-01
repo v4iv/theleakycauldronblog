@@ -5,21 +5,6 @@ import ScriptProvider from '@/components/ScriptProvider'
 import {TooltipProvider} from './src/components/ui/tooltip'
 import {ThemeProvider} from './src/components/ui/theme-context'
 
-export const onRouteUpdate: GatsbyBrowser['onRouteUpdate'] = ({location}) => {
-  if (process.env.NODE_ENV !== 'production') {
-    return null
-  }
-  const pagePath = location
-    ? location.pathname + location.search + location.hash
-    : undefined
-  setTimeout(() => {
-    if (typeof window.gtag === 'function') {
-      window.gtag('event', 'page_view', {page_path: pagePath})
-    }
-  }, 50)
-  return true
-}
-
 export const wrapRootElement: GatsbyBrowser['wrapRootElement'] = ({
   element,
 }) => {
