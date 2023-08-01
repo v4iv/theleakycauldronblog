@@ -21,8 +21,7 @@ const config: GatsbyConfig = {
   // If you use VSCode you can also use the GraphQL plugin
   // Learn more at: https://gatsby.dev/graphql-typegen
   partytownProxiedURLs: [
-    `https://www.googletagmanager.com/gtm.js?id=${process.env.GATBSY_GTM_ID}`,
-    `https://www.google-analytics.com/analytics.js`,
+    `https://www.googletagmanager.com/gtag/js?id=${process.env.GATSBY_GTAG}`,
   ],
   graphqlTypegen: true,
   plugins: [
