@@ -24,6 +24,7 @@
                 "sessionStorage": true,
                 "localStorage": true,
                 "alert": true,
+                "gtag": true,
                 "zaraz": true
             },
             "rules": {
