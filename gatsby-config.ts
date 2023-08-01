@@ -283,7 +283,9 @@ const config: GatsbyConfig = {
                     }
                     frontmatter: {
                       title: string
+                      author: string
                       date: string
+                      tags: string[]
                       templateKey: string
                     }
                   }[]
@@ -311,8 +313,10 @@ const config: GatsbyConfig = {
 
                   return Object.assign({}, node.frontmatter, {
                     title: node.frontmatter.title,
+                    author: node.frontmatter.author,
                     description: node.excerpt,
                     date: node.frontmatter.date,
+                    categories: node.frontmatter.tags,
                     url: site.siteMetadata.siteUrl + node.fields.slug,
                     guid: site.siteMetadata.siteUrl + node.fields.slug,
                     custom_elements: [{'content:encoded': html}],
@@ -331,7 +335,9 @@ const config: GatsbyConfig = {
                   }
                   frontmatter {
                     title
+                    author
                     date
+                    tags
                     templateKey
                   }
                 }
