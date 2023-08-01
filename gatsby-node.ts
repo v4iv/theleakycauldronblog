@@ -71,9 +71,25 @@ export const onCreateNode: GatsbyNode['onCreateNode'] = ({
 
 export const createPages: GatsbyNode['createPages'] = async ({
   actions,
+  store,
   graphql,
 }) => {
-  const {createPage} = actions
+  const {createPage, createRedirect} = actions
+
+  const {config = {}} = store.getState()
+  const {partytownProxiedURLs = []} = config
+
+  for (const host of partytownProxiedURLs) {
+    const encodedURL: string = encodeURIComponent(host)
+
+    createRedirect({
+      fromPath: `/__third-party-proxy?url=${encodedURL}`,
+      toPath: host,
+      statusCode: 200,
+      force: true,
+      redirectInBrowser: true,
+    })
+  }
 
   const response: any = await graphql<IQueryResult>(`
     query TheLeakyCauldronBlog {
