@@ -15,7 +15,7 @@ tags:
   - typescript
   - developer
 ---
-When I first started this blog, I was among the early adopters of Gatsby JS, a static site generator that allowed me to create blazing-fast websites with React and GraphQL. However, in those early days, Gatsby was still evolving, and the plugin ecosystem was not as mature and stable as it is today. As each new release brought improvements, it also brought its fair share of challenges. Nonetheless, I persevered, learning from issues that arose and helping others in the process.
+When I first started this blog, I was among the early adopters of [Gatsby JS](https://www.gatsbyjs.com/docs), a static site generator that allowed me to create blazing-fast websites with React and GraphQL. However, in those early days, Gatsby was still evolving, and the plugin ecosystem was not as mature and stable as it is today. As each new release brought improvements, it also brought its fair share of challenges. Nonetheless, I persevered, learning from issues that arose and helping others in the process.
 
 By the time I released version 2 of my website using Gatsby 3, the platform had significantly matured, and it offered more stability and features. However, one crucial aspect was missing - TypeScript support. It was time to address this limitation and make my codebase more robust.
 
@@ -27,7 +27,7 @@ To eliminate bloat and unnecessary dependencies, I decided to rewrite my codebas
 
 ## Revamping Styling with `shadcn/ui`
 
-To maintain consistency in styling and ensure future extensibility, I sought out a suitable component system. After exploring various options, I settled on `shadcn/ui`, a flexible framework that generates component files, allowing for infinite customization possibilities. This choice provided the perfect balance of convenience and control, saving me the trouble of designing a new component system from scratch.
+To maintain consistency in styling and ensure future extensibility, I sought out a suitable component system. After exploring various options, I settled on [`shadcn/ui`](https://ui.shadcn.com), a flexible framework that generates component files, allowing for infinite customization possibilities. This choice provided the perfect balance of convenience and control, saving me the trouble of designing a new component system from scratch.
 
 ## Improving User Experience: Pagination and Search Functionality
 
@@ -39,7 +39,7 @@ Moreover, the search functionality on my blog required enhancement. With the pre
 
 As part of this migration process, I reevaluated the features present on my blog. I decided to remove certain elements that were either outdated or posed more problems than benefits. Among the features I discarded were:
 
-* **Site-wide branding with `config.js`:** To maintain branding consistency across the site, I implemented it using `react-i18next` instead.
+* **Site-wide branding with `config.js`:** To maintain branding consistency across the site i was using a config.js file but removed that in favor of `react-i18next` as it was a dual purpose solution.
 * **Embedding support for various services:** I streamlined the embedded content to avoid clutter and improve loading times.
 * **Offline support:** While it sounded good on paper, I found that offline support created more issues than it resolved, so I decided to drop it.
 * **Cookie consent:** The previous cookie consent implementation was unreliable, so I removed it in favor of a better user experience.
@@ -53,7 +53,7 @@ Amidst the removal of unnecessary features, I also introduced some exciting new 
 
 * **Site-wide branding using `react-i18next`:** This allowed me to make a base to provide multilingual support in future while still acting as a one stop config hub.
 * **Automatic Dark mode:** Catering to the growing trend and preferences for dark mode, I incorporated this feature to give users more control over their reading experience.
-* **Cloudflare *Zaraz*:** By integrating *Zaraz*, I gained more granular control over tracking and analytics on my blog, without blocking main thread.
+* **Cloudflare *Zaraz*:** By integrating *[Zaraz](https://www.cloudflare.com/application-services/products/zaraz/)*, I gained more granular control over tracking and analytics on my blog, without blocking main thread.
 * **Contact form using `react-hook-form` and validation with `zod`:** To ensure a smoother experience for users interacting with the contact form, I migrated from `Formik` to `react-hook-form`, and for validation, I switched from `yup` to `zod`.
 * **Licensing changes:** I made licensing more explicit, separating licenses for posts, the code within them, and the Gatsby website. Thanks [@gaereon](https://twitter.com/dan_abramov)
 * **Typescript and GraphQL type generation:** Adding TypeScript support allowed for better code maintenance and provided improved type safety. Additionally, GraphQL type generation further enhanced the development workflow.
