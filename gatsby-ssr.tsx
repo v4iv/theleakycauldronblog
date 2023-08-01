@@ -1,15 +1,43 @@
 import React from 'react'
 import {GatsbySSR} from 'gatsby'
+import ScriptProvider from './src/components/ScriptProvider'
 import {TooltipProvider} from './src/components/ui/tooltip'
 import {ThemeProvider} from './src/components/ui/theme-context'
 
 export const onRenderBody: GatsbySSR['onRenderBody'] = ({
   setHtmlAttributes,
+  setHeadComponents,
   setPreBodyComponents,
 }) => {
   setHtmlAttributes({
     lang: 'en',
   })
+
+  setHeadComponents([
+    <script
+      key="partytown-vanilla-config"
+      dangerouslySetInnerHTML={{
+        __html: `partytown = {
+           resolveUrl(url, location) {
+              if (url.hostname.includes('google-analytics')) {
+                // Use a secure connection
+                if (url?.protocol === 'http:') {
+                  url = new URL(url.href.replace('http', 'https'))
+                }
+
+                // Point to our proxied URL
+                const proxyUrl = new URL(location.origin + '/__third-party-proxy')
+                proxyUrl.searchParams.append('url', url)
+
+                return proxyUrl
+              }
+
+              return url
+           }
+         }`,
+      }}
+    />,
+  ])
 
   setPreBodyComponents([
     <script
@@ -44,8 +72,10 @@ export const onRenderBody: GatsbySSR['onRenderBody'] = ({
 
 export const wrapRootElement: GatsbySSR['wrapRootElement'] = ({element}) => {
   return (
-    <ThemeProvider>
-      <TooltipProvider>{element}</TooltipProvider>
-    </ThemeProvider>
+    <ScriptProvider>
+      <ThemeProvider>
+        <TooltipProvider>{element}</TooltipProvider>
+      </ThemeProvider>
+    </ScriptProvider>
   )
 }

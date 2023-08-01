@@ -77,6 +77,8 @@
 
      - DISQUS_SHORTNAME - To enable Disqus comments
 
+     - GATSBY_GTM_ID - To enable Google Tag Manager
+
 5. **Learn more**
 
     - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
