@@ -33,7 +33,8 @@ export const onRenderBody: GatsbySSR['onRenderBody'] = ({
               }
 
               return url
-           }
+           },
+           debug: true
          }`,
       }}
     />,
