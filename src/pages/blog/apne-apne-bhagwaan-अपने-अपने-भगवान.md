@@ -3,7 +3,7 @@ templateKey: article-page
 title: Apne Apne Bhagwaan — अपने अपने भगवान
 slug: apne-apne-bhagwaan
 author: Vyom
-authorLink: https://theleakycauldronblog.com/contact
+authorLink: /search/?q=vyom
 date: 2020-08-16T14:49:01.852Z
 cover: /img/ben-white-apne-apne-bhagwaan.jpg
 metaTitle: Apne Apne Bhagwaan — अपने अपने भगवान

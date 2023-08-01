@@ -3,7 +3,7 @@ templateKey: article-page
 title: Raat — रात
 slug: raat
 author: Vyom
-authorLink: https://theleakycauldronblog.com/contact
+authorLink: /search/?q=vyom
 date: 2020-10-15T08:30:41.705Z
 cover: /img/todd-diemer-raat-vyom.jpg
 metaTitle: Raat - रात
