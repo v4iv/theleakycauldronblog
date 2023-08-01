@@ -77,7 +77,7 @@
 
      - DISQUS_SHORTNAME - To enable Disqus comments
 
-     - GATSBY_GTAG - To enable GA4 Universal Analytics
+     - GATSBY_GTAG - To enable Google Analytics 4
 
 5. **Learn more**
 
