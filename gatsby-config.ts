@@ -25,6 +25,7 @@ const config: GatsbyConfig = {
   // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
   plugins: [
+    `gatsby-plugin-netlify`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -358,7 +359,6 @@ const config: GatsbyConfig = {
     `gatsby-plugin-twitter`,
     `gatsby-plugin-use-query-params`,
     `gatsby-plugin-catch-links`,
-    `gatsby-plugin-netlify`,
     `gatsby-plugin-remove-serviceworker`,
     // `gatsby-plugin-perf-budgets`,
     // `gatsby-plugin-webpack-bundle-analyser-v2`,

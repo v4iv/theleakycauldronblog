@@ -17,7 +17,7 @@ export const onRenderBody: GatsbySSR['onRenderBody'] = ({
     <script
       key="partytown-vanilla-config"
       dangerouslySetInnerHTML={{
-        __html: `partytown = { debug: false }`,
+        __html: `partytown = { debug: true }`,
       }}
     />,
   ])
