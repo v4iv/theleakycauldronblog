@@ -77,8 +77,6 @@
 
      - DISQUS_SHORTNAME - To enable Disqus comments
 
-     - GATSBY_GTAG - To enable Google Analytics 4
-
 5. **Learn more**
 
     - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
