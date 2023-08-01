@@ -2,7 +2,6 @@ import React from 'react'
 import {graphql} from 'gatsby'
 import {useTranslation} from 'gatsby-plugin-react-i18next'
 import {Separator} from '@/components/ui/separator'
-import {TypographyH1, TypographyH2} from '@/components/ui/typography'
 import {useSiteMetadata} from '@/hooks/useSiteMetadata'
 import SEO from '@/components/SEO'
 import Layout from '@/components/Layout'
@@ -13,10 +12,14 @@ function NotFoundPage() {
   return (
     <Layout>
       <header className="mx-auto flex min-h-screen w-full max-w-screen-md items-center justify-center">
-        <div className="flex h-12 items-center space-x-4">
-          <TypographyH1>404</TypographyH1>
+        <div className="flex h-8 items-center space-x-4">
+          <h1 className="text-sm text-muted-foreground md:text-xl">404</h1>
+
           <Separator orientation="vertical" />
-          <TypographyH2>{t('page-not-found')}</TypographyH2>
+
+          <p className="text-sm text-muted-foreground md:text-xl">
+            {t('page-not-found')}
+          </p>
         </div>
       </header>
     </Layout>
