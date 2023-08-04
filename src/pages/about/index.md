@@ -29,4 +29,4 @@ As they say, life's a journey and I want us to support each other through each p
 
 ` ~~~ Mischief Managed ~~~ `
 
-Source Code: [https://github.com/v4iv/theleakycauldronblog](https://github.com/v4iv/theleakycauldronblog)
+[Source Code](https://github.com/v4iv/theleakycauldronblog)

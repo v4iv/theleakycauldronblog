@@ -55,7 +55,7 @@ Amidst the removal of unnecessary features, I also introduced some exciting new 
 * **Automatic Dark mode:** Catering to the growing trend and preferences for dark mode, I incorporated this feature to give users more control over their reading experience.
 * **Cloudflare *Zaraz*:** By integrating *[Zaraz](https://www.cloudflare.com/application-services/products/zaraz/)*, I gained more granular control over tracking and analytics on my blog, without blocking main thread.
 * **Contact form using `react-hook-form` and validation with `zod`:** To ensure a smoother experience for users interacting with the contact form, I migrated from `Formik` to `react-hook-form`, and for validation, I switched from `yup` to `zod`.
-* **Licensing changes:** I made licensing more explicit, separating licenses for posts, the code within them, and the Gatsby website. Thanks [@gaereon](https://twitter.com/dan_abramov)
+* **Licensing changes:** I made licensing more explicit, separating licenses for posts, the code within them, and the Gatsby website. Thanks [@dan_abramov](https://twitter.com/dan_abramov)
 * **Typescript and GraphQL type generation:** Adding TypeScript support allowed for better code maintenance and provided improved type safety. Additionally, GraphQL type generation further enhanced the development workflow.
 
 ## Optimization and Bloat Removal
