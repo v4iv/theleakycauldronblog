@@ -5,6 +5,7 @@ import {
   TypographyLarge,
   TypographyLead,
 } from '@/components/ui/typography'
+import {useSiteMetadata} from '@/hooks/useSiteMetadata'
 import SEO from '@/components/SEO'
 import Layout from '@/components/Layout'
 import ImageBox from '@/components/ImageBox'
@@ -74,6 +75,61 @@ export function Head({
     },
   },
 }: HeadProps<DataProps>) {
+  const {title, siteUrl} = useSiteMetadata()
+
+  const breadcrumbSchemaOrgJSONLD = {
+    '@context': 'http://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        item: {
+          '@id': siteUrl,
+          name: 'Home',
+          image: `${siteUrl}/icon-512.png`,
+        },
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        item: {
+          '@id': `${siteUrl}/about/`,
+          name: 'About',
+          image: `${siteUrl}/icon-512.png`,
+        },
+      },
+    ],
+  }
+
+  const aboutPageSchemaOrgJSONLD = {
+    '@context': 'http://schema.org',
+    '@type': 'AboutPage',
+    url: `${siteUrl}/about/`,
+    headline: metaTitle,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `${siteUrl}/about/`,
+    },
+    image: {
+      '@type': 'ImageObject',
+      url: image.publicURL,
+      width: 3120,
+      height: 1394,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: title,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${siteUrl}/icon-512.png`,
+        width: 512,
+        height: 512,
+      },
+    },
+    description: metaDescription,
+  }
+
   return (
     <SEO
       pathname={pathname}
@@ -81,7 +137,16 @@ export function Head({
       description={metaDescription}
       author={author}
       image={image.publicURL}
-    />
+    >
+      {/* Schema.org tags */}
+      <script type="application/ld+json">
+        {JSON.stringify(breadcrumbSchemaOrgJSONLD)}
+      </script>
+
+      <script type="application/ld+json">
+        {JSON.stringify(aboutPageSchemaOrgJSONLD)}
+      </script>
+    </SEO>
   )
 }
 

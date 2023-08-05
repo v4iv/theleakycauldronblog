@@ -1,11 +1,12 @@
 import React from 'react'
 import {HeadProps, Link, PageProps, graphql} from 'gatsby'
+import {useTranslation} from 'gatsby-plugin-react-i18next'
 import {ArrowLeft, ArrowRight} from 'lucide-react'
 import {Button} from '@/components/ui/button'
+import {useSiteMetadata} from '@/hooks/useSiteMetadata'
 import SEO from '@/components/SEO'
 import Layout from '@/components/Layout'
 import ArticleList from '@/components/ArticleList'
-import {useTranslation} from 'react-i18next'
 
 type DataProps = {
   allMarkdownRemark: {
@@ -84,7 +85,28 @@ export default HomePageTemplate
 export function Head({
   location: {pathname},
 }: HeadProps<DataProps, PageContextProps>) {
-  return <SEO pathname={pathname} />
+  const {title, siteUrl} = useSiteMetadata()
+
+  const websiteSchemaOrgJSONLD = {
+    '@context': 'http://schema.org',
+    '@type': 'WebSite',
+    url: siteUrl,
+    name: title,
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: `${siteUrl}/search/?q={search_term_string}`,
+      'query-input': 'required name=search_term_string',
+    },
+  }
+
+  return (
+    <SEO pathname={pathname}>
+      {/* Schema.org tags */}
+      <script type="application/ld+json">
+        {JSON.stringify(websiteSchemaOrgJSONLD)}
+      </script>
+    </SEO>
+  )
 }
 
 export const articleListQuery = graphql`

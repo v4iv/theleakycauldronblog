@@ -4,6 +4,7 @@ import {Link, graphql, PageProps, HeadProps} from 'gatsby'
 import 'prismjs/themes/prism-twilight.css'
 import {badgeVariants} from '@/components/ui/badge'
 import {TypographyH1, TypographyLead} from '@/components/ui/typography'
+import {useSiteMetadata} from '@/hooks/useSiteMetadata'
 import SEO from '@/components/SEO'
 import Layout from '@/components/Layout'
 import ImageBox from '@/components/ImageBox'
@@ -145,10 +146,68 @@ export function Head({
   location: {pathname},
   data: {
     markdownRemark: {
-      frontmatter: {author, cover, metaTitle, metaDescription},
+      frontmatter: {author, cover, date, metaTitle, metaDescription},
     },
   },
 }: HeadProps<DataProps>) {
+  const {title, siteUrl} = useSiteMetadata()
+
+  const breadcrumbSchemaOrgJSONLD = {
+    '@context': 'http://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        item: {
+          '@id': siteUrl,
+          name: 'Home',
+          image: `${siteUrl}/icon-512.png`,
+        },
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        item: {
+          '@id': siteUrl + pathname,
+          name: title,
+          image: cover.publicURL,
+        },
+      },
+    ],
+  }
+
+  const blogPostingSchemaOrgJSONLD = {
+    '@context': 'http://schema.org',
+    '@type': 'BlogPosting',
+    url: siteUrl + pathname,
+    name: title,
+    headline: metaTitle,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': siteUrl + pathname,
+    },
+    author: {
+      '@type': 'Person',
+      name: author,
+    },
+    image: {
+      '@type': 'ImageObject',
+      url: cover.publicURL,
+    },
+    datePublished: date,
+    dateModified: date,
+    publisher: {
+      '@type': 'Organization',
+      name: title,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${siteUrl}/icon-512.png`,
+      },
+    },
+    description: metaDescription,
+  }
+
   return (
     <SEO
       pathname={pathname}
@@ -156,7 +215,16 @@ export function Head({
       description={metaDescription}
       author={author}
       image={cover.publicURL}
-    />
+    >
+      {/* Schema.org tags */}
+      <script type="application/ld+json">
+        {JSON.stringify(breadcrumbSchemaOrgJSONLD)}
+      </script>
+
+      <script type="application/ld+json">
+        {JSON.stringify(blogPostingSchemaOrgJSONLD)}
+      </script>
+    </SEO>
   )
 }
 
