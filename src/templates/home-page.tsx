@@ -50,25 +50,30 @@ function HomePageTemplate({
 
   return (
     <Layout>
-      <ArticleList pages={pages} />
+      <div className="flex flex-col">
+        <div className="grow">
+          <ArticleList pages={pages} />
+        </div>
 
-      <div className="mx-auto flex w-full max-w-screen-md justify-evenly pb-9 pt-5 align-middle">
-        {!isFirst && (
-          <Button asChild>
-            <Link to={prevPage} rel="prev">
-              <ArrowLeft className="mr-2 h-4 w-4" />
-              &nbsp;{t('prev')}
-            </Link>
-          </Button>
-        )}
-        {!isLast && (
-          <Button asChild>
-            <Link to={nextPage} rel="next">
-              {t('next')}&nbsp;
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
-        )}
+        <div className="mx-auto flex w-full max-w-screen-md justify-evenly pb-9 pt-5 align-middle">
+          {!isFirst && (
+            <Button asChild>
+              <Link to={prevPage} rel="prev">
+                <ArrowLeft className="mr-2 h-4 w-4" />
+                &nbsp;{t('prev')}
+              </Link>
+            </Button>
+          )}
+
+          {!isLast && (
+            <Button asChild>
+              <Link to={nextPage} rel="next">
+                {t('next')}&nbsp;
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          )}
+        </div>
       </div>
     </Layout>
   )

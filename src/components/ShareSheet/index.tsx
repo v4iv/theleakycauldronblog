@@ -47,6 +47,7 @@ function ShareSheet({
           {iconOnly ? '' : t('share-button')}
         </Button>
       </PopoverTrigger>
+
       <PopoverContent className="w-full" side={side}>
         <div
           className={`flex items-center justify-center py-2 ${
@@ -184,6 +185,7 @@ function ShareSheet({
                 </div>
               </CopyToClipboard>
             </TooltipTrigger>
+
             <TooltipContent>
               <p>{t('share.copy-link')}</p>
             </TooltipContent>

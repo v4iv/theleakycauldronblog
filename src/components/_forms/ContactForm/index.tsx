@@ -100,10 +100,13 @@ function ContactForm() {
           render={({field}) => (
             <FormItem>
               <FormLabel>{t('contact-form.name')}</FormLabel>
+
               <FormControl>
-                <Input required disabled={submitDisabled} {...field} />
+                <Input disabled={submitDisabled} {...field} />
               </FormControl>
+
               <FormDescription />
+
               <FormMessage />
             </FormItem>
           )}
@@ -115,10 +118,13 @@ function ContactForm() {
           render={({field}) => (
             <FormItem>
               <FormLabel>{t('contact-form.email')}</FormLabel>
+
               <FormControl>
-                <Input required disabled={submitDisabled} {...field} />
+                <Input disabled={submitDisabled} {...field} />
               </FormControl>
+
               <FormDescription />
+
               <FormMessage />
             </FormItem>
           )}
@@ -130,15 +136,13 @@ function ContactForm() {
           render={({field}) => (
             <FormItem>
               <FormLabel>{t('contact-form.message')}</FormLabel>
+
               <FormControl>
-                <Textarea
-                  required
-                  rows={12}
-                  disabled={submitDisabled}
-                  {...field}
-                />
+                <Textarea rows={12} disabled={submitDisabled} {...field} />
               </FormControl>
+
               <FormDescription />
+
               <FormMessage />
             </FormItem>
           )}
@@ -158,6 +162,7 @@ function ContactForm() {
             {submitDisabled && (
               <Loader2 className="mr-2 h-4 w-4 animate-spin" />
             )}
+
             {submitDisabled
               ? t('contact-form.submitting')
               : t('contact-form.submit')}
