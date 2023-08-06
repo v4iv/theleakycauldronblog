@@ -13,7 +13,7 @@ tags:
   - psychology
   - relationships
 ---
-Hello everyone,I know it's tough. I know you're going through a lot.
+I know it's tough. I know you're going through a lot.
 
 BUT
 
