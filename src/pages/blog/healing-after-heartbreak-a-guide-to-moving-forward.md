@@ -11,8 +11,8 @@ metaDescription: Discover advice for overcoming heartbreak, finding hope, and
   embracing a better future. You're not alone on this journey. Deal with it
   properly and move forward in a healthy manner.
 tags:
-  - psychology
   - relationships
+  - psychology
 ---
 I know it's tough. I know you're going through a lot.
 
