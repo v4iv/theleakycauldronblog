@@ -1,5 +1,5 @@
 [build.environment]
-  NODE_VERSION = "20.4.0"
+  NODE_VERSION = "18.17.0"
 
 [[headers]]
   for = "/*.png"
