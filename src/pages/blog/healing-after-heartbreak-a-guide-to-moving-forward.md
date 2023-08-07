@@ -1,6 +1,6 @@
 ---
 templateKey: article-page
-title: "Healing After Heartbreak: A Guide to Moving Forward Healthily"
+title: "Healing After Heartbreak: A Guide to Moving Forward"
 slug: healing-after-heartbreak-healthily
 author: Rishabh Chakrabarti
 authorLink: https://rishacha.github.io
