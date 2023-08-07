@@ -146,7 +146,14 @@ export function Head({
   location: {pathname},
   data: {
     markdownRemark: {
-      frontmatter: {author, cover, date, metaTitle, metaDescription},
+      frontmatter: {
+        author,
+        authorLink,
+        cover,
+        date,
+        metaTitle,
+        metaDescription,
+      },
     },
   },
 }: HeadProps<DataProps>) {
@@ -190,6 +197,7 @@ export function Head({
     author: {
       '@type': 'Person',
       name: author,
+      url: authorLink,
     },
     image: {
       '@type': 'ImageObject',
