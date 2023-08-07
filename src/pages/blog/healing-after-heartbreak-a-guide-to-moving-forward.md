@@ -20,7 +20,7 @@ BUT
 
 I sincerely believe that sharing these points can help someone. I won't bore anyone with a lot of details about my past and my relationship but you can take my word for it that it was tight (but it also had its ups and downs). I didn't breakup, she did. She cheated on me and long distance + COVID + family issues were huge factors. Posts and replies on this sub also helped me. A lot of the stuff has been said earlier in some other posts. So TL;DR -
 
-\#﻿# Succint Points
+## Succint Points
 
 * No contact and kill the hope (it's gone, you have to accept it) 
 * There's tradeoffs - maybe they will go on with their life with different issues in a different relationship and maybe you will go on with your life with different issues in a different relationship. The bottom line is there's always someone out there with a different set of tradeoffs that might interlock better with your criterion
@@ -37,5 +37,6 @@ I sincerely believe that sharing these points can help someone. I won't bore any
 * Rebound or no rebound doesn't matter. Don't start a new relationship with any agenda. Just let it flow and believe that it'll be different. Don't go looking for patterns that match with your ex. Let it be fresh - like you're going through a different journey altogether
 * Don't try to victimize yourself, don't get addicted to the sadness. Don't think that you need to be in mourning for a certain period of time. Your life doesn't have to be that same old depressing movie. At a certain point, you need to snap out of it and make space for something better
 
-\#﻿# Conclusion
+## Conclusion
+
 All in all I would say one thing to end this already long post. Try and cope up with it healthily. Try to not let it affect your present. I know it's a lot of philosophy, it may/may not help you, but I am telling you with complete confidence that there's nothing to be ashamed of. There's nothing to be afraid of and you are not alone. Have faith that your future is going to be better. There's plenty of fish in the sea.
