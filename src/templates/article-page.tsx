@@ -1,7 +1,10 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import slugify from 'slugify'
+import {useTranslation} from 'gatsby-plugin-react-i18next'
 import {Link, graphql, PageProps, HeadProps} from 'gatsby'
+import {ChevronsUp} from 'lucide-react'
 import 'prismjs/themes/prism-twilight.css'
+import {Button} from '@/components/ui/button'
 import {badgeVariants} from '@/components/ui/badge'
 import {TypographyH1, TypographyLead} from '@/components/ui/typography'
 import {useSiteMetadata} from '@/hooks/useSiteMetadata'
@@ -11,6 +14,7 @@ import ImageBox from '@/components/ImageBox'
 import Content from '@/components/Content'
 import ShareSheet from '@/components/ShareSheet'
 import CommentBox from '@/components/CommentBox'
+import {Tooltip, TooltipContent, TooltipTrigger} from '@/components/ui/tooltip'
 
 type DataProps = {
   site: {
@@ -61,6 +65,23 @@ function ArticlePageTemplate({
     },
   },
 }: PageProps<DataProps>) {
+  const {t} = useTranslation()
+  const [showButton, setShowButton] = useState(false)
+
+  useEffect(() => {
+    // Button is displayed after scrolling for 300 pixels
+    const handleScrollButtonVisiblity = () => {
+      document.body.scrollTop > 20 || document.documentElement.scrollTop > 20
+        ? setShowButton(true)
+        : setShowButton(false)
+    }
+
+    window.addEventListener('scroll', handleScrollButtonVisiblity)
+    return () => {
+      window.removeEventListener('scroll', handleScrollButtonVisiblity)
+    }
+  }, [])
+
   return (
     <Layout>
       <article>
@@ -134,6 +155,24 @@ function ArticlePageTemplate({
           </div>
 
           <CommentBox id={id} slug={slug} title={title} siteURL={siteUrl} />
+
+          {showButton && (
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button
+                  aria-label={t('scroll-to-top')}
+                  size="icon"
+                  variant="destructive"
+                  className="fixed bottom-2 right-2"
+                  onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}
+                >
+                  <ChevronsUp className="h-4 w-4" />
+                </Button>
+              </TooltipTrigger>
+
+              <TooltipContent side="left">{t('scroll-to-top')}</TooltipContent>
+            </Tooltip>
+          )}
         </div>
       </article>
     </Layout>
