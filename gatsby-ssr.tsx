@@ -9,6 +9,7 @@ export const onRenderBody: GatsbySSR['onRenderBody'] = ({
 }) => {
   setHtmlAttributes({
     lang: 'en',
+    className: 'scroll-smooth',
   })
 
   setPreBodyComponents([

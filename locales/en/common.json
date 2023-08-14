@@ -17,6 +17,7 @@
     "tag-subtitle_one": "{{count}} post tagged with \"{{tag}}\"",
     "tag-subtitle_other": "{{count}} posts tagged with \"{{tag}}\"",
     "share-button": "Share",
+    "scroll-to-top": "Scroll To Top",
     "quick-search": "QUICK SEARCH",
     "footer": {
         "copyright": "Copyright © 2018-{{year}} The Leaky Cauldron Blog. All Rights Reserved.",
