@@ -163,7 +163,7 @@ function ArticlePageTemplate({
                   aria-label={t('scroll-to-top')}
                   size="icon"
                   variant="destructive"
-                  className="fixed bottom-2 right-2"
+                  className="fixed bottom-5 right-2"
                   onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}
                 >
                   <ChevronsUp className="h-4 w-4" />

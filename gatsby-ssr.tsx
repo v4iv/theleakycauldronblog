@@ -1,7 +1,7 @@
 import React from 'react'
 import {GatsbySSR} from 'gatsby'
 import {TooltipProvider} from './src/components/ui/tooltip'
-import {ThemeProvider} from './src/components/ui/theme-context'
+import {ThemeProvider} from './src/components/ui/theme-provider'
 
 export const onRenderBody: GatsbySSR['onRenderBody'] = ({
   setHtmlAttributes,
@@ -18,26 +18,8 @@ export const onRenderBody: GatsbySSR['onRenderBody'] = ({
       dangerouslySetInnerHTML={{
         // taken from next-themes, removes flicker
         __html: `
-                  !(function () {
-                    try {
-                      const d = document.body,
-                        c = d.classList
-                      c.remove('light', 'dark')
-                      const e = localStorage.getItem('theme')
-                      if ('system' === e || (!e && true)) {
-                        const t = '(prefers-color-scheme: dark)',
-                          m = window.matchMedia(t)
-                        if (m.media !== t || m.matches) {
-                          c.add('dark')
-                        } else {
-                          c.add('light')
-                        }
-                      } else if (e) {
-                        c.add(e || '')
-                      }
-                    } catch (e) {}
-                  })()
-                `,
+        !function(){try{let e=document.body,t=e.classList;t.remove("light","dark");let a=localStorage.getItem("theme");if("system"!==a&&a)a&&t.add(a||"");else{let d="(prefers-color-scheme: dark)",s=window.matchMedia(d);s.media!==d||s.matches?t.add("dark"):t.add("light")}}catch(c){}}();
+        `,
       }}
     />,
   ])

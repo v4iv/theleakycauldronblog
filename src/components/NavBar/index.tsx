@@ -1,9 +1,24 @@
 import React, {lazy, Suspense, useState, useEffect} from 'react'
 import {Link} from 'gatsby'
 import {useTranslation} from 'gatsby-plugin-react-i18next'
-import {Equal, Search, AtSign, Home, MessageCircle, Hash} from 'lucide-react'
+import {
+  Equal,
+  Search,
+  AtSign,
+  Home,
+  MessageCircle,
+  Moon,
+  Sun,
+  Hash,
+} from 'lucide-react'
 import {Button} from '@/components/ui/button'
 import {Tooltip, TooltipContent, TooltipTrigger} from '@/components/ui/tooltip'
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu'
 import {
   Sheet,
   SheetContent,
@@ -14,12 +29,14 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet'
 import {Avatar, AvatarFallback, AvatarImage} from '@/components/ui/avatar'
+import {useTheme} from '@/components/ui/theme-provider'
 
 const CommandPalette = lazy(() => import('@/components/CommandPalette'))
 
 function NavBar() {
   const {t} = useTranslation('common')
   const [open, setOpen] = useState(false)
+  const {setTheme} = useTheme()
 
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -186,13 +203,41 @@ function NavBar() {
                     </Button>
                   </SheetDescription>
 
-                  <SheetFooter>
+                  <SheetFooter className="flex">
                     <p className="hidden font-mono text-[10px] text-muted-foreground md:flex md:items-center">
                       {t('quick-search')}&nbsp;&raquo;&nbsp;
                       <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
                         <span className="text-xs">&#8984;</span>K
                       </kbd>
                     </p>
+
+                    <div className="grow" />
+
+                    <DropdownMenu>
+                      <DropdownMenuTrigger asChild>
+                        <Button variant="outline" size="icon">
+                          <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+
+                          <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+
+                          <span className="sr-only">Toggle theme</span>
+                        </Button>
+                      </DropdownMenuTrigger>
+
+                      <DropdownMenuContent side="top" align="end">
+                        <DropdownMenuItem onClick={() => setTheme('light')}>
+                          Light
+                        </DropdownMenuItem>
+
+                        <DropdownMenuItem onClick={() => setTheme('dark')}>
+                          Dark
+                        </DropdownMenuItem>
+
+                        <DropdownMenuItem onClick={() => setTheme('system')}>
+                          System
+                        </DropdownMenuItem>
+                      </DropdownMenuContent>
+                    </DropdownMenu>
                   </SheetFooter>
                 </SheetContent>
               </Sheet>
