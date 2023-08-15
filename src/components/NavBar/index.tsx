@@ -220,21 +220,21 @@ function NavBar() {
 
                           <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
 
-                          <span className="sr-only">Toggle theme</span>
+                          <span className="sr-only">{t('toggle-theme')}</span>
                         </Button>
                       </DropdownMenuTrigger>
 
                       <DropdownMenuContent side="top" align="end">
                         <DropdownMenuItem onClick={() => setTheme('light')}>
-                          Light
+                          {t('light')}
                         </DropdownMenuItem>
 
                         <DropdownMenuItem onClick={() => setTheme('dark')}>
-                          Dark
+                          {t('dark')}
                         </DropdownMenuItem>
 
                         <DropdownMenuItem onClick={() => setTheme('system')}>
-                          System
+                          {t('system')}
                         </DropdownMenuItem>
                       </DropdownMenuContent>
                     </DropdownMenu>

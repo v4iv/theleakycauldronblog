@@ -21,12 +21,12 @@ export function ThemeProvider({
   ...props
 }: {children: React.ReactNode, defaultTheme?: string
   storageKey?: string}) {
-  const [theme, setTheme] = useState(getThemePreference())
+  const [theme, setTheme] = useState(getThemePreference(storageKey))
   const prefersDarkMode = usePrefersDarkMode()
 
   useEffect(() => {
     const root = window.document.documentElement
- 
+
     root.classList.remove("light", "dark")
 
     if (theme === "system") {
@@ -34,12 +34,16 @@ export function ThemeProvider({
       ? "dark"
       : "light"
 
+      console.log('systemTheme', systemTheme)
+
       root.classList.add(systemTheme)
       return
-    }
+    } 
+
+    console.log('prefersDarkMode', prefersDarkMode)
 
     root.classList.add(theme)
-  }, [prefersDarkMode, theme])
+  }, [theme, prefersDarkMode])
 
   const value = {
     theme,
