@@ -11,10 +11,10 @@ export function encode(data: {[key: string]: any}) {
     .join('&')
 }
 
-export function getThemePreference() {
-  if (typeof window === 'undefined') return 'light'
+export function getThemePreference(storageKey: string) {
+  if (typeof window === 'undefined') return 'system'
 
-  const storedTheme = localStorage.getItem('theme')
+  const storedTheme = localStorage.getItem(storageKey)
 
   if ('system' === storedTheme || (!storedTheme && true)) {
     const query = '(prefers-color-scheme: dark)',
@@ -26,5 +26,5 @@ export function getThemePreference() {
     }
   }
 
-  return 'light'
+  return 'system'
 }

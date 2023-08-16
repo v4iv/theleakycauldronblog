@@ -19,6 +19,10 @@
     "share-button": "Share",
     "scroll-to-top": "Scroll To Top",
     "quick-search": "QUICK SEARCH",
+    "toggle-theme": "Toggle Theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System",
     "footer": {
         "copyright": "Copyright © 2018-{{year}} The Leaky Cauldron Blog. All Rights Reserved.",
         "github": "My Github",
