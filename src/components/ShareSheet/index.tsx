@@ -15,7 +15,6 @@ import {Popover, PopoverContent, PopoverTrigger} from '@/components/ui/popover'
 interface ShareSheetProps {
   title: string
   slug: string
-  excerpt: string
   siteURL: string
   side?: 'top' | 'bottom' | 'left' | 'right'
   iconOnly?: boolean
@@ -25,7 +24,6 @@ interface ShareSheetProps {
 function ShareSheet({
   title,
   slug,
-  excerpt,
   siteURL,
   side = 'bottom',
   iconOnly = false,
@@ -141,7 +139,7 @@ function ShareSheet({
             </Tooltip>
           </RedditShareButton>
 
-          <FacebookShareButton url={url} quote={excerpt}>
+          <FacebookShareButton url={url}>
             <Tooltip>
               <TooltipTrigger asChild>
                 <div
