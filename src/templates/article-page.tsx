@@ -53,15 +53,7 @@ function ArticlePageTemplate({
       html,
       id,
       fields: {slug},
-      frontmatter: {
-        title,
-        cover,
-        date,
-        author,
-        authorLink,
-        tags,
-        metaDescription,
-      },
+      frontmatter: {title, cover, date, author, authorLink, tags},
     },
   },
 }: PageProps<DataProps>) {
@@ -108,12 +100,7 @@ function ArticlePageTemplate({
                 </div>
 
                 <div className="hidden md:flex">
-                  <ShareSheet
-                    title={title}
-                    slug={slug}
-                    excerpt={metaDescription}
-                    siteURL={siteUrl}
-                  />
+                  <ShareSheet title={title} slug={slug} siteURL={siteUrl} />
                 </div>
               </div>
 
@@ -147,7 +134,6 @@ function ArticlePageTemplate({
             <ShareSheet
               title={title}
               slug={slug}
-              excerpt={metaDescription}
               siteURL={siteUrl}
               side="top"
               orientation="horizontal"
