@@ -1,5 +1,6 @@
 import dotenv from 'dotenv'
 import * as path from 'path'
+import adapter from 'gatsby-adapter-netlify'
 import type {GatsbyConfig} from 'gatsby'
 
 dotenv.config({path: `.env.${process.env.NODE_ENV}`})
@@ -21,6 +22,9 @@ const config: GatsbyConfig = {
   // If you use VSCode you can also use the GraphQL plugin
   // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
+  adapter: adapter({
+    excludeDatastoreFromEngineFunction: false,
+  }),
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
@@ -352,7 +356,6 @@ const config: GatsbyConfig = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-netlify`,
     `gatsby-plugin-twitter`,
     `gatsby-plugin-use-query-params`,
     `gatsby-plugin-catch-links`,
