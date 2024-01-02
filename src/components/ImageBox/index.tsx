@@ -11,16 +11,11 @@ function ImageBox({image, alt, className}: ImageBoxProps) {
   const publicURL = image?.publicURL
 
   return typeof image === 'string' ? (
-    <img className={className} placeholder="blurred" src={image} alt={alt} />
+    <img className={className} src={image} alt={alt} />
   ) : getImage(image) ? (
     <GatsbyImage image={getImage(image)!} className={className} alt={alt} />
   ) : (
-    <img
-      className={className}
-      placeholder="blurred"
-      src={publicURL}
-      alt={alt}
-    />
+    <img className={className} src={publicURL} alt={alt} />
   )
 }
 
