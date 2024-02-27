@@ -37,6 +37,6 @@ The inquisitors and the Lord Ruler himself instilled a sense of dread and forebo
 
 While the ending of "The Final Empire" felt satisfying, I couldn't shake the feeling that Vin bordered on Mary Sue territory. However, as I delved further into the trilogy, I came to appreciate the deliberate nature of her character arc. It was a subtle nuance that might have been difficult to grasp initially but added depth upon reflection.
 
-And then there's Sazed—an unsung hero whose quiet strength and unwavering loyalty stole my heart.
+And then there's Sazed — an unsung hero whose quiet strength and unwavering loyalty stole my heart.
 
 In hindsight, "The Final Empire" was almost perfect, with its only flaw being a slight dip in pacing in the middle. But even that minor hiccup couldn't detract from the overall brilliance of Brandon Sanderson's storytelling. It was a journey that left me eager to delve deeper into the world of Mistborn, eager to uncover its secrets and unravel its mysteries.
