@@ -1,84 +1,26 @@
 {
-    "root": true,
-    "overrides": [
-        {
-            "files": [
-                "*.ts",
-                "*.tsx"
-            ],
-            "processor": "@graphql-eslint/graphql",
-            "parser": "@typescript-eslint/parser",
-            "extends": [
-                "eslint:recommended",
-                "plugin:@typescript-eslint/recommended",
-                "plugin:react/recommended",
-                "plugin:prettier/recommended",
-                "plugin:tailwindcss/recommended"
-            ],
-            "env": {
-                "es6": true
-            },
-            "globals": {
-                "graphql": true,
-                "fetch": true,
-                "sessionStorage": true,
-                "localStorage": true,
-                "alert": true,
-                "gtag": true,
-                "zaraz": true
-            },
-            "rules": {
-                "prettier/prettier": [
-                    "warn",
-                    {
-                        "singleQuote": true,
-                        "bracketSpacing": false,
-                        "trailingComma": "all",
-                        "semi": false,
-                        "endOfLine": "lf"
-                    }
-                ],
-                "prefer-template": "error",
-                "@typescript-eslint/no-empty-function": "off",
-                "@typescript-eslint/ban-ts-comment": "off",
-                "@typescript-eslint/no-explicit-any": "off"
-            },
-            "settings": {
-                "react": {
-                    "version": "detect"
-                }
-            }
-        },
-        {
-            "files": [
-                "*.graphql"
-            ],
-            "parser": "@graphql-eslint/eslint-plugin",
-            "plugins": [
-                "@graphql-eslint"
-            ],
-            "rules": {
-                "@graphql-eslint/no-anonymous-operations": "error",
-                "@graphql-eslint/naming-convention": [
-                    "error",
-                    {
-                        "OperationDefinition": {
-                            "style": "PascalCase",
-                            "forbiddenPrefixes": [
-                                "Query",
-                                "Mutation",
-                                "Subscription",
-                                "Get"
-                            ],
-                            "forbiddenSuffixes": [
-                                "Query",
-                                "Mutation",
-                                "Subscription"
-                            ]
-                        }
-                    }
-                ]
-            }
-        }
-    ]
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:prettier/recommended",
+    "plugin:tailwindcss/recommended"
+  ],
+  "plugins": [
+    "prettier"
+  ],
+  "rules": {
+    "prettier/prettier": [
+      "warn",
+      {
+        "singleQuote": true,
+        "bracketSpacing": false,
+        "trailingComma": "all",
+        "semi": false,
+        "endOfLine": "lf"
+      }
+    ],
+    "prefer-template": "error",
+    "tailwindcss/no-custom-classname": "off"
+  }
 }

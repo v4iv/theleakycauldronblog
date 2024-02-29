@@ -2,92 +2,46 @@
 
 <p align="center">
   <a href="https://theleakycauldronblog.com">
-    <img alt="Gatsby" src="https://theleakycauldronblog.com/icon-512.png" width="60" />
+    <img alt="tlcb" src="https://theleakycauldronblog.com/icon-512.png" width="60" />
   </a>
 </p>
 <h1 align="center">
   The Leaky Cauldron Blog
 </h1>
 
-## ✨ Features
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-- TypeScript
+## Getting Started
 
-- Lunr search
+First, run the development server:
 
-- Pagination
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-- SEO friendly (Head API, Slug, Sitemap, Robots.txt etc)
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-- Disqus comments
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-- Built with Tailwind CSS (shadcn/ui)
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-- Decap CMS(Netlify CMS) generated markdown pages with Prism code highlighting, social embedding etc
+## Learn More
 
-- Netlify Forms
+To learn more about Next.js, take a look at the following resources:
 
-- Dark Mode
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-## 🚀 Getting Started
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-1. **Create a Gatsby site.**
+## Deploy on Vercel
 
-    Use the Gatsby CLI to create a new site, specifying the blog starter.
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-    ```shell
-    # create a new Gatsby project
-    gatsby new {your-project-name} https://github.com/v4iv/theleakycauldronblog.git 
-    ```
-
-2. **Start developing.**
-
-    Navigate to new site’s directory and start it up.
-
-    ```shell
-    cd {your-project-name}/
-    yarn develop
-    ```
-
-3. **Open the code and start editing!**
-
-    Your site is now running at <http://localhost:8000>!
-
-    Edit `src/pages` to see your site update in real-time!
-
-4. **Customize**
-
-    You'll need to change the following files to make it fully yours, also make sure to not deploy the site with the blog posts written for [theleakycauldronblog.com](https://theleakycauldronblog.com):
-
-    - `gatsby-config.ts` : edit siteMetadata variable
-
-    - `locales/en/common.json` : react-i18next is being used to manage entire site's branding, though you can extend it to support multiple languages as well
-
-    - `static/admin/config.yml` : site url, default values
-
-    - `static/icon-*.png` : your brand icons
-
-    - `static/apple-touch-icon.png` : your brand icons
-
-    - `static/favicon.ico` : your brand icons
-
-    - `static/robots.txt` : sitemap url
-
-4. **Environment Variables**
-
-     - DISQUS_SHORTNAME - To enable Disqus comments
-
-5. **Learn more**
-
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [Tutorials](https://www.gatsbyjs.com/docs/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [Guides](https://www.gatsbyjs.com/docs/how-to/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-## Built with Netlify
-
-<a href="https://www.netlify.com">
-  <img src="https://www.netlify.com/img/global/badges/netlify-dark.svg"/>
-</a>
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

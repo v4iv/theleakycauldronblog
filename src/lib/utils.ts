@@ -10,21 +10,3 @@ export function encode(data: {[key: string]: any}) {
     .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
     .join('&')
 }
-
-export function getThemePreference(storageKey: string) {
-  if (typeof window === 'undefined') return 'system'
-
-  const storedTheme = localStorage.getItem(storageKey)
-
-  if ('system' === storedTheme || (!storedTheme && true)) {
-    const query = '(prefers-color-scheme: dark)',
-      systemTheme = window.matchMedia(query)
-    if (systemTheme.media !== query || systemTheme.matches) {
-      return 'dark'
-    } else {
-      return 'light'
-    }
-  }
-
-  return 'system'
-}
