@@ -83,7 +83,7 @@ function SearchPage({
             <Tooltip>
               <TooltipTrigger asChild>
                 <div className="relative flex grow">
-                  <Search className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2" />
+                  <Search className="pointer-events-none absolute right-3 top-1/2 size-4 -translate-y-1/2" />
 
                   <Input
                     autoFocus
@@ -117,7 +117,7 @@ function SearchPage({
                     aria-label={t('close')}
                     onClick={() => navigate(-1)}
                   >
-                    <X className="h-5 w-5 animate-in spin-in" />
+                    <X className="size-5 animate-in spin-in" />
                   </Button>
                 </TooltipTrigger>
 

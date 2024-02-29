@@ -107,7 +107,7 @@ function NavBar() {
                     asChild
                   >
                     <Link to="/search">
-                      <Search className="h-4 w-4" />
+                      <Search className="size-4" />
                     </Link>
                   </Button>
                 </TooltipTrigger>
@@ -126,7 +126,7 @@ function NavBar() {
                         size="icon"
                         aria-label={t('menu')}
                       >
-                        <Equal className="h-6 w-6" />
+                        <Equal className="size-6" />
                       </Button>
                     </SheetTrigger>
                   </TooltipTrigger>
@@ -149,7 +149,7 @@ function NavBar() {
                       asChild
                     >
                       <Link className="flex" to="/">
-                        <Home className="mr-3 h-4 w-4" />
+                        <Home className="mr-3 size-4" />
                         {t('home')}
                       </Link>
                     </Button>
@@ -161,7 +161,7 @@ function NavBar() {
                       asChild
                     >
                       <Link className="flex" to="/search/">
-                        <Search className="mr-2 h-4 w-4" />
+                        <Search className="mr-2 size-4" />
                         {t('search')}
                       </Link>
                     </Button>
@@ -173,7 +173,7 @@ function NavBar() {
                       asChild
                     >
                       <Link className="flex" to="/tags/">
-                        <Hash className="mr-2 h-4 w-4" />
+                        <Hash className="mr-2 size-4" />
                         {t('tags')}
                       </Link>
                     </Button>
@@ -185,7 +185,7 @@ function NavBar() {
                       asChild
                     >
                       <Link className="flex" to="/about/">
-                        <MessageCircle className="mr-2 h-4 w-4" />
+                        <MessageCircle className="mr-2 size-4" />
                         {t('about')}
                       </Link>
                     </Button>
@@ -197,7 +197,7 @@ function NavBar() {
                       asChild
                     >
                       <Link className="flex" to="/contact/">
-                        <AtSign className="mr-2 h-4 w-4" />
+                        <AtSign className="mr-2 size-4" />
                         {t('contact')}
                       </Link>
                     </Button>
@@ -216,9 +216,9 @@ function NavBar() {
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
                         <Button variant="ghost" size="icon">
-                          <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+                          <Sun className="size-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
 
-                          <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                          <Moon className="absolute size-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
 
                           <span className="sr-only">{t('toggle-theme')}</span>
                         </Button>

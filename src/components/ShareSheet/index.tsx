@@ -41,7 +41,7 @@ function ShareSheet({
           size={iconOnly ? 'icon' : 'sm'}
           className="text-xs"
         >
-          <Share className={iconOnly ? 'h-4 w-4' : 'mr-2 h-3 w-3'} />
+          <Share className={iconOnly ? 'size-4' : 'mr-2 size-3'} />
           {iconOnly ? '' : t('share-button')}
         </Button>
       </PopoverTrigger>
@@ -59,12 +59,12 @@ function ShareSheet({
               <TooltipTrigger asChild>
                 <div
                   role="button"
-                  className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-input bg-background text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+                  className="inline-flex size-10 items-center justify-center rounded-md border border-input bg-background text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
                   aria-label={t('share.share-whatsapp')}
                   aria-pressed="false"
                 >
                   <svg
-                    className="h-4 w-4"
+                    className="size-4"
                     data-icon="whatsapp"
                     viewBox="0 0 24 24"
                     style={{fill: 'currentcolor'}}
@@ -87,12 +87,12 @@ function ShareSheet({
               <TooltipTrigger asChild>
                 <div
                   role="button"
-                  className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-input bg-background text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+                  className="inline-flex size-10 items-center justify-center rounded-md border border-input bg-background text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
                   aria-label={t('share.share-twitter')}
                   aria-pressed="false"
                 >
                   <svg
-                    className="h-4 w-4"
+                    className="size-4"
                     data-icon="twitter"
                     viewBox="0 0 32 32"
                     style={{fill: 'currentcolor'}}
@@ -115,12 +115,12 @@ function ShareSheet({
               <TooltipTrigger asChild>
                 <div
                   role="button"
-                  className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-input bg-background text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+                  className="inline-flex size-10 items-center justify-center rounded-md border border-input bg-background text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
                   aria-label={t('share.share-reddit')}
                   aria-pressed="false"
                 >
                   <svg
-                    className="h-4 w-4"
+                    className="size-4"
                     role="img"
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
@@ -144,12 +144,12 @@ function ShareSheet({
               <TooltipTrigger asChild>
                 <div
                   role="button"
-                  className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-input bg-background text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+                  className="inline-flex size-10 items-center justify-center rounded-md border border-input bg-background text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
                   aria-label={t('share.share-facebook')}
                   aria-pressed="false"
                 >
                   <svg
-                    className="h-4 w-4"
+                    className="size-4"
                     data-icon="facebook"
                     viewBox="0 0 32 32"
                     style={{fill: 'currentcolor'}}
@@ -175,11 +175,11 @@ function ShareSheet({
               >
                 <div
                   role="button"
-                  className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-input bg-background text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+                  className="inline-flex size-10 items-center justify-center rounded-md border border-input bg-background text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
                   aria-label={t('share.copy-link')}
                   aria-pressed="false"
                 >
-                  <Link className="h-4 w-4" />
+                  <Link className="size-4" />
                 </div>
               </CopyToClipboard>
             </TooltipTrigger>

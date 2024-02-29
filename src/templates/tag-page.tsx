@@ -47,7 +47,7 @@ function TagPageTemplate({
           <header className="space-y-3">
             <TypographyH1>
               <span className="flex items-end">
-                <Hash className="mr-1 h-11 w-11" />
+                <Hash className="mr-1 size-11" />
                 {tag}
               </span>
             </TypographyH1>

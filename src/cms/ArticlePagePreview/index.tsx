@@ -62,7 +62,7 @@ function ArticlePagePreview({entry, widgetFor}: any) {
 
         <div className="mx-auto w-full max-w-screen-md">
           <div className="p-3 md:px-0 md:py-5">
-            <div className="prose prose-base prose-slate md:prose-lg dark:prose-invert">
+            <div className="prose prose-base prose-slate dark:prose-invert md:prose-lg">
               {body}
             </div>
           </div>
