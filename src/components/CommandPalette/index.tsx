@@ -77,7 +77,7 @@ function CommandPalette({open, setOpen}: CommandPaletteProps) {
               .filter(([, val]) => val.templateKey === 'article-page')
               .map(([key, val]) => (
                 <CommandItem key={key} onSelect={() => navigate(val.slug)}>
-                  <Circle className="mr-2 h-2 w-2" />
+                  <Circle className="mr-2 size-2" />
                   {val.title}
                 </CommandItem>
               ))}

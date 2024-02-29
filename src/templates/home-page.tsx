@@ -60,7 +60,7 @@ function HomePageTemplate({
           {!isFirst && (
             <Button asChild>
               <Link to={prevPage} rel="prev">
-                <ArrowLeft className="mr-2 h-4 w-4" />
+                <ArrowLeft className="mr-2 size-4" />
                 &nbsp;{t('prev')}
               </Link>
             </Button>
@@ -70,7 +70,7 @@ function HomePageTemplate({
             <Button asChild>
               <Link to={nextPage} rel="next">
                 {t('next')}&nbsp;
-                <ArrowRight className="ml-2 h-4 w-4" />
+                <ArrowRight className="ml-2 size-4" />
               </Link>
             </Button>
           )}

@@ -159,9 +159,7 @@ function ContactForm() {
           </Button>
 
           <Button type="submit" disabled={submitDisabled}>
-            {submitDisabled && (
-              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-            )}
+            {submitDisabled && <Loader2 className="mr-2 size-4 animate-spin" />}
 
             {submitDisabled
               ? t('contact-form.submitting')

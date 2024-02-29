@@ -152,7 +152,7 @@ function ArticlePageTemplate({
                   className="fixed bottom-5 right-2"
                   onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}
                 >
-                  <ChevronsUp className="h-4 w-4" />
+                  <ChevronsUp className="size-4" />
                 </Button>
               </TooltipTrigger>
 

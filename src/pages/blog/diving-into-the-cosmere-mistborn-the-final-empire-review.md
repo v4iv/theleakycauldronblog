@@ -25,13 +25,13 @@ The introduction of Kelsier, a troublemaker with layers of complexity, was a hig
 
 Vin, too, struck a chord with me. Her portrayal as someone scarred by an abusive childhood resonated deeply, adding a layer of realism to her character that made her journey all the more compelling.
 
-What truly stood out, however, was the dynamic ensemble of characters that comprised the crew. Each member possessed a distinct personality, and as I journeyed alongside them, I found myself becoming intimately familiar with their quirks and motivations. It was as though I could predict their reactions in any given situation—a testament to the author's skill in crafting relatable characters.
+What truly stood out, however, was the dynamic ensemble of characters that comprised the crew. Each member possessed a distinct personality, and as I journeyed alongside them, I found myself becoming intimately familiar with their quirks and motivations. It was as though I could predict their reactions in any given situation — a testament to the author's skill in crafting relatable characters.
 
 The magic system introduced in "The Final Empire" is unparalleled in its complexity and ingenuity. The way each aspect of magic is intricately woven into the fabric of the trilogy as a whole is nothing short of masterful. It adds layers of depth to the story, enriching the world-building and driving the plot forward in unexpected ways.
 
 The portrayal of nobles and skaa felt incredibly realistic, highlighting the stark divide between the privileged and the oppressed. Their contrasting perspectives and prejudices added another layer of complexity to an already richly textured narrative.
 
-Encountering Hoid, a character often spoken of in memes, was a delightfully unexpected surprise—a nod to the interconnectedness of the Cosmere universe.
+Encountering Hoid, a character often spoken of in memes, was a delightfully unexpected surprise — a nod to the interconnectedness of the Cosmere universe.
 
 The inquisitors and the Lord Ruler himself instilled a sense of dread and foreboding, adding a chilling element to the story that sent shivers down my spine.
 
