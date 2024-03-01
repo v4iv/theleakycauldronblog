@@ -1,6 +1,5 @@
 import React, {lazy, Suspense, useState, useEffect} from 'react'
 import {Link} from 'gatsby'
-import {useTranslation} from 'gatsby-plugin-react-i18next'
 import {
   Equal,
   Search,
@@ -11,14 +10,9 @@ import {
   Sun,
   Hash,
 } from 'lucide-react'
-import {Button} from '@/components/ui/button'
-import {Tooltip, TooltipContent, TooltipTrigger} from '@/components/ui/tooltip'
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu'
+import {StaticImage} from 'gatsby-plugin-image'
+import {useTranslation} from 'gatsby-plugin-react-i18next'
+
 import {
   Sheet,
   SheetContent,
@@ -28,8 +22,16 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet'
-import {Avatar, AvatarFallback, AvatarImage} from '@/components/ui/avatar'
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu'
+import {Button} from '@/components/ui/button'
 import {useTheme} from '@/components/ui/theme-provider'
+import {Avatar, AvatarFallback, AvatarImage} from '@/components/ui/avatar'
+import {Tooltip, TooltipContent, TooltipTrigger} from '@/components/ui/tooltip'
 
 const CommandPalette = lazy(() => import('@/components/CommandPalette'))
 
@@ -61,7 +63,13 @@ function NavBar() {
                       <AvatarImage
                         src="/icon-192-maskable.png"
                         alt="the-leaky-cauldron-blog"
-                      />
+                        asChild
+                      >
+                        <StaticImage
+                          src="../../assets/avatar.png"
+                          alt="the-leaky-cauldron-blog"
+                        />
+                      </AvatarImage>
                       <AvatarFallback>{t('site-short-name')}</AvatarFallback>
                     </Avatar>
                   </Link>
