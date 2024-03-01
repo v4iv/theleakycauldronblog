@@ -52,7 +52,7 @@ function TagPageTemplate({
               </span>
             </TypographyH1>
 
-            <TypographyLead>
+            <TypographyLead className="font-mono">
               {t('tag-subtitle', {count: totalCount, tag: tag})}
             </TypographyLead>
 

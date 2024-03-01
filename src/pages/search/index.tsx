@@ -77,7 +77,7 @@ function SearchPage({
 
   return (
     <>
-      <nav className="mx-auto w-full max-w-screen-md">
+      <nav className="mx-auto w-full max-w-screen-md font-mono">
         <div className="p-3 md:px-0 md:py-5">
           <div className="flex space-x-2">
             <Tooltip>

@@ -39,14 +39,14 @@ function ShareSheet({
           aria-label={t('share-button')}
           variant="outline"
           size={iconOnly ? 'icon' : 'sm'}
-          className="text-xs"
+          className="font-mono text-xs"
         >
           <Share className={iconOnly ? 'size-4' : 'mr-2 size-3'} />
           {iconOnly ? '' : t('share-button')}
         </Button>
       </PopoverTrigger>
 
-      <PopoverContent className="w-full" side={side}>
+      <PopoverContent className="w-full font-mono" side={side}>
         <div
           className={`flex items-center justify-center py-2 ${
             orientation === 'vertical'

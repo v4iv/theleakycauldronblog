@@ -1,9 +1,4 @@
 @tailwind base;
-@layer base {
-  html {
-    @apply font-mono;
-  }
-}
 @tailwind components;
 @tailwind utilities;
  
