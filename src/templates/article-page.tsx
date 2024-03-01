@@ -296,6 +296,7 @@ export const articleQuery = graphql`
               quality: 75
               layout: FULL_WIDTH
               placeholder: BLURRED
+              formats: [AUTO, AVIF, WEBP]
             )
           }
           publicURL

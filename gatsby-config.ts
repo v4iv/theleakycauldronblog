@@ -352,14 +352,9 @@ const config: GatsbyConfig = {
         ],
       },
     },
-    `gatsby-plugin-image`,
-    {
-      resolve: `gatsby-plugin-sharp`,
-      options: {
-        formats: [`auto`, `avif`, `webp`],
-      },
-    },
     `gatsby-plugin-postcss`,
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-twitter`,
     `gatsby-plugin-use-query-params`,

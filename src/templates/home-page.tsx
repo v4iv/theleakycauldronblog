@@ -137,7 +137,12 @@ export const articleListQuery = graphql`
             title
             cover {
               childImageSharp {
-                gatsbyImageData(width: 400, quality: 75, placeholder: BLURRED)
+                gatsbyImageData(
+                  width: 400
+                  quality: 75
+                  placeholder: BLURRED
+                  formats: [AUTO, AVIF, WEBP]
+                )
               }
               publicURL
             }

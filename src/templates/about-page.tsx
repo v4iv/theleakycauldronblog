@@ -175,6 +175,7 @@ export const aboutPageQuery = graphql`
               quality: 85
               layout: FULL_WIDTH
               placeholder: BLURRED
+              formats: [AUTO, AVIF, WEBP]
             )
           }
           publicURL
