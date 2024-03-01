@@ -1,5 +1,6 @@
 import React from 'react'
 import {Script} from 'gatsby'
+
 interface CommentBoxProps {
   id: string
   slug: string
@@ -7,17 +8,20 @@ interface CommentBoxProps {
   siteURL: string
 }
 
-function CommentBox({id, slug, siteURL}: CommentBoxProps) {
+function CommentBox({id, title, slug, siteURL}: CommentBoxProps) {
   const url = siteURL + slug
 
+  // This is just to load the disqus config for the page, Disqus itself is being loaded using Cloudflare Zaraz
   return (
     <>
       <div id="disqus_thread" className="p-3 md:px-0 md:py-5" />
+
       <Script id="disqus-config-loader">
         {`
           var disqus_config = function () {
-            this.page.url = ${url};  // Replace PAGE_URL with your page's canonical URL variable
-            this.page.identifier = ${id}; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+            this.page.url = ${url};
+            this.page.title = ${title}
+            this.page.identifier = ${id};
           };
         `}
       </Script>

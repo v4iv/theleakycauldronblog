@@ -7620,11 +7620,6 @@ gatsby-plugin-catch-links@^5.13.1:
     "@babel/runtime" "^7.20.13"
     escape-string-regexp "^1.0.5"
 
-gatsby-plugin-disqus@^1.2.6:
-  version "1.2.6"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-disqus/-/gatsby-plugin-disqus-1.2.6.tgz#cefc7b1cc5921fa36099256f8ca0fe634b72cb6e"
-  integrity sha512-lGa6q7oldF3cxbwcS1dvndaxDevEBfYOIweUYOARheU0AhbDzYp4lyIvUkUwBYEWsAzIsuJNiugI6yIcQXy09g==
-
 gatsby-plugin-feed@^5.13.1:
   version "5.13.1"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-feed/-/gatsby-plugin-feed-5.13.1.tgz#3fd19f442823ce6100b73b7206d3150ee70f07b4"

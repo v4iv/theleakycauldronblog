@@ -2,7 +2,7 @@
   "name": "theleakycauldronblog",
   "description": "The Leaky Cauldron Blog",
   "author": "Vaibhav Sharma<vaibhavsharmaatwork@gmail.com>",
-  "version": "3.4.0",
+  "version": "3.4.1",
   "license": "MIT",
   "scripts": {
     "develop": "gatsby develop",
@@ -34,7 +34,6 @@
     "gatsby": "^5.13.3",
     "gatsby-adapter-netlify": "^1.1.3",
     "gatsby-plugin-catch-links": "^5.13.1",
-    "gatsby-plugin-disqus": "^1.2.6",
     "gatsby-plugin-feed": "^5.13.1",
     "gatsby-plugin-image": "^3.13.1",
     "gatsby-plugin-local-search": "^2.0.1",

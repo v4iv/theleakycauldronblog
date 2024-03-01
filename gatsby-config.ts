@@ -209,12 +209,6 @@ const config: GatsbyConfig = {
       },
     },
     {
-      resolve: `gatsby-plugin-disqus`,
-      options: {
-        shortname: process.env.DISQUS_SHORTNAME,
-      },
-    },
-    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: siteMetadata.title,
