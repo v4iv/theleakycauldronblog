@@ -77,11 +77,11 @@ function ArticleList({pages}: ArticleListProps) {
                 </div>
               </div>
 
-              <TypographyMuted>
+              <TypographyMuted className="font-mono">
                 {t('by-author', {author: author.toUpperCase()})}
               </TypographyMuted>
 
-              <time className="block">
+              <time className="block font-mono">
                 <TypographySmall>{date}</TypographySmall>
               </time>
 

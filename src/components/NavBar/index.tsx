@@ -50,7 +50,7 @@ function NavBar() {
 
   return (
     <>
-      <nav className="mx-auto w-full max-w-screen-md">
+      <nav className="mx-auto w-full max-w-screen-md font-mono">
         <div className="p-3 md:px-0 md:py-5">
           <div className="flex">
             <div className="flex grow">
@@ -136,7 +136,7 @@ function NavBar() {
                   </TooltipContent>
                 </Tooltip>
 
-                <SheetContent className="flex flex-col">
+                <SheetContent className="flex flex-col font-mono">
                   <SheetHeader>
                     <SheetTitle>{t('menu')}</SheetTitle>
                   </SheetHeader>
@@ -225,15 +225,24 @@ function NavBar() {
                       </DropdownMenuTrigger>
 
                       <DropdownMenuContent side="top" align="end">
-                        <DropdownMenuItem onClick={() => setTheme('light')}>
+                        <DropdownMenuItem
+                          className="font-mono"
+                          onClick={() => setTheme('light')}
+                        >
                           {t('light')}
                         </DropdownMenuItem>
 
-                        <DropdownMenuItem onClick={() => setTheme('dark')}>
+                        <DropdownMenuItem
+                          className="font-mono"
+                          onClick={() => setTheme('dark')}
+                        >
                           {t('dark')}
                         </DropdownMenuItem>
 
-                        <DropdownMenuItem onClick={() => setTheme('system')}>
+                        <DropdownMenuItem
+                          className="font-mono"
+                          onClick={() => setTheme('system')}
+                        >
                           {t('system')}
                         </DropdownMenuItem>
                       </DropdownMenuContent>

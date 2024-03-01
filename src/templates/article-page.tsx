@@ -86,7 +86,7 @@ function ArticlePageTemplate({
                 <div className="flex flex-wrap items-center gap-x-2">
                   <TypographyLead>
                     <a
-                      className="hover:text-primary"
+                      className="font-mono hover:text-primary"
                       rel="noreferrer nofollow noopener"
                       href={authorLink}
                     >
@@ -96,7 +96,7 @@ function ArticlePageTemplate({
 
                   <TypographyLead>&middot;</TypographyLead>
 
-                  <TypographyLead>{date}</TypographyLead>
+                  <TypographyLead className="font-mono">{date}</TypographyLead>
                 </div>
 
                 <div className="hidden md:flex">
@@ -108,7 +108,7 @@ function ArticlePageTemplate({
                 {tags.map((tag, idx) => (
                   <Link
                     key={`${slugify(tag)}-${idx}`}
-                    className={`${badgeVariants({variant: 'default'})} mr-2`}
+                    className={`${badgeVariants({variant: 'default'})} mr-2 font-mono`}
                     to={`/tags/${slugify(tag)}/`}
                   >
                     #{tag}

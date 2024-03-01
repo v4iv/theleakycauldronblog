@@ -42,7 +42,7 @@ function TagsPage({
                 to={`/tags/${slugify(tag.fieldValue)}/`}
                 className={`${badgeVariants({
                   variant: 'outline',
-                })} mr-4`}
+                })} mr-4 font-mono`}
               >
                 #{tag.fieldValue} ({tag.totalCount})
               </Link>

@@ -56,7 +56,7 @@ function HomePageTemplate({
           <ArticleList pages={pages} />
         </div>
 
-        <div className="mx-auto flex w-full max-w-screen-md justify-evenly pb-9 pt-5 align-middle">
+        <div className="mx-auto flex w-full max-w-screen-md justify-evenly pb-9 pt-5 align-middle font-mono">
           {!isFirst && (
             <Button asChild>
               <Link to={prevPage} rel="prev">
