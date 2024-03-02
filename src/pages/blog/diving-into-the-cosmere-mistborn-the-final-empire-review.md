@@ -6,9 +6,9 @@ author: Vaibhav Sharma
 authorLink: https://twitter.com/waybove
 date: 2024-02-26T13:02:21.442Z
 cover: /img/the-final-empire-review-cederic-vandenberghe.jpg
-metaTitle: Mistborn The Final Empire Review
+metaTitle: "Mistborn: The Final Empire Review"
 metaDescription: This is my review of diving into the fantastic world of Brandon
-  Sanderson's Cosmere, with Mistborn The Final Empire
+  Sanderson's Cosmere, with Mistborn The Final Empire.
 tags:
   - book
   - interesting
@@ -17,7 +17,7 @@ Although I love Harry Potter and Lord of the Rings I'm not much of a Fantasy rea
 
 https://youtu.be/SVsFurvvkhs
 
-## Mistborn: The Final Empire Review
+**Warning: May Contain Spoilers!**
 
 Entering the world of Mistborn through "The Final Empire" was akin to stepping into a realm where shadows danced with intrigue and despair. At first, the pace felt slow, but the intricate setup of this grim, dark world gradually drew me in, weaving a web of curiosity that I couldn't escape.
 
