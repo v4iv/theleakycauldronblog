@@ -16,15 +16,19 @@ function CommentBox({id, title, slug, siteURL}: CommentBoxProps) {
     <>
       <div id="disqus_thread" className="p-3 md:px-0 md:py-5" />
 
-      <Script id="disqus-config-loader">
-        {`
+      <Script
+        id="disqus-config-loader"
+        strategy="post-hydrate"
+        dangerouslySetInnerHTML={{
+          __html: `
           var disqus_config = function () {
             this.page.url = ${url};
-            this.page.title = ${title}
+            this.page.title = ${title};
             this.page.identifier = ${id};
           };
-        `}
-      </Script>
+        `,
+        }}
+      />
     </>
   )
 }

@@ -19,9 +19,9 @@
 
 - SEO friendly (Head API, Slug, Sitemap, Robots.txt etc)
 
-- Disqus comments
+- Google Analytics & Disqus Comments with [Cloudflare Zaraz](https://www.cloudflare.com/application-services/products/zaraz/)
 
-- Built with Tailwind CSS (shadcn/ui)
+- Built with shadcn/ui (Tailwind CSS)
 
 - Decap CMS(Netlify CMS) generated markdown pages with Prism code highlighting, social embedding etc
 
@@ -65,6 +65,8 @@
 
     - `static/admin/config.yml` : site url, default values
 
+    - `src/assets/avatar.png` : your brand icons
+
     - `static/icon-*.png` : your brand icons
 
     - `static/apple-touch-icon.png` : your brand icons
@@ -73,11 +75,7 @@
 
     - `static/robots.txt` : sitemap url
 
-4. **Environment Variables**
-
-     - DISQUS_SHORTNAME - To enable Disqus comments
-
-5. **Learn more**
+4. **Learn more**
 
     - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
     - [Tutorials](https://www.gatsbyjs.com/docs/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
