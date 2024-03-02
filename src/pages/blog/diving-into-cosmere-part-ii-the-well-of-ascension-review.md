@@ -1,6 +1,6 @@
 ---
 templateKey: article-page
-title: "Diving into Cosmere Part II: The Well of Ascension Review"
+title: "Diving into The Cosmere Part II: The Well of Ascension Review"
 slug: mistborn-the-well-of-ascension-review
 author: Vaibhav Sharma
 authorLink: https://twitter.com/waybove
