@@ -10,7 +10,7 @@ metaTitle: "Mistborn: The Well of Ascension Review"
 metaDescription: Review for the book The Well of Ascension by Brandon Sanderson,
   the second book in the Era 1 of Mistborn series
 tags:
-  - book
+  - books
   - interesting
 ---
 **Warning: May Contain Spoilers!**

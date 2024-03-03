@@ -11,7 +11,7 @@ metaDescription: Fahrenheit 451 is no doubt a great read but what bugs me is
   that the book pretends to be about book burning and censorship but is actually
   mostly about shitting on new technologies at its core. But why?
 tags:
--   book
+-   books
 -   interesting
 -   rant
 ---

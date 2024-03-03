@@ -10,7 +10,7 @@ metaTitle: "Mistborn: The Final Empire Review"
 metaDescription: This is my review of diving into the fantastic world of Brandon
   Sanderson's Cosmere, with Mistborn The Final Empire.
 tags:
-  - book
+  - books
   - interesting
 ---
 Although I love Harry Potter and Lord of the Rings I'm not much of a Fantasy reader; I mostly stick to Sci-Fi books. And though, I had heard a lot about Brandon Sanderson, the sheer number of pages per book and the number of books had made me avoid getting into Cosmere for the longest time. Then somehow I stumbled upon "that Wired article" ('Brandon Sanderson is your God' not gonna provide a link to that hit piece and increase its engagement) insulting Brandon Sanderson, and after reading it, instead of the intended effect, he rather came off as a great guy. So, I decided to dive into Cosmere by following his very own 2024 reading guide.
