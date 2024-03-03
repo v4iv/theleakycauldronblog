@@ -1,4 +1,5 @@
 import React from 'react'
+import {Script, ScriptStrategy} from 'gatsby'
 
 interface CommentBoxProps {
   id: string
@@ -15,7 +16,9 @@ function CommentBox({id, title, slug, siteURL}: CommentBoxProps) {
     <>
       <div id="disqus_thread" className="p-3 md:px-0 md:py-5" />
 
-      <script
+      <Script
+        id="disqus-config-loader"
+        strategy={ScriptStrategy.postHydrate}
         dangerouslySetInnerHTML={{
           __html: `
           var disqus_config = function () {
