@@ -13,7 +13,7 @@ tags:
   - books
   - interesting
 ---
-**Warning: May Contain Spoilers!**
+**Warning: May Contain Mild Spoilers!**
 
 As I made it clear in my previous review, I really loved the first book in the Mistborn Era 1, though it left me with lingering questions about the ominous warning of *Lord Ruler*. So, I started the Book 2 immediately.
 
@@ -36,3 +36,9 @@ The ending of "The Well of Ascension" surpassed its predecessor in every way. Ea
 Yet, despite its strengths, the uneven pacing remained a notable flaw. The journey truly found its stride in Part 5 of the book, with the payoffs making the earlier struggles worthwhile.
 
 In hindsight, "The Well of Ascension" was a testament to Brandon Sanderson's ability to weave intricate tales of power and personal struggle. It was a journey marked by highs and lows, triumphs and tragedies — a journey that left me eagerly anticipating the next installment in the Mistborn series.
+
+## Mistborn Era 1 Reviews
+
+**[The Final Emire Review](https://theleakycauldronblog.com/blog/mistborn-the-final-empire-review)**
+
+**[The Hero of Ages Review](https://theleakycauldronblog.com/blog/mistborn-the-hero-of-ages-review)**
