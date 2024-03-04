@@ -23,6 +23,7 @@
     "light": "Light",
     "dark": "Dark",
     "system": "System",
+    "guest-author": "Guest Author",
     "footer": {
         "copyright": "Copyright © 2018-{{year}} The Leaky Cauldron Blog. All Rights Reserved.",
         "github": "My Github",

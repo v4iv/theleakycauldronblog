@@ -108,7 +108,7 @@ function ArticlePageTemplate({
                 {tags.map((tag, idx) => (
                   <Link
                     key={`${slugify(tag)}-${idx}`}
-                    className={`${badgeVariants({variant: 'default'})} mr-2 font-mono`}
+                    className={`${badgeVariants({variant: tag === 'guest author' ? 'destructive' : 'default'})} mr-2 font-mono`}
                     to={`/tags/${slugify(tag)}/`}
                   >
                     #{tag}
