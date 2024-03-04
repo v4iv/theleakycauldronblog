@@ -17,7 +17,31 @@ Although I love Harry Potter and Lord of the Rings I'm not much of a Fantasy rea
 
 https://youtu.be/SVsFurvvkhs
 
-**Warning: May Contain Spoilers!**
+## Brandon Sanderson's 2024 Cosmere Reading Order
+
+* The Final Empire
+* The Well of Ascension
+* The Hero of Ages
+* Warbreaker
+* Tress of the Emerald Sea
+* The Way of Kings
+* The Alloy of Law
+* Words of Radiance
+* Shadows of Self
+* Edgedancer
+* The Bands of Mourning
+* Oathbringer
+* The Lost Metal
+* Dawnshard
+* Rhythm of War
+* Elantris
+* Yumi and The Nightmare Painter
+* The Sunlit Man
+* Wind and Truth
+
+
+
+**Warning: May Contain Mild Spoilers!**
 
 Entering the world of Mistborn through "The Final Empire" was akin to stepping into a realm where shadows danced with intrigue and despair. At first, the pace felt slow, but the intricate setup of this grim, dark world gradually drew me in, weaving a web of curiosity that I couldn't escape.
 
@@ -42,3 +66,9 @@ While the ending of "The Final Empire" felt satisfying, I couldn't shake the fee
 And then there's Sazed — an unsung hero whose quiet strength and unwavering loyalty stole my heart.
 
 In hindsight, "The Final Empire" was almost perfect, with its only flaw being a slight dip in pacing in the middle. But even that minor hiccup couldn't detract from the overall brilliance of Brandon Sanderson's storytelling. It was a journey that left me eager to delve deeper into the world of Mistborn, eager to uncover its secrets and unravel its mysteries.
+
+## Mistborn Era 1 Reviews
+
+**[The Well of Ascension Review](https://theleakycauldronblog.com/blog/mistborn-the-well-of-ascension-review)**
+
+**[The Hero of Ages Review](https://theleakycauldronblog.com/blog/mistborn-the-hero-of-ages-review)**
