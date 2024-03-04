@@ -17,7 +17,11 @@ Although I love Harry Potter and Lord of the Rings I'm not much of a Fantasy rea
 
 https://youtu.be/SVsFurvvkhs
 
-**Warning: May Contain Spoilers!**
+Brandon Sanderson's 2024 Cosmere Reading Order
+
+
+
+**Warning: May Contain Mild Spoilers!**
 
 Entering the world of Mistborn through "The Final Empire" was akin to stepping into a realm where shadows danced with intrigue and despair. At first, the pace felt slow, but the intricate setup of this grim, dark world gradually drew me in, weaving a web of curiosity that I couldn't escape.
 
