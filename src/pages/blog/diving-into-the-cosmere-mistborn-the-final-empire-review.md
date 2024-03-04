@@ -1,6 +1,6 @@
 ---
 templateKey: article-page
-title: "Diving into The Cosmere: Mistborn The Final Empire Review"
+title: "Diving into The Cosmere Part I: Mistborn The Final Empire Review"
 slug: mistborn-the-final-empire-review
 author: Vaibhav Sharma
 authorLink: https://twitter.com/waybove

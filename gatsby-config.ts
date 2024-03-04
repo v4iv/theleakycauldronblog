@@ -282,6 +282,9 @@ const config: GatsbyConfig = {
                     }
                     frontmatter: {
                       title: string
+                      cover: {
+                        publicURL: string
+                      }
                       author: string
                       date: string
                       tags: string[]
@@ -297,6 +300,9 @@ const config: GatsbyConfig = {
                 )
                 .map((node) => {
                   let html = node.html
+                  const cover =
+                    site.siteMetadata.siteUrl + node.frontmatter.cover.publicURL
+
                   // Hacky workaround for replacing relative paths taken from overreacted.io https://github.com/gaearon/overreacted.io
                   html = html
                     .replace(/href="\//g, `href="${site.siteMetadata.siteUrl}/`)
@@ -308,6 +314,10 @@ const config: GatsbyConfig = {
                     .replace(
                       /,\s*\/static\//g,
                       `,${site.siteMetadata.siteUrl}/static/`,
+                    )
+                    .replace(
+                      `<p>`,
+                      `<p><img src="${cover}" alt="${node.frontmatter.title}" /></p><p>`,
                     )
 
                   return Object.assign({}, node.frontmatter, {
@@ -334,6 +344,9 @@ const config: GatsbyConfig = {
                   }
                   frontmatter {
                     title
+                    cover {
+                      publicURL
+                    }
                     author
                     date
                     tags
