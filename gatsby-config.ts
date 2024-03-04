@@ -300,8 +300,8 @@ const config: GatsbyConfig = {
                 )
                 .map((node) => {
                   let html = node.html
-                  const cover =
-                    site.siteMetadata.siteUrl + node.frontmatter.cover.publicURL
+                  const cover = `<img src="${site.siteMetadata.siteUrl + node.frontmatter.cover.publicURL}" alt="${node.frontmatter.title}"/> `
+                  const description = cover + node.excerpt
 
                   // Hacky workaround for replacing relative paths taken from overreacted.io https://github.com/gaearon/overreacted.io
                   html = html
@@ -315,15 +315,11 @@ const config: GatsbyConfig = {
                       /,\s*\/static\//g,
                       `,${site.siteMetadata.siteUrl}/static/`,
                     )
-                    .replace(
-                      `<p>`,
-                      `<p><img src="${cover}" alt="${node.frontmatter.title}" /></p><p>`,
-                    )
 
                   return Object.assign({}, node.frontmatter, {
                     title: node.frontmatter.title,
                     author: node.frontmatter.author,
-                    description: node.excerpt,
+                    description: description,
                     date: node.frontmatter.date,
                     categories: node.frontmatter.tags,
                     url: site.siteMetadata.siteUrl + node.fields.slug,
