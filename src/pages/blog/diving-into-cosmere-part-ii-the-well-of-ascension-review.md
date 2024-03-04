@@ -17,6 +17,8 @@ tags:
 
 As I made it clear in my previous review, I really loved the first book in the Mistborn Era 1, though it left me with lingering questions about the ominous warning of *Lord Ruler*. So, I started the Book 2 immediately.
 
+![mistborn-the-well-of-ascension](/img/mistborn-the-well-of-ascension.jpg "Mistborn: The Well of Ascension")
+
 And the journey continued in "Well of Ascension," where the aftermath of revolution laid bare the complexities of power and the turmoil it leaves in its wake.
 
 The initial chapters painted a vivid picture of the instability and power vacuum created by the revolution — a stark reminder of the consequences of upheaval and change. The impact of Kelsier's death reverberated through the narrative, affecting each member of the crew in profoundly different ways. The deification of Kelsier felt hauntingly realistic, showcasing how legends are born from the ashes of tragedy.
