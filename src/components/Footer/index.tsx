@@ -1,6 +1,7 @@
 import React from 'react'
-import {useTranslation} from 'gatsby-plugin-react-i18next'
 import {Github, Rss, Twitter} from 'lucide-react'
+import {useTranslation} from 'gatsby-plugin-react-i18next'
+
 import {Button} from '@/components/ui/button'
 import {TypographyMuted} from '@/components/ui/typography'
 import {Tooltip, TooltipContent, TooltipTrigger} from '@/components/ui/tooltip'

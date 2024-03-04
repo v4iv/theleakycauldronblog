@@ -2,8 +2,9 @@ import React from 'react'
 import {HeadProps, Link, PageProps, graphql} from 'gatsby'
 import {useTranslation} from 'gatsby-plugin-react-i18next'
 import {ArrowLeft, ArrowRight} from 'lucide-react'
-import {Button} from '@/components/ui/button'
+
 import {useSiteMetadata} from '@/hooks/useSiteMetadata'
+import {Button} from '@/components/ui/button'
 import SEO from '@/components/SEO'
 import Layout from '@/components/Layout'
 import ArticleList from '@/components/ArticleList'
@@ -24,6 +25,7 @@ type DataProps = {
           }
           author: string
           date: any
+          tags: string[]
           templateKey: string
         }
       }
@@ -43,17 +45,23 @@ function HomePageTemplate({
   pageContext: {currentPage, numberOfPages},
 }: PageProps<DataProps, PageContextProps>) {
   const {t} = useTranslation('common')
+
   const isFirst = currentPage === 1
   const isLast = currentPage === numberOfPages
+
   const prevPage =
     currentPage - 1 === 1 ? '/' : `/${(currentPage - 1).toString()}`
   const nextPage = `/${(currentPage + 1).toString()}`
+
+  const posts = pages.filter(
+    (page) => page?.node?.frontmatter?.templateKey === 'article-page',
+  )
 
   return (
     <Layout>
       <div className="flex flex-col">
         <div className="grow">
-          <ArticleList pages={pages} />
+          <ArticleList posts={posts} />
         </div>
 
         <div className="mx-auto flex w-full max-w-screen-md justify-evenly pb-9 pt-5 align-middle font-mono">
@@ -148,6 +156,7 @@ export const articleListQuery = graphql`
             }
             author
             date(formatString: "MMMM DD, YYYY")
+            tags
             templateKey
           }
         }

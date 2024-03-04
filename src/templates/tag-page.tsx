@@ -2,13 +2,14 @@ import React from 'react'
 import {HeadProps, Link, PageProps, graphql} from 'gatsby'
 import {useTranslation} from 'gatsby-plugin-react-i18next'
 import {Hash} from 'lucide-react'
+
+import {useSiteMetadata} from '@/hooks/useSiteMetadata'
 import {
   TypographyH1,
   TypographyH2,
   TypographyLead,
 } from '@/components/ui/typography'
 import {Separator} from '@/components/ui/separator'
-import {useSiteMetadata} from '@/hooks/useSiteMetadata'
 import SEO from '@/components/SEO'
 import Layout from '@/components/Layout'
 

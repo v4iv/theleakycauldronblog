@@ -1,11 +1,12 @@
 import React from 'react'
 import {HeadProps, PageProps, graphql} from 'gatsby'
+
+import {useSiteMetadata} from '@/hooks/useSiteMetadata'
 import {
   TypographyH1,
   TypographyLarge,
   TypographyLead,
 } from '@/components/ui/typography'
-import {useSiteMetadata} from '@/hooks/useSiteMetadata'
 import SEO from '@/components/SEO'
 import Layout from '@/components/Layout'
 import ImageBox from '@/components/ImageBox'

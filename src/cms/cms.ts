@@ -1,4 +1,5 @@
 import CMS from 'netlify-cms-app'
+
 import '../styles/globals.css'
 import AboutPagePreview from './AboutPagePreview'
 import ContactPagePreview from './ContactPagePreview'

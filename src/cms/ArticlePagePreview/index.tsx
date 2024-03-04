@@ -1,5 +1,6 @@
 import React from 'react'
 import slugify from 'slugify'
+
 import {Badge} from '../../components/ui/badge'
 import {TypographyH1, TypographyLead} from '../../components/ui/typography'
 
