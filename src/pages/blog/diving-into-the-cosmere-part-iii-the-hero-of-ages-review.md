@@ -15,7 +15,7 @@ tags:
 ---
 **Warning: May Contain Spoilers!**
 
-The last two books were very interesting but I went into this with an irrational fear — what if the ending is not good enough especially for the high bar it had set in past two books, because i have seen multiple times when something starts great but ends up being a dud in the ending. But thankfully it was exactly that an irrational fear.
+The last two books were very interesting but I went into this with an irrational fear — what if the ending is not good enough especially for the high bar it had set in past two books, because i have seen multiple times when something starts great but ends up being a dud in the ending. But thankfully it was exactly that — an irrational fear.
 
 ![mistborn-the-hero-of-ages](/img/mistborn-the-hero-of-ages.jpg "Mistborn: The Hero of Ages")
 
