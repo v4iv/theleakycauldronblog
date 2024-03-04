@@ -1,7 +1,8 @@
 import React from 'react'
+import slugify from 'slugify'
 import {HeadProps, Link, PageProps, graphql} from 'gatsby'
 import {useTranslation} from 'gatsby-plugin-react-i18next'
-import slugify from 'slugify'
+
 import {useSiteMetadata} from '@/hooks/useSiteMetadata'
 import {Separator} from '@/components/ui/separator'
 import {badgeVariants} from '@/components/ui/badge'

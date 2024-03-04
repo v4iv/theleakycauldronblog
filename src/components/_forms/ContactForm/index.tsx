@@ -1,10 +1,11 @@
 import React from 'react'
+import * as z from 'zod'
+import {Loader2} from 'lucide-react'
 import {useTranslation} from 'gatsby-plugin-react-i18next'
 import {useForm, SubmitHandler} from 'react-hook-form'
-import * as z from 'zod'
 import {zodResolver} from '@hookform/resolvers/zod'
-import {Loader2} from 'lucide-react'
-import {Button} from '@/components/ui/button'
+
+import {encode} from '@/lib/utils'
 import {
   Form,
   FormControl,
@@ -15,9 +16,9 @@ import {
   FormMessage,
 } from '@/components/ui/form'
 import {Input} from '@/components/ui/input'
+import {Button} from '@/components/ui/button'
 import {Textarea} from '@/components/ui/textarea'
 import {useToast} from '@/components/ui/use-toast'
-import {encode} from '@/lib/utils'
 
 function ContactForm() {
   const {t} = useTranslation('common')

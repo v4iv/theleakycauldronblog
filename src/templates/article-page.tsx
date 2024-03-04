@@ -4,17 +4,18 @@ import {useTranslation} from 'gatsby-plugin-react-i18next'
 import {Link, graphql, PageProps, HeadProps} from 'gatsby'
 import {ChevronsUp} from 'lucide-react'
 import 'prismjs/themes/prism-twilight.css'
+
+import {useSiteMetadata} from '@/hooks/useSiteMetadata'
 import {Button} from '@/components/ui/button'
 import {badgeVariants} from '@/components/ui/badge'
 import {TypographyH1, TypographyLead} from '@/components/ui/typography'
-import {useSiteMetadata} from '@/hooks/useSiteMetadata'
+import {Tooltip, TooltipContent, TooltipTrigger} from '@/components/ui/tooltip'
 import SEO from '@/components/SEO'
 import Layout from '@/components/Layout'
 import ImageBox from '@/components/ImageBox'
 import Content from '@/components/Content'
 import ShareSheet from '@/components/ShareSheet'
 import CommentBox from '@/components/CommentBox'
-import {Tooltip, TooltipContent, TooltipTrigger} from '@/components/ui/tooltip'
 
 type DataProps = {
   site: {

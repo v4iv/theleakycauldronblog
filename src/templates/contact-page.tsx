@@ -1,5 +1,6 @@
 import React from 'react'
 import {HeadProps, PageProps, graphql} from 'gatsby'
+
 import {Separator} from '@/components/ui/separator'
 import {TypographyH1, TypographyLead} from '@/components/ui/typography'
 import SEO from '@/components/SEO'
