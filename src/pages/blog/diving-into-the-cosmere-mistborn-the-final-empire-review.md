@@ -69,6 +69,6 @@ In hindsight, "The Final Empire" was almost perfect, with its only flaw being a 
 
 ## Mistborn Era 1 Reviews
 
-[The Well of Ascension Review](https://theleakycauldronblog.com/blog/mistborn-the-well-of-ascension-review)
+**[The Well of Ascension Review](https://theleakycauldronblog.com/blog/mistborn-the-well-of-ascension-review)**
 
-[The Hero of Ages Review](https://theleakycauldronblog.com/blog/mistborn-the-hero-of-ages-review)
+**[The Hero of Ages Review](https://theleakycauldronblog.com/blog/mistborn-the-hero-of-ages-review)**
