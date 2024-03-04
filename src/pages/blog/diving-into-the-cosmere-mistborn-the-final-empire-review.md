@@ -19,9 +19,9 @@ https://youtu.be/SVsFurvvkhs
 
 **Warning: May Contain Spoilers!**
 
-![mistborn-the-final-empire](/img/mistborn-the-final-empire.jpg "Mistborn: The Final Empire")
-
 Entering the world of Mistborn through "The Final Empire" was akin to stepping into a realm where shadows danced with intrigue and despair. At first, the pace felt slow, but the intricate setup of this grim, dark world gradually drew me in, weaving a web of curiosity that I couldn't escape.
+
+![mistborn-the-final-empire](/img/mistborn-the-final-empire.jpg "Mistborn: The Final Empire")
 
 The introduction of Kelsier, a troublemaker with layers of complexity, was a highlight. Initially, I saw him as a rebel without a cause, but as the layers of his character peeled away, I found myself captivated by his depth and determination. He became a character I couldn't help but admire.
 
