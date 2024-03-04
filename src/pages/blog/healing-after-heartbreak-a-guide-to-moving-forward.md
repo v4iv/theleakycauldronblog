@@ -11,6 +11,7 @@ metaDescription: Discover advice for overcoming heartbreak, finding hope, and
   embracing a better future. You're not alone on this journey. Deal with it
   properly and move forward in a healthy manner.
 tags:
+  - guest author
   - relationships
   - psychology
 ---
@@ -18,7 +19,7 @@ I know it's tough. I know you're going through a lot.
 
 BUT
 
-I sincerely believe that sharing these points can help someone. I won't bore anyone with a lot of details about my past and my relationship but you can take my word for it that it was tight (but it also had its ups and downs). I didn't breakup, she did. She cheated on me and long distance + COVID + family issues were huge factors. Posts and replies on this sub also helped me. A lot of the stuff has been said earlier in some other posts. So TL;DR -
+I sincerely believe that sharing these points can help someone. I won't bore anyone with a lot of details about my past and my relationship but you can take my word for it that it was tight (but it also had its ups and downs). I didn't breakup, she did. She cheated on me and long distance + COVID + family issues were huge factors.
 
 ## Succint Points
 
