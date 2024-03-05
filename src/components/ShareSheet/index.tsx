@@ -7,7 +7,6 @@ import {
   TwitterShareButton,
   WhatsappShareButton,
 } from 'react-share'
-import {CopyToClipboard} from 'react-copy-to-clipboard'
 
 import {Button} from '@/components/ui/button'
 import {Tooltip, TooltipContent, TooltipTrigger} from '@/components/ui/tooltip'
@@ -32,6 +31,18 @@ function ShareSheet({
 }: ShareSheetProps) {
   const {t} = useTranslation('common')
   const url = siteURL + slug
+
+  const copyToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText(url)
+
+      alert(t('share.link-copied'))
+    } catch (err: any) {
+      console.error(err.message)
+
+      alert(t('share.link-copy-failed'))
+    }
+  }
 
   return (
     <Popover>
@@ -170,19 +181,14 @@ function ShareSheet({
 
           <Tooltip>
             <TooltipTrigger>
-              <CopyToClipboard
-                text={url}
-                onCopy={() => alert(t('share.link-copied'))}
+              <Button
+                aria-label={t('share.copy-link')}
+                variant="outline"
+                size="icon"
+                onClick={copyToClipboard}
               >
-                <div
-                  role="button"
-                  className="inline-flex size-10 items-center justify-center rounded-md border border-input bg-background text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
-                  aria-label={t('share.copy-link')}
-                  aria-pressed="false"
-                >
-                  <Link className="size-4" />
-                </div>
-              </CopyToClipboard>
+                <Link className="size-4" />
+              </Button>
             </TooltipTrigger>
 
             <TooltipContent>
