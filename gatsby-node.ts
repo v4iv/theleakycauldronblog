@@ -1,6 +1,6 @@
-import webpack from 'webpack'
 import * as path from 'path'
 import slugify from 'slugify'
+import webpack from 'webpack'
 import type {CreateNodeArgs, GatsbyNode} from 'gatsby'
 import {createFilePath} from 'gatsby-source-filesystem'
 

@@ -1,7 +1,7 @@
 import dotenv from 'dotenv'
 import * as path from 'path'
-import adapter from 'gatsby-adapter-netlify'
 import type {GatsbyConfig} from 'gatsby'
+import adapter from 'gatsby-adapter-netlify'
 
 dotenv.config({path: `.env.${process.env.NODE_ENV}`})
 
@@ -361,7 +361,6 @@ const config: GatsbyConfig = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-twitter`,
-    `gatsby-plugin-use-query-params`,
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-remove-serviceworker`,
     // `gatsby-plugin-perf-budgets`,

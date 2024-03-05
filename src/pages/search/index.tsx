@@ -4,7 +4,7 @@ import {useTranslation} from 'gatsby-plugin-react-i18next'
 import useSWR, {preload} from 'swr'
 import {useLunr} from 'react-lunr'
 import {useDebouncedCallback} from 'use-debounce'
-import {StringParam, useQueryParam} from 'use-query-params'
+import {useQueryParamString} from 'react-use-query-param-string'
 import {Search, X} from 'lucide-react'
 
 import {useSiteMetadata} from '@/hooks/useSiteMetadata'
@@ -35,7 +35,7 @@ function SearchPage({
   },
 }: PageProps<DataProps>) {
   const {t} = useTranslation('common')
-  const [q] = useQueryParam('q', StringParam)
+  const [q] = useQueryParamString('q', '')
 
   const [query, setQuery] = useState(q || '')
 
