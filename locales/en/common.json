@@ -42,7 +42,8 @@
         "share-reddit": "Share on Reddit",
         "share-facebook": "Share on Facebook",
         "copy-link": "Copy Link",
-        "link-copied": "Link copied to clipboard. ✅"
+        "link-copied": "Link copied to clipboard. ✅",
+        "link-copy-failed": "Couldn't copy the link to clipboard! ❌"
     },
     "contact-form": {
         "name": "Name",
