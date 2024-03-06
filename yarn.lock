@@ -7854,6 +7854,13 @@ gatsby-react-router-scroll@^6.13.1:
     "@babel/runtime" "^7.20.13"
     prop-types "^15.8.1"
 
+gatsby-remark-absolute-link-catch@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-absolute-link-catch/-/gatsby-remark-absolute-link-catch-0.0.1.tgz#2611b0cf44816aeaf9550d49b4f56419020578e2"
+  integrity sha512-VWP289VChbGNXCbSTLZa2z73OfAOjnM5Ah8YHRnsWY8GBb8LhIPO6zy7Cnz733zGIW9Q0oWzcnb4wMCbtO1r8A==
+  dependencies:
+    unist-util-visit "1.4.0"
+
 gatsby-remark-copy-linked-files@^6.13.1:
   version "6.13.1"
   resolved "https://registry.yarnpkg.com/gatsby-remark-copy-linked-files/-/gatsby-remark-copy-linked-files-6.13.1.tgz#b623eba410fdbe4ee2059cf10d4f8cef655684e2"
@@ -15368,6 +15375,13 @@ unist-util-visit-parents@^3.0.0, unist-util-visit-parents@^3.1.1:
   dependencies:
     "@types/unist" "^2.0.0"
     unist-util-is "^4.0.0"
+
+unist-util-visit@1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/unist-util-visit/-/unist-util-visit-1.4.0.tgz#1cb763647186dc26f5e1df5db6bd1e48b3cc2fb1"
+  integrity sha512-FiGu34ziNsZA3ZUteZxSFaczIjGmksfSgdKqBfOejrrfzyUy5b7YrlzT1Bcvi+djkYDituJDy2XB7tGTeBieKw==
+  dependencies:
+    unist-util-visit-parents "^2.0.0"
 
 unist-util-visit@^1.0.0, unist-util-visit@^1.1.0, unist-util-visit@^1.1.3:
   version "1.4.1"

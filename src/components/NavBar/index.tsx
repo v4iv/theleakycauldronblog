@@ -115,7 +115,7 @@ function NavBar() {
                     asChild
                   >
                     <Link to="/search">
-                      <Search className="size-4" />
+                      <Search className="size-4 text-aquamarine-500" />
                     </Link>
                   </Button>
                 </TooltipTrigger>
@@ -134,7 +134,7 @@ function NavBar() {
                         size="icon"
                         aria-label={t('menu')}
                       >
-                        <Equal className="size-6" />
+                        <Equal className="size-6 text-aquamarine-500" />
                       </Button>
                     </SheetTrigger>
                   </TooltipTrigger>
@@ -146,7 +146,9 @@ function NavBar() {
 
                 <SheetContent className="flex flex-col font-mono">
                   <SheetHeader>
-                    <SheetTitle>{t('menu')}</SheetTitle>
+                    <SheetTitle className="text-aquablue-500">
+                      {t('menu')}
+                    </SheetTitle>
                   </SheetHeader>
 
                   <SheetDescription className="flex grow flex-col gap-y-5">
@@ -157,7 +159,7 @@ function NavBar() {
                       asChild
                     >
                       <Link className="flex" to="/">
-                        <Home className="mr-3 size-4" />
+                        <Home className="mr-3 size-4 text-aquamarine-500" />
                         {t('home')}
                       </Link>
                     </Button>
@@ -169,7 +171,7 @@ function NavBar() {
                       asChild
                     >
                       <Link className="flex" to="/search/">
-                        <Search className="mr-2 size-4" />
+                        <Search className="mr-2 size-4 text-aquamarine-500" />
                         {t('search')}
                       </Link>
                     </Button>
@@ -181,7 +183,7 @@ function NavBar() {
                       asChild
                     >
                       <Link className="flex" to="/tags/">
-                        <Hash className="mr-2 size-4" />
+                        <Hash className="mr-2 size-4 text-aquamarine-500" />
                         {t('tags')}
                       </Link>
                     </Button>
@@ -193,7 +195,7 @@ function NavBar() {
                       asChild
                     >
                       <Link className="flex" to="/about/">
-                        <MessageCircle className="mr-2 size-4" />
+                        <MessageCircle className="mr-2 size-4 text-aquamarine-500" />
                         {t('about')}
                       </Link>
                     </Button>
@@ -205,7 +207,7 @@ function NavBar() {
                       asChild
                     >
                       <Link className="flex" to="/contact/">
-                        <AtSign className="mr-2 size-4" />
+                        <AtSign className="mr-2 size-4 text-aquamarine-500" />
                         {t('contact')}
                       </Link>
                     </Button>
@@ -224,9 +226,9 @@ function NavBar() {
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
                         <Button variant="ghost" size="icon">
-                          <Sun className="size-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+                          <Sun className="size-[1.2rem] rotate-0 scale-100 text-aquamarine-500 transition-all dark:-rotate-90 dark:scale-0" />
 
-                          <Moon className="absolute size-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                          <Moon className="absolute size-[1.2rem] rotate-90 scale-0 text-aquamarine-500 transition-all dark:rotate-0 dark:scale-100" />
 
                           <span className="sr-only">{t('toggle-theme')}</span>
                         </Button>

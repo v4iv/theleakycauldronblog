@@ -53,7 +53,13 @@ function ShareSheet({
           size={iconOnly ? 'icon' : 'sm'}
           className="font-mono text-xs"
         >
-          <Share className={iconOnly ? 'size-4' : 'mr-2 size-3'} />
+          <Share
+            className={
+              iconOnly
+                ? 'size-4 text-aquamarine-500'
+                : 'mr-2 size-3 text-aquamarine-500'
+            }
+          />
           {iconOnly ? '' : t('share-button')}
         </Button>
       </PopoverTrigger>

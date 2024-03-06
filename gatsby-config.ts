@@ -77,7 +77,7 @@ const config: GatsbyConfig = {
           {
             resolve: `gatsby-remark-prismjs`,
             options: {
-              classPrefix: 'language-',
+              classPrefix: `language-`,
               inlineCodeMarker: null,
               aliases: {},
               showLineNumbersGlobal: false,
@@ -85,10 +85,21 @@ const config: GatsbyConfig = {
             },
           },
           {
+            resolve: `gatsby-remark-absolute-link-catch`,
+            options: {
+              absoluteUrls: [
+                `https://theleakycauldronblog.com`,
+                `https://www.theleakycauldronblog.com`,
+                `http://theleakycauldronblog.com`,
+                `http://www.theleakycauldronblog.com`,
+              ],
+            },
+          },
+          {
             resolve: `gatsby-remark-external-links`,
             options: {
-              target: `_blank`,
-              rel: 'nofollow',
+              target: `_self`,
+              rel: `nofollow`,
             },
           },
           `gatsby-remark-embedder`,
@@ -115,7 +126,7 @@ const config: GatsbyConfig = {
         trailingSlash: `always`,
         i18nextOptions: {
           defaultNS: `common`,
-          debug: !!(process.env.NODE_ENV === 'development'),
+          debug: !!(process.env.NODE_ENV === `development`),
           lowerCaseLng: true,
           saveMissing: false,
           interpolation: {
@@ -177,7 +188,7 @@ const config: GatsbyConfig = {
                 frontmatter: {
                   templateKey: string
                 }
-              }) => node.frontmatter.templateKey === 'article-page',
+              }) => node.frontmatter.templateKey === `article-page`,
             )
             .map(
               (node: {
@@ -205,7 +216,7 @@ const config: GatsbyConfig = {
     {
       resolve: `gatsby-plugin-nprogress`,
       options: {
-        color: '#ffa3d7',
+        color: `#ffa3d7`,
         showSpinner: false,
       },
     },
@@ -233,13 +244,13 @@ const config: GatsbyConfig = {
             src: `/icon-192-maskable.png`,
             sizes: `192x192`,
             type: `image/png`,
-            purpose: 'any maskable',
+            purpose: `any maskable`,
           },
           {
             src: `/icon-512-maskable.png`,
             sizes: `512x512`,
             type: `image/png`,
-            purpose: 'any maskable',
+            purpose: `any maskable`,
           },
           {
             src: `/apple-touch-icon.png`,
@@ -296,7 +307,7 @@ const config: GatsbyConfig = {
             }) => {
               return allMarkdownRemark.nodes
                 .filter(
-                  (node) => node.frontmatter.templateKey === 'article-page',
+                  (node) => node.frontmatter.templateKey === `article-page`,
                 )
                 .map((node) => {
                   let html = node.html

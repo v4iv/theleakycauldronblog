@@ -84,7 +84,7 @@ function SearchPage({
             <Tooltip>
               <TooltipTrigger asChild>
                 <div className="relative flex grow">
-                  <Search className="pointer-events-none absolute right-3 top-1/2 size-4 -translate-y-1/2" />
+                  <Search className="pointer-events-none absolute right-3 top-1/2 size-4 -translate-y-1/2 text-aquamarine-500" />
 
                   <Input
                     autoFocus
@@ -118,7 +118,7 @@ function SearchPage({
                     aria-label={t('close')}
                     onClick={() => navigate(-1)}
                   >
-                    <X className="size-5 animate-in spin-in" />
+                    <X className="size-5 text-aquamarine-500 animate-in spin-in" />
                   </Button>
                 </TooltipTrigger>
 
@@ -157,7 +157,7 @@ function SearchPage({
                       </Link>
                     </TypographyH2>
 
-                    <TypographyMuted>
+                    <TypographyMuted className="font-mono text-aquablue-700">
                       {t('by-author', {author: author?.toUpperCase()})}
                     </TypographyMuted>
                   </article>

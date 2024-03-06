@@ -87,7 +87,7 @@ function ArticlePageTemplate({
                 <div className="flex flex-wrap items-center gap-x-2">
                   <TypographyLead>
                     <a
-                      className="font-mono hover:text-primary"
+                      className="font-mono text-aquablue-500 hover:text-aquablue-900"
                       rel="noreferrer nofollow noopener"
                       href={authorLink}
                     >
