@@ -2,7 +2,7 @@
   "name": "theleakycauldronblog",
   "description": "The Leaky Cauldron Blog",
   "author": "Vaibhav Sharma<vaibhavsharmaatwork@gmail.com>",
-  "version": "3.4.8",
+  "version": "3.5.0",
   "license": "MIT",
   "scripts": {
     "develop": "gatsby develop",
@@ -47,6 +47,7 @@
     "gatsby-plugin-sharp": "^5.13.1",
     "gatsby-plugin-sitemap": "^6.13.1",
     "gatsby-plugin-twitter": "^5.13.1",
+    "gatsby-remark-absolute-link-catch": "^0.0.1",
     "gatsby-remark-copy-linked-files": "^6.13.1",
     "gatsby-remark-embedder": "^7.0.0",
     "gatsby-remark-external-links": "^0.0.4",

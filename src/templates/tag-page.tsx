@@ -8,6 +8,7 @@ import {
   TypographyH1,
   TypographyH2,
   TypographyLead,
+  TypographyMuted,
 } from '@/components/ui/typography'
 import {Separator} from '@/components/ui/separator'
 import SEO from '@/components/SEO'
@@ -23,6 +24,7 @@ type DataProps = {
         }
         frontmatter: {
           title: string
+          author: string
         }
       }
     }[]
@@ -53,7 +55,7 @@ function TagPageTemplate({
               </span>
             </TypographyH1>
 
-            <TypographyLead className="font-mono">
+            <TypographyLead className="font-mono text-aquamarine-500">
               {t('tag-subtitle', {count: totalCount, tag: tag})}
             </TypographyLead>
 
@@ -63,18 +65,26 @@ function TagPageTemplate({
           <section>
             {articles.map((article: any, idx: number) => {
               const articleTitle = article.node.frontmatter.title
+              const author = article.node.frontmatter.author
               const slug = article.node.fields.slug
 
               return (
                 <article
                   key={`${slug}-${idx}`}
-                  className="border-b py-6 last:border-none"
+                  className="space-y-3 border-b py-6 last:border-none"
                 >
                   <TypographyH2>
-                    <Link className="hover:text-muted-foreground" to={slug}>
+                    <Link
+                      className="transition-colors duration-100 hover:text-muted-foreground"
+                      to={slug}
+                    >
                       {articleTitle}
                     </Link>
                   </TypographyH2>
+
+                  <TypographyMuted className="font-mono text-aquablue-700">
+                    {t('by-author', {author: author?.toUpperCase()})}
+                  </TypographyMuted>
                 </article>
               )
             })}
@@ -135,6 +145,7 @@ export const tagQuery = graphql`
           }
           frontmatter {
             title
+            author
           }
         }
       }

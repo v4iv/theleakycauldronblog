@@ -7,7 +7,7 @@ interface ContentProps {
 function Content({html}: ContentProps) {
   return (
     <div
-      className="prose prose-base prose-slate dark:prose-invert md:prose-lg"
+      className="prose prose-base prose-slate font-serif dark:prose-invert md:prose-xl"
       dangerouslySetInnerHTML={{__html: html}}
     />
   )

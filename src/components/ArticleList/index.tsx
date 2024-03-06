@@ -62,7 +62,9 @@ function ArticleList({posts}: ArticleListProps) {
                   >
                     <TypographyH2>{title}</TypographyH2>
 
-                    <TypographyP>{excerpt}</TypographyP>
+                    <TypographyP className="font-serif text-xl">
+                      {excerpt}
+                    </TypographyP>
                   </Link>
                 </div>
 
@@ -90,12 +92,14 @@ function ArticleList({posts}: ArticleListProps) {
                 </div>
               </div>
 
-              <TypographyMuted className="font-mono">
+              <TypographyMuted className="font-mono text-aquablue-700 dark:text-aquablue-500">
                 {t('by-author', {author: author.toUpperCase()})}
               </TypographyMuted>
 
               <time className="block font-mono">
-                <TypographySmall>{date}</TypographySmall>
+                <TypographySmall className="text-muted-foreground">
+                  {date}
+                </TypographySmall>
               </time>
 
               <Separator className="mt-7" />

@@ -57,7 +57,7 @@ function Footer() {
                   rel="noreferrer nofollow noopener"
                   href="https://twitter.com/waybove"
                 >
-                  <Twitter className="size-4" />
+                  <Twitter className="size-4 text-[#1da1f2]" />
                 </a>
               </Button>
             </TooltipTrigger>
@@ -76,7 +76,7 @@ function Footer() {
                 asChild
               >
                 <a target="_blank" href="/rss.xml" rel="noopener noreferrer">
-                  <Rss className="size-4" />
+                  <Rss className="size-4 text-[#ee802f]" />
                 </a>
               </Button>
             </TooltipTrigger>

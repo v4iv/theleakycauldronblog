@@ -53,7 +53,13 @@ function ShareSheet({
           size={iconOnly ? 'icon' : 'sm'}
           className="font-mono text-xs"
         >
-          <Share className={iconOnly ? 'size-4' : 'mr-2 size-3'} />
+          <Share
+            className={
+              iconOnly
+                ? 'size-4 text-aquamarine-500'
+                : 'mr-2 size-3 text-aquamarine-500'
+            }
+          />
           {iconOnly ? '' : t('share-button')}
         </Button>
       </PopoverTrigger>
@@ -79,7 +85,7 @@ function ShareSheet({
                     className="size-4"
                     data-icon="whatsapp"
                     viewBox="0 0 24 24"
-                    style={{fill: 'currentcolor'}}
+                    style={{fill: '#25d366'}}
                   >
                     <title>{t('share.share-whatsapp')}</title>
 
@@ -107,7 +113,7 @@ function ShareSheet({
                     className="size-4"
                     data-icon="twitter"
                     viewBox="0 0 32 32"
-                    style={{fill: 'currentcolor'}}
+                    style={{fill: '#1da1f2'}}
                   >
                     <title>{t('share.share-twitter')}</title>
 
@@ -136,7 +142,7 @@ function ShareSheet({
                     role="img"
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
-                    style={{fill: 'currentcolor'}}
+                    style={{fill: '#ff4500'}}
                   >
                     <title>{t('share.share-reddit')}</title>
 
@@ -164,7 +170,7 @@ function ShareSheet({
                     className="size-4"
                     data-icon="facebook"
                     viewBox="0 0 32 32"
-                    style={{fill: 'currentcolor'}}
+                    style={{fill: '#316ff6'}}
                   >
                     <title>{t('share.share-facebook')}</title>
 
