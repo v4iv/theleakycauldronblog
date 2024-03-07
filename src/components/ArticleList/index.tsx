@@ -62,7 +62,7 @@ function ArticleList({posts}: ArticleListProps) {
                   >
                     <TypographyH2>{title}</TypographyH2>
 
-                    <TypographyP className="font-serif text-xl">
+                    <TypographyP className="font-serif text-lg md:text-xl">
                       {excerpt}
                     </TypographyP>
                   </Link>

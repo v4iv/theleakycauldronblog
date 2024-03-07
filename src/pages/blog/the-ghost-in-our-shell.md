@@ -24,7 +24,7 @@ So what DOES make us, US? Memories and experiences? What if we lose all our memo
 
 Joni Mitchell in her ethereal song Woodstock, sang:
 
-> “We are Stardust…”
+> We are Stardust…
 >
 > ― Joni Mitchell
 
@@ -40,6 +40,6 @@ Some philosophers like Daniel Dennett believe that our inability to express our 
 
 As Pierre Teilhard de Chardin once said:
 
-> “We are not human beings having a spiritual experience. We are spiritual beings having a human experience.”
+> We are not human beings having a spiritual experience. We are spiritual beings having a human experience.
 >
 > ― Pierre Teilhard de Chardin

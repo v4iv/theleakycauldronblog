@@ -447,6 +447,8 @@ Save the `secret`, we’ll be using it while making authenticated CRUD requests.
 
 That’s it for this part, In the next part, we’ll finally be writing the code for authenticated CRUD requests.
 
+---
+
 ## Links
 
 **Link to Part 1:** [Authenticated Serverless CRUD with Netlify Functions and FaunaDB Part 1](/blog/authenticated-serverless-crud-netlify-functions-faunadb-part-1)

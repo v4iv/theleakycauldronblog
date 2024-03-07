@@ -37,6 +37,8 @@ Yet, despite its strengths, the uneven pacing remained a notable flaw. The journ
 
 In hindsight, "The Well of Ascension" was a testament to Brandon Sanderson's ability to weave intricate tales of power and personal struggle. It was a journey marked by highs and lows, triumphs and tragedies — a journey that left me eagerly anticipating the next installment in the Mistborn series.
 
+---
+
 ## Mistborn Era 1 Reviews
 
 **[The Final Emire Review](https://theleakycauldronblog.com/blog/mistborn-the-final-empire-review)**

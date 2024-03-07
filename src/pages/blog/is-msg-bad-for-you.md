@@ -16,7 +16,7 @@ tags:
 ---
 Recently [a video](https://www.youtube.com/watch?v=53me-ICi_f8) by Sino-Malaysian comedian Nigel Ng went viral where his alter-ego Uncle Roger ruthelessly roasts an Anglo-Indian girl Hersha Patel, for her “Egg Fried Rice” cooking methods. But in a wholesome turn of events, they became friends, and he made [another video](https://www.youtube.com/watch?v=d9Zg_I5a96Y) about taking her to London’s Chinatown for shopping authentic Chinese ingredients. In this video, Nigel or rather Uncle Roger confesses his love for ... MSG. This leads to a minor argument between Uncle Roger and Aunty Hersha on whether MSG is bad for health.
 
-> "In Asian culture, if taste good no need science"
+> In Asian culture, if taste good no need science
 >
 > — Uncle Roger
 

@@ -35,6 +35,8 @@ The final stand of Elend and Vin brought tears to my eyes, a testament to the em
 
 In the end, "Hero of Ages" delivered a worthy conclusion to the Mistborn trilogy — one filled with grandeur, emotion, and unexpected twists. It was a journey that defied expectations, leaving me awestruck by the sheer brilliance of Brandon Sanderson's storytelling prowess.
 
+---
+
 ## Mistborn Era 1 Reviews
 
 **[The Final Empire Review](https://theleakycauldronblog.com/blog/mistborn-the-final-empire-review/)**

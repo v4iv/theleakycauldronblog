@@ -25,7 +25,7 @@ The article list was all words, no thumbnails and since all the images were with
 
 This all changed when I decided to ditch [Bulma](https://bulma.io) for [Tachyons](https://tachyons.io).
 
-> "With New Framework Comes New Design"
+> With New Framework Comes New Design
 >
 > \- Anonymous (Probably LOL)
 

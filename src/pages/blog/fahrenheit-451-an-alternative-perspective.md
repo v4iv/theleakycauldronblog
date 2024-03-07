@@ -25,7 +25,7 @@ Ray Bradbury, since childhood, was obsessed with books but didn’t have the mea
 
 Now forgive me for my ignorance but, I never found Tim Robbins to be significant enough to recognise by name, even though I have seen *Shawshank Redemption*. That and the fact that his voice seemed awfully similar to *Norm McDonald*’s, made it more hilarious than the author intended it. It certainly didn’t help on how fuckin preachy and on the nose the writing itself was at times. The writing was clearly influenced by George Orwell but lacked the subtlety and complexity of his work. It read like a fanfiction of 1984 about kids these days, which is ironic since George Orwell famously once said ―
 
-> “Every generation imagines itself to be more intelligent than the one that went before it, and wiser than the one that comes after it.”
+> Every generation imagines itself to be more intelligent than the one that went before it, and wiser than the one that comes after it.
 >
 > ― George Orwell
 

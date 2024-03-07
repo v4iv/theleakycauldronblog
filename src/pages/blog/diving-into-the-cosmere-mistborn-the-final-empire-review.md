@@ -67,6 +67,8 @@ And then there's Sazed — an unsung hero whose quiet strength and unwavering lo
 
 In hindsight, "The Final Empire" was almost perfect, with its only flaw being a slight dip in pacing in the middle. But even that minor hiccup couldn't detract from the overall brilliance of Brandon Sanderson's storytelling. It was a journey that left me eager to delve deeper into the world of Mistborn, eager to uncover its secrets and unravel its mysteries.
 
+---
+
 ## Mistborn Era 1 Reviews
 
 **[The Well of Ascension Review](https://theleakycauldronblog.com/blog/mistborn-the-well-of-ascension-review)**

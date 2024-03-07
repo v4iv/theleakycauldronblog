@@ -356,6 +356,8 @@ Then, to test the API, restart the dev server and make a `DELETE` request to the
 
 That’s it for this tutorial series on making serverless authenticated CRUD with Netlify Functions and Fauna DB. Hope, you make something awesome.
 
+---
+
 ## Links
 
 **Link to Part 1:** [Authenticated Serverless CRUD with Netlify Functions and FaunaDB Part 1](/blog/authenticated-serverless-crud-netlify-functions-faunadb-part-1)
