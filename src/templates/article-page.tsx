@@ -105,7 +105,7 @@ function ArticlePageTemplate({
                 </div>
               </div>
 
-              <div className="flex flex-wrap gap-y-1">
+              <div className="flex flex-wrap gap-y-3">
                 {tags.map((tag, idx) => (
                   <Link
                     key={`${slugify(tag)}-${idx}`}
