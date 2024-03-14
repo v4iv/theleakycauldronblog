@@ -28,7 +28,7 @@ This tutorial assumes you already have Cloudflare DNS setup for your Website or 
 
 ## Why did I choose Zaraz over Partytown?
 
-My blog is built with [Gatsby JS](https://www.gatsbyjs.com), which has native support for Partytown. So, you must be wondering why I went with Zaraz, let me tell you, I didn't, at least not at first. I first attempted to implement it with the [Gatsby Script API off-main-thread strategy](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-script/), which is a fancy wrapper on Partytown. But that didn't work out because it was built for Gatsby Cloud primarily, and even though Netlify claims, it supports the redirections required to make it work,(via `gatsby-plugin-netlify`), I couldn't make it work. And not for the lack of trying, as I wasn't the only one who found this task nearly impossible, given the forum posts, I encountered. This naturally left me with the only available option — Cloudflare Zaraz.
+My blog is built with [Gatsby JS](https://www.gatsbyjs.com), which has native support for Partytown. So, you must be wondering why I went with Zaraz, let me tell you, I didn't, at least not at first. I first attempted to implement it with the [Gatsby Script API off-main-thread strategy](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-script/), which is a fancy wrapper on Partytown. But that didn't work out because it was built for *Gatsby Cloud* primarily, and even though Netlify claims, it supports the redirections required to make it work,(via `gatsby-adapter-netlify`), I couldn't make it work. And not for the lack of trying, as I wasn't the only one who found this task nearly impossible, given the forum posts, I encountered. This naturally left me with the only available option — Cloudflare Zaraz.
 
 ## Embedding Disqus
 
@@ -96,29 +96,31 @@ import {Script, ScriptStrategy} from 'gatsby'
 
 ### Implementing Disqus Script with Cloudflare Zaraz
 
-![Cloudflare Zaraz in left side panel](/img/screenshot-2024-03-14-at-11.17.48 am.jpg)
+Go to your project, and then, in the left side panel, click on Zaraz.
 
-Go to your project, and then, in the left side panel, click on Zaraz. The way Zaraz works is you have to create a `trigger` and attach that trigger to the code you want to insert into your website. There are a few templates, but Disqus is not one of them, so we'll use a `Custom HTML Tool` to insert it. So click on Custom HTML.
+![Cloudflare Zaraz in left side panel](/img/screenshot-2024-03-14-at-11.17.48 am.jpg "Cloudflare Zaraz in left side panel")
 
-![Custom HTML Tool](/img/screenshot-2024-03-14-at-11.26.21 am.jpg)
+The way Zaraz works is you have to create a `trigger` and attach that trigger to the code you want to insert into your website. There are a few templates, but Disqus is not one of them, so we'll use a `Custom HTML Tool` to insert it. So click on Custom HTML.
+
+![Custom HTML Tool](/img/screenshot-2024-03-14-at-11.26.21 am.jpg "Custom HTML Tool")
 
 You'll be asked for a few permissions, grant them, and give it a name.
 
-![Confirm permission](/img/screenshot-2024-03-14-at-11.26.38 am.jpg)
+![Confirm permission](/img/screenshot-2024-03-14-at-11.26.38 am.jpg "Confirm permission")
 
-![JS permission](/img/screenshot-2024-03-14-at-11.26.45 am.jpg)
+![Execute JS permission](/img/screenshot-2024-03-14-at-11.26.45 am.jpg "Execute JS permission")
 
-![Name the tool](/img/screenshot-2024-03-14-at-11.27.02 am.jpg)
+![Name the tool](/img/screenshot-2024-03-14-at-11.27.02 am.jpg "Name the tool")
 
 While Zaraz provides a default trigger i.e. `Pageview`, which loads on every page view, we don't want to load Disqus scripts on every page, so we'll create a new Trigger by going to *Triggers* tab and clicking on Create a trigger. We'll add two rules to this trigger — 
 
 * first, that'll identify the page to load the script on, by checking if the URL contains `/blog/` (although you can use whatever identifying pattern you want) 
-* and second, that'll check if the user has scrolled enough that we should begin loading the comments, I have used a scroll depth of 50%, you can choose your own, though I'd recommend at least 10%, or else it sometimes doesn't work.
+* and second, that'll check if the user has scrolled enough that we should begin loading the comments, I have used a scroll depth of 50%, you can choose your own. Though I'd recommend at least 10%, or else it sometimes doesn't work.
 
-![Create Trigger](/img/screenshot-2024-03-14-at-11.17.13 am.jpg)
+![Create Trigger](/img/screenshot-2024-03-14-at-11.17.13 am.jpg "Create Trigger")
 
-Then we go to the Third-Party Tools tab and click on Disqus > Edit and add the Trigger Blog view and the Disqus embed js to it.
+Then we go to the Third-Party Tools tab and click on Disqus > Edit and add the Trigger `Blog view` and the Disqus `embed.js` to it.
 
-![Third-party tool](/img/screenshot-2024-03-14-at-11.16.49 am.jpg)
+![Third-party tool](/img/screenshot-2024-03-14-at-11.16.49 am.jpg "Third-party tool")
 
 This should load Disqus comments on your website using Zaraz.
