@@ -92,14 +92,12 @@ function ArticleList({posts}: ArticleListProps) {
                 </div>
               </div>
 
-              <TypographyMuted className="font-mono text-aquablue-700 dark:text-aquablue-500">
+              <TypographyMuted className="font-mono">
                 {t('by-author', {author: author.toUpperCase()})}
               </TypographyMuted>
 
               <time className="block font-mono">
-                <TypographySmall className="text-muted-foreground">
-                  {date}
-                </TypographySmall>
+                <TypographySmall>{date}</TypographySmall>
               </time>
 
               <Separator className="mt-7" />
