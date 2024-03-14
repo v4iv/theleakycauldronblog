@@ -22,29 +22,21 @@ Using Third-Party Embeddings is always taxing on the performance metrics, but no
 
 Out of all these, I found web worker strategies to be the most natural user experience. There are a few web worker providers like [Partytown](https://partytown.builder.io) and [Cloudflare Zaraz](https://www.cloudflare.com/application-services/products/zaraz/) that are mostly preferred.
 
-## 
-Prerequisite
-
+## Prerequisite
 
 This tutorial assumes you already have Cloudflare DNS setup for your Website or Cloudflare is your DNS Provider.
 
-## 
-Why did I choose Zaraz over Partytown?
-
+## Why did I choose Zaraz over Partytown?
 
 My blog is built with [Gatsby JS](https://www.gatsbyjs.com), which has native support for Partytown. So, you must be wondering why I went with Zaraz, let me tell you, I didn't, at least not at first. I first attempted to implement it with the [Gatsby Script API off-main-thread strategy](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-script/), which is a fancy wrapper on Partytown. But that didn't work out because it was built for Gatsby Cloud primarily, and even though Netlify claims, it supports the redirections required to make it work,(via `gatsby-plugin-netlify`), I couldn't make it work. And not for the lack of trying, as I wasn't the only one who found this task nearly impossible, given the forum posts, I encountered. This naturally left me with the only available option — Cloudflare Zaraz.
 
-## 
-Embedding Disqus
-
+## Embedding Disqus
 
 Embedding Disqus has three steps:
 
 * Create a `<div/>` with id `"disqus_thread"`.
 * Implement a config loading function.
 * Insert the Disqus embedding JS.
-
-
 
 ```javascript
 <div id="disqus_thread"></div>
@@ -67,14 +59,9 @@ Embedding Disqus has three steps:
 </script>
 ```
 
-
-
 ### Frontend Code
 
-
 The first step is easy enough - just add a `div` to the page where you want the comments. Next, add the `disqus_config` script to the page where you want the comments, and replace the variables, since I'm using Gatsby, I'll be using Gatsby's Script API, and pass the page `URL`, `identifier` and title to it, and push it to production.
-
-
 
 ```jsx
 import {Script, ScriptStrategy} from 'gatsby'
@@ -107,10 +94,7 @@ import {Script, ScriptStrategy} from 'gatsby'
 </>
 ```
 
-
-
 ### Implementing Disqus Script with Cloudflare Zaraz
-
 
 ![Cloudflare Zaraz in left side panel](/img/screenshot-2024-03-14-at-11.17.48 am.jpg)
 
@@ -126,20 +110,15 @@ You'll be asked for a few permissions, grant them, and give it a name.
 
 ![Name the tool](/img/screenshot-2024-03-14-at-11.27.02 am.jpg)
 
-While Zaraz provides a default trigger i.e. `Pageview`, which loads on every page view, we don't want to load Disqus scripts on every page, so we'll create a new Trigger by going to *Triggers* tab and clicking on Create a trigger and adding to it two conditions — 
-
+While Zaraz provides a default trigger i.e. `Pageview`, which loads on every page view, we don't want to load Disqus scripts on every page, so we'll create a new Trigger by going to *Triggers* tab and clicking on Create a trigger. We'll add two rules to this trigger — 
 
 * first, that'll identify the page to load the script on, by checking if the URL contains `/blog/` (although you can use whatever identifying pattern you want) 
-
 * and second, that'll check if the user has scrolled enough that we should begin loading the comments, I have used a scroll depth of 50%, you can choose your own, though I'd recommend at least 10%, or else it sometimes doesn't work.
 
 ![Create Trigger](/img/screenshot-2024-03-14-at-11.17.13 am.jpg)
 
-
-
 Then we go to the Third-Party Tools tab and click on Disqus > Edit and add the Trigger Blog view and the Disqus embed js to it.
 
 ![Third-party tool](/img/screenshot-2024-03-14-at-11.16.49 am.jpg)
-
 
 This should load Disqus comments on your website using Zaraz.
