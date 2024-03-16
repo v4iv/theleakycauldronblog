@@ -121,6 +121,6 @@ While Zaraz provides a default trigger i.e. `Pageview`, which loads on every pag
 
 Then we go to the Third-Party Tools tab and click on Disqus > Edit and add the Trigger `Blog view` and the Disqus `embed.js` to it.
 
-![Third-party tool](/img/screenshot-2024-03-14-at-11.16.49 am.jpg "Third-party tool")
+![Third-party tool](/img/screenshot-2024-03-16-at-8.13.39 pm.jpg "Third-party tool")
 
 This should load Disqus comments on your website using Zaraz.

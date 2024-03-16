@@ -7,7 +7,9 @@ dotenv.config({path: `.env.${process.env.NODE_ENV}`})
 
 const siteMetadata = {
   title: `The Leaky Cauldron Blog`,
-  description: `A Brew of Awesomeness with a Pinch of Magic...`,
+  description: `A Brew of Awesomeness with a Pinch of Magic. The Leaky Cauldron Blog is the personal blog of Vaibhav
+  Sharma. Topics include coding, movies, music, books, dinosaurs or anything
+  under the sun and beyond.`,
   shortName: `tlcb`,
   siteUrl: `https://theleakycauldronblog.com`,
   image: `/banner.jpg`,

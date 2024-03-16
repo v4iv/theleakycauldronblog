@@ -46,7 +46,7 @@ function AboutPage({
 
             <TypographyLead>{subtitle}</TypographyLead>
 
-            <TypographyLarge className="font-mono text-aquablue-700">
+            <TypographyLarge className="font-mono text-aquablue-700 dark:text-aquamarine-500">
               {author}
             </TypographyLarge>
           </header>

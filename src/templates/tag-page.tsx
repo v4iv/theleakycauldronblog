@@ -82,7 +82,7 @@ function TagPageTemplate({
                     </Link>
                   </TypographyH2>
 
-                  <TypographyMuted className="font-mono text-aquablue-700">
+                  <TypographyMuted className="font-mono">
                     {t('by-author', {author: author?.toUpperCase()})}
                   </TypographyMuted>
                 </article>
