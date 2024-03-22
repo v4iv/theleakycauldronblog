@@ -10,9 +10,11 @@ import {
   Sun,
   Hash,
 } from 'lucide-react'
+import useDarkMode from 'use-dark-mode'
 import {StaticImage} from 'gatsby-plugin-image'
 import {useTranslation} from 'gatsby-plugin-react-i18next'
 
+import {darkModeConfig} from '@/lib/utils'
 import {
   Sheet,
   SheetContent,
@@ -29,7 +31,6 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 import {Button} from '@/components/ui/button'
-import {useTheme} from '@/components/ui/theme-provider'
 import {Avatar, AvatarFallback, AvatarImage} from '@/components/ui/avatar'
 import {Tooltip, TooltipContent, TooltipTrigger} from '@/components/ui/tooltip'
 
@@ -38,7 +39,7 @@ const CommandPalette = lazy(() => import('@/components/CommandPalette'))
 function NavBar() {
   const {t} = useTranslation('common')
   const [open, setOpen] = useState(false)
-  const {setTheme} = useTheme()
+  const darkMode = useDarkMode(false, darkModeConfig)
 
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -237,23 +238,16 @@ function NavBar() {
                       <DropdownMenuContent side="top" align="end">
                         <DropdownMenuItem
                           className="font-mono"
-                          onClick={() => setTheme('light')}
+                          onClick={darkMode.disable}
                         >
                           {t('light')}
                         </DropdownMenuItem>
 
                         <DropdownMenuItem
                           className="font-mono"
-                          onClick={() => setTheme('dark')}
+                          onClick={darkMode.enable}
                         >
                           {t('dark')}
-                        </DropdownMenuItem>
-
-                        <DropdownMenuItem
-                          className="font-mono"
-                          onClick={() => setTheme('system')}
-                        >
-                          {t('system')}
                         </DropdownMenuItem>
                       </DropdownMenuContent>
                     </DropdownMenu>
