@@ -126,8 +126,6 @@ src/utils/airports.ts
 src/utils/airlines.ts
 
 .eslintrc.json
-.prettierrc
-
 .netlify/
 netlify.toml
 
