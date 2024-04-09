@@ -69,7 +69,7 @@ function NavBar() {
 
             <Tooltip>
               <TooltipTrigger asChild>
-                <h3 className="scroll-m-20 text-2xl font-extrabold leading-relaxed tracking-wider">
+                <h3 className="scroll-m-20 text-2xl leading-relaxed tracking-wider">
                   <Link
                     className="hidden hover:text-muted-foreground md:flex"
                     to="/"

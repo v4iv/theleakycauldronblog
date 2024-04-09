@@ -13,7 +13,7 @@ function Footer() {
     <footer className="mx-auto w-full max-w-screen-md font-mono">
       <div className="flex flex-col items-center px-3 py-5 text-center md:flex-row md:px-0 md:text-left">
         <div className="grow">
-          <TypographyMuted>
+          <TypographyMuted className="font-extralight">
             {t('footer.copyright', {
               year: new Date().getFullYear().toString(),
             })}

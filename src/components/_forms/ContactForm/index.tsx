@@ -100,15 +100,21 @@ function ContactForm() {
           name="name"
           render={({field}) => (
             <FormItem>
-              <FormLabel>{t('contact-form.name')}</FormLabel>
+              <FormLabel className="font-mono">
+                {t('contact-form.name')}
+              </FormLabel>
 
               <FormControl>
-                <Input disabled={submitDisabled} {...field} />
+                <Input
+                  className="font-mono"
+                  disabled={submitDisabled}
+                  {...field}
+                />
               </FormControl>
 
-              <FormDescription />
+              <FormDescription className="font-mono" />
 
-              <FormMessage />
+              <FormMessage className="font-mono" />
             </FormItem>
           )}
         />
@@ -118,15 +124,21 @@ function ContactForm() {
           name="email"
           render={({field}) => (
             <FormItem>
-              <FormLabel>{t('contact-form.email')}</FormLabel>
+              <FormLabel className="font-mono">
+                {t('contact-form.email')}
+              </FormLabel>
 
               <FormControl>
-                <Input disabled={submitDisabled} {...field} />
+                <Input
+                  className="font-mono"
+                  disabled={submitDisabled}
+                  {...field}
+                />
               </FormControl>
 
-              <FormDescription />
+              <FormDescription className="font-mono" />
 
-              <FormMessage />
+              <FormMessage className="font-mono" />
             </FormItem>
           )}
         />
@@ -136,21 +148,29 @@ function ContactForm() {
           name="message"
           render={({field}) => (
             <FormItem>
-              <FormLabel>{t('contact-form.message')}</FormLabel>
+              <FormLabel className="font-mono">
+                {t('contact-form.message')}
+              </FormLabel>
 
               <FormControl>
-                <Textarea rows={12} disabled={submitDisabled} {...field} />
+                <Textarea
+                  className="font-mono"
+                  rows={12}
+                  disabled={submitDisabled}
+                  {...field}
+                />
               </FormControl>
 
-              <FormDescription />
+              <FormDescription className="font-mono" />
 
-              <FormMessage />
+              <FormMessage className="font-mono" />
             </FormItem>
           )}
         />
 
         <div className="mt-3 flex justify-end space-x-2">
           <Button
+            className="font-mono"
             variant="outline"
             type="reset"
             disabled={methods.formState.isSubmitting}
@@ -159,7 +179,7 @@ function ContactForm() {
             {t('contact-form.clear')}
           </Button>
 
-          <Button type="submit" disabled={submitDisabled}>
+          <Button className="font-mono" type="submit" disabled={submitDisabled}>
             {submitDisabled && <Loader2 className="mr-2 size-4 animate-spin" />}
 
             {submitDisabled

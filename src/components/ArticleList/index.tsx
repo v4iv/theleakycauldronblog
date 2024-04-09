@@ -70,7 +70,7 @@ function ArticleList({posts}: ArticleListProps) {
 
                 <div className="order-1 mb-4 w-full pl-0 md:order-last md:mb-0 md:ml-auto md:w-2/5 md:pl-3">
                   <div
-                    className={`${isGuestAuthor && 'relative'} overflow-hidden rounded-md`}
+                    className={`${isGuestAuthor && 'relative'} overflow-hidden rounded-md font-mono`}
                   >
                     <Link className="block px-0" to={slug}>
                       <ImageBox
