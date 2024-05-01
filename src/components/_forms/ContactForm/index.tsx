@@ -28,17 +28,20 @@ function ContactForm() {
       .string({
         required_error: t('contact-form.name-required'),
       })
+      .trim()
       .min(2, {message: t('contact-form.name-too-short')})
       .max(50, {message: t('contact-form.name-too-long')}),
     email: z
       .string({
         required_error: t('contact-form.email-required'),
       })
+      .trim()
       .email({message: t('contact-form.invalid-email')}),
     message: z
       .string({
         required_error: t('contact-form.message-required'),
       })
+      .trim()
       .min(20, {
         message: t('contact-form.message-too-short'),
       }),
