@@ -1,14 +1,15 @@
 ---
 templateKey: article-page
-title: Dear friends...
-slug: friends-and-politics
+title: "Dear Friends: Politics"
+slug: dear-friends-politics
 author: Vaibhav Sharma
 authorLink: https://twitter.com/waybove
 date: 2024-04-28T19:26:21.241Z
 cover: /img/dear-friends-politics-brian-wertheim.jpg
-metaTitle: Friends and Politics
-metaDescription: Dear friends I believe we should take a centrist approach
-  rather than align to ideological leanings, here's why.
+metaTitle: "Dear Friends: Politics"
+metaDescription: A letter to my friends on why I believe we should take a
+  centrist approach rather than align to ideological leanings and political
+  parties.
 tags:
   - rant
   - politics
