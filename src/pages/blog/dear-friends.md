@@ -4,7 +4,7 @@ title: "Dear Friends: Politics"
 slug: dear-friends-politics
 author: Vaibhav Sharma
 authorLink: https://twitter.com/waybove
-date: 2024-04-28T19:26:21.241Z
+date: 2024-05-04T18:30:21.241Z
 cover: /img/dear-friends-politics-brian-wertheim.jpg
 metaTitle: "Dear Friends: Politics"
 metaDescription: A letter to my friends on why I believe we should take a
