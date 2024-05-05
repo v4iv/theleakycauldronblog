@@ -11,7 +11,7 @@ metaDescription: A letter to my friends on why I believe we should take a
   centrist approach rather than align to ideological leanings and political
   parties.
 tags:
-  - rant
+  - open letter
   - politics
 ---
 Do you think any politician deserves our blind loyalty? I don't believe even our closest family or friends warrant that level of devotion. As humans, we are deeply flawed, and our understanding of someone's true motivations is greatly diminished in parasocial relationships, such as those with celebrities, influencers, or politicians. In my opinion, we need not defend every policy decision made by our preferred party, nor should we oppose every action taken by the opposing party.
