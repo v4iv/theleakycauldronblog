@@ -4,7 +4,7 @@ title: Top 10 LoFi 🌌 - beats to distract you from study/work to
 slug: top-10-lofi-tracks
 author: Vaibhav Sharma
 authorLink: https://twitter.com/waybove
-date: 2024-05-15T06:30:06.679Z
+date: 2024-05-11T11:12:10.578Z
 cover: /img/lofigirl.png
 metaTitle: Top 10 LoFi - beats to distract you from study/work to
 metaDescription: My Top 10 LoFi Beats that are so good that they distract me
