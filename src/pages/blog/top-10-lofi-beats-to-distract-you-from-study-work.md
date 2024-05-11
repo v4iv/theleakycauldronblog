@@ -81,3 +81,5 @@ https://youtu.be/57PcFq4uZ2s
 This LoFi track is pure perfection, from the entrancing music to the masterfully edited video. Clips from the film [Eternal Sunshine of the Spotless Mind](https://en.wikipedia.org/wiki/Eternal_Sunshine_of_the_Spotless_Mind) are seamlessly woven together, made even more poignant by sampling a line from the movie itself. The result captures the bittersweet nostalgia of a faded relationship with heartbreaking accuracy. As the melancholic melody washes over you, it kindles hope for the future, like finding solace in a cozy cafe over a cup of pourover, while processing the end of one chapter and the potential start of another.
 
 https://youtu.be/U-9rYC8RPu8
+
+So these were my top 10, did I miss any, what did you think about it, let me know in the comments down below!
