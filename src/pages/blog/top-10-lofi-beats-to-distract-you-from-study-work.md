@@ -1,12 +1,12 @@
 ---
 templateKey: article-page
-title: Top 10 LoFi 🌌 - beats to distract you from study/work to
+title: Top 10 LoFi 🌌 - beats to distract you from study/work
 slug: top-10-lofi-tracks
 author: Vaibhav Sharma
 authorLink: https://twitter.com/waybove
 date: 2024-05-11T11:12:10.578Z
 cover: /img/lofigirl.png
-metaTitle: Top 10 LoFi - beats to distract you from study/work to
+metaTitle: Top 10 LoFi - beats to distract you from study/work
 metaDescription: My Top 10 LoFi Beats that are so good that they distract me
   from work/study and make me vibe hard and transport my imagination to far off
   places.
