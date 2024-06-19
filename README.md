@@ -48,6 +48,29 @@
     cd {your-project-name}/
     yarn develop
     ```
+    ### VS Code
+
+    Set up debugging in VS Code by adding the following to `launch.json`
+
+    ```json
+    {
+        "name": "Gatsby Develop",
+        "type": "node",
+        "request": "launch",
+        "program": "${workspaceRoot}/node_modules/.bin/gatsby",
+        "args": [
+            "develop"
+        ],
+        "env": {
+            "PARCEL_WORKERS": "0",
+            "GATSBY_CPU_COUNT": "2",
+        },
+        "runtimeArgs": [
+            "--nolazy"
+        ],
+        "console": "integratedTerminal"
+    },
+    ```
 
 3. **Open the code and start editing!**
 
@@ -83,31 +106,6 @@
     - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
     - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
     - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-## VS Code
-
-Set up debugging in VS Code by adding the following to `launch.json`
-
-```json
-{
-    "name": "Gatsby Develop",
-    "type": "node",
-    "request": "launch",
-    "program": "${workspaceRoot}/node_modules/.bin/gatsby",
-    "args": [
-        "develop"
-    ],
-    "env": {
-        "PARCEL_WORKERS": "0",
-        "GATSBY_CPU_COUNT": "2",
-    },
-    "runtimeArgs": [
-        "--nolazy"
-    ],
-    "console": "integratedTerminal"
-},
-```
-
 
 ## Built with Netlify
 
