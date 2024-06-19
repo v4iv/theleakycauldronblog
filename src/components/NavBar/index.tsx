@@ -53,7 +53,7 @@ function NavBar() {
                       asChild
                     >
                       <StaticImage
-                        src="../../assets/avatar.png"
+                        src="../../assets/images/avatar.png"
                         alt="the-leaky-cauldron-blog"
                       />
                     </AvatarImage>
@@ -69,7 +69,7 @@ function NavBar() {
 
             <Tooltip>
               <TooltipTrigger asChild>
-                <h3 className="scroll-m-20 text-2xl leading-relaxed tracking-wider">
+                <h3 className="scroll-m-20 text-2xl font-bold leading-relaxed tracking-wider">
                   <Link
                     className="hidden hover:text-muted-foreground md:flex"
                     to="/"

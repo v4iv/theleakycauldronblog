@@ -8,6 +8,12 @@
             ],
             "processor": "@graphql-eslint/graphql",
             "parser": "@typescript-eslint/parser",
+            "parserOptions": {
+                "ecmaVersion": "latest"
+            },
+            "env": {
+                "es6": true
+            },
             "extends": [
                 "eslint:recommended",
                 "plugin:@typescript-eslint/recommended",
@@ -15,9 +21,6 @@
                 "plugin:prettier/recommended",
                 "plugin:tailwindcss/recommended"
             ],
-            "env": {
-                "es6": true
-            },
             "globals": {
                 "graphql": true,
                 "fetch": true,
