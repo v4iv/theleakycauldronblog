@@ -20,8 +20,8 @@ const config = {
     },
     extend: {
       fontFamily: {
-        sans: ['Helvetica', ...fontFamily.sans],
-        serif: ['Athelas', ...fontFamily.serif],
+        sans: ['Avenir', 'Helvetica', ...fontFamily.sans],
+        serif: ['Athelas', 'Baskerville', ...fontFamily.serif],
       },
       colors: {
         border: 'hsl(var(--border))',
@@ -58,6 +58,7 @@ const config = {
           foreground: 'hsl(var(--card-foreground))',
         },
         aquamarine: {
+          DEFAULT: 'hsl(var(--aquamarine))',
           50: 'hsl(161, 100%, 96%)',
           100: 'hsl(160, 100%, 89%)',
           200: 'hsl(163, 100%, 80%)',
@@ -71,6 +72,7 @@ const config = {
           950: 'hsl(173, 100%, 10%)',
         },
         aquablue: {
+          DEFAULT: 'hsl(var(--aquablue))',
           50: 'hsl(248, 100%, 97%)',
           100: 'hsl(249, 100%, 95%)',
           200: 'hsl(248, 100%, 90%)',
@@ -98,7 +100,7 @@ const config = {
           from: {height: 'var(--radix-accordion-content-height)'},
           to: {height: '0'},
         },
-        reveal: {
+        'reveal-reverse': {
           from: {
             clipPath: 'inset(0 0 0 100%)',
           },
@@ -110,7 +112,7 @@ const config = {
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
-        'reveal-reverse': 'reveal 0.3s ease-in',
+        'reveal-reverse': 'reveal-reverse 0.3s ease-in',
       },
       dropShadow: {
         aquamarine: '0 1px 2px hsl(168, 100%, 43%)',

@@ -81,10 +81,12 @@ function ArticlePageTemplate({
         <div className="mx-auto w-full max-w-screen-md">
           <div className="p-3 md:px-0 md:py-5">
             <header className="space-y-3">
-              <TypographyH1>{title}</TypographyH1>
+              <TypographyH1 className="font-mono animate-in slide-in-from-top">
+                {title}
+              </TypographyH1>
 
               <div className="flex items-center justify-between">
-                <div className="flex flex-wrap items-center gap-x-2">
+                <div className="flex flex-wrap items-center gap-x-2 animate-in slide-in-from-right">
                   <TypographyLead>
                     <a
                       className="font-mono text-aquablue-500 hover:text-aquablue-900"
@@ -100,12 +102,12 @@ function ArticlePageTemplate({
                   <TypographyLead className="font-mono">{date}</TypographyLead>
                 </div>
 
-                <div className="hidden md:flex">
+                <div className="hidden animate-in zoom-in md:flex">
                   <ShareSheet title={title} slug={slug} siteURL={siteUrl} />
                 </div>
               </div>
 
-              <div className="flex flex-wrap gap-y-3">
+              <div className="flex flex-wrap gap-y-3 animate-in slide-in-from-bottom">
                 {tags.map((tag, idx) => (
                   <Link
                     key={`${slugify(tag)}-${idx}`}

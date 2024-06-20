@@ -42,11 +42,15 @@ function AboutPage({
       <div className="mx-auto w-full max-w-screen-md">
         <div className="p-3 md:px-0 md:py-5">
           <header className="space-y-3">
-            <TypographyH1>{title}</TypographyH1>
+            <TypographyH1 className="font-mono animate-in slide-in-from-top">
+              {title}
+            </TypographyH1>
 
-            <TypographyLead>{subtitle}</TypographyLead>
+            <TypographyLead className="font-mono animate-in slide-in-from-right">
+              {subtitle}
+            </TypographyLead>
 
-            <TypographyLarge className="font-mono text-aquablue-700 dark:text-aquamarine-500">
+            <TypographyLarge className="font-mono text-aquablue-700 animate-in slide-in-from-bottom dark:text-aquamarine-500">
               {author}
             </TypographyLarge>
           </header>

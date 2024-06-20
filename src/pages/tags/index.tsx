@@ -31,7 +31,9 @@ function TagsPage({
       <div className="mx-auto w-full max-w-screen-md">
         <div className="p-3 md:px-0 md:py-5">
           <header className="space-y-3">
-            <TypographyH1>{t('tags')}</TypographyH1>
+            <TypographyH1 className="font-mono animate-in slide-in-from-top">
+              {t('tags')}
+            </TypographyH1>
 
             <Separator />
           </header>

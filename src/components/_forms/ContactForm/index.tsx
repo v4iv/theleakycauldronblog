@@ -109,7 +109,7 @@ function ContactForm() {
 
               <FormControl>
                 <Input
-                  className="font-mono"
+                  className="font-mono animate-in slide-in-from-bottom"
                   disabled={submitDisabled}
                   {...field}
                 />
@@ -133,7 +133,7 @@ function ContactForm() {
 
               <FormControl>
                 <Input
-                  className="font-mono"
+                  className="font-mono animate-in slide-in-from-bottom"
                   disabled={submitDisabled}
                   {...field}
                 />
@@ -157,7 +157,7 @@ function ContactForm() {
 
               <FormControl>
                 <Textarea
-                  className="font-mono"
+                  className="font-mono animate-in slide-in-from-bottom"
                   rows={12}
                   disabled={submitDisabled}
                   {...field}
@@ -173,7 +173,7 @@ function ContactForm() {
 
         <div className="mt-3 flex justify-end space-x-2">
           <Button
-            className="font-mono"
+            className="font-mono animate-in zoom-in"
             variant="outline"
             type="reset"
             disabled={methods.formState.isSubmitting}
@@ -182,7 +182,11 @@ function ContactForm() {
             {t('contact-form.clear')}
           </Button>
 
-          <Button className="font-mono" type="submit" disabled={submitDisabled}>
+          <Button
+            className="font-mono animate-in zoom-in"
+            type="submit"
+            disabled={submitDisabled}
+          >
             {submitDisabled && <Loader2 className="mr-2 size-4 animate-spin" />}
 
             {submitDisabled
