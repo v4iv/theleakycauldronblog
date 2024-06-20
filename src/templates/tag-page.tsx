@@ -48,7 +48,7 @@ function TagPageTemplate({
       <div className="mx-auto w-full max-w-screen-md">
         <div className="p-3 md:px-0 md:py-5">
           <header className="space-y-3">
-            <TypographyH1>
+            <TypographyH1 className="font-mono">
               <span className="flex items-end">
                 <Hash className="mr-1 size-11" />
                 {tag}
@@ -73,7 +73,7 @@ function TagPageTemplate({
                   key={`${slug}-${idx}`}
                   className="space-y-3 border-b py-6 last:border-none"
                 >
-                  <TypographyH2>
+                  <TypographyH2 className="font-mono">
                     <Link
                       className="transition-colors duration-100 hover:text-muted-foreground"
                       to={slug}

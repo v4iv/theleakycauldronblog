@@ -20,8 +20,8 @@ const config = {
     },
     extend: {
       fontFamily: {
-        sans: ['Helvetica', ...fontFamily.sans],
-        serif: ['Athelas', ...fontFamily.serif],
+        sans: ['Avenir', 'Helvetica', ...fontFamily.sans],
+        serif: ['Athelas', 'Baskerville', ...fontFamily.serif],
       },
       colors: {
         border: 'hsl(var(--border))',
@@ -58,6 +58,7 @@ const config = {
           foreground: 'hsl(var(--card-foreground))',
         },
         aquamarine: {
+          DEFAULT: 'hsl(var(--aquamarine))',
           50: 'hsl(161, 100%, 96%)',
           100: 'hsl(160, 100%, 89%)',
           200: 'hsl(163, 100%, 80%)',
@@ -71,6 +72,7 @@ const config = {
           950: 'hsl(173, 100%, 10%)',
         },
         aquablue: {
+          DEFAULT: 'hsl(var(--aquablue))',
           50: 'hsl(248, 100%, 97%)',
           100: 'hsl(249, 100%, 95%)',
           200: 'hsl(248, 100%, 90%)',

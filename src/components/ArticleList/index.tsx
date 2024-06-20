@@ -60,9 +60,9 @@ function ArticleList({posts}: ArticleListProps) {
                     className="block px-0 hover:text-muted-foreground"
                     to={slug}
                   >
-                    <TypographyH2>{title}</TypographyH2>
+                    <TypographyH2 className="font-mono">{title}</TypographyH2>
 
-                    <TypographyP className="font-serif text-lg md:text-xl">
+                    <TypographyP className="text-lg md:text-xl">
                       {excerpt}
                     </TypographyP>
                   </Link>
