@@ -83,7 +83,7 @@ function SearchPage({
           <div className="flex space-x-2">
             <Tooltip>
               <TooltipTrigger asChild>
-                <div className="relative flex grow">
+                <div className="relative flex grow animate-reveal-reverse">
                   <Search className="pointer-events-none absolute right-3 top-1/2 size-4 -translate-y-1/2 text-aquamarine-500" />
 
                   <Input
@@ -147,7 +147,7 @@ function SearchPage({
                     className="space-y-3 border-b py-3 last:border-none"
                     key={id}
                   >
-                    <TypographyH2 className="font-mono">
+                    <TypographyH2 className="font-mono animate-in slide-in-from-bottom">
                       <Link
                         className="transition-colors duration-100 hover:text-gray-500"
                         to={slug}
@@ -157,7 +157,7 @@ function SearchPage({
                       </Link>
                     </TypographyH2>
 
-                    <TypographyMuted className="font-mono">
+                    <TypographyMuted className="font-mono animate-in slide-in-from-bottom">
                       {t('by-author', {author: author?.toUpperCase()})}
                     </TypographyMuted>
                   </article>

@@ -55,20 +55,22 @@ function ArticleList({posts}: ArticleListProps) {
           return (
             <article key={`${slug}-${idx}`} className="px-3 py-5 md:px-0">
               <div className="flex flex-col md:flex-row">
-                <div className="order-2 mb-2 pr-0 md:order-1 md:w-3/5 md:pr-3">
+                <div className="order-2 mb-2 pr-0  md:order-1 md:w-3/5 md:pr-3">
                   <Link
                     className="block px-0 hover:text-muted-foreground"
                     to={slug}
                   >
-                    <TypographyH2 className="font-mono">{title}</TypographyH2>
+                    <TypographyH2 className="font-mono animate-in slide-in-from-left">
+                      {title}
+                    </TypographyH2>
 
-                    <TypographyP className="text-lg md:text-xl">
+                    <TypographyP className="text-lg animate-in slide-in-from-bottom md:text-xl">
                       {excerpt}
                     </TypographyP>
                   </Link>
                 </div>
 
-                <div className="order-1 mb-4 w-full pl-0 md:order-last md:mb-0 md:ml-auto md:w-2/5 md:pl-3">
+                <div className="order-1 mb-4 w-full pl-0 animate-in fade-in md:order-last md:mb-0 md:ml-auto md:w-2/5 md:pl-3">
                   <div
                     className={`${isGuestAuthor && 'relative'} overflow-hidden rounded-md font-mono`}
                   >
@@ -92,11 +94,11 @@ function ArticleList({posts}: ArticleListProps) {
                 </div>
               </div>
 
-              <TypographyMuted className="font-mono">
+              <TypographyMuted className="font-mono animate-in slide-in-from-right">
                 {t('by-author', {author: author.toUpperCase()})}
               </TypographyMuted>
 
-              <time className="block font-mono">
+              <time className="block font-mono animate-in slide-in-from-top">
                 <TypographySmall>{date}</TypographySmall>
               </time>
 

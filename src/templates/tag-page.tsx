@@ -48,14 +48,14 @@ function TagPageTemplate({
       <div className="mx-auto w-full max-w-screen-md">
         <div className="p-3 md:px-0 md:py-5">
           <header className="space-y-3">
-            <TypographyH1 className="font-mono">
+            <TypographyH1 className="font-mono animate-in slide-in-from-top">
               <span className="flex items-end">
                 <Hash className="mr-1 size-11" />
                 {tag}
               </span>
             </TypographyH1>
 
-            <TypographyLead className="font-mono text-aquamarine-500">
+            <TypographyLead className="font-mono text-aquamarine-500 animate-in slide-in-from-right">
               {t('tag-subtitle', {count: totalCount, tag: tag})}
             </TypographyLead>
 
@@ -73,7 +73,7 @@ function TagPageTemplate({
                   key={`${slug}-${idx}`}
                   className="space-y-3 border-b py-6 last:border-none"
                 >
-                  <TypographyH2 className="font-mono">
+                  <TypographyH2 className="font-mono animate-in slide-in-from-bottom">
                     <Link
                       className="transition-colors duration-100 hover:text-muted-foreground"
                       to={slug}
@@ -82,7 +82,7 @@ function TagPageTemplate({
                     </Link>
                   </TypographyH2>
 
-                  <TypographyMuted className="font-mono">
+                  <TypographyMuted className="font-mono animate-in slide-in-from-left">
                     {t('by-author', {author: author?.toUpperCase()})}
                   </TypographyMuted>
                 </article>
