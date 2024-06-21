@@ -1,78 +1,75 @@
 ---
 templateKey: article-page
-title: How to sync Child transforms of a GameObject with PUN2
-slug: multiplayer-unity3d-pun2
+title: How to sync Child Transforms of a GameObject with PUN2 in Unity3D
+slug: sync-child-transforms-unity3d-pun2
 author: Eklavya Mishra
 authorLink: https://listeningpoet.wordpress.com/
 date: 2024-06-21T10:09:42.999Z
-cover: /img/artem-sapegin-webstorm-vscode.jpg
-metaTitle: How to sync child transforms of a GameObject with PUN2
-metaDescription: How to sync child transforms of a GameObject with PUN2
+cover: /img/sync-child-transforms-unity3d-pun2-lorenzo-herrera.jpg
+metaTitle: How to sync child transforms of a GameObject with PUN2 in Unity3D
+metaDescription: Learn how to sync child transforms using Photon Unity
+  Networking 2 (PUN2) for smooth, optimized multiplayer game experiences.
 tags:
+  - guest author
+  - gamedev
   - Unity3D
-  - Photon
   - PUN2
   - C#
-  - multiplayer
 ---
-<!--StartFragment-->
+**Photon Unity Networking v2 ([PUN2](https://www.photonengine.com/pun))**  is the `networking package` you end up using when you realize the [Unity3D](https://unity.com) project you’re working on will need:
 
-How to sync Child transforms of a GameObject with PUN2
+* A **WebGL** build
+* **Voice Chat** support
 
-**PUN2** - that’s **Photon Unity Networking** (v2) - is the **Networking** package you end up using when you realize the project you’re working on will need
+The alternative, **[Netcode](https://docs-multiplayer.unity3d.com/netcode/current/about/)** for `GameObjects`, the networking package provided by **Unity3D** itself, is a decent solution for sure (according to me, having worked on it for only a week). But the voice service provided by Unity - **Vivox** doesn’t support voice over **WebGL**.
 
-* A **WebGL** build…
-* Which supports **Voice Chat**.
+The point is, **PUN2** exists and its voice service works over **WebGL**! Can you read the excitement in my words? That’s me with 5 years of **[Game Dev](https://theleakycauldronblog.com/tags/gamedev)** experience now. I’ve heard it’s only gonna get better.
 
-Now, the alternative - **Netcode for Gameobjects** - the networking package provided by **Unity** itself - is a decent solution for sure (according to me - who worked on it for a week). But the voice service provided by Unity - **Vivox** doesn’t support voice over **WebGL**.
-
-Point being - **PUN2** is there. And its voice works over **WebGL**. Can you read the excitement in my words? That’s me with 5 years of **Game Dev** experience now. I’ve heard it’s only gonna get better.
-
-Anyway, you probably know how to set up a prefab which will be instantiated over the internet.
+Anyway, you probably know how to set up a `prefab` which will be instantiated over the internet.
 
 Or if you don’t - that’s fine. I’ll explain. I’ll skip the steps about importing **PUN2** and the **App ID** setup. You can find that stuff anywhere. 
 
-1. Have a prefab in your **Resources** folder.
-2. Add a **PhotonView** component to your prefab’s root. Let’s assume it’s a basic **Cube**. We don’t care about syncing animations for now.
-3. Now add a **PhotonTransformView** component to your alongside the **PhotonView** (ie. on the same root). This component will be responsible for syncing our **Transform** over the network.
-4. Now wherever you wanna instantiate your prefab - you put in the code:
+1. Have a prefab in your `Resources` folder.
+2. Add a `PhotonView` component to your prefab’s root. Let’s assume it’s a basic *Cube*. We don’t care about syncing animations for now.
+3. Now add a `PhotonTransformView` component to your alongside the `PhotonView` (i.e., on the same root). This component will be responsible for syncing our `Transform` over the network.
+4. Add this code to instantiate your `prefab`:
 
    ```csharp
    PhotonNetwork.Instantiate(prefabPath, Vector3.zero, Quaternion.identity);
    ```
-5. Here **prefabPath** would be the path to your prefab in the **Resources** folder. And the **Vector3** and **Quaternion** are your position and rotation respectively.
+5. Here `prefabPath` would be the path to your prefab in the `Resources` folder. And the `Vector3` and `Quaternion` are your position and rotation respectively.
 
-And that’s it. Your **Cube** (assuming it has a script updating its position/rotation) will reflect the changes to the other players.
+And that’s it. Your ***Cube*** (assuming it has a script updating its position/rotation) will reflect the changes to the other players.
 
 There’s a catch here of course. 
 
-Say, there’s a child of **Cube**. It’s a **Capsule**.  Let’s also say there’s a script on it rotating it along the Y axis.
+Say, there’s a ***Cube*** with a script that rotates the ***Cube*** along the `Y-axis`, and there's a child of this ***Cube***, a ***Capsule***.
 
-Now, would this **Capsule’s** movement also be reflected to other players?
+Now, it's fair to assume that the ***Capsule’s*** movement should also be reflected to other players over the network.
 
-Of course not. 
+But of course, that doesn't work. SMH.
 
-So what do we do?
+So, what do we do?
 
-Now I’ll pay a little lip-service to the idea of adding another **PhotonView** and another **PhotonTransformView** to the child (**Capsule** in our case). But I could never get that solution to work. Maybe it’s supposed to, maybe it’s not. 
+Now I’ll pay a little lip-service to the idea of adding another `PhotonView` and another `PhotonTransformView` to the child (***Capsule*** in our case). But I could never get that solution to work. Maybe it’s supposed to, maybe it’s not. 
 
 Either way, I have a different solution.
 
-See **PhotonTransformView** implements this interface called **IPunObservable**.
+The `PhotonTransformView` implements an interface called `IPunObservable`.
 
 ```csharp
 public class PhotonTransformView : MonoBehaviour, IPunObservable
 ```
 
-That’s what you wanna inherit from if you wanna share data over the **network stream.** This gives you the method - **OnPhotonSerializeView** which gets called anytime there is a change in the stream. This method also provides us with the stream object itself.
+That’s what you wanna inherit from if you wanna share data over the`network stream`. This gives you the method — `OnPhotonSerializeView`, which gets called every time there is a change in the `stream`. This `method` also provides us with the `stream object` itself.
 
-All we need to do is check if the stream is currently **writing** or **reading**, which is the equivalent of **sending** and **receiving** data respectively.
+All we need to do is check if the stream is currently `reading` or `writing`, which is the equivalent of sending/receiving data.
 
-One thing to note here is: the **order** in which the data is **received** is the **same order** in which it is **sent**.
+One thing to note here is that the ***order*** in which the data is ***received*** is the ***same order*** in which it is ***sent***.
 
-So here’s the gist of the idea: We handle the syncing ourselves. 
+So here’s the gist of the idea — we handle the syncing ourselves. 
 
-Here’s a **bad** way of doing this:
+Here’s a *bad* way of doing this:
 
 ```csharp
 using Photon.Pun;
@@ -102,16 +99,16 @@ public class ChildTransformSync : MonoBehaviourPun, IPunObservable
 
 All you gotta do with this component is:
 
-1. Attach it to the **Capsule**.
-2. Add it to the **Observed Components** list in your parent’s (**Cube**) **PhotonView**.
+1. Attach it to the ***Capsule***.
+2. Add it to the `Observed Components` list in your parent’s (***Cube***) `PhotonView`.
 
 Here are my issues with this script:
 
-1. I gotta add this **component** to every child I need. And make sure they are observed by the parent’s **PhotonView**.
-2. I’m sending the **position** for this **Capsule** over **stream** - an object which is never going to move. Only rotate. That too just in the **Y** axis. Why clog up the stream?
-3. There is no **interpolation** for these sync ups. So, the **movement** / **rotation** is gonna snap all over the place.
+1. I gotta add this `component` to every `child` I need. And make sure they are observed by the parent’s `PhotonView`.
+2. I’m sending the `position` for this ***Capsule*** over `stream` — an object which is never going to move. Only rotate. That too, only in the `Y-axis`. Why should I clog up the stream?
+3. There is no `interpolation` for these sync ups. So, the *movement/rotation* is gonna snap all over the place.
 
-Let’s first handle the first problem. The code handles the syncing for one child - instead lets sync up any number of **Transforms** we want.
+Let’s first handle the first problem. The code handles the syncing for one child, so let's ***DRY*** it up so that it syncs up all the `Transforms` we want.
 
 ```csharp
 using UnityEngine;
@@ -153,9 +150,7 @@ public class TransformSync: MonoBehaviourPun, IPunObservable
 }
 ```
 
-Next, what was that about the **interpolation**?
-
-Yeah, let’s make a **struct** to hold the data we get from the stream:
+Next, let's take care of the `interpolation`, by making a `struct` to hold the data we get from the stream:
 
 ```csharp
 [System.Serializable]
@@ -174,11 +169,11 @@ public struct TransformData
 }
 ```
 
-Now let’s use an **array** of these **structs** to hold the received data from the stream, instead of setting it right when it’s received.\
+Now, let’s use an `array` of these `structs` to hold the received data from the stream instead of setting it right when it’s received.\
 \
-We’ll also ensure this array is filled at start with the initial positions of these transforms. We don’t want any goof-ups. We are dealing with **structs** here, not **classes**. **Struct** references- when they are not initialized in code - take up **default values** which can screw up our calculations.
+We’ll also ensure that this `array` is populated at the start with the initial positions of these `transforms`. We don’t want any goof-ups. Since, we are dealing with `structs` here, not `classes`, `struct` references(when they are not initialized in code) take up `default values` which can screw up our calculations.
 
-Once we have the data - we can lerp to the **network** positions - instead of snapping to them.
+Once we have the data — we can `lerp` to the network positions, instead of snapping to them.
 
 ```csharp
 using UnityEngine;
@@ -251,7 +246,7 @@ public class TransformsSync : MonoBehaviourPun, IPunObservable
 }
 ```
 
-You’ll notice a check in the Update method:
+You might've noticed a check in the `Update method`:
 
 ```csharp
 private void Update()
@@ -263,22 +258,22 @@ private void Update()
 }
 ```
 
-This means our **interpolation** will only occur for objects belonging to other clients. Of course, we’d be handling our **Capsule** rotation ourselves so our calculated rotations will be perfectly accurate already.
+This ensures our `interpolation` will only occur for objects belonging to other clients. Of course, we’d be handling our ***Capsule*** rotation ourselves so our calculated rotations will be perfectly accurate already.
 
-So **interpolation** is resolved. All we need to do is:
+So `interpolation` is resolved. Now, all we need to do is:
 
-1. Attach this script to the prefab root.
-2. Fill the **transforms** list with the **Transform** components we want to sync up.
-3. Get rid of any **PhotonTransformView** components - we don’t need help.
-4. Add this component to the **Observed Components** list in our **PhotonView**.
+1. Attach this script to the `prefab root`.
+2. Fill the `transforms` list with the `Transform` components we want to sync up.
+3. Get rid of any `PhotonTransformView` components — we don’t need help.
+4. Add this component to the `Observed Components` list in our `PhotonView`.
 
-Now, technically what we need is done. You can even stop reading at this point. But let’s see if we can handle limiting the data sent / received over **stream**. 
+Now, *technically* we have achieved, what we set out to do. You can even stop reading at this point. But, let’s see if we can handle limiting the data *sent/received* over `stream`. 
 
-Why? Because we are **programmers** and we **love optimizing things**.
+Why? Because we are ***programmers*** and we ***love optimizing things***.
 
-Let’s first create another **struct** called **TransformSyncSettings**. This will determine which values we want to sync up. It will consist of **3 bools** - *x, y, z*. Each determining the axis we want to sync. 
+Let’s first create another `struct` called `TransformSyncSettings`. This will determine which values we want to sync up. It will consist of 3 `bools` — ***x, y & z***. Each determining the `axis` we want to sync. 
 
-This structure makes sense for **position** and **scale** - for rotations we should have an additional *w* component as they are **Quaternions** but let’s stick with **euler** angles for now.
+This structure makes sense for *position* and *scale* but for rotations we should have an additional `w` component as they are `Quaternions` though let’s stick with `Euler angles` for now.
 
 ```csharp
 [System.Serializable]
@@ -288,9 +283,9 @@ public struct SyncSettings
 }
 ```
 
-Let’s get rid of the **TransformData** class and rename it to **TransformSyncData**. It sounds cleaner. 
+Let’s get rid of the `TransformData` class and rename it to `TransformSyncData`. It sounds cleaner. 
 
-This struct will hold a **Transform** reference, **SyncSettings** references for position, rotation and scale, and **3 Vectors (NonSerialized)** which will hold on to the network target positions for **interpolation**.
+This `struct` will hold a `Transform` reference, also a `SyncSettings` references for *position*, *rotation* and *scale*, and the `3 Vectors`(`NonSerialized`) which will hold on to the network target positions for `interpolation`.
 
 ```csharp
 [System.Serializable]
@@ -318,7 +313,7 @@ public struct TransformSyncData
 }
 ```
 
-Now, in our **TransformsSync** class, let’s adjust the **Start** method so we correctly initialize the positions of our synced transforms. We’ll also update the old **TransformData** array reference to be of the **TransformSyncData** type.
+Now, in our `TransformsSync` class, let’s adjust the `Start` method so we correctly initialize the positions of our synced transforms. We’ll also update the old `TransformData` array reference to be of the `TransformSyncData` type.
 
 ```csharp
 [Header("Transform Sync")]
@@ -338,9 +333,9 @@ private void Start()
 }
 ```
 
-Now, let’s take a look at our **OnPhotonSerializeView** code. 
+Now, let’s take a look at our `OnPhotonSerializeView` code. 
 
-We wanna make use of our **SyncSettings** and only send / receive data which is explicitly defined to be sent through the **inspector**.
+We wanna make use of our `SyncSettings` and only *send/receive* data which is explicitly defined to be sent through the `inspector`.
 
 This is how we’ll handle the sending:
 
@@ -424,7 +419,7 @@ for (int i = 0; i < transformsToSync.Length; i++)
 }
 ```
 
-Moving on to **interpolation**, we want to make sure we only interpolate the values which we have explicitly stated to be sent / received making use of the **SyncSettings** bools.
+Moving on to `interpolation`, we want to make sure we only interpolate the values which we have explicitly stated to be *sent/received* making use of the `SyncSettings` bools.
 
 ```csharp
 for (int i = 0; i < transformsToSync.Length; i++)
@@ -494,22 +489,22 @@ for (int i = 0; i < transformsToSync.Length; i++)
 }
 ```
 
-You’ll notice I’ve gotten rid of the **interpolationSpeed** factor here instead opting for **PhotonNetwork.SerializationRate**. I took that cue from the original **PhotonTransformView** class. Can I explain more about it? No, I can’t.
+You’ll notice I’ve gotten rid of the `interpolationSpeed` factor here, instead opting for `PhotonNetwork.SerializationRate`. I took that cue from the original `PhotonTransformView` class. 
 
-Now, in the inspector add the **Cube** and the **Capsule** to the **transformsToSync** list. And, adjust the **SyncSettings** booleans to your heart’s content.
+Can I explain more about it? No, I can’t.
 
-Finally, at long last we are done. Really done. 100% absolutely-
+Now, in the inspector add the ***Cube*** and the ***Capsule*** to the `transformsToSync` list. And, adjust the `SyncSettings` booleans to your heart’s content.
+
+Finally, at long last, we are done. Really done! 100% absolutely ....
 
 Yeah, there’s an issue.
 
-If you run a build with this code you’ll notice that if the **Host’s Capsule** rotated somewhat before a **client** joined - the joining **client** would only see the **default rotation** set in the prefab itself. Any **updates** to the rotation afterwards will **reflect perfectly** on the client but that initial situation is an **issue**.
+If you run a build with this code you’ll notice that if the **Host’s *Capsule*** rotated somewhat before a **Client** joined — the joining **Client** would only see the *default rotation* set in the `prefab` itself. Any *updates* to the rotation afterwards will *reflect perfectly* on the client but that initial situation is an *issue*.
 
-Answer me this - Which got called first **Update** or **OnPhotonSerializeView?**
+Riddle me this: which got called first `Update` or `OnPhotonSerializeView`?
 
-That’s right. It’s **unclear**. On some machines maybe **Update** got called first, on others maybe it was **OnPhotonSerializeView**. They are not linked. One is never guaranteed to be called after the other.
+That’s right. It’s *unclear*. On some machines, maybe `Update` got called first, on others, maybe it was `OnPhotonSerializeView`. They are not linked; one is never guaranteed to be called after the other.
 
-So let’s be a **responsible programmer** and handle that initial situation. All we gotta do is make sure our updates ie. our **interpolation** only happens once we have started receiving data over the network.
+So let’s be **responsible programmers** and handle that initial situation. All we gotta do is make sure our updates, i.e., our `interpolation`, only happens once we have started receiving data over the network.
 
-That said, I’m sure you can figure out how to do that.
-
-<!--EndFragment-->
+I’m sure you can figure out how to do that... 😉
