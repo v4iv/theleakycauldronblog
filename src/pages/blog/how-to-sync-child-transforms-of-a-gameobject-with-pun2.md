@@ -273,7 +273,7 @@ Why? Because we are ***programmers*** and we ***love optimizing things***.
 
 Let’s first create another `struct` called `TransformSyncSettings`. This will determine which values we want to sync up. It will consist of 3 `bools` — ***x, y & z***. Each determining the `axis` we want to sync. 
 
-This structure makes sense for *position* and *scale* but for rotations we should have an additional `w` component as they are `Quaternions` though let’s stick with `Euler angles` for now.
+This structure makes sense for *position* and *scale* but for rotations we should have an additional `w` parameter as they are `Quaternions` - though let’s stick with `Euler angles` for now.
 
 ```csharp
 [System.Serializable]
