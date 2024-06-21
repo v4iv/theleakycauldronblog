@@ -82,7 +82,7 @@ function TagPageTemplate({
                     </Link>
                   </TypographyH2>
 
-                  <TypographyMuted className="font-mono animate-in slide-in-from-left">
+                  <TypographyMuted className="font-mono animate-in zoom-in">
                     {t('by-author', {author: author?.toUpperCase()})}
                   </TypographyMuted>
                 </article>
