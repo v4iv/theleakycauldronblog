@@ -60,11 +60,11 @@ function ArticleList({posts}: ArticleListProps) {
                     className="block px-0 hover:text-muted-foreground"
                     to={slug}
                   >
-                    <TypographyH2 className="font-mono animate-in slide-in-from-left">
+                    <TypographyH2 className="font-mono animate-in slide-in-from-top">
                       {title}
                     </TypographyH2>
 
-                    <TypographyP className="text-lg animate-in slide-in-from-bottom md:text-xl">
+                    <TypographyP className="text-lg animate-in slide-in-from-right md:text-xl">
                       {excerpt}
                     </TypographyP>
                   </Link>
@@ -94,11 +94,11 @@ function ArticleList({posts}: ArticleListProps) {
                 </div>
               </div>
 
-              <TypographyMuted className="font-mono animate-in slide-in-from-right">
+              <TypographyMuted className="font-mono animate-in slide-in-from-bottom">
                 {t('by-author', {author: author.toUpperCase()})}
               </TypographyMuted>
 
-              <time className="block font-mono animate-in slide-in-from-top">
+              <time className="block font-mono animate-in fade-in">
                 <TypographySmall>{date}</TypographySmall>
               </time>
 
