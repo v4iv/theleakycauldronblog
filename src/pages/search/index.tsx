@@ -147,7 +147,7 @@ function SearchPage({
                     className="space-y-3 border-b py-3 last:border-none"
                     key={id}
                   >
-                    <TypographyH2 className="font-mono animate-in slide-in-from-bottom">
+                    <TypographyH2 className="font-mono animate-in slide-in-from-top">
                       <Link
                         className="transition-colors duration-100 hover:text-gray-500"
                         to={slug}
@@ -157,7 +157,7 @@ function SearchPage({
                       </Link>
                     </TypographyH2>
 
-                    <TypographyMuted className="font-mono animate-in slide-in-from-bottom">
+                    <TypographyMuted className="font-mono animate-in fade-in">
                       {t('by-author', {author: author?.toUpperCase()})}
                     </TypographyMuted>
                   </article>

@@ -30,8 +30,8 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
+import {Avatar} from '@/components/ui/avatar'
 import {Button} from '@/components/ui/button'
-import {Avatar, AvatarFallback, AvatarImage} from '@/components/ui/avatar'
 import {Tooltip, TooltipContent, TooltipTrigger} from '@/components/ui/tooltip'
 
 function NavBar() {
@@ -47,17 +47,11 @@ function NavBar() {
               <TooltipTrigger asChild>
                 <Link aria-label={t('site-short-name')} to="/">
                   <Avatar className="mr-2 flex md:hidden">
-                    <AvatarImage
-                      src="/icon-192-maskable.png"
+                    <StaticImage
+                      src="../../assets/images/avatar.png"
+                      placeholder="blurred"
                       alt="the-leaky-cauldron-blog"
-                      asChild
-                    >
-                      <StaticImage
-                        src="../../assets/images/avatar.png"
-                        alt="the-leaky-cauldron-blog"
-                      />
-                    </AvatarImage>
-                    <AvatarFallback>{t('site-short-name')}</AvatarFallback>
+                    />
                   </Avatar>
                 </Link>
               </TooltipTrigger>
