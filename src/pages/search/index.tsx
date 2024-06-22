@@ -147,7 +147,7 @@ function SearchPage({
                     className="space-y-3 border-b py-3 last:border-none"
                     key={id}
                   >
-                    <TypographyH2 className="font-mono animate-in slide-in-from-top">
+                    <TypographyH2 className="font-mono animate-in slide-in-from-top-10">
                       <Link
                         className="transition-colors duration-100 hover:text-gray-500"
                         to={slug}

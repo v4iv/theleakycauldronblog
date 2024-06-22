@@ -48,7 +48,7 @@ function TagPageTemplate({
       <div className="mx-auto w-full max-w-screen-md">
         <div className="p-3 md:px-0 md:py-5">
           <header className="space-y-3">
-            <TypographyH1 className="font-mono animate-in slide-in-from-top">
+            <TypographyH1 className="font-mono animate-in slide-in-from-top-10">
               <span className="flex items-end">
                 <Hash className="mr-1 size-11" />
                 {tag}
@@ -82,7 +82,7 @@ function TagPageTemplate({
                     </Link>
                   </TypographyH2>
 
-                  <TypographyMuted className="font-mono animate-in zoom-in">
+                  <TypographyMuted className="font-mono animate-in fade-in">
                     {t('by-author', {author: author?.toUpperCase()})}
                   </TypographyMuted>
                 </article>

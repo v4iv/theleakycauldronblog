@@ -72,6 +72,7 @@ export const onCreateNode: GatsbyNode['onCreateNode'] = ({
 export const createPages: GatsbyNode['createPages'] = async ({
   actions,
   graphql,
+  reporter,
 }) => {
   const {createPage} = actions
 
@@ -95,7 +96,7 @@ export const createPages: GatsbyNode['createPages'] = async ({
   `)
 
   if (response.errors) {
-    response.errors.forEach((err: any) => console.error(err.toString()))
+    reporter.panicOnBuild(`Error while running GraphQL query.`)
 
     return Promise.reject(response.errors)
   }
@@ -126,17 +127,20 @@ export const createPages: GatsbyNode['createPages'] = async ({
     })
   })
 
-  allNodes.forEach((edge: IEdge) => {
+  allNodes.forEach((edge: IEdge, idx: number) => {
     const id = edge.node.id
+    const prev = idx === allNodes.length - 1 ? null : allNodes[idx + 1].node
+    const next = idx === 0 ? null : allNodes[idx - 1].node
 
     createPage({
       path: edge.node.fields.slug,
       component: path.resolve(
         `src/templates/${String(edge?.node?.frontmatter?.templateKey)}.tsx`,
       ),
-
       context: {
         id: id,
+        prev,
+        next,
       },
     })
   })

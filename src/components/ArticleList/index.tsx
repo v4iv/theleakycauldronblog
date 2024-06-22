@@ -60,7 +60,7 @@ function ArticleList({posts}: ArticleListProps) {
                     className="block px-0 hover:text-muted-foreground"
                     to={slug}
                   >
-                    <TypographyH2 className="font-mono animate-in slide-in-from-top">
+                    <TypographyH2 className="font-mono animate-in slide-in-from-top-10">
                       {title}
                     </TypographyH2>
 
