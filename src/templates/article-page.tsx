@@ -75,6 +75,15 @@ function ArticlePageTemplate({
     }
   }, [])
 
+  // make sure that site-owner in locales/en/common.json is same as the default author in static/admin/config.yml
+  const isGuestAuthor = (author !== t('site-owner')) as boolean
+
+  const articleTags = [...tags]
+
+  if (isGuestAuthor && !tags.includes('guest author')) {
+    articleTags.push('guest author')
+  }
+
   return (
     <Layout>
       <article>
@@ -108,7 +117,7 @@ function ArticlePageTemplate({
               </div>
 
               <div className="flex flex-wrap gap-y-3 animate-in slide-in-from-bottom">
-                {tags.map((tag, idx) => (
+                {articleTags.map((tag, idx) => (
                   <Link
                     key={`${slugify(tag)}-${idx}`}
                     className={`${badgeVariants({variant: tag === 'guest author' ? 'destructive' : 'default'})} mr-2 font-mono`}

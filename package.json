@@ -2,7 +2,7 @@
   "name": "theleakycauldronblog",
   "description": "The Leaky Cauldron Blog",
   "author": "Vaibhav Sharma<vaibhavsharmaatwork@gmail.com>",
-  "version": "3.6.2",
+  "version": "3.6.3",
   "license": "MIT",
   "scripts": {
     "develop": "gatsby develop",
@@ -83,7 +83,7 @@
   "devDependencies": {
     "@graphql-eslint/eslint-plugin": "^3.20.1",
     "@tailwindcss/typography": "^0.5.13",
-    "@types/node": "^20.14.7",
+    "@types/node": "^20.14.8",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^7.11.0",

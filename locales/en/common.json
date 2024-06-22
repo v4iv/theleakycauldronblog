@@ -1,6 +1,7 @@
 {
     "site-name": "the leaky cauldron blog",
     "site-short-name": "tlcb",
+    "site-owner": "Vaibhav Sharma",
     "loading": "Loading...",
     "home": "Home",
     "search": "Search",

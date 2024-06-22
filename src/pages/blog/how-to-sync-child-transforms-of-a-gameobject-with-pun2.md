@@ -6,7 +6,7 @@ author: Eklavya Mishra
 authorLink: https://listeningpoet.wordpress.com/
 date: 2024-06-21T10:09:42.999Z
 cover: /img/sync-child-transforms-unity3d-pun2-lorenzo-herrera.jpg
-metaTitle: How to sync child transforms of a GameObject with PUN2 in Unity3D
+metaTitle: How to sync Child Transforms of a GameObject with PUN2 in Unity3D
 metaDescription: Learn how to sync child transforms using Photon Unity
   Networking 2 (PUN2) for smooth, optimized multiplayer game experiences.
 tags:

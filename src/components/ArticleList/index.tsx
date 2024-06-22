@@ -50,7 +50,9 @@ function ArticleList({posts}: ArticleListProps) {
           },
           idx,
         ) => {
-          const isGuestAuthor = tags.includes('guest author')
+          // make sure that site-owner in locales/en/common.json is same as the default author in static/admin/config.yml
+          const isGuestAuthor = (tags.includes('guest author') ||
+            author !== t('site-owner')) as boolean
 
           return (
             <article key={`${slug}-${idx}`} className="px-3 py-5 md:px-0">
