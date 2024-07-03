@@ -132,12 +132,12 @@ function ArticlePageTemplate({
         </div>
 
         <ImageBox
-          className="aspect-video h-auto w-full object-cover"
+          className="aspect-video h-auto w-full object-cover animate-in fade-in"
           image={cover}
           alt={title}
         />
 
-        <div className="mx-auto w-full max-w-screen-md">
+        <div className="mx-auto w-full max-w-screen-md animate-in slide-in-from-bottom">
           <div className="p-3 md:px-0 md:py-5">
             <Content html={html} />
           </div>
