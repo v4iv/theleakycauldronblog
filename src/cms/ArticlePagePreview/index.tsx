@@ -47,7 +47,7 @@ function ArticlePagePreview({entry, widgetFor}: any) {
               <div className="flex flex-wrap gap-y-3">
                 {tags.map((tag: any, idx: number) => (
                   <Badge
-                    key={`${slugify(tag)}-${idx}`}
+                    key={`${slugify(tag)}-${idx}` /* @ts-ignore */}
                     variant={tag === 'guest author' ? 'destructive' : 'default'}
                     className="mr-2 font-mono"
                   >
