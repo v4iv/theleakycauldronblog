@@ -79,3 +79,6 @@ yarn-error.log
 .idea/
 .vscode/
 .fleet/
+# Local Netlify folder
+.netlify
+_redirects
