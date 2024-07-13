@@ -28,6 +28,14 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "no-referrer-when-downgrade"
 
+# partytown gtag redirects
+[[redirects]]
+  from = "/__third-party-proxy"
+  to = "https://www.googletagmanager.com/gtag/js?id=$GATSBY_GTAG"
+  status = 200
+  force = true
+  query = {url = ":url"}
+
 [[plugins]]
   package = "netlify-plugin-submit-sitemap"
 
