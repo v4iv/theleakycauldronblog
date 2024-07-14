@@ -26,6 +26,19 @@ function Layout({children}: {children: React.ReactNode}) {
         strategy={ScriptStrategy.offMainThread}
         forward={[`dataLayer.push`]}
       />
+
+      <Script
+        id="gtag-config"
+        strategy={ScriptStrategy.offMainThread}
+        forward={[`gtag`]}
+      >
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)};
+          gtag('js', new Date());
+          gtag('config', ${process.env.GATSBY_GTAG}, { page_path: location ? location.pathname + location.search + location.hash : undefined })
+        `}
+      </Script>
     </>
   )
 }
