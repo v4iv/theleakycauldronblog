@@ -24,7 +24,6 @@ function Layout({children}: {children: React.ReactNode}) {
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GATSBY_GTAG}`}
         strategy={ScriptStrategy.offMainThread}
-        forward={[`dataLayer.push`]}
       />
 
       <Script
