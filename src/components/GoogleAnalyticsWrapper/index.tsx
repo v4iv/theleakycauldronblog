@@ -7,18 +7,19 @@ function GoogleAnalyticsWrapper({children}: {children: React.ReactNode}) {
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GATSBY_GTAG}`}
         strategy={ScriptStrategy.offMainThread}
-        forward={[`gtag`]}
+        forward={[`dataLayer.push`]}
       />
 
       <Script
         id="gtag-config"
         strategy={ScriptStrategy.offMainThread}
+        forward={[`gtag`]}
         dangerouslySetInnerHTML={{
           __html: `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments)};
             gtag('js', new Date());
-            gtag('config', ${process.env.GATSBY_GTAG}, { send_page_view: false })
+            gtag('config', ${process.env.GATSBY_GTAG}, { page_path: location ? location.pathname + location.search + location.hash : undefined })
           `,
         }}
       />
