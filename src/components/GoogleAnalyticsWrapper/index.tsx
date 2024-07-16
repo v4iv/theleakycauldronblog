@@ -18,7 +18,7 @@ function GoogleAnalyticsWrapper({children}: {children: React.ReactNode}) {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments)};
             gtag('js', new Date());
-            gtag('config', ${process.env.GATSBY_GTAG}, { page_path: location ? location.pathname + location.search + location.hash : undefined })
+            gtag('config', ${process.env.GATSBY_GTAG}, { send_page_view: false })
           `,
         }}
       />

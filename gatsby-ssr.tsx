@@ -23,9 +23,9 @@ export const onRenderBody: GatsbySSR['onRenderBody'] = ({
 }
 
 export const wrapRootElement: GatsbySSR['wrapRootElement'] = ({element}) => {
-  return (
-    <GoogleAnalyticsWrapper>
-      <TooltipProvider>{element}</TooltipProvider>
-    </GoogleAnalyticsWrapper>
-  )
+  return <TooltipProvider>{element}</TooltipProvider>
+}
+
+export const wrapPageElement: GatsbySSR['wrapPageElement'] = ({element}) => {
+  return <GoogleAnalyticsWrapper>{element}</GoogleAnalyticsWrapper>
 }
