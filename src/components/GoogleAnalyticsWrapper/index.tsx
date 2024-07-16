@@ -1,12 +1,14 @@
 import React from 'react'
 import {Script, ScriptStrategy} from 'gatsby'
 
+// haven't been able to make it work, currently GA4 is being implemented by Zaraz
 function GoogleAnalyticsWrapper({children}: {children: React.ReactNode}) {
   return (
     <>
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GATSBY_GTAG}`}
         strategy={ScriptStrategy.offMainThread}
+        forward={[`dataLayer.push`]}
       />
 
       <Script
