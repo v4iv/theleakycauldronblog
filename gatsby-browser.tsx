@@ -15,9 +15,9 @@ export const onRouteUpdate: GatsbyBrowser['onRouteUpdate'] = ({location}) => {
 
   setTimeout(() => {
     // @ts-ignore
-    if (typeof window?.gtag === 'function') {
+    if (typeof gtag === 'function') {
       // @ts-ignore
-      window.gtag('event', 'page_view', {page_path: pagePath})
+      gtag('event', 'page_view', {page_path: pagePath})
     }
   }, 100)
 
