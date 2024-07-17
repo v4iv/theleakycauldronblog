@@ -8,13 +8,13 @@ function GoogleAnalyticsWrapper({children}: {children: React.ReactNode}) {
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GATSBY_GTAG}`}
         strategy={ScriptStrategy.offMainThread}
-        forward={[`dataLayer.push`, `gtag`]}
+        forward={[`dataLayer.push`, `gtag`, `window.gtag`]}
       />
 
       <Script
         id="gtag-config"
         strategy={ScriptStrategy.offMainThread}
-        forward={[`dataLayer.push`, `gtag`]}
+        forward={[`gtag`, `dataLayer.push`, `window.gtag`]}
         dangerouslySetInnerHTML={{
           __html: `
             window.dataLayer = window.dataLayer || [];
