@@ -79,14 +79,20 @@ const config: GatsbyConfig = {
               withWebp: true,
             },
           },
+          // {
+          //   resolve: `gatsby-remark-prismjs`,
+          //   options: {
+          //     classPrefix: `language-`,
+          //     inlineCodeMarker: null,
+          //     aliases: {},
+          //     showLineNumbersGlobal: false,
+          //     noInlineHighlight: true,
+          //   },
+          // },
           {
-            resolve: `gatsby-remark-prismjs`,
+            resolve: `gatsby-remark-shiki`,
             options: {
-              classPrefix: `language-`,
-              inlineCodeMarker: null,
-              aliases: {},
-              showLineNumbersGlobal: false,
-              noInlineHighlight: true,
+              theme: 'nord', // Default
             },
           },
           {

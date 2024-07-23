@@ -3,7 +3,6 @@ import slugify from 'slugify'
 import {useTranslation} from 'gatsby-plugin-react-i18next'
 import {Link, graphql, PageProps, HeadProps} from 'gatsby'
 import {ChevronsUp} from 'lucide-react'
-import 'prismjs/themes/prism-funky.css'
 
 import {useSiteMetadata} from '@/hooks/useSiteMetadata'
 import {Button} from '@/components/ui/button'
