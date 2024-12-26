@@ -62,15 +62,16 @@ function ArticlePageTemplate({
 
   useEffect(() => {
     // Button is displayed after scrolling for 300 pixels
-    const handleScrollButtonVisiblity = () => {
+    const handleScrollButtonVisibility = () => {
+      // eslint-disable-next-line @typescript-eslint/no-unused-expressions
       document.body.scrollTop > 20 || document.documentElement.scrollTop > 20
         ? setShowButton(true)
         : setShowButton(false)
     }
 
-    window.addEventListener('scroll', handleScrollButtonVisiblity)
+    window.addEventListener('scroll', handleScrollButtonVisibility)
     return () => {
-      window.removeEventListener('scroll', handleScrollButtonVisiblity)
+      window.removeEventListener('scroll', handleScrollButtonVisibility)
     }
   }, [])
 

@@ -12,7 +12,7 @@
     "lint": "eslint --ignore-path .eslintignore .",
     "lint:fix": "yarn run lint --fix",
     "typecheck": "tsc --noEmit",
-    "prepare": "husky install",
+    "prepare": "husky",
     "nuke:install": "rimraf .cache public node_modules yarn.lock"
   },
   "dependencies": {
@@ -31,6 +31,7 @@
     "autoprefixer": "^10.4.20",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "dotenv": "^16.4.7",
     "gatsby": "^5.13.7",
     "gatsby-adapter-netlify": "^1.1.7",
     "gatsby-plugin-catch-links": "^5.13.1",
@@ -99,6 +100,8 @@
     "lint-staged": "^15.2.10",
     "prettier": "^3.3.3",
     "rimraf": "^6.0.1",
-    "typescript": "^5.6.2"
-  }
+    "typescript": "^5.6.2",
+    "webpack": "^5.97.1"
+  },
+  "packageManager": "pnpm@9.4.0"
 }

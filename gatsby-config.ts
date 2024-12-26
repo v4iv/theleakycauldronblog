@@ -27,9 +27,6 @@ const config: GatsbyConfig = {
   adapter: adapter({
     excludeDatastoreFromEngineFunction: false,
   }),
-  partytownProxiedURLs: [
-    `https://www.googletagmanager.com/gtag/js?id=${process.env.GATSBY_GTAG}`,
-  ],
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
