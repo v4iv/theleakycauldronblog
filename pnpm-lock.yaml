@@ -152,9 +152,6 @@ importers:
       prismjs:
         specifier: ^1.29.0
         version: 1.29.0
-      querystring:
-        specifier: ^0.2.1
-        version: 0.2.1
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -173,9 +170,6 @@ importers:
       react-share:
         specifier: ^5.1.0
         version: 5.1.1(react@18.3.1)
-      react-use-query-param-string:
-        specifier: ^2.1.5
-        version: 2.1.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       slugify:
         specifier: ^1.6.6
         version: 1.6.6
@@ -194,9 +188,6 @@ importers:
       use-dark-mode:
         specifier: ^2.3.1
         version: 2.3.1(react@18.3.1)
-      use-debounce:
-        specifier: ^10.0.3
-        version: 10.0.4(react@18.3.1)
       zod:
         specifier: ^3.23.6
         version: 3.24.1
@@ -7401,15 +7392,6 @@ packages:
     resolution: {integrity: sha512-XDxAeVmpfu1/6IjyT/gXHOl+S0vQ9owggJ30hhWKdHAsNPOcasn5o9BW0eejZqL2e4vMjhAxoW3jVHcD6mbcYw==}
     engines: {node: '>=6'}
 
-  query-string@7.1.3:
-    resolution: {integrity: sha512-hh2WYhq4fi8+b+/2Kg9CEge4fDPvHS534aOOvOZeQ3+Vf2mCFsaFBYj0i+iXcAq6I9Vzp5fjMFBlONvayDC1qg==}
-    engines: {node: '>=6'}
-
-  querystring@0.2.1:
-    resolution: {integrity: sha512-wkvS7mL/JMugcup3/rMitHmd9ecIGd2lhFhK9N3UUQ450h66d1r3Y9nvXzQAW1Lq+wyx61k/1pfKS5KuKiyEbg==}
-    engines: {node: '>=0.4.x'}
-    deprecated: The querystring API is considered Legacy. new code should use the URLSearchParams API instead.
-
   queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
 
@@ -7690,12 +7672,6 @@ packages:
       '@types/react':
         optional: true
 
-  react-sub-unsub@2.2.7:
-    resolution: {integrity: sha512-b2o0mIW8G4Yb3aaKxFB9iiCCHxCDGmogy+493oQpEJHjBy/hl6uf+6RhAinqKWRwi1fvO6mGIMVGsf2XYLL38g==}
-    peerDependencies:
-      react: ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^20.0.0 || ^21.0.0 || ^22.0.0
-      react-dom: ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^20.0.0 || ^21.0.0 || ^22.0.0
-
   react-textarea-autosize@8.5.6:
     resolution: {integrity: sha512-aT3ioKXMa8f6zHYGebhbdMD2L00tKeRX1zuVuDx9YQK/JLLRSaSxq3ugECEmUB9z2kvk6bFSIoRHLkkUv0RJiw==}
     engines: {node: '>=10'}
@@ -7724,12 +7700,6 @@ packages:
     peerDependencies:
       react: '>=16.6.0'
       react-dom: '>=16.6.0'
-
-  react-use-query-param-string@2.1.5:
-    resolution: {integrity: sha512-h9UbTwDrVUlZ2m1iBJOWrBN/dWJ48dT0YKs45xrouxr73b7aBDQ8QRT6XhEpY6I9buy5YR+O5k/eHh5Aewte1g==}
-    peerDependencies:
-      react: ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^20.0.0 || ^21.0.0 || ^22.0.0
-      react-dom: ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^20.0.0 || ^21.0.0 || ^22.0.0
 
   react-virtualized-auto-sizer@1.0.25:
     resolution: {integrity: sha512-YHsksEGDfsHbHuaBVDYwJmcktblcHGafz4ZVuYPQYuSHMUGjpwmUCrAOcvMSGMwwk1eFWj1M/1GwYpNPuyhaBg==}
@@ -9015,12 +8985,6 @@ packages:
     resolution: {integrity: sha512-hmcdJR96tTustRQdaQwe6jMrZHnmPqXBxgy4jaQ4gsfhwajsCpjECuq9prgDe9XxMx/f9r96o2/md6O4Lwhwjg==}
     peerDependencies:
       react: ^16.8.0
-
-  use-debounce@10.0.4:
-    resolution: {integrity: sha512-6Cf7Yr7Wk7Kdv77nnJMf6de4HuDE4dTxKij+RqE9rufDsI6zsbjyAxcH5y2ueJCQAnfgKbzXbZHYlkFwmBlWkw==}
-    engines: {node: '>= 16.0.0'}
-    peerDependencies:
-      react: '*'
 
   use-isomorphic-layout-effect@1.2.0:
     resolution: {integrity: sha512-q6ayo8DWoPZT0VdG4u3D3uxcgONP3Mevx2i2b0434cwWBoL+aelL1DzkXI6w3PhTZzUeR2kaVlZn70iCiseP6w==}
@@ -18412,15 +18376,6 @@ snapshots:
       split-on-first: 1.1.0
       strict-uri-encode: 2.0.0
 
-  query-string@7.1.3:
-    dependencies:
-      decode-uri-component: 0.2.2
-      filter-obj: 1.1.0
-      split-on-first: 1.1.0
-      strict-uri-encode: 2.0.0
-
-  querystring@0.2.1: {}
-
   queue-microtask@1.2.3: {}
 
   queue-tick@1.0.1: {}
@@ -18776,11 +18731,6 @@ snapshots:
     optionalDependencies:
       '@types/react': 18.3.18
 
-  react-sub-unsub@2.2.7(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
-    dependencies:
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
-
   react-textarea-autosize@8.5.6(@types/react@18.3.18)(react@18.3.1):
     dependencies:
       '@babel/runtime': 7.26.0
@@ -18818,13 +18768,6 @@ snapshots:
       prop-types: 15.8.1
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
-
-  react-use-query-param-string@2.1.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
-    dependencies:
-      query-string: 7.1.3
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
-      react-sub-unsub: 2.2.7(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
 
   react-virtualized-auto-sizer@1.0.25(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
@@ -20381,10 +20324,6 @@ snapshots:
       '@use-it/event-listener': 0.1.7(react@18.3.1)
       react: 18.3.1
       use-persisted-state: 0.3.3(react@18.3.1)
-
-  use-debounce@10.0.4(react@18.3.1):
-    dependencies:
-      react: 18.3.1
 
   use-isomorphic-layout-effect@1.2.0(@types/react@18.3.18)(react@18.3.1):
     dependencies:
