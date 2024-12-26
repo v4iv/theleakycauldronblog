@@ -1,7 +1,6 @@
 import React from 'react'
 import {GatsbySSR} from 'gatsby'
 import {TooltipProvider} from './src/components/ui/tooltip'
-import GoogleAnalyticsWrapper from './src/components/GoogleAnalyticsWrapper'
 
 export const onRenderBody: GatsbySSR['onRenderBody'] = ({
   setHeadComponents,
@@ -24,8 +23,4 @@ export const onRenderBody: GatsbySSR['onRenderBody'] = ({
 
 export const wrapRootElement: GatsbySSR['wrapRootElement'] = ({element}) => {
   return <TooltipProvider>{element}</TooltipProvider>
-}
-
-export const wrapPageElement: GatsbySSR['wrapPageElement'] = ({element}) => {
-  return <GoogleAnalyticsWrapper>{element}</GoogleAnalyticsWrapper>
 }

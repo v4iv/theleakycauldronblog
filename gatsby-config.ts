@@ -27,9 +27,6 @@ const config: GatsbyConfig = {
   adapter: adapter({
     excludeDatastoreFromEngineFunction: false,
   }),
-  partytownProxiedURLs: [
-    `https://www.googletagmanager.com/gtag/js?id=${process.env.GATSBY_GTAG}`,
-  ],
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
@@ -120,7 +117,7 @@ const config: GatsbyConfig = {
       },
     },
     {
-      resolve: `gatsby-plugin-netlify-cms`,
+      resolve: `gatsby-plugin-decap-cms`,
       options: {
         modulePath: path.join(__dirname, `src`, `cms`, `cms.ts`),
         enableIdentityWidget: true,

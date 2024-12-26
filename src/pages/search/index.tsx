@@ -1,10 +1,14 @@
-import React, {lazy, Suspense, useEffect, useState} from 'react'
+import React, {
+  lazy,
+  Suspense,
+  useDeferredValue,
+  useEffect,
+  useState,
+} from 'react'
 import {graphql, Link, HeadProps, navigate, PageProps} from 'gatsby'
 import {useTranslation} from 'gatsby-plugin-react-i18next'
 import useSWR, {preload} from 'swr'
 import {useLunr} from 'react-lunr'
-import {useDebouncedCallback} from 'use-debounce'
-import {useQueryParamString} from 'react-use-query-param-string'
 import {Search, X} from 'lucide-react'
 
 import {useSiteMetadata} from '@/hooks/useSiteMetadata'
@@ -30,14 +34,17 @@ type DataProps = {
 }
 
 function SearchPage({
+  location,
   data: {
     localSearchPages: {publicIndexURL, publicStoreURL},
   },
 }: PageProps<DataProps>) {
   const {t} = useTranslation('common')
-  const [q] = useQueryParamString('q', '')
+  const params = new URLSearchParams(location.search)
+  const q = params.get('q') as string
 
   const [query, setQuery] = useState(q || '')
+  const deferredQuery = useDeferredValue(query)
 
   useEffect(() => {
     preload(publicIndexURL, fetcher)
@@ -65,14 +72,10 @@ function SearchPage({
 
     setQuery(inputValue)
 
-    debouncedSetQueryParam(inputValue)
+    navigate(`?q=${encodeURIComponent(inputValue)}`, {replace: true})
   }
 
-  const debouncedSetQueryParam = useDebouncedCallback((inputValue) => {
-    navigate(`?q=${encodeURIComponent(inputValue)}`, {replace: true})
-  }, 500)
-
-  const results = useLunr(query, index, store)
+  const results = useLunr(deferredQuery, index, store)
 
   const showSkeleton = (isIndexLoading || isStoreLoading) && query.length > 0
 
