@@ -15,7 +15,7 @@ function Footer() {
         <div className="grow">
           <TypographyMuted className="font-extralight">
             {t('footer.copyright', {
-              year: new Date().getFullYear().toString(),
+              year: new Date().getFullYear().toString().slice(2),
             })}
           </TypographyMuted>
         </div>

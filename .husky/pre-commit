@@ -1,2 +1,2 @@
 
-yarn lint-staged
+pnpm run lint
