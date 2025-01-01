@@ -4,7 +4,7 @@ import {Toaster} from '@/components/ui/toaster'
 import {Separator} from '@/components/ui/separator'
 import NavBar from '@/components/NavBar'
 import Footer from '@/components/Footer'
-import CelebrationConfetti from '../CelebrationConfetti'
+import CelebrationConfetti from '@/components/CelebrationConfetti'
 
 function Layout({children}: {children: React.ReactNode}) {
   return (

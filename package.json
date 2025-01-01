@@ -2,7 +2,7 @@
   "name": "theleakycauldronblog",
   "description": "A fully customizable, batteries included, personal blog powered by Gatsby JS.",
   "author": "Vaibhav Sharma<vaibhavsharmaatwork@gmail.com>",
-  "version": "3.6.7",
+  "version": "3.6.8",
   "license": "MIT",
   "scripts": {
     "develop": "gatsby develop",
@@ -10,10 +10,10 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "lint": "eslint --ignore-path .eslintignore .",
-    "lint:fix": "yarn run lint --fix",
+    "lint:fix": "pnpm run lint --fix",
     "typecheck": "tsc --noEmit",
     "prepare": "husky",
-    "nuke:install": "rimraf .cache public node_modules yarn.lock"
+    "nuke:install": "rimraf .cache public node_modules pnpm-lock.yaml"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
@@ -103,5 +103,5 @@
     "typescript": "^5.7.2",
     "webpack": "^5.97.1"
   },
-  "packageManager": "pnpm@9.15.2"
+  "packageManager": "pnpm@9.15.2+sha512.93e57b0126f0df74ce6bff29680394c0ba54ec47246b9cf321f0121d8d9bb03f750a705f24edc3c1180853afd7c2c3b94196d0a3d53d3e069d9e2793ef11f321"
 }
