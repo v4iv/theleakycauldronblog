@@ -23,7 +23,7 @@
 
 - Built with shadcn/ui (Tailwind CSS)
 
-- Decap CMS(Netlify CMS) generated markdown pages with Prism code highlighting, social embedding etc
+- Decap CMS(Netlify CMS) generated markdown pages with Shiki code highlighting, social embedding etc
 
 - Netlify Forms
 

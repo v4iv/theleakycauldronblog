@@ -1,17 +1,14 @@
 import React from 'react'
+import {Slice} from 'gatsby'
 
 import {Toaster} from '@/components/ui/toaster'
 import {Separator} from '@/components/ui/separator'
-import NavBar from '@/components/NavBar'
-import Footer from '@/components/Footer'
-import CelebrationConfetti from '@/components/CelebrationConfetti'
 
 function Layout({children}: {children: React.ReactNode}) {
   return (
     <>
-      <CelebrationConfetti />
-
-      <NavBar />
+      {/* Navbar Slice */}
+      <Slice alias="navbar" />
 
       <Separator />
 
@@ -19,7 +16,8 @@ function Layout({children}: {children: React.ReactNode}) {
 
       <Separator />
 
-      <Footer />
+      {/* Footer Slice */}
+      <Slice alias="footer" />
 
       <Toaster />
     </>
