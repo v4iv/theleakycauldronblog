@@ -74,7 +74,10 @@ export const createPages: GatsbyNode['createPages'] = async ({
   graphql,
   reporter,
 }) => {
-  const {createPage, createSlice} = actions
+  const {
+    createPage,
+    // createSlice
+  } = actions
 
   const response: any = await graphql<IQueryResult>(`
     query TheLeakyCauldronBlog {
@@ -167,18 +170,41 @@ export const createPages: GatsbyNode['createPages'] = async ({
     })
   })
 
+  // removed slices because it doesn't play well with i18next and causes hydration diff
   // Navbar Slice
-  createSlice({
-    id: `navbar`,
-    component: path.resolve(`./src/components/NavBar/index.tsx`),
-  })
+  // createSlice({
+  //   id: `navbar`,
+  //   component: path.resolve(`./src/components/NavBar/index.tsx`),
+  // })
 
   // Footer Slice
-  createSlice({
-    id: `footer`,
-    component: path.resolve(`./src/components/Footer/index.tsx`),
-  })
+  // createSlice({
+  //   id: `footer`,
+  //   component: path.resolve(`./src/components/Footer/index.tsx`),
+  // })
 }
+
+export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] =
+  ({actions}) => {
+    actions.createTypes(`
+    type Site {
+      siteMetadata: SiteMetadata!
+    }
+    
+    type SiteMetadata {
+      title: String!
+      description: String!
+      shortName: String!
+      siteUrl: String!
+      image: String!
+      social: Social!
+    }
+
+    type Social {
+      twitter: String!
+    }
+  `)
+  }
 
 export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({
   actions,

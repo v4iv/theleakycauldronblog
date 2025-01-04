@@ -46,7 +46,7 @@
 
     ```shell
     cd {your-project-name}/
-    yarn develop
+    pnpm develop
     ```
     ### VS Code
 
