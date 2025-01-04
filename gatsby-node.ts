@@ -74,7 +74,7 @@ export const createPages: GatsbyNode['createPages'] = async ({
   graphql,
   reporter,
 }) => {
-  const {createPage} = actions
+  const {createPage, createSlice} = actions
 
   const response: any = await graphql<IQueryResult>(`
     query TheLeakyCauldronBlog {
@@ -165,6 +165,18 @@ export const createPages: GatsbyNode['createPages'] = async ({
         tag,
       },
     })
+  })
+
+  // Navbar Slice
+  createSlice({
+    id: `navbar`,
+    component: path.resolve(`./src/components/NavBar/index.tsx`),
+  })
+
+  // Footer Slice
+  createSlice({
+    id: `footer`,
+    component: path.resolve(`./src/components/Footer/index.tsx`),
   })
 }
 

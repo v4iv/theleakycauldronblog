@@ -33,6 +33,7 @@ import {
 import {Avatar} from '@/components/ui/avatar'
 import {Button} from '@/components/ui/button'
 import {Tooltip, TooltipContent, TooltipTrigger} from '@/components/ui/tooltip'
+import CelebrationConfetti from '@/components/CelebrationConfetti'
 
 function NavBar() {
   const {t} = useTranslation('common')
@@ -40,6 +41,7 @@ function NavBar() {
 
   return (
     <nav className="mx-auto w-full max-w-screen-md font-mono">
+      <CelebrationConfetti />
       <div className="p-3 md:px-0 md:py-5">
         <div className="flex">
           <div className="flex grow">
