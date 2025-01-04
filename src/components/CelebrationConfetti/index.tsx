@@ -5,7 +5,9 @@ import Confetti from 'react-confetti'
 // @TODO: make it reusable for multiple holidays
 export default function CelebrationConfetti() {
   const {width, height} = useWindowSize()
-  const isNewYear = (new Date().getMonth() === 0) as boolean
+  const today = new Date()
+  const isNewYear = (today.getMonth() === 0 && today.getDate() <= 5) as boolean
+
   return (
     <Confetti run={isNewYear} recycle={false} width={width} height={height} />
   )
