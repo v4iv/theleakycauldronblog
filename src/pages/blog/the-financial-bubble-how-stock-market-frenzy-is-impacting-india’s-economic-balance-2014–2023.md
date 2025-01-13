@@ -3,8 +3,8 @@ templateKey: article-page
 title: "The Financial Bubble: How Stock Market Frenzy Is Impacting India’s
   Economic Balance (2014–2023)"
 slug: indian-financial-bubble-stock-market-frenzy
-author: Vyom
-authorLink: https://theleakycauldronblog.com/search/?q=vyom
+author: CA Sumeet Agarwal
+authorLink: https://theleakycauldronblog.com/search/?q=CA%20Sumeet%20Agarwal
 date: 2025-01-13T20:44:00.000Z
 cover: /img/stock-market-tyler-prahm.jpg
 metaTitle: "The (New) Financial Bubble: How Stock Market Frenzy Is Impacting
@@ -16,8 +16,6 @@ tags:
   - guest author
   - finance
 ---
-## Introduction: An Imbalanced Growth Story
-
 India’s economy over the past decade has been characterized by robust government expenditure, surging stock markets, and stagnating private consumption. From 2014 to 2023, the market capitalization of listed companies on Indian exchanges grew by 259.1%, while private consumption—India’s largest GDP component—grew only by 51.4%. During the same period, bank deposit growth slowed significantly, as retail investors increasingly diverted funds to the stock market in search of higher returns. This article evaluates how government expenditure and excess liquidity are indirectly being funneled into equity markets, creating a risky financial bubble that threatens long-term economic stability.
 
 ## Government Expenditure and Its Indirect Link to Stock Markets
@@ -99,7 +97,7 @@ Domestic Institutional Investors (DIIs) and retail investors have played a pivot
 
 ### Wealth Concentration
 
-The stock market boom has disproportionately benefited the wealthy, exacerbating income inequality. According to Oxfam’s 2023 report, the richest 1% of Indians own 40% of national wealth.
+The stock market boom has disproportionately benefited the wealthy, exacerbating income inequality. According to [Oxfam’s 2023 report](https://www.oxfamindia.org/knowledgehub/workingpaper/survival-richest-india-story), the richest 1% of Indians own 40% of national wealth.
 
 ### Speculative Bubble Risks
 
