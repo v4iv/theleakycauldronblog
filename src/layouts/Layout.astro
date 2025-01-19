@@ -1,0 +1,45 @@
+---
+import { ClientRouter } from "astro:transitions"
+
+import { getLangFromUrl, useTranslations } from "@/i18n/utils"
+import BaseHead from "@/components/BaseHead.astro"
+import Header from "@/components/Header.astro"
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+---
+
+<!doctype html>
+<html lang={lang}>
+  <BaseHead title={t("meta.title")} description={t("meta.description")} />
+  <script is:inline>
+    const darkModePreference = window.matchMedia("(prefers-color-scheme: dark)")
+
+    if (darkModePreference.matches) {
+      document.documentElement.classList.add("dark")
+    } else {
+      document.documentElement.classList.remove("dark")
+    }
+
+    darkModePreference.addEventListener("change", (e) => {
+      if (e.matches) {
+        document.documentElement.classList.add("dark")
+      } else {
+        document.documentElement.classList.remove("dark")
+      }
+    })
+
+    // Necessary for view transitions
+    document.addEventListener("astro:after-swap", () => {
+      if (darkModePreference.matches) {
+        document.documentElement.classList.add("dark")
+      } else {
+        document.documentElement.classList.remove("dark")
+      }
+    })
+  </script>
+  <ClientRouter />
+  <body class="min-h-screen bg-background antialiased">
+    <slot />
+  </body>
+</html>
