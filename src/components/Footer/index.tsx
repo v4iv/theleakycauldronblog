@@ -92,7 +92,7 @@ function Footer() {
         </div>
       </footer>
       <div className="flex justify-start">
-        <span className="easter-egg invert"></span>
+        <span className="easter-egg invert dark:invert-0"></span>
       </div>
     </>
   )
