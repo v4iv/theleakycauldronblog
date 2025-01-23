@@ -1,0 +1,26 @@
+.easter-egg {
+  background: url("../images/easter-egg.png") 0 0 / cover;
+  height: 48px;
+  width: 48px;
+  scale: 0.8;
+  -webkit-animation: pixel 15s steps(15) infinite;
+  animation: pixel 15s steps(15) infinite;
+}
+
+@-webkit-keyframes pixel {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -720px 0;
+  }
+}
+
+@keyframes pixel {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -720px 0;
+  }
+}
