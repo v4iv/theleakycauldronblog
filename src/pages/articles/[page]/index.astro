@@ -1,0 +1,169 @@
+---
+import { getCollection, getEntry, render } from "astro:content"
+import type { GetStaticPathsOptions } from "astro"
+import { Picture } from "astro:assets"
+
+import { getLangFromUrl, useTranslations } from "@/i18n/utils"
+import BaseLayout from "@/layouts/BaseLayout.astro"
+import {
+  Pagination,
+  PaginationContent,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from "@/components/ui/pagination"
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+
+export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
+  const articles = (await getCollection("articles")).sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+  )
+
+  return paginate(articles, { pageSize: 6 })
+}
+
+const {
+  page: {
+    data,
+    currentPage,
+    url: { prev, next, current, first, last },
+  },
+} = Astro.props
+---
+
+<BaseLayout>
+  <main class="mx-auto min-h-screen w-full max-w-screen-lg px-3">
+    <section class="mx-auto my-8 max-w-screen-md space-y-5">
+      <div class="mb-3 flex">
+        <div class="border-b-4 border-violet-500">
+          <p class="font-mono font-bold uppercase tracking-wider">
+            {t("home.all-articles")}
+          </p>
+        </div>
+      </div>
+      {
+        data.map(async (article) => {
+          const author = await getEntry(article.data.author)
+          const pubDate = new Date(article.data.pubDate).toLocaleString(
+            "default",
+            {
+              month: "short",
+              day: "numeric",
+              year: "numeric",
+            },
+          )
+          const {
+            remarkPluginFrontmatter: { minutesRead: articleMinutesRead },
+          } = await render(article)
+
+          return (
+            <article class="border-b py-5 last:border-none md:px-0">
+              <div class="group flex flex-col md:flex-row">
+                <div class="order-2 mb-2 pr-0 md:order-1 md:w-3/5 md:pr-3">
+                  <a
+                    class="block px-0 group-hover:text-muted-foreground"
+                    href={`/articles/${article.id}`}
+                  >
+                    <h2 class="scroll-m-20 text-3xl font-bold first:mt-0">
+                      {article.data.title}
+                    </h2>
+
+                    <p class="font-serif text-lg font-extralight md:text-xl">
+                      {article.data.description}
+                    </p>
+                  </a>
+                </div>
+
+                <div class="order-1 mb-4 w-full pl-0 md:order-last md:mb-0 md:ml-auto md:w-2/5 md:pl-3">
+                  <div class={`overflow-hidden rounded-none font-mono`}>
+                    <a class="block px-0" href={`/articles/${article.id}`}>
+                      <Picture
+                        class="block aspect-video h-auto w-full bg-gradient-to-r from-yellow-400/20 via-rose-400/20 to-violet-500/20 object-cover transition-all duration-300 group-hover:scale-105 md:aspect-[4/3]"
+                        src={article.data.cover}
+                        alt={article.data.title}
+                        formats={["avif", "webp"]}
+                      />
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <p class="font-mono text-sm uppercase">
+                <a
+                  class="text-violet-600 underline-offset-4 hover:underline dark:text-teal-300"
+                  href={author.data.link}
+                >
+                  {author.data.name}
+                </a>
+              </p>
+
+              <time class="block font-mono uppercase text-muted-foreground">
+                <small>
+                  {pubDate} | <span class="italic">{articleMinutesRead}</span>
+                </small>
+              </time>
+            </article>
+          )
+        })
+      }
+    </section>
+
+    <div class="mx-auto w-full max-w-screen-md py-5">
+      <Pagination>
+        <PaginationContent>
+          <PaginationItem>
+            {
+              prev && (
+                <PaginationPrevious
+                  href={prev}
+                  className="rounded-none font-mono text-lg uppercase"
+                />
+              )
+            }
+          </PaginationItem>
+
+          {
+            !last && (
+              <PaginationItem>
+                <PaginationEllipsis />
+              </PaginationItem>
+            )
+          }
+
+          <PaginationItem>
+            <PaginationLink
+              isActive
+              href={current}
+              className="rounded-none font-mono text-lg"
+            >
+              {currentPage}
+            </PaginationLink>
+          </PaginationItem>
+
+          {
+            next && (
+              <PaginationItem>
+                <PaginationEllipsis />
+              </PaginationItem>
+            )
+          }
+
+          <PaginationItem>
+            {
+              next && (
+                <PaginationNext
+                  className="rounded-none font-mono text-lg uppercase"
+                  href={next}
+                />
+              )
+            }
+          </PaginationItem>
+        </PaginationContent>
+      </Pagination>
+    </div>
+  </main>
+</BaseLayout>

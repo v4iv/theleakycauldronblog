@@ -1,0 +1,78 @@
+---
+import { ClientRouter } from "astro:transitions"
+import LoadingIndicator from "astro-loading-indicator/component"
+
+import { getLangFromUrl, useTranslations } from "@/i18n/utils"
+import BaseHead from "@/components/BaseHead.astro"
+import NavBar from "@/components/NavBar.astro"
+import Footer from "@/components/Footer.astro"
+
+interface Props {
+  title?: string
+  description?: string
+  image?: string
+  author?: string
+}
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+
+const {
+  title = t("meta.title"),
+  description = t("meta.description"),
+  image = "/banner.jpg",
+  author = "Vaibhav Sharma",
+} = Astro.props
+---
+
+<!doctype html>
+<html lang={lang} class="scroll-smooth">
+  <head>
+    <BaseHead
+      title={title}
+      description={description}
+      author={author}
+      image={image}
+    />
+
+    <script is:inline>
+      const darkModePreference = window.matchMedia(
+        "(prefers-color-scheme: dark)",
+      )
+
+      if (darkModePreference.matches) {
+        document.documentElement.classList.add("dark")
+      } else {
+        document.documentElement.classList.remove("dark")
+      }
+
+      darkModePreference.addEventListener("change", (e) => {
+        if (e.matches) {
+          document.documentElement.classList.add("dark")
+        } else {
+          document.documentElement.classList.remove("dark")
+        }
+      })
+
+      // Necessary for view transitions
+      document.addEventListener("astro:after-swap", () => {
+        if (darkModePreference.matches) {
+          document.documentElement.classList.add("dark")
+        } else {
+          document.documentElement.classList.remove("dark")
+        }
+      })
+    </script>
+
+    <ClientRouter />
+    <LoadingIndicator color="#ffa3d7" />
+  </head>
+
+  <body class="min-h-screen bg-background antialiased">
+    <NavBar />
+
+    <slot />
+
+    <Footer />
+  </body>
+</html>

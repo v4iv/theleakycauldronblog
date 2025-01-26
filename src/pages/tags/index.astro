@@ -1,0 +1,50 @@
+---
+import { getCollection } from "astro:content"
+import slugify from "slugify"
+
+import tagsImage from "@/assets/tags.svg"
+import { getLangFromUrl, useTranslations } from "@/i18n/utils"
+import BaseLayout from "@/layouts/BaseLayout.astro"
+import PageHeader from "@/components/PageHeader.astro"
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+
+const articles = await getCollection("articles")
+
+const allTags = articles.flatMap((article) => article.data.tags)
+
+const tags = [...new Set(allTags)]
+  .map((tag) => ({ name: tag, tag: slugify(tag) }))
+  .sort((tagA, tagB) => tagA.tag.localeCompare(tagB.tag))
+---
+
+<BaseLayout title={`${t("tags.title")} | ${t("meta.title")}`} description={t("tags.description")}>
+  <main class="mx-auto min-h-screen w-full">
+    <PageHeader
+      backgroundImage={tagsImage}
+      title={t("tags.title")}
+      subtitle={t("tags.subtitle")}
+    />
+
+    <div class="mx-auto w-full max-w-screen-md px-3">
+      <ul class="my-16 flex flex-wrap gap-3 text-2xl">
+        {
+          tags.map((tag) => (
+            <Fragment>
+              <li class="font-mono uppercase tracking-widest text-violet-600 dark:text-violet-500">
+                <a
+                  href={`/tags/${tag.tag}`}
+                  class="underline-offset-4 hover:underline"
+                >
+                  #{tag.name}
+                </a>
+              </li>
+              <li class="last:hidden">/</li>
+            </Fragment>
+          ))
+        }
+      </ul>
+    </div>
+  </main>
+</BaseLayout>

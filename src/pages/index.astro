@@ -1,20 +1,229 @@
 ---
-import Layout from "@/layouts/Layout.astro"
+import { getCollection, getEntry, render } from "astro:content"
+import { Picture } from "astro:assets"
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import featured from "@/assets/featured.svg"
+import { getLangFromUrl, useTranslations } from "@/i18n/utils"
+import BaseLayout from "@/layouts/BaseLayout.astro"
+import ButtonLink from "@/components/ButtonLink.astro"
+import { Separator } from "@/components/ui/separator"
+import { ShareMobile, Share } from "@/components/share"
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+
+const articles = (await getCollection("articles")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+)
+
+// featured article
+const featuredArticle = articles[0]
+const featuredArticleAuthor = await getEntry(featuredArticle.data.author)
+const {
+  remarkPluginFrontmatter: { minutesRead: featuredArticleMinutesRead },
+} = await render(featuredArticle)
+const featuredArticlePubDate = new Date(
+  featuredArticle.data.pubDate,
+).toLocaleString("default", {
+  month: "long",
+  day: "numeric",
+  year: "numeric",
+})
+
+const latestArticles = articles.slice(1, 5)
 ---
 
-<Layout>
-  <main class="mx-auto flex min-h-screen w-full max-w-screen-xl px-3">
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud ex ea ex ea exercitation ullamco laboris nisi ut
-      aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-      voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-      sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-      mollit anim id est laborum.
-    </p>
+<BaseLayout>
+  <main class="min-h-screen w-full">
+    <div class="mx-auto max-w-screen-xl px-3">
+      <!-- hero -->
+      <div class="group mb-10 max-w-screen-xl">
+        <div
+          class="relative block max-w-screen-sm md:pl-14 lg:max-w-screen-md xl:max-w-screen-lg"
+        >
+          <!-- featued -->
+          <Picture
+            src={featured}
+            alt={t("home.featured")}
+            loading="eager"
+            class="absolute bottom-1/4 left-[-11.5rem] -z-10 hidden -rotate-90 md:block"
+          />
+          <!-- hero metadata -->
+          <div class="mb-2 flex items-center justify-between font-mono text-sm">
+            <div
+              class="flex items-center gap-1 border-b-4 border-teal-300 md:border-violet-500"
+            >
+              <time class="uppercase">
+                {featuredArticlePubDate}
+              </time>
+              &bull;
+              <small class="uppercase italic text-muted-foreground">
+                {featuredArticleMinutesRead}
+              </small>
+            </div>
+
+            <ShareMobile
+              lang={lang}
+              title={featuredArticle.data.title}
+              link={`${Astro.site}articles/${featuredArticle.id}`}
+              className="justify-end"
+              client:load
+            />
+          </div>
+
+          <!-- hero image -->
+          <a href={`/articles/${featuredArticle.id}`}>
+            <Picture
+              src={featuredArticle.data.cover}
+              alt={featuredArticle.data.title}
+              formats={["avif", "webp"]}
+              loading="eager"
+              class="bg-gradient-to-r from-yellow-400/20 via-rose-400/20 to-violet-500/20 drop-shadow-lg"
+            />
+          </a>
+
+          <div
+            class="pointer-events-none absolute bottom-0 top-auto size-full translate-y-0 bg-gradient-to-t from-white/10 to-transparent dark:from-black/10"
+          >
+          </div>
+
+          <div
+            class="pointer-events-none absolute bottom-0 top-auto h-1/3 w-full translate-y-0 bg-gradient-to-t from-white/20 to-transparent dark:from-black/30"
+          >
+          </div>
+
+          <Share
+            lang={lang}
+            title={featuredArticle.data.title}
+            link={`${Astro.site}articles/${featuredArticle.id}`}
+            className="absolute -right-12 top-8 hidden flex-col md:flex"
+            client:load
+          />
+        </div>
+
+        <!-- hero details -->
+        <div class="relative -mt-5 sm:-mt-10 md:pl-60 lg:pl-80">
+          <h2
+            class="text-glitch scroll-m-20 break-words text-4xl font-bold first:m-0 md:text-6xl"
+          >
+            <a
+              href={`/articles/${featuredArticle.id}`}
+              class="origin-top-right decoration-violet-500 decoration-8 group-hover:underline"
+            >
+              {featuredArticle.data.title}
+            </a>
+          </h2>
+
+          <p class="my-1 font-serif text-lg md:my-2 md:text-xl">
+            <a href={`/articles/${featuredArticle.id}`}>
+              {featuredArticle.data.description}
+            </a>
+          </p>
+
+          <div
+            class="flex flex-col-reverse gap-2 font-mono text-sm md:flex-row"
+          >
+            <p class="truncate">
+              <a
+                class="uppercase text-violet-600 underline-offset-4 hover:underline dark:text-teal-300"
+                href={featuredArticleAuthor.data.link}
+              >
+                {featuredArticleAuthor.data.name}
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <Separator />
+
+      <!-- latest articles -->
+      <section class="mx-auto my-8 max-w-screen-md space-y-5">
+        <div class="mb-3 flex">
+          <div class="border-b-4 border-violet-500">
+            <p class="font-mono font-bold uppercase tracking-wider">
+              {t("home.latest")}
+            </p>
+          </div>
+        </div>
+        {
+          latestArticles.map(async (article) => {
+            const author = await getEntry(article.data.author)
+            const pubDate = new Date(article.data.pubDate).toLocaleString(
+              "default",
+              {
+                month: "short",
+                day: "numeric",
+                year: "numeric",
+              },
+            )
+            const {
+              remarkPluginFrontmatter: { minutesRead: articleMinutesRead },
+            } = await render(article)
+
+            return (
+              <article class="border-b py-5 last:border-none md:px-0">
+                <div class="group flex flex-col md:flex-row">
+                  <div class="order-2 mb-2 pr-0 md:order-1 md:w-3/5 md:pr-3">
+                    <a
+                      class="block px-0 group-hover:text-muted-foreground"
+                      href={`/articles/${article.id}`}
+                    >
+                      <h2 class="scroll-m-20 text-3xl font-bold first:mt-0">
+                        {article.data.title}
+                      </h2>
+
+                      <p class="font-serif text-lg font-extralight md:text-xl">
+                        {article.data.description}
+                      </p>
+                    </a>
+                  </div>
+
+                  <div class="order-1 mb-4 w-full pl-0 md:order-last md:mb-0 md:ml-auto md:w-2/5 md:pl-3">
+                    <div class={`overflow-hidden rounded-none font-mono`}>
+                      <a class="block px-0" href={`/articles/${article.id}`}>
+                        <Picture
+                          class="block aspect-video h-auto w-full bg-gradient-to-r from-yellow-400/20 via-rose-400/20 to-violet-500/20 object-cover transition-all duration-300 group-hover:scale-105 md:aspect-[4/3]"
+                          src={article.data.cover}
+                          alt={article.data.title}
+                          formats={["avif", "webp"]}
+                        />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <p class="font-mono text-sm uppercase">
+                  <a
+                    class="text-violet-600 underline-offset-4 hover:underline dark:text-teal-300"
+                    href={author.data.link}
+                  >
+                    {author.data.name}
+                  </a>
+                </p>
+
+                <time class="block font-mono uppercase text-muted-foreground">
+                  <small>
+                    {pubDate} | <span class="italic">{articleMinutesRead}</span>
+                  </small>
+                </time>
+              </article>
+            )
+          })
+        }
+      </section>
+
+      <!-- all articles -->
+      <div class="mx-auto my-3 flex max-w-screen-md justify-end">
+        <ButtonLink
+          href="/articles/1"
+          size="lg"
+          variant="outline"
+          class="rounded-none font-mono uppercase"
+        >
+          {t("home.all-articles")} &rarr;
+        </ButtonLink>
+      </div>
+    </div>
   </main>
-</Layout>
+</BaseLayout>

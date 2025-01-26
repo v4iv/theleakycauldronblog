@@ -1,0 +1,150 @@
+---
+import {
+  type CollectionEntry,
+  getCollection,
+  getEntry,
+  render,
+} from "astro:content"
+import { getImage, Picture } from "astro:assets"
+import slugify from "slugify"
+
+import { getLangFromUrl } from "@/i18n/utils"
+import BaseLayout from "@/layouts/BaseLayout.astro"
+import Prose from "@/components/Prose.astro"
+import { Share, ShareMobile } from "@/components/share"
+
+export async function getStaticPaths() {
+  const articles = await getCollection("articles")
+  return articles.map((article) => {
+    return {
+      params: { slug: article.id },
+      props: article,
+    }
+  })
+}
+
+type Props = CollectionEntry<"articles">
+
+const lang = getLangFromUrl(Astro.url)
+
+const article = Astro.props
+
+const author = await getEntry(article.data.author)
+
+const {
+  Content,
+  remarkPluginFrontmatter: { minutesRead },
+} = await render(article)
+
+const pubDate = new Date(article.data.pubDate).toLocaleString("default", {
+  month: "short",
+  day: "numeric",
+  year: "numeric",
+})
+
+const bannerImage = await getImage({src: article.data.cover, format: 'avif'})
+---
+
+<BaseLayout
+  title={article.data.title}
+  description={article.data.description}
+  image={bannerImage.src}
+  author={author.data.name}
+>
+  <main class="min-h-screen">
+    <header class="mx-auto mb-5 w-full max-w-screen-lg px-3">
+      <!-- tags -->
+      <ul class="mb-4 flex flex-wrap gap-3 text-sm">
+        {
+          article.data.tags.map((tag) => (
+            <Fragment>
+              <li class="font-mono uppercase tracking-widest text-violet-600 dark:text-violet-500">
+                <a
+                  href={`/tags/${slugify(tag)}`}
+                  class="underline-offset-4 hover:underline"
+                >
+                  #{tag}
+                </a>
+              </li>
+              <li class="last:hidden">/</li>
+            </Fragment>
+          ))
+        }
+      </ul>
+
+      <!-- title -->
+      <h1
+        class="mb-3 scroll-m-20 text-4xl font-extrabold first:mt-0 md:text-5xl lg:text-6xl"
+      >
+        {article.data.title}
+      </h1>
+
+      <!-- description -->
+      <p class="mb-2 text-2xl">
+        {article.data.description}
+      </p>
+
+      <!-- metadata -->
+      <div class="flex flex-col-reverse gap-2 font-mono text-sm md:flex-row">
+        <p class="truncate">
+          By <a
+            class="text-violet-600 underline-offset-4 hover:underline dark:text-violet-500"
+            href={author.data.link}>{author.data.name}</a
+          >
+        </p>
+        <span class="hidden md:flex">&bull;</span>
+        <time class="text-muted-foreground">
+          {pubDate}
+          |
+          <span class="italic">{minutesRead}</span>
+        </time>
+      </div>
+
+      <ShareMobile
+        lang={lang}
+        title={article.data.title}
+        link={`${Astro.site}articles/${article.id}`}
+        className="pt-3"
+        client:load
+      />
+      <Share
+        lang={lang}
+        title={article.data.title}
+        link={`${Astro.site}articles/${article.id}`}
+        className="hidden pt-3 md:flex"
+        client:load
+      />
+    </header>
+
+    <div class="mx-auto w-full max-w-screen-xl px-3">
+      <Picture
+        src={article.data.cover}
+        alt={article.data.title}
+        formats={["avif", "webp"]}
+        loading="eager"
+        class="bg-gradient-to-r from-yellow-400/20 via-rose-400/20 to-violet-500/20"
+      />
+    </div>
+
+    <div class="mx-auto w-full max-w-screen-md px-3 py-10">
+      <Prose>
+        <Content />
+      </Prose>
+
+      <ShareMobile
+        lang={lang}
+        title={article.data.title}
+        link={`${Astro.site}articles/${article.id}`}
+        className="justify-center pt-5"
+        client:load
+      />
+      <Share
+        lang={lang}
+        title={article.data.title}
+        link={`${Astro.site}articles/${article.id}`}
+        className="hidden justify-center pt-5 md:flex"
+        client:load
+      />
+    </div>
+  </main>
+</BaseLayout>

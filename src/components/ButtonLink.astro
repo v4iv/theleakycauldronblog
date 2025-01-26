@@ -1,0 +1,14 @@
+---
+import { buttonVariants } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
+import type { HTMLAttributes } from "astro/types"
+import type { VariantProps } from "class-variance-authority"
+
+export type Props = HTMLAttributes<"a"> & VariantProps<typeof buttonVariants>
+
+const { variant = "default", size = "default", ...props } = Astro.props
+---
+
+<a class={cn(buttonVariants({ variant, size }), props.class)} {...props}>
+  <slot />
+</a>
