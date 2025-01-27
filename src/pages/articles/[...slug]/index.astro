@@ -126,8 +126,6 @@ const bannerImage = await getImage({
         alt={article.data.title}
         format="avif"
         loading="eager"
-        widths={[540, 1200, article.data.cover.width]}
-        sizes={`(max-width: 360px) 540px, (max-width: 720px) 1200px, ${article.data.cover.width}`}
         class="w-full bg-gradient-to-r from-yellow-400/20 via-rose-400/20 to-violet-500/20"
       />
     </div>
@@ -151,6 +149,26 @@ const bannerImage = await getImage({
         className="hidden justify-center pt-5 md:flex"
         client:load
       />
+
+      <div class="mt-10">
+        <script
+          is:inline
+          src="https://giscus.app/client.js"
+          data-repo="v4iv/theleakycauldronblog"
+          data-repo-id="MDEwOlJlcG9zaXRvcnkxMjg3NzMyOTY="
+          data-category="Comments"
+          data-category-id="DIC_kwDOB6zssM4CmYXn"
+          data-mapping="url"
+          data-strict="0"
+          data-reactions-enabled="1"
+          data-emit-metadata="0"
+          data-input-position="top"
+          data-theme="preferred_color_scheme"
+          data-lang="en"
+          data-loading="lazy"
+          crossorigin="anonymous"
+          async></script>
+      </div>
     </div>
   </main>
 </BaseLayout>
