@@ -1,40 +1,5 @@
 [build.environment]
-  PNPM_VERSION = "9.15.2"
-
-[[headers]]
-  for = "/*.png"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/*.js"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/*.css"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/sw.js"
-  [headers.values]
-    Cache-Control = "public, max-age=0, must-revalidate"
-
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Frame-Options = "DENY"
-    X-Content-Type-Options = "nosniff"
-    Referrer-Policy = "no-referrer-when-downgrade"
-
-# partytown gtag redirects
-#[[redirects]]
-#  from = "/__third-party-proxy"
-#  to = "https://www.googletagmanager.com/gtag/js?id=$GATSBY_GTAG"
-#  status = 200
-#  force = true
-#  query = {url = ":url"}
+  PNPM_VERSION = "9.15.3"
 
 [[plugins]]
   package = "netlify-plugin-submit-sitemap"

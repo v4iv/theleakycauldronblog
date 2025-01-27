@@ -1,0 +1,30 @@
+---
+import { getImage } from "astro:assets"
+
+interface Props {
+  backgroundImage: any
+  title: string
+  subtitle?: string
+}
+
+const { backgroundImage, title, subtitle } = Astro.props
+
+const optimizedBackground = await getImage({ src: backgroundImage })
+---
+
+<div class="bg-gradient-to-t from-teal-300/30 to-transparent">
+  <div
+    style={`background-image: url(${optimizedBackground.src});`}
+    class="mx-auto w-full bg-fixed"
+  >
+    <header class="mx-auto w-full max-w-screen-xl px-3 py-10">
+      <h1
+        class="text-glitch font-mono text-4xl font-bold uppercase tracking-widest md:text-5xl lg:text-7xl"
+      >
+        {title}
+      </h1>
+
+      <p class="glitch md:text-xl">{subtitle}</p>
+    </header>
+  </div>
+</div>

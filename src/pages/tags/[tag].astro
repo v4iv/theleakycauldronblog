@@ -1,0 +1,77 @@
+---
+import slugify from "slugify"
+import { getCollection, getEntry } from "astro:content"
+
+import tagsImage from "@/assets/tags.svg"
+import { getLangFromUrl, useTranslations } from "@/i18n/utils"
+import BaseLayout from "@/layouts/BaseLayout.astro"
+import PageHeader from "@/components/PageHeader.astro"
+
+export async function getStaticPaths() {
+  const articles = (await getCollection("articles")).sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+  )
+  const allTags = articles.flatMap((article) => article.data.tags)
+
+  const tags = [...new Set(allTags)]
+    .map((tag) => ({ name: tag, tag: slugify(tag) }))
+    .sort((tagA, tagB) => tagA.tag.localeCompare(tagB.tag))
+
+  return tags.flatMap(({ tag, name }) => {
+    const taggedArticles = articles.filter((article) => {
+      const slugifiedTags = article.data.tags.map((t) => slugify(t))
+      return slugifiedTags.includes(tag)
+    })
+
+    return {
+      params: { tag },
+      props: { name, taggedArticles },
+    }
+  })
+}
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+
+const { taggedArticles, name } = Astro.props
+---
+
+<BaseLayout
+  title={`${taggedArticles.length} article${taggedArticles.length > 1 ? "s" : ""} tagged with "${name}"`}
+  description={t("tags.description")}
+>
+  <main class="mx-auto min-h-screen w-full">
+    <PageHeader
+      backgroundImage={tagsImage}
+      title={`#${name}`}
+      subtitle={`${taggedArticles.length} article${taggedArticles.length > 1 ? "s" : ""} tagged with "${name}"`}
+    />
+
+    <div class="mx-auto my-10 w-full max-w-screen-md px-3">
+      <section>
+        {
+          taggedArticles.map(async (article) => {
+            const author = await getEntry(article.data.author)
+
+            return (
+              <article class="space-y-3 border-b py-6 last:border-none">
+                <h2 class="scroll-m-20 text-3xl font-bold tracking-wide transition-colors first:mt-0 md:text-4xl">
+                  <a
+                    class="transition-colors duration-100 hover:text-muted-foreground"
+                    href={`/articles/${article.id}`}
+                  >
+                    {article.data.title}
+                  </a>
+                </h2>
+
+                <p class="font-mono text-muted-foreground">
+                  By <span class="uppercase">{author.data.name}</span>
+                </p>
+              </article>
+            )
+          })
+        }
+      </section>
+    </div>
+  </main>
+</BaseLayout>

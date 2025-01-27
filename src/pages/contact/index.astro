@@ -1,0 +1,29 @@
+---
+import contactImage from "@/assets/contact.svg"
+import { getLangFromUrl, useTranslations } from "@/i18n/utils"
+import BaseLayout from "@/layouts/BaseLayout.astro"
+import PageHeader from "@/components/PageHeader.astro"
+import { Toaster } from "@/components/ui/toaster"
+import { ContactForm } from "@/components/forms/contact-form"
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+---
+
+<BaseLayout
+  title={`${t("contact.title")} | ${t("meta.title")}`}
+  description={t("contact.description")}
+>
+  <main class="mx-auto min-h-screen w-full">
+    <PageHeader
+      backgroundImage={contactImage}
+      title={t("contact.title")}
+      subtitle={t("contact.subtitle")}
+    />
+
+    <div class="mx-auto w-full max-w-screen-md px-3 py-16">
+      <ContactForm lang={lang} client:load />
+    </div>
+  </main>
+  <Toaster client:load />
+</BaseLayout>

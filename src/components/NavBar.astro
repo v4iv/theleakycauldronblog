@@ -1,0 +1,96 @@
+---
+import { Search } from "lucide-react"
+
+import { getLangFromUrl, useTranslations } from "@/i18n/utils"
+import { MenuButton } from "@/components/menu"
+import StickyNavBar from "@/components/sticky-navbar"
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+---
+
+<nav
+  class="tlcb-bg w-full max-w-screen-2xl bg-cover bg-local bg-no-repeat 2xl:mx-auto"
+>
+  <div class="mx-auto flex w-full max-w-screen-xl">
+    <div class="flex w-full justify-normal md:justify-end">
+      <div class="w-full max-w-screen-md px-3 py-5 md:py-16">
+        <div
+          class="flex items-end border-black pb-2 dark:border-white md:border-b"
+        >
+          <div class="grow">
+            <a
+              href="/"
+              class="hidden truncate break-words bg-gradient-to-r from-yellow-400 via-rose-400 to-violet-500 bg-clip-text font-mono text-4xl font-extrabold tracking-wider text-transparent md:flex"
+            >
+              {t("navbar.title")}
+            </a>
+            <a
+              href="/"
+              class="truncate break-words bg-gradient-to-r from-yellow-400 via-rose-400 to-violet-500 bg-clip-text font-mono text-4xl font-extrabold tracking-wider text-transparent md:hidden"
+            >
+              {t("navbar.short-name")}
+            </a>
+          </div>
+          <div
+            class="hidden items-center justify-normal space-x-6 tracking-wider md:flex"
+          >
+            <a
+              href="/"
+              class="text-xl uppercase transition-all duration-300 hover:scale-95 hover:text-muted-foreground"
+              >{t("navbar.home")}</a
+            >
+            <span>/</span>
+            <a
+              href="/tags"
+              class="text-xl uppercase transition-all duration-300 hover:scale-95 hover:text-muted-foreground"
+              >{t("navbar.tags")}</a
+            >
+            <span>/</span>
+            <a
+              href="/about"
+              class="text-xl uppercase transition-all duration-300 hover:scale-95 hover:text-muted-foreground"
+              >{t("navbar.about")}</a
+            >
+            <span>/</span>
+            <a
+              href="/contact"
+              class="text-xl uppercase transition-all duration-300 hover:scale-95 hover:text-muted-foreground"
+              >{t("navbar.contact")}</a
+            >
+            <span>/</span>
+            <div>
+              <a
+                href="/search"
+                class="flex cursor-pointer items-center text-xl uppercase transition-all duration-300 hover:scale-95 hover:text-muted-foreground"
+              >
+                {t("navbar.search")}
+                <Search className="ml-2 size-5" />
+              </a>
+            </div>
+          </div>
+          <div class="flex items-center md:hidden">
+            <MenuButton
+              lang={lang}
+              variant="outline"
+              className="rounded-none border-x-0 border-t-0 border-b-black bg-transparent px-0 text-lg uppercase transition-all duration-300 hover:bg-transparent hover:text-muted-foreground dark:border-b-white"
+              client:load
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+<StickyNavBar lang={lang} client:load />
+
+<style>
+  .tlcb-bg {
+    background-image: none;
+  }
+  @screen md {
+    .tlcb-bg {
+      background-image: url("../assets/background.svg");
+    }
+  }
+</style>

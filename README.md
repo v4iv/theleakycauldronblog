@@ -9,106 +9,48 @@
   The Leaky Cauldron Blog
 </h1>
 
-## ✨ Features
+Personal blog powered by [Astro](https://astro.build) & [Decap CMS](https://decapcms.org)
 
-- TypeScript
-
-- Lunr search
-
-- Pagination
-
-- SEO friendly (Head API, Slug, Sitemap, Robots.txt etc)
-
-- Google Analytics & Disqus Comments with [Cloudflare Zaraz](https://www.cloudflare.com/application-services/products/zaraz/)
-
-- Built with shadcn/ui (Tailwind CSS)
-
-- Decap CMS(Netlify CMS) generated markdown pages with Shiki code highlighting, social embedding etc
-
-- Netlify Forms
-
-- Dark Mode
 
 ## 🚀 Getting Started
 
-1. **Create a Gatsby site.**
+```sh
+pnpm create astro@latest -- --template v4iv/nebula
+```
 
-    Use the Gatsby CLI to create a new site, specifying the blog starter.
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-    ```shell
-    # create a new Gatsby project
-    gatsby new {your-project-name} https://github.com/v4iv/theleakycauldronblog.git 
-    ```
+## Project Structure
 
-2. **Start developing.**
+Inside of your Astro project, you'll see the following folders and files:
 
-    Navigate to new site’s directory and start it up.
+```text
+/
+├── public/
+│   └── favicon.svg
+├── src/
+│   ├── layouts/
+│   │   └── Layout.astro
+│   └── pages/
+│       └── index.astro
+└── package.json
+```
 
-    ```shell
-    cd {your-project-name}/
-    pnpm develop
-    ```
-    ### VS Code
+To learn more about the folder structure of an Astro project, refer to [the guide on project structure](https://docs.astro.build/en/basics/project-structure/).
 
-    Set up debugging in VS Code by adding the following to `launch.json`
+## 🧞 Commands
 
-    ```json
-    {
-        "name": "Gatsby Develop",
-        "type": "node",
-        "request": "launch",
-        "program": "${workspaceRoot}/node_modules/.bin/gatsby",
-        "args": [
-            "develop"
-        ],
-        "env": {
-            "PARCEL_WORKERS": "0",
-            "GATSBY_CPU_COUNT": "2",
-        },
-        "runtimeArgs": [
-            "--nolazy"
-        ],
-        "console": "integratedTerminal"
-    },
-    ```
+All commands are run from the root of the project, from a terminal:
 
-3. **Open the code and start editing!**
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `pnpm install`             | Installs dependencies                            |
+| `pnpm run dev`             | Starts local dev server at `localhost:4321`      |
+| `pnpm run build`           | Build your production site to `./dist/`          |
+| `pnpm run preview`         | Preview your build locally, before deploying     |
+| `pnpm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `pnpm run astro -- --help` | Get help using the Astro CLI                     |
 
-    Your site is now running at <http://localhost:8000>!
+## 👀 Want to learn more?
 
-    Edit `src/pages` to see your site update in real-time!
-
-4. **Customize**
-
-    You'll need to change the following files to make it fully yours, also make sure to not deploy the site with the blog posts written for [theleakycauldronblog.com](https://theleakycauldronblog.com):
-
-    - `gatsby-config.ts` : edit siteMetadata variable
-
-    - `locales/en/common.json` : react-i18next is being used to manage entire site's branding, though you can extend it to support multiple languages as well
-
-    - `static/admin/config.yml` : site url, default values
-
-    - `src/assets/avatar.png` : your brand icons
-
-    - `static/icon-*.png` : your brand icons
-
-    - `static/apple-touch-icon.png` : your brand icons
-
-    - `static/favicon.ico` : your brand icons
-
-    - `static/robots.txt` : sitemap url
-
-4. **Learn more**
-
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [Tutorials](https://www.gatsbyjs.com/docs/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [Guides](https://www.gatsbyjs.com/docs/how-to/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-## Built with Netlify
-
-<a href="https://www.netlify.com">
-  <img src="https://www.netlify.com/img/global/badges/netlify-dark.svg"/>
-</a>
+Feel free to check [the documentation](https://docs.astro.build) or jump into the [Astro Discord server](https://astro.build/chat).

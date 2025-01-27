@@ -1,0 +1,88 @@
+backend:
+  name: git-gateway
+  repo: v4iv/nebula
+  branch: main
+
+local_backend: true
+logo_url: /icon-512.png
+media_folder: src/assets/media
+public_folder: src/assets/media
+publish_mode: editorial_workflow
+
+collections:
+  - name: "articles" # Used in routes, e.g., /admin/collections/blog
+    label: "Articles" # Used in the UI
+    label_singular: "Article"
+    folder: "src/content/articles" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{fields.slug}}"
+    sortable_fields: ["pubDate", "title"]
+    view_groups:
+      - label: Year
+        field: pubDate
+        # groups items based on the value matched by the pattern
+        pattern: \d{4}
+    fields: # The fields for each document, usually in frontmatter
+      - { label: "Title", name: "title", widget: "string", required: true }
+      - {
+          label: "Description",
+          name: "description",
+          widget: "string",
+          required: true,
+        }
+      - {
+          label: "Publish Date",
+          name: "pubDate",
+          widget: "datetime",
+          required: true,
+        }
+      - { label: "Slug", name: "slug", widget: "string", required: true }
+      - {
+          label: "Author",
+          name: "author",
+          widget: "relation",
+          required: true,
+          collection: "authors",
+          search_fields: ["name"],
+          value_field: "{{slug}}",
+          display_fields: ["name", "link"],
+        }
+      - { label: "Cover", name: "cover", widget: "image", required: true }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Tags", name: "tags", widget: "list" }
+  - name: "authors"
+    label: "Authors"
+    label_singular: "Author"
+    folder: "src/content/authors"
+    create: true
+    slug: "{{fields.name}}.{{extension}}"
+    extenstion: "json"
+    format: "json"
+    fields:
+      - { label: "Name", name: "name", widget: string, required: true }
+      - { label: "Link", name: "link", widget: string, required: true }
+  - name: "pages"
+    label: "Pages"
+    label_signular: "Page"
+    files:
+      - file: "src/pages/about/index.md"
+        label: "About Page"
+        name: "about"
+        fields:
+          - {
+              label: "Layout",
+              name: "layout",
+              widget: "hidden",
+              default: "../../layouts/AboutLayout.astro",
+            }
+          - { label: "Title", name: "title", widget: "string" }
+          - {
+              label: "Description",
+              name: "description",
+              widget: "string",
+              required: true,
+            }
+          - { label: "Subtitle", name: "subtitle", widget: "string" }
+          - { label: "Author", name: "author", widget: "string" }
+          - { label: "Cover", name: "cover", widget: "image" }
+          - { label: "Body", name: "body", widget: "markdown" }

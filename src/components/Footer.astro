@@ -1,0 +1,177 @@
+---
+import { Image } from "astro:assets"
+
+import tlcb from "@/assets/logo.svg"
+import { getLangFromUrl, useTranslations } from "@/i18n/utils"
+import { Separator } from "@/components/ui/separator"
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+---
+
+<footer class="w-full">
+  <div class="min-h-60 bg-teal-300"></div>
+
+  <div class="bg-slate-950">
+    <div class="mx-auto w-full max-w-screen-xl">
+      <div class="grid grid-cols-2 px-3">
+        <div class="col-span-2 my-5 md:col-span-1 md:my-20">
+          <!-- logo -->
+          <Image
+            src={tlcb}
+            alt={t("navbar.short-name")}
+            class="size-full invert md:w-60"
+          />
+
+          <!-- tagline -->
+          <p class="truncate text-center font-serif text-white md:text-left">
+            {t("footer.tagline")}
+          </p>
+        </div>
+
+        <div class="col-span-2 my-5 flex flex-col md:col-span-1 md:my-20">
+          <!-- site links -->
+          <div class="my-5 flex flex-wrap font-mono uppercase tracking-widest">
+            <a href="/" class="text-white underline-offset-4 hover:underline">
+              {t("navbar.home")}
+            </a>
+
+            <span class="text-rose-400">&nbsp;/&nbsp;</span>
+
+            <a
+              href="/tags"
+              class="text-white underline-offset-4 hover:underline"
+            >
+              {t("navbar.tags")}
+            </a>
+
+            <span class="text-rose-400">&nbsp;/&nbsp;</span>
+
+            <a
+              href="/about"
+              class="text-white underline-offset-4 hover:underline"
+            >
+              {t("navbar.about")}
+            </a>
+
+            <span class="text-rose-400">&nbsp;/&nbsp;</span>
+
+            <a
+              href="/contact"
+              class="text-white underline-offset-4 hover:underline"
+            >
+              {t("navbar.contact")}
+            </a>
+
+            <span class="text-rose-400">&nbsp;/&nbsp;</span>
+
+            <a
+              href="/sitemap-index.xml"
+              class="text-white underline-offset-4 hover:underline"
+            >
+              {t("seo.sitemap")}
+            </a>
+          </div>
+
+          <!-- cookie intimation -->
+          <p class="text-sm text-white">{t("footer.cookie")}</p>
+        </div>
+      </div>
+
+      <Separator />
+
+      <div class="mt-7 grid grid-cols-2 px-3">
+        <div class="col-span-2 md:col-span-1">
+          <!-- socials -->
+          <div
+            class="mb-5 flex flex-wrap font-mono text-xs uppercase tracking-widest"
+          >
+            <span class="uppercase text-teal-300">
+              {t("social.follow")}&nbsp;&nbsp;
+            </span>
+
+            <a
+              target="_blank"
+              rel="noreferrer nofollow"
+              href="https://waybove.bsky.social"
+              class="text-white underline-offset-4 hover:underline"
+            >
+              {t("social.bluesky")}
+            </a>
+            <span class="text-yellow-400">&nbsp;/&nbsp;</span>
+            <a
+              target="_blank"
+              rel="noreferrer nofollow"
+              href="https://github.com/v4iv"
+              class="text-white underline-offset-4 hover:underline"
+            >
+              {t("social.github")}
+            </a>
+            <span class="text-yellow-400">&nbsp;/&nbsp;</span>
+            <a
+              target="_blank"
+              rel="noreferrer nofollow"
+              href="https://instagram.com/mildlyzen"
+              class="text-white underline-offset-4 hover:underline"
+            >
+              {t("social.instagram")}
+            </a>
+            <span class="text-yellow-400">&nbsp;/&nbsp;</span>
+            <a
+              href="/rss.xml"
+              class="text-white underline-offset-4 hover:underline"
+            >
+              {t("social.rss")}
+            </a>
+          </div>
+        </div>
+
+        <div class="col-span-2 md:col-span-1">
+          <!-- copyright -->
+          <div class="mb-5">
+            <p class="font-mono text-white">
+              {t("footer.copyright")} 2018-{new Date().getFullYear()} &bull; {
+                t("meta.title")
+              } &bull;
+              {t("footer.all-rights-reserved")}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- easter egg -->
+    <div class="flex justify-end">
+      <span class="easter-egg"></span>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .easter-egg {
+    background: url("../assets/easter-egg.png") 0 0 / cover;
+    height: 48px;
+    width: 48px;
+    scale: 0.8;
+    -webkit-animation: pixel 17s steps(17) infinite;
+    animation: pixel 17s steps(17) infinite;
+  }
+
+  @-webkit-keyframes pixel {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: -816px 0;
+    }
+  }
+
+  @keyframes pixel {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: -816px 0;
+    }
+  }
+</style>

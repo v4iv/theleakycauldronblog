@@ -1,0 +1,25 @@
+---
+import { Image } from "astro:assets"
+import type { ImageMetadata } from "astro"
+
+const { src, alt, ...attrs } = Astro.props
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/media/*.{jpeg,jpg,png,gif}",
+)
+
+if (!images[src])
+  throw new Error(
+    `"${src}" does not exist in glob: "src/assets/media/*.{jpeg,jpg,png,gif}"`,
+  )
+---
+
+<Image
+  src={images[src]()}
+  alt={alt}
+  format="avif"
+  loading="eager"
+  widths={[720, 1200]}
+  sizes={`(max-width: 720px) 720px, 1200px`}
+  {...attrs}
+/>
