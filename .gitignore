@@ -24,3 +24,6 @@ pnpm-debug.log*
 .idea/
 .vscode/
 .fleet/
+
+# Local Netlify folder
+.netlify
