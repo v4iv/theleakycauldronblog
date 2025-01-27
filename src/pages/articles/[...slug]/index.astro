@@ -1,12 +1,12 @@
 ---
+import slugify from "slugify"
 import {
   type CollectionEntry,
   getCollection,
   getEntry,
   render,
 } from "astro:content"
-import { getImage, Picture } from "astro:assets"
-import slugify from "slugify"
+import { getImage, Image } from "astro:assets"
 
 import { getLangFromUrl } from "@/i18n/utils"
 import BaseLayout from "@/layouts/BaseLayout.astro"
@@ -42,7 +42,11 @@ const pubDate = new Date(article.data.pubDate).toLocaleString("default", {
   year: "numeric",
 })
 
-const bannerImage = await getImage({src: article.data.cover, format: 'avif'})
+const bannerImage = await getImage({
+  src: article.data.cover,
+  format: "jpeg",
+  width: 1200,
+})
 ---
 
 <BaseLayout
@@ -117,12 +121,14 @@ const bannerImage = await getImage({src: article.data.cover, format: 'avif'})
     </header>
 
     <div class="mx-auto w-full max-w-screen-xl px-3">
-      <Picture
+      <Image
         src={article.data.cover}
         alt={article.data.title}
-        formats={["avif", "webp"]}
+        format="avif"
         loading="eager"
-        class="bg-gradient-to-r from-yellow-400/20 via-rose-400/20 to-violet-500/20"
+        widths={[540, 1200, article.data.cover.width]}
+        sizes={`(max-width: 360px) 540px, (max-width: 720px) 1200px, ${article.data.cover.width}`}
+        class="w-full bg-gradient-to-r from-yellow-400/20 via-rose-400/20 to-violet-500/20"
       />
     </div>
 

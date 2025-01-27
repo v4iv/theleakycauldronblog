@@ -1,6 +1,6 @@
 ---
-import { getCollection, getEntry } from "astro:content"
 import slugify from "slugify"
+import { getCollection, getEntry } from "astro:content"
 
 import tagsImage from "@/assets/tags.svg"
 import { getLangFromUrl, useTranslations } from "@/i18n/utils"
@@ -8,7 +8,9 @@ import BaseLayout from "@/layouts/BaseLayout.astro"
 import PageHeader from "@/components/PageHeader.astro"
 
 export async function getStaticPaths() {
-  const articles = await getCollection("articles")
+  const articles = (await getCollection("articles")).sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+  )
   const allTags = articles.flatMap((article) => article.data.tags)
 
   const tags = [...new Set(allTags)]
@@ -45,7 +47,7 @@ const { taggedArticles, name } = Astro.props
       subtitle={`${taggedArticles.length} article${taggedArticles.length > 1 ? "s" : ""} tagged with "${name}"`}
     />
 
-    <div class="mx-auto w-full max-w-screen-md px-3">
+    <div class="mx-auto my-10 w-full max-w-screen-md px-3">
       <section>
         {
           taggedArticles.map(async (article) => {

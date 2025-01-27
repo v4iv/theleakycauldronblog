@@ -1,6 +1,6 @@
 ---
-import { getCollection } from "astro:content"
 import slugify from "slugify"
+import { getCollection } from "astro:content"
 
 import tagsImage from "@/assets/tags.svg"
 import { getLangFromUrl, useTranslations } from "@/i18n/utils"
@@ -19,7 +19,10 @@ const tags = [...new Set(allTags)]
   .sort((tagA, tagB) => tagA.tag.localeCompare(tagB.tag))
 ---
 
-<BaseLayout title={`${t("tags.title")} | ${t("meta.title")}`} description={t("tags.description")}>
+<BaseLayout
+  title={`${t("tags.title")} | ${t("meta.title")}`}
+  description={t("tags.description")}
+>
   <main class="mx-auto min-h-screen w-full">
     <PageHeader
       backgroundImage={tagsImage}

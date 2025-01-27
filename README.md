@@ -1,14 +1,26 @@
-# The Leaky Cauldron Blog
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a3b02aa4-93ac-47d9-b914-7eb42de75a83/deploy-status)](https://app.netlify.com/sites/theleakycauldronblog/deploys)
 
-Based on nebula astro blog starter.
+<p align="center">
+  <a href="https://theleakycauldronblog.com">
+    <img alt="Gatsby" src="https://theleakycauldronblog.com/icon-512.png" width="60" />
+  </a>
+</p>
+<h1 align="center">
+  The Leaky Cauldron Blog
+</h1>
+
+Personal blog powered by [Astro](https://astro.build) & [Decap CMS](https://decapcms.org)
+
+
+## 🚀 Getting Started
 
 ```sh
-npm create astro@latest -- --template v4iv/nebula
+pnpm create astro@latest -- --template v4iv/nebula
 ```
 
 > 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-## 🚀 Project Structure
+## Project Structure
 
 Inside of your Astro project, you'll see the following folders and files:
 

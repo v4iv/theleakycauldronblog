@@ -1,0 +1,34 @@
+---
+import { getCollection, getEntry } from "astro:content"
+
+import { getLangFromUrl } from "@/i18n/utils"
+import BaseLayout from "@/layouts/BaseLayout.astro"
+import { SearchBar } from "@/components/search"
+
+const lang = getLangFromUrl(Astro.url)
+
+const articles = (await getCollection("articles")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+)
+
+const haystack = await Promise.all(
+  articles.map(async ({ id, data }) => {
+    const author = await getEntry(data.author)
+
+    return {
+      id,
+      title: data.title,
+      description: data.description,
+      author: author.data.name,
+      tags: data.tags,
+      data,
+    }
+  }),
+)
+---
+
+<BaseLayout>
+  <main class="min-h-screen">
+    <SearchBar lang={lang} haystack={haystack} client:only="react" />
+  </main>
+</BaseLayout>

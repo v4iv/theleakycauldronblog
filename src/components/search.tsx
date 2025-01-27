@@ -1,141 +1,147 @@
 import React from "react"
-import { Search } from "lucide-react"
+import Fuse from "fuse.js"
 import type { CollectionEntry } from "astro:content"
+import { Search, X } from "lucide-react"
 
 import { useTranslations } from "@/i18n/utils"
 import { defaultLang, type languages } from "@/i18n/ui"
 import {
-  CommandDialog,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-  CommandList,
-} from "@/components/ui/command"
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
+import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
-import {
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog"
 
-function SearchBox({
-  lang = defaultLang,
-  open,
-  setOpen,
-  articles,
-}: {
-  lang?: keyof typeof languages
-  open: boolean
-  setOpen: React.Dispatch<React.SetStateAction<boolean>>
-  articles: CollectionEntry<"articles">[]
-}) {
-  const t = useTranslations(lang)
-
-  return (
-    <CommandDialog open={open} onOpenChange={setOpen}>
-      <DialogHeader>
-        <DialogTitle></DialogTitle>
-        <DialogDescription></DialogDescription>
-      </DialogHeader>
-
-      <CommandInput placeholder={t("search.placeholder")} />
-
-      <CommandList aria-describedby="">
-        <CommandEmpty>{t("search.no-results")}</CommandEmpty>
-
-        <CommandGroup heading={t("search.suggestions")}>
-          <CommandItem>
-            <a href="/tags" className="text-lg">
-              {t("navbar.tags")}
-            </a>
-          </CommandItem>
-          <CommandItem>
-            <a href="/about" className="text-lg">
-              {t("navbar.about")}
-            </a>
-          </CommandItem>
-          <CommandItem>
-            <a href="/contact" className="text-lg">
-              {t("navbar.contact")}
-            </a>
-          </CommandItem>
-        </CommandGroup>
-
-        <CommandGroup heading={t("search.articles")}>
-          {articles.map((article, idx) => (
-            <CommandItem key={`${article.id}-${idx}`}>
-              <a href={`/articles/${article.id}`} className="text-lg">
-                {article.data.title}
-              </a>
-            </CommandItem>
-          ))}
-        </CommandGroup>
-      </CommandList>
-    </CommandDialog>
-  )
+export type HaystackItem = {
+  id: string
+  title: string
+  description: string
+  author: string
+  tags: string[]
+  data: CollectionEntry<"articles">["data"]
 }
 
-export function SearchButton({
+interface SearchResult {
+  item: HaystackItem
+  refIndex: number
+}
+
+export function SearchBar({
   lang = defaultLang,
-  articles,
+  haystack,
 }: {
+  haystack: HaystackItem[]
   lang?: keyof typeof languages
-  articles: CollectionEntry<"articles">[]
 }) {
   const t = useTranslations(lang)
-  const [open, setOpen] = React.useState(false)
+  const params = new URLSearchParams(window.location.search)
+  const q = params.get("q") as string
+  const [query, setQuery] = React.useState<string>(q || "")
+  const [results, setResults] = React.useState<SearchResult[] | null>(null)
+  const needle = React.useDeferredValue(query)
+
+  const handleQuery = async (event: React.ChangeEvent<HTMLInputElement>) => {
+    const inputValue = event.target.value
+
+    setQuery(inputValue)
+
+    history.replaceState(
+      history.state,
+      "",
+      `${window.location.pathname}?q=${encodeURIComponent(inputValue)}`,
+    )
+  }
+
+  const fuse = React.useMemo(
+    () =>
+      new Fuse(haystack, {
+        keys: ["id", "title", "description", "author", "tags"],
+        includeMatches: true,
+        minMatchCharLength: 3,
+        ignoreFieldNorm: true,
+        threshold: 0.5,
+      }),
+    [haystack],
+  )
 
   React.useEffect(() => {
-    const down = (e: KeyboardEvent) => {
-      if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
-        e.preventDefault()
-        setOpen((open) => !open)
-      }
-    }
-    document.addEventListener("keydown", down)
-    return () => document.removeEventListener("keydown", down)
-  }, [])
+    const searchResult = needle.length > 2 ? fuse.search(needle) : []
+
+    setResults(searchResult)
+  }, [needle])
 
   return (
-    <>
-      <span
-        onClick={() => setOpen(!open)}
-        className="flex cursor-pointer items-center text-xl uppercase transition-all duration-300 hover:scale-95 hover:text-muted-foreground"
-      >
-        {t("navbar.search")}
-        <Search className="ml-2 size-5" />
-      </span>
+    <TooltipProvider>
+      <div className="mx-auto w-full max-w-screen-md px-3 py-5">
+        <div className="flex items-center space-x-2">
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <div className="animate-reveal-reverse relative flex grow">
+                <Search className="pointer-events-none absolute right-3 top-1/2 size-4 -translate-y-1/2 text-teal-300" />
 
-      <SearchBox open={open} setOpen={setOpen} articles={articles} />
-    </>
-  )
-}
+                <Input
+                  autoFocus
+                  spellCheck={false}
+                  autoComplete="new-password"
+                  aria-label={t("navbar.search")}
+                  name={t("navbar.search")}
+                  value={query}
+                  placeholder={t("search.placeholder")}
+                  onChange={handleQuery}
+                  className="h-14 rounded-none md:text-2xl"
+                />
+              </div>
+            </TooltipTrigger>
 
-export function SearchField({
-  lang = defaultLang,
-  articles,
-}: {
-  lang?: keyof typeof languages
-  articles: CollectionEntry<"articles">[]
-}) {
-  const t = useTranslations(lang)
-  const [open, setOpen] = React.useState(false)
+            <TooltipContent>
+              <p>{t("navbar.search")}</p>
+            </TooltipContent>
+          </Tooltip>
 
-  return (
-    <div className="animate-reveal-reverse relative flex grow">
-      <Search className="pointer-events-none absolute right-3 top-1/2 size-5 -translate-y-1/2 text-teal-300" />
+          <div>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button
+                  variant="outline"
+                  aria-label={t("navbar.close")}
+                  onClick={() => history.back()}
+                  className="size-14 rounded-none"
+                >
+                  <X className="animate-in spin-in" />
+                </Button>
+              </TooltipTrigger>
 
-      <Button
-        size="lg"
-        variant="outline"
-        onClick={() => setOpen(!open)}
-        className="w-full cursor-text justify-start rounded-none border-none bg-indigo-800 px-3 text-lg uppercase text-muted-foreground hover:bg-indigo-800 hover:text-muted-foreground"
-      >
-        {t("search.placeholder")}
-      </Button>
+              <TooltipContent>
+                <p>{t("navbar.close")}</p>
+              </TooltipContent>
+            </Tooltip>
+          </div>
+        </div>
 
-      <SearchBox open={open} setOpen={setOpen} articles={articles} />
-    </div>
+        <div className="my-10 gap-3">
+          {results?.map(({ item: { id, title, author }, refIndex }) => (
+            <article
+              className="space-y-3 border-b py-3 last:border-none"
+              key={`${refIndex}-${id}`}
+            >
+              <h2 className="scroll-m-20 text-3xl font-bold tracking-wide transition-colors first:mt-0 md:text-4xl">
+                <a
+                  className="transition-colors duration-100 hover:text-muted-foreground"
+                  href={`/articles/${id}`}
+                >
+                  {title}
+                </a>
+              </h2>
+
+              <p className="font-mono text-muted-foreground">
+                By <span className="uppercase">{author}</span>
+              </p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </TooltipProvider>
   )
 }

@@ -1,7 +1,8 @@
 ---
+import { Image } from "astro:assets"
 import { getCollection, getEntry, render } from "astro:content"
 import type { GetStaticPathsOptions } from "astro"
-import { Picture } from "astro:assets"
+
 
 import { getLangFromUrl, useTranslations } from "@/i18n/utils"
 import BaseLayout from "@/layouts/BaseLayout.astro"
@@ -81,11 +82,12 @@ const {
                 <div class="order-1 mb-4 w-full pl-0 md:order-last md:mb-0 md:ml-auto md:w-2/5 md:pl-3">
                   <div class={`overflow-hidden rounded-none font-mono`}>
                     <a class="block px-0" href={`/articles/${article.id}`}>
-                      <Picture
-                        class="block aspect-video h-auto w-full bg-gradient-to-r from-yellow-400/20 via-rose-400/20 to-violet-500/20 object-cover transition-all duration-300 group-hover:scale-105 md:aspect-[4/3]"
+                      <Image
                         src={article.data.cover}
                         alt={article.data.title}
-                        formats={["avif", "webp"]}
+                        format="avif"
+                        width={720}
+                        class="block aspect-video h-auto w-full bg-gradient-to-r from-yellow-400/20 via-rose-400/20 to-violet-500/20 object-cover transition-all duration-300 group-hover:scale-105 md:aspect-[4/3]"
                       />
                     </a>
                   </div>

@@ -1,17 +1,12 @@
 ---
-import { getCollection } from "astro:content"
+import { Search } from "lucide-react"
 
 import { getLangFromUrl, useTranslations } from "@/i18n/utils"
 import { MenuButton } from "@/components/menu"
-import { SearchButton } from "@/components/search"
 import StickyNavBar from "@/components/sticky-navbar"
 
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
-
-const articles = (await getCollection("articles")).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-)
 ---
 
 <nav
@@ -65,14 +60,19 @@ const articles = (await getCollection("articles")).sort(
             >
             <span>/</span>
             <div>
-              <SearchButton lang={lang} articles={articles} client:load />
+              <a
+                href="/search"
+                class="flex cursor-pointer items-center text-xl uppercase transition-all duration-300 hover:scale-95 hover:text-muted-foreground"
+              >
+                {t("navbar.search")}
+                <Search className="ml-2 size-5" />
+              </a>
             </div>
           </div>
           <div class="flex items-center md:hidden">
             <MenuButton
               lang={lang}
               variant="outline"
-              articles={articles}
               className="rounded-none border-x-0 border-t-0 border-b-black bg-transparent px-0 text-lg uppercase transition-all duration-300 hover:bg-transparent hover:text-muted-foreground dark:border-b-white"
               client:load
             />
@@ -82,7 +82,7 @@ const articles = (await getCollection("articles")).sort(
     </div>
   </div>
 </nav>
-<StickyNavBar lang={lang} articles={articles} client:load />
+<StickyNavBar lang={lang} client:load />
 
 <style>
   .tlcb-bg {

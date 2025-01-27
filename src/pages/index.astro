@@ -1,12 +1,13 @@
 ---
+import { Image } from "astro:assets"
 import { getCollection, getEntry, render } from "astro:content"
-import { Picture } from "astro:assets"
 
 import featured from "@/assets/featured.svg"
 import { getLangFromUrl, useTranslations } from "@/i18n/utils"
 import BaseLayout from "@/layouts/BaseLayout.astro"
 import ButtonLink from "@/components/ButtonLink.astro"
 import { Separator } from "@/components/ui/separator"
+import { AspectRatio } from "@/components/ui/aspect-ratio"
 import { ShareMobile, Share } from "@/components/share"
 
 const lang = getLangFromUrl(Astro.url)
@@ -42,7 +43,7 @@ const latestArticles = articles.slice(1, 5)
           class="relative block max-w-screen-sm md:pl-14 lg:max-w-screen-md xl:max-w-screen-lg"
         >
           <!-- featued -->
-          <Picture
+          <Image
             src={featured}
             alt={t("home.featured")}
             loading="eager"
@@ -72,15 +73,24 @@ const latestArticles = articles.slice(1, 5)
           </div>
 
           <!-- hero image -->
-          <a href={`/articles/${featuredArticle.id}`}>
-            <Picture
-              src={featuredArticle.data.cover}
-              alt={featuredArticle.data.title}
-              formats={["avif", "webp"]}
-              loading="eager"
-              class="bg-gradient-to-r from-yellow-400/20 via-rose-400/20 to-violet-500/20 drop-shadow-lg"
-            />
-          </a>
+          <div class="overflow-hidden">
+            <a href={`/articles/${featuredArticle.id}`}>
+              <AspectRatio
+                ratio={16 / 9}
+                className="bg-gradient-to-r from-yellow-400/20 via-rose-400/20 to-violet-500/20"
+              >
+                <Image
+                  src={featuredArticle.data.cover}
+                  alt={featuredArticle.data.title}
+                  format="avif"
+                  loading="eager"
+                  widths={[540, 1200, featuredArticle.data.cover.width]}
+                  sizes={`(max-width: 360px) 540px, (max-width: 720px) 1200px, ${featuredArticle.data.cover.width}`}
+                  class="w-full object-cover drop-shadow-lg transition-all duration-300 hover:scale-105"
+                />
+              </AspectRatio>
+            </a>
+          </div>
 
           <div
             class="pointer-events-none absolute bottom-0 top-auto size-full translate-y-0 bg-gradient-to-t from-white/10 to-transparent dark:from-black/10"
@@ -182,11 +192,12 @@ const latestArticles = articles.slice(1, 5)
                   <div class="order-1 mb-4 w-full pl-0 md:order-last md:mb-0 md:ml-auto md:w-2/5 md:pl-3">
                     <div class={`overflow-hidden rounded-none font-mono`}>
                       <a class="block px-0" href={`/articles/${article.id}`}>
-                        <Picture
-                          class="block aspect-video h-auto w-full bg-gradient-to-r from-yellow-400/20 via-rose-400/20 to-violet-500/20 object-cover transition-all duration-300 group-hover:scale-105 md:aspect-[4/3]"
+                        <Image
                           src={article.data.cover}
                           alt={article.data.title}
-                          formats={["avif", "webp"]}
+                          format="avif"
+                          width={720}
+                          class="block aspect-video h-auto w-full bg-gradient-to-r from-yellow-400/20 via-rose-400/20 to-violet-500/20 object-cover transition-all duration-300 group-hover:scale-105 md:aspect-[4/3]"
                         />
                       </a>
                     </div>

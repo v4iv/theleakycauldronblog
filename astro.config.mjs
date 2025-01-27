@@ -1,11 +1,11 @@
 // @ts-check
 import { defineConfig } from "astro/config"
 import react from "@astrojs/react"
+import sitemap from "@astrojs/sitemap"
 import tailwind from "@astrojs/tailwind"
 
 import { readingTime } from "./src/plugins/remark/reading-time"
 
-import sitemap from "@astrojs/sitemap"
 
 // https://astro.build/config
 export default defineConfig({
@@ -14,8 +14,7 @@ export default defineConfig({
     react(),
     tailwind({ applyBaseStyles: false }),
     sitemap({
-      filter: (page) =>
-        page !== `${process.env.URL || "http://localhost:4321"}/admin/`,
+      filter: (page) => !page.includes(`/admin/`) && !page.includes(`/tags/`),
     }),
   ],
   markdown: {
@@ -28,10 +27,7 @@ export default defineConfig({
     responsiveImages: true,
     contentIntellisense: true,
   },
-  prefetch: {
-    defaultStrategy: "viewport",
-  },
   redirects: {
-    "/blog/[...slug]": "/articles/[...slug]",
-  },
+    "/blog/[...slug]": "/articles/[...slug]"
+  }
 })

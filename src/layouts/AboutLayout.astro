@@ -1,4 +1,6 @@
 ---
+import { getImage } from "astro:assets"
+
 import about from "@/assets/media/about.jpeg"
 import { getLangFromUrl, useTranslations } from "@/i18n/utils"
 import BaseLayout from "@/layouts/BaseLayout.astro"
@@ -11,12 +13,14 @@ const {
 
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
+
+const bannerImage = await getImage({src: about, format: 'jpeg', width: 1200})
 ---
 
 <BaseLayout
   title={`${title} | ${t("meta.title")}`}
   description={description}
-  image={about.src}
+  image={bannerImage.src}
 >
   <main class="mx-auto min-h-screen w-full max-w-screen-xl pb-10">
     <div>
