@@ -1,7 +1,7 @@
 backend:
   name: git-gateway
   repo: v4iv/nebula
-  branch: main
+  branch: master
 
 local_backend: true
 logo_url: /icon-512.png

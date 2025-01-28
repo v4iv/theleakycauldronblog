@@ -153,10 +153,11 @@ const bannerImage = await getImage({
       />
 
       <div class="mt-10">
+        <!-- Giscus -->
         <script
           src="https://giscus.app/client.js"
-          data-repo="v4iv/theleakycauldronblog"
-          data-repo-id="MDEwOlJlcG9zaXRvcnkxMjg3NzMyOTY="
+          data-repo={import.meta.env.PUBLIC_GISCUS_REPO}
+          data-repo-id={import.meta.env.PUBLIC_GISCUS_REPO_ID}
           data-category="Comments"
           data-category-id="DIC_kwDOB6zssM4CmYXn"
           data-mapping="url"

@@ -1,15 +1,17 @@
 // @ts-check
 import { defineConfig } from "astro/config"
+import { loadEnv } from "vite"
 import react from "@astrojs/react"
 import sitemap from "@astrojs/sitemap"
 import tailwind from "@astrojs/tailwind"
 
 import { readingTime } from "./src/plugins/remark/reading-time"
 
+const { URL } = loadEnv(import.meta.env.MODE, process.cwd(), "")
 
 // https://astro.build/config
 export default defineConfig({
-  site: process.env.URL || "http://localhost:4321",
+  site: URL,
   integrations: [
     react(),
     tailwind({ applyBaseStyles: false }),
@@ -28,6 +30,6 @@ export default defineConfig({
     contentIntellisense: true,
   },
   redirects: {
-    "/blog/[...slug]": "/articles/[...slug]"
-  }
+    "/blog/[...slug]": "/articles/[...slug]",
+  },
 })
