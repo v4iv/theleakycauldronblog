@@ -1,36 +1,43 @@
 ---
 import { Search } from "lucide-react"
 
+import background from "@/assets/background.svg"
 import { getLangFromUrl, useTranslations } from "@/i18n/utils"
 import { MenuButton } from "@/components/menu"
 import StickyNavBar from "@/components/sticky-navbar"
+import { Image } from "astro:assets"
 
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 ---
 
 <nav
-  class="tlcb-bg w-full max-w-screen-2xl bg-cover bg-local bg-no-repeat 2xl:mx-auto"
+  class="relative w-full max-w-screen-2xl 2xl:mx-auto"
 >
+  <Image
+    src={background}
+    alt={t("navbar.app")}
+    class="absolute -z-20 w-full max-w-screen-lg 2xl:mx-auto"
+  />
   <div class="mx-auto flex w-full max-w-screen-xl">
     <div class="flex w-full justify-normal md:justify-end">
-      <div class="w-full max-w-screen-md px-3 py-5 md:py-16">
+      <div class="w-full max-w-screen-md px-3 py-5 md:py-10">
         <div
           class="flex items-end border-black pb-2 dark:border-white md:border-b"
         >
           <div class="grow">
             <a
               href="/"
-              class="hidden truncate break-words bg-gradient-to-r from-yellow-400 via-rose-400 to-violet-500 bg-clip-text font-mono text-4xl font-extrabold tracking-wider text-transparent md:flex"
+              class="truncate break-words bg-gradient-to-r from-yellow-400 via-rose-400 to-violet-500 bg-clip-text font-mono text-3xl font-extrabold tracking-wider text-transparent"
             >
               {t("navbar.title")}
             </a>
-            <a
+            <!-- <a
               href="/"
               class="truncate break-words bg-gradient-to-r from-yellow-400 via-rose-400 to-violet-500 bg-clip-text font-mono text-4xl font-extrabold tracking-wider text-transparent md:hidden"
             >
               {t("navbar.short-name")}
-            </a>
+            </a> -->
           </div>
           <div
             class="hidden items-center justify-normal space-x-6 tracking-wider md:flex"
@@ -83,14 +90,3 @@ const t = useTranslations(lang)
   </div>
 </nav>
 <StickyNavBar lang={lang} client:load />
-
-<style>
-  .tlcb-bg {
-    background-image: none;
-  }
-  @screen md {
-    .tlcb-bg {
-      background-image: url("../assets/background.svg");
-    }
-  }
-</style>
