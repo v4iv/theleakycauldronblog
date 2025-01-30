@@ -44,6 +44,7 @@ const latestArticles = articles.slice(1, 5)
         >
           <!-- featued -->
           <Image
+            priority
             src={featured}
             alt={t("home.featured")}
             loading="eager"
@@ -87,7 +88,8 @@ const latestArticles = articles.slice(1, 5)
                   alt={featuredArticle.data.title}
                   format="avif"
                   loading="eager"
-                  layout="responsive"
+                  widths={[540, 1200, featuredArticle.data.cover.width]}
+                  sizes={`(max-width: 360px) 540px, (max-width: 720px) 1200px, ${featuredArticle.data.cover.width}`}
                   class="w-full object-cover drop-shadow-lg transition-all duration-300 hover:scale-105"
                 />
               </AspectRatio>

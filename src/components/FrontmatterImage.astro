@@ -15,10 +15,12 @@ if (!images[src])
 ---
 
 <Image
+  priority
   src={images[src]()}
   alt={alt}
   format="avif"
   loading="eager"
-  layout="responsive"
+  widths={[720, 1200]}
+  sizes={`(max-width: 720px) 720px, 1200px`}
   {...attrs}
 />

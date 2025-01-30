@@ -11,12 +11,12 @@ const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 ---
 
-<nav
-  class="relative w-full max-w-screen-2xl 2xl:mx-auto"
->
+<nav class="relative w-full max-w-screen-2xl 2xl:mx-auto">
   <Image
+    priority
     src={background}
     alt={t("navbar.app")}
+    loading="eager"
     class="absolute -z-20 w-full max-w-screen-lg 2xl:mx-auto"
   />
   <div class="mx-auto flex w-full max-w-screen-xl">
