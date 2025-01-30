@@ -1,7 +1,5 @@
 ---
-import { Image } from "astro:assets"
-
-import tlcb from "@/assets/logo.svg"
+import TLCB from "@/assets/logo.svg"
 import { getLangFromUrl, useTranslations } from "@/i18n/utils"
 import { Separator } from "@/components/ui/separator"
 
@@ -17,11 +15,7 @@ const t = useTranslations(lang)
       <div class="grid grid-cols-2 px-3">
         <div class="col-span-2 my-5 md:col-span-1 md:my-20">
           <!-- logo -->
-          <Image
-            src={tlcb}
-            alt={t("navbar.short-name")}
-            class="size-full invert md:w-60"
-          />
+          <TLCB class="size-full invert md:w-60" />
 
           <!-- tagline -->
           <p class="truncate text-center font-serif text-white md:text-left">

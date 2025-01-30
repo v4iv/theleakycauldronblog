@@ -2,7 +2,7 @@
 import { Image } from "astro:assets"
 import { getCollection, getEntry, render } from "astro:content"
 
-import featured from "@/assets/featured.svg"
+import Featured from "@/assets/featured.svg"
 import { getLangFromUrl, useTranslations } from "@/i18n/utils"
 import BaseLayout from "@/layouts/BaseLayout.astro"
 import ButtonLink from "@/components/ButtonLink.astro"
@@ -43,11 +43,7 @@ const latestArticles = articles.slice(1, 5)
           class="relative block max-w-screen-sm md:pl-14 lg:max-w-screen-md xl:max-w-screen-lg"
         >
           <!-- featued -->
-          <Image
-            priority
-            src={featured}
-            alt={t("home.featured")}
-            loading="eager"
+          <Featured
             class="absolute bottom-1/4 left-[-11.5rem] -z-10 hidden -rotate-90 md:block"
           />
           <!-- hero metadata -->
@@ -88,8 +84,8 @@ const latestArticles = articles.slice(1, 5)
                   alt={featuredArticle.data.title}
                   format="avif"
                   loading="eager"
-                  widths={[540, 1200, featuredArticle.data.cover.width]}
-                  sizes={`(max-width: 360px) 540px, (max-width: 720px) 1200px, ${featuredArticle.data.cover.width}`}
+                  widths={[540, 720, 1250]}
+                  sizes={`(max-width: 360px) 540px, (max-width: 720px) 720px, 1250px`}
                   class="w-full object-cover drop-shadow-lg transition-all duration-300 hover:scale-105"
                 />
               </AspectRatio>

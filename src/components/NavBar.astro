@@ -1,8 +1,7 @@
 ---
-import { Image } from "astro:assets"
 import { Search } from "lucide-react"
 
-import background from "@/assets/background.svg"
+import Background from "@/assets/background.svg"
 import { getLangFromUrl, useTranslations } from "@/i18n/utils"
 import { MenuButton } from "@/components/menu"
 import StickyNavBar from "@/components/sticky-navbar"
@@ -12,13 +11,8 @@ const t = useTranslations(lang)
 ---
 
 <nav class="relative w-full max-w-screen-2xl 2xl:mx-auto">
-  <Image
-    priority
-    src={background}
-    alt={t("navbar.app")}
-    loading="eager"
-    class="absolute -z-20 w-full max-w-screen-lg 2xl:mx-auto"
-  />
+  <Background class="absolute -z-20 w-full max-w-screen-lg 2xl:mx-auto" />
+
   <div class="mx-auto flex w-full max-w-screen-xl">
     <div class="flex w-full justify-normal md:justify-end">
       <div class="w-full max-w-screen-md px-3 py-5 md:py-10">
