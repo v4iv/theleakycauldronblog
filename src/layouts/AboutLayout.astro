@@ -14,7 +14,7 @@ const {
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 
-const bannerImage = await getImage({src: about, format: 'jpeg', width: 1200})
+const bannerImage = await getImage({ src: about, format: "jpg", width: 1200 })
 ---
 
 <BaseLayout
