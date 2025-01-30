@@ -1,11 +1,11 @@
 ---
+import { Image } from "astro:assets"
 import { Search } from "lucide-react"
 
 import background from "@/assets/background.svg"
 import { getLangFromUrl, useTranslations } from "@/i18n/utils"
 import { MenuButton } from "@/components/menu"
 import StickyNavBar from "@/components/sticky-navbar"
-import { Image } from "astro:assets"
 
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)

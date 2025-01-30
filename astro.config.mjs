@@ -2,18 +2,25 @@
 import { defineConfig } from "astro/config"
 import { loadEnv } from "vite"
 import react from "@astrojs/react"
+import favicons from "astro-favicons"
 import sitemap from "@astrojs/sitemap"
+import netlify from "@astrojs/netlify"
 import tailwind from "@astrojs/tailwind"
 
 import { readingTime } from "./src/plugins/remark/reading-time"
 
-import favicons from "astro-favicons"
-
-const { URL, APP_NAME, APP_SHORT_NAME } = loadEnv(import.meta.env.MODE, process.cwd(), "")
+const { URL, APP_NAME, APP_SHORT_NAME } = loadEnv(
+  import.meta.env.MODE,
+  process.cwd(),
+  "",
+)
 
 // https://astro.build/config
 export default defineConfig({
+  adapter: netlify(),
+
   site: URL,
+
   integrations: [
     react(),
     favicons({
@@ -27,16 +34,19 @@ export default defineConfig({
       filter: (page) => !page.includes(`/admin/`) && !page.includes(`/tags/`),
     }),
   ],
+
   markdown: {
     remarkPlugins: [readingTime],
     shikiConfig: {
       theme: "houston",
     },
   },
+
   experimental: {
     responsiveImages: true,
     contentIntellisense: true,
   },
+
   redirects: {
     "/blog/[...slug]": "/articles/[...slug]",
   },
