@@ -84,7 +84,7 @@ const bannerImage = await getImage({
       </h1>
 
       <!-- description -->
-      <p class="mb-2 text-2xl">
+      <p class="mb-2 font-serif text-2xl">
         {article.data.description}
       </p>
 
@@ -159,9 +159,10 @@ const bannerImage = await getImage({
           src="https://giscus.app/client.js"
           data-repo={import.meta.env.PUBLIC_GISCUS_REPO}
           data-repo-id={import.meta.env.PUBLIC_GISCUS_REPO_ID}
-          data-category="Comments"
-          data-category-id="DIC_kwDOB6zssM4CmYXn"
-          data-mapping="url"
+          data-category={import.meta.env.PUBLIC_GISCUS_CATEGORY}
+          data-category-id={import.meta.env.PUBLIC_GISCUS_CATEGORY_ID}
+          data-mapping="specific"
+          data-term={article.id}
           data-strict="0"
           data-reactions-enabled="1"
           data-emit-metadata="0"

@@ -74,52 +74,56 @@ export function SearchBar({
 
   return (
     <TooltipProvider>
-      <div className="mx-auto w-full max-w-screen-md px-3 py-5">
-        <div className="flex items-center space-x-2">
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <div className="animate-reveal-reverse relative flex grow">
-                <Search className="pointer-events-none absolute right-3 top-1/2 size-4 -translate-y-1/2 text-teal-300" />
-
-                <Input
-                  autoFocus
-                  spellCheck={false}
-                  autoComplete="new-password"
-                  aria-label={t("navbar.search")}
-                  name={t("navbar.search")}
-                  value={query}
-                  placeholder={t("search.placeholder")}
-                  onChange={handleQuery}
-                  className="h-14 rounded-none md:text-2xl"
-                />
-              </div>
-            </TooltipTrigger>
-
-            <TooltipContent>
-              <p>{t("navbar.search")}</p>
-            </TooltipContent>
-          </Tooltip>
-
-          <div>
+      <header className="bg-gradient-to-t from-teal-300/30 to-transparent py-16">
+        <div className="mx-auto w-full max-w-screen-md px-3">
+          <div className="flex items-center space-x-2">
             <Tooltip>
               <TooltipTrigger asChild>
-                <Button
-                  variant="outline"
-                  aria-label={t("navbar.close")}
-                  onClick={() => history.back()}
-                  className="size-14 rounded-none"
-                >
-                  <X className="animate-in spin-in" />
-                </Button>
+                <div className="animate-reveal-reverse relative flex grow">
+                  <Search className="pointer-events-none absolute right-3 top-1/2 size-4 -translate-y-1/2 text-teal-300" />
+
+                  <Input
+                    autoFocus
+                    spellCheck={false}
+                    autoComplete="new-password"
+                    aria-label={t("navbar.search")}
+                    name={t("navbar.search")}
+                    value={query}
+                    placeholder={t("search.placeholder")}
+                    onChange={handleQuery}
+                    className="h-14 rounded-none bg-background md:text-2xl"
+                  />
+                </div>
               </TooltipTrigger>
 
               <TooltipContent>
-                <p>{t("navbar.close")}</p>
+                <p>{t("navbar.search")}</p>
               </TooltipContent>
             </Tooltip>
+
+            <div>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Button
+                    variant="outline"
+                    aria-label={t("navbar.close")}
+                    onClick={() => history.back()}
+                    className="size-14 rounded-none"
+                  >
+                    <X className="animate-in spin-in" />
+                  </Button>
+                </TooltipTrigger>
+
+                <TooltipContent>
+                  <p>{t("navbar.close")}</p>
+                </TooltipContent>
+              </Tooltip>
+            </div>
           </div>
         </div>
+      </header>
 
+      <div className="mx-auto w-full max-w-screen-md px-3">
         <div className="my-10 gap-3">
           {results?.map(({ item: { id, title, author }, refIndex }) => (
             <article

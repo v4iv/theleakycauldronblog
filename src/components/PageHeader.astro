@@ -1,6 +1,4 @@
 ---
-import { getImage } from "astro:assets"
-
 interface Props {
   backgroundImage: any
   title: string
@@ -8,13 +6,11 @@ interface Props {
 }
 
 const { backgroundImage, title, subtitle } = Astro.props
-
-const optimizedBackground = await getImage({ src: backgroundImage })
 ---
 
 <div class="bg-gradient-to-t from-teal-300/30 to-transparent">
   <div
-    style={`background-image: url(${optimizedBackground.src});`}
+    style={`background-image: url(${backgroundImage.src});`}
     class="mx-auto w-full bg-fixed"
   >
     <header class="mx-auto w-full max-w-screen-xl px-3 py-10">

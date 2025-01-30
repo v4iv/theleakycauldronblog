@@ -9,6 +9,7 @@ export default {
       fontFamily: {
         sans: ["Geist Sans", ...fontFamily.sans],
         mono: ["Geist Mono Variable", ...fontFamily.mono],
+        serif: ["Playfair Display Variable", ...fontFamily.serif],
       },
       borderRadius: {
         lg: "var(--radius)",
