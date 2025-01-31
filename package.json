@@ -1,9 +1,10 @@
 {
   "name": "theleakycauldronblog",
+  "description": "A fully customizable, batteries included, personal blog powered by Astro JS.",
+  "author": "Vaibhav Sharma<vaibhavsharmaatwork@gmail.com>",
   "type": "module",
   "version": "4.0.0",
   "license": "MIT",
-  "author": "Vaibhav Sharma<vaibhavsharmaatwork@gmail.com>",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
