@@ -2,6 +2,7 @@
 import { Image } from "astro:assets"
 import { getCollection, getEntry, render } from "astro:content"
 import type { GetStaticPathsOptions } from "astro"
+import { ChevronsLeft, ChevronsRight } from "lucide-react"
 
 import { getLangFromUrl, useTranslations } from "@/i18n/utils"
 import BaseLayout from "@/layouts/BaseLayout.astro"
@@ -30,9 +31,29 @@ const {
   page: {
     data,
     currentPage,
-    url: { prev, next, current, first, last },
+    lastPage,
+    url: { prev, next, first, last },
   },
 } = Astro.props
+
+const getPageNumbers = () => {
+  const pages = []
+  const maxPagesToShow = 5
+  const half = Math.floor(maxPagesToShow / 2)
+
+  let startPage = Math.max(1, currentPage - half)
+  let endPage = Math.min(lastPage, startPage + maxPagesToShow - 1)
+
+  if (endPage - startPage < maxPagesToShow - 1) {
+    startPage = Math.max(1, endPage - maxPagesToShow + 1)
+  }
+
+  for (let i = startPage; i <= endPage; i++) {
+    pages.push(i)
+  }
+
+  return pages
+}
 ---
 
 <BaseLayout>
@@ -114,56 +135,65 @@ const {
       }
     </section>
 
+    <!-- pagination -->
     <div class="mx-auto w-full max-w-screen-md py-5">
       <Pagination>
         <PaginationContent>
-          <PaginationItem>
-            {
-              prev && (
-                <PaginationPrevious
-                  href={prev}
-                  className="rounded-none font-mono text-lg uppercase"
-                />
-              )
-            }
-          </PaginationItem>
+          {
+            first && (
+              <PaginationItem>
+                <PaginationLink aria-label="First" href={first}>
+                  <ChevronsLeft />
+                </PaginationLink>
+              </PaginationItem>
+            )
+          }
 
           {
-            !last && (
+            prev && (
+              <PaginationItem>
+                <PaginationPrevious href={prev} />
+              </PaginationItem>
+            )
+          }
+
+          {
+            getPageNumbers().map((pageNumber) => (
+              <PaginationItem key={pageNumber}>
+                <PaginationLink
+                  href={`/articles/${pageNumber}`}
+                  isActive={pageNumber === currentPage}
+                >
+                  {pageNumber}
+                </PaginationLink>
+              </PaginationItem>
+            ))
+          }
+          {
+            currentPage < lastPage - 2 && (
               <PaginationItem>
                 <PaginationEllipsis />
               </PaginationItem>
             )
           }
-
-          <PaginationItem>
-            <PaginationLink
-              isActive
-              href={current}
-              className="rounded-none font-mono text-lg"
-            >
-              {currentPage}
-            </PaginationLink>
-          </PaginationItem>
 
           {
             next && (
               <PaginationItem>
-                <PaginationEllipsis />
+                <PaginationNext href={next} />
               </PaginationItem>
             )
           }
 
-          <PaginationItem>
-            {
-              next && (
-                <PaginationNext
-                  className="rounded-none font-mono text-lg uppercase"
-                  href={next}
-                />
-              )
-            }
-          </PaginationItem>
+          {
+            last && (
+              <PaginationItem>
+                <PaginationLink aria-label="Last" href={last}>
+                  <ChevronsRight />
+                </PaginationLink>
+              </PaginationItem>
+            )
+          }
         </PaginationContent>
       </Pagination>
     </div>

@@ -82,7 +82,7 @@ export function MenuButton({
               <span className="sr-only">{t("navbar.close")}</span>
             </SheetClose>
           </SheetTitle>
-          <SheetDescription className="flex w-full justify-center py-2 font-mono text-lg md:text-2xl">
+          <SheetDescription className="flex w-full justify-center py-2 font-mono text-md md:text-2xl">
             <span className="animate-gradient truncate break-words bg-[linear-gradient(to_right,theme(colors.indigo.400),theme(colors.cyan.300),theme(colors.sky.400),theme(colors.yellow.400),theme(colors.rose.400),theme(colors.teal.400),theme(colors.indigo.400))] bg-[length:200%_auto] bg-clip-text lowercase text-transparent">
               {t("navbar.app")}
             </span>
