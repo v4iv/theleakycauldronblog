@@ -1,19 +1,15 @@
 ---
-import { getImage } from "astro:assets"
-
 import fourohfour from "@/assets/404.svg"
 import { getLangFromUrl, useTranslations } from "@/i18n/utils"
 import BaseLayout from "@/layouts/BaseLayout.astro"
 
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
-
-const optimizedBackground = await getImage({ src: fourohfour })
 ---
 
 <BaseLayout title={`${t("404.page-not-found")} | ${t("meta.title")}`}>
   <main
-    style={`background-image: url(${optimizedBackground.src});`}
+    style={`background-image: url(${fourohfour.src});`}
     class="pointer-events-none mx-auto flex min-h-screen w-full max-w-screen-xl items-center justify-center bg-contain bg-center bg-no-repeat"
   >
     <header>

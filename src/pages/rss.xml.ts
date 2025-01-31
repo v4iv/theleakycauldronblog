@@ -1,5 +1,5 @@
 import rss from "@astrojs/rss"
-import type { AstroGlobal } from "astro"
+import type { APIRoute } from "astro"
 import MarkdownIt from "markdown-it"
 import sanitizeHtml from "sanitize-html"
 import { getCollection, getEntry, type CollectionEntry } from "astro:content"
@@ -11,7 +11,7 @@ const parser = new MarkdownIt()
 
 const t = useTranslations(defaultLang)
 
-export async function GET(context: AstroGlobal) {
+export const GET: APIRoute = async (context) => {
   const siteUrl = context.site ?? new URL(import.meta.env.SITE)
   const articles: CollectionEntry<"articles">[] = (
     await getCollection("articles")

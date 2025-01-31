@@ -1,0 +1,103 @@
+---
+import { ChevronsLeft, ChevronsRight } from "lucide-react"
+
+import {
+  Pagination,
+  PaginationContent,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from "@/components/ui/pagination"
+
+interface Props {
+  currentPage: number
+  lastPage: number
+  prev: string | undefined
+  next: string | undefined
+  first: string | undefined
+  last: string | undefined
+}
+
+const { currentPage, lastPage, prev, next, first, last } = Astro.props
+
+const getPageNumbers = () => {
+  const pages = []
+  const maxPagesToShow = 3
+  const half = Math.floor(maxPagesToShow / 2)
+
+  let startPage = Math.max(1, currentPage - half)
+  let endPage = Math.min(lastPage, startPage + maxPagesToShow - 1)
+
+  if (endPage - startPage < maxPagesToShow - 1) {
+    startPage = Math.max(1, endPage - maxPagesToShow + 1)
+  }
+
+  for (let i = startPage; i <= endPage; i++) {
+    pages.push(i)
+  }
+
+  return pages
+}
+---
+
+<Pagination className="overflow-x-scroll">
+  <PaginationContent>
+    {
+      first && (
+        <PaginationItem>
+          <PaginationLink aria-label="First" href={first}>
+            <ChevronsLeft />
+          </PaginationLink>
+        </PaginationItem>
+      )
+    }
+
+    {
+      prev && (
+        <PaginationItem>
+          <PaginationPrevious href={prev} />
+        </PaginationItem>
+      )
+    }
+
+    {
+      getPageNumbers().map((pageNumber) => (
+        <PaginationItem key={pageNumber}>
+          <PaginationLink
+            href={`/articles/${pageNumber}`}
+            isActive={pageNumber === currentPage}
+          >
+            {pageNumber}
+          </PaginationLink>
+        </PaginationItem>
+      ))
+    }
+    {
+      currentPage < lastPage - 1 && (
+        <PaginationItem>
+          <PaginationEllipsis />
+        </PaginationItem>
+      )
+    }
+
+    {
+      next && (
+        <PaginationItem>
+          <PaginationNext href={next} />
+        </PaginationItem>
+      )
+    }
+
+    {
+      last && (
+        <PaginationItem>
+          <PaginationLink aria-label="Last" href={last}>
+            <ChevronsRight />
+          </PaginationLink>
+        </PaginationItem>
+      )
+    }
+  </PaginationContent>
+</Pagination>
