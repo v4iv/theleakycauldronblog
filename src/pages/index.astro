@@ -31,7 +31,7 @@ const featuredArticlePubDate = new Date(
   year: "numeric",
 })
 
-const latestArticles = articles.slice(1, 5)
+const latestArticles = articles.slice(1, 6)
 ---
 
 <BaseLayout>
@@ -148,93 +148,100 @@ const latestArticles = articles.slice(1, 5)
       <Separator />
 
       <!-- latest articles -->
-      <section class="mx-auto my-8 max-w-screen-md space-y-5">
-        <div class="mb-3 flex">
-          <div class="border-b-4 border-violet-500">
-            <p class="font-mono font-bold uppercase tracking-wider">
-              {t("home.latest")}
-            </p>
-          </div>
-        </div>
-        {
-          latestArticles.map(async (article) => {
-            const author = await getEntry(article.data.author)
-            const pubDate = new Date(article.data.pubDate).toLocaleString(
-              "default",
-              {
-                month: "short",
-                day: "numeric",
-                year: "numeric",
-              },
-            )
-            const {
-              remarkPluginFrontmatter: { minutesRead: articleMinutesRead },
-            } = await render(article)
+      {
+        !!latestArticles.length && (
+          <section class="mx-auto my-8 max-w-screen-md space-y-5">
+            <div class="mb-3 flex">
+              <div class="border-b-4 border-violet-500">
+                <p class="font-mono font-bold uppercase tracking-wider">
+                  {t("home.latest")}
+                </p>
+              </div>
+            </div>
+            {latestArticles.map(async (article) => {
+              const author = await getEntry(article.data.author)
+              const pubDate = new Date(article.data.pubDate).toLocaleString(
+                "default",
+                {
+                  month: "short",
+                  day: "numeric",
+                  year: "numeric",
+                },
+              )
+              const {
+                remarkPluginFrontmatter: { minutesRead: articleMinutesRead },
+              } = await render(article)
 
-            return (
-              <article class="border-b py-5 last:border-none md:px-0">
-                <div class="group flex flex-col md:flex-row">
-                  <div class="order-2 mb-2 pr-0 md:order-1 md:w-3/5 md:pr-3">
-                    <a
-                      class="block px-0 group-hover:text-muted-foreground"
-                      href={`/articles/${article.id}`}
-                    >
-                      <h2 class="scroll-m-20 text-3xl font-bold first:mt-0">
-                        {article.data.title}
-                      </h2>
+              return (
+                <article class="border-b py-5 last:border-none md:px-0">
+                  <div class="group flex flex-col md:flex-row">
+                    <div class="order-2 mb-2 pr-0 md:order-1 md:w-3/5 md:pr-3">
+                      <a
+                        class="block px-0 group-hover:text-muted-foreground"
+                        href={`/articles/${article.id}`}
+                      >
+                        <h2 class="scroll-m-20 text-3xl font-bold first:mt-0">
+                          {article.data.title}
+                        </h2>
 
-                      <p class="font-serif text-lg font-extralight md:text-xl">
-                        {article.data.description}
-                      </p>
-                    </a>
-                  </div>
-
-                  <div class="order-1 mb-4 w-full pl-0 md:order-last md:mb-0 md:ml-auto md:w-2/5 md:pl-3">
-                    <div class={`overflow-hidden rounded-none font-mono`}>
-                      <a class="block px-0" href={`/articles/${article.id}`}>
-                        <Image
-                          src={article.data.cover}
-                          alt={article.data.title}
-                          format="avif"
-                          widths={[360, 540]}
-                          sizes={`(max-width: 360px) 360px, 540px`}
-                          class="block aspect-video h-auto w-full bg-gradient-to-r from-yellow-400/20 via-rose-400/20 to-violet-500/20 object-cover transition-all duration-300 group-hover:scale-105 md:aspect-[4/3]"
-                        />
+                        <p class="font-serif text-lg font-extralight md:text-xl">
+                          {article.data.description}
+                        </p>
                       </a>
                     </div>
+
+                    <div class="order-1 mb-4 w-full pl-0 md:order-last md:mb-0 md:ml-auto md:w-2/5 md:pl-3">
+                      <div class={`overflow-hidden rounded-none font-mono`}>
+                        <a class="block px-0" href={`/articles/${article.id}`}>
+                          <Image
+                            src={article.data.cover}
+                            alt={article.data.title}
+                            format="avif"
+                            widths={[360, 540]}
+                            sizes={`(max-width: 360px) 360px, 540px`}
+                            class="block aspect-video h-auto w-full bg-gradient-to-r from-yellow-400/20 via-rose-400/20 to-violet-500/20 object-cover transition-all duration-300 group-hover:scale-105 md:aspect-[4/3]"
+                          />
+                        </a>
+                      </div>
+                    </div>
                   </div>
-                </div>
 
-                <p class="font-mono text-sm uppercase">
-                  <a
-                    class="text-violet-600 underline-offset-4 hover:underline dark:text-teal-300"
-                    href={author.data.link}
-                  >
-                    {author.data.name}
-                  </a>
-                </p>
+                  <p class="font-mono text-sm uppercase">
+                    <a
+                      class="text-violet-600 underline-offset-4 hover:underline dark:text-teal-300"
+                      href={author.data.link}
+                    >
+                      {author.data.name}
+                    </a>
+                  </p>
 
-                <time class="block font-mono uppercase text-muted-foreground">
-                  <small>
-                    {pubDate} | <span class="italic">{articleMinutesRead}</span>
-                  </small>
-                </time>
-              </article>
-            )
-          })
-        }
-      </section>
+                  <time class="block font-mono uppercase text-muted-foreground">
+                    <small>
+                      {pubDate} |{" "}
+                      <span class="italic">{articleMinutesRead}</span>
+                    </small>
+                  </time>
+                </article>
+              )
+            })}
+          </section>
+        )
+      }
 
       <!-- all articles -->
-      <div class="mx-auto my-3 flex max-w-screen-md justify-end">
-        <ButtonLink
-          href="/articles/1"
-          size="lg"
-          variant="outline"
-          class="rounded-none font-mono uppercase"
-        >
-          {t("home.all-articles")} &rarr;
-        </ButtonLink>
+      <div class="mx-auto flex max-w-screen-md justify-end py-5">
+        {
+          !!(latestArticles.length === 5) && (
+            <ButtonLink
+              href="/articles/1"
+              size="lg"
+              variant="outline"
+              class="rounded-none font-mono uppercase"
+            >
+              {t("home.all-articles")} &rarr;
+            </ButtonLink>
+          )
+        }
       </div>
     </div>
   </main>

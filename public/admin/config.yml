@@ -4,7 +4,7 @@ backend:
   branch: master
 
 local_backend: true
-logo_url: /icon-512.png
+logo_url: /favicon.svg
 media_folder: src/assets/media
 public_folder: src/assets/media
 publish_mode: editorial_workflow

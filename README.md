@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://theleakycauldronblog.com">
-    <img alt="Gatsby" src="https://theleakycauldronblog.com/icon-512.png" width="60" />
+    <img alt="Gatsby" src="https://theleakycauldronblog.com/favicon.svg" width="60" />
   </a>
 </p>
 <h1 align="center">
