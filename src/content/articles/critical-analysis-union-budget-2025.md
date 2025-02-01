@@ -11,7 +11,7 @@ tags:
   - guest author
   - finance
 ---
-The Union Budget 2025 presents a mix of ambitious reforms, fiscal prudence, and sector-specific incentives. While it introduces significant tax reliefs, infrastructure expansion, and targeted employment generation, there are concerns regarding fiscal consolidation, implementation challenges, and potential economic implications. Below is a critical evaluation of the budget’s major aspects.
+The Union Budget 2025 presents a mix of ambitious reforms, fiscal prudence, and sector-specific incentives. While it introduces significant tax reliefs, infrastructure expansion, and targeted employment generation, there are concerns regarding fiscal consolidation, implementation challenges, and potential economic implications. Let's take a look at the budget’s major aspects.
 
 ## Taxation & Fiscal Consolidation
 
@@ -41,7 +41,7 @@ The Union Budget 2025 presents a mix of ambitious reforms, fiscal prudence, and 
 
 ❌ **MSP & Procurement Uncertainty –** The budget lacks clarity on whether the government will increase Minimum Support Prices (MSP) or sustain large-scale procurement programs.
 
-##  Infrastructure & Urban Development
+## Infrastructure & Urban Development
 
 ### Positives:
 
