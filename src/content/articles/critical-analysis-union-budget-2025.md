@@ -113,7 +113,7 @@ The Union Budget 2025 presents a mix of ambitious reforms, fiscal prudence, and 
 
 ### ✅ Strengths
 
-*  **Pro-Growth & Investment-Oriented:** Focus on infrastructure, MSME credit, and nuclear energy will drive long-term growth.
+* **Pro-Growth & Investment-Oriented:** Focus on infrastructure, MSME credit, and nuclear energy will drive long-term growth.
 * **Taxpayer-Friendly:** Raising tax exemption limits will boost disposable income.
 * **Sector-Specific Support:** Agriculture, rural development, and manufacturing sectors receive targeted incentives.
 
@@ -125,4 +125,4 @@ The Union Budget 2025 presents a mix of ambitious reforms, fiscal prudence, and 
 
 ## Rating: 7.5/10
 
-**TL;DR** – The 2025 Union Budget balances ambitious reforms, fiscal prudence, and sector-specific incentives. Significant tax reliefs, infrastructure expansion, and employment generation are introduced, but fiscal consolidation concerns, implementation challenges, and potential economic implications arise. The budget aims to reduce the fiscal deficit to 4.4% of GDP, but ambitious expenditure raises revenue shortfall concerns.
+**\*Disclaimer:** *Views expressed are author's personal and based on initial interpretation and understanding of budget before further addendums and explanations given by the government*
