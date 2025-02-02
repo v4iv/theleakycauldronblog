@@ -76,9 +76,12 @@ export const GET: APIRoute = async (context) => {
           .toString()
           .replace(/href="\//g, `href="${siteUrl}`)
 
+        const optimizedCoverImage = await getImage({ src: article.data.cover })
+        const coverImage = `<img alt="${article.data.title}" src="${context.site + optimizedCoverImage.src.replace("/", "")}" />`
+
         return {
           title: article.data.title,
-          description: article.data.description,
+          description: `${coverImage} ${article.data.description}`,
           pubDate: new Date(article.data.pubDate),
           author: author.data.name,
           link: `/articles/${article.data.slug}`,
