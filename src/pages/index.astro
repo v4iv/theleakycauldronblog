@@ -85,6 +85,7 @@ const latestArticles = articles.slice(1, 6)
                   format="avif"
                   loading="eager"
                   widths={[540, 720, 1250]}
+                  quality="mid"
                   sizes={`(max-width: 360px) 540px, (max-width: 720px) 720px, 1250px`}
                   class="w-full object-cover drop-shadow-lg transition-all duration-300 hover:scale-105"
                 />
@@ -200,6 +201,7 @@ const latestArticles = articles.slice(1, 6)
                             src={article.data.cover}
                             alt={article.data.title}
                             format="avif"
+                            quality="mid"
                             widths={[360, 540]}
                             sizes={`(max-width: 360px) 360px, 540px`}
                             class="block aspect-video h-auto w-full bg-gradient-to-r from-yellow-400/20 via-rose-400/20 to-violet-500/20 object-cover transition-all duration-300 group-hover:scale-105 md:aspect-[4/3]"
