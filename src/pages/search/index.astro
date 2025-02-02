@@ -21,6 +21,7 @@ const haystack = await Promise.all(
       description: data.description,
       author: author.data.name,
       tags: data.tags,
+      slug: data.slug,
       data,
     }
   }),

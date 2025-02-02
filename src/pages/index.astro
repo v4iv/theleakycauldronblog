@@ -65,7 +65,7 @@ const latestArticles = articles.slice(1, 6)
             <ShareMobile
               lang={lang}
               title={featuredArticle.data.title}
-              link={`${Astro.site}articles/${featuredArticle.id}`}
+              link={`${Astro.site}articles/${featuredArticle.data.slug}`}
               className="justify-end"
               client:load
             />
@@ -73,7 +73,7 @@ const latestArticles = articles.slice(1, 6)
 
           <!-- hero image -->
           <div class="overflow-hidden">
-            <a href={`/articles/${featuredArticle.id}`}>
+            <a href={`/articles/${featuredArticle.data.slug}`}>
               <AspectRatio
                 ratio={16 / 9}
                 className="bg-gradient-to-r from-yellow-400/20 via-rose-400/20 to-violet-500/20"
@@ -105,7 +105,7 @@ const latestArticles = articles.slice(1, 6)
           <Share
             lang={lang}
             title={featuredArticle.data.title}
-            link={`${Astro.site}articles/${featuredArticle.id}`}
+            link={`${Astro.site}articles/${featuredArticle.data.slug}`}
             className="absolute -right-12 top-8 hidden flex-col md:flex"
             client:load
           />
@@ -117,7 +117,7 @@ const latestArticles = articles.slice(1, 6)
             class="text-glitch scroll-m-20 break-words text-4xl font-bold first:m-0 md:text-6xl"
           >
             <a
-              href={`/articles/${featuredArticle.id}`}
+              href={`/articles/${featuredArticle.data.slug}`}
               class="origin-top-right decoration-violet-500 decoration-8 group-hover:underline"
             >
               {featuredArticle.data.title}
@@ -125,7 +125,7 @@ const latestArticles = articles.slice(1, 6)
           </h2>
 
           <p class="my-1 font-serif text-lg md:my-2 md:text-xl">
-            <a href={`/articles/${featuredArticle.id}`}>
+            <a href={`/articles/${featuredArticle.data.slug}`}>
               {featuredArticle.data.description}
             </a>
           </p>
@@ -178,7 +178,7 @@ const latestArticles = articles.slice(1, 6)
                     <div class="order-2 mb-2 pr-0 md:order-1 md:w-3/5 md:pr-3">
                       <a
                         class="block px-0 group-hover:text-muted-foreground"
-                        href={`/articles/${article.id}`}
+                        href={`/articles/${article.data.slug}`}
                       >
                         <h2 class="scroll-m-20 text-3xl font-bold first:mt-0">
                           {article.data.title}
@@ -192,7 +192,10 @@ const latestArticles = articles.slice(1, 6)
 
                     <div class="order-1 mb-4 w-full pl-0 md:order-last md:mb-0 md:ml-auto md:w-2/5 md:pl-3">
                       <div class={`overflow-hidden rounded-none font-mono`}>
-                        <a class="block px-0" href={`/articles/${article.id}`}>
+                        <a
+                          class="block px-0"
+                          href={`/articles/${article.data.slug}`}
+                        >
                           <Image
                             src={article.data.cover}
                             alt={article.data.title}

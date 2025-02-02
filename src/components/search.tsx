@@ -19,6 +19,7 @@ export type HaystackItem = {
   title: string
   description: string
   author: string
+  slug: string
   tags: string[]
   data: CollectionEntry<"articles">["data"]
 }
@@ -57,7 +58,7 @@ export function SearchBar({
   const fuse = React.useMemo(
     () =>
       new Fuse(haystack, {
-        keys: ["id", "title", "description", "author", "tags"],
+        keys: ["id", "title", "description", "author", "slug", "tags"],
         includeMatches: true,
         minMatchCharLength: 3,
         ignoreFieldNorm: true,
@@ -117,7 +118,7 @@ export function SearchBar({
 
       <div className="mx-auto w-full max-w-screen-md px-3">
         <div className="my-10 gap-3">
-          {results?.map(({ item: { id, title, author }, refIndex }) => (
+          {results?.map(({ item: { id, title, author, slug }, refIndex }) => (
             <article
               className="space-y-3 border-b py-3 last:border-none"
               key={`${refIndex}-${id}`}
@@ -125,7 +126,7 @@ export function SearchBar({
               <h2 className="scroll-m-20 text-3xl font-bold tracking-wide transition-colors first:mt-0 md:text-4xl">
                 <a
                   className="transition-colors duration-100 hover:text-muted-foreground"
-                  href={`/articles/${id}`}
+                  href={`/articles/${slug}`}
                 >
                   {title}
                 </a>

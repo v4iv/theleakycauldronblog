@@ -58,7 +58,7 @@ const { taggedArticles, name } = Astro.props
                 <h2 class="scroll-m-20 text-3xl font-bold tracking-wide transition-colors first:mt-0 md:text-4xl">
                   <a
                     class="transition-colors duration-100 hover:text-muted-foreground"
-                    href={`/articles/${article.id}`}
+                    href={`/articles/${article.data.slug}`}
                   >
                     {article.data.title}
                   </a>

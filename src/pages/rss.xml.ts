@@ -1,15 +1,22 @@
-import rss from "@astrojs/rss"
 import type { APIRoute } from "astro"
+import rss from "@astrojs/rss"
 import MarkdownIt from "markdown-it"
 import sanitizeHtml from "sanitize-html"
+import { parse as htmlParser } from "node-html-parser"
+import { getImage } from "astro:assets"
 import { getCollection, getEntry, type CollectionEntry } from "astro:content"
 
-import { useTranslations } from "@/i18n/utils"
 import { defaultLang } from "@/i18n/ui"
+import { useTranslations } from "@/i18n/utils"
 
-const parser = new MarkdownIt()
+const markdownParser = new MarkdownIt()
 
 const t = useTranslations(defaultLang)
+
+// get dynamic import of images as a map collection
+const imagesGlob = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/media/*.{jpeg,jpg,png,gif}", // add more image formats if needed
+)
 
 export const GET: APIRoute = async (context) => {
   const siteUrl = context.site ?? new URL(import.meta.env.SITE)
@@ -32,20 +39,52 @@ export const GET: APIRoute = async (context) => {
       articles.map(async (article) => {
         const author = await getEntry(article.data.author)
 
-        // TODO: Replace image links with the correct path
-        const html = sanitizeHtml(parser.render(article.body ?? ""), {
-          allowedTags: sanitizeHtml.defaults.allowedTags.concat(["img"]),
-        })
+        // convert markdown to html string
+        const body = markdownParser.render(article.body ?? "")
+        // convert html string to DOM-like structure
+        const html = htmlParser.parse(body)
+        // hold all img tags in variable images
+        const images = html.querySelectorAll("img")
+
+        for (const img of images) {
+          const src = img.getAttribute("src")!
+
+          // from - https://billyle.dev/posts/adding-rss-feed-content-and-fixing-markdown-image-paths-in-astro
+          if (src.startsWith("src/assets/media")) {
+            // call the dynamic import and return the module
+            const imagePath = await imagesGlob[`/${src}`]?.()?.then(
+              (res) => res.default,
+            )
+
+            if (imagePath) {
+              const optimizedImg = await getImage({ src: imagePath })
+
+              // set the correct path to the optimized image
+              img.setAttribute(
+                "src",
+                context.site + optimizedImg.src.replace("/", ""),
+              )
+            }
+          } else if (src.startsWith("https")) {
+            continue
+          } else {
+            throw Error("src unknown")
+          }
+        }
+
+        const contentEncoded = html
+          .toString()
           .replace(/href="\//g, `href="${siteUrl}`)
-          .replace(/src="\//g, `src="${siteUrl}`)
 
         return {
           title: article.data.title,
           description: article.data.description,
           pubDate: new Date(article.data.pubDate),
           author: author.data.name,
-          link: `/articles/${article.id}`,
-          content: html,
+          link: `/articles/${article.data.slug}`,
+          content: sanitizeHtml(contentEncoded, {
+            allowedTags: sanitizeHtml.defaults.allowedTags.concat(["img"]),
+          }),
         }
       }),
     ),

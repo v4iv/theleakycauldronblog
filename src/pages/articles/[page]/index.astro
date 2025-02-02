@@ -59,7 +59,7 @@ const {
                 <div class="order-2 mb-2 pr-0 md:order-1 md:w-3/5 md:pr-3">
                   <a
                     class="block px-0 group-hover:text-muted-foreground"
-                    href={`/articles/${article.id}`}
+                    href={`/articles/${article.data.slug}`}
                   >
                     <h2 class="scroll-m-20 text-3xl font-bold first:mt-0">
                       {article.data.title}
@@ -73,7 +73,10 @@ const {
 
                 <div class="order-1 mb-4 w-full pl-0 md:order-last md:mb-0 md:ml-auto md:w-2/5 md:pl-3">
                   <div class={`overflow-hidden rounded-none font-mono`}>
-                    <a class="block px-0" href={`/articles/${article.id}`}>
+                    <a
+                      class="block px-0"
+                      href={`/articles/${article.data.slug}`}
+                    >
                       <Image
                         src={article.data.cover}
                         alt={article.data.title}
