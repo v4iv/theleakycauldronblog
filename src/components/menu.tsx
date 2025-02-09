@@ -7,6 +7,7 @@ import {
   Plus,
   Rss,
   Search,
+  StickyNote,
   X,
 } from "lucide-react"
 
@@ -98,6 +99,17 @@ export function MenuButton({
           >
             <a className="flex justify-between" href="/">
               <span>{t("navbar.home")}</span> <House />
+            </a>
+          </Button>
+
+          <Button
+            size="lg"
+            variant="ghost"
+            className="w-full justify-start border-b-white px-2 text-3xl text-white hover:bg-transparent hover:text-teal-300 dark:border-b-white"
+            asChild
+          >
+            <a className="flex justify-between" href="/articles/1">
+              <span>{t("navbar.articles")}</span> <StickyNote />
             </a>
           </Button>
 
