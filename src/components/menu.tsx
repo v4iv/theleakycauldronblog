@@ -60,7 +60,7 @@ export function MenuButton({
         {/* tlcb background */}
         <div
           style={{ backgroundImage: `url('${tclb.src}')` }}
-          className="absolute -top-[20%] right-0 -z-10 h-[200px] w-[600px] origin-bottom-right -rotate-90 transform bg-cover bg-no-repeat opacity-20 xl:h-[283px] xl:w-[834px]"
+          className="absolute right-0 top-[-20%] -z-10 h-[200px] w-[600px] origin-bottom-right -rotate-90 bg-cover bg-no-repeat opacity-20 xl:h-[283px] xl:w-[834px]"
         />
 
         <SheetHeader>
