@@ -27,12 +27,22 @@ Inside of your Astro project, you'll see the following folders and files:
 ```text
 /
 ├── public/
-│   └── favicon.svg
+│   ├── admin/
+│   │   └── config.yml
+│   ├── favicon.svg
+│   └── banner.jpg
 ├── src/
+│   ├── assets/
+│   ├── components/
+│   ├── content/
+│   ├── hooks/
+│   ├── i18n/
 │   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
+│   ├── lib/
+│   ├── pages/
+│   ├── plugins/
+│   ├── styles/
+│   └── content.config.ts
 └── package.json
 ```
 
