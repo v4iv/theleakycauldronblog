@@ -124,17 +124,26 @@ Animated.timing(animatedValue, {
 
 ### Use `useRef` Instead of Inline Functions in Loops
 
-When passing functions in lists, `useRefs` instead of recreating functions:
+To avoid unnecessary function recreation, store the function references in a `useRef` object. `useRef` maintains a persistent object across renders, preventing unnecessary re-renders.
 
 ```typescript
-const itemRefs = useRef({});
+import { useRef } from 'react';
 
-<FlatList
-  data={items}
-  renderItem={({ item }) => (
-    <ItemComponent ref={(ref) => (itemRefs.current[item.id] = ref)} />
-  )}
-/>;
+const ItemList = ({ items }) => {
+  const handlers = useRef({});
+
+  return (
+    <FlatList
+      data={items}
+      renderItem={({ item }) => {
+        if (!handlers.current[item.id]) {
+          handlers.current[item.id] = () => handlePress(item.id);
+        }
+        return <ItemComponent onPress={handlers.current[item.id]} />;
+      }}
+    />
+  );
+};
 ```
 
 ### Remove Unmounted Listeners
