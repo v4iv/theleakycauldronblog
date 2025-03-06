@@ -135,6 +135,8 @@ export function Share({
               asChild
             >
               <a
+                target="_blank"
+                rel="noreferrer nofollow"
                 href={`https://bsky.app/intent/compose?text=${encodeURIComponent(`${title} ${link}`)}`}
               >
                 <svg
@@ -164,6 +166,8 @@ export function Share({
               asChild
             >
               <a
+                target="_blank"
+                rel="noreferrer nofollow"
                 href={`https://wa.me/?text=${encodeURIComponent(`${title} ${link}`)}`}
               >
                 <svg
@@ -193,6 +197,8 @@ export function Share({
               asChild
             >
               <a
+                target="_blank"
+                rel="noreferrer nofollow"
                 href={`http://www.reddit.com/submit?url=${link}&title=${encodeURIComponent(title)}`}
               >
                 <svg
@@ -222,7 +228,9 @@ export function Share({
               asChild
             >
               <a
-                href={`https://www.facebook.com/sharer.php?u=${encodeURIComponent(`${title} ${link}`)}`}
+                target="_blank"
+                rel="noreferrer nofollow"
+                href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`${link}`)}&t=${encodeURIComponent(`${title}`)}`}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
