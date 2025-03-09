@@ -38,7 +38,7 @@
     "clsx": "^2.1.1",
     "decap-cms-app": "^3.6.2",
     "fuse.js": "^7.1.0",
-    "lucide-react": "^0.476.0",
+    "lucide-react": "^0.479.0",
     "markdown-it": "^14.1.0",
     "mdast-util-to-string": "^4.0.0",
     "node-html-parser": "^7.0.1",
