@@ -122,30 +122,6 @@ Animated.timing(animatedValue, {
 
 ## Memory Management and Avoiding Leaks
 
-### Use `useRef` Instead of Inline Functions in Loops
-
-To avoid unnecessary function recreation, store the function references in a `useRef` object. `useRef` maintains a persistent object across renders, preventing unnecessary re-renders.
-
-```typescript
-import { useRef } from 'react';
-
-const ItemList = ({ items }) => {
-  const handlers = useRef({});
-
-  return (
-    <FlatList
-      data={items}
-      renderItem={({ item }) => {
-        if (!handlers.current[item.id]) {
-          handlers.current[item.id] = () => handlePress(item.id);
-        }
-        return <ItemComponent onPress={handlers.current[item.id]} />;
-      }}
-    />
-  );
-};
-```
-
 ### Remove Unmounted Listeners
 
 Unremoved listeners cause memory leaks. Clean up listeners in `useEffect`:
