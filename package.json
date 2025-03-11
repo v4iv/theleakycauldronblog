@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@astrojs/netlify": "^6.2.1",
+    "@astrojs/partytown": "^2.1.4",
     "@astrojs/react": "^4.1.6",
     "@astrojs/rss": "^4.0.11",
     "@astrojs/sitemap": "^3.2.1",
