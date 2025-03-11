@@ -1,0 +1,24 @@
+---
+type Props = {
+  googleAnalyticsID: string
+}
+
+const { googleAnalyticsID } = Astro.props
+---
+
+<script
+  type="text/partytown"
+  src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsID}`}
+  is:inline></script>
+
+<script
+  is:inline
+  set:html={`
+  window.dataLayer = window.dataLayer || []
+  function gtag() {
+    dataLayer.push(arguments)
+  }
+  gtag("js", new Date())
+  gtag("config", "${googleAnalyticsID}")
+ `}
+/>

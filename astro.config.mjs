@@ -6,6 +6,7 @@ import favicons from "astro-favicons"
 import sitemap from "@astrojs/sitemap"
 import netlify from "@astrojs/netlify"
 import tailwind from "@astrojs/tailwind"
+import partytown from "@astrojs/partytown"
 
 import { readingTime } from "./src/plugins/remark/reading-time"
 
@@ -23,6 +24,13 @@ export default defineConfig({
 
   integrations: [
     react(),
+
+    partytown({
+      config: {
+        forward: ["dataLayer.push"],
+      },
+    }),
+
     favicons({
       name: APP_NAME,
       short_name: APP_SHORT_NAME,
