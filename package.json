@@ -15,7 +15,7 @@
     "clean": "rimraf .astro dist .netlify"
   },
   "dependencies": {
-    "@astrojs/netlify": "^6.2.1",
+    "@astrojs/netlify": "^6.2.3",
     "@astrojs/partytown": "^2.1.4",
     "@astrojs/react": "^4.1.6",
     "@astrojs/rss": "^4.0.11",
@@ -32,7 +32,7 @@
     "@radix-ui/react-slot": "^1.1.2",
     "@radix-ui/react-toast": "^1.2.6",
     "@radix-ui/react-tooltip": "^1.1.8",
-    "astro": "^5.3.1",
+    "astro": "^5.5.2",
     "astro-favicons": "^3.1.5",
     "astro-loading-indicator": "^0.7.0",
     "class-variance-authority": "^0.7.1",
