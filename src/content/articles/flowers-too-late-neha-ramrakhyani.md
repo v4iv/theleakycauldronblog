@@ -11,7 +11,12 @@ tags:
   - guest author
   - poem
 ---
-> Art is to console those who are broken by life. - Vincent Van Gogh
+A heartfelt tribute to the unseen artists, their struggles, and the enduring power of art to heal and console.
+
+<br />
+
+> Art is to console those who are broken by life. — Vincent Van Gogh
+
 
 I've often found myself thinking and writing about art.
 
@@ -36,6 +41,10 @@ We lose a voice that had courage to speak but fell on deaf ears.
 What good is it when you honor him by putting flowers on his grave,
 
 When all his life you made him feel like he had done nothing but failed.
+
+<br />
+
+<br />
 
 When actually it was you who had failed,
 
