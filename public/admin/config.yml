@@ -55,7 +55,7 @@ collections:
     label_singular: "Author"
     folder: "src/content/authors"
     create: true
-    slug: "{{fields.name}}.{{extension}}"
+    slug: "{{fields.name}}"
     extenstion: "json"
     format: "json"
     fields:
@@ -84,5 +84,10 @@ collections:
             }
           - { label: "Subtitle", name: "subtitle", widget: "string" }
           - { label: "Author", name: "author", widget: "string" }
-          - { label: "Cover", name: "cover", widget: "image", public_folder: "/src/assets/media" }
+          - {
+              label: "Cover",
+              name: "cover",
+              widget: "image",
+              public_folder: "/src/assets/media",
+            }
           - { label: "Body", name: "body", widget: "markdown" }
