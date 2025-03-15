@@ -13,10 +13,9 @@ tags:
 ---
 A heartfelt tribute to the unseen artists, their struggles, and the enduring power of art to heal and console.
 
-<br />
+## Flowers Too Late — Neha Ramrakhyani
 
 > Art is to console those who are broken by life. — Vincent Van Gogh
-
 
 I've often found myself thinking and writing about art.
 
