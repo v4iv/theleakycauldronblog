@@ -190,7 +190,7 @@ function ContactForm({
 
           <Button
             size="lg"
-            className="rounded-none bg-teal-300 font-mono text-xl uppercase text-slate-950 hover:bg-teal-800 hover:text-white"
+            className="rounded-none bg-teal-300 font-mono text-xl text-slate-950 uppercase hover:bg-teal-800 hover:text-white"
             type="submit"
             disabled={submitDisabled}
           >

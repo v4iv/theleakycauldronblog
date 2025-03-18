@@ -39,14 +39,14 @@ const {
 
     <ThemeScript />
 
-    <Analytics googleAnalyticsID={import.meta.env.PUBLIC_GOOGLE_ANALYTICS_ID} />
-
     <ClientRouter />
 
     <LoadingIndicator color="#ffa3d7" />
+
+    <Analytics googleAnalyticsID={import.meta.env.PUBLIC_GOOGLE_ANALYTICS_ID} />
   </head>
 
-  <body class="min-h-screen bg-background antialiased">
+  <body class="bg-background min-h-screen antialiased">
     <NavBar />
 
     <slot />

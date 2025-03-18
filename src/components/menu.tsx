@@ -67,18 +67,18 @@ export function MenuButton({
           {/* tlcb background */}
           <div
             style={{ backgroundImage: `url('${tclb.src}')` }}
-            className="absolute right-0 top-[-20%] -z-10 h-[200px] w-[600px] origin-bottom-right -rotate-90 bg-cover bg-no-repeat opacity-20 xl:h-[283px] xl:w-[834px]"
+            className="absolute top-[-20%] right-0 -z-10 h-[200px] w-[600px] origin-bottom-right -rotate-90 bg-cover bg-no-repeat opacity-20 xl:h-[283px] xl:w-[834px]"
           />
 
           <SheetHeader>
             <SheetTitle className="flex items-center space-x-2">
               <div className="animate-reveal-reverse relative flex grow">
-                <Search className="pointer-events-none absolute right-3 top-1/2 size-5 -translate-y-1/2 text-teal-300" />
+                <Search className="pointer-events-none absolute top-1/2 right-3 size-5 -translate-y-1/2 text-teal-300" />
 
                 <Button
                   size="lg"
                   variant="outline"
-                  className="w-full cursor-text justify-start rounded-none border-none bg-indigo-800 px-3 text-lg uppercase text-muted-foreground hover:bg-indigo-800 hover:text-muted-foreground"
+                  className="text-muted-foreground dark:text-muted-foreground hover:text-muted-foreground dark:hover:text-muted-foreground w-full cursor-text justify-start rounded-none border-none bg-indigo-800 px-3 text-lg uppercase hover:bg-indigo-800 dark:bg-indigo-800 dark:hover:bg-indigo-800"
                   asChild
                 >
                   <a href="/search">{t("search.placeholder")}</a>
@@ -91,67 +91,57 @@ export function MenuButton({
               </SheetClose>
             </SheetTitle>
             <SheetDescription className="text-md flex w-full justify-center py-2 font-mono md:text-2xl">
-              <span className="animate-gradient truncate break-words bg-[linear-gradient(to_right,theme(colors.indigo.400),theme(colors.cyan.300),theme(colors.sky.400),theme(colors.yellow.400),theme(colors.rose.400),theme(colors.teal.400),theme(colors.indigo.400))] bg-[length:200%_auto] bg-clip-text lowercase text-transparent">
+              <span className="animate-gradient truncate bg-[linear-gradient(to_right,theme(colors.indigo.400),theme(colors.cyan.300),theme(colors.sky.400),theme(colors.yellow.400),theme(colors.rose.400),theme(colors.teal.400),theme(colors.indigo.400))] bg-[length:200%_auto] bg-clip-text break-words text-transparent lowercase">
                 {t("navbar.app")}
               </span>
             </SheetDescription>
           </SheetHeader>
 
-          <div className="flex grow flex-col space-y-10 py-10 font-mono">
-            <Button
-              size="lg"
-              variant="ghost"
-              className="w-full justify-start border-b-white px-2 text-3xl text-white hover:bg-transparent hover:text-teal-300 dark:border-b-white"
-              asChild
+          <div className="flex grow flex-col space-y-4 overflow-y-scroll px-5 font-mono md:space-y-10">
+            <a
+              className="justify-start border-b border-dashed border-b-white px-2 py-5 text-3xl text-white hover:bg-transparent hover:text-teal-300 dark:border-b-white"
+              href="/"
             >
-              <a className="flex justify-between" href="/">
-                <span>{t("navbar.home")}</span> <House />
-              </a>
-            </Button>
+              <div className="flex w-full items-center justify-between">
+                {t("navbar.home")} <House />
+              </div>
+            </a>
 
-            <Button
-              size="lg"
-              variant="ghost"
-              className="w-full justify-start border-b-white px-2 text-3xl text-white hover:bg-transparent hover:text-teal-300 dark:border-b-white"
-              asChild
+            <a
+              className="justify-start border-b border-dashed border-b-white px-2 py-5 text-3xl text-white hover:bg-transparent hover:text-teal-300 dark:border-b-white"
+              href="/articles/1"
             >
-              <a className="flex justify-between" href="/articles/1">
-                <span>{t("navbar.articles")}</span> <StickyNote />
-              </a>
-            </Button>
+              <div className="flex w-full items-center justify-between">
+                {t("navbar.articles")} <StickyNote />
+              </div>
+            </a>
 
-            <Button
-              size="lg"
-              variant="ghost"
-              className="w-full justify-start border-b-white px-2 text-3xl text-white hover:bg-transparent hover:text-teal-300 dark:border-b-white"
-              asChild
+            <a
+              className="justify-start border-b border-dashed border-b-white px-2 py-5 text-3xl text-white hover:bg-transparent hover:text-teal-300 dark:border-b-white"
+              href="/tags"
             >
-              <a className="flex justify-between" href="/tags">
-                <span>{t("navbar.tags")}</span> <Hash />
-              </a>
-            </Button>
+              <div className="flex w-full items-center justify-between">
+                {t("navbar.tags")} <Hash />
+              </div>
+            </a>
 
-            <Button
-              size="lg"
-              variant="ghost"
-              className="w-full justify-start border-b-white px-2 text-3xl text-white hover:bg-transparent hover:text-teal-300 dark:border-b-white"
-              asChild
+            <a
+              className="justify-start border-b border-dashed border-b-white px-2 py-5 text-3xl text-white hover:bg-transparent hover:text-teal-300 dark:border-b-white"
+              href="/about"
             >
-              <a className="flex justify-between" href="/about">
-                <span>{t("navbar.about")}</span> <MessageCircle />
-              </a>
-            </Button>
+              <div className="flex w-full items-center justify-between">
+                {t("navbar.about")} <MessageCircle />
+              </div>
+            </a>
 
-            <Button
-              size="lg"
-              variant="ghost"
-              className="w-full justify-start border-b-white px-2 text-3xl text-white hover:bg-transparent hover:text-teal-300 dark:border-b-white"
-              asChild
+            <a
+              className="justify-start border-b border-dashed border-b-white px-2 py-5 text-3xl text-white hover:bg-transparent hover:text-teal-300 dark:border-b-white"
+              href="/contact"
             >
-              <a className="flex justify-between" href="/contact">
-                <span>{t("navbar.contact")}</span> <AtSign />
-              </a>
-            </Button>
+              <div className="flex w-full items-center justify-between">
+                {t("navbar.contact")} <AtSign />
+              </div>
+            </a>
           </div>
 
           <SheetFooter>
@@ -162,7 +152,7 @@ export function MenuButton({
                   <Button
                     size="icon"
                     variant="outline"
-                    className="rounded-none border-teal-300 bg-transparent hover:bg-indigo-700"
+                    className="rounded-none border-teal-300 bg-transparent hover:bg-indigo-700 dark:border-teal-300 dark:hover:bg-indigo-700"
                     asChild
                   >
                     <a
@@ -192,7 +182,7 @@ export function MenuButton({
                   <Button
                     size="icon"
                     variant="outline"
-                    className="rounded-none border-teal-300 bg-transparent hover:bg-indigo-700"
+                    className="rounded-none border-teal-300 bg-transparent hover:bg-indigo-700 dark:border-teal-300 dark:hover:bg-indigo-700"
                     asChild
                   >
                     <a
@@ -222,7 +212,7 @@ export function MenuButton({
                   <Button
                     size="icon"
                     variant="outline"
-                    className="rounded-none border-teal-300 bg-transparent hover:bg-indigo-700"
+                    className="rounded-none border-teal-300 bg-transparent hover:bg-indigo-700 dark:border-teal-300 dark:hover:bg-indigo-700"
                     asChild
                   >
                     <a
@@ -252,7 +242,7 @@ export function MenuButton({
                   <Button
                     size="icon"
                     variant="outline"
-                    className="rounded-none border-teal-300 bg-transparent hover:bg-indigo-700"
+                    className="rounded-none border-teal-300 bg-transparent hover:bg-indigo-700 dark:border-teal-300 dark:hover:bg-indigo-700"
                     asChild
                   >
                     <a aria-label={t("social.rss")} href="/rss.xml">
