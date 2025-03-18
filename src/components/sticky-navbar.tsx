@@ -31,21 +31,21 @@ export default function StickyNavBar({
     <>
       {show && (
         <div
-          className={`fixed top-0 z-40 w-full bg-slate-50/95 py-5 shadow-md animate-in slide-in-from-top dark:bg-slate-900/95`}
+          className={`animate-in slide-in-from-top fixed top-0 z-40 w-full bg-slate-50/95 py-5 shadow-md dark:bg-slate-900/95`}
         >
           <div className="mx-auto flex w-full max-w-screen-xl items-center px-3">
             <div className="grow">
               <a
                 href="/"
-                className="truncate break-words bg-gradient-to-r from-yellow-400 via-rose-400 to-violet-500 bg-clip-text font-mono text-3xl font-extrabold tracking-wider text-transparent"
+                className="truncate bg-gradient-to-r from-yellow-400 via-rose-400 to-violet-500 bg-clip-text font-mono text-3xl font-extrabold tracking-wider break-words text-transparent"
               >
                 {t("navbar.short-name")}
               </a>
             </div>
 
             <MenuButton
-              variant="outline"
-              className="rounded-none border-none bg-transparent px-0 text-lg uppercase shadow-none transition-all duration-300 hover:bg-transparent hover:text-muted-foreground"
+              variant="ghost"
+              className="hover:text-muted-foreground cursor-pointer rounded-none border-none bg-transparent px-0 text-lg uppercase shadow-none transition-all duration-300"
             />
           </div>
         </div>

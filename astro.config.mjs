@@ -5,10 +5,11 @@ import react from "@astrojs/react"
 import favicons from "astro-favicons"
 import sitemap from "@astrojs/sitemap"
 import netlify from "@astrojs/netlify"
-import tailwind from "@astrojs/tailwind"
 import partytown from "@astrojs/partytown"
 
 import { readingTime } from "./src/plugins/remark/reading-time"
+
+import tailwindcss from "@tailwindcss/vite";
 
 const { URL, APP_NAME, APP_SHORT_NAME } = loadEnv(
   import.meta.env.MODE,
@@ -19,7 +20,6 @@ const { URL, APP_NAME, APP_SHORT_NAME } = loadEnv(
 // https://astro.build/config
 export default defineConfig({
   adapter: netlify(),
-
   site: URL,
 
   integrations: [
@@ -37,7 +37,7 @@ export default defineConfig({
       pixel_art: true,
       themes: ["#ffffff", "#020617"],
     }),
-    tailwind({ applyBaseStyles: false }),
+
     sitemap({
       filter: (page) => !page.includes(`/admin/`) && !page.includes(`/tags/`),
     }),
@@ -58,5 +58,9 @@ export default defineConfig({
 
   redirects: {
     "/blog/[...slug]": "/articles/[...slug]",
+  },
+
+  vite: {
+    plugins: [tailwindcss()],
   },
 })
