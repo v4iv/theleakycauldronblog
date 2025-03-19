@@ -10,7 +10,7 @@ export default [
   {
     ...pluginReact.configs.flat.recommended,
     files: ["**/*.{jsx,tsx}"],
-    ignores: ["src/components/ui/*.tsx"],
+    ignores: ["src/components/ui/*.tsx", "netlify.toml"],
     settings: { react: { version: "detect" } },
     languageOptions: {
       ...pluginReact.configs.flat.recommended.languageOptions,

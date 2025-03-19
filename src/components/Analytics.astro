@@ -7,12 +7,12 @@ const { googleAnalyticsID } = Astro.props
 ---
 
 <script
-  async
   type="text/partytown"
   src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsID}`}
 ></script>
 
 <script
+  type="text/partytown"
   set:html={`
   window.dataLayer = window.dataLayer || []
   function gtag() {

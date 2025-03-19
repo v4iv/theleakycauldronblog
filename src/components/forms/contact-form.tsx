@@ -19,14 +19,13 @@ import {
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
-import { useToast } from "@/hooks/use-toast"
+import { toast } from "sonner"
 
 function ContactForm({
   lang = defaultLang,
 }: {
   lang?: keyof typeof languages
 }) {
-  const { toast } = useToast()
   const t = useTranslations(lang)
 
   const formSchema = z.object({
@@ -75,8 +74,7 @@ function ContactForm({
         }),
       })
 
-      toast({
-        title: t("contact.success-toast-title"),
+      toast(t("contact.success-toast-title"), {
         description: t("contact.success-toast-description"),
       })
 
@@ -84,9 +82,7 @@ function ContactForm({
     } catch (err) {
       console.error(err)
 
-      toast({
-        variant: "destructive",
-        title: t("contact.error-toast-title"),
+      toast(t("contact.error-toast-title"), {
         description: t("contact.error-toast-description"),
       })
     }
