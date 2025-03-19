@@ -85,7 +85,7 @@ export function MenuButton({
                 </Button>
               </div>
 
-              <SheetClose>
+              <SheetClose className="cursor-pointer">
                 <X className="size-10 text-teal-300" />
                 <span className="sr-only">{t("navbar.close")}</span>
               </SheetClose>

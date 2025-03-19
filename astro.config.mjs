@@ -1,6 +1,6 @@
 // @ts-check
-import { defineConfig } from "astro/config"
 import { loadEnv } from "vite"
+import { defineConfig } from "astro/config"
 import react from "@astrojs/react"
 import favicons from "astro-favicons"
 import sitemap from "@astrojs/sitemap"
@@ -9,7 +9,7 @@ import partytown from "@astrojs/partytown"
 
 import { readingTime } from "./src/plugins/remark/reading-time"
 
-import tailwindcss from "@tailwindcss/vite";
+import tailwindcss from "@tailwindcss/vite"
 
 const { URL, APP_NAME, APP_SHORT_NAME } = loadEnv(
   import.meta.env.MODE,
@@ -23,7 +23,11 @@ export default defineConfig({
   site: URL,
 
   integrations: [
-    react(),
+    react({
+      babel: {
+        plugins: [["babel-plugin-react-compiler"]],
+      },
+    }),
 
     partytown({
       config: {

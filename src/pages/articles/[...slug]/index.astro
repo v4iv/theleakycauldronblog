@@ -11,6 +11,7 @@ import { getImage, Image } from "astro:assets"
 import { getLangFromUrl } from "@/i18n/utils"
 import BaseLayout from "@/layouts/BaseLayout.astro"
 import Prose from "@/components/Prose.astro"
+import Comments from "@/components/Comments.astro"
 import { Share, ShareMobile } from "@/components/share"
 
 export async function getStaticPaths() {
@@ -62,7 +63,7 @@ const bannerImage = await getImage({
         {
           article.data.tags.map((tag) => (
             <Fragment>
-              <li class="font-mono uppercase tracking-widest text-violet-600 dark:text-violet-500">
+              <li class="font-mono tracking-widest text-violet-600 uppercase dark:text-violet-500">
                 <a
                   href={`/tags/${slugify(tag)}`}
                   class="underline-offset-4 hover:underline"
@@ -155,25 +156,7 @@ const bannerImage = await getImage({
       />
 
       <div class="mt-10">
-        <!-- Giscus -->
-        <script
-          src="https://giscus.app/client.js"
-          data-repo={import.meta.env.PUBLIC_GISCUS_REPO}
-          data-repo-id={import.meta.env.PUBLIC_GISCUS_REPO_ID}
-          data-category={import.meta.env.PUBLIC_GISCUS_CATEGORY}
-          data-category-id={import.meta.env.PUBLIC_GISCUS_CATEGORY_ID}
-          data-mapping="specific"
-          data-term={article.id}
-          data-strict="0"
-          data-reactions-enabled="1"
-          data-emit-metadata="0"
-          data-input-position="top"
-          data-theme="preferred_color_scheme"
-          data-lang="en"
-          data-loading="lazy"
-          crossorigin="anonymous"
-          is:inline
-          async></script>
+        <Comments articleId={article.id} />
       </div>
     </div>
   </main>
