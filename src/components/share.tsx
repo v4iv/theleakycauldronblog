@@ -50,7 +50,7 @@ export function ShareMobile({
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="size-4 text-violet-600"
+                className="size-4 cursor-pointer text-violet-600"
               >
                 <title>{t("share.copy-url")}</title>
                 <path d="M9 17H7A5 5 0 0 1 7 7h2" />
@@ -260,7 +260,7 @@ export function Share({
               aria-label={t("share.copy-url")}
               size="icon"
               variant="outline"
-              className="rounded-full text-violet-600"
+              className="cursor-pointer rounded-full text-violet-600"
               onClick={async () => {
                 try {
                   await navigator.clipboard.writeText(link)

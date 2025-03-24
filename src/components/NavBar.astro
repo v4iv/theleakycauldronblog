@@ -17,12 +17,12 @@ const t = useTranslations(lang)
     <div class="flex w-full justify-normal md:justify-end">
       <div class="w-full max-w-screen-md px-3 py-5 md:py-10">
         <div
-          class="flex items-end border-black pb-2 dark:border-white md:border-b"
+          class="flex items-end border-black pb-2 md:border-b dark:border-white"
         >
           <div class="grow">
             <a
               href="/"
-              class="truncate break-words bg-gradient-to-r from-yellow-400 via-rose-400 to-violet-500 bg-clip-text font-mono text-3xl font-extrabold tracking-wider text-transparent"
+              class="truncate bg-gradient-to-r from-yellow-400 via-rose-400 to-violet-500 bg-clip-text font-mono text-3xl font-extrabold tracking-wider break-words text-transparent"
             >
               {t("navbar.title")}
             </a>
@@ -32,32 +32,32 @@ const t = useTranslations(lang)
           >
             <a
               href="/"
-              class="text-xl uppercase transition-all duration-300 hover:scale-95 hover:text-muted-foreground"
+              class="hover:text-muted-foreground text-xl uppercase transition-all duration-300 hover:scale-95"
               >{t("navbar.home")}</a
             >
             <span>/</span>
             <a
               href="/tags"
-              class="text-xl uppercase transition-all duration-300 hover:scale-95 hover:text-muted-foreground"
+              class="hover:text-muted-foreground text-xl uppercase transition-all duration-300 hover:scale-95"
               >{t("navbar.tags")}</a
             >
             <span>/</span>
             <a
               href="/about"
-              class="text-xl uppercase transition-all duration-300 hover:scale-95 hover:text-muted-foreground"
+              class="hover:text-muted-foreground text-xl uppercase transition-all duration-300 hover:scale-95"
               >{t("navbar.about")}</a
             >
             <span>/</span>
             <a
               href="/contact"
-              class="text-xl uppercase transition-all duration-300 hover:scale-95 hover:text-muted-foreground"
+              class="hover:text-muted-foreground text-xl uppercase transition-all duration-300 hover:scale-95"
               >{t("navbar.contact")}</a
             >
             <span>/</span>
             <div>
               <a
                 href="/search"
-                class="flex cursor-pointer items-center text-xl uppercase transition-all duration-300 hover:scale-95 hover:text-muted-foreground"
+                class="hover:text-muted-foreground flex cursor-pointer items-center text-xl uppercase transition-all duration-300 hover:scale-95"
               >
                 {t("navbar.search")}
                 <Search className="ml-2 size-5" />
@@ -68,7 +68,7 @@ const t = useTranslations(lang)
             <MenuButton
               lang={lang}
               variant="outline"
-              className="rounded-none border-x-0 border-t-0 border-b-black bg-transparent px-0 text-lg uppercase transition-all duration-300 hover:bg-transparent hover:text-muted-foreground dark:border-b-white"
+              className="hover:text-muted-foreground rounded-none border-x-0 border-t-0 border-b-black bg-transparent px-0 text-lg uppercase transition-all duration-300 hover:bg-transparent dark:border-b-white"
               client:load
             />
           </div>

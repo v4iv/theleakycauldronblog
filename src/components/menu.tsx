@@ -145,6 +145,10 @@ export function MenuButton({
           </div>
 
           <SheetFooter>
+            <p className="font-mono text-sm text-teal-300 uppercase">
+              {t("social.follow")}
+            </p>
+
             {/* socials */}
             <div className="flex w-full justify-between">
               <Tooltip>
