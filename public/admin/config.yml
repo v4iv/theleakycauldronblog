@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  repo: v4iv/theleakycauldroblog
+  repo: v4iv/theleakycauldronblog
   branch: master
 
 local_backend: true
