@@ -79,7 +79,7 @@ export function SearchBar({
         <div className="mx-auto w-full max-w-screen-md px-3">
           <div className="flex items-center space-x-2">
             <div className="animate-reveal-reverse relative flex grow">
-              <Search className="pointer-events-none absolute right-3 top-1/2 size-4 -translate-y-1/2 text-teal-300" />
+              <Search className="pointer-events-none absolute top-1/2 right-3 size-4 -translate-y-1/2 text-teal-300" />
 
               <Input
                 autoFocus
@@ -90,7 +90,7 @@ export function SearchBar({
                 value={query}
                 placeholder={t("search.placeholder")}
                 onChange={handleQuery}
-                className="h-14 rounded-none bg-background md:text-2xl"
+                className="bg-background h-14 rounded-none md:text-2xl"
               />
             </div>
 
@@ -125,14 +125,14 @@ export function SearchBar({
             >
               <h2 className="scroll-m-20 text-3xl font-bold tracking-wide transition-colors first:mt-0 md:text-4xl">
                 <a
-                  className="transition-colors duration-100 hover:text-muted-foreground"
+                  className="hover:text-muted-foreground transition-colors duration-100"
                   href={`/articles/${slug}`}
                 >
                   {title}
                 </a>
               </h2>
 
-              <p className="font-mono text-muted-foreground">
+              <p className="text-muted-foreground font-mono">
                 By <span className="uppercase">{author}</span>
               </p>
             </article>

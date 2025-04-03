@@ -33,7 +33,7 @@ const {
     <section class="mx-auto my-8 max-w-screen-md space-y-5">
       <div class="mb-3 flex">
         <div class="border-b-4 border-violet-500">
-          <p class="font-mono font-bold uppercase tracking-wider">
+          <p class="font-mono font-bold tracking-wider uppercase">
             {t("home.all-articles")}
           </p>
         </div>
@@ -58,7 +58,7 @@ const {
               <div class="group flex flex-col md:flex-row">
                 <div class="order-2 mb-2 pr-0 md:order-1 md:w-3/5 md:pr-3">
                   <a
-                    class="block px-0 group-hover:text-muted-foreground"
+                    class="group-hover:text-muted-foreground block px-0"
                     href={`/articles/${article.data.slug}`}
                   >
                     <h2 class="scroll-m-20 text-3xl font-bold first:mt-0">
@@ -100,7 +100,7 @@ const {
                 </a>
               </p>
 
-              <time class="block font-mono uppercase text-muted-foreground">
+              <time class="text-muted-foreground block font-mono uppercase">
                 <small>
                   {pubDate} | <span class="italic">{articleMinutesRead}</span>
                 </small>

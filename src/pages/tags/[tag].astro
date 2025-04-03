@@ -57,14 +57,14 @@ const { taggedArticles, name } = Astro.props
               <article class="space-y-3 border-b py-6 last:border-none">
                 <h2 class="scroll-m-20 text-3xl font-bold tracking-wide transition-colors first:mt-0 md:text-4xl">
                   <a
-                    class="transition-colors duration-100 hover:text-muted-foreground"
+                    class="hover:text-muted-foreground transition-colors duration-100"
                     href={`/articles/${article.data.slug}`}
                   >
                     {article.data.title}
                   </a>
                 </h2>
 
-                <p class="font-mono text-muted-foreground">
+                <p class="text-muted-foreground font-mono">
                   By <span class="uppercase">{author.data.name}</span>
                 </p>
               </article>
