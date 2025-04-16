@@ -15,7 +15,11 @@ const t = useTranslations(lang)
       <div class="grid grid-cols-2 px-3">
         <div class="col-span-2 my-5 md:col-span-1 md:my-20">
           <!-- logo -->
-          <TLCB class="size-full invert md:w-60" />
+          <TLCB
+            aria-label={t("navbar.short-name")}
+            role="img"
+            class="size-full invert md:w-60"
+          />
 
           <!-- tagline -->
           <p class="truncate text-center font-serif text-white md:text-left">
