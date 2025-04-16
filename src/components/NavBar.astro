@@ -11,7 +11,11 @@ const t = useTranslations(lang)
 ---
 
 <nav class="relative w-full max-w-screen-2xl 2xl:mx-auto">
-  <Background class="absolute -z-20 w-full max-w-screen-lg 2xl:mx-auto" />
+  <Background
+    aria-label={t("navbar.app")}
+    role="img"
+    class="absolute -z-20 w-full max-w-screen-lg 2xl:mx-auto"
+  />
 
   <div class="mx-auto flex w-full max-w-screen-xl">
     <div class="flex w-full justify-normal md:justify-end">

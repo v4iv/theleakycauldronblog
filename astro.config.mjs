@@ -55,7 +55,6 @@ export default defineConfig({
   },
 
   experimental: {
-    svg: true,
     responsiveImages: true,
     contentIntellisense: true,
   },
