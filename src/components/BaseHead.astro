@@ -1,8 +1,6 @@
 ---
 import "@/styles/global.css"
-import "@fontsource/geist-sans"
-import "@fontsource-variable/geist-mono"
-import "@fontsource-variable/playfair-display"
+import { Font } from "astro:assets"
 
 interface Props {
   title: string
@@ -50,3 +48,8 @@ const { title, description, image, author } = Astro.props
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+<!-- Fonts -->
+<Font cssVariable="--font-geist" />
+<Font cssVariable="--font-geist-mono" />
+<Font cssVariable="--font-playfair-display" />

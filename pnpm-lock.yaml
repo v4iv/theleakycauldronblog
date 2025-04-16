@@ -23,15 +23,6 @@ importers:
       '@astrojs/sitemap':
         specifier: ^3.3.0
         version: 3.3.0
-      '@fontsource-variable/geist-mono':
-        specifier: ^5.0.1
-        version: 5.2.5
-      '@fontsource-variable/playfair-display':
-        specifier: ^5.1.1
-        version: 5.2.5
-      '@fontsource/geist-sans':
-        specifier: ^5.1.0
-        version: 5.2.5
       '@hookform/resolvers':
         specifier: ^4.1.3
         version: 4.1.3(react-hook-form@7.55.0(react@19.1.0))
@@ -804,15 +795,6 @@ packages:
 
   '@floating-ui/utils@0.2.9':
     resolution: {integrity: sha512-MDWhGtE+eHw5JW7lq4qhc5yRLS11ERl1c7Z6Xd0a58DozHES6EnNNwUWbMiG4J9Cgj053Bhk8zvlhFYKVhULwg==}
-
-  '@fontsource-variable/geist-mono@5.2.5':
-    resolution: {integrity: sha512-zyuyDtO00SbmqU4Bo5XWzX2hE5RUxL+h2bv3P8SrmxqfqW66FU/xw5DW3xRQPqQgyEpb/Fh5FEFCpOna78dvCA==}
-
-  '@fontsource-variable/playfair-display@5.2.5':
-    resolution: {integrity: sha512-nzSCC5pbWHjkJBqjPe81cPIC7fqJ6U5DwJ6tec7vF1bQ2DJnaKRBZluRQJuseFpACZLTN8LeN/1gBQEA7PnKOw==}
-
-  '@fontsource/geist-sans@5.2.5':
-    resolution: {integrity: sha512-anllOHyJbElRs9fV15TeDRqAeb1IKm4bSknPl6ZMoyPTx1BBy7logudcUwpNjmQLkzn4Q0JGQLRCUKJYoyST6A==}
 
   '@hookform/resolvers@4.1.3':
     resolution: {integrity: sha512-Jsv6UOWYTrEFJ/01ZrnwVXs7KDvP8XIo115i++5PWvNkNvkrsTfGiLS6w+eJ57CYtUtDQalUWovCZDHFJ8u1VQ==}
@@ -6964,12 +6946,6 @@ snapshots:
       react-dom: 19.1.0(react@19.1.0)
 
   '@floating-ui/utils@0.2.9': {}
-
-  '@fontsource-variable/geist-mono@5.2.5': {}
-
-  '@fontsource-variable/playfair-display@5.2.5': {}
-
-  '@fontsource/geist-sans@5.2.5': {}
 
   '@hookform/resolvers@4.1.3(react-hook-form@7.55.0(react@19.1.0))':
     dependencies:
