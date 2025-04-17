@@ -6,10 +6,9 @@ import favicons from "astro-favicons"
 import sitemap from "@astrojs/sitemap"
 import netlify from "@astrojs/netlify"
 import partytown from "@astrojs/partytown"
+import tailwindcss from "@tailwindcss/vite"
 
 import { readingTime } from "./src/plugins/remark/reading-time"
-
-import tailwindcss from "@tailwindcss/vite"
 
 const { URL, APP_NAME, APP_SHORT_NAME } = loadEnv(
   import.meta.env.MODE,
@@ -62,18 +61,16 @@ export default defineConfig({
         provider: fontProviders.fontsource(),
         name: "Geist Sans",
         cssVariable: "--font-geist",
-        subsets: ["latin"],
-      },
-      {
-        provider: fontProviders.fontsource(),
-        name: "Playfair Display",
-        cssVariable: "--font-playfair-display",
-        subsets: ["latin"],
       },
       {
         provider: fontProviders.fontsource(),
         name: "Geist Mono",
         cssVariable: "--font-geist-mono",
+      },
+      {
+        provider: fontProviders.fontsource(),
+        name: "Playfair Display",
+        cssVariable: "--font-playfair-display",
       },
     ],
   },
