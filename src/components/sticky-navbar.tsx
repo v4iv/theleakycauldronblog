@@ -45,7 +45,7 @@ export default function StickyNavBar({
 
             <MenuButton
               variant="ghost"
-              className="hover:text-muted-foreground cursor-pointer rounded-none border-none bg-transparent px-0 text-lg uppercase shadow-none transition-all duration-300"
+              className="hover:text-muted-foreground cursor-pointer border-none bg-transparent px-0 text-lg uppercase shadow-none transition-all duration-300"
             />
           </div>
         </div>
