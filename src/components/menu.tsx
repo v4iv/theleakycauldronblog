@@ -78,7 +78,7 @@ export function MenuButton({
                 <Button
                   size="lg"
                   variant="outline"
-                  className="text-muted-foreground dark:text-muted-foreground hover:text-muted-foreground dark:hover:text-muted-foreground w-full cursor-text justify-start rounded-none border-none bg-indigo-800 px-3 text-lg uppercase hover:bg-indigo-800 dark:bg-indigo-800 dark:hover:bg-indigo-800"
+                  className="text-muted-foreground dark:text-muted-foreground hover:text-muted-foreground dark:hover:text-muted-foreground w-full cursor-text justify-start border-none bg-indigo-800 px-3 text-lg uppercase hover:bg-indigo-800 dark:bg-indigo-800 dark:hover:bg-indigo-800"
                   asChild
                 >
                   <a href="/search">{t("search.placeholder")}</a>
@@ -156,7 +156,7 @@ export function MenuButton({
                   <Button
                     size="icon"
                     variant="outline"
-                    className="rounded-none border-teal-300 bg-transparent hover:bg-indigo-700 dark:border-teal-300 dark:hover:bg-indigo-700"
+                    className="border-teal-300 bg-transparent hover:bg-indigo-700 dark:border-teal-300 dark:hover:bg-indigo-700"
                     asChild
                   >
                     <a
@@ -186,7 +186,7 @@ export function MenuButton({
                   <Button
                     size="icon"
                     variant="outline"
-                    className="rounded-none border-teal-300 bg-transparent hover:bg-indigo-700 dark:border-teal-300 dark:hover:bg-indigo-700"
+                    className="border-teal-300 bg-transparent hover:bg-indigo-700 dark:border-teal-300 dark:hover:bg-indigo-700"
                     asChild
                   >
                     <a
@@ -216,7 +216,7 @@ export function MenuButton({
                   <Button
                     size="icon"
                     variant="outline"
-                    className="rounded-none border-teal-300 bg-transparent hover:bg-indigo-700 dark:border-teal-300 dark:hover:bg-indigo-700"
+                    className="border-teal-300 bg-transparent hover:bg-indigo-700 dark:border-teal-300 dark:hover:bg-indigo-700"
                     asChild
                   >
                     <a
@@ -246,7 +246,7 @@ export function MenuButton({
                   <Button
                     size="icon"
                     variant="outline"
-                    className="rounded-none border-teal-300 bg-transparent hover:bg-indigo-700 dark:border-teal-300 dark:hover:bg-indigo-700"
+                    className="border-teal-300 bg-transparent hover:bg-indigo-700 dark:border-teal-300 dark:hover:bg-indigo-700"
                     asChild
                   >
                     <a aria-label={t("social.rss")} href="/rss.xml">

@@ -110,7 +110,7 @@ function ContactForm({
 
               <FormControl>
                 <Input
-                  className="rounded-none font-mono"
+                  className="font-mono"
                   disabled={submitDisabled}
                   {...field}
                 />
@@ -134,7 +134,7 @@ function ContactForm({
 
               <FormControl>
                 <Input
-                  className="rounded-none font-mono"
+                  className="font-mono"
                   disabled={submitDisabled}
                   {...field}
                 />
@@ -158,7 +158,7 @@ function ContactForm({
 
               <FormControl>
                 <Textarea
-                  className="rounded-none font-mono"
+                  className="font-mono"
                   rows={12}
                   disabled={submitDisabled}
                   {...field}
@@ -174,7 +174,7 @@ function ContactForm({
 
         <div className="mt-3 flex justify-end space-x-2">
           <Button
-            className="rounded-none font-mono text-xl uppercase"
+            className="font-mono text-xl uppercase"
             variant="outline"
             type="reset"
             size="lg"
@@ -186,7 +186,7 @@ function ContactForm({
 
           <Button
             size="lg"
-            className="rounded-none bg-teal-300 font-mono text-xl text-slate-950 uppercase hover:bg-teal-800 hover:text-white"
+            className="bg-teal-300 font-mono text-xl text-slate-950 uppercase hover:bg-teal-800 hover:text-white"
             type="submit"
             disabled={submitDisabled}
           >
