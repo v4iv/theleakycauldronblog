@@ -1,18 +1,11 @@
 import React from "react"
 import Fuse from "fuse.js"
 import type { CollectionEntry } from "astro:content"
-import { Search, X } from "lucide-react"
+import { Search } from "lucide-react"
 
 import { useTranslations } from "@/i18n/utils"
 import { defaultLang, type languages } from "@/i18n/ui"
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip"
 import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
 
 export type HaystackItem = {
   id: string
@@ -74,7 +67,7 @@ export function SearchBar({
   }, [needle])
 
   return (
-    <TooltipProvider>
+    <>
       <header className="bg-gradient-to-t from-teal-300/30 to-transparent py-16">
         <div className="mx-auto w-full max-w-screen-md px-3">
           <div className="animate-reveal-reverse relative flex grow">
@@ -118,6 +111,6 @@ export function SearchBar({
           ))}
         </div>
       </div>
-    </TooltipProvider>
+    </>
   )
 }
