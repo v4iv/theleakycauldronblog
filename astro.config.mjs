@@ -42,7 +42,7 @@ export default defineConfig({
     }),
 
     sitemap({
-      filter: (page) => !page.includes(`/admin/`) && !page.includes(`/tags/`),
+      filter: (page) => !page.includes(`/admin/`),
     }),
   ],
 
