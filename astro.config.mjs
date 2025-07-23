@@ -53,8 +53,9 @@ export default defineConfig({
     },
   },
 
+  responsiveImages: true,
+
   experimental: {
-    responsiveImages: true,
     contentIntellisense: true,
     fonts: [
       {
