@@ -85,10 +85,8 @@ const latestArticles = articles.slice(1, 6)
                   src={featuredArticle.data.cover}
                   alt={featuredArticle.data.title}
                   format="avif"
-                  loading="eager"
                   quality="mid"
                   widths={[360, 540, 720, 1250]}
-                  fetchpriority="high"
                   sizes={`(max-width: 360px) 360px, (max-width: 540px) 540px, (max-width: 720px) 720px, 1250px`}
                   class="w-full object-cover drop-shadow-lg transition-all duration-300 hover:scale-105"
                 />
