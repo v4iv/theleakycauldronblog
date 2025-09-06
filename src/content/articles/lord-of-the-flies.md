@@ -1,7 +1,6 @@
 ---
 title: "Civilization, Myth, and Savagery: Reading Lord of the Flies"
-description: On a deserted island, civilization’s thin skin peels away. Is
-  savagery our destiny, or can culture and cooperation save us?
+description: On a deserted island, Golding’s “Lord of the Flies” explores the collapse of civilization, questioning whether savagery is humanity’s fate or if culture and cooperation can prevail.
 pubDate: 2025-09-06T14:08:00.000+05:30
 slug: lord-of-the-flies
 author: rishabh-chakrabarti
