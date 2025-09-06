@@ -81,7 +81,8 @@ Golding’s pessimism wasn’t universal, but it was pointed: the stories elites
 
 *Lord of the Flies* forces us to ask:  
 
-> What happens when those myths are stripped away?  
+> What happens when those myths are stripped away?
+  
 > What happens when humans devolve?  
 
 Golding leaves us with a haunting possibility: without culture, compassion, and constant vigilance, civilization is only a mask.  
