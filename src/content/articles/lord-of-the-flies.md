@@ -1,6 +1,8 @@
 ---
 title: "Civilization, Myth, and Savagery: Reading Lord of the Flies"
-description: On a deserted island, Golding’s “Lord of the Flies” explores the collapse of civilization, questioning whether savagery is humanity’s fate or if culture and cooperation can prevail.
+description: On a deserted island, Golding’s “Lord of the Flies” explores the
+  collapse of civilization, questioning whether savagery is humanity’s fate or
+  if culture and cooperation can prevail.
 pubDate: 2025-09-06T14:08:00.000+05:30
 slug: lord-of-the-flies
 author: rishabh-chakrabarti
@@ -84,5 +86,5 @@ Golding’s pessimism wasn’t universal, but it was pointed: the stories elites
 
 Golding leaves us with a haunting possibility: without culture, compassion, and constant vigilance, civilization is only a mask.  
 
-**Can humanity rise above savagery at its most desperate times?**
+> **Can humanity rise above savagery at its most desperate times?**
 
