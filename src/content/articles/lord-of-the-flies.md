@@ -6,7 +6,7 @@ description: On a deserted island, Golding’s “Lord of the Flies” explores 
 pubDate: 2025-09-06T14:08:00.000+05:30
 slug: lord-of-the-flies
 author: rishabh-chakrabarti
-cover: src/assets/media/pig-head5.jpg
+cover: src/assets/media/lordoftheflies.png
 tags:
   - guest author
   - books
