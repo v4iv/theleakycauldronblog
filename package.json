@@ -3,7 +3,7 @@
   "description": "A fully customizable, batteries included, personal blog powered by Astro JS.",
   "author": "Vaibhav Sharma<vaibhavsharmaatwork@gmail.com>",
   "type": "module",
-  "version": "4.0.8",
+  "version": "4.0.10",
   "license": "MIT",
   "scripts": {
     "dev": "astro dev",
