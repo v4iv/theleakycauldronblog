@@ -6,7 +6,7 @@ description: A poignant reflection on the unrecognized struggles of artists, the
 pubDate: 2025-03-16T12:30:00.000Z
 slug: flowers-too-late-neha-ramrakhyani
 author: neha-ramrakhyani
-cover: src/assets/media/starry-night.jpg
+cover: ../../assets/media/starry-night.jpg
 tags:
   - guest author
   - poem

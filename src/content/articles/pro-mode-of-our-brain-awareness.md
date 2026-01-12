@@ -6,7 +6,7 @@ description: My dealings with my awareness, and how it changed my life. I learnt
 pubDate: 2019-10-12T12:30:00.000Z
 slug: pro-mode-of-our-brain-awareness
 author: vaibhav-sharma
-cover: src/assets/media/ben-white-thinking-and-awareness.jpg
+cover: ../../assets/media/ben-white-thinking-and-awareness.jpg
 tags:
   - self help
 ---

@@ -6,7 +6,7 @@ description: Discover how fear drives humanity, which was once the gift that
 pubDate: 2020-10-20T12:30:00.000Z
 slug: hate-in-the-time-of-corona
 author: vaibhav-sharma
-cover: src/assets/media/bram-hate-in-the-time-of-corona.jpg
+cover: ../../assets/media/bram-hate-in-the-time-of-corona.jpg
 tags:
   - rant
   - philosophy

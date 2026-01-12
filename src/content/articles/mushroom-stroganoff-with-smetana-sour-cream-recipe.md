@@ -5,7 +5,7 @@ description: A vegetarian twist to a classic Russian dish. This is an easy and
 pubDate: 2020-03-23T12:30:00.000Z
 slug: mushroom-stroganoff-with-smetana-sour-cream-recipe
 author: vaibhav-sharma
-cover: src/assets/media/mushroom-stroganoff-with-sour-cream.jpg
+cover: ../../assets/media/mushroom-stroganoff-with-sour-cream.jpg
 tags:
   - food and drinks
   - recipe

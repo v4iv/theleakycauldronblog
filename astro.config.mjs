@@ -57,6 +57,7 @@ export default defineConfig({
 
   experimental: {
     contentIntellisense: true,
+    svgo: true,
     fonts: [
       {
         provider: fontProviders.fontsource(),
@@ -85,6 +86,7 @@ export default defineConfig({
   },
 
   vite: {
+    // @ts-expect-error
     plugins: [tailwindcss()],
   },
 })

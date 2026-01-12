@@ -6,7 +6,7 @@ description: By implementing these optimization strategies, you can
 pubDate: 2025-02-25T12:30:00.000Z
 slug: optimizing-performance-react-native
 author: vaibhav-sharma
-cover: src/assets/media/rob-hampson-react-native-optimization.jpg
+cover: ../../assets/media/rob-hampson-react-native-optimization.jpg
 tags:
   - typescript
   - react native

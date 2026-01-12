@@ -6,7 +6,7 @@ description: After a lot of digging, I think I'm finally convinced that I have
 pubDate: 2020-08-27T12:30:00.000Z
 slug: is-always-really-snape-best-line
 author: hermione-lovegood
-cover: src/assets/media/artem-maltsev-always-snape.jpg
+cover: ../../assets/media/artem-maltsev-always-snape.jpg
 tags:
   - guest author
   - harry potter

@@ -5,7 +5,7 @@ description: Review for the final book in the Mistborn Trilogy, The Hero of Ages
 pubDate: 2024-03-04T12:30:00.000Z
 slug: mistborn-the-hero-of-ages-review
 author: vaibhav-sharma
-cover: src/assets/media/hero-of-ages-review-izabela-kraus.jpg
+cover: ../../assets/media/hero-of-ages-review-izabela-kraus.jpg
 tags:
   - books
 ---

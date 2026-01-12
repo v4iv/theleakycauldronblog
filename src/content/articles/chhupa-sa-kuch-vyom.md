@@ -6,7 +6,7 @@ description: Amidst life's trials and tribulations, this poem reflects on the
 pubDate: 2025-06-20T12:30:00.000Z
 slug: chhupa-sa-kuch-vyom
 author: vyom
-cover: src/assets/media/chhupa-sa-kuch-vyom-erik-odiin.jpg
+cover: ../../assets/media/chhupa-sa-kuch-vyom-erik-odiin.jpg
 tags:
   - guest author
   - poem

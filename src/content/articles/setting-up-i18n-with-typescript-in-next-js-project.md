@@ -5,7 +5,7 @@ description: Leverage the power of TypeScript with Next JS and make your project
 pubDate: 2019-03-10T12:30:00.000Z
 slug: setting-up-i18n-with-typescript-in-next-js-project
 author: vaibhav-sharma
-cover: src/assets/media/i18n-typescript-nextjs.jpg
+cover: ../../assets/media/i18n-typescript-nextjs.jpg
 tags:
   - typescript
   - next js

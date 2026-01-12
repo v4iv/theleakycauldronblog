@@ -6,7 +6,7 @@ description: Take a look at the interesting life of bees. Bees pollinate about
 pubDate: 2020-04-24T12:30:00.000Z
 slug: the-interesting-world-of-bees
 author: vaibhav-sharma
-cover: src/assets/media/boris-smokrovic-the-interesting-world-of-bees.jpg
+cover: ../../assets/media/boris-smokrovic-the-interesting-world-of-bees.jpg
 tags:
   - science
 ---

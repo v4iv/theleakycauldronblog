@@ -6,7 +6,7 @@ description: Psychedelic down-regulates the part of brain that controls our ego
 pubDate: 2020-12-25T12:30:00.000Z
 slug: psychedelics-consciousness-iit
 author: vaibhav-sharma
-cover: src/assets/media/dima-pechurin-psychedelic-consciousness-iit.jpg
+cover: ../../assets/media/dima-pechurin-psychedelic-consciousness-iit.jpg
 tags:
   - science
   - mythology

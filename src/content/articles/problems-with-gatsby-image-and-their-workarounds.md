@@ -7,7 +7,7 @@ description: Gatsby Image is a very powerful package with drool worthy features.
 pubDate: 2018-12-19T12:30:00.000Z
 slug: problems-with-gatsby-image-and-their-workarounds
 author: vaibhav-sharma
-cover: src/assets/media/gatsby-image-workarounds.jpeg
+cover: ../../assets/media/gatsby-image-workarounds.jpeg
 tags:
   - javascript
   - gatsby js

@@ -5,7 +5,7 @@ description: This is my review of diving into the fantastic world of Brandon
 pubDate: 2024-02-26T12:30:00.000Z
 slug: mistborn-the-final-empire-review
 author: vaibhav-sharma
-cover: src/assets/media/the-final-empire-review-cederic-vandenberghe.jpg
+cover: ../../assets/media/the-final-empire-review-cederic-vandenberghe.jpg
 tags:
   - books
 ---

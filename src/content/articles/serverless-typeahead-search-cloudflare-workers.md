@@ -4,7 +4,7 @@ description: Use Cloudflare Workers and React to make a Basic Typeahead Search f
 pubDate: 2021-03-12T12:30:00.000Z
 slug: serverless-typeahead-search-cloudflare-workers
 author: vaibhav-sharma
-cover: src/assets/media/michael-rivera-serverless-typeahead-search.jpg
+cover: ../../assets/media/michael-rivera-serverless-typeahead-search.jpg
 tags:
   - typescript
   - serverless

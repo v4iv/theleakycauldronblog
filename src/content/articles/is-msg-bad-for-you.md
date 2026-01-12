@@ -5,7 +5,7 @@ description: Find out if MSG is really bad for you, if not, where does the
 pubDate: 2020-09-21T12:30:00.000Z
 slug: is-msg-bad-for-you
 author: vaibhav-sharma
-cover: src/assets/media/uncle-roger-msg.jpg
+cover: ../../assets/media/uncle-roger-msg.jpg
 tags:
   - food and drinks
   - science

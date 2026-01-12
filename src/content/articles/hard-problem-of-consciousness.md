@@ -6,7 +6,7 @@ description: Embark on a journey to understand the question of what makes us,
 pubDate: 2021-01-16T12:30:00.000Z
 slug: hard-problem-of-consciousness
 author: vaibhav-sharma
-cover: src/assets/media/the-ghost-in-the-shell.jpg
+cover: ../../assets/media/the-ghost-in-the-shell.jpg
 tags:
   - science
   - philosophy

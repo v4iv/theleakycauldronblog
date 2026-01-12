@@ -5,7 +5,7 @@ description: This "magical" version of In Bruges definitely adds a Harry Potter
 pubDate: 2025-02-03T12:30:00.000Z
 slug: in-bruges-harry-potter-edition
 author: vaibhav-sharma
-cover: src/assets/media/in-bruges.jpg
+cover: ../../assets/media/in-bruges.jpg
 tags:
   - harry potter
   - movies

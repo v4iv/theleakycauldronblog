@@ -6,7 +6,7 @@ description: Scraping websites made with Javascript frameworks like Angular and
 pubDate: 2018-05-04T12:30:00.000Z
 slug: scraping-dynamic-single-page-websites-with-scrapy-and-selenium
 author: vaibhav-sharma
-cover: src/assets/media/scraping_dynamic_webapps.jpg
+cover: ../../assets/media/scraping_dynamic_webapps.jpg
 tags:
   - python
   - scraping

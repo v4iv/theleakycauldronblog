@@ -5,7 +5,7 @@ description: अजीब थी वो रात पर आखिर रात 
 pubDate: 2020-10-15T12:30:00.000Z
 slug: raat
 author: vyom
-cover: src/assets/media/todd-diemer-raat-vyom.jpg
+cover: ../../assets/media/todd-diemer-raat-vyom.jpg
 tags:
   - guest author
   - poem

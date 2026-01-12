@@ -6,7 +6,7 @@ description: Discover advice for overcoming heartbreak, finding hope, and
 pubDate: 2023-08-06T12:30:00.000Z
 slug: healing-after-heartbreak-healthily
 author: rishabh-chakrabarti
-cover: src/assets/media/content-pixie-2v5pjggqyts-unsplash.jpg
+cover: ../../assets/media/content-pixie-2v5pjggqyts-unsplash.jpg
 tags:
   - guest author
   - self help

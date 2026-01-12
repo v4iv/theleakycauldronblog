@@ -4,7 +4,7 @@ description: Learn few of the most classy french insults, and sound like a true 
 pubDate: 2019-09-01T12:30:00.000Z
 slug: classy-french-insults
 author: vaibhav-sharma
-cover: src/assets/media/markus-clemens-classy-french-insult.jpg
+cover: ../../assets/media/markus-clemens-classy-french-insult.jpg
 tags:
   - le francais
 ---

@@ -5,7 +5,7 @@ description: A letter to my friends on why I believe we should take a centrist
 pubDate: 2024-05-06T12:30:00.000Z
 slug: dear-friends-politics
 author: vaibhav-sharma
-cover: src/assets/media/dear-friends-politics-brian-wertheim.jpg
+cover: ../../assets/media/dear-friends-politics-brian-wertheim.jpg
 tags:
   - open letter
 ---

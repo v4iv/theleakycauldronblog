@@ -7,7 +7,7 @@ description: Dive into a conversational journey through Brandon Sanderson’s
 pubDate: 2024-04-08T12:30:00.000Z
 slug: tress-of-the-emerald-sea-review
 author: vaibhav-sharma
-cover: src/assets/media/sippingsaltytea.jpg
+cover: ../../assets/media/sippingsaltytea.jpg
 tags:
   - books
 ---

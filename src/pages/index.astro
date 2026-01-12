@@ -53,12 +53,12 @@ const latestArticles = articles.slice(1, 6)
             <div
               class="flex items-center gap-1 border-b-4 border-teal-300 md:border-violet-500"
             >
-              <time class="truncate break-words uppercase">
+              <time class="truncate wrap-break-word uppercase">
                 {featuredArticlePubDate}
               </time>
               &bull;
               <small
-                class="text-muted-foreground truncate break-words uppercase italic"
+                class="text-muted-foreground truncate wrap-break-word uppercase italic"
               >
                 {featuredArticleMinutesRead}
               </small>
@@ -95,12 +95,12 @@ const latestArticles = articles.slice(1, 6)
           </div>
 
           <div
-            class="pointer-events-none absolute top-auto bottom-0 size-full translate-y-0 bg-gradient-to-t from-white/10 to-transparent dark:from-black/10"
+            class="pointer-events-none absolute top-auto bottom-0 size-full translate-y-0 bg-linear-to-t from-white/10 to-transparent dark:from-black/10"
           >
           </div>
 
           <div
-            class="pointer-events-none absolute top-auto bottom-0 h-1/3 w-full translate-y-0 bg-gradient-to-t from-white/20 to-transparent dark:from-black/30"
+            class="pointer-events-none absolute top-auto bottom-0 h-1/3 w-full translate-y-0 bg-linear-to-t from-white/20 to-transparent dark:from-black/30"
           >
           </div>
 
@@ -116,7 +116,7 @@ const latestArticles = articles.slice(1, 6)
         <!-- hero details -->
         <div class="relative -mt-5 sm:-mt-10 md:pl-60 lg:pl-80">
           <h2
-            class="text-cmyk scroll-m-20 text-4xl font-bold break-words first:m-0 md:text-6xl"
+            class="text-cmyk scroll-m-20 text-4xl font-bold wrap-break-word first:m-0 md:text-6xl"
           >
             <a
               href={`/articles/${featuredArticle.data.slug}`}
@@ -205,7 +205,7 @@ const latestArticles = articles.slice(1, 6)
                             quality="mid"
                             widths={[360, 540]}
                             sizes={`(max-width: 360px) 360px, 540px`}
-                            class="block aspect-video h-auto w-full bg-gradient-to-r from-yellow-400/20 via-rose-400/20 to-violet-500/20 object-cover transition-all duration-300 group-hover:scale-105 md:aspect-[4/3]"
+                            class="block aspect-video h-auto w-full bg-linear-to-r from-yellow-400/20 via-rose-400/20 to-violet-500/20 object-cover transition-all duration-300 group-hover:scale-105 md:aspect-4/3"
                           />
                         </a>
                       </div>

@@ -5,7 +5,7 @@ description: Learn to write an API to fetch the details of currently logged in
 pubDate: 2018-04-16T12:30:00.000Z
 slug: requesting-user-details-jwt-django-oauth-toolkit
 author: vaibhav-sharma
-cover: src/assets/media/user_info_jwt.jpg
+cover: ../../assets/media/user_info_jwt.jpg
 tags:
   - python
   - django

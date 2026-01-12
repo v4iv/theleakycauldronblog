@@ -31,24 +31,23 @@ function ContactForm({
   const formSchema = z.object({
     name: z
       .string({
-        required_error: t("contact.name-required"),
+        error: t("contact.name-required"),
       })
       .trim()
-      .min(2, { message: t("contact.name-too-short") })
-      .max(50, { message: t("contact.name-too-long") }),
+      .min(2, { error: t("contact.name-too-short") })
+      .max(50, { error: t("contact.name-too-long") }),
     email: z
-      .string({
-        required_error: t("contact.email-required"),
+      .email({
+        error: t("contact.invalid-email"),
       })
-      .trim()
-      .email({ message: t("contact.invalid-email") }),
+      .trim(),
     message: z
       .string({
-        required_error: t("contact.message-required"),
+        error: t("contact.message-required"),
       })
       .trim()
       .min(20, {
-        message: t("contact.message-too-short"),
+        error: t("contact.message-too-short"),
       }),
   })
 

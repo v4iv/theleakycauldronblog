@@ -5,7 +5,7 @@ description: Use React Google Maps and fit bounds & zoom of a Polyline and
 pubDate: 2019-07-16T12:30:00.000Z
 slug: fit-bounds-of-a-polyline-and-marker-with-react-google-maps
 author: vaibhav-sharma
-cover: src/assets/media/react-google-maps.jpg
+cover: ../../assets/media/react-google-maps.jpg
 tags:
   - typescript
   - react js

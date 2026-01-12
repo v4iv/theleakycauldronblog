@@ -6,7 +6,7 @@ description: What if I told you there exists a scary SCARY thing that can enter
 pubDate: 2020-08-24T12:30:00.000Z
 slug: mccollough-effect
 author: vaibhav-sharma
-cover: src/assets/media/david-clode-mccollough-effect.jpg
+cover: ../../assets/media/david-clode-mccollough-effect.jpg
 tags:
   - science
 ---

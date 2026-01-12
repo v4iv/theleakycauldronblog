@@ -6,7 +6,7 @@ description: The Union Budget 2025 is growth-focused, investor-friendly, and
 pubDate: 2025-02-01T12:30:00.000Z
 slug: critical-analysis-union-budget-2025
 author: ca-sumeet-agarwal
-cover: src/assets/media/ishant-mishra-union-budget-2025.jpg
+cover: ../../assets/media/ishant-mishra-union-budget-2025.jpg
 tags:
   - guest author
   - finance

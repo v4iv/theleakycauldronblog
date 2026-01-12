@@ -5,7 +5,7 @@ description: Learn to write tests for Django OAuth Toolkit Authenticated APIs in
 pubDate: 2018-04-13T12:30:00.000Z
 slug: writing-tests-for-authenticated-apis-in-django-rest-framework
 author: vaibhav-sharma
-cover: src/assets/media/authenticated_api_testing.jpg
+cover: ../../assets/media/authenticated_api_testing.jpg
 tags:
   - python
   - testing

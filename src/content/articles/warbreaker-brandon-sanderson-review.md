@@ -5,7 +5,7 @@ description: A review of Warbreaker by Brandon Sanderson, a tale of twists,
 pubDate: 2024-03-24T12:30:00.000Z
 slug: warbreaker-brandon-sanderson-review
 author: vaibhav-sharma
-cover: src/assets/media/warbreaker-brandon-sanderson-bill-williams.jpg
+cover: ../../assets/media/warbreaker-brandon-sanderson-bill-williams.jpg
 tags:
   - books
 ---

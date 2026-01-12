@@ -5,7 +5,7 @@ description: Here are some of the most awesome moments from the long-awaited
 pubDate: 2018-04-30T12:30:00.000Z
 slug: awesome-moments-from-avengers-infinity-war
 author: vaibhav-sharma
-cover: src/assets/media/avengers_infinity_war.jpg
+cover: ../../assets/media/avengers_infinity_war.jpg
 tags:
   - movies
 ---

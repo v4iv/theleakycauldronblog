@@ -5,7 +5,7 @@ description: In this post, we’ll explore what WebAssembly is, why you’d want
 pubDate: 2025-02-09T12:30:00.000Z
 slug: react-and-webassembly-unlocking-high-performance-apps
 author: vaibhav-sharma
-cover: src/assets/media/francesco-ungaro-rust-reactjs-webassembly.jpg
+cover: ../../assets/media/francesco-ungaro-rust-reactjs-webassembly.jpg
 tags:
   - typescript
   - react js
