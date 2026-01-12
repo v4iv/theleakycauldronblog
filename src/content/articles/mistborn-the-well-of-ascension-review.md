@@ -5,7 +5,7 @@ description: Review for the book The Well of Ascension by Brandon Sanderson, the
 pubDate: 2024-03-02T12:30:00.000Z
 slug: mistborn-the-well-of-ascension-review
 author: vaibhav-sharma
-cover: src/assets/media/well-of-ascension-review-hasan-almasi.jpg
+cover: ../../assets/media/well-of-ascension-review-hasan-almasi.jpg
 tags:
   - books
 ---

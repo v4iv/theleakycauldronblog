@@ -6,7 +6,7 @@ description: Find out how an unwitting saviour rescued Indian Democracy from
 pubDate: 2021-01-26T12:30:00.000Z
 slug: kesavananda-bharati-vs-kerala
 author: vaibhav-sharma
-cover: src/assets/media/manyu-varma-kesavanada-bharati-vs-kerala.jpg
+cover: ../../assets/media/manyu-varma-kesavanada-bharati-vs-kerala.jpg
 tags:
   - history
 ---

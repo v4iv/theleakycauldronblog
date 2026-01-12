@@ -7,7 +7,7 @@ description: India’s economy, driven by government spending and liquidity, mig
 pubDate: 2025-01-13T12:30:00.000Z
 slug: indian-financial-bubble-stock-market-frenzy
 author: ca-sumeet-agarwal
-cover: src/assets/media/stock-market-tyler-prahm.jpg
+cover: ../../assets/media/stock-market-tyler-prahm.jpg
 tags:
   - guest author
   - finance

@@ -6,7 +6,7 @@ description: Join my journey as I switch from WebStorm to VS Code! Discover the
 pubDate: 2023-07-24T12:30:00.000Z
 slug: migrating-from-webstorm-to-vscode
 author: vaibhav-sharma
-cover: src/assets/media/juanjo-jaramillo-vscode-webstorm.jpg
+cover: ../../assets/media/juanjo-jaramillo-vscode-webstorm.jpg
 tags:
   - development
   - typescript

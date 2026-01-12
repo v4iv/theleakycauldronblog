@@ -5,7 +5,7 @@ description: Taste the creamy mildly spicy deliciousness of this mushroom
 pubDate: 2019-03-23T12:30:00.000Z
 slug: creamy-mushrome-mushroom-recipe
 author: vaibhav-sharma
-cover: src/assets/media/mushrome.jpg
+cover: ../../assets/media/mushrome.jpg
 tags:
   - food and drinks
   - recipe

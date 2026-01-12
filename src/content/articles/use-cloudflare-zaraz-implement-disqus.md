@@ -6,7 +6,7 @@ description: Use Cloudflare Zaraz to implement Disqus performantly by offloading
 pubDate: 2024-03-14T12:30:00.000Z
 slug: use-cloudflare-zaraz-implement-disqus
 author: vaibhav-sharma
-cover: src/assets/media/disqus-comments-zaraz-catherine-heath.jpg
+cover: ../../assets/media/disqus-comments-zaraz-catherine-heath.jpg
 tags:
   - typescript
   - react js

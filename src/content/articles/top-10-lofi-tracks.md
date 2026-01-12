@@ -6,7 +6,7 @@ description: My Top 10 LoFi Beats that are so good that they distract me from
 pubDate: 2024-05-11T12:30:00.000Z
 slug: top-10-lofi-tracks
 author: vaibhav-sharma
-cover: src/assets/media/lofigirl.png
+cover: ../../assets/media/lofigirl.png
 tags:
   - music
 ---

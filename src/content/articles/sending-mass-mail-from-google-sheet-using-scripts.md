@@ -5,7 +5,7 @@ description: Leverage the power of Google Script to run email campaigns, right
 pubDate: 2018-06-04T12:30:00.000Z
 slug: sending-mass-mail-from-google-sheet-using-scripts
 author: vaibhav-sharma
-cover: src/assets/media/mass_mail_google_script.jpg
+cover: ../../assets/media/mass_mail_google_script.jpg
 tags:
   - javascript
   - marketing

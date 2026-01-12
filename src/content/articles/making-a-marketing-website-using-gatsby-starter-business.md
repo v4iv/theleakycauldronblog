@@ -6,7 +6,7 @@ description: Make an SEO friendly website, leveraging Gatsby Starter Business,
 pubDate: 2018-04-10T12:30:00.000Z
 slug: making-a-marketing-website-using-gatsby-starter-business
 author: vaibhav-sharma
-cover: src/assets/media/gatsby_marketing_website.jpg
+cover: ../../assets/media/gatsby_marketing_website.jpg
 tags:
   - javascript
   - marketing

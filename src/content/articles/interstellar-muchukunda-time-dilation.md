@@ -6,7 +6,7 @@ description: Time Dilation was an important part of both Ancient Hindu
 pubDate: 2020-10-10T12:30:00.000Z
 slug: interstellar-muchukunda-time-dilation
 author: vaibhav-sharma
-cover: src/assets/media/king-muchukunda.jpg
+cover: ../../assets/media/king-muchukunda.jpg
 tags:
   - movies
   - science

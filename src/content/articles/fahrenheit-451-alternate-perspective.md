@@ -6,7 +6,7 @@ description: Fahrenheit 451 is no doubt a great read but what bugs me is that
 pubDate: 2021-09-18T12:30:00.000Z
 slug: fahrenheit-451-alternate-perspective
 author: vaibhav-sharma
-cover: src/assets/media/fred-kearney-fahrenheit-451-alternative-perspective.jpg
+cover: ../../assets/media/fred-kearney-fahrenheit-451-alternative-perspective.jpg
 tags:
   - books
   - rant

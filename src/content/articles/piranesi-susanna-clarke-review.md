@@ -4,7 +4,7 @@ description: Piranesi by Susanna Clarke explores themes of identity, power, and 
 pubDate: 2025-01-28T12:30:00.000Z
 slug: piranesi-susanna-clarke-review
 author: vaibhav-sharma
-cover: src/assets/media/dan-asaki-labyrinth.jpg
+cover: ../../assets/media/dan-asaki-labyrinth.jpg
 tags:
   - books
 ---

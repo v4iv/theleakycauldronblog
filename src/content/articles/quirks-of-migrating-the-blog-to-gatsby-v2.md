@@ -6,7 +6,7 @@ description: Dealing with the struggles and features of migrating to Gatsby v2.
 pubDate: 2018-12-03T12:30:00.000Z
 slug: quirks-of-migrating-the-blog-to-gatsby-v2
 author: vaibhav-sharma
-cover: src/assets/media/1y8lnpji8cr11.jpg
+cover: ../../assets/media/1y8lnpji8cr11.jpg
 tags:
   - javascript
   - gatsby js

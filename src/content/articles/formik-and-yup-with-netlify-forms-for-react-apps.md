@@ -6,7 +6,7 @@ description: Use Formik and Yup to make robust forms in conjunction with Netlify
 pubDate: 2019-06-16T12:30:00.000Z
 slug: formik-and-yup-with-netlify-forms-for-react-apps
 author: vaibhav-sharma
-cover: src/assets/media/formik-netlify-forms-react-yup.jpg
+cover: ../../assets/media/formik-netlify-forms-react-yup.jpg
 tags:
   - javascript
   - react js

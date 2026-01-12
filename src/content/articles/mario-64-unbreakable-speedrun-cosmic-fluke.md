@@ -5,7 +5,7 @@ description: "Unbreakable Glory: The Cosmic Fluke Behind Mario 64's Unbeatable
 pubDate: 2023-07-29T12:30:00.000Z
 slug: mario-64-unbreakable-speedrun-cosmic-fluke
 author: vaibhav-sharma
-cover: src/assets/media/claudio-luiz-castro-mario-64-unbreakable-speedrun-record.jpg
+cover: ../../assets/media/claudio-luiz-castro-mario-64-unbreakable-speedrun-record.jpg
 tags:
   - gaming
   - science

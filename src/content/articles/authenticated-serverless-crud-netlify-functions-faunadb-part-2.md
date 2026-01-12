@@ -5,7 +5,7 @@ description: Leverage FaunaDB and Netlify Functions to create authenticated
 pubDate: 2021-01-19T12:30:00.000Z
 slug: authenticated-serverless-crud-netlify-functions-faunadb-part-2
 author: vaibhav-sharma
-cover: src/assets/media/ga-authenticated-serverless-crud-netlify-faunadb-part-2.jpg
+cover: ../../assets/media/ga-authenticated-serverless-crud-netlify-faunadb-part-2.jpg
 tags:
   - javascript
   - serverless

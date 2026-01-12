@@ -5,7 +5,7 @@ description: Self host google fonts to better leverage the browser caching
 pubDate: 2018-12-05T12:30:00.000Z
 slug: self-hosting-google-fonts-for-better-caching
 author: vaibhav-sharma
-cover: src/assets/media/self_hosted_google_fonts.jpg
+cover: ../../assets/media/self_hosted_google_fonts.jpg
 tags:
   - javascript
   - gatsby js

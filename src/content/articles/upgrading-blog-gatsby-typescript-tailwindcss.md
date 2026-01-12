@@ -5,7 +5,7 @@ description: Discover the journey of upgrading my blog to Gatsby v5 with
 pubDate: 2023-08-01T12:30:00.000Z
 slug: upgrading-blog-gatsby-typescript-tailwindcss
 author: vaibhav-sharma
-cover: src/assets/media/andrew-neel-upgrading-blog-gatsby-typescript-tailwindcss.jpg
+cover: ../../assets/media/andrew-neel-upgrading-blog-gatsby-typescript-tailwindcss.jpg
 tags:
   - typescript
   - gatsby js

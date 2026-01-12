@@ -6,7 +6,7 @@ description: Writing Authenticated Routes which will redirect to signin page if
 pubDate: 2018-06-02T12:30:00.000Z
 slug: writing-authenticated-route-component-in-react-redux
 author: vaibhav-sharma
-cover: src/assets/media/react_redux_authenticated_routes.jpg
+cover: ../../assets/media/react_redux_authenticated_routes.jpg
 tags:
   - javascript
   - authentication

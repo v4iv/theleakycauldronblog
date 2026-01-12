@@ -5,7 +5,7 @@ description: Learn how to sync child transforms using Photon Unity Networking 2
 pubDate: 2024-06-21T12:30:00.000Z
 slug: sync-child-transforms-unity3d-pun2
 author: eklavya-mishra
-cover: src/assets/media/sync-child-transforms-unity3d-pun2-lorenzo-herrera.jpg
+cover: ../../assets/media/sync-child-transforms-unity3d-pun2-lorenzo-herrera.jpg
 tags:
   - guest author
   - c#

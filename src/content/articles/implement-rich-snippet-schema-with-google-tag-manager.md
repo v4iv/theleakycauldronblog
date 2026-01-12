@@ -5,7 +5,7 @@ description: Leverage Google Tag Manager Custom HTML Tag to implement Schema.org
 pubDate: 2018-06-16T12:30:00.000Z
 slug: implement-rich-snippet-schema-with-google-tag-manager
 author: vaibhav-sharma
-cover: src/assets/media/structured_data_gtm.jpg
+cover: ../../assets/media/structured_data_gtm.jpg
 tags:
   - javascript
   - marketing

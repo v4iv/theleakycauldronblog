@@ -5,7 +5,7 @@ description: राम तू, क़ुरान तू, नानक साह
 pubDate: 2020-08-16T12:30:00.000Z
 slug: apne-apne-bhagwaan
 author: vyom
-cover: src/assets/media/ben-white-apne-apne-bhagwaan.jpg
+cover: ../../assets/media/ben-white-apne-apne-bhagwaan.jpg
 tags:
   - guest author
   - poem
