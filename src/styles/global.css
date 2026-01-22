@@ -132,3 +132,16 @@
       0.025em 0.04em 0 #fffc00;
   }
 }
+
+@theme {
+  --animate-gradient: gradient 8s linear infinite;
+
+  @keyframes gradient {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: 200% center;
+    }
+  }
+}
