@@ -4,7 +4,7 @@ description: A rant about why retrying kills horror in video games, why fear
   doesn’t survive repetition, and why some encounters should be allowed to fail,
   permanently.
 pubDate: 2026-02-06T18:50:00.000+05:30
-slug: fear-doesnt-survive-a-reload
+slug: retrying-kills-horror-games
 author: eklavya-mishra
 cover: src/assets/media/gabriel-h73jxsqwecc-unsplash.png
 tags:
@@ -25,7 +25,7 @@ Repetition especially in a particularly tough encounter destroys the atmosphere 
 
 The ability to make different choices or planning ahead this time, that’s our hook. That’s where our agency is. And the more options (read viable options) we have, the better the game is.
 
-*Resident Evil 7*’s first boss fight against Jack Baker, even though that first shock of “I’m supposed to deal with this guy” may subside on multiple attempts but … I am free to move, to explore, find weapons, map out the area in my head for quick getaways. I have strategies to try. It doesn’t feel repetitive. And it’s one of my favorite boss fights in any horror game. 
+***Resident Evil 7***’s first boss fight against Jack Baker, even though that first shock of “*I’m supposed to deal with this guy*” may subside on multiple attempts but … I am free to move, to explore, find weapons, map out the area in my head for quick getaways. I have strategies to try. It doesn’t feel repetitive. And it’s one of my favorite boss fights in any horror game. 
 
 But the problem comes with games which are light on gameplay. The story or atmosphere focused ones. There are those of us who enjoy being put into situations like these. However, not having a proper combat system or enough options means I’m basically doing the same thing every time. Which you may call a bad game and you may as well be right.
 
