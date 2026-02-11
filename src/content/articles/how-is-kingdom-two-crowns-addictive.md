@@ -15,7 +15,7 @@ Who designs a game like that?
 
 It takes so long to get to each place too. A whole in-game day even to go from the left edge of this camp-turned-kingdom to the right. You don’t wanna give me some kinda button to boost this retarded donkey? Maybe just one button if you time it right and boom! Suddenly lord huffs-a-lot gets some pepper up his ass.
 
-I don’t even know why I want to get where I’m going, faster. It’s just so I can press and hold A so some stacks of wood turn into stone walls, and then when I have more money, the stone walls turn to rock walls, oh look there’s a mound of mud there, that can be another stack of wood, and if I get enough money I can turn it into a stone wall and…
+I don’t even know why I want to get where I’m going, faster. It’s just so I can press and hold **A** so some stacks of wood turn into stone walls, and then when I have more money, the stone walls turn to rock walls, oh look there’s a mound of mud there, that can be another stack of wood, and if I get enough money I can turn it into a stone wall and…
 
 What the hell is wrong with me? Why?
 
