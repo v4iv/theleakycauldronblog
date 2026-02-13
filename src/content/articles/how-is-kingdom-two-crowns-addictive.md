@@ -2,10 +2,10 @@
 title: How is Kingdom Two Crowns So Addictive?!
 description: A love letter to a game with just one button, a slow horse, and
   some wooden walls that somehow hijacked five hours of my life.
-pubDate: 2026-02-11T16:59:00.000+05:30
+pubDate: 2026-02-13T12:10:00.000+05:30
 slug: how-is-kingdom-two-crowns-so-addictive
 author: eklavya-mishra
-cover: src/assets/media/FUAY5i8.png
+cover: src/assets/media/kingdom-two-crowns.webp
 tags:
   - guest author
   - gaming
