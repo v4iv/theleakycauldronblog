@@ -1,9 +1,9 @@
 ---
-title: How is Kingdom Two Crowns So Addictive?
+title: How is Kingdom Two Crowns So Addictive?!
 description: A love letter to a game with just one button, a slow horse, and
   some wooden walls that somehow hijacked five hours of my life.
 pubDate: 2026-02-11T16:59:00.000+05:30
-slug: how-is-kingdom-two-crowns-addictive
+slug: how-is-kingdom-two-crowns-so-addictive
 author: eklavya-mishra
 cover: src/assets/media/FUAY5i8.png
 tags:
@@ -22,7 +22,7 @@ I don’t even know why I want to get where I’m going, faster. It’s just so 
 
 *What the hell is wrong with me? Why?*
 
-Can’t you add some action for god’s sake. Let me have some more buttons at least? I like pressing buttons. I’m good at it. I’m pressing them now. *Tap. Tap. Tap*. Is this meta humor?
+Can’t you add some action for god’s sake. Let me have some more buttons at least? I like pressing buttons. I’m good at it. I’m pressing them now. ***Tap. Tap. Tap*.** (*Is this meta humor?*)
 
 I don’t know. I really don’t. The art looks pretty I guess. The little builders look cute with their hammers somehow cutting down trees so I can add a mill to my little continent spanning empire.
 
