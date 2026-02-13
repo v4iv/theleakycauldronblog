@@ -5,7 +5,7 @@ description: A love letter to a game with just one button, a slow horse, and
 pubDate: 2026-02-13T12:10:00.000+05:30
 slug: how-is-kingdom-two-crowns-so-addictive
 author: eklavya-mishra
-cover: src/assets/media/kingdom-two-crowns.webp
+cover: src/assets/media/img2.jpg
 tags:
   - guest author
   - gaming
@@ -18,6 +18,8 @@ Who designs a game like that?
 
 It takes so long to get to each place too. A whole in-game day even to go from the left edge of this camp-turned-kingdom to the right. You don’t wanna give me some kinda button to boost this retarded donkey? Maybe just one button if you time it right and boom! Suddenly lord huffs-a-lot gets some pepper up his ass.
 
+![](src/assets/media/img1.jpg)
+
 I don’t even know why I want to get where I’m going, faster. It’s just so I can press and hold **A** so some stacks of wood turn into stone walls, and then when I have more money, the stone walls turn to rock walls, oh look there’s a mound of mud there, that can be another stack of wood, and if I get enough money I can turn it into a stone wall and…
 
 *What the hell is wrong with me? Why?*
@@ -27,6 +29,8 @@ Can’t you add some action for god’s sake. Let me have some more buttons at l
 I don’t know. I really don’t. The art looks pretty I guess. The little builders look cute with their hammers somehow cutting down trees so I can add a mill to my little continent spanning empire.
 
 And what’s with that water reflection? It’s so calm and beautiful. Every wave has this parallax effect in motion that I just can’t ignore how serene it makes me feel. 
+
+![](src/assets/media/img0.jpg)
 
 I mean I get that I don’t sound serene right now. Senile more like.
 
