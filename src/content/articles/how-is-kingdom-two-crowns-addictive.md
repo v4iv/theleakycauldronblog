@@ -3,7 +3,7 @@ title: How is Kingdom Two Crowns So Addictive?!
 description: A love letter to a game with just one button, a slow horse, and
   some wooden walls that somehow hijacked five hours of my life.
 pubDate: 2026-02-13T12:10:00.000+05:30
-slug: how-is-kingdom-two-crowns-so-addictive
+slug: kingdom-two-crowns-is-addictive
 author: eklavya-mishra
 cover: src/assets/media/img2.jpg
 tags:
@@ -18,7 +18,7 @@ Who designs a game like that?
 
 It takes so long to get to each place too. A whole in-game day even to go from the left edge of this camp-turned-kingdom to the right. You don’t wanna give me some kinda button to boost this retarded donkey? Maybe just one button if you time it right and boom! Suddenly lord huffs-a-lot gets some pepper up his ass.
 
-![](src/assets/media/img1.jpg)
+![kingdom-2-crowns-night](src/assets/media/img1.jpg "kingdom-2-crowns-night")
 
 I don’t even know why I want to get where I’m going, faster. It’s just so I can press and hold **A** so some stacks of wood turn into stone walls, and then when I have more money, the stone walls turn to rock walls, oh look there’s a mound of mud there, that can be another stack of wood, and if I get enough money I can turn it into a stone wall and…
 
@@ -30,7 +30,7 @@ I don’t know. I really don’t. The art looks pretty I guess. The little build
 
 And what’s with that water reflection? It’s so calm and beautiful. Every wave has this parallax effect in motion that I just can’t ignore how serene it makes me feel. 
 
-![](src/assets/media/img0.jpg)
+![kingdom-2-crowns-fog](src/assets/media/img0.jpg "kingdom-2-crowns-fog")
 
 I mean I get that I don’t sound serene right now. Senile more like.
 
