@@ -63,11 +63,8 @@
     "@typescript-eslint/parser": "^8.53.1",
     "babel-plugin-react-compiler": "19.1.0-rc.3",
     "eslint": "^9.39.2",
-    "eslint-plugin-astro": "^1.5.0",
-    "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-react": "^7.37.4",
     "eslint-plugin-react-compiler": "19.1.0-rc.2",
-    "eslint-plugin-tailwindcss": "^3.18.0",
     "prettier": "^3.8.1",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.7.2",
@@ -82,5 +79,5 @@
       "sharp"
     ]
   },
-  "packageManager": "pnpm@10.13.1"
+  "packageManager": "pnpm@11.0.9+sha512.34ce82e6780233cf9cad8685029a8f81d2e06196c5a9bad98879f7424940c6817c4e4524fb7d38b8553ceed48b9758b8ebaf1abd3600c232c4c8cf7366086f38"
 }
