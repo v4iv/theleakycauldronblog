@@ -1,6 +1,6 @@
 // @ts-check
 import { loadEnv } from "vite"
-import { defineConfig, fontProviders } from "astro/config"
+import { defineConfig, fontProviders, svgoOptimizer } from "astro/config"
 import react from "@astrojs/react"
 import favicons from "astro-favicons"
 import sitemap from "@astrojs/sitemap"
@@ -53,32 +53,31 @@ export default defineConfig({
     },
   },
 
-  responsiveImages: true,
+  fonts: [
+    {
+      provider: fontProviders.fontsource(),
+      name: "Geist Sans",
+      cssVariable: "--font-geist",
+      subsets: ["latin", "latin-ext"],
+    },
+    {
+      provider: fontProviders.fontsource(),
+      name: "Geist Mono",
+      cssVariable: "--font-geist-mono",
+      weights: [400, 500, 600, 700],
+      subsets: ["latin", "latin-ext"],
+    },
+    {
+      provider: fontProviders.fontsource(),
+      name: "Playfair Display",
+      cssVariable: "--font-playfair-display",
+      subsets: ["latin", "latin-ext"],
+    },
+  ],
 
   experimental: {
     contentIntellisense: true,
-    svgo: true,
-    fonts: [
-      {
-        provider: fontProviders.fontsource(),
-        name: "Geist Sans",
-        cssVariable: "--font-geist",
-        subsets: ["latin", "latin-ext"],
-      },
-      {
-        provider: fontProviders.fontsource(),
-        name: "Geist Mono",
-        cssVariable: "--font-geist-mono",
-        weights: [400, 500, 600, 700],
-        subsets: ["latin", "latin-ext"],
-      },
-      {
-        provider: fontProviders.fontsource(),
-        name: "Playfair Display",
-        cssVariable: "--font-playfair-display",
-        subsets: ["latin", "latin-ext"],
-      },
-    ],
+    svgOptimizer: svgoOptimizer(),
   },
 
   redirects: {
@@ -86,7 +85,6 @@ export default defineConfig({
   },
 
   vite: {
-    // @ts-expect-error
     plugins: [tailwindcss()],
   },
 })
