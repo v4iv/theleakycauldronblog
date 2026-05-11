@@ -157,8 +157,8 @@ function ContactForm({
 
               <FormControl>
                 <Textarea
-                  className="font-mono"
-                  rows={12}
+                  className="h-auto font-mono"
+                  rows={10}
                   disabled={submitDisabled}
                   {...field}
                 />

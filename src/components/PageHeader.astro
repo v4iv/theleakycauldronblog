@@ -1,26 +1,22 @@
 ---
 interface Props {
-  backgroundImage: any
   title: string
   subtitle?: string
 }
 
-const { backgroundImage, title, subtitle } = Astro.props
+const { title, subtitle } = Astro.props
 ---
 
-<div class="bg-linear-to-t from-teal-300/30 to-transparent">
-  <div
-    style={`background-image: url(${backgroundImage.src});`}
-    class="mx-auto w-full bg-fixed"
-  >
+<div class="bg-linear-to-t from-violet-500 to-transparent">
+  <div class="mx-auto w-full bg-fixed">
     <header class="mx-auto w-full max-w-screen-xl px-3 py-10">
       <h1
-        class="text-cmyk font-mono text-4xl font-bold tracking-widest uppercase md:text-5xl lg:text-7xl"
+        class="font-mono text-4xl font-bold tracking-widest text-white uppercase md:text-5xl lg:text-7xl"
       >
         {title}
       </h1>
 
-      <p class="cmyk md:text-xl">{subtitle}</p>
+      <p class="cmyk text-white md:text-xl">{subtitle}</p>
     </header>
   </div>
 </div>

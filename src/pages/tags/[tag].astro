@@ -2,7 +2,6 @@
 import slugify from "slugify"
 import { getCollection, getEntry } from "astro:content"
 
-import tagsImage from "@/assets/tags.svg"
 import { getLangFromUrl, useTranslations } from "@/i18n/utils"
 import BaseLayout from "@/layouts/BaseLayout.astro"
 import PageHeader from "@/components/PageHeader.astro"
@@ -39,10 +38,10 @@ const { taggedArticles, name } = Astro.props
 <BaseLayout
   title={`${taggedArticles.length} article${taggedArticles.length > 1 ? "s" : ""} tagged with "${name}"`}
   description={t("tags.description")}
+  dark
 >
   <main class="mx-auto min-h-screen w-full">
     <PageHeader
-      backgroundImage={tagsImage}
       title={`#${name}`}
       subtitle={`${taggedArticles.length} article${taggedArticles.length > 1 ? "s" : ""} tagged with "${name}"`}
     />

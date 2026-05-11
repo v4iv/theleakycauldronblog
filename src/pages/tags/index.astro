@@ -2,7 +2,6 @@
 import slugify from "slugify"
 import { getCollection } from "astro:content"
 
-import tagsImage from "@/assets/tags.svg"
 import { getLangFromUrl, useTranslations } from "@/i18n/utils"
 import BaseLayout from "@/layouts/BaseLayout.astro"
 import PageHeader from "@/components/PageHeader.astro"
@@ -22,20 +21,17 @@ const tags = [...new Set(allTags)]
 <BaseLayout
   title={`${t("tags.title")} | ${t("meta.title")}`}
   description={t("tags.description")}
+  dark
 >
   <main class="mx-auto min-h-screen w-full">
-    <PageHeader
-      backgroundImage={tagsImage}
-      title={t("tags.title")}
-      subtitle={t("tags.subtitle")}
-    />
+    <PageHeader title={t("tags.title")} subtitle={t("tags.subtitle")} />
 
     <div class="mx-auto w-full max-w-screen-md px-3">
       <ul class="my-16 flex flex-wrap gap-3 text-2xl">
         {
           tags.map((tag) => (
             <Fragment>
-              <li class="font-mono tracking-widest text-violet-600 uppercase dark:text-violet-500">
+              <li class="font-mono tracking-widest text-violet-600 uppercase dark:text-white">
                 <a
                   href={`/tags/${tag.tag}`}
                   class="underline-offset-4 hover:underline"

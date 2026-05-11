@@ -14,6 +14,7 @@ interface Props {
   description?: string
   image?: string
   author?: string
+  dark?: boolean
 }
 
 const lang = getLangFromUrl(Astro.url)
@@ -24,6 +25,7 @@ const {
   description = t("meta.description"),
   image = "/banner.jpg",
   author = "Vaibhav Sharma",
+  dark = false,
 } = Astro.props
 ---
 
@@ -46,7 +48,7 @@ const {
     <Analytics googleAnalyticsID={import.meta.env.PUBLIC_GOOGLE_ANALYTICS_ID} />
   </head>
 
-  <body class="bg-background min-h-screen antialiased">
+  <body class={`bg-background min-h-screen antialiased ${dark ? "dark" : ""}`}>
     <NavBar />
 
     <slot />

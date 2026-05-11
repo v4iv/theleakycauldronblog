@@ -68,7 +68,7 @@ export function SearchBar({
 
   return (
     <>
-      <header className="bg-gradient-to-t from-teal-300/30 to-transparent py-16">
+      <header className="bg-gradient-to-t from-teal-300/30 to-transparent py-16 dark:from-violet-500">
         <div className="mx-auto w-full max-w-screen-md px-3">
           <div className="animate-reveal-reverse relative flex grow">
             <Search className="pointer-events-none absolute top-1/2 right-3 size-6 -translate-y-1/2 text-teal-300" />
