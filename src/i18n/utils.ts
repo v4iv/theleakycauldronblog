@@ -1,6 +1,6 @@
 import { defaultLang, showDefaultLang } from "@/i18n/ui"
 
-import ui from "@/content/translations/ui.json"
+import ui from "@/content/translations/en/ui.json"
 
 export function getLangFromUrl(url: URL) {
   const [, lang] = url.pathname.split("/")
